@@ -27,7 +27,7 @@ namespace TransmitterMan.Commands
         static RegisteredCommands()
         {
             CreateTransmitter = new RoutedUICommand("CreateTransmitter", "CreateTransmitter", typeof(RegisteredCommands));
-            //CreateTransmitter.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control));
+            CreateTransmitter.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands
