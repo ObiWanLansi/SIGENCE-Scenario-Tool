@@ -324,7 +324,20 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void OpenFile()
         {
-            MB.NotYetImplemented();
+            if (ofd.ShowDialog() == true)
+            {
+                Reset();
+                CurrentFile = ofd.FileName;
+
+                try
+                {
+                    XDocument xdoc = XDocument.Load(CurrentFile);
+                }
+                catch (Exception ex)
+                {
+                    MB.Error(ex);
+                }
+            }
         }
 
 
@@ -333,7 +346,7 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void SaveFile()
         {
-            if (strCurrentFile == null)
+            if (CurrentFile == null)
             {
                 if (sfd.ShowDialog() == true)
                 {
@@ -347,8 +360,6 @@ namespace TransmitterTool.Windows
 
             try
             {
-                //string strFileName = string.Format("{0}{1}.xml", Path.GetTempPath(), DateTime.Now.Fmt_YYYYMMDD_HHMMSSFFF());
-
                 XElement eTransmitter = new XElement("TransmitterCollection");
 
                 foreach (Transmitter t in from transmitter in Transmitter select transmitter.Transmitter)
@@ -357,8 +368,6 @@ namespace TransmitterTool.Windows
                 }
 
                 eTransmitter.SaveDefault(CurrentFile);
-
-                //Tools.Windows.OpenWithDefaultApplication(strFileName);
             }
             catch (Exception ex)
             {
