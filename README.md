@@ -1,2 +1,2 @@
-# TransmitterMan
+# TransmitterTool
 SIGINT AG Transmitter Tool
