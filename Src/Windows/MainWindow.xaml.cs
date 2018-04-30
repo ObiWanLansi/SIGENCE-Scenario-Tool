@@ -8,6 +8,8 @@ using System.Windows;
 using System.Windows.Input;
 using System.Xml.Linq;
 
+using Microsoft.Win32;
+
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
@@ -29,7 +31,18 @@ namespace TransmitterTool.Windows
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
 
+        /// <summary>
+        ///
+        /// </summary>
+        private readonly SaveFileDialog sfd = new SaveFileDialog();
+
+        /// <summary>
+        ///
+        /// </summary>
+        private readonly OpenFileDialog ofd = new OpenFileDialog();
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Gets or sets the transmitter.
@@ -38,8 +51,6 @@ namespace TransmitterTool.Windows
         /// The transmitter.
         /// </value>
         public ObservableCollection<TransmitterViewModel> Transmitter { get; set; }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -77,6 +88,29 @@ namespace TransmitterTool.Windows
             get { return mcMapControl; }
         }
 
+
+        /// <summary>
+        /// The string current file
+        /// </summary>
+        private string strCurrentFile = null;
+
+        /// <summary>
+        /// Gets or sets the current file.
+        /// </summary>
+        /// <value>
+        /// The current file.
+        /// </value>
+        public string CurrentFile
+        {
+            get { return strCurrentFile; }
+            set
+            {
+                this.strCurrentFile = value;
+                SetTitle();
+                FirePropertyChanged();
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -87,12 +121,32 @@ namespace TransmitterTool.Windows
         {
             InitializeComponent();
 
+            //-----------------------------------------------------------------
+
             this.Transmitter = new ObservableCollection<TransmitterViewModel>();
             this.DataContext = this;
+
+            //-----------------------------------------------------------------
 
             InitMapControl();
             InitMapProvider();
             InitCommands();
+
+            //-----------------------------------------------------------------
+
+            sfd.Title = "Save SIGINT Transmitter File";
+            sfd.Filter = "SIGINT Transmitter File (*.stf)|*.stf";
+            sfd.AddExtension = true;
+            sfd.CheckPathExists = true;
+
+            ofd.Title = "Load SIGINT Transmitter File";
+            ofd.Filter = "SIGINT Transmitter File (*.stf)|*.stf";
+            ofd.AddExtension = true;
+            ofd.CheckPathExists = true;
+            ofd.CheckFileExists = true;
+            ofd.Multiselect = false;
+
+            //-----------------------------------------------------------------
 
 #if DEBUG
             //WindowState = WindowState.Maximized;
@@ -111,6 +165,42 @@ namespace TransmitterTool.Windows
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     NewFile();
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
+
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Open,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    OpenFile();
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
+
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Save,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    SaveFile();
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
+
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.SaveAs,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    SaveAsFile();
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
@@ -199,13 +289,92 @@ namespace TransmitterTool.Windows
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Resets this instance.
+        /// </summary>
+        private void Reset()
+        {
+            CurrentFile = null;
+            Transmitter.Clear();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void SetTitle()
+        {
+            this.Title = string.Format("{0}{1}", Tool.ProductTitle, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// News the file.
         /// </summary>
         private void NewFile()
         {
-            Transmitter.Clear();
+            Reset();
+        }
+
+
+        /// <summary>
+        /// Opens the file.
+        /// </summary>
+        private void OpenFile()
+        {
+            MB.NotYetImplemented();
+        }
+
+
+        /// <summary>
+        /// Saves the file.
+        /// </summary>
+        private void SaveFile()
+        {
+            if (strCurrentFile == null)
+            {
+                if (sfd.ShowDialog() == true)
+                {
+                    CurrentFile = sfd.FileName;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            try
+            {
+                //string strFileName = string.Format("{0}{1}.xml", Path.GetTempPath(), DateTime.Now.Fmt_YYYYMMDD_HHMMSSFFF());
+
+                XElement eTransmitter = new XElement("TransmitterCollection");
+
+                foreach (Transmitter t in from transmitter in Transmitter select transmitter.Transmitter)
+                {
+                    eTransmitter.Add(t.ToXml());
+                }
+
+                eTransmitter.SaveDefault(CurrentFile);
+
+                //Tools.Windows.OpenWithDefaultApplication(strFileName);
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Saves with different filename.
+        /// </summary>
+        private void SaveAsFile()
+        {
+            CurrentFile = null;
+
+            SaveFile();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -269,32 +438,6 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void ExportTransmitter()
         {
-            if (Transmitter.Count > 0)
-            {
-                try
-                {
-                    string strFileName = string.Format("{0}{1}.xml", Path.GetTempPath(), DateTime.Now.Fmt_YYYYMMDD_HHMMSSFFF());
-
-                    XElement eTransmitter = new XElement("TransmitterCollection");
-
-                    foreach (Transmitter t in from transmitter in Transmitter select transmitter.Transmitter)
-                    {
-                        eTransmitter.Add(t.ToXml());
-                    }
-
-                    eTransmitter.SaveDefault(strFileName);
-
-                    Tools.Windows.OpenWithDefaultApplication(strFileName);
-                }
-                catch (Exception ex)
-                {
-                    MB.Error(ex);
-                }
-            }
-            else
-            {
-                MB.Information("There Are No Transmitter To Export!");
-            }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
