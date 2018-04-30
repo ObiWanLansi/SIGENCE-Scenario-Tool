@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Transmitter>
+
+    <Property Name="Id" Type="Guid" Init="Guid.NewGuid()"/>
+    <Property Name="Name" Type="string" Init="&quot;Unknown Transmitter&quot;"/>
+    <Property Name="Location" Type="PointLatLng?" Init="null"/>
+    <Property Name="Remark" Type="string" Init="null"/>
+
+</Transmitter>
