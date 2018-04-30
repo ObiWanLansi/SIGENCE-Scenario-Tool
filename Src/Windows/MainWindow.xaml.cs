@@ -1,16 +1,22 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
 
 using TransmitterTool.Commands;
+using TransmitterTool.Extensions;
 using TransmitterTool.Markers;
 using TransmitterTool.Models;
+using TransmitterTool.Tools;
 using TransmitterTool.ViewModels;
 
 
@@ -89,7 +95,7 @@ namespace TransmitterTool.Windows
             InitCommands();
 
 #if DEBUG
-            WindowState = WindowState.Maximized;
+            //WindowState = WindowState.Maximized;
 #endif
         }
 
@@ -101,18 +107,6 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void InitCommands()
         {
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateTransmitter,
-                (object sender, ExecutedRoutedEventArgs e) =>
-                {
-                    BeginCreateTransmitter();
-                    e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
-                {
-                    e.CanExecute = true;
-                }
-            ));
-
             CommandBindings.Add(new CommandBinding(ApplicationCommands.New,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
@@ -129,6 +123,30 @@ namespace TransmitterTool.Windows
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     Close();
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
+
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateTransmitter,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    BeginCreateTransmitter();
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
+
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportTransmitter,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    ExportTransmitter();
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
@@ -208,6 +226,7 @@ namespace TransmitterTool.Windows
         private void BeginCreateTransmitter()
         {
             CreatingTransmitter = true;
+            mcMapControl.Cursor = Cursors.Cross;
         }
 
 
@@ -216,6 +235,7 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void EndCreateTransmitter()
         {
+            mcMapControl.Cursor = Cursors.Arrow;
             CreatingTransmitter = false;
         }
 
@@ -243,6 +263,39 @@ namespace TransmitterTool.Windows
             Transmitter.Add(new TransmitterViewModel(t));
         }
 
+
+        /// <summary>
+        /// Exports the transmitter.
+        /// </summary>
+        private void ExportTransmitter()
+        {
+            if (Transmitter.Count > 0)
+            {
+                try
+                {
+                    string strFileName = string.Format("{0}{1}.xml", Path.GetTempPath(), DateTime.Now.Fmt_YYYYMMDD_HHMMSSFFF());
+
+                    XElement eTransmitter = new XElement("TransmitterCollection");
+
+                    foreach (Transmitter t in from transmitter in Transmitter select transmitter.Transmitter)
+                    {
+                        eTransmitter.Add(t.ToXml());
+                    }
+
+                    eTransmitter.SaveDefault(strFileName);
+
+                    Tools.Windows.OpenWithDefaultApplication(strFileName);
+                }
+                catch (Exception ex)
+                {
+                    MB.Error(ex);
+                }
+            }
+            else
+            {
+                MB.Information("There Are No Transmitter To Export!");
+            }
+        }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

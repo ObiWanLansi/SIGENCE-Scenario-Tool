@@ -1,4 +1,4 @@
-﻿<Window x:Class="TransmitterTool.Windows.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:TransmitterTool.Commands"  mc:Ignorable="d" Title="TransmitterTool" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+﻿<Window x:Class="TransmitterTool.Windows.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:TransmitterTool.Commands"  mc:Ignorable="d" Title="TransmitterTool" Height="900" Width="900" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!--<ObjectDataProvider x:Key="eMapTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -29,15 +29,16 @@
                 <Separator />
                 <MenuItem Header="Quit" Command="{x:Static ApplicationCommands.Close}" />
             </MenuItem>
-            <!--<MenuItem Header="_Actions">
+            <MenuItem Header="_Actions">
                 <MenuItem Header="_Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
-            </MenuItem>-->
+                <Separator />
+                <MenuItem Header="_Export Transmitter" Command="{x:Static cmd:RegisteredCommands.ExportTransmitter}" />
+            </MenuItem>
         </Menu>
 
         <ToolBar Grid.Row="1">
-            <!--<ToggleButton x:Name="tbCreateTransmitter" Content="Create Transmitter" IsChecked="{Binding CreatingTransmitter}" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />-->
-            <Button Content="Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
-            <Separator />
+            <!--<Button Content="Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
+            <Separator />-->
             <Label Content="MapType" />
             <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapControl.MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" />
             <Separator />
