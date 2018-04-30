@@ -1,7 +1,7 @@
 ﻿
 /**
- * SourceFile     : S:\EigeneDateien\Entwicklung\Testfolder\TransmitterMan\Src\Models\Transmitter.xml
- * Timestamp      : 29.04.2018, 20:42
+ * SourceFile     : D:\BigData\GitHub\TransmitterMan\Src\Models\Transmitter.xml
+ * Timestamp      : 30.04.2018, 10:16
  * User           : Jörg Lanser Lokal
  * Host           : MARUSHA
  */
@@ -15,11 +15,11 @@ using System.Xml.Linq;
 
 using GMap.NET;
 
-using TransmitterMan.Extensions;
+using TransmitterTool.Extensions;
 
 
 
-namespace TransmitterMan.Models
+namespace TransmitterTool.Models
 {
     ///<summary>
     /// Generated Model Class from Transmitter.xml.

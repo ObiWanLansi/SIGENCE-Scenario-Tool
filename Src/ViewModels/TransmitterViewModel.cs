@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using TransmitterMan.Models;
+
+using TransmitterTool.Models;
 
 
 
-namespace TransmitterMan.ViewModels
+namespace TransmitterTool.ViewModels
 {
     /// <summary>
     /// A ViewModel for a Transmitter.

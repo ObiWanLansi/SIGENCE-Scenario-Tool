@@ -2,7 +2,7 @@
 
 
 
-namespace TransmitterMan.Commands
+namespace TransmitterTool.Commands
 {
     /// <summary>
     /// 

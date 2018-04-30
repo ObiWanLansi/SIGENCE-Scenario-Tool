@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 
 
 
-namespace TransmitterMan.Tools
+namespace TransmitterTool.Tools
 {
     /// <summary>
     /// Klasse mit statischen Standalonefunktionen.
@@ -91,12 +91,12 @@ namespace TransmitterMan.Tools
             {
                 Assembly aEntryAssembly = Assembly.GetEntryAssembly();
 
-                if( aEntryAssembly != null )
+                if (aEntryAssembly != null)
                 {
                     {
                         object[] oAttributes = aEntryAssembly.GetCustomAttributes(typeof(AssemblyProductAttribute), false);
 
-                        if( oAttributes.Length == 1 )
+                        if (oAttributes.Length == 1)
                         {
                             ProductName = (oAttributes[0] as AssemblyProductAttribute).Product;
                         }
@@ -104,7 +104,7 @@ namespace TransmitterMan.Tools
                     {
                         object[] oAttributes = aEntryAssembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
 
-                        if( oAttributes.Length == 1 )
+                        if (oAttributes.Length == 1)
                         {
                             ProductTitle = (oAttributes[0] as AssemblyTitleAttribute).Title;
                         }
@@ -112,7 +112,7 @@ namespace TransmitterMan.Tools
                     {
                         object[] oAttributes = aEntryAssembly.GetCustomAttributes(typeof(AssemblyFileVersionAttribute), false);
 
-                        if( oAttributes.Length == 1 )
+                        if (oAttributes.Length == 1)
                         {
                             Version = (oAttributes[0] as AssemblyFileVersionAttribute).Version;
                         }
@@ -125,7 +125,7 @@ namespace TransmitterMan.Tools
                     Version = "0.0";
                 }
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
                 ProductName = ex.Message;
             }
@@ -142,22 +142,22 @@ namespace TransmitterMan.Tools
         /// <returns></returns>
         static public string GetHumanSize(long lSizeInBytes)
         {
-            if( lSizeInBytes >= 1099511627776 )
+            if (lSizeInBytes >= 1099511627776)
             {
                 return string.Format("{0:F} Tb", (float)lSizeInBytes / 1099511627776);
             }
 
-            if( lSizeInBytes >= 1073741824 )
+            if (lSizeInBytes >= 1073741824)
             {
                 return string.Format("{0:F} Gb", (float)lSizeInBytes / 1073741824);
             }
 
-            if( lSizeInBytes >= 1048576 )
+            if (lSizeInBytes >= 1048576)
             {
                 return string.Format("{0:F} Mb", (float)lSizeInBytes / 1048576);
             }
 
-            if( lSizeInBytes >= 1024 )
+            if (lSizeInBytes >= 1024)
             {
                 return string.Format("{0:F} Kb", (float)lSizeInBytes / 1024);
             }
@@ -173,7 +173,7 @@ namespace TransmitterMan.Tools
         /// <returns></returns>
         static public string GetHumanDistance(long lLengthInMeter)
         {
-            if( lLengthInMeter < 1000 )
+            if (lLengthInMeter < 1000)
             {
                 return string.Format("{0} m", lLengthInMeter);
             }
@@ -208,24 +208,24 @@ namespace TransmitterMan.Tools
         /// <returns></returns>
         static public string ReadResourceAsString(string strResourceName)
         {
-            using( Stream s = Assembly.GetEntryAssembly().GetManifestResourceStream(strResourceName) )
+            using (Stream s = Assembly.GetEntryAssembly().GetManifestResourceStream(strResourceName))
             {
 
-                if( s == null )
+                if (s == null)
                 {
                     return null;
                 }
 
                 byte[] bBuffer = new byte[s.Length];
 
-                if( s.Read(bBuffer, 0, bBuffer.Length) != bBuffer.Length )
+                if (s.Read(bBuffer, 0, bBuffer.Length) != bBuffer.Length)
                 {
                     return null;
                 }
 
                 StringBuilder sb = new StringBuilder(bBuffer.Length);
 
-                foreach( byte t in bBuffer )
+                foreach (byte t in bBuffer)
                 {
                     sb.Append((char)t);
                 }

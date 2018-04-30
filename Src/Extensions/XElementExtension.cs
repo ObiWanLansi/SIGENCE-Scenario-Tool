@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 
 
-namespace TransmitterMan.Extensions
+namespace TransmitterTool.Extensions
 {
     static public class XElementExtension
     {

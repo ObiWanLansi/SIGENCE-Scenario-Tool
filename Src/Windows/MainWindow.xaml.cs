@@ -8,14 +8,14 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
 
-using TransmitterMan.Commands;
-using TransmitterMan.Markers;
-using TransmitterMan.Models;
-using TransmitterMan.ViewModels;
+using TransmitterTool.Commands;
+using TransmitterTool.Markers;
+using TransmitterTool.Models;
+using TransmitterTool.ViewModels;
 
 
 
-namespace TransmitterMan.Windows
+namespace TransmitterTool.Windows
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml

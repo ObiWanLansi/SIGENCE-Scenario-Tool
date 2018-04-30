@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TransmitterMan.Markers.Circle" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="300" Width="300" Background="Transparent">
+﻿<UserControl x:Class="TransmitterTool.Markers.Circle" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="300" Width="300" Background="Transparent">
     <Grid>
         <Ellipse Stroke="Red" Fill="AliceBlue" Opacity="0.44" />
     </Grid>

@@ -3,7 +3,7 @@ using System.Windows.Media;
 
 
 
-namespace TransmitterMan.Extensions
+namespace TransmitterTool.Extensions
 {
     /// <summary>
     /// Eine Erweiterungsklasse für unseren lieblichen String.

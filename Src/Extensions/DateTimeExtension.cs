@@ -2,7 +2,7 @@ using System;
 
 
 
-namespace TransmitterMan.Extensions
+namespace TransmitterTool.Extensions
 {
     /// <summary>
     /// 

@@ -2,7 +2,7 @@
 
 
 
-namespace TransmitterMan
+namespace TransmitterTool
 {
     /// <summary>
     /// Interaktionslogik für "App.xaml"

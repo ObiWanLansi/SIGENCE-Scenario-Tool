@@ -5,11 +5,11 @@ using System.Windows;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("SIGINT-AG TransmitterMan")]
+[assembly: AssemblyTitle("SIGINT-AG TransmitterTool")]
 [assembly: AssemblyDescription("A Little Tool For Placing Transmitters On A Map.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LansiTools")]
-[assembly: AssemblyProduct("SIGINT-AG TransmitterMan")]
+[assembly: AssemblyProduct("SIGINT-AG TransmitterTool")]
 [assembly: AssemblyCopyright("Copyright © LansiTools 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

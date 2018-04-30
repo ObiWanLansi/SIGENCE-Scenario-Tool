@@ -1,4 +1,4 @@
-﻿<Window x:Class="TransmitterMan.Windows.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:TransmitterMan.Commands"  mc:Ignorable="d" Title="TransmitterMan" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+﻿<Window x:Class="TransmitterTool.Windows.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:TransmitterTool.Commands"  mc:Ignorable="d" Title="TransmitterTool" Height="600" Width="900" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!--<ObjectDataProvider x:Key="eMapTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0">
-            <MenuItem Header="_TransmitterMan">
+            <MenuItem Header="_TransmitterTool">
                 <MenuItem Header="_New File" Command="{x:Static ApplicationCommands.New}" />
                 <Separator />
                 <MenuItem Header="_Open File" Command="{x:Static ApplicationCommands.Open}" />

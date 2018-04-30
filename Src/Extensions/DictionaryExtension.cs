@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace TransmitterMan.Extensions
+namespace TransmitterTool.Extensions
 {
     /// <summary>
     /// Eine Erweiterungsklasse für Dictionary &lt;TKey , TValue&gt; und SortedDictionary&lt;TKey , TValue&gt; .

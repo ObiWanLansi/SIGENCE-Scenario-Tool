@@ -2,7 +2,7 @@ using System.IO;
 
 
 
-namespace TransmitterMan.Extensions
+namespace TransmitterTool.Extensions
 {
     /// <summary>
     /// Eine Erweiterungsklasse für System.IO.FileInfo .

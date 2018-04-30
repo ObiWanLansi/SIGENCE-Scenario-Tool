@@ -29,7 +29,7 @@ using System.Xml.Linq;
 
 using GMap.NET;
 
-using TransmitterMan.Extensions;
+using TransmitterTool.Extensions;
 
 
 <#
@@ -38,7 +38,7 @@ using TransmitterMan.Extensions;
     XElement eRoot = xd.Root;
 #>
 
-namespace TransmitterMan.Models
+namespace TransmitterTool.Models
 {
     ///<summary>
     /// Generated Model Class from <#=new FileInfo(strFileName).Name#>.
