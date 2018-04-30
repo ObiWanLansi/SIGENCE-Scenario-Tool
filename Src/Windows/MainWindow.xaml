@@ -36,7 +36,8 @@
 
         <ToolBar Grid.Row="1">
             <!--<ToggleButton x:Name="tbCreateTransmitter" Content="Create Transmitter" IsChecked="{Binding CreatingTransmitter}" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />-->
-            <!--<Separator />-->
+            <Button Content="Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
+            <Separator />
             <Label Content="MapType" />
             <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapControl.MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" />
             <Separator />

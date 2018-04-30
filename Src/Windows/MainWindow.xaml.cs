@@ -2,15 +2,15 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
+
 using TransmitterMan.Commands;
 using TransmitterMan.Markers;
 using TransmitterMan.Models;
-using TransmitterMan.Tools;
 using TransmitterMan.ViewModels;
 
 
@@ -104,6 +104,7 @@ namespace TransmitterMan.Windows
             CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateTransmitter,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
+                    BeginCreateTransmitter();
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
@@ -155,7 +156,6 @@ namespace TransmitterMan.Windows
             mcMapControl.Position = new PointLatLng(49.761471, 6.650053);
             mcMapControl.Zoom = 14;
 
-            mcMapControl.MouseDown += MapControl_MouseDown;
             mcMapControl.MouseLeftButtonDown += McMapControl_MouseLeftButtonDown;
         }
 
@@ -190,6 +190,8 @@ namespace TransmitterMan.Windows
             Transmitter.Clear();
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Sets the map to creating transmitter mode.
@@ -197,7 +199,24 @@ namespace TransmitterMan.Windows
         private void SetMapToCreatingTransmitterMode()
         {
             mcMapControl.DragButton = bCreatingTransmitter ? MouseButton.Right : MouseButton.Left;
-            //tbCreateTransmitter.IsChecked = bCreatingTransmitter;
+        }
+
+
+        /// <summary>
+        /// Begins the create transmitter.
+        /// </summary>
+        private void BeginCreateTransmitter()
+        {
+            CreatingTransmitter = true;
+        }
+
+
+        /// <summary>
+        /// Ends the create transmitter.
+        /// </summary>
+        private void EndCreateTransmitter()
+        {
+            CreatingTransmitter = false;
         }
 
 
@@ -209,10 +228,7 @@ namespace TransmitterMan.Windows
         {
             GMapMarker currentMarker = new GMapMarker(pll)
             {
-                //Shape = new Label { Content = "Transmitter" },
-                //Shape = new Circle { Center = pll },
                 Shape = new Cross(),
-                // Das pass noch nicht ganz ...
                 Offset = new Point(-15, -15),
                 ZIndex = int.MaxValue
             };
@@ -227,54 +243,7 @@ namespace TransmitterMan.Windows
             Transmitter.Add(new TransmitterViewModel(t));
         }
 
-
-        ///// <summary>
-        ///// Toogles the create transmitter.
-        ///// </summary>
-        //private void ToogleCreateTransmitter()
-        //{
-        //    //CreatingTransmitter = tbCreateTransmitter.IsChecked ?? false;
-        //    //CreatingTransmitter = !CreatingTransmitter;
-        //}
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="strPropertyName"></param>
-        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
-        }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-        /// <summary>
-        /// Handles the MouseDown event of the MapControl control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
-        private void MapControl_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-            //if (CreatingTransmitter == true)
-            //{
-            //    //MessageBox.Show("");
-
-            //    e.Handled = true;
-            //}
-        }
 
 
         /// <summary>
@@ -292,20 +261,29 @@ namespace TransmitterMan.Windows
 
                 CreateTransmitter(pll);
 
+                EndCreateTransmitter();
+
                 e.Handled = true;
             }
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        ///// <summary>
-        ///// Handles the Click event of the ToggleButton_CreateTransmitter control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
-        //private void ToggleButton_CreateTransmitter_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ToogleCreateTransmitter();
-        //}
+
+        /// <summary>
+        /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        /// <summary>
+        /// Fires the property changed.
+        /// </summary>
+        /// <param name="strPropertyName">Name of the string property.</param>
+        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+        }
 
     } // end public partial class MainWindow
 }
