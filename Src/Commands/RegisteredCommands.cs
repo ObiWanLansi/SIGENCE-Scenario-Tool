@@ -26,6 +26,15 @@ namespace TransmitterTool.Commands
         /// </value>
         static public RoutedUICommand ExportTransmitter { get; private set; }
 
+
+        /// <summary>
+        /// Gets the import transmitter.
+        /// </summary>
+        /// <value>
+        /// The import transmitter.
+        /// </value>
+        static public RoutedUICommand ImportTransmitter { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -39,6 +48,9 @@ namespace TransmitterTool.Commands
 
             ExportTransmitter = new RoutedUICommand("ExportTransmitter", "ExportTransmitter", typeof(RegisteredCommands));
             ExportTransmitter.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
+
+            ImportTransmitter = new RoutedUICommand("ImportTransmitter", "ImportTransmitter", typeof(RegisteredCommands));
+            ImportTransmitter.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands

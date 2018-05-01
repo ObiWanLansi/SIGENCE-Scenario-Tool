@@ -33,6 +33,15 @@
                 <MenuItem Header="_Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
                 <Separator />
                 <MenuItem Header="_Export Transmitter" Command="{x:Static cmd:RegisteredCommands.ExportTransmitter}" />
+                <MenuItem Header="_Import Transmitter" Command="{x:Static cmd:RegisteredCommands.ImportTransmitter}" />
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Find GeoLocation" IsEnabled="False" />
+                <Separator />
+                <MenuItem Header="_Create Screenshot From Map" IsEnabled="False" />
+            </MenuItem>
+            <MenuItem Header="_Extras">
+                <MenuItem Header="_Settings" IsEnabled="False" />
             </MenuItem>
         </Menu>
 
