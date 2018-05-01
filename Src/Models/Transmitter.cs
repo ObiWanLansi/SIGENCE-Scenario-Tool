@@ -1,7 +1,7 @@
 ﻿
 /**
- * SourceFile     : D:\BigData\GitHub\TransmitterMan\Src\Models\Transmitter.xml
- * Timestamp      : 30.04.2018, 10:16
+ * SourceFile     : D:\BigData\GitHub\TransmitterTool\Src\Models\Transmitter.xml
+ * Timestamp      : 01.05.2018, 18:57
  * User           : Jörg Lanser Lokal
  * Host           : MARUSHA
  */
@@ -73,12 +73,12 @@ namespace TransmitterTool.Models
         ///<summary>
         /// The DefaultValue For Name.
         ///</summary>
-        static public readonly string DEFAULT_NAME = "Unknown Transmitter";
+        static public readonly string DEFAULT_NAME = "Transmitter";
         
         ///<summary>
         /// The Internal Field For Name.
         ///</summary>
-        private string _Name = "Unknown Transmitter";
+        private string _Name = "Transmitter";
 
         ///<summary>
         /// Name As string.
@@ -97,32 +97,66 @@ namespace TransmitterTool.Models
 
         //---------------------------------------------------------------------
 
-        #region Location
+        #region Latitude
 
         ///<summary>
-        /// The PropertyName As ReadOnly String For Location.
+        /// The PropertyName As ReadOnly String For Latitude.
         ///</summary>
-        public const String LOCATION = "Location";
+        public const String LATITUDE = "Latitude";
 
         ///<summary>
-        /// The DefaultValue For Location.
+        /// The DefaultValue For Latitude.
         ///</summary>
-        static public readonly PointLatLng? DEFAULT_LOCATION = null;
+        static public readonly double DEFAULT_LATITUDE = double.NaN;
         
         ///<summary>
-        /// The Internal Field For Location.
+        /// The Internal Field For Latitude.
         ///</summary>
-        private PointLatLng? _Location = null;
+        private double _Latitude = double.NaN;
 
         ///<summary>
-        /// Location As PointLatLng?.
+        /// Latitude As double.
         ///</summary>
-        public PointLatLng? Location 
+        public double Latitude 
         {
-            get { return _Location; }
+            get { return _Latitude; }
             set
             {
-                _Location = value;
+                _Latitude = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+
+        //---------------------------------------------------------------------
+
+        #region Longitude
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Longitude.
+        ///</summary>
+        public const String LONGITUDE = "Longitude";
+
+        ///<summary>
+        /// The DefaultValue For Longitude.
+        ///</summary>
+        static public readonly double DEFAULT_LONGITUDE = double.NaN;
+        
+        ///<summary>
+        /// The Internal Field For Longitude.
+        ///</summary>
+        private double _Longitude = double.NaN;
+
+        ///<summary>
+        /// Longitude As double.
+        ///</summary>
+        public double Longitude 
+        {
+            get { return _Longitude; }
+            set
+            {
+                _Longitude = value;
                 FirePropertyChanged();
             }
         }
@@ -174,7 +208,8 @@ namespace TransmitterTool.Models
 
                 XElementExtension.GetXElement("Id", Id),
                 XElementExtension.GetXElement("Name", Name),
-                XElementExtension.GetXElement("Location", Location),
+                XElementExtension.GetXElement("Latitude", Latitude),
+                XElementExtension.GetXElement("Longitude", Longitude),
                 XElementExtension.GetXElement("Remark", Remark)  
             );
         }
@@ -196,8 +231,9 @@ namespace TransmitterTool.Models
             return new Transmitter
             {
                 Id = eChild.GetProperty<Guid>("Id",Guid.NewGuid()),
-                Name = eChild.GetProperty<string>("Name","Unknown Transmitter"),
-                Location = eChild.GetProperty<PointLatLng?>("Location",null),
+                Name = eChild.GetProperty<string>("Name","Transmitter"),
+                Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
+                Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
                 Remark = eChild.GetProperty<string>("Remark",null)            
             };
         }
@@ -222,7 +258,12 @@ namespace TransmitterTool.Models
                 return false;
             }
 
-            if (Location != other.Location )
+            if (Latitude != other.Latitude )
+            {
+                return false;
+            }
+
+            if (Longitude != other.Longitude )
             {
                 return false;
             }

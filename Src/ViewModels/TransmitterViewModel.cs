@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using TransmitterTool.Models;
@@ -65,7 +66,7 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Latitude
         {
-            get { return string.Format("{0:F8}", Transmitter.Location.Value.Lat); }
+            get { return string.Format("{0:F8}", Transmitter.Latitude); }
         }
 
 
@@ -77,7 +78,7 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Longitude
         {
-            get { return string.Format("{0:F8}", Transmitter.Location.Value.Lng); }
+            get { return string.Format("{0:F8}", Transmitter.Longitude); }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,7 +90,7 @@ namespace TransmitterTool.ViewModels
         /// <param name="t">The t.</param>
         public TransmitterViewModel(Transmitter t)
         {
-            this.Transmitter = t;
+            this.Transmitter = t ?? throw new ArgumentNullException("t");
         }
 
     } // end sealed public class TransmitterViewModel

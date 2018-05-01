@@ -50,7 +50,7 @@ namespace TransmitterTool.Windows
         /// <value>
         /// The transmitter.
         /// </value>
-        public ObservableCollection<TransmitterViewModel> Transmitter { get; set; }
+        public ObservableCollection<TransmitterViewModel> TransmitterCollection { get; set; }
 
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace TransmitterTool.Windows
 
             //-----------------------------------------------------------------
 
-            this.Transmitter = new ObservableCollection<TransmitterViewModel>();
+            this.TransmitterCollection = new ObservableCollection<TransmitterViewModel>();
             this.DataContext = this;
 
             //-----------------------------------------------------------------
@@ -295,7 +295,7 @@ namespace TransmitterTool.Windows
         private void Reset()
         {
             CurrentFile = null;
-            Transmitter.Clear();
+            TransmitterCollection.Clear();
         }
 
 
@@ -324,9 +324,6 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void OpenFile()
         {
-            MB.NotYetImplemented();
-            return;
-
             if (ofd.ShowDialog() == true)
             {
                 Reset();
@@ -335,6 +332,11 @@ namespace TransmitterTool.Windows
                 try
                 {
                     XDocument xdoc = XDocument.Load(CurrentFile);
+
+                    foreach (XElement e in xdoc.Root.Elements())
+                    {
+                        AddTransmitter(Transmitter.FromXml(e));
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -365,7 +367,7 @@ namespace TransmitterTool.Windows
             {
                 XElement eTransmitter = new XElement("TransmitterCollection");
 
-                foreach (Transmitter t in from transmitter in Transmitter select transmitter.Transmitter)
+                foreach (Transmitter t in from transmitter in TransmitterCollection select transmitter.Transmitter)
                 {
                     eTransmitter.Add(t.ToXml());
                 }
@@ -425,7 +427,7 @@ namespace TransmitterTool.Windows
         /// Creates the transmitter.
         /// </summary>
         /// <param name="pll">The PLL.</param>
-        private void CreateTransmitter(PointLatLng pll)
+        private void AddTransmitter(PointLatLng pll)
         {
             GMapMarker currentMarker = new GMapMarker(pll)
             {
@@ -438,10 +440,30 @@ namespace TransmitterTool.Windows
 
             Transmitter t = new Transmitter
             {
-                Location = pll
+                Latitude = pll.Lat,
+                Longitude = pll.Lng
             };
 
-            Transmitter.Add(new TransmitterViewModel(t));
+            TransmitterCollection.Add(new TransmitterViewModel(t));
+        }
+
+
+        /// <summary>
+        /// Adds the transmitter.
+        /// </summary>
+        /// <param name="t">The t.</param>
+        private void AddTransmitter(Transmitter t)
+        {
+            GMapMarker currentMarker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
+            {
+                Shape = new Cross(),
+                Offset = new Point(-15, -15),
+                ZIndex = int.MaxValue
+            };
+
+            mcMapControl.Markers.Add(currentMarker);
+
+            TransmitterCollection.Add(new TransmitterViewModel(t));
         }
 
 
@@ -469,7 +491,7 @@ namespace TransmitterTool.Windows
 
                 PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
 
-                CreateTransmitter(pll);
+                AddTransmitter(pll);
 
                 EndCreateTransmitter();
 

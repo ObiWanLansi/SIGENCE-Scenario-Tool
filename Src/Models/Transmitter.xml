@@ -2,8 +2,10 @@
 <Transmitter>
 
     <Property Name="Id" Type="Guid" Init="Guid.NewGuid()"/>
-    <Property Name="Name" Type="string" Init="&quot;Unknown Transmitter&quot;"/>
-    <Property Name="Location" Type="PointLatLng?" Init="null"/>
+    <Property Name="Name" Type="string" Init="&quot;Transmitter&quot;"/>
+    <!--<Property Name="Location" Type="PointLatLng?" Init="null"/>-->
+    <Property Name="Latitude" Type="double" Init="double.NaN"/>
+    <Property Name="Longitude" Type="double" Init="double.NaN"/>
     <Property Name="Remark" Type="string" Init="null"/>
 
 </Transmitter>

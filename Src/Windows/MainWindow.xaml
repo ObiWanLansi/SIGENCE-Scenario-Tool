@@ -47,7 +47,7 @@
         <gmap:GMapControl x:Name="mcMapControl" Grid.Row="2" />
 
         <ScrollViewer Grid.Row="3">
-            <DataGrid ItemsSource="{Binding Transmitter}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14">
+            <DataGrid ItemsSource="{Binding TransmitterCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14">
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
@@ -106,7 +106,7 @@
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="TransmitterCount:" />
-                    <Label Content="{Binding Transmitter.Count}" />
+                    <Label Content="{Binding TransmitterCollection.Count}" />
                 </StackPanel>
             </StatusBarItem>
 
