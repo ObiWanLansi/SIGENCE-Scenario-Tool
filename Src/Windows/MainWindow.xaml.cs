@@ -324,6 +324,9 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void OpenFile()
         {
+            MB.NotYetImplemented();
+            return;
+
             if (ofd.ShowDialog() == true)
             {
                 Reset();
@@ -447,7 +450,9 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void ExportTransmitter()
         {
+            MB.NotYetImplemented();
         }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
