@@ -6,6 +6,6 @@
     <!--<Property Name="Location" Type="PointLatLng?" Init="null"/>-->
     <Property Name="Latitude" Type="double" Init="double.NaN"/>
     <Property Name="Longitude" Type="double" Init="double.NaN"/>
-    <Property Name="Remark" Type="string" Init="null"/>
+    <Property Name="Remark" Type="string" Init="&quot;&quot;"/>
 
 </Transmitter>

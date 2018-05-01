@@ -20,8 +20,7 @@ using TransmitterTool.Markers;
 using TransmitterTool.Models;
 using TransmitterTool.Tools;
 using TransmitterTool.ViewModels;
-
-
+using System.Windows.Controls;
 
 namespace TransmitterTool.Windows
 {
@@ -233,17 +232,17 @@ namespace TransmitterTool.Windows
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportTransmitter,
-                (object sender, ExecutedRoutedEventArgs e) =>
-                {
-                    ExportTransmitter();
-                    e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
-                {
-                    e.CanExecute = true;
-                }
-            ));
+            //CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportTransmitter,
+            //    (object sender, ExecutedRoutedEventArgs e) =>
+            //    {
+            //        ExportTransmitter();
+            //        e.Handled = true;
+            //    },
+            //    (object sender, CanExecuteRoutedEventArgs e) =>
+            //    {
+            //        e.CanExecute = true;
+            //    }
+            //));
         }
 
 
@@ -497,6 +496,21 @@ namespace TransmitterTool.Windows
 
                 e.Handled = true;
             }
+        }
+
+        /// <summary>
+        /// Handles the MouseDoubleClick event of the DataGrid control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            TransmitterViewModel item = (sender as DataGrid).SelectedItem as TransmitterViewModel;
+
+            mcMapControl.Position = new PointLatLng(item.Transmitter.Latitude, item.Transmitter.Longitude);
+            mcMapControl.Zoom = 20;
+
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

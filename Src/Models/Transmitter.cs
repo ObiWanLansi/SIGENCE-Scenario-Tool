@@ -1,7 +1,7 @@
 ﻿
 /**
  * SourceFile     : D:\BigData\GitHub\TransmitterTool\Src\Models\Transmitter.xml
- * Timestamp      : 01.05.2018, 18:57
+ * Timestamp      : 01.05.2018, 20:35
  * User           : Jörg Lanser Lokal
  * Host           : MARUSHA
  */
@@ -175,12 +175,12 @@ namespace TransmitterTool.Models
         ///<summary>
         /// The DefaultValue For Remark.
         ///</summary>
-        static public readonly string DEFAULT_REMARK = null;
+        static public readonly string DEFAULT_REMARK = "";
         
         ///<summary>
         /// The Internal Field For Remark.
         ///</summary>
-        private string _Remark = null;
+        private string _Remark = "";
 
         ///<summary>
         /// Remark As string.
@@ -234,7 +234,7 @@ namespace TransmitterTool.Models
                 Name = eChild.GetProperty<string>("Name","Transmitter"),
                 Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
                 Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
-                Remark = eChild.GetProperty<string>("Remark",null)            
+                Remark = eChild.GetProperty<string>("Remark","")            
             };
         }
 

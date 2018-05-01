@@ -81,6 +81,19 @@ namespace TransmitterTool.ViewModels
             get { return string.Format("{0:F8}", Transmitter.Longitude); }
         }
 
+
+        /// <summary>
+        /// Gets or sets the remark.
+        /// </summary>
+        /// <value>
+        /// The remark.
+        /// </value>
+        public string Remark
+        {
+            get { return Transmitter.Remark; }
+            set { Transmitter.Remark = value; }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
