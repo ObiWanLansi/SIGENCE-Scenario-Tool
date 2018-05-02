@@ -26,9 +26,9 @@ namespace TransmitterTool.ViewModels
         /// 
         /// </summary>
         /// <param name="strPropertyName"></param>
-        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,7 +66,7 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Latitude
         {
-            get { return string.Format("{0:F8}", Transmitter.Latitude); }
+            get { return string.Format( "{0:F8}" , Transmitter.Latitude ); }
         }
 
 
@@ -78,7 +78,7 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Longitude
         {
-            get { return string.Format("{0:F8}", Transmitter.Longitude); }
+            get { return string.Format( "{0:F8}" , Transmitter.Longitude ); }
         }
 
 
@@ -101,9 +101,14 @@ namespace TransmitterTool.ViewModels
         /// Initializes a new instance of the <see cref="TransmitterViewModel"/> class.
         /// </summary>
         /// <param name="t">The t.</param>
-        public TransmitterViewModel(Transmitter t)
+        public TransmitterViewModel( Transmitter t )
         {
-            this.Transmitter = t ?? throw new ArgumentNullException("t");
+            if( t == null )
+            {
+                throw new ArgumentNullException( "t" );
+            }
+            
+            this.Transmitter = t;
         }
 
     } // end sealed public class TransmitterViewModel

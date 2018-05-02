@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml.Linq;
-
-using Microsoft.Win32;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
+
+using Microsoft.Win32;
 
 using TransmitterTool.Commands;
 using TransmitterTool.Extensions;
@@ -20,7 +21,8 @@ using TransmitterTool.Markers;
 using TransmitterTool.Models;
 using TransmitterTool.Tools;
 using TransmitterTool.ViewModels;
-using System.Windows.Controls;
+
+
 
 namespace TransmitterTool.Windows
 {
@@ -160,77 +162,77 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void InitCommands()
         {
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.New,
-                (object sender, ExecutedRoutedEventArgs e) =>
+            CommandBindings.Add( new CommandBinding( ApplicationCommands.New ,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
                 {
                     NewFile();
                     e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
                 {
                     e.CanExecute = true;
                 }
-            ));
+            ) );
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.Open,
-                (object sender, ExecutedRoutedEventArgs e) =>
+            CommandBindings.Add( new CommandBinding( ApplicationCommands.Open ,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
                 {
                     OpenFile();
                     e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
                 {
                     e.CanExecute = true;
                 }
-            ));
+            ) );
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.Save,
-                (object sender, ExecutedRoutedEventArgs e) =>
+            CommandBindings.Add( new CommandBinding( ApplicationCommands.Save ,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
                 {
                     SaveFile();
                     e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
                 {
                     e.CanExecute = true;
                 }
-            ));
+            ) );
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.SaveAs,
-                (object sender, ExecutedRoutedEventArgs e) =>
+            CommandBindings.Add( new CommandBinding( ApplicationCommands.SaveAs ,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
                 {
                     SaveAsFile();
                     e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
                 {
                     e.CanExecute = true;
                 }
-            ));
+            ) );
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.Close,
-                (object sender, ExecutedRoutedEventArgs e) =>
+            CommandBindings.Add( new CommandBinding( ApplicationCommands.Close ,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
                 {
                     Close();
                     e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
                 {
                     e.CanExecute = true;
                 }
-            ));
+            ) );
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateTransmitter,
-                (object sender, ExecutedRoutedEventArgs e) =>
+            CommandBindings.Add( new CommandBinding( RegisteredCommands.CreateTransmitter ,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
                 {
                     BeginCreateTransmitter();
                     e.Handled = true;
-                },
-                (object sender, CanExecuteRoutedEventArgs e) =>
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
                 {
                     e.CanExecute = true;
                 }
-            ));
+            ) );
 
             //CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportTransmitter,
             //    (object sender, ExecutedRoutedEventArgs e) =>
@@ -251,6 +253,9 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void InitMapControl()
         {
+            GMapProvider.WebProxy = WebRequest.DefaultWebProxy;
+            GMapProvider.WebProxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+
             mcMapControl.DragButton = MouseButton.Left;
             mcMapControl.MapProvider = GMapProviders.OpenStreetMap;
             mcMapControl.Manager.Mode = AccessMode.ServerAndCache;
@@ -260,7 +265,7 @@ namespace TransmitterTool.Windows
             mcMapControl.MinZoom = 2;
             mcMapControl.MaxZoom = 24;
 
-            mcMapControl.Position = new PointLatLng(49.761471, 6.650053);
+            mcMapControl.Position = new PointLatLng( 49.761471 , 6.650053 );
             mcMapControl.Zoom = 14;
 
             mcMapControl.MouseLeftButtonDown += McMapControl_MouseLeftButtonDown;
@@ -274,16 +279,16 @@ namespace TransmitterTool.Windows
         private void InitMapProvider()
         {
             // Wir fügen nur die für unsere Region sinnvollen hinzu ...
-            cbMapProvider.Items.Add(GMapProviders.OpenStreetMap);
+            cbMapProvider.Items.Add( GMapProviders.OpenStreetMap );
 
-            cbMapProvider.Items.Add(GMapProviders.GoogleHybridMap);
-            cbMapProvider.Items.Add(GMapProviders.GoogleMap);
-            cbMapProvider.Items.Add(GMapProviders.GoogleSatelliteMap);
-            cbMapProvider.Items.Add(GMapProviders.GoogleTerrainMap);
+            cbMapProvider.Items.Add( GMapProviders.GoogleHybridMap );
+            cbMapProvider.Items.Add( GMapProviders.GoogleMap );
+            cbMapProvider.Items.Add( GMapProviders.GoogleSatelliteMap );
+            cbMapProvider.Items.Add( GMapProviders.GoogleTerrainMap );
 
-            cbMapProvider.Items.Add(GMapProviders.BingHybridMap);
-            cbMapProvider.Items.Add(GMapProviders.BingMap);
-            cbMapProvider.Items.Add(GMapProviders.BingSatelliteMap);
+            cbMapProvider.Items.Add( GMapProviders.BingHybridMap );
+            cbMapProvider.Items.Add( GMapProviders.BingMap );
+            cbMapProvider.Items.Add( GMapProviders.BingSatelliteMap );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -303,7 +308,7 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format("{0}{1}", Tool.ProductTitle, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
+            this.Title = string.Format( "{0}{1}" , Tool.ProductTitle , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -323,23 +328,23 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void OpenFile()
         {
-            if (ofd.ShowDialog() == true)
+            if( ofd.ShowDialog() == true )
             {
                 Reset();
                 CurrentFile = ofd.FileName;
 
                 try
                 {
-                    XDocument xdoc = XDocument.Load(CurrentFile);
+                    XDocument xdoc = XDocument.Load( CurrentFile );
 
-                    foreach (XElement e in xdoc.Root.Elements())
+                    foreach( XElement e in xdoc.Root.Elements() )
                     {
-                        AddTransmitter(Transmitter.FromXml(e));
+                        AddTransmitter( Transmitter.FromXml( e ) );
                     }
                 }
-                catch (Exception ex)
+                catch( Exception ex )
                 {
-                    MB.Error(ex);
+                    MB.Error( ex );
                 }
             }
         }
@@ -350,9 +355,9 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void SaveFile()
         {
-            if (CurrentFile == null)
+            if( CurrentFile == null )
             {
-                if (sfd.ShowDialog() == true)
+                if( sfd.ShowDialog() == true )
                 {
                     CurrentFile = sfd.FileName;
                 }
@@ -364,18 +369,18 @@ namespace TransmitterTool.Windows
 
             try
             {
-                XElement eTransmitter = new XElement("TransmitterCollection");
+                XElement eTransmitter = new XElement( "TransmitterCollection" );
 
-                foreach (Transmitter t in from transmitter in TransmitterCollection select transmitter.Transmitter)
+                foreach( Transmitter t in from transmitter in TransmitterCollection select transmitter.Transmitter )
                 {
-                    eTransmitter.Add(t.ToXml());
+                    eTransmitter.Add( t.ToXml() );
                 }
 
-                eTransmitter.SaveDefault(CurrentFile);
+                eTransmitter.SaveDefault( CurrentFile );
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Error(ex);
+                MB.Error( ex );
             }
         }
 
@@ -426,24 +431,24 @@ namespace TransmitterTool.Windows
         /// Creates the transmitter.
         /// </summary>
         /// <param name="pll">The PLL.</param>
-        private void AddTransmitter(PointLatLng pll)
+        private void AddTransmitter( PointLatLng pll )
         {
-            GMapMarker currentMarker = new GMapMarker(pll)
+            GMapMarker currentMarker = new GMapMarker( pll )
             {
-                Shape = new Cross(),
-                Offset = new Point(-15, -15),
+                Shape = new Cross() ,
+                Offset = new Point( -15 , -15 ) ,
                 ZIndex = int.MaxValue
             };
 
-            mcMapControl.Markers.Add(currentMarker);
+            mcMapControl.Markers.Add( currentMarker );
 
             Transmitter t = new Transmitter
             {
-                Latitude = pll.Lat,
+                Latitude = pll.Lat ,
                 Longitude = pll.Lng
             };
 
-            TransmitterCollection.Add(new TransmitterViewModel(t));
+            TransmitterCollection.Add( new TransmitterViewModel( t ) );
         }
 
 
@@ -451,18 +456,18 @@ namespace TransmitterTool.Windows
         /// Adds the transmitter.
         /// </summary>
         /// <param name="t">The t.</param>
-        private void AddTransmitter(Transmitter t)
+        private void AddTransmitter( Transmitter t )
         {
-            GMapMarker currentMarker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
+            GMapMarker currentMarker = new GMapMarker( new PointLatLng( t.Latitude , t.Longitude ) )
             {
-                Shape = new Cross(),
-                Offset = new Point(-15, -15),
+                Shape = new Cross() ,
+                Offset = new Point( -15 , -15 ) ,
                 ZIndex = int.MaxValue
             };
 
-            mcMapControl.Markers.Add(currentMarker);
+            mcMapControl.Markers.Add( currentMarker );
 
-            TransmitterCollection.Add(new TransmitterViewModel(t));
+            TransmitterCollection.Add( new TransmitterViewModel( t ) );
         }
 
 
@@ -482,15 +487,15 @@ namespace TransmitterTool.Windows
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void McMapControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void McMapControl_MouseLeftButtonDown( object sender , MouseButtonEventArgs e )
         {
-            if (CreatingTransmitter == true)
+            if( CreatingTransmitter == true )
             {
-                Point p = e.GetPosition(mcMapControl);
+                Point p = e.GetPosition( mcMapControl );
 
-                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
+                PointLatLng pll = mcMapControl.FromLocalToLatLng( ( int ) p.X , ( int ) p.Y );
 
-                AddTransmitter(pll);
+                AddTransmitter( pll );
 
                 EndCreateTransmitter();
 
@@ -503,11 +508,11 @@ namespace TransmitterTool.Windows
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void DataGrid_MouseDoubleClick( object sender , MouseButtonEventArgs e )
         {
-            TransmitterViewModel item = (sender as DataGrid).SelectedItem as TransmitterViewModel;
+            TransmitterViewModel item = ( sender as DataGrid ).SelectedItem as TransmitterViewModel;
 
-            mcMapControl.Position = new PointLatLng(item.Transmitter.Latitude, item.Transmitter.Longitude);
+            mcMapControl.Position = new PointLatLng( item.Transmitter.Latitude , item.Transmitter.Longitude );
             mcMapControl.Zoom = 20;
 
             e.Handled = true;
@@ -526,9 +531,9 @@ namespace TransmitterTool.Windows
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
         }
 
     } // end public partial class MainWindow
