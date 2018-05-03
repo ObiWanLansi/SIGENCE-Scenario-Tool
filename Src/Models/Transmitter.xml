@@ -3,9 +3,28 @@
 
     <Property Name="Id" Type="Guid" Init="Guid.NewGuid()"/>
     <Property Name="Name" Type="string" Init="&quot;Transmitter&quot;"/>
-    <!--<Property Name="Location" Type="PointLatLng?" Init="null"/>-->
+
     <Property Name="Latitude" Type="double" Init="double.NaN"/>
     <Property Name="Longitude" Type="double" Init="double.NaN"/>
+    <Property Name="Altitude" Type="uint" Init="0"/>
+
+    <Property Name="Roll" Type="double" Init="double.NaN"/>
+    <Property Name="Pitch" Type="double" Init="double.NaN"/>
+    <Property Name="Yaw" Type="double" Init="double.NaN"/>
+
+    <Property Name="RxTxType" Type="RxTxType" Init="RxTxType.Unknown"/>
+    <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown"/>
+    <Property Name="Gain" Type="uint" Init="0"/>
+    <Property Name="CenterFrequency" Type="uint" Init="0"/>
+    <Property Name="Bandwith" Type="uint" Init="0"/>
+    <Property Name="SignalToNoiseRatio" Type="uint" Init="0"/>
+
+    <Property Name="XPos" Type="int" Init="0"/>
+    <Property Name="YPos" Type="int" Init="0"/>
+    <Property Name="ZPos" Type="int" Init="0"/>
+
+    <Property Name="StartTime" Type="uint" Init="0"/>
+
     <Property Name="Remark" Type="string" Init="&quot;&quot;"/>
 
 </Transmitter>

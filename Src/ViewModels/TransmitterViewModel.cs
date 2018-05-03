@@ -54,7 +54,11 @@ namespace TransmitterTool.ViewModels
         public string Name
         {
             get { return Transmitter.Name; }
-            set { Transmitter.Name = value; }
+            set
+            {
+                Transmitter.Name = value;
+                FirePropertyChanged();
+            }
         }
 
 
@@ -82,6 +86,149 @@ namespace TransmitterTool.ViewModels
         }
 
 
+        public uint Altitude
+        {
+            get { return Transmitter.Altitude; }
+            set
+            {
+                Transmitter.Altitude = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        public double Roll
+        {
+            get { return Transmitter.Roll; }
+            set
+            {
+                Transmitter.Roll = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        public double Pitch
+        {
+            get { return Transmitter.Pitch; }
+            set
+            {
+                Transmitter.Pitch = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        public double Yaw
+        {
+            get { return Transmitter.Yaw; }
+            set
+            {
+                Transmitter.Yaw = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public RxTxType RxTxType
+        {
+            get { return Transmitter.RxTxType; }
+            set
+            {
+                Transmitter.RxTxType = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public AntennaType AntennaType
+        {
+            get { return Transmitter.AntennaType; }
+            set
+            {
+                Transmitter.AntennaType = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public uint Gain
+        {
+            get { return Transmitter.Gain; }
+            set
+            {
+                Transmitter.Gain = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public uint CenterFrequency
+        {
+            get { return Transmitter.CenterFrequency; }
+            set
+            {
+                Transmitter.CenterFrequency = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public uint Bandwith
+        {
+            get { return Transmitter.Bandwith; }
+            set
+            {
+                Transmitter.Bandwith = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public uint SignalToNoiseRatio
+        {
+            get { return Transmitter.SignalToNoiseRatio; }
+            set
+            {
+                Transmitter.SignalToNoiseRatio = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public int XPos
+        {
+            get { return Transmitter.XPos; }
+            set
+            {
+                Transmitter.XPos = value;
+                FirePropertyChanged();
+            }
+        }
+        
+        public int YPos
+        {
+            get { return Transmitter.YPos; }
+            set
+            {
+                Transmitter.YPos = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public int ZPos
+        {
+            get { return Transmitter.ZPos; }
+            set
+            {
+                Transmitter.ZPos = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public uint StartTime
+        {
+            get { return Transmitter.StartTime; }
+            set
+            {
+                Transmitter.StartTime = value;
+                FirePropertyChanged();
+            }
+        }
+
         /// <summary>
         /// Gets or sets the remark.
         /// </summary>
@@ -91,7 +238,11 @@ namespace TransmitterTool.ViewModels
         public string Remark
         {
             get { return Transmitter.Remark; }
-            set { Transmitter.Remark = value; }
+            set
+            {
+                Transmitter.Remark = value;
+                FirePropertyChanged();
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,7 +258,7 @@ namespace TransmitterTool.ViewModels
             {
                 throw new ArgumentNullException( "t" );
             }
-            
+
             this.Transmitter = t;
         }
 

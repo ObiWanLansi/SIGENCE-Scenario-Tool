@@ -30,6 +30,7 @@ using System.Xml.Linq;
 using GMap.NET;
 
 using TransmitterTool.Extensions;
+using TransmitterTool.Models;
 
 
 <#

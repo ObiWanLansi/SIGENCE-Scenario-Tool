@@ -89,6 +89,7 @@
     <Compile Include="Src\Extensions\FileInfoExtension.cs" />
     <Compile Include="Src\Extensions\StringExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
+    <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\Transmitter.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,7 +175,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Transmitter.cs</LastGenOutput>
     </Content>
-    <Resource Include="Src\Models\Transmitter.xml" />
+    <Resource Include="Src\Models\Transmitter.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
