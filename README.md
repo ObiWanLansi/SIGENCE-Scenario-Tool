@@ -21,4 +21,4 @@ https://github.com/ObiWanLansi/TransmitterTool/wiki
 
 ## Screenshot
 
-![alt text](Screenshots/MainApplication.png  "Screenshot from the MainWindow.")
+![Sorry, but here should be a Screenshot :-(](Screenshots/MainApplication.jpg  "Screenshot from the MainWindow.")
