@@ -11,13 +11,9 @@ using System.Xml.Linq;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
-using GMap.NET.WindowsPresentation;
-
-using Microsoft.Win32;
 
 using TransmitterTool.Commands;
 using TransmitterTool.Extensions;
-using TransmitterTool.Markers;
 using TransmitterTool.Models;
 using TransmitterTool.Tools;
 using TransmitterTool.ViewModels;
@@ -31,89 +27,6 @@ namespace TransmitterTool.Windows
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-
-        /// <summary>
-        ///
-        /// </summary>
-        private readonly SaveFileDialog sfd = new SaveFileDialog();
-
-        /// <summary>
-        ///
-        /// </summary>
-        private readonly OpenFileDialog ofd = new OpenFileDialog();
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
-        /// Gets or sets the transmitter.
-        /// </summary>
-        /// <value>
-        /// The transmitter.
-        /// </value>
-        public ObservableCollection<TransmitterViewModel> TransmitterCollection { get; set; }
-
-
-        /// <summary>
-        /// The b creating transmitter
-        /// </summary>
-        private bool bCreatingTransmitter = false;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether [creating transmitter].
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if [creating transmitter]; otherwise, <c>false</c>.
-        /// </value>
-        public bool CreatingTransmitter
-        {
-            get { return bCreatingTransmitter; }
-            set
-            {
-                this.bCreatingTransmitter = value;
-
-                SetMapToCreatingTransmitterMode();
-                FirePropertyChanged();
-            }
-        }
-
-
-        /// <summary>
-        /// Gets the map control.
-        /// </summary>
-        /// <value>
-        /// The map control.
-        /// </value>
-        public GMapControl MapControl
-        {
-            get { return mcMapControl; }
-        }
-
-
-        /// <summary>
-        /// The string current file
-        /// </summary>
-        private string strCurrentFile = null;
-
-        /// <summary>
-        /// Gets or sets the current file.
-        /// </summary>
-        /// <value>
-        /// The current file.
-        /// </value>
-        public string CurrentFile
-        {
-            get { return strCurrentFile; }
-            set
-            {
-                this.strCurrentFile = value;
-                SetTitle();
-                FirePropertyChanged();
-            }
-        }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
@@ -149,9 +62,10 @@ namespace TransmitterTool.Windows
 
             //-----------------------------------------------------------------
 
-#if DEBUG
-            //WindowState = WindowState.Maximized;
-#endif
+            System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
+
+            this.Width = screen.WorkingArea.Width * 0.6666;
+            this.Height= screen.WorkingArea.Height * 0.6666;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -263,7 +177,7 @@ namespace TransmitterTool.Windows
             mcMapControl.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
             mcMapControl.ShowCenter = false;
             mcMapControl.MinZoom = 2;
-            mcMapControl.MaxZoom = 24;
+            mcMapControl.MaxZoom = 22;
 
             mcMapControl.Position = new PointLatLng( 49.761471 , 6.650053 );
             mcMapControl.Zoom = 14;
@@ -395,89 +309,6 @@ namespace TransmitterTool.Windows
             SaveFile();
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
-        /// Sets the map to creating transmitter mode.
-        /// </summary>
-        private void SetMapToCreatingTransmitterMode()
-        {
-            mcMapControl.DragButton = bCreatingTransmitter ? MouseButton.Right : MouseButton.Left;
-        }
-
-
-        /// <summary>
-        /// Begins the create transmitter.
-        /// </summary>
-        private void BeginCreateTransmitter()
-        {
-            CreatingTransmitter = true;
-            mcMapControl.Cursor = Cursors.Cross;
-        }
-
-
-        /// <summary>
-        /// Ends the create transmitter.
-        /// </summary>
-        private void EndCreateTransmitter()
-        {
-            mcMapControl.Cursor = Cursors.Arrow;
-            CreatingTransmitter = false;
-        }
-
-
-        /// <summary>
-        /// Creates the transmitter.
-        /// </summary>
-        /// <param name="pll">The PLL.</param>
-        private void AddTransmitter( PointLatLng pll )
-        {
-            GMapMarker currentMarker = new GMapMarker( pll )
-            {
-                Shape = new Cross() ,
-                Offset = new Point( -15 , -15 ) ,
-                ZIndex = int.MaxValue
-            };
-
-            mcMapControl.Markers.Add( currentMarker );
-
-            Transmitter t = new Transmitter
-            {
-                Latitude = pll.Lat ,
-                Longitude = pll.Lng
-            };
-
-            TransmitterCollection.Add( new TransmitterViewModel( t ) );
-        }
-
-
-        /// <summary>
-        /// Adds the transmitter.
-        /// </summary>
-        /// <param name="t">The t.</param>
-        private void AddTransmitter( Transmitter t )
-        {
-            GMapMarker currentMarker = new GMapMarker( new PointLatLng( t.Latitude , t.Longitude ) )
-            {
-                Shape = new Cross() ,
-                Offset = new Point( -15 , -15 ) ,
-                ZIndex = int.MaxValue
-            };
-
-            mcMapControl.Markers.Add( currentMarker );
-
-            TransmitterCollection.Add( new TransmitterViewModel( t ) );
-        }
-
-
-        /// <summary>
-        /// Exports the transmitter.
-        /// </summary>
-        private void ExportTransmitter()
-        {
-            MB.NotYetImplemented();
-        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
