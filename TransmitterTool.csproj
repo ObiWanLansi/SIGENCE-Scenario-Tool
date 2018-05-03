@@ -119,7 +119,10 @@
     <Compile Include="Src\Markers\Cross.xaml.cs">
       <DependentUpon>Cross.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Windows\MainWindow.EventHandling.cs" />
+    <Compile Include="Src\Windows\MainWindow.FileHandling.cs" />
     <Compile Include="Src\Windows\MainWindow.FieldsAndProperties.cs" />
+    <Compile Include="Src\Windows\MainWindow.InitFunctions.cs" />
     <Compile Include="Src\Windows\MainWindow.TransmitterHandling.cs" />
     <Compile Include="Src\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
