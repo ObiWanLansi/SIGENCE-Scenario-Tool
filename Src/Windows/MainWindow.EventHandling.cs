@@ -23,15 +23,15 @@ namespace TransmitterTool.Windows
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void McMapControl_MouseLeftButtonDown( object sender , MouseButtonEventArgs e )
+        private void McMapControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if( CreatingTransmitter == true )
+            if (CreatingTransmitter == true)
             {
-                Point p = e.GetPosition( mcMapControl );
+                Point p = e.GetPosition(mcMapControl);
 
-                PointLatLng pll = mcMapControl.FromLocalToLatLng( ( int ) p.X , ( int ) p.Y );
+                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
 
-                AddTransmitter( pll );
+                AddTransmitter(pll);
 
                 EndCreateTransmitter();
 
@@ -45,11 +45,11 @@ namespace TransmitterTool.Windows
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void DataGrid_MouseDoubleClick( object sender , MouseButtonEventArgs e )
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            TransmitterViewModel item = ( sender as DataGrid ).SelectedItem as TransmitterViewModel;
+            TransmitterViewModel item = (sender as DataGrid).SelectedItem as TransmitterViewModel;
 
-            mcMapControl.Position = new PointLatLng( item.Transmitter.Latitude , item.Transmitter.Longitude );
+            mcMapControl.Position = new PointLatLng(item.Transmitter.Latitude, item.Transmitter.Longitude);
             mcMapControl.Zoom = 20;
 
             e.Handled = true;
@@ -68,9 +68,9 @@ namespace TransmitterTool.Windows
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
-            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }
 
     } // end public partial class MainWindow

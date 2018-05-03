@@ -734,7 +734,7 @@ namespace TransmitterTool.Extensions
             if( t == typeof( int ) )
             {
                 int xDefault = ( int ) ( ( object ) tDefault );
-                return ( T ) ( ( object ) GetUInt32FromNode( eParent , strElementName ) ?? xDefault );
+                return ( T ) ( ( object ) GetInt32FromNode( eParent , strElementName ) ?? xDefault );
             }
 
             if( t == typeof( byte ) )

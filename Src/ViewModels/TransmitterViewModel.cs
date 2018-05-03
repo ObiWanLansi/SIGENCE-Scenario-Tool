@@ -26,9 +26,9 @@ namespace TransmitterTool.ViewModels
         /// 
         /// </summary>
         /// <param name="strPropertyName"></param>
-        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
-            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Latitude
         {
-            get { return string.Format( "{0:F8}" , Transmitter.Latitude ); }
+            get { return string.Format("{0:F8}", Transmitter.Latitude); }
         }
 
 
@@ -82,10 +82,16 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Longitude
         {
-            get { return string.Format( "{0:F8}" , Transmitter.Longitude ); }
+            get { return string.Format("{0:F8}", Transmitter.Longitude); }
         }
 
 
+        /// <summary>
+        /// Gets or sets the altitude.
+        /// </summary>
+        /// <value>
+        /// The altitude.
+        /// </value>
         public uint Altitude
         {
             get { return Transmitter.Altitude; }
@@ -97,6 +103,12 @@ namespace TransmitterTool.ViewModels
         }
 
 
+        /// <summary>
+        /// Gets or sets the roll.
+        /// </summary>
+        /// <value>
+        /// The roll.
+        /// </value>
         public double Roll
         {
             get { return Transmitter.Roll; }
@@ -108,6 +120,12 @@ namespace TransmitterTool.ViewModels
         }
 
 
+        /// <summary>
+        /// Gets or sets the pitch.
+        /// </summary>
+        /// <value>
+        /// The pitch.
+        /// </value>
         public double Pitch
         {
             get { return Transmitter.Pitch; }
@@ -119,6 +137,12 @@ namespace TransmitterTool.ViewModels
         }
 
 
+        /// <summary>
+        /// Gets or sets the yaw.
+        /// </summary>
+        /// <value>
+        /// The yaw.
+        /// </value>
         public double Yaw
         {
             get { return Transmitter.Yaw; }
@@ -129,6 +153,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the type of the rx tx.
+        /// </summary>
+        /// <value>
+        /// The type of the rx tx.
+        /// </value>
         public RxTxType RxTxType
         {
             get { return Transmitter.RxTxType; }
@@ -139,6 +170,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the type of the antenna.
+        /// </summary>
+        /// <value>
+        /// The type of the antenna.
+        /// </value>
         public AntennaType AntennaType
         {
             get { return Transmitter.AntennaType; }
@@ -149,6 +187,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the gain.
+        /// </summary>
+        /// <value>
+        /// The gain.
+        /// </value>
         public uint Gain
         {
             get { return Transmitter.Gain; }
@@ -159,6 +204,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the center frequency.
+        /// </summary>
+        /// <value>
+        /// The center frequency.
+        /// </value>
         public uint CenterFrequency
         {
             get { return Transmitter.CenterFrequency; }
@@ -169,6 +221,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the bandwith.
+        /// </summary>
+        /// <value>
+        /// The bandwith.
+        /// </value>
         public uint Bandwith
         {
             get { return Transmitter.Bandwith; }
@@ -179,6 +238,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the signal to noise ratio.
+        /// </summary>
+        /// <value>
+        /// The signal to noise ratio.
+        /// </value>
         public uint SignalToNoiseRatio
         {
             get { return Transmitter.SignalToNoiseRatio; }
@@ -189,6 +255,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the x position.
+        /// </summary>
+        /// <value>
+        /// The x position.
+        /// </value>
         public int XPos
         {
             get { return Transmitter.XPos; }
@@ -198,7 +271,14 @@ namespace TransmitterTool.ViewModels
                 FirePropertyChanged();
             }
         }
-        
+
+
+        /// <summary>
+        /// Gets or sets the y position.
+        /// </summary>
+        /// <value>
+        /// The y position.
+        /// </value>
         public int YPos
         {
             get { return Transmitter.YPos; }
@@ -209,6 +289,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the z position.
+        /// </summary>
+        /// <value>
+        /// The z position.
+        /// </value>
         public int ZPos
         {
             get { return Transmitter.ZPos; }
@@ -219,6 +306,13 @@ namespace TransmitterTool.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the start time.
+        /// </summary>
+        /// <value>
+        /// The start time.
+        /// </value>
         public uint StartTime
         {
             get { return Transmitter.StartTime; }
@@ -228,6 +322,7 @@ namespace TransmitterTool.ViewModels
                 FirePropertyChanged();
             }
         }
+
 
         /// <summary>
         /// Gets or sets the remark.
@@ -252,11 +347,11 @@ namespace TransmitterTool.ViewModels
         /// Initializes a new instance of the <see cref="TransmitterViewModel"/> class.
         /// </summary>
         /// <param name="t">The t.</param>
-        public TransmitterViewModel( Transmitter t )
+        public TransmitterViewModel(Transmitter t)
         {
-            if( t == null )
+            if (t == null)
             {
-                throw new ArgumentNullException( "t" );
+                throw new ArgumentNullException("t");
             }
 
             this.Transmitter = t;

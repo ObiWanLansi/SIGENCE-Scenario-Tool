@@ -52,7 +52,7 @@ namespace TransmitterTool.Windows
             System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
 
             this.Width = screen.WorkingArea.Width * 0.6666;
-            this.Height= screen.WorkingArea.Height * 0.6666;
+            this.Height = screen.WorkingArea.Height * 0.6666;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -69,11 +69,11 @@ namespace TransmitterTool.Windows
 
 
         /// <summary>
-        /// 
+        /// Sets the title.
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format( "{0}{1}" , Tool.ProductTitle , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
+            this.Title = string.Format("{0}{1}", Tool.ProductTitle, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
         }
 
     } // end public partial class MainWindow

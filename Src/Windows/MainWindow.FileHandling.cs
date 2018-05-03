@@ -30,23 +30,23 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void OpenFile()
         {
-            if( ofd.ShowDialog() == true )
+            if (ofd.ShowDialog() == true)
             {
                 Reset();
                 CurrentFile = ofd.FileName;
 
                 try
                 {
-                    XDocument xdoc = XDocument.Load( CurrentFile );
+                    XDocument xdoc = XDocument.Load(CurrentFile);
 
-                    foreach( XElement e in xdoc.Root.Elements() )
+                    foreach (XElement e in xdoc.Root.Elements())
                     {
-                        AddTransmitter( Transmitter.FromXml( e ) );
+                        AddTransmitter(Transmitter.FromXml(e));
                     }
                 }
-                catch( Exception ex )
+                catch (Exception ex)
                 {
-                    MB.Error( ex );
+                    MB.Error(ex);
                 }
             }
         }
@@ -57,9 +57,9 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void SaveFile()
         {
-            if( CurrentFile == null )
+            if (CurrentFile == null)
             {
-                if( sfd.ShowDialog() == true )
+                if (sfd.ShowDialog() == true)
                 {
                     CurrentFile = sfd.FileName;
                 }
@@ -71,18 +71,18 @@ namespace TransmitterTool.Windows
 
             try
             {
-                XElement eTransmitter = new XElement( "TransmitterCollection" );
+                XElement eTransmitter = new XElement("TransmitterCollection");
 
-                foreach( Transmitter t in from transmitter in TransmitterCollection select transmitter.Transmitter )
+                foreach (Transmitter t in from transmitter in TransmitterCollection select transmitter.Transmitter)
                 {
-                    eTransmitter.Add( t.ToXml() );
+                    eTransmitter.Add(t.ToXml());
                 }
 
-                eTransmitter.SaveDefault( CurrentFile );
+                eTransmitter.SaveDefault(CurrentFile);
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
         }
 
