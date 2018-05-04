@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-
+using GMap.NET;
+using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
-
 using Microsoft.Win32;
 
 using TransmitterTool.ViewModels;
@@ -71,19 +71,38 @@ namespace TransmitterTool.Windows
             }
         }
 
+        //---------------------------------------------------------------------
+
+
+        //public GMapControl MapControl
+        //{
+        //    get { return mcMapControl; }
+        //}
 
         /// <summary>
-        /// Gets the map control.
+        /// Gets or sets the map provider.
         /// </summary>
         /// <value>
-        /// The map control.
+        /// The map provider.
         /// </value>
-        public GMapControl MapControl
+        public GMapProvider MapProvider
         {
-            get { return mcMapControl; }
+            get { return mcMapControl.MapProvider; }
+            set
+            {
+                mcMapControl.MapProvider = value;
+
+                FirePropertyChanged();
+            }
         }
 
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [show center].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [show center]; otherwise, <c>false</c>.
+        /// </value>
         public bool ShowCenter
         {
             get { return mcMapControl.ShowCenter; }
@@ -96,6 +115,61 @@ namespace TransmitterTool.Windows
             }
         }
 
+
+        /// <summary>
+        /// Gets or sets the zoom.
+        /// </summary>
+        /// <value>
+        /// The zoom.
+        /// </value>
+        public double Zoom
+        {
+            get { return mcMapControl.Zoom; }
+            set
+            {
+                mcMapControl.Zoom = value;
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the latitude.
+        /// </summary>
+        /// <value>
+        /// The latitude.
+        /// </value>
+        public double Latitude
+        {
+            get { return mcMapControl.Position.Lat; }
+            set
+            {
+                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the longitude.
+        /// </summary>
+        /// <value>
+        /// The longitude.
+        /// </value>
+        public double Longitude
+        {
+            get { return mcMapControl.Position.Lng; }
+            set
+            {
+                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
+
+                FirePropertyChanged();
+            }
+        }
+
+        //---------------------------------------------------------------------
 
         /// <summary>
         /// The string current file

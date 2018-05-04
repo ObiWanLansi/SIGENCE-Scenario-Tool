@@ -51,14 +51,14 @@
         <ToolBar Grid.Row="1">
             <!--<Button Content="Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
             <Separator />-->
-            <Label Content="MapType" />
-            <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapControl.MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Label Content="MapProvider" />
+            <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
             <Separator />
-            <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
             <Separator />
         </ToolBar>
 
-        <gmap:GMapControl x:Name="mcMapControl" Grid.Row="2" />
+        <gmap:GMapControl x:Name="mcMapControl" Grid.Row="2" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
         <ScrollViewer Grid.Row="3">
             <DataGrid ItemsSource="{Binding TransmitterCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" MouseDoubleClick="DataGrid_MouseDoubleClick">
@@ -90,8 +90,6 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-
-                    <!--           -->
 
                     <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                         <DataGridTextColumn.ElementStyle>
@@ -139,7 +137,6 @@
                         </DataGridComboBoxColumn.ElementStyle>
                     </DataGridComboBoxColumn>
 
-
                     <DataGridComboBoxColumn Header="AntennaType" SelectedItemBinding="{Binding AntennaType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eAntennaType}}">
                         <DataGridComboBoxColumn.ElementStyle>
                             <Style TargetType="ComboBox">
@@ -185,8 +182,6 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
 
-                    <!--           -->
-
                     <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
@@ -206,8 +201,19 @@
 
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Current Zoom:" />
-                    <Label Content="{Binding MapControl.Zoom}" />
+                    <Label Content="Zoom:" />
+                    <Label Content="{Binding Zoom}" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="CenterPosition:" />
+                    <Label Content="{Binding Latitude}" ContentStringFormat="F8" />
+                    <Label Content="/" />
+                    <Label Content="{Binding Longitude}" ContentStringFormat="F8" />
                 </StackPanel>
             </StatusBarItem>
 
@@ -224,7 +230,7 @@
 
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Transmitter Count:" />
+                    <Label Content="Transmitter:" />
                     <Label Content="{Binding TransmitterCollection.Count}" />
                 </StackPanel>
             </StatusBarItem>

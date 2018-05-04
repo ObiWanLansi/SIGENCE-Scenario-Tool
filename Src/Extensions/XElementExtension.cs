@@ -57,10 +57,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the date time from node UTC.
         /// </summary>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
         static public DateTime? GetDateTimeFromNodeUTC( this XElement xCurrentElement , string strElementName )
         {
@@ -97,6 +97,12 @@ namespace TransmitterTool.Extensions
         }
 
 
+        /// <summary>
+        /// Gets the int32 from node.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
         static public int? GetInt32FromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
@@ -110,6 +116,12 @@ namespace TransmitterTool.Extensions
         }
 
 
+        /// <summary>
+        /// Gets the u int32 from node.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
         static public uint? GetUInt32FromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
@@ -124,6 +136,12 @@ namespace TransmitterTool.Extensions
 
 
 
+        /// <summary>
+        /// Gets the single from node.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
         static public float? GetSingleFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
@@ -137,6 +155,12 @@ namespace TransmitterTool.Extensions
         }
 
 
+        /// <summary>
+        /// Gets the single from node comma.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
         static public float? GetSingleFromNodeComma( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
@@ -150,6 +174,12 @@ namespace TransmitterTool.Extensions
         }
 
 
+        /// <summary>
+        /// Gets the single from node point.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
         static public float? GetSingleFromNodePoint( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
@@ -163,6 +193,12 @@ namespace TransmitterTool.Extensions
         }
 
 
+        /// <summary>
+        /// Gets the double from node.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
         static public double? GetDoubleFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
@@ -176,26 +212,38 @@ namespace TransmitterTool.Extensions
         }
 
 
-        static public double? GetDoubleFromNodeComma( this XElement xCurrentElement , string strElementName )
+        /// <summary>
+        /// Gets the double from node comma.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
+        static public double? GetDoubleFromNodeComma(this XElement xCurrentElement, string strElementName)
         {
-            XElement x = xCurrentElement.Element( strElementName );
+            XElement x = xCurrentElement.Element(strElementName);
 
-            if( x != null && x.Value.IsNotEmpty() )
+            if (x != null && x.Value.IsNotEmpty())
             {
-                return double.Parse( x.Value );
+                return double.Parse(x.Value);
             }
 
             return null;
         }
 
 
-        static public double? GetDoubleFromNodePoint( this XElement xCurrentElement , string strElementName )
+        /// <summary>
+        /// Gets the double from node point.
+        /// </summary>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <returns></returns>
+        static public double? GetDoubleFromNodePoint(this XElement xCurrentElement, string strElementName)
         {
-            XElement x = xCurrentElement.Element( strElementName );
+            XElement x = xCurrentElement.Element(strElementName);
 
-            if( x != null && x.Value.IsNotEmpty() )
+            if (x != null && x.Value.IsNotEmpty())
             {
-                return double.Parse( x.Value , ci );
+                return double.Parse(x.Value, ci);
             }
 
             return null;
@@ -249,10 +297,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the bool from node.
         /// </summary>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
         static public bool? GetBoolFromNode( this XElement xCurrentElement , string strElementName )
         {
@@ -268,10 +316,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the unique identifier from node.
         /// </summary>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
         static public Guid? GetGuidFromNode( this XElement xCurrentElement , string strElementName )
         {
@@ -344,22 +392,22 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the bitmap source from node.
         /// </summary>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public BitmapSource GetBitmapSourceFromNode( this XElement xCurrentElement , string strElementName )
+        static public BitmapSource GetBitmapSourceFromNode(this XElement xCurrentElement, string strElementName)
         {
-            XElement x = xCurrentElement.Element( strElementName );
+            XElement x = xCurrentElement.Element(strElementName);
 
-            if( x != null && x.Value.IsNotEmpty() )
+            if (x != null && x.Value.IsNotEmpty())
             {
-                PngBitmapDecoder decoder = new PngBitmapDecoder( new MemoryStream( Convert.FromBase64String( x.Value ) ) , BitmapCreateOptions.None , BitmapCacheOption.Default );
+                PngBitmapDecoder decoder = new PngBitmapDecoder(new MemoryStream(Convert.FromBase64String(x.Value)), BitmapCreateOptions.None, BitmapCacheOption.Default);
 
-                if( decoder != null && decoder.Frames.Count > 0 )
+                if (decoder != null && decoder.Frames.Count > 0)
                 {
-                    return decoder.Frames [0];
+                    return decoder.Frames[0];
                 }
             }
 
@@ -370,12 +418,12 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the enum from node.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
-        /// <param name="tDefault"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <param name="tDefault">The t default.</param>
         /// <returns></returns>
         static public T GetEnumFromNode<T>( this XElement xCurrentElement , string strElementName , T tDefault )
         {
@@ -391,11 +439,11 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the color from node.
         /// </summary>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
-        /// <param name="cDefault"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <param name="cDefault">The c default.</param>
         /// <returns></returns>
         static public Color GetColorFromNode( this XElement xCurrentElement , string strElementName , Color cDefault )
         {
@@ -411,11 +459,11 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the file information from node.
         /// </summary>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
-        /// <param name="fiDefault"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <param name="fiDefault">The fi default.</param>
         /// <returns></returns>
         static public FileInfo GetFileInfoFromNode( this XElement xCurrentElement , string strElementName , FileInfo fiDefault )
         {
@@ -431,19 +479,19 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the directory information from node.
         /// </summary>
-        /// <param name="xCurrentElement"></param>
-        /// <param name="strElementName"></param>
-        /// <param name="diDefault"></param>
+        /// <param name="xCurrentElement">The x current element.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <param name="diDefault">The di default.</param>
         /// <returns></returns>
-        static public DirectoryInfo GetDirectoryInfoFromNode( this XElement xCurrentElement , string strElementName , DirectoryInfo diDefault )
+        static public DirectoryInfo GetDirectoryInfoFromNode(this XElement xCurrentElement, string strElementName, DirectoryInfo diDefault)
         {
-            XElement x = xCurrentElement.Element( strElementName );
+            XElement x = xCurrentElement.Element(strElementName);
 
-            if( x != null && x.Value.IsNotEmpty() )
+            if (x != null && x.Value.IsNotEmpty())
             {
-                return new DirectoryInfo( x.Value );
+                return new DirectoryInfo(x.Value);
             }
 
             return diDefault;
@@ -457,11 +505,11 @@ namespace TransmitterTool.Extensions
         #region Attribut Abfragen
 
         /// <summary>
-        /// 
+        /// Gets the date time attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
-        /// <param name="bIsUTC"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
+        /// <param name="bIsUTC">if set to <c>true</c> [b is UTC].</param>
         /// <returns></returns>
         static public DateTime? GetDateTimeAttribute( this XElement eParent , string strName , bool bIsUTC = false )
         {
@@ -479,10 +527,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the string attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
         static public string GetStringAttribute( this XElement eParent , string strName )
         {
@@ -498,18 +546,18 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the bool attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public bool? GetBoolAttribute( this XElement eParent , string strName )
+        static public bool? GetBoolAttribute(this XElement eParent, string strName)
         {
-            XAttribute a = eParent.Attribute( strName );
+            XAttribute a = eParent.Attribute(strName);
 
-            if( a != null )
+            if (a != null)
             {
-                return bool.Parse( a.Value );
+                return bool.Parse(a.Value);
             }
 
             return null;
@@ -517,10 +565,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the u int32 attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
         static public uint? GetUInt32Attribute( this XElement eParent , string strName )
         {
@@ -536,10 +584,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the int32 attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
         static public int? GetInt32Attribute( this XElement eParent , string strName )
         {
@@ -555,10 +603,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the int64 attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
         static public long? GetInt64Attribute( this XElement eParent , string strName )
         {
@@ -574,10 +622,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the double attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
         static public double? GetDoubleAttribute( this XElement eParent , string strName )
         {
@@ -598,10 +646,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the single attribute.
         /// </summary>
-        /// <param name="eParent"></param>
-        /// <param name="strName"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
         static public float? GetSingleAttribute( this XElement eParent , string strName )
         {
@@ -626,10 +674,10 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the x element.
         /// </summary>
-        /// <param name="strPropertyName"></param>
-        /// <param name="o"></param>
+        /// <param name="strPropertyName">Name of the string property.</param>
+        /// <param name="o">The o.</param>
         /// <returns></returns>
         static public XElement GetXElement( string strPropertyName , object o )
         {
@@ -687,13 +735,14 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the property.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="eParent"></param>
-        /// <param name="strElementName"></param>
-        /// <param name="tDefault"></param>
+        /// <param name="eParent">The e parent.</param>
+        /// <param name="strElementName">Name of the string element.</param>
+        /// <param name="tDefault">The t default.</param>
         /// <returns></returns>
+        /// <exception cref="NotSupportedException"></exception>
         static public T GetProperty<T>( this XElement eParent , string strElementName , T tDefault )
         {
             Type t = typeof( T );

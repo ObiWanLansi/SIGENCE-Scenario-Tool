@@ -18,7 +18,7 @@ namespace TransmitterTool.Extensions
         /// <summary>
         /// The hs ignore types
         /// </summary>
-        static private readonly HashSet<string> hsIgnoreTypes = new HashSet<string> { "List`1" , "HashSet`1" , "SortedDictionary`2" , "IntPtr" , "StreamWriter" , "StreamReader" };
+        static private readonly HashSet<string> hsIgnoreTypes = new HashSet<string> { "List`1", "HashSet`1", "SortedDictionary`2", "IntPtr", "StreamWriter", "StreamReader" };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -27,25 +27,30 @@ namespace TransmitterTool.Extensions
         /// Saves the list as JSON.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="lValues"></param>
-        /// <param name="strOutputFilename"></param>
-        static public void SaveAsJson<T>( this List<T> lValues , string strOutputFilename )
+        /// <param name="lValues">The l values.</param>
+        /// <param name="strOutputFilename">The string output filename.</param>
+        /// <exception cref="ArgumentException">
+        /// Die Liste darf nicht leer sein! - lValues
+        /// or
+        /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename
+        /// </exception>
+        static public void SaveAsJson<T>(this List<T> lValues, string strOutputFilename)
         {
-            if( lValues == null || lValues.Count == 0 )
+            if (lValues == null || lValues.Count == 0)
             {
-                throw new ArgumentException( "Die Liste darf nicht leer sein!" , "lValues" );
+                throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
             }
 
-            if( strOutputFilename.IsEmpty() )
+            if (strOutputFilename.IsEmpty())
             {
-                throw new ArgumentException( "Der Ausgabedateiname darf nicht leer sein!" , "strOutputFilename" );
+                throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
             }
 
             //---------------------------------------------
 
-            string strJson = JsonConvert.SerializeObject( lValues , Formatting.Indented );
+            string strJson = JsonConvert.SerializeObject(lValues, Formatting.Indented);
 
-            File.WriteAllText( strOutputFilename , strJson , Encoding.GetEncoding( "ISO-8859-1" ) );
+            File.WriteAllText(strOutputFilename, strJson, Encoding.GetEncoding("ISO-8859-1"));
         }
 
 
@@ -56,49 +61,47 @@ namespace TransmitterTool.Extensions
         /// <param name="lValues">The l values.</param>
         /// <param name="strOutputFilename">The string output filename.</param>
         /// <param name="bUseQuotationMark">if set to <c>true</c> [b use quotation mark].</param>
-        /// <exception cref="ArgumentException">
-        /// Die Liste darf nicht leer sein! - lValues
+        /// <exception cref="ArgumentException">Die Liste darf nicht leer sein! - lValues
         /// or
-        /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename
-        /// </exception>
+        /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
         /// <exception cref="System.ArgumentException">Die Liste darf nicht leer sein! - lValues
         /// or
         /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
-        static public void SaveAsCsv<T>( this List<T> lValues , string strOutputFilename , bool bUseQuotationMark = false )
+        static public void SaveAsCsv<T>(this List<T> lValues, string strOutputFilename, bool bUseQuotationMark = false)
         {
-            if( lValues == null || lValues.Count == 0 )
+            if (lValues == null || lValues.Count == 0)
             {
-                throw new ArgumentException( "Die Liste darf nicht leer sein!" , "lValues" );
+                throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
             }
 
-            if( strOutputFilename.IsEmpty() )
+            if (strOutputFilename.IsEmpty())
             {
-                throw new ArgumentException( "Der Ausgabedateiname darf nicht leer sein!" , "strOutputFilename" );
+                throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
             }
 
             //---------------------------------------------
 
-            Type tType = typeof( T );
+            Type tType = typeof(T);
 
-            StringBuilder sb = new StringBuilder( 8192 );
+            StringBuilder sb = new StringBuilder(8192);
 
             //---------------------------------------------
 
             int iColumnCounter = 0;
 
-            foreach( PropertyInfo pi in tType.GetProperties() )
+            foreach (PropertyInfo pi in tType.GetProperties())
             {
-                if( hsIgnoreTypes.Contains( pi.PropertyType.Name ) == true )
+                if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
                 {
                     continue;
                 }
 
-                if( iColumnCounter > 0 )
+                if (iColumnCounter > 0)
                 {
-                    sb.Append( ';' );
+                    sb.Append(';');
                 }
 
-                sb.Append( pi.Name );
+                sb.Append(pi.Name);
 
                 iColumnCounter++;
             }
@@ -107,50 +110,50 @@ namespace TransmitterTool.Extensions
 
             //---------------------------------------------
 
-            foreach( object o in lValues )
+            foreach (object o in lValues)
             {
                 iColumnCounter = 0;
 
-                foreach( PropertyInfo pi in tType.GetProperties() )
+                foreach (PropertyInfo pi in tType.GetProperties())
                 {
-                    if( hsIgnoreTypes.Contains( pi.PropertyType.Name ) == true )
+                    if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
                     {
                         continue;
                     }
 
-                    if( iColumnCounter > 0 )
+                    if (iColumnCounter > 0)
                     {
-                        sb.Append( ';' );
+                        sb.Append(';');
                     }
 
-                    object value = pi.GetValue( o , null );
+                    object value = pi.GetValue(o, null);
 
-                    if( value == DBNull.Value || value == null )
+                    if (value == DBNull.Value || value == null)
                     {
-                        sb.Append( "-" );
+                        sb.Append("-");
                     }
                     else
                     {
                         // Es kann vorkommen das wir einen String haben der nicht NULL aber "" ist ...
-                        if( value is string )
+                        if (value is string)
                         {
-                            if( ( ( string ) value ).Length == 0 )
+                            if (((string)value).Length == 0)
                             {
                                 value = "-";
                             }
 
-                            if( bUseQuotationMark == true )
+                            if (bUseQuotationMark == true)
                             {
-                                sb.AppendFormat( "\"{0}\"" , value );
+                                sb.AppendFormat("\"{0}\"", value);
                             }
                             else
                             {
-                                sb.Append( value );
+                                sb.Append(value);
                             }
                         }
                         else
                         {
-                            sb.Append( value );
+                            sb.Append(value);
                         }
                     }
 
@@ -162,7 +165,7 @@ namespace TransmitterTool.Extensions
 
             //---------------------------------------------
 
-            File.WriteAllText( strOutputFilename , sb.ToString() , Encoding.GetEncoding( "ISO-8859-1" ) );
+            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.GetEncoding("ISO-8859-1"));
         }
 
     } // end static public class ListExtension

@@ -70,9 +70,11 @@ namespace TransmitterTool.Tools
 
 
         /// <summary>
-        /// 
+        /// Gets the WPF screenshot.
         /// </summary>
-        /// <param name="control"></param>
+        /// <param name="control">The control.</param>
+        /// <param name="iWidth">Width of the i.</param>
+        /// <param name="iHeight">Height of the i.</param>
         /// <returns></returns>
         static public BitmapSource GetWPFScreenshot(Control control, int? iWidth = null, int? iHeight = null)
         {

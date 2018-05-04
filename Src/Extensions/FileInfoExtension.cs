@@ -10,9 +10,9 @@ namespace TransmitterTool.Extensions
     static public class FileInfoExtension
     {
         /// <summary>
-        /// 
+        /// Gets the size of the file.
         /// </summary>
-        /// <param name="fi"></param>
+        /// <param name="fi">The fi.</param>
         /// <returns></returns>
         static public string GetFileSize(this FileInfo fi)
         {
@@ -36,9 +36,9 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Gets the filename without extension.
         /// </summary>
-        /// <param name="fi"></param>
+        /// <param name="fi">The fi.</param>
         /// <returns></returns>
         static public string GetFilenameWithoutExtension(this FileInfo fi)
         {
@@ -46,6 +46,7 @@ namespace TransmitterTool.Extensions
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Moves to file to a other directory.
@@ -59,11 +60,12 @@ namespace TransmitterTool.Extensions
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// Copies to file to a other directory.
         /// </summary>
-        /// <param name="fi"></param>
-        /// <param name="di"></param>
+        /// <param name="fi">The fi.</param>
+        /// <param name="di">The di.</param>
         /// <returns></returns>
         static public FileInfo CopyTo(this FileInfo fi, DirectoryInfo di)
         {
@@ -72,17 +74,16 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Copies to.
         /// </summary>
-        /// <param name="fi"></param>
-        /// <param name="di"></param>
-        /// <param name="bOverwrite"></param>
+        /// <param name="fi">The fi.</param>
+        /// <param name="di">The di.</param>
+        /// <param name="bOverwrite">if set to <c>true</c> [b overwrite].</param>
         /// <returns></returns>
         static public FileInfo CopyTo(this FileInfo fi, DirectoryInfo di, bool bOverwrite)
         {
             return fi.CopyTo(string.Format("{0}\\{1}", di.FullName, fi.Name), bOverwrite);
         }
-
 
     } // end static public class FileInfoExtension
 }

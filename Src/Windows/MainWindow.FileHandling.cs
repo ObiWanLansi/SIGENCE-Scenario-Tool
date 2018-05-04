@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Xml.Linq;
 
+using GMap.NET.MapProviders;
+
 using TransmitterTool.Extensions;
 using TransmitterTool.Models;
 using TransmitterTool.Tools;
@@ -39,7 +41,31 @@ namespace TransmitterTool.Windows
                 {
                     XDocument xdoc = XDocument.Load(CurrentFile);
 
-                    foreach (XElement e in xdoc.Root.Elements())
+                    //---------------------------------------------------------
+
+                    XElement eGeneralSettings = xdoc.Root.Element("GeneralSettings");
+                    Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
+                    ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
+
+                    string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
+                    foreach (var mp in GMapProviders.List)
+                    {
+                        if (mp.Name == strMapProvider)
+                        {
+                            MapProvider = mp;
+                            break;
+                        }
+                    }
+
+                    XElement eCenterPosition = eGeneralSettings.Element("CenterPosition");
+                    Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? Latitude;
+                    Longitude = eCenterPosition.GetDoubleFromNodePoint("Longitude") ?? Longitude;
+
+                    //---------------------------------------------------------
+
+                    XElement eTransmitterList = xdoc.Root.Element("TransmitterCollection");
+
+                    foreach (XElement e in eTransmitterList.Elements())
                     {
                         AddTransmitter(Transmitter.FromXml(e));
                     }
@@ -71,6 +97,24 @@ namespace TransmitterTool.Windows
 
             try
             {
+                XElement eTransmitterTool = new XElement("TransmitterTool", new XAttribute("Version", Tool.Version));
+
+                //-------------------------------------------------------------
+
+                XElement eGeneralSettings = new XElement("GeneralSettings");
+
+                eGeneralSettings.Add(new XElement("Zoom", mcMapControl.Zoom));
+                eGeneralSettings.Add(new XElement("ShowCenter", mcMapControl.ShowCenter));
+                eGeneralSettings.Add(new XElement("CenterPosition",
+                    new XElement("Latitude", mcMapControl.Position.Lat),
+                    new XElement("Longitude", mcMapControl.Position.Lng))
+                );
+                eGeneralSettings.Add(new XElement("MapProvider", mcMapControl.MapProvider));
+
+                eTransmitterTool.Add(eGeneralSettings);
+
+                //-------------------------------------------------------------
+
                 XElement eTransmitter = new XElement("TransmitterCollection");
 
                 foreach (Transmitter t in from transmitter in TransmitterCollection select transmitter.Transmitter)
@@ -78,7 +122,11 @@ namespace TransmitterTool.Windows
                     eTransmitter.Add(t.ToXml());
                 }
 
-                eTransmitter.SaveDefault(CurrentFile);
+                eTransmitterTool.Add(eTransmitter);
+
+                //-------------------------------------------------------------
+
+                eTransmitterTool.SaveDefault(CurrentFile);
             }
             catch (Exception ex)
             {

@@ -23,7 +23,7 @@ namespace TransmitterTool.Windows
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void McMapControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void MapControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (CreatingTransmitter == true)
             {
@@ -37,6 +37,26 @@ namespace TransmitterTool.Windows
 
                 e.Handled = true;
             }
+        }
+
+
+        /// <summary>
+        /// Maps the control on position changed.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        private void MapControl_OnPositionChanged(PointLatLng point)
+        {
+            FirePropertyChanged("Latitude");
+            FirePropertyChanged("Longitude");
+        }
+
+
+        /// <summary>
+        /// Maps the control on map zoom changed.
+        /// </summary>
+        private void MapControl_OnMapZoomChanged()
+        {
+            FirePropertyChanged("Zoom");
         }
 
 

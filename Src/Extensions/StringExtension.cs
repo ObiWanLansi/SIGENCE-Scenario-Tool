@@ -56,9 +56,9 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Capitalizes the specified string content.
         /// </summary>
-        /// <param name="strContent"></param>
+        /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
         static public string Capitalize(this string strContent)
         {

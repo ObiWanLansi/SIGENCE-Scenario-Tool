@@ -12,7 +12,7 @@ namespace TransmitterTool.Extensions
     static public class DictionaryExtension
     {
         /// <summary>
-        /// 
+        /// Fors the each.
         /// </summary>
         /// <typeparam name="TKey">The type of the key.</typeparam>
         /// <typeparam name="TValue">The type of the value.</typeparam>
@@ -30,7 +30,7 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Fors the each.
         /// </summary>
         /// <typeparam name="TKey">The type of the key.</typeparam>
         /// <typeparam name="TValue">The type of the value.</typeparam>
@@ -48,13 +48,15 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
-        /// <typeparam name="TKey"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
-        /// <param name="dict"></param>
-        /// <param name="cDivider"></param>
-        /// <returns></returns>
+        /// <typeparam name="TKey">The type of the key.</typeparam>
+        /// <typeparam name="TValue">The type of the value.</typeparam>
+        /// <param name="dict">The dictionary.</param>
+        /// <param name="cDivider">The c divider.</param>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         static public string ToString<TKey, TValue>(this SortedDictionary<TKey, TValue> dict, char cDivider)
         {
             StringBuilder sb = new StringBuilder();
