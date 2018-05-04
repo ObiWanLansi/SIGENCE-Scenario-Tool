@@ -97,7 +97,7 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void ExportTransmitter()
         {
-            MB.NotYetImplemented();
+            //MB.NotYetImplemented();
         }
 
     } // end public partial class MainWindow
