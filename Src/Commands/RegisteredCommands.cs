@@ -35,6 +35,10 @@ namespace TransmitterTool.Commands
         /// </value>
         static public RoutedUICommand ImportTransmitter { get; private set; }
 
+
+        static public RoutedUICommand CreateScreenshot { get; private set; }
+
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -51,6 +55,9 @@ namespace TransmitterTool.Commands
 
             ImportTransmitter = new RoutedUICommand("ImportTransmitter", "ImportTransmitter", typeof(RegisteredCommands));
             ImportTransmitter.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
+
+            CreateScreenshot = new RoutedUICommand( "CreateScreenshot" , "CreateScreenshot" , typeof( RegisteredCommands ) );
+            //CreateScreenshot.InputGestures.Add( new KeyGesture( Key.I , ModifierKeys.Control ) );
         }
 
     } // end static public class RegisteredCommands

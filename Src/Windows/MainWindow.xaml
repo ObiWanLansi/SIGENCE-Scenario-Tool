@@ -41,9 +41,7 @@
                 <MenuItem Header="_Import Transmitter" Command="{x:Static cmd:RegisteredCommands.ImportTransmitter}" />
             </MenuItem>
             <MenuItem Header="_Tools">
-                <MenuItem Header="_Find GeoLocation" IsEnabled="False" />
-                <Separator />
-                <MenuItem Header="_Create Screenshot From Map" IsEnabled="False" />
+                <MenuItem Header="_Create Screenshot From Map" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
             </MenuItem>
             <MenuItem Header="_Extras">
                 <MenuItem Header="_Settings" IsEnabled="False" />

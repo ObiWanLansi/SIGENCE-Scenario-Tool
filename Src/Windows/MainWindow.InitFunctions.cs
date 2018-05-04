@@ -116,6 +116,18 @@ namespace TransmitterTool.Windows
                     e.CanExecute = true;
                 }
             ) );
+
+            CommandBindings.Add( new CommandBinding( RegisteredCommands.CreateScreenshot,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
+                {
+                    CreateScreenshot();
+                    e.Handled = true;
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                {
+                    e.CanExecute = true;
+                }
+            ) );
         }
 
 

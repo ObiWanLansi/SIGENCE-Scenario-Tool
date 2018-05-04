@@ -31,6 +31,11 @@ namespace TransmitterTool.Windows
         /// </summary>
         private readonly SaveFileDialog sfdExportTransmitter = new SaveFileDialog();
 
+        /// <summary>
+        ///
+        /// </summary>
+        private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

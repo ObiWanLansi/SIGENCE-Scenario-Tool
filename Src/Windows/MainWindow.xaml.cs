@@ -1,7 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
-
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using TransmitterTool.Tools;
 using TransmitterTool.ViewModels;
 
@@ -56,6 +59,13 @@ namespace TransmitterTool.Windows
 
             //-----------------------------------------------------------------
 
+            sfdSaveScreenshot.Title = "Save Screenshot";
+            sfdSaveScreenshot.Filter = "Portable Network Graphics (*.png)|*.png";
+            sfdSaveScreenshot.AddExtension = true;
+            sfdSaveScreenshot.CheckPathExists = true;
+
+            //-----------------------------------------------------------------
+
             System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
 
             this.Width = screen.WorkingArea.Width * 0.6666;
@@ -80,7 +90,42 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format("{0}{1}", Tool.ProductTitle, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
+            this.Title = string.Format( "{0}{1}" , Tool.ProductTitle , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void CreateScreenshot()
+        {
+            try
+            {
+                if( CurrentFile != null )
+                {
+                    sfdSaveScreenshot.FileName = new FileInfo( CurrentFile ).Name;
+                }
+
+                if( sfdSaveScreenshot.ShowDialog() == true )
+                {
+                    var screenshot = Tools.Windows.GetWPFScreenshot( mcMapControl );
+
+                    PngBitmapEncoder encoder = new PngBitmapEncoder();
+
+                    encoder.Frames.Add( BitmapFrame.Create( screenshot ) );
+
+                    using( BufferedStream bs = new BufferedStream( new FileStream( sfdSaveScreenshot.FileName , FileMode.Create ) ) )
+                    {
+                        encoder.Save( bs );
+                    }
+
+                    Tools.Windows.OpenWithDefaultApplication( sfdSaveScreenshot.FileName );
+                }
+            }
+            catch( Exception ex )
+            {
+                MB.Error( ex );
+            }
         }
 
     } // end public partial class MainWindow
