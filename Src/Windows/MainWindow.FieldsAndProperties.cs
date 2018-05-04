@@ -19,12 +19,17 @@ namespace TransmitterTool.Windows
         /// <summary>
         ///
         /// </summary>
-        private readonly SaveFileDialog sfd = new SaveFileDialog();
+        private readonly SaveFileDialog sfdSaveTransmitter = new SaveFileDialog();
 
         /// <summary>
         ///
         /// </summary>
-        private readonly OpenFileDialog ofd = new OpenFileDialog();
+        private readonly OpenFileDialog ofdLoadTransmitter = new OpenFileDialog();
+
+        /// <summary>
+        ///
+        /// </summary>
+        private readonly SaveFileDialog sfdExportTransmitter = new SaveFileDialog();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -71,6 +76,19 @@ namespace TransmitterTool.Windows
         public GMapControl MapControl
         {
             get { return mcMapControl; }
+        }
+
+
+        public bool ShowCenter
+        {
+            get { return mcMapControl.ShowCenter; }
+            set
+            {
+                mcMapControl.ShowCenter = value;
+                mcMapControl.ReloadMap();
+
+                FirePropertyChanged();
+            }
         }
 
 

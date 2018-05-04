@@ -54,7 +54,9 @@
             <!--<Button Content="Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
             <Separator />-->
             <Label Content="MapType" />
-            <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapControl.MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" />
+            <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapControl.MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Separator />
+            <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <Separator />
         </ToolBar>
 
@@ -206,28 +208,37 @@
 
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Zoom:" />
+                    <Label Content="Current Zoom:" />
                     <Label Content="{Binding MapControl.Zoom}" />
                 </StackPanel>
             </StatusBarItem>
 
             <Separator />
 
-            <StatusBarItem>
+            <!--<StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Creating Transmitter:" />
                     <Label Content="{Binding CreatingTransmitter}" />
                 </StackPanel>
             </StatusBarItem>
 
-            <Separator />
+            <Separator />-->
 
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="TransmitterCount:" />
+                    <Label Content="Transmitter Count:" />
                     <Label Content="{Binding TransmitterCollection.Count}" />
                 </StackPanel>
             </StatusBarItem>
+
+            <!--<Separator />
+
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="ShowCenter:" />
+                    <Label Content="{Binding ShowCenter}" />
+                </StackPanel>
+            </StatusBarItem>-->
 
             <Separator />
 

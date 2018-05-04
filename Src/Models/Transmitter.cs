@@ -1,7 +1,7 @@
 ﻿
 /**
  * SourceFile     : C:\Lanser\Entwicklung\GitRepositories\TransmitterTool\Src\Models\Transmitter.xml
- * Timestamp      : 03.05.2018, 12:08
+ * Timestamp      : 04.05.2018, 10:31
  * User           : I142985D
  * Host           : 20NB449896
  */
@@ -210,12 +210,12 @@ namespace TransmitterTool.Models
         ///<summary>
         /// The DefaultValue For Roll.
         ///</summary>
-        static public readonly double DEFAULT_ROLL = double.NaN;
+        static public readonly double DEFAULT_ROLL = 0;
         
         ///<summary>
         /// The Internal Field For Roll.
         ///</summary>
-        private double _Roll = double.NaN;
+        private double _Roll = 0;
 
         ///<summary>
         /// Roll As double.
@@ -244,12 +244,12 @@ namespace TransmitterTool.Models
         ///<summary>
         /// The DefaultValue For Pitch.
         ///</summary>
-        static public readonly double DEFAULT_PITCH = double.NaN;
+        static public readonly double DEFAULT_PITCH = 0;
         
         ///<summary>
         /// The Internal Field For Pitch.
         ///</summary>
-        private double _Pitch = double.NaN;
+        private double _Pitch = 0;
 
         ///<summary>
         /// Pitch As double.
@@ -278,12 +278,12 @@ namespace TransmitterTool.Models
         ///<summary>
         /// The DefaultValue For Yaw.
         ///</summary>
-        static public readonly double DEFAULT_YAW = double.NaN;
+        static public readonly double DEFAULT_YAW = 0;
         
         ///<summary>
         /// The Internal Field For Yaw.
         ///</summary>
-        private double _Yaw = double.NaN;
+        private double _Yaw = 0;
 
         ///<summary>
         /// Yaw As double.
@@ -726,9 +726,9 @@ namespace TransmitterTool.Models
                 Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
                 Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
                 Altitude = eChild.GetProperty<uint>("Altitude",0),
-                Roll = eChild.GetProperty<double>("Roll",double.NaN),
-                Pitch = eChild.GetProperty<double>("Pitch",double.NaN),
-                Yaw = eChild.GetProperty<double>("Yaw",double.NaN),
+                Roll = eChild.GetProperty<double>("Roll",0),
+                Pitch = eChild.GetProperty<double>("Pitch",0),
+                Yaw = eChild.GetProperty<double>("Yaw",0),
                 RxTxType = eChild.GetProperty<RxTxType>("RxTxType",RxTxType.Unknown),
                 AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
                 Gain = eChild.GetProperty<uint>("Gain",0),

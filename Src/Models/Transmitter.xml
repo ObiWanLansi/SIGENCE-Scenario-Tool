@@ -8,9 +8,9 @@
     <Property Name="Longitude" Type="double" Init="double.NaN"/>
     <Property Name="Altitude" Type="uint" Init="0"/>
 
-    <Property Name="Roll" Type="double" Init="double.NaN"/>
-    <Property Name="Pitch" Type="double" Init="double.NaN"/>
-    <Property Name="Yaw" Type="double" Init="double.NaN"/>
+    <Property Name="Roll" Type="double" Init="0"/>
+    <Property Name="Pitch" Type="double" Init="0"/>
+    <Property Name="Yaw" Type="double" Init="0"/>
 
     <Property Name="RxTxType" Type="RxTxType" Init="RxTxType.Unknown"/>
     <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown"/>

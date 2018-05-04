@@ -30,10 +30,10 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void OpenFile()
         {
-            if (ofd.ShowDialog() == true)
+            if (ofdLoadTransmitter.ShowDialog() == true)
             {
                 Reset();
-                CurrentFile = ofd.FileName;
+                CurrentFile = ofdLoadTransmitter.FileName;
 
                 try
                 {
@@ -59,9 +59,9 @@ namespace TransmitterTool.Windows
         {
             if (CurrentFile == null)
             {
-                if (sfd.ShowDialog() == true)
+                if (sfdSaveTransmitter.ShowDialog() == true)
                 {
-                    CurrentFile = sfd.FileName;
+                    CurrentFile = sfdSaveTransmitter.FileName;
                 }
                 else
                 {

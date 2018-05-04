@@ -1,0 +1,5 @@
+Id;Name;Latitude;Longitude;Altitude;Roll;Pitch;Yaw;RxTxType;AntennaType;Gain;CenterFrequency;Bandwith;SignalToNoiseRatio;XPos;YPos;ZPos;StartTime;Remark
+d1da2ccf-9d6f-459c-b59c-98d6b35f4448;Transmitter I;49,762333914987;6,63149356842041;400;0;0;0;IdealSDR;OmniDirectional;0;0;0;0;0;0;0;0;Auf der Pferdeinsel
+9fd6037b-1e98-4b27-b26c-f90ad2abaf12;Transmitter II;49,7665474122578;6,64956092834473;402;0;0;0;HackRF;OmniDirectional;0;0;0;0;0;0;0;0;Moselstadion
+f31c3d8a-f0cb-4cfb-9e54-b675ff406753;Transmitter III;49,7566229328956;6,65037631988525;401;0;0;0;TwinRx;Unknown;0;0;0;0;0;0;0;0;Beim Kaufland
+c5180e8f-fd31-4ddf-a668-595a63c9c6bb;Transmitter IV;49,7580646034922;6,64175033569336;399;0;0;0;Unknown;Unknown;0;0;0;0;0;0;0;0;Sender Karstadt

@@ -1,9 +1,15 @@
-﻿using System.Windows;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
+using TransmitterTool.Extensions;
 using TransmitterTool.Markers;
 using TransmitterTool.Models;
 using TransmitterTool.Tools;
@@ -52,24 +58,24 @@ namespace TransmitterTool.Windows
         /// Creates the transmitter.
         /// </summary>
         /// <param name="pll">The PLL.</param>
-        private void AddTransmitter(PointLatLng pll)
+        private void AddTransmitter( PointLatLng pll )
         {
-            GMapMarker currentMarker = new GMapMarker(pll)
+            GMapMarker currentMarker = new GMapMarker( pll )
             {
-                Shape = new Cross(),
-                Offset = new Point(-15, -15),
+                Shape = new Cross() ,
+                Offset = new Point( -15 , -15 ) ,
                 ZIndex = int.MaxValue
             };
 
-            mcMapControl.Markers.Add(currentMarker);
+            mcMapControl.Markers.Add( currentMarker );
 
             Transmitter t = new Transmitter
             {
-                Latitude = pll.Lat,
+                Latitude = pll.Lat ,
                 Longitude = pll.Lng
             };
 
-            TransmitterCollection.Add(new TransmitterViewModel(t));
+            TransmitterCollection.Add( new TransmitterViewModel( t ) );
         }
 
 
@@ -77,18 +83,18 @@ namespace TransmitterTool.Windows
         /// Adds the transmitter.
         /// </summary>
         /// <param name="t">The t.</param>
-        private void AddTransmitter(Transmitter t)
+        private void AddTransmitter( Transmitter t )
         {
-            GMapMarker currentMarker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
+            GMapMarker currentMarker = new GMapMarker( new PointLatLng( t.Latitude , t.Longitude ) )
             {
-                Shape = new Cross(),
-                Offset = new Point(-15, -15),
+                Shape = new Cross() ,
+                Offset = new Point( -15 , -15 ) ,
                 ZIndex = int.MaxValue
             };
 
-            mcMapControl.Markers.Add(currentMarker);
+            mcMapControl.Markers.Add( currentMarker );
 
-            TransmitterCollection.Add(new TransmitterViewModel(t));
+            TransmitterCollection.Add( new TransmitterViewModel( t ) );
         }
 
 
@@ -97,7 +103,52 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void ExportTransmitter()
         {
-            //MB.NotYetImplemented();
+            if( TransmitterCollection.Count == 0 )
+            {
+                MB.Warning( "No transmitter avaible for export!" );
+                return;
+            }
+
+            if( CurrentFile != null )
+            {
+                sfdExportTransmitter.FileName = new FileInfo( CurrentFile ).Name;
+            }
+
+            if( sfdExportTransmitter.ShowDialog() == true )
+            {
+                FileInfo fiExportFile = new FileInfo( sfdExportTransmitter.FileName );
+
+                List<Transmitter> tl = TransmitterCollection.Select( t => t.Transmitter ).ToList();
+
+                try
+                {
+                    switch( fiExportFile.Extension.ToLower() )
+                    {
+                        case ".csv":
+                            tl.SaveAsCsv( fiExportFile.FullName );
+                            break;
+
+                        case ".json":
+                            tl.SaveAsJson( fiExportFile.FullName );
+                            break;
+                    }
+
+                    MB.Information( "File {0} successful created." , fiExportFile.Name );
+                }
+                catch( Exception ex )
+                {
+                    MB.Error( ex );
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ImportTransmitter()
+        {
+            MB.NotYetImplemented();
         }
 
     } // end public partial class MainWindow

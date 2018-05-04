@@ -35,17 +35,24 @@ namespace TransmitterTool.Windows
 
             //-----------------------------------------------------------------
 
-            sfd.Title = "Save SIGINT Transmitter File";
-            sfd.Filter = "SIGINT Transmitter File (*.stf)|*.stf";
-            sfd.AddExtension = true;
-            sfd.CheckPathExists = true;
+            sfdSaveTransmitter.Title = "Save SIGINT Transmitter File";
+            sfdSaveTransmitter.Filter = "SIGINT Transmitter File (*.stf)|*.stf";
+            sfdSaveTransmitter.AddExtension = true;
+            sfdSaveTransmitter.CheckPathExists = true;
 
-            ofd.Title = "Load SIGINT Transmitter File";
-            ofd.Filter = "SIGINT Transmitter File (*.stf)|*.stf";
-            ofd.AddExtension = true;
-            ofd.CheckPathExists = true;
-            ofd.CheckFileExists = true;
-            ofd.Multiselect = false;
+            ofdLoadTransmitter.Title = "Load SIGINT Transmitter File";
+            ofdLoadTransmitter.Filter = "SIGINT Transmitter File (*.stf)|*.stf";
+            ofdLoadTransmitter.AddExtension = true;
+            ofdLoadTransmitter.CheckPathExists = true;
+            ofdLoadTransmitter.CheckFileExists = true;
+            ofdLoadTransmitter.Multiselect = false;
+
+            //-----------------------------------------------------------------
+
+            sfdExportTransmitter.Title = "Export SIGINT Transmitter File";
+            sfdExportTransmitter.Filter = "Comma Separated Values (*.csv)|*.csv|JavaScript Object Notation (*.json)|*.json";
+            sfdExportTransmitter.AddExtension = true;
+            sfdExportTransmitter.CheckPathExists = true;
 
             //-----------------------------------------------------------------
 
