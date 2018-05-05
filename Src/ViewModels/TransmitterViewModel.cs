@@ -1,7 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
+using GMap.NET;
+using GMap.NET.WindowsPresentation;
 
+using TransmitterTool.Markers;
 using TransmitterTool.Models;
 
 
@@ -57,6 +61,7 @@ namespace TransmitterTool.ViewModels
             set
             {
                 Transmitter.Name = value;
+                UpdateMarkerTooltip();
                 FirePropertyChanged();
             }
         }
@@ -342,6 +347,19 @@ namespace TransmitterTool.ViewModels
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        private GMapMarker _Marker = null;
+        public GMapMarker Marker
+        {
+            get { return _Marker; }
+            set
+            {
+                _Marker = value;
+                FirePropertyChanged();
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TransmitterViewModel"/> class.
@@ -354,7 +372,26 @@ namespace TransmitterTool.ViewModels
                 throw new ArgumentNullException("t");
             }
 
+            //-----------------------------------------------------------------
             this.Transmitter = t;
+
+            this.Marker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
+            {
+                Offset = new Point(-15, -15),
+                ZIndex = int.MaxValue
+            };
+            this.Marker.Shape = new CustomMarker(this.Marker, t.Name);
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Updates the marker tooltip.
+        /// </summary>
+        private void UpdateMarkerTooltip()
+        {
+            (this.Marker.Shape as CustomMarker).Title = Name;
         }
 
     } // end sealed public class TransmitterViewModel

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -59,22 +60,11 @@ namespace TransmitterTool.Windows
         /// <param name="pll">The PLL.</param>
         private void AddTransmitter(PointLatLng pll)
         {
-            GMapMarker currentMarker = new GMapMarker(pll)
-            {
-                Shape = new Cross(),
-                Offset = new Point(-15, -15),
-                ZIndex = int.MaxValue
-            };
-
-            mcMapControl.Markers.Add(currentMarker);
-
-            Transmitter t = new Transmitter
+            AddTransmitter(new Transmitter
             {
                 Latitude = pll.Lat,
                 Longitude = pll.Lng
-            };
-
-            TransmitterCollection.Add(new TransmitterViewModel(t));
+            });
         }
 
 
@@ -84,17 +74,33 @@ namespace TransmitterTool.Windows
         /// <param name="t">The t.</param>
         private void AddTransmitter(Transmitter t)
         {
-            GMapMarker currentMarker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
-            {
-                Shape = new Cross(),
-                Offset = new Point(-15, -15),
-                ZIndex = int.MaxValue
-            };
+            TransmitterViewModel tvm = new TransmitterViewModel(t);
+            TransmitterCollection.Add(tvm);
+            
+            //GMapMarker marker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
+            //{
+            //    Offset = new Point(-15, -15),
+            //    ZIndex = int.MaxValue
+            //};
+            //marker.Shape = new CustomMarker(this, marker, t.Name);
+            mcMapControl.Markers.Add(tvm.Marker);
 
-            mcMapControl.Markers.Add(currentMarker);
 
-            TransmitterCollection.Add(new TransmitterViewModel(t));
+            // Falls durch die Datagrid nachträglich Datengeändert werden 
+            // müssen wir das natürlich mitbekommen um z.B. den Tooltip wieder anzupassen.
+            //tvm.PropertyChanged += Transmitter_PropertyChanged;
         }
+
+
+        ///// <summary>
+        ///// Handles the PropertyChanged event of the Transmitter control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="PropertyChangedEventArgs"/> instance containing the event data.</param>
+        //private void Transmitter_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        //{
+            
+        //}
 
 
         /// <summary>

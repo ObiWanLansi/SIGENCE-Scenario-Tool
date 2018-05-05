@@ -84,6 +84,7 @@ namespace TransmitterTool.Windows
         {
             CurrentFile = null;
             TransmitterCollection.Clear();
+            mcMapControl.Markers.Clear();
         }
 
 

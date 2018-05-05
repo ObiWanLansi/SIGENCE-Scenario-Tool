@@ -94,6 +94,9 @@
     <Compile Include="Src\Extensions\ListExtension.cs" />
     <Compile Include="Src\Extensions\StringExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
+    <Compile Include="Src\Markers\CustomMarker.xaml.cs">
+      <DependentUpon>CustomMarker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\Transmitter.cs">
       <AutoGen>True</AutoGen>
@@ -103,11 +106,11 @@
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
     <Compile Include="Src\ViewModels\TransmitterViewModel.cs" />
-    <Page Include="Src\Markers\Circle.xaml">
+    <Page Include="Src\Markers\Cross.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Src\Markers\Cross.xaml">
+    <Page Include="Src\Markers\CustomMarker.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -118,9 +121,6 @@
     <Compile Include="Src\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Src\Markers\Circle.xaml.cs">
-      <DependentUpon>Circle.xaml</DependentUpon>
     </Compile>
     <Compile Include="Src\Markers\Cross.xaml.cs">
       <DependentUpon>Cross.xaml</DependentUpon>
