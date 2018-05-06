@@ -68,12 +68,13 @@ namespace TransmitterTool.Markers
 
             Label = new Label
             {
-                Background = Brushes.Blue,
-                Foreground = Brushes.White,
+                Background = Brushes.Yellow,
+                Foreground = Brushes.Black,
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
                 Padding = new Thickness(3),
                 FontSize = 14,
+                FontFamily = new FontFamily("Courier New"),
                 Content = strTitle
             };
 
