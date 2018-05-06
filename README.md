@@ -22,3 +22,12 @@ https://github.com/ObiWanLansi/TransmitterTool/wiki
 ## Screenshot
 
 ![Sorry, but here should be a Screenshot :-(](Screenshots/MainApplication.jpg  "Screenshot from the MainWindow.")
+
+
+## Dependencies
+
+### GMap.NET.Presentation
+https://www.nuget.org/packages/GMap.NET.Presentation/
+
+### Newtonsoft.Json
+https://www.nuget.org/packages/Newtonsoft.Json/
