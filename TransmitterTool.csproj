@@ -92,6 +92,7 @@
     <Compile Include="Src\Extensions\DictionaryExtension.cs" />
     <Compile Include="Src\Extensions\FileInfoExtension.cs" />
     <Compile Include="Src\Extensions\ListExtension.cs" />
+    <Compile Include="Src\Extensions\RandomExtension.cs" />
     <Compile Include="Src\Extensions\StringExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
     <Compile Include="Src\Markers\CustomMarker.xaml.cs">

@@ -23,15 +23,15 @@ namespace TransmitterTool.Windows
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void MapControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void MapControl_MouseLeftButtonDown( object sender , MouseButtonEventArgs e )
         {
-            if (CreatingTransmitter == true)
+            if( CreatingTransmitter == true )
             {
-                Point p = e.GetPosition(mcMapControl);
+                Point p = e.GetPosition( mcMapControl );
 
-                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
+                PointLatLng pll = mcMapControl.FromLocalToLatLng( ( int ) p.X , ( int ) p.Y );
 
-                AddTransmitter(pll);
+                AddTransmitter( pll );
 
                 EndCreateTransmitter();
 
@@ -44,10 +44,10 @@ namespace TransmitterTool.Windows
         /// Maps the control on position changed.
         /// </summary>
         /// <param name="point">The point.</param>
-        private void MapControl_OnPositionChanged(PointLatLng point)
+        private void MapControl_OnPositionChanged( PointLatLng point )
         {
-            FirePropertyChanged("Latitude");
-            FirePropertyChanged("Longitude");
+            FirePropertyChanged( "Latitude" );
+            FirePropertyChanged( "Longitude" );
         }
 
 
@@ -56,23 +56,60 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void MapControl_OnMapZoomChanged()
         {
-            FirePropertyChanged("Zoom");
+            FirePropertyChanged( "Zoom" );
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// Handles the MouseDoubleClick event of the DataGrid control.
+        /// 
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGrid_KeyDown( object sender , KeyEventArgs e )
         {
-            TransmitterViewModel item = (sender as DataGrid).SelectedItem as TransmitterViewModel;
+            if( e.Key == Key.Space )
+            {
+                TransmitterViewModel item = ( sender as DataGrid ).SelectedItem as TransmitterViewModel;
 
-            mcMapControl.Position = new PointLatLng(item.Transmitter.Latitude, item.Transmitter.Longitude);
-            mcMapControl.Zoom = 20;
+                mcMapControl.Position = new PointLatLng( item.Transmitter.Latitude , item.Transmitter.Longitude );
+                mcMapControl.Zoom = 20;
 
-            e.Handled = true;
+                e.Handled = true;
+                return;
+            }
+
+            //if( e.Key == Key.Delete )
+            //{
+            //    e.Handled = true;
+            //    return;
+            //}
+        }
+
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void DataGrid_PreviewKeyDown( object sender , KeyEventArgs e )
+        //{
+        //    Debug.Write( "private void DataGrid_PreviewKeyDown( object sender , KeyEventArgs e )" );
+        //}
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_CreateSomeRandomizedTransmitter_Click( object sender , RoutedEventArgs e )
+        {
+            CreateRandomizedTransmitter();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -88,9 +125,9 @@ namespace TransmitterTool.Windows
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
         }
 
     } // end public partial class MainWindow

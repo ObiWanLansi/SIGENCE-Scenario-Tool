@@ -93,6 +93,18 @@ namespace TransmitterTool.Windows
                 }
             ));
 
+            CommandBindings.Add( new CommandBinding( RegisteredCommands.DeleteTransmitter,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
+                {
+                    DeleteTransmitter();
+                    e.Handled = true;
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                {
+                    e.CanExecute = true;
+                }
+            ) );
+
             CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportTransmitter,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {

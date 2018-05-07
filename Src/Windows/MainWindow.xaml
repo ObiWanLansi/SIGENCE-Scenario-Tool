@@ -36,12 +36,15 @@
             </MenuItem>
             <MenuItem Header="_Actions">
                 <MenuItem Header="_Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
+                <Button Content="_Delete Transmitter" Command="{x:Static cmd:RegisteredCommands.DeleteTransmitter}" />
                 <Separator />
                 <MenuItem Header="_Export Transmitter" Command="{x:Static cmd:RegisteredCommands.ExportTransmitter}" />
                 <MenuItem Header="_Import Transmitter" Command="{x:Static cmd:RegisteredCommands.ImportTransmitter}" />
             </MenuItem>
             <MenuItem Header="_Tools">
                 <MenuItem Header="_Create Screenshot From Map" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+                <Separator />
+                <MenuItem Header="Create Some Randomized Transmitter" Click="MenuItem_CreateSomeRandomizedTransmitter_Click"/>
             </MenuItem>
             <MenuItem Header="_Extras">
                 <MenuItem Header="_Settings" IsEnabled="False" />
@@ -56,12 +59,15 @@
             <Separator />
             <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
             <Separator />
+            <Button Content="Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
+            <Button Content="Delete Transmitter" Command="{x:Static cmd:RegisteredCommands.DeleteTransmitter}" />
+            <Separator />
         </ToolBar>
 
         <gmap:GMapControl x:Name="mcMapControl" Grid.Row="2" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
         <ScrollViewer Grid.Row="3">
-            <DataGrid ItemsSource="{Binding TransmitterCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" MouseDoubleClick="DataGrid_MouseDoubleClick">
+            <DataGrid x:Name="dgTransmitter" ItemsSource="{Binding TransmitterCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" KeyDown="DataGrid_KeyDown">
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
