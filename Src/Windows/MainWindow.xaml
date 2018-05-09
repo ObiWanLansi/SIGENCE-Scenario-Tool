@@ -36,7 +36,7 @@
             </MenuItem>
             <MenuItem Header="_Actions">
                 <MenuItem Header="_Create Transmitter" Command="{x:Static cmd:RegisteredCommands.CreateTransmitter}" />
-                <Button Content="_Delete Transmitter" Command="{x:Static cmd:RegisteredCommands.DeleteTransmitter}" />
+                <MenuItem Header="_Delete Transmitter" Command="{x:Static cmd:RegisteredCommands.DeleteTransmitter}" />
                 <Separator />
                 <MenuItem Header="_Export Transmitter" Command="{x:Static cmd:RegisteredCommands.ExportTransmitter}" />
                 <MenuItem Header="_Import Transmitter" Command="{x:Static cmd:RegisteredCommands.ImportTransmitter}" />
