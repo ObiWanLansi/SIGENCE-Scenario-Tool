@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
@@ -347,7 +348,18 @@ namespace TransmitterTool.ViewModels
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// The marker
+        /// </summary>
         private GMapMarker _Marker = null;
+
+        /// <summary>
+        /// Gets or sets the marker.
+        /// </summary>
+        /// <value>
+        /// The marker.
+        /// </value>
         public GMapMarker Marker
         {
             get { return _Marker; }
@@ -373,6 +385,7 @@ namespace TransmitterTool.ViewModels
             }
 
             //-----------------------------------------------------------------
+
             this.Transmitter = t;
 
             this.Marker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
@@ -380,7 +393,8 @@ namespace TransmitterTool.ViewModels
                 Offset = new Point(-15, -15),
                 ZIndex = int.MaxValue
             };
-            this.Marker.Shape = new CustomMarker(this.Marker, t.Name);
+
+            this.Marker.Shape = new CustomMarker(this.Marker, string.Format("{0}\n{1,1:00.########}\n{2,1:00.########}", t.Name, t.Latitude, t.Longitude));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
