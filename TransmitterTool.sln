@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransmitterTool.WithoutExcel", "TransmitterTool.WithoutExcel.csproj", "{06F3AE52-658E-4C66-BF2C-0A6AC1E432A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransmitterTool.WithoutExcel", "TransmitterTool.MainApp\TransmitterTool.WithoutExcel.csproj", "{06F3AE52-658E-4C66-BF2C-0A6AC1E432A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransmitterTool.WithExcel", "TransmitterTool.WithExcel.csproj", "{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransmitterTool.WithExcel", "TransmitterTool.MainApp\TransmitterTool.WithExcel.csproj", "{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransmitterTool.MainApp", "TransmitterTool.MainApp", "{6BFD59EE-5E5F-4178-B538-6303F7BB4448}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransmitterTool.UnitTests", "TransmitterTool.UnitTests", "{AD0FB10D-6FCE-43B3-8B95-012EB12A17BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransmitterTool.UnitTests", "TransmitterTool.UnitTests\TransmitterTool.UnitTests.csproj", "{4A837532-76D1-4A78-99CB-E53BE9525C80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,18 @@ Global
 		{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A837532-76D1-4A78-99CB-E53BE9525C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A837532-76D1-4A78-99CB-E53BE9525C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A837532-76D1-4A78-99CB-E53BE9525C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A837532-76D1-4A78-99CB-E53BE9525C80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06F3AE52-658E-4C66-BF2C-0A6AC1E432A0} = {6BFD59EE-5E5F-4178-B538-6303F7BB4448}
+		{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E} = {6BFD59EE-5E5F-4178-B538-6303F7BB4448}
+		{4A837532-76D1-4A78-99CB-E53BE9525C80} = {AD0FB10D-6FCE-43B3-8B95-012EB12A17BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68762B22-46CC-4B76-8B9D-88F882980599}

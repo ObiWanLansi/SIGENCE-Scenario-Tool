@@ -19,10 +19,10 @@ namespace TransmitterTool.Commands
         static public RoutedUICommand CreateTransmitter { get; private set; }
 
         /// <summary>
-        /// 
+        /// Gets the delete transmitter.
         /// </summary>
         /// <value>
-        /// 
+        /// The delete transmitter.
         /// </value>
         static public RoutedUICommand DeleteTransmitter { get; private set; }
 
@@ -45,8 +45,11 @@ namespace TransmitterTool.Commands
 
 
         /// <summary>
-        /// 
+        /// Gets the create screenshot.
         /// </summary>
+        /// <value>
+        /// The create screenshot.
+        /// </value>
         static public RoutedUICommand CreateScreenshot { get; private set; }
 
 
@@ -58,19 +61,19 @@ namespace TransmitterTool.Commands
         /// </summary>
         static RegisteredCommands()
         {
-            CreateTransmitter = new RoutedUICommand( "CreateTransmitter" , "CreateTransmitter" , typeof( RegisteredCommands ) );
-            CreateTransmitter.InputGestures.Add( new KeyGesture( Key.C , ModifierKeys.Alt ) );
+            CreateTransmitter = new RoutedUICommand("CreateTransmitter", "CreateTransmitter", typeof(RegisteredCommands));
+            CreateTransmitter.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Alt));
 
-            DeleteTransmitter = new RoutedUICommand( "DeleteTransmitter" , "DeleteTransmitter" , typeof( RegisteredCommands ) );
-            DeleteTransmitter.InputGestures.Add( new KeyGesture( Key.D , ModifierKeys.Alt ) );
+            DeleteTransmitter = new RoutedUICommand("DeleteTransmitter", "DeleteTransmitter", typeof(RegisteredCommands));
+            DeleteTransmitter.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Alt));
 
-            ExportTransmitter = new RoutedUICommand( "ExportTransmitter" , "ExportTransmitter" , typeof( RegisteredCommands ) );
-            ExportTransmitter.InputGestures.Add( new KeyGesture( Key.E , ModifierKeys.Control ) );
+            ExportTransmitter = new RoutedUICommand("ExportTransmitter", "ExportTransmitter", typeof(RegisteredCommands));
+            ExportTransmitter.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
 
-            ImportTransmitter = new RoutedUICommand( "ImportTransmitter" , "ImportTransmitter" , typeof( RegisteredCommands ) );
-            ImportTransmitter.InputGestures.Add( new KeyGesture( Key.I , ModifierKeys.Control ) );
+            ImportTransmitter = new RoutedUICommand("ImportTransmitter", "ImportTransmitter", typeof(RegisteredCommands));
+            ImportTransmitter.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
 
-            CreateScreenshot = new RoutedUICommand( "CreateScreenshot" , "CreateScreenshot" , typeof( RegisteredCommands ) );
+            CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
             //CreateScreenshot.InputGestures.Add( new KeyGesture( Key.I , ModifierKeys.Control ) );
         }
 

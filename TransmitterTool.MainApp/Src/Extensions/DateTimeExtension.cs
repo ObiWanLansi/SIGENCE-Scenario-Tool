@@ -98,9 +98,9 @@ namespace TransmitterTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// Dayses the in month.
         /// </summary>
-        /// <param name="dt"></param>
+        /// <param name="dt">The dt.</param>
         /// <returns></returns>
         static public int DaysInMonth(this DateTime dt)
         {

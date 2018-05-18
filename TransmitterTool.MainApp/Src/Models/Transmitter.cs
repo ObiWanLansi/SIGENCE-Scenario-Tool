@@ -1,9 +1,9 @@
 ﻿
 /**
- * SourceFile     : C:\Lanser\Entwicklung\GitRepositories\TransmitterTool\Src\Models\Transmitter.xml
- * Timestamp      : 18.05.2018, 11:09
- * User           : I142985D
- * Host           : 20NB449896
+ * SourceFile     : D:\BigData\GitHub\TransmitterTool\TransmitterTool.MainApp\Src\Models\Transmitter.xml
+ * Timestamp      : 18.05.2018, 19:50
+ * User           : Jörg Lanser Lokal
+ * Host           : MARUSHA
  */
 
 using System;

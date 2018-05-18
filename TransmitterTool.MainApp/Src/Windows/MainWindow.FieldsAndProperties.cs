@@ -18,22 +18,22 @@ namespace TransmitterTool.Windows
     {
 
         /// <summary>
-        ///
+        /// The SFD save transmitter
         /// </summary>
         private readonly SaveFileDialog sfdSaveTransmitter = new SaveFileDialog();
 
         /// <summary>
-        ///
+        /// The ofd load transmitter
         /// </summary>
         private readonly OpenFileDialog ofdLoadTransmitter = new OpenFileDialog();
 
         /// <summary>
-        ///
+        /// The SFD export transmitter
         /// </summary>
         private readonly SaveFileDialog sfdExportTransmitter = new SaveFileDialog();
 
         /// <summary>
-        ///
+        /// The SFD save screenshot
         /// </summary>
         private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();
 
@@ -146,7 +146,7 @@ namespace TransmitterTool.Windows
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
+                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
 
                 FirePropertyChanged();
             }
@@ -164,7 +164,7 @@ namespace TransmitterTool.Windows
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
+                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
 
                 FirePropertyChanged();
             }
