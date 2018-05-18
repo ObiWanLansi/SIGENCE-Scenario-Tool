@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Transmitter>
 
-    <Property Name="Id" Type="Guid" Init="Guid.NewGuid()"/>
+    <Property Name="PrimaryKey" Type="Guid" Init="Guid.NewGuid()"/>
+    <Property Name="Id" Type="int" Init="0"/>
+    
+    <!--<Property Name="Id" Type="Guid" Init="Guid.NewGuid()"/>-->
     <Property Name="Name" Type="string" Init="&quot;Transmitter&quot;"/>
 
     <Property Name="Latitude" Type="double" Init="double.NaN"/>

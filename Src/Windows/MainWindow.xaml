@@ -49,6 +49,8 @@
                     <MenuItem Header="50" Tag="50" Click="MenuItem_CreateSomeRandomizedTransmitter_Click" />
                     <MenuItem Header="100" Tag="100" Click="MenuItem_CreateSomeRandomizedTransmitter_Click" />
                     <MenuItem Header="200" Tag="200" Click="MenuItem_CreateSomeRandomizedTransmitter_Click" />
+                    <MenuItem Header="500" Tag="500" Click="MenuItem_CreateSomeRandomizedTransmitter_Click" />
+                    <MenuItem Header="1000" Tag="1000" Click="MenuItem_CreateSomeRandomizedTransmitter_Click" />
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Extras">
@@ -74,6 +76,15 @@
         <ScrollViewer Grid.Row="3">
             <DataGrid x:Name="dgTransmitter" ItemsSource="{Binding TransmitterCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" KeyDown="DataGrid_KeyDown">
                 <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Right" />
+                                <Setter Property="Margin" Value="5" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
 
                     <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                         <DataGridTextColumn.ElementStyle>

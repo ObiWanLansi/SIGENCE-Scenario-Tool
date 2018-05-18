@@ -1,25 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="TransmitterTool.Windows.MainWindow">
-    <Position X="0.5" Y="1.25" Width="1.5" />
+    <Position X="0.5" Y="1.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AgAQMAAEACjABAAEIQAABAAIgQAAAEAABACAAGACAAQ=</HashCode>
-      <FileName>Src\Windows\MainWindow.FieldsAndProperties.cs</FileName>
+      <HashCode>AgIQNAIEgGhQBAEMMYAIBBAIgUAAQEAABACBAEAAkAU=</HashCode>
+      <FileName>Src\Windows\MainWindow.EventHandling.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TransmitterTool.ViewModels.TransmitterViewModel">
-    <Position X="3" Y="1.25" Width="1.5" />
+    <Position X="3.75" Y="1.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEgAAAAAAAAIAAQAgCAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AACAAAAAAEgAACEAACAIwQQAoCAhAAABABBAAAAAAQA=</HashCode>
       <FileName>Src\ViewModels\TransmitterViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TransmitterTool.Models.Transmitter">
-    <Position X="5.5" Y="1.25" Width="1.5" />
+    <Position X="7" Y="1.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AIACACAgAEgCgAAMgAEIoAQAgEAAEAAEBCBBAAAEAVA=</HashCode>
+      <HashCode>EMYHSCAgIEiDgCEcgCG44AQAoVAhEEMlpLFBiQkkIVA=</HashCode>
       <FileName>Src\Models\Transmitter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

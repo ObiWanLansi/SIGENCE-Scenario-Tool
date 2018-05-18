@@ -95,6 +95,7 @@
     <Compile Include="Src\Extensions\RandomExtension.cs" />
     <Compile Include="Src\Extensions\StringExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
+    <Compile Include="Src\Interfaces\IXmlExport.cs" />
     <Compile Include="Src\Markers\CustomMarker.xaml.cs">
       <DependentUpon>CustomMarker.xaml</DependentUpon>
     </Compile>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows.Input;
 using System.Xml.Linq;
 
 using GMap.NET.MapProviders;
@@ -34,6 +35,9 @@ namespace TransmitterTool.Windows
         {
             if (ofdLoadTransmitter.ShowDialog() == true)
             {
+                Cursor = Cursors.Wait;
+                DoEvents();
+
                 Reset();
                 CurrentFile = ofdLoadTransmitter.FileName;
 
@@ -74,6 +78,8 @@ namespace TransmitterTool.Windows
                 {
                     MB.Error(ex);
                 }
+
+                Cursor = Cursors.Arrow;
             }
         }
 
@@ -94,6 +100,9 @@ namespace TransmitterTool.Windows
                     return;
                 }
             }
+
+            Cursor = Cursors.Wait;
+            DoEvents();
 
             try
             {
@@ -132,6 +141,8 @@ namespace TransmitterTool.Windows
             {
                 MB.Error(ex);
             }
+
+            Cursor = Cursors.Arrow;
         }
 
 

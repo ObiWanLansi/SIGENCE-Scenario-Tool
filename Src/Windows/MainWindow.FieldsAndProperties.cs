@@ -1,7 +1,8 @@
 ﻿using System.Collections.ObjectModel;
+
 using GMap.NET;
 using GMap.NET.MapProviders;
-using GMap.NET.WindowsPresentation;
+
 using Microsoft.Win32;
 
 using TransmitterTool.ViewModels;
@@ -145,7 +146,7 @@ namespace TransmitterTool.Windows
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
+                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -163,7 +164,7 @@ namespace TransmitterTool.Windows
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
+                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
 
                 FirePropertyChanged();
             }

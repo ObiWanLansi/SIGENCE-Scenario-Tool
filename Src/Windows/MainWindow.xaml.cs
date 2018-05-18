@@ -53,7 +53,7 @@ namespace TransmitterTool.Windows
             //-----------------------------------------------------------------
 
             sfdExportTransmitter.Title = "Export SIGINT Transmitter File";
-            sfdExportTransmitter.Filter = "Comma Separated Values (*.csv)|*.csv|JavaScript Object Notation (*.json)|*.json";
+            sfdExportTransmitter.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
             sfdExportTransmitter.AddExtension = true;
             sfdExportTransmitter.CheckPathExists = true;
 
@@ -86,6 +86,9 @@ namespace TransmitterTool.Windows
 
             TransmitterCollection.Clear();
             mcMapControl.Markers.Clear();
+
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
         }
 
 

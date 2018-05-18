@@ -1,22 +1,18 @@
 ﻿
 /**
  * SourceFile     : C:\Lanser\Entwicklung\GitRepositories\TransmitterTool\Src\Models\Transmitter.xml
- * Timestamp      : 04.05.2018, 10:31
+ * Timestamp      : 18.05.2018, 11:09
  * User           : I142985D
  * Host           : 20NB449896
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Media.Imaging;
 using System.Xml.Linq;
 
-using GMap.NET;
-
 using TransmitterTool.Extensions;
-using TransmitterTool.Models;
+using TransmitterTool.Interfaces;
 
 
 
@@ -25,10 +21,44 @@ namespace TransmitterTool.Models
     ///<summary>
     /// Generated Model Class from Transmitter.xml.
     ///</summary>
-    sealed public class Transmitter : IEquatable<Transmitter>, INotifyPropertyChanged, ICloneable
+    sealed public class Transmitter : IEquatable<Transmitter>, INotifyPropertyChanged, ICloneable, IXmlExport
     {
 
         #region Instance Properties
+
+        #region PrimaryKey
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For PrimaryKey.
+        ///</summary>
+        public const String PRIMARYKEY = "PrimaryKey";
+
+        ///<summary>
+        /// The DefaultValue For PrimaryKey.
+        ///</summary>
+        static public readonly Guid DEFAULT_PRIMARYKEY = Guid.NewGuid();
+        
+        ///<summary>
+        /// The Internal Field For PrimaryKey.
+        ///</summary>
+        private Guid _PrimaryKey = Guid.NewGuid();
+
+        ///<summary>
+        /// PrimaryKey As Guid.
+        ///</summary>
+        public Guid PrimaryKey 
+        {
+            get { return _PrimaryKey; }
+            set
+            {
+                _PrimaryKey = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+
+        //---------------------------------------------------------------------
 
         #region Id
 
@@ -40,17 +70,17 @@ namespace TransmitterTool.Models
         ///<summary>
         /// The DefaultValue For Id.
         ///</summary>
-        static public readonly Guid DEFAULT_ID = Guid.NewGuid();
+        static public readonly int DEFAULT_ID = 0;
         
         ///<summary>
         /// The Internal Field For Id.
         ///</summary>
-        private Guid _Id = Guid.NewGuid();
+        private int _Id = 0;
 
         ///<summary>
-        /// Id As Guid.
+        /// Id As int.
         ///</summary>
-        public Guid Id 
+        public int Id 
         {
             get { return _Id; }
             set
@@ -683,6 +713,7 @@ namespace TransmitterTool.Models
         {
             return new XElement("Transmitter",
 
+                XElementExtension.GetXElement("PrimaryKey", PrimaryKey),
                 XElementExtension.GetXElement("Id", Id),
                 XElementExtension.GetXElement("Name", Name),
                 XElementExtension.GetXElement("Latitude", Latitude),
@@ -721,7 +752,8 @@ namespace TransmitterTool.Models
 
             return new Transmitter
             {
-                Id = eChild.GetProperty<Guid>("Id",Guid.NewGuid()),
+                PrimaryKey = eChild.GetProperty<Guid>("PrimaryKey",Guid.NewGuid()),
+                Id = eChild.GetProperty<int>("Id",0),
                 Name = eChild.GetProperty<string>("Name","Transmitter"),
                 Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
                 Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
@@ -749,6 +781,11 @@ namespace TransmitterTool.Models
         public bool Equals(Transmitter other)
         {
             if (other == null)
+            {
+                return false;
+            }
+
+            if (PrimaryKey != other.PrimaryKey )
             {
                 return false;
             }

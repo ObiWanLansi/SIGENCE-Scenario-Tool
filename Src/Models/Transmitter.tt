@@ -21,16 +21,12 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Media.Imaging;
 using System.Xml.Linq;
 
-using GMap.NET;
-
 using TransmitterTool.Extensions;
-using TransmitterTool.Models;
+using TransmitterTool.Interfaces;
 
 
 <#
@@ -44,7 +40,7 @@ namespace TransmitterTool.Models
     ///<summary>
     /// Generated Model Class from <#=new FileInfo(strFileName).Name#>.
     ///</summary>
-    sealed public class <#=eRoot.Name#> : IEquatable<<#=eRoot.Name#>>, INotifyPropertyChanged, ICloneable
+    sealed public class <#=eRoot.Name#> : IEquatable<<#=eRoot.Name#>>, INotifyPropertyChanged, ICloneable, IXmlExport
     {
 
         #region Instance Properties

@@ -31,9 +31,9 @@ namespace TransmitterTool.ViewModels
         /// 
         /// </summary>
         /// <param name="strPropertyName"></param>
-        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,6 +48,17 @@ namespace TransmitterTool.ViewModels
         public Transmitter Transmitter { get; private set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        public int Id
+        {
+            get { return Transmitter.Id; }
+            set
+            {
+                Transmitter.Id = value;
+                FirePropertyChanged();
+            }
+        }
 
 
         /// <summary>
@@ -76,7 +87,7 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Latitude
         {
-            get { return string.Format("{0:F8}", Transmitter.Latitude); }
+            get { return string.Format( "{0:F8}" , Transmitter.Latitude ); }
         }
 
 
@@ -88,7 +99,7 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public string Longitude
         {
-            get { return string.Format("{0:F8}", Transmitter.Longitude); }
+            get { return string.Format( "{0:F8}" , Transmitter.Longitude ); }
         }
 
 
@@ -377,24 +388,24 @@ namespace TransmitterTool.ViewModels
         /// Initializes a new instance of the <see cref="TransmitterViewModel"/> class.
         /// </summary>
         /// <param name="t">The t.</param>
-        public TransmitterViewModel(Transmitter t)
+        public TransmitterViewModel( Transmitter t )
         {
-            if (t == null)
+            if( t == null )
             {
-                throw new ArgumentNullException("t");
+                throw new ArgumentNullException( "t" );
             }
 
             //-----------------------------------------------------------------
 
             this.Transmitter = t;
 
-            this.Marker = new GMapMarker(new PointLatLng(t.Latitude, t.Longitude))
+            this.Marker = new GMapMarker( new PointLatLng( t.Latitude , t.Longitude ) )
             {
-                Offset = new Point(-15, -15),
+                Offset = new Point( -15 , -15 ) ,
                 ZIndex = int.MaxValue
             };
 
-            this.Marker.Shape = new CustomMarker(this.Marker, string.Format("{0}\n{1,1:00.########}\n{2,1:00.########}", t.Name, t.Latitude, t.Longitude));
+            this.Marker.Shape = new CustomMarker( this.Marker , string.Format( "{0}\n{1,1:00.########}\n{2,1:00.########}" , t.Name , t.Latitude , t.Longitude ) );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -405,7 +416,7 @@ namespace TransmitterTool.ViewModels
         /// </summary>
         private void UpdateMarkerTooltip()
         {
-            (this.Marker.Shape as CustomMarker).Title = Name;
+            ( this.Marker.Shape as CustomMarker ).Title = Name;
         }
 
     } // end sealed public class TransmitterViewModel
