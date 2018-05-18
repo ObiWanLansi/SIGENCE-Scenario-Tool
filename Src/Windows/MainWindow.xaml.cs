@@ -54,6 +54,9 @@ namespace TransmitterTool.Windows
 
             sfdExportTransmitter.Title = "Export SIGINT Transmitter File";
             sfdExportTransmitter.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
+#if EXCEL_SUPPORT
+            sfdExportTransmitter.Filter += "Office Open XML File Format (*.xlsx)|*.xlsx";
+#endif
             sfdExportTransmitter.AddExtension = true;
             sfdExportTransmitter.CheckPathExists = true;
 

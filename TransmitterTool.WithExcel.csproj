@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{06F3AE52-658E-4C66-BF2C-0A6AC1E432A0}</ProjectGuid>
+    <ProjectGuid>{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TransmitterTool</RootNamespace>
     <AssemblyName>TransmitterTool</AssemblyName>
@@ -36,7 +36,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;EXCEL_SUPPORT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
