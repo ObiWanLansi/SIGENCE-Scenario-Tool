@@ -107,6 +107,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Src\Commands\RegisteredCommands.cs" />
+    <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
+    <Compile Include="Src\Datatypes\Standard\StringList.cs" />
     <Compile Include="Src\Extensions\ColorExtension.cs" />
     <Compile Include="Src\Extensions\DateTimeExtension.cs" />
     <Compile Include="Src\Extensions\DictionaryExtension.cs" />
@@ -125,6 +127,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Transmitter.tt</DependentUpon>
     </Compile>
+    <Compile Include="Src\Models\TransmitterList.cs" />
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
     <Compile Include="Src\ViewModels\TransmitterViewModel.cs" />
