@@ -1,4 +1,12 @@
-﻿using System;
+﻿
+/**
+ * SourceFile     : D:\BigData\GitHub\TransmitterTool\TransmitterTool.MainApp\Src\Models\Transmitter.xml
+ * Timestamp      : 28.05.2018, 15:37
+ * User           : Jörg Lanser Lokal
+ * Host           : MARUSHA
+ */
+
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
@@ -29,7 +37,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For PrimaryKey.
         ///</summary>
         static public readonly Guid DEFAULT_PRIMARYKEY = Guid.NewGuid();
-
+        
         ///<summary>
         /// The Internal Field For PrimaryKey.
         ///</summary>
@@ -38,7 +46,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// PrimaryKey As Guid.
         ///</summary>
-        public Guid PrimaryKey
+        public Guid PrimaryKey 
         {
             get { return _PrimaryKey; }
             set
@@ -63,7 +71,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Id.
         ///</summary>
         static public readonly int DEFAULT_ID = 0;
-
+        
         ///<summary>
         /// The Internal Field For Id.
         ///</summary>
@@ -72,7 +80,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Id As int.
         ///</summary>
-        public int Id
+        public int Id 
         {
             get { return _Id; }
             set
@@ -97,7 +105,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Name.
         ///</summary>
         static public readonly string DEFAULT_NAME = "Transmitter";
-
+        
         ///<summary>
         /// The Internal Field For Name.
         ///</summary>
@@ -106,7 +114,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Name As string.
         ///</summary>
-        public string Name
+        public string Name 
         {
             get { return _Name; }
             set
@@ -131,7 +139,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Latitude.
         ///</summary>
         static public readonly double DEFAULT_LATITUDE = double.NaN;
-
+        
         ///<summary>
         /// The Internal Field For Latitude.
         ///</summary>
@@ -140,7 +148,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Latitude As double.
         ///</summary>
-        public double Latitude
+        public double Latitude 
         {
             get { return _Latitude; }
             set
@@ -165,7 +173,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Longitude.
         ///</summary>
         static public readonly double DEFAULT_LONGITUDE = double.NaN;
-
+        
         ///<summary>
         /// The Internal Field For Longitude.
         ///</summary>
@@ -174,7 +182,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Longitude As double.
         ///</summary>
-        public double Longitude
+        public double Longitude 
         {
             get { return _Longitude; }
             set
@@ -199,7 +207,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Altitude.
         ///</summary>
         static public readonly uint DEFAULT_ALTITUDE = 0;
-
+        
         ///<summary>
         /// The Internal Field For Altitude.
         ///</summary>
@@ -208,7 +216,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Altitude As uint.
         ///</summary>
-        public uint Altitude
+        public uint Altitude 
         {
             get { return _Altitude; }
             set
@@ -233,7 +241,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Roll.
         ///</summary>
         static public readonly double DEFAULT_ROLL = 0;
-
+        
         ///<summary>
         /// The Internal Field For Roll.
         ///</summary>
@@ -242,7 +250,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Roll As double.
         ///</summary>
-        public double Roll
+        public double Roll 
         {
             get { return _Roll; }
             set
@@ -267,7 +275,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Pitch.
         ///</summary>
         static public readonly double DEFAULT_PITCH = 0;
-
+        
         ///<summary>
         /// The Internal Field For Pitch.
         ///</summary>
@@ -276,7 +284,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Pitch As double.
         ///</summary>
-        public double Pitch
+        public double Pitch 
         {
             get { return _Pitch; }
             set
@@ -301,7 +309,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Yaw.
         ///</summary>
         static public readonly double DEFAULT_YAW = 0;
-
+        
         ///<summary>
         /// The Internal Field For Yaw.
         ///</summary>
@@ -310,7 +318,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Yaw As double.
         ///</summary>
-        public double Yaw
+        public double Yaw 
         {
             get { return _Yaw; }
             set
@@ -335,7 +343,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For RxTxType.
         ///</summary>
         static public readonly RxTxType DEFAULT_RXTXTYPE = RxTxType.Unknown;
-
+        
         ///<summary>
         /// The Internal Field For RxTxType.
         ///</summary>
@@ -344,7 +352,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// RxTxType As RxTxType.
         ///</summary>
-        public RxTxType RxTxType
+        public RxTxType RxTxType 
         {
             get { return _RxTxType; }
             set
@@ -369,7 +377,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For AntennaType.
         ///</summary>
         static public readonly AntennaType DEFAULT_ANTENNATYPE = AntennaType.Unknown;
-
+        
         ///<summary>
         /// The Internal Field For AntennaType.
         ///</summary>
@@ -378,7 +386,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// AntennaType As AntennaType.
         ///</summary>
-        public AntennaType AntennaType
+        public AntennaType AntennaType 
         {
             get { return _AntennaType; }
             set
@@ -403,7 +411,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For CenterFrequency_Hz.
         ///</summary>
         static public readonly uint DEFAULT_CENTERFREQUENCY_HZ = 0;
-
+        
         ///<summary>
         /// The Internal Field For CenterFrequency_Hz.
         ///</summary>
@@ -412,7 +420,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// CenterFrequency_Hz As uint.
         ///</summary>
-        public uint CenterFrequency_Hz
+        public uint CenterFrequency_Hz 
         {
             get { return _CenterFrequency_Hz; }
             set
@@ -437,7 +445,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Bandwith_Hz.
         ///</summary>
         static public readonly uint DEFAULT_BANDWITH_HZ = 0;
-
+        
         ///<summary>
         /// The Internal Field For Bandwith_Hz.
         ///</summary>
@@ -446,7 +454,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Bandwith_Hz As uint.
         ///</summary>
-        public uint Bandwith_Hz
+        public uint Bandwith_Hz 
         {
             get { return _Bandwith_Hz; }
             set
@@ -471,7 +479,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Gain_dB.
         ///</summary>
         static public readonly uint DEFAULT_GAIN_DB = 0;
-
+        
         ///<summary>
         /// The Internal Field For Gain_dB.
         ///</summary>
@@ -480,7 +488,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Gain_dB As uint.
         ///</summary>
-        public uint Gain_dB
+        public uint Gain_dB 
         {
             get { return _Gain_dB; }
             set
@@ -505,7 +513,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For SignalToNoiseRatio_dB.
         ///</summary>
         static public readonly uint DEFAULT_SIGNALTONOISERATIO_DB = 0;
-
+        
         ///<summary>
         /// The Internal Field For SignalToNoiseRatio_dB.
         ///</summary>
@@ -514,7 +522,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// SignalToNoiseRatio_dB As uint.
         ///</summary>
-        public uint SignalToNoiseRatio_dB
+        public uint SignalToNoiseRatio_dB 
         {
             get { return _SignalToNoiseRatio_dB; }
             set
@@ -539,7 +547,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For XPos.
         ///</summary>
         static public readonly int DEFAULT_XPOS = 0;
-
+        
         ///<summary>
         /// The Internal Field For XPos.
         ///</summary>
@@ -548,7 +556,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// XPos As int.
         ///</summary>
-        public int XPos
+        public int XPos 
         {
             get { return _XPos; }
             set
@@ -573,7 +581,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For YPos.
         ///</summary>
         static public readonly int DEFAULT_YPOS = 0;
-
+        
         ///<summary>
         /// The Internal Field For YPos.
         ///</summary>
@@ -582,7 +590,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// YPos As int.
         ///</summary>
-        public int YPos
+        public int YPos 
         {
             get { return _YPos; }
             set
@@ -607,7 +615,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For ZPos.
         ///</summary>
         static public readonly int DEFAULT_ZPOS = 0;
-
+        
         ///<summary>
         /// The Internal Field For ZPos.
         ///</summary>
@@ -616,7 +624,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// ZPos As int.
         ///</summary>
-        public int ZPos
+        public int ZPos 
         {
             get { return _ZPos; }
             set
@@ -641,7 +649,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For StartTime.
         ///</summary>
         static public readonly uint DEFAULT_STARTTIME = 0;
-
+        
         ///<summary>
         /// The Internal Field For StartTime.
         ///</summary>
@@ -650,7 +658,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// StartTime As uint.
         ///</summary>
-        public uint StartTime
+        public uint StartTime 
         {
             get { return _StartTime; }
             set
@@ -675,7 +683,7 @@ namespace TransmitterTool.Models
         /// The DefaultValue For Remark.
         ///</summary>
         static public readonly string DEFAULT_REMARK = "";
-
+        
         ///<summary>
         /// The Internal Field For Remark.
         ///</summary>
@@ -684,7 +692,7 @@ namespace TransmitterTool.Models
         ///<summary>
         /// Remark As string.
         ///</summary>
-        public string Remark
+        public string Remark 
         {
             get { return _Remark; }
             set
@@ -703,176 +711,176 @@ namespace TransmitterTool.Models
 
         public XElement ToXml()
         {
-            return new XElement( "Transmitter" ,
+            return new XElement("Transmitter",
 
-                XElementExtension.GetXElement( "PrimaryKey" , PrimaryKey ) ,
-                XElementExtension.GetXElement( "Id" , Id ) ,
-                XElementExtension.GetXElement( "Name" , Name ) ,
-                XElementExtension.GetXElement( "Latitude" , Latitude ) ,
-                XElementExtension.GetXElement( "Longitude" , Longitude ) ,
-                XElementExtension.GetXElement( "Altitude" , Altitude ) ,
-                XElementExtension.GetXElement( "Roll" , Roll ) ,
-                XElementExtension.GetXElement( "Pitch" , Pitch ) ,
-                XElementExtension.GetXElement( "Yaw" , Yaw ) ,
-                XElementExtension.GetXElement( "RxTxType" , RxTxType ) ,
-                XElementExtension.GetXElement( "AntennaType" , AntennaType ) ,
-                XElementExtension.GetXElement( "CenterFrequency_Hz" , CenterFrequency_Hz ) ,
-                XElementExtension.GetXElement( "Bandwith_Hz" , Bandwith_Hz ) ,
-                XElementExtension.GetXElement( "Gain_dB" , Gain_dB ) ,
-                XElementExtension.GetXElement( "SignalToNoiseRatio_dB" , SignalToNoiseRatio_dB ) ,
-                XElementExtension.GetXElement( "XPos" , XPos ) ,
-                XElementExtension.GetXElement( "YPos" , YPos ) ,
-                XElementExtension.GetXElement( "ZPos" , ZPos ) ,
-                XElementExtension.GetXElement( "StartTime" , StartTime ) ,
-                XElementExtension.GetXElement( "Remark" , Remark )
+                XElementExtension.GetXElement("PrimaryKey", PrimaryKey),
+                XElementExtension.GetXElement("Id", Id),
+                XElementExtension.GetXElement("Name", Name),
+                XElementExtension.GetXElement("Latitude", Latitude),
+                XElementExtension.GetXElement("Longitude", Longitude),
+                XElementExtension.GetXElement("Altitude", Altitude),
+                XElementExtension.GetXElement("Roll", Roll),
+                XElementExtension.GetXElement("Pitch", Pitch),
+                XElementExtension.GetXElement("Yaw", Yaw),
+                XElementExtension.GetXElement("RxTxType", RxTxType),
+                XElementExtension.GetXElement("AntennaType", AntennaType),
+                XElementExtension.GetXElement("CenterFrequency_Hz", CenterFrequency_Hz),
+                XElementExtension.GetXElement("Bandwith_Hz", Bandwith_Hz),
+                XElementExtension.GetXElement("Gain_dB", Gain_dB),
+                XElementExtension.GetXElement("SignalToNoiseRatio_dB", SignalToNoiseRatio_dB),
+                XElementExtension.GetXElement("XPos", XPos),
+                XElementExtension.GetXElement("YPos", YPos),
+                XElementExtension.GetXElement("ZPos", ZPos),
+                XElementExtension.GetXElement("StartTime", StartTime),
+                XElementExtension.GetXElement("Remark", Remark)  
             );
         }
 
 
-        static public Transmitter FromXml( XElement eRoot )
+        static public Transmitter FromXml(XElement eRoot)
         {
             XElement eChild = null;
 
-            if( eRoot.Name.LocalName.Equals( "Transmitter" ) )
+            if (eRoot.Name.LocalName.Equals("Transmitter"))
             {
                 eChild = eRoot;
             }
             else
             {
-                eChild = eRoot.Element( "Transmitter" );
+                eChild = eRoot.Element("Transmitter");
             }
 
             return new Transmitter
             {
-                PrimaryKey = eChild.GetProperty<Guid>( "PrimaryKey" , Guid.NewGuid() ) ,
-                Id = eChild.GetProperty<int>( "Id" , 0 ) ,
-                Name = eChild.GetProperty<string>( "Name" , "Transmitter" ) ,
-                Latitude = eChild.GetProperty<double>( "Latitude" , double.NaN ) ,
-                Longitude = eChild.GetProperty<double>( "Longitude" , double.NaN ) ,
-                Altitude = eChild.GetProperty<uint>( "Altitude" , 0 ) ,
-                Roll = eChild.GetProperty<double>( "Roll" , 0 ) ,
-                Pitch = eChild.GetProperty<double>( "Pitch" , 0 ) ,
-                Yaw = eChild.GetProperty<double>( "Yaw" , 0 ) ,
-                RxTxType = eChild.GetProperty<RxTxType>( "RxTxType" , RxTxType.Unknown ) ,
-                AntennaType = eChild.GetProperty<AntennaType>( "AntennaType" , AntennaType.Unknown ) ,
-                CenterFrequency_Hz = eChild.GetProperty<uint>( "CenterFrequency_Hz" , 0 ) ,
-                Bandwith_Hz = eChild.GetProperty<uint>( "Bandwith_Hz" , 0 ) ,
-                Gain_dB = eChild.GetProperty<uint>( "Gain_dB" , 0 ) ,
-                SignalToNoiseRatio_dB = eChild.GetProperty<uint>( "SignalToNoiseRatio_dB" , 0 ) ,
-                XPos = eChild.GetProperty<int>( "XPos" , 0 ) ,
-                YPos = eChild.GetProperty<int>( "YPos" , 0 ) ,
-                ZPos = eChild.GetProperty<int>( "ZPos" , 0 ) ,
-                StartTime = eChild.GetProperty<uint>( "StartTime" , 0 ) ,
-                Remark = eChild.GetProperty<string>( "Remark" , "" )
+                PrimaryKey = eChild.GetProperty<Guid>("PrimaryKey",Guid.NewGuid()),
+                Id = eChild.GetProperty<int>("Id",0),
+                Name = eChild.GetProperty<string>("Name","Transmitter"),
+                Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
+                Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
+                Altitude = eChild.GetProperty<uint>("Altitude",0),
+                Roll = eChild.GetProperty<double>("Roll",0),
+                Pitch = eChild.GetProperty<double>("Pitch",0),
+                Yaw = eChild.GetProperty<double>("Yaw",0),
+                RxTxType = eChild.GetProperty<RxTxType>("RxTxType",RxTxType.Unknown),
+                AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
+                CenterFrequency_Hz = eChild.GetProperty<uint>("CenterFrequency_Hz",0),
+                Bandwith_Hz = eChild.GetProperty<uint>("Bandwith_Hz",0),
+                Gain_dB = eChild.GetProperty<uint>("Gain_dB",0),
+                SignalToNoiseRatio_dB = eChild.GetProperty<uint>("SignalToNoiseRatio_dB",0),
+                XPos = eChild.GetProperty<int>("XPos",0),
+                YPos = eChild.GetProperty<int>("YPos",0),
+                ZPos = eChild.GetProperty<int>("ZPos",0),
+                StartTime = eChild.GetProperty<uint>("StartTime",0),
+                Remark = eChild.GetProperty<string>("Remark","")            
             };
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public bool Equals( Transmitter other )
+        public bool Equals(Transmitter other)
         {
-            if( other == null )
+            if (other == null)
             {
                 return false;
             }
 
-            if( PrimaryKey != other.PrimaryKey )
+            if (PrimaryKey != other.PrimaryKey )
             {
                 return false;
             }
 
-            if( Id != other.Id )
+            if (Id != other.Id )
             {
                 return false;
             }
 
-            if( Name != other.Name )
+            if (Name != other.Name )
             {
                 return false;
             }
 
-            if( Latitude != other.Latitude )
+            if (Latitude != other.Latitude )
             {
                 return false;
             }
 
-            if( Longitude != other.Longitude )
+            if (Longitude != other.Longitude )
             {
                 return false;
             }
 
-            if( Altitude != other.Altitude )
+            if (Altitude != other.Altitude )
             {
                 return false;
             }
 
-            if( Roll != other.Roll )
+            if (Roll != other.Roll )
             {
                 return false;
             }
 
-            if( Pitch != other.Pitch )
+            if (Pitch != other.Pitch )
             {
                 return false;
             }
 
-            if( Yaw != other.Yaw )
+            if (Yaw != other.Yaw )
             {
                 return false;
             }
 
-            if( RxTxType != other.RxTxType )
+            if (RxTxType != other.RxTxType )
             {
                 return false;
             }
 
-            if( AntennaType != other.AntennaType )
+            if (AntennaType != other.AntennaType )
             {
                 return false;
             }
 
-            if( CenterFrequency_Hz != other.CenterFrequency_Hz )
+            if (CenterFrequency_Hz != other.CenterFrequency_Hz )
             {
                 return false;
             }
 
-            if( Bandwith_Hz != other.Bandwith_Hz )
+            if (Bandwith_Hz != other.Bandwith_Hz )
             {
                 return false;
             }
 
-            if( Gain_dB != other.Gain_dB )
+            if (Gain_dB != other.Gain_dB )
             {
                 return false;
             }
 
-            if( SignalToNoiseRatio_dB != other.SignalToNoiseRatio_dB )
+            if (SignalToNoiseRatio_dB != other.SignalToNoiseRatio_dB )
             {
                 return false;
             }
 
-            if( XPos != other.XPos )
+            if (XPos != other.XPos )
             {
                 return false;
             }
 
-            if( YPos != other.YPos )
+            if (YPos != other.YPos )
             {
                 return false;
             }
 
-            if( ZPos != other.ZPos )
+            if (ZPos != other.ZPos )
             {
                 return false;
             }
 
-            if( StartTime != other.StartTime )
+            if (StartTime != other.StartTime )
             {
                 return false;
             }
 
-            if( Remark != other.Remark )
+            if (Remark != other.Remark )
             {
                 return false;
             }
@@ -889,7 +897,7 @@ namespace TransmitterTool.Models
         /// <returns></returns>
         public override string ToString()
         {
-            return string.IsNullOrEmpty( Name ) ? "Unknown" : Name;
+            return string.IsNullOrEmpty(Name) ? "Unknown" : Name;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -901,7 +909,7 @@ namespace TransmitterTool.Models
         /// <returns></returns>
         public Transmitter Clone()
         {
-            return ( Transmitter ) this.MemberwiseClone();
+            return (Transmitter)this.MemberwiseClone();
         }
 
 
@@ -927,16 +935,16 @@ namespace TransmitterTool.Models
         /// 
         /// </summary>
         /// <param name="strPropertyName"></param>
-        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
             // Wir cachen das Event lokal da es während der Abfrage in der if Anweisung und
             // dem eigentlichen Ausführen zurückgesetzt werden könnte und somit eine Exception
             // hervorgerufen werden könnte obwohl wir es ja überprüft haben.
             var temp = PropertyChanged;
 
-            if( temp != null )
+            if (temp != null)
             {
-                temp( this , new PropertyChangedEventArgs( strPropertyName ) );
+                temp(this, new PropertyChangedEventArgs(strPropertyName));
             }
         }
 

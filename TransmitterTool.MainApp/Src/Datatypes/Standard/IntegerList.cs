@@ -28,9 +28,9 @@ namespace TransmitterTool.Datatypes.Standard
         }
 
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="IntegerList"/> class.
         /// </summary>
-        /// <param name="collection"></param>
+        /// <param name="collection">Die Auflistung, deren Elemente in die neue Liste kopiert werden.</param>
         public IntegerList(IEnumerable<int> collection) :
             base(collection)
         {

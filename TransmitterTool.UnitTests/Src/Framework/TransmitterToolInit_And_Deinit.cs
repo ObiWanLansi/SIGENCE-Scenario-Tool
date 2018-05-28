@@ -96,7 +96,7 @@ namespace TransmitterTool.UnitTests
 
 
         /// <summary>
-        /// 
+        /// The start time
         /// </summary>
         private DateTime dtStart;
 
