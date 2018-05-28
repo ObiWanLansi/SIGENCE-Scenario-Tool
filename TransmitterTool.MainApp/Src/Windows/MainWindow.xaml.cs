@@ -55,7 +55,7 @@ namespace TransmitterTool.Windows
             sfdExportTransmitter.Title = "Export SIGINT Transmitter File";
             sfdExportTransmitter.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
 #if EXCEL_SUPPORT
-            sfdExportTransmitter.Filter += "Office Open XML File Format (*.xlsx)|*.xlsx";
+            sfdExportTransmitter.Filter += "|Office Open XML File Format (*.xlsx)|*.xlsx";
 #endif
             sfdExportTransmitter.AddExtension = true;
             sfdExportTransmitter.CheckPathExists = true;
@@ -69,12 +69,18 @@ namespace TransmitterTool.Windows
 
             //-----------------------------------------------------------------
 
-            System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
+            //System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.PrimaryScreen;
 
-            this.Width = screen.WorkingArea.Width * 0.6666;
-            this.Height = screen.WorkingArea.Height * 0.6666;
+            //this.Width = screen.WorkingArea.Width * 0.6666;
+            //this.Height = screen.WorkingArea.Height * 0.6666;
 
             SetTitle();
+
+            //-----------------------------------------------------------------
+
+#if DEBUG
+            CreateRandomizedTransmitter( 10 );
+#endif
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -100,7 +106,7 @@ namespace TransmitterTool.Windows
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format("{0} ({1}){2}", Tool.ProductTitle, Tool.Version, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
+            this.Title = string.Format( "{0} ({1}){2}" , Tool.ProductTitle , Tool.Version , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
         }
 
 
@@ -111,30 +117,30 @@ namespace TransmitterTool.Windows
         {
             try
             {
-                if (CurrentFile != null)
+                if( CurrentFile != null )
                 {
-                    sfdSaveScreenshot.FileName = new FileInfo(CurrentFile).Name;
+                    sfdSaveScreenshot.FileName = new FileInfo( CurrentFile ).Name;
                 }
 
-                if (sfdSaveScreenshot.ShowDialog() == true)
+                if( sfdSaveScreenshot.ShowDialog() == true )
                 {
-                    var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
+                    var screenshot = Tools.Windows.GetWPFScreenshot( mcMapControl );
 
                     PngBitmapEncoder encoder = new PngBitmapEncoder();
 
-                    encoder.Frames.Add(BitmapFrame.Create(screenshot));
+                    encoder.Frames.Add( BitmapFrame.Create( screenshot ) );
 
-                    using (BufferedStream bs = new BufferedStream(new FileStream(sfdSaveScreenshot.FileName, FileMode.Create)))
+                    using( BufferedStream bs = new BufferedStream( new FileStream( sfdSaveScreenshot.FileName , FileMode.Create ) ) )
                     {
-                        encoder.Save(bs);
+                        encoder.Save( bs );
                     }
 
-                    Tools.Windows.OpenWithDefaultApplication(sfdSaveScreenshot.FileName);
+                    Tools.Windows.OpenWithDefaultApplication( sfdSaveScreenshot.FileName );
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Error(ex);
+                MB.Error( ex );
             }
         }
 

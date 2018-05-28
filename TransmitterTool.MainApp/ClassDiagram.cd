@@ -4,6 +4,7 @@
     <Position X="7" Y="1" Width="2.25" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
     </Compartments>
     <NestedTypes>
       <Delegate Name="TransmitterTool.Windows.MainWindow.DoForegoroundEvents" Collapsed="true">
@@ -22,6 +23,7 @@
     <Position X="4" Y="1" Width="2.25" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>AACCAAAAAEgAACEAACAIwQQAoCAhAAABABBAAAAAAQA=</HashCode>
@@ -33,6 +35,7 @@
     <Position X="0.5" Y="1" Width="2.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>EMYHSCAgIUiTgCEcgCG44AQAoVAhEEMlpLFBiQkkoVA=</HashCode>
@@ -40,5 +43,19 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Enum Name="TransmitterTool.Models.RxTxType">
+    <Position X="2" Y="8.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TransmitterTool.Models.AntennaType">
+    <Position X="0.5" Y="8.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABA=</HashCode>
+      <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

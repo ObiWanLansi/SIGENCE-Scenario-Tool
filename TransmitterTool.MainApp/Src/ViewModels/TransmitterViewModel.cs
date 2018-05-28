@@ -219,10 +219,10 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public uint Gain
         {
-            get { return Transmitter.Gain; }
+            get { return Transmitter.Gain_dB; }
             set
             {
-                Transmitter.Gain = value;
+                Transmitter.Gain_dB = value;
                 FirePropertyChanged();
             }
         }
@@ -236,10 +236,10 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public uint CenterFrequency
         {
-            get { return Transmitter.CenterFrequency; }
+            get { return Transmitter.CenterFrequency_Hz; }
             set
             {
-                Transmitter.CenterFrequency = value;
+                Transmitter.CenterFrequency_Hz = value;
                 FirePropertyChanged();
             }
         }
@@ -253,10 +253,10 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public uint Bandwith
         {
-            get { return Transmitter.Bandwith; }
+            get { return Transmitter.Bandwith_Hz; }
             set
             {
-                Transmitter.Bandwith = value;
+                Transmitter.Bandwith_Hz = value;
                 FirePropertyChanged();
             }
         }
@@ -270,10 +270,10 @@ namespace TransmitterTool.ViewModels
         /// </value>
         public uint SignalToNoiseRatio
         {
-            get { return Transmitter.SignalToNoiseRatio; }
+            get { return Transmitter.SignalToNoiseRatio_dB; }
             set
             {
-                Transmitter.SignalToNoiseRatio = value;
+                Transmitter.SignalToNoiseRatio_dB = value;
                 FirePropertyChanged();
             }
         }

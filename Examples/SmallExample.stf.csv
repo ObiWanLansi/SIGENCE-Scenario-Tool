@@ -1,0 +1,11 @@
+PrimaryKey;Id;Name;Latitude;Longitude;Altitude;Roll;Pitch;Yaw;RxTxType;AntennaType;CenterFrequency_Hz;Bandwith_Hz;Gain_dB;SignalToNoiseRatio_dB;XPos;YPos;ZPos;StartTime;Remark
+f4cb08b5-7bb0-47ec-8a19-22b11593f497;366;Transmitter #1;49,7601816343069;6,64560975212879;0;0;0;0;HackRF;Unknown;99;63;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+25fb607d-dfb4-4d26-b3d3-3a0a1c982926;-36;Transmitter #2;49,7859767751348;6,62717135353827;0;0;0;0;Unknown;Unknown;91;54;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b6f6b93b-8e0a-4665-ae9d-92edfa09a582;-636;Transmitter #3;49,7614143631818;6,62162978498355;0;0;0;0;Unknown;OmniDirectional;93;67;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a20a55bc-35d7-4c05-9922-f32ba49aaba8;-35;Transmitter #4;49,7606755482659;6,64095948605391;0;0;0;0;Unknown;OmniDirectional;93;31;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2d97f7c1-bea6-4f3f-9f6b-0471bc824bc7;72;Transmitter #5;49,7909519235207;6,66111013528491;0;0;0;0;HackRF;Unknown;85;19;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+98d77912-ee97-4773-aa17-bb6992cf0ede;-176;Transmitter #6;49,7908977934693;6,6255855176439;0;0;0;0;TwinRx;OmniDirectional;88;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8fa48994-cc47-425d-b0cd-d866acc6aa34;339;Transmitter #7;49,7744959017254;6,63718947196728;0;0;0;0;HackRF;OmniDirectional;94;61;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+93244952-4be6-4adb-be83-d08ffe26d325;-57;Transmitter #8;49,78692210699;6,65787705583413;0;0;0;0;TwinRx;OmniDirectional;100;70;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d6fff9d7-afb7-40e6-8ba9-50fbd7e5f241;14;Transmitter #9;49,7589816475673;6,62601004662752;0;0;0;0;Unknown;OmniDirectional;90;40;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d783902a-50ee-47dd-b342-2b2452f4c1b4;-645;Transmitter #10;49,7714274664853;6,63260007112888;0;0;0;0;HackRF;OmniDirectional;87;34;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.

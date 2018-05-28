@@ -17,17 +17,17 @@
 
     <Property Name="RxTxType" Type="RxTxType" Init="RxTxType.Unknown"/>
     <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown"/>
-    <Property Name="Gain" Type="uint" Init="0"/>
-    <Property Name="CenterFrequency" Type="uint" Init="0"/>
-    <Property Name="Bandwith" Type="uint" Init="0"/>
-    <Property Name="SignalToNoiseRatio" Type="uint" Init="0"/>
+
+    <Property Name="CenterFrequency_Hz" Type="uint" Init="0"/>
+    <Property Name="Bandwith_Hz" Type="uint" Init="0"/>
+    <Property Name="Gain_dB" Type="uint" Init="0"/>
+    <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0"/>
 
     <Property Name="XPos" Type="int" Init="0"/>
     <Property Name="YPos" Type="int" Init="0"/>
     <Property Name="ZPos" Type="int" Init="0"/>
 
     <Property Name="StartTime" Type="uint" Init="0"/>
-
     <Property Name="Remark" Type="string" Init="&quot;&quot;"/>
 
 </Transmitter>
