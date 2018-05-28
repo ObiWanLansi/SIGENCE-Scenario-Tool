@@ -11,7 +11,7 @@ using NUnit.Framework;
 
 
 
-namespace TransmitterTool.UnitTest.Framework
+namespace TransmitterTool.UnitTests
 {
     /// <summary>
     /// 

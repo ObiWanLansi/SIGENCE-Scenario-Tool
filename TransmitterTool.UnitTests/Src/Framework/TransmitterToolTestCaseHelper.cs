@@ -13,7 +13,7 @@ using TransmitterTool.UnitTest.Attributes;
 
 
 
-namespace TransmitterTool.UnitTest.Framework
+namespace TransmitterTool.UnitTests
 {
     /// <summary>
     /// 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 
@@ -11,7 +10,6 @@ using TransmitterTool.Extensions;
 using TransmitterTool.Models;
 using TransmitterTool.Tools;
 using TransmitterTool.UnitTest.Attributes;
-using TransmitterTool.UnitTest.Framework;
 
 
 
