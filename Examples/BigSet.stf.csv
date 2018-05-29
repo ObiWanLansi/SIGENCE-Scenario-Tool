@@ -1,0 +1,1010 @@
+PrimaryKey;Id;Name;Latitude;Longitude;Altitude;Roll;Pitch;Yaw;RxTxType;AntennaType;CenterFrequency_Hz;Bandwith_Hz;Gain_dB;SignalToNoiseRatio_dB;XPos;YPos;ZPos;StartTime;Remark
+91988fd4-250d-4e50-b847-4c48fe6a8141;-66;RFDevice #1;49,7538871429058;6,65725240795759;0;0;0;0;Unknown;Unknown;98;24;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a9012a3c-2611-4c2e-893d-845b90e69683;977;RFDevice #2;49,7706019471141;6,61717774467891;0;0;0;0;TwinRx;OmniDirectional;98;11;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c704ffae-0581-45ce-9f10-c40d83211471;-547;RFDevice #3;49,7468137025231;6,62362572551422;0;0;0;0;HackRF;OmniDirectional;86;28;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ce0ca259-ff35-49d5-9841-1843c498783c;-528;RFDevice #4;49,7699096295255;6,65386467827212;0;0;0;0;TwinRx;Unknown;87;47;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c5b8f623-8046-479d-a3ec-c67cf1666729;931;RFDevice #5;49,7492524635154;6,63497003748793;0;0;0;0;HackRF;OmniDirectional;92;30;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c701cdd6-4f95-45b2-8ec2-eace3c4fddf3;-545;RFDevice #6;49,7824546151824;6,66444313894247;0;0;0;0;Unknown;OmniDirectional;88;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bd712f95-adc7-4367-bada-64f419e92f03;813;RFDevice #8;49,7455238160534;6,65205588310135;0;0;0;0;IdealSDR;Unknown;95;31;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4326629c-8a73-4f54-8923-403723733e46;931;RFDevice #9;49,7944962733278;6,64404904655383;0;0;0;0;IdealSDR;OmniDirectional;96;41;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f1a53d24-4741-428c-bfb5-0d711057982d;470;RFDevice #10;49,7569721459554;6,62503558481826;0;0;0;0;HackRF;OmniDirectional;92;40;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ba83115c-6c19-49b6-aafd-81018b7b1600;-669;RFDevice #1;49,7854157588953;6,65456431475229;0;0;0;0;TwinRx;Unknown;97;65;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5e9e4305-41f3-4475-8d0b-f5e9c8979fa5;-754;RFDevice #2;49,7462836670317;6,64204016136114;0;0;0;0;IdealSDR;Unknown;90;12;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3212ee12-ece8-4fd5-9aa8-7db3a997c6b7;-134;RFDevice #3;49,752417709225;6,66136911329891;0;0;0;0;HackRF;Unknown;91;61;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+2c4c8744-68a0-4c3f-a08a-e2dc0b11444a;-283;RFDevice #4;49,7668357206232;6,6233276698569;0;0;0;0;IdealSDR;Unknown;95;30;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+fc5d7775-e4d8-4506-8158-9f1f9f9166a9;123;RFDevice #5;49,779098900502;6,65863429391707;0;0;0;0;IdealSDR;Unknown;96;10;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+680ac11b-0153-4c61-9ac1-0a3ad7a9c5ba;-634;RFDevice #6;49,7815006472195;6,65978619516831;0;0;0;0;IdealSDR;OmniDirectional;89;27;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+adcba2ac-528f-41b2-b2da-cc3087727923;-612;RFDevice #7;49,7699516689609;6,66356188773823;0;0;0;0;Unknown;OmniDirectional;85;43;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bb0132e8-c19b-454f-ab85-1cd8e88259fe;-858;RFDevice #8;49,7687537955551;6,63346931732901;0;0;0;0;HackRF;OmniDirectional;100;77;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+4bff08a7-ce8e-4591-a98d-c4fc6a1e3a63;453;RFDevice #9;49,7455872043825;6,64896943268332;0;0;0;0;Unknown;OmniDirectional;103;79;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c89355da-201c-4357-8275-910320eed13e;-739;RFDevice #10;49,7752813147144;6,62682638669718;0;0;0;0;Unknown;OmniDirectional;94;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+76de5629-132f-4c28-aec4-7aae7bf1ba61;-650;RFDevice #11;49,7796947206852;6,65685911702325;0;0;0;0;HackRF;Unknown;91;17;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+4ba90314-9c95-4467-a096-4e88aff1cf65;-623;RFDevice #12;49,7460171436285;6,61662048329921;0;0;0;0;HackRF;OmniDirectional;96;70;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3ae702a6-b042-4cf8-a44d-481c239f08f4;526;RFDevice #13;49,7614552154603;6,6401742245911;0;0;0;0;IdealSDR;Unknown;91;17;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+95e09a9c-4a30-4829-bb5f-26e4108cb330;3;RFDevice #14;49,7512728232774;6,65597866861908;0;0;0;0;Unknown;Unknown;97;41;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0ad71ca7-6004-4075-88ac-9560694f46f4;-657;RFDevice #15;49,7560899131139;6,62674406313665;0;0;0;0;Unknown;Unknown;95;10;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+eb8272af-06d6-4977-a4e4-ef539865fa6f;805;RFDevice #16;49,7523546182207;6,65252589981203;0;0;0;0;HackRF;Unknown;99;55;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+db5363ac-e80c-4f3e-bea6-79cd9b558a21;463;RFDevice #17;49,7864331324865;6,61983633263043;0;0;0;0;IdealSDR;Unknown;90;54;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b2318563-2c59-466c-9e0e-604a16f7e529;162;RFDevice #18;49,7742273076661;6,66035926076614;0;0;0;0;HackRF;Unknown;90;63;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+035a129f-e419-4ff7-a84f-3c623ea9bb57;111;RFDevice #19;49,7684128939138;6,61907983285346;0;0;0;0;Unknown;OmniDirectional;86;44;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+548c2f59-83af-4adb-8e5b-9cd775d2ae1e;-364;RFDevice #20;49,7512732360163;6,62111496197126;0;0;0;0;HackRF;Unknown;99;35;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+02c6f3ce-09ab-4733-9dc8-33b268429331;-65;RFDevice #21;49,7598057398263;6,62035581309379;0;0;0;0;Unknown;Unknown;92;50;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ae5c2b27-455f-4f7f-81c4-5b97553c0e71;151;RFDevice #22;49,7640817642155;6,62482970164396;0;0;0;0;HackRF;Unknown;95;70;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+7771e9ae-943b-494d-b529-b468a6d516db;-245;RFDevice #23;49,7547559029323;6,65539984507286;0;0;0;0;HackRF;Unknown;98;22;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b9e5c7bd-1ab7-4fdb-be2a-1ed48b6e1d8f;-343;RFDevice #24;49,7895661274499;6,65322008456267;0;0;0;0;Unknown;OmniDirectional;90;31;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f49ade98-44a8-4ac5-98e9-dab2e7aa476e;-578;RFDevice #25;49,752447241976;6,66430793383839;0;0;0;0;IdealSDR;OmniDirectional;101;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a844d05a-0c4d-42ce-9df8-3ce297c8dc90;755;RFDevice #26;49,7543830172756;6,63573922308909;0;0;0;0;Unknown;Unknown;87;50;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2dea5ef1-9947-4cec-9b47-281d61a8f9dd;-507;RFDevice #27;49,7694729647335;6,61504656039427;0;0;0;0;HackRF;Unknown;103;18;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+8576da57-9c53-42ee-8bf8-39862920b4aa;-770;RFDevice #28;49,7685947265208;6,6464560434859;0;0;0;0;TwinRx;Unknown;99;63;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+63fce616-d46c-4767-9cdf-2881bac6f384;-861;RFDevice #29;49,763226514746;6,62182318040269;0;0;0;0;HackRF;Unknown;97;44;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+99fcfc37-bf54-4504-971a-7c38e52a5b90;-708;RFDevice #30;49,776731655421;6,64286613146922;0;0;0;0;HackRF;OmniDirectional;88;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2a27a54d-dc40-43ec-8af6-e0c40c052481;-388;RFDevice #31;49,7951576970606;6,64627709090085;0;0;0;0;TwinRx;OmniDirectional;103;73;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+40c9c513-0c8c-4680-af08-4bca69f905d5;-955;RFDevice #32;49,7542547456585;6,62059245829512;0;0;0;0;TwinRx;OmniDirectional;92;50;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+42ce8c0c-a1ca-4209-98c1-1656927ffbd5;-162;RFDevice #33;49,7503332649936;6,66074204056107;0;0;0;0;TwinRx;OmniDirectional;86;24;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+bdb0dda5-7f4a-4143-a4ba-68c790e96ae5;979;RFDevice #34;49,7667481790718;6,62620665040636;0;0;0;0;HackRF;OmniDirectional;97;49;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+530b9d18-99ab-44de-9761-7799b53a1ab1;412;RFDevice #35;49,7676173653181;6,63163998446983;0;0;0;0;TwinRx;OmniDirectional;86;14;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+fcee6560-0853-424e-8a15-2e3aa1e3ff4b;-113;RFDevice #36;49,7881909827292;6,63864309814709;0;0;0;0;HackRF;Unknown;101;38;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d374d137-bf8c-4135-ba0b-8770230c495d;-902;RFDevice #37;49,7649132394412;6,61745208844438;0;0;0;0;IdealSDR;OmniDirectional;89;22;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+073e86ff-69dc-4894-8153-838750ed88c9;565;RFDevice #38;49,7465508820351;6,64852754326483;0;0;0;0;Unknown;Unknown;97;73;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+bbedf058-2d22-44e8-bb62-fc817eb535b1;212;RFDevice #39;49,7546466779096;6,66393598662887;0;0;0;0;TwinRx;OmniDirectional;104;16;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+55c149bf-ad74-4eab-9d27-a31acae1bab9;-930;RFDevice #40;49,784302924973;6,61928033961895;0;0;0;0;IdealSDR;Unknown;101;15;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+cd9a6986-0048-44c5-bf77-e486ea1818e3;-958;RFDevice #41;49,76936439471;6,62756888126855;0;0;0;0;Unknown;Unknown;93;56;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ddcfb1f0-bb96-4b12-8dec-1175aa3c0511;-478;RFDevice #42;49,7507751379509;6,65630433386965;0;0;0;0;IdealSDR;OmniDirectional;89;40;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+94d5c40b-3484-4037-8f4f-9b502a783285;884;RFDevice #43;49,750393229548;6,6536707796594;0;0;0;0;HackRF;Unknown;98;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+1ffda6f9-a543-4249-a544-90f283ddff5c;-396;RFDevice #44;49,7818899078321;6,62021243034886;0;0;0;0;HackRF;OmniDirectional;85;53;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+540b52c0-ec4e-4502-948d-9946aeb91d7d;893;RFDevice #45;49,7697819667838;6,65521561701108;0;0;0;0;IdealSDR;OmniDirectional;103;64;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+fdcb0125-721c-448b-9f39-85ff03bcabc7;50;RFDevice #46;49,7704316745485;6,63814036102427;0;0;0;0;Unknown;OmniDirectional;85;72;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+67ca4a3b-2112-45e1-a3f7-3bedf9fef2cd;-312;RFDevice #47;49,7581241272771;6,62517706913197;0;0;0;0;TwinRx;OmniDirectional;99;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+2a38ed84-6ec1-49dd-9419-05f7a81fb736;594;RFDevice #48;49,7539555827751;6,64873259062368;0;0;0;0;Unknown;OmniDirectional;88;33;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d3f86f90-2875-4454-9752-f5786789cd11;-31;RFDevice #49;49,7892224595011;6,62046876047308;0;0;0;0;Unknown;OmniDirectional;89;43;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8ab0fae7-7420-40c9-b2a6-0d5f0381fe6b;-357;RFDevice #50;49,7753332257732;6,65579202391491;0;0;0;0;HackRF;OmniDirectional;99;76;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a3026235-414d-438b-91cc-71eed42d5276;668;RFDevice #51;49,7607358177586;6,62224782650012;0;0;0;0;Unknown;Unknown;87;72;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8396e78e-c2ea-469c-aba3-4cdb4f396fd9;-747;RFDevice #52;49,7686189045396;6,63633195908118;0;0;0;0;IdealSDR;OmniDirectional;103;69;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9c0d7ad5-db1a-4c02-9cce-925dd4afb9e0;-682;RFDevice #53;49,7573379138862;6,63853229308912;0;0;0;0;HackRF;Unknown;104;35;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+567bc7d2-af69-45f5-8543-f02bba640694;556;RFDevice #54;49,7552908110568;6,62404368427319;0;0;0;0;HackRF;Unknown;85;18;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+73eec6a6-7bf4-45f3-bc53-0eb3d18ac972;-545;RFDevice #55;49,7656216395737;6,61654046068752;0;0;0;0;IdealSDR;OmniDirectional;94;37;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+34869e47-517b-4715-aa02-33f988dc649b;960;RFDevice #56;49,7902955434118;6,65546019184206;0;0;0;0;Unknown;Unknown;90;62;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e0c570d3-fe9d-4b17-8c86-d5b38a773a21;490;RFDevice #57;49,768437199128;6,62310573221809;0;0;0;0;Unknown;OmniDirectional;98;34;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+19342115-de61-4f7b-bb86-8ab8e07c1491;873;RFDevice #58;49,7459285773662;6,62018889401131;0;0;0;0;TwinRx;Unknown;93;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a3e792cc-f31f-413a-a02d-0c2375b40519;-326;RFDevice #59;49,7632237420823;6,66281853623368;0;0;0;0;Unknown;Unknown;101;33;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+674cdb68-9c09-4444-8780-8e538e41be44;684;RFDevice #60;49,7507297735077;6,62899747373038;0;0;0;0;IdealSDR;OmniDirectional;93;34;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+2323fbd7-561a-46e7-816a-aedc9909c9c9;-104;RFDevice #61;49,7840306198494;6,65048926742318;0;0;0;0;HackRF;Unknown;88;67;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+1a2a6c5e-0c97-4b9e-a955-4ef44de6a68c;-899;RFDevice #62;49,753221688176;6,61889447526037;0;0;0;0;IdealSDR;OmniDirectional;100;40;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+19ebdd6c-9a10-4285-b75e-9e6dc0d17cf9;199;RFDevice #63;49,7815015066673;6,64629485026775;0;0;0;0;HackRF;OmniDirectional;102;47;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+282c527f-6be9-45ba-b328-e2d49aff9b79;-751;RFDevice #64;49,7685015709104;6,62157658623153;0;0;0;0;IdealSDR;OmniDirectional;91;61;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+7259e681-850c-4aa9-9b41-a021354130af;306;RFDevice #65;49,7762703446672;6,62409070740193;0;0;0;0;IdealSDR;Unknown;101;25;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4540af57-d120-486d-aacf-e34892cb0dd9;73;RFDevice #66;49,765998790292;6,65503314984745;0;0;0;0;TwinRx;Unknown;91;34;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2ab8c17c-c8bc-4d31-823e-b01b92b42992;352;RFDevice #67;49,7824403241771;6,63594764961221;0;0;0;0;HackRF;Unknown;103;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0dfd44b8-e7c7-4b08-a778-0a9027ffd182;-519;RFDevice #68;49,785589797869;6,63138121183574;0;0;0;0;HackRF;OmniDirectional;98;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e59da73c-4e11-4e9e-98dd-ef725c232031;-147;RFDevice #69;49,7728221124721;6,63276230032698;0;0;0;0;TwinRx;Unknown;90;66;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bc81ca19-6140-4bcc-9fb6-e08f5e64edba;12;RFDevice #70;49,7675064504339;6,65921019788343;0;0;0;0;Unknown;OmniDirectional;101;20;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7f93dbb3-8108-46b7-90f0-3638dbea4d51;-778;RFDevice #71;49,7481834441526;6,63837823638631;0;0;0;0;TwinRx;Unknown;91;62;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5bd8d3f7-dd12-4933-8f68-03e83e6ce779;-79;RFDevice #72;49,7770013328645;6,661006351235;0;0;0;0;Unknown;Unknown;101;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+8d8c1a1c-076f-4a2d-bf54-34bc2879b031;-471;RFDevice #73;49,7496326704153;6,62967456487006;0;0;0;0;IdealSDR;Unknown;97;44;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+53936e8d-bf62-4a2e-803c-3406064550cf;854;RFDevice #74;49,7786360122042;6,66081101072538;0;0;0;0;HackRF;OmniDirectional;89;42;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3284ccff-1b27-4ead-88fd-4f766d6c6363;306;RFDevice #75;49,7718848683153;6,62990345448265;0;0;0;0;Unknown;OmniDirectional;94;66;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b782c5f1-87ea-4bc9-9850-92a1e3e777fc;588;RFDevice #76;49,7772992097545;6,62856227402522;0;0;0;0;Unknown;OmniDirectional;102;26;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+965f073a-caf0-4189-a57e-a2c3feda8edf;-452;RFDevice #77;49,7465843048973;6,64764433339608;0;0;0;0;IdealSDR;Unknown;103;68;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ca927919-5fc9-411f-a092-b650afb5cbb0;117;RFDevice #78;49,7484415549423;6,65146791601636;0;0;0;0;IdealSDR;OmniDirectional;93;56;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3e20c6a7-623c-4cdd-91e2-cec055fcdc42;-653;RFDevice #79;49,7699445609905;6,62843047998321;0;0;0;0;Unknown;Unknown;89;56;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0044fcb4-7343-49b2-ae2e-c62bdf43b879;-443;RFDevice #80;49,7541104470975;6,63562737099171;0;0;0;0;HackRF;OmniDirectional;95;14;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2aacd28e-acf8-4a8d-a173-2d5c0899e2b0;-156;RFDevice #81;49,7562129806867;6,61794623195112;0;0;0;0;IdealSDR;Unknown;93;74;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e5172ec4-9bac-4bd8-8907-db299bef0edc;395;RFDevice #82;49,7856723912104;6,63508180937515;0;0;0;0;IdealSDR;Unknown;96;61;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ef5bc084-5b8e-43de-9ea3-07fc3e2c4772;933;RFDevice #83;49,7478729007401;6,65364236891919;0;0;0;0;Unknown;Unknown;90;23;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+75520ddf-2a5f-4e2e-ade3-361598b10b66;-269;RFDevice #84;49,7893369456814;6,65142008566378;0;0;0;0;HackRF;Unknown;95;20;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8717c729-975a-429e-b740-78e130a68272;994;RFDevice #85;49,7801175197837;6,65613821474669;0;0;0;0;IdealSDR;OmniDirectional;97;54;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+4909c47d-a8bf-4111-8a5a-72149574bddb;147;RFDevice #86;49,773379383165;6,62923313880783;0;0;0;0;TwinRx;Unknown;95;11;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+ae2e4840-9c03-4db2-83e1-b58a80c1a77a;-120;RFDevice #87;49,7473717834433;6,63305256770614;0;0;0;0;HackRF;Unknown;89;39;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+50bcb131-2cfc-4d2b-a87c-ef758ad4434e;-963;RFDevice #88;49,7950275732059;6,64783139230596;0;0;0;0;TwinRx;Unknown;96;22;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5d5699fa-2610-40da-9dac-881ab6b963a8;308;RFDevice #89;49,7650801969175;6,6222160098434;0;0;0;0;IdealSDR;Unknown;96;11;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1ffd46de-85dd-42b6-89d0-7c0e51d7666e;-185;RFDevice #90;49,7479136505498;6,62893021570948;0;0;0;0;IdealSDR;Unknown;94;28;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+be353351-d7ba-4231-a12f-695a627b46f2;719;RFDevice #91;49,7459404225087;6,65989580543255;0;0;0;0;HackRF;OmniDirectional;102;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bb94e61f-de64-4843-8a09-6fb256f46859;-447;RFDevice #92;49,7784221871068;6,62251385774594;0;0;0;0;HackRF;Unknown;103;10;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+75f6b1d0-4757-410c-b658-2e9cd5a2d6e4;-248;RFDevice #93;49,7499716044747;6,6171259805129;0;0;0;0;HackRF;OmniDirectional;104;78;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b81e4148-7b2b-451d-b856-09f1ef62d46e;-955;RFDevice #94;49,7475589711086;6,65921396948375;0;0;0;0;TwinRx;Unknown;92;23;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6889c629-74b7-4f8f-97a2-d311d4975c53;452;RFDevice #95;49,7857578827811;6,65707001241267;0;0;0;0;TwinRx;Unknown;98;13;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9dd6dc7c-6396-40e0-a860-40fc0e040746;-686;RFDevice #96;49,7632971480894;6,6542082136937;0;0;0;0;IdealSDR;OmniDirectional;98;33;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+dca8bb6c-a97a-464e-a707-d17755bbc67f;-911;RFDevice #97;49,7595970939535;6,64909337455844;0;0;0;0;Unknown;OmniDirectional;102;43;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+df096e79-3303-4d2f-88eb-05d7740bcad1;-950;RFDevice #98;49,7465617317801;6,63817518412996;0;0;0;0;IdealSDR;Unknown;95;70;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ca8cd1ed-668e-4aae-9c58-c2457c3d7462;-65;RFDevice #99;49,7770298528023;6,64686459302304;0;0;0;0;IdealSDR;OmniDirectional;90;32;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6354a84f-1dc1-4e21-8817-b1ab499e2a4c;-930;RFDevice #100;49,7577682400269;6,62746803600703;0;0;0;0;IdealSDR;OmniDirectional;103;42;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+c92f1e60-13ba-4cef-be4a-3a33a18aef4c;423;RFDevice #101;49,7662475774717;6,64884024378338;0;0;0;0;TwinRx;Unknown;91;14;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+fd3ee5cc-7f32-47cb-9b24-c5b4f8c78701;-353;RFDevice #102;49,7923657266033;6,64903260641235;0;0;0;0;TwinRx;OmniDirectional;104;67;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3837a8c3-03ea-40c8-83f3-9a6ccb6dc919;-5;RFDevice #103;49,7887498052849;6,64520935990639;0;0;0;0;Unknown;OmniDirectional;88;36;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+272af94f-af09-426b-a4a5-5388807e52f5;929;RFDevice #104;49,7455700364287;6,6571256428945;0;0;0;0;IdealSDR;Unknown;94;61;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+de04c0d9-2bf3-4780-a522-ce731ef1f1bf;115;RFDevice #105;49,7501137073496;6,63412684350015;0;0;0;0;TwinRx;Unknown;89;27;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+addf43f7-3153-4a40-8a0c-8327b93260e2;134;RFDevice #106;49,7839293346543;6,65777409081258;0;0;0;0;IdealSDR;Unknown;98;41;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+55442cf5-1dc0-4651-8f94-73961bf4a168;-158;RFDevice #107;49,7757599671369;6,64050010036714;0;0;0;0;HackRF;OmniDirectional;98;35;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+9a7dfe27-9e43-4538-b902-389e726af2bd;-915;RFDevice #108;49,7919961846041;6,64889843377247;0;0;0;0;TwinRx;OmniDirectional;102;28;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+cb324261-6fb8-40bb-8321-7ff11a79c2aa;-591;RFDevice #109;49,7738467942679;6,6197186375782;0;0;0;0;IdealSDR;Unknown;90;66;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9aa47bf8-4e7c-424e-be8d-7b5b6953a8aa;243;RFDevice #110;49,7679770489418;6,62545952115476;0;0;0;0;IdealSDR;OmniDirectional;89;19;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+caee7c4e-e7a4-4d59-a5f8-8d0301f68354;105;RFDevice #111;49,7838442471147;6,65419630731665;0;0;0;0;Unknown;Unknown;93;66;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+897bb672-9e3b-4e3c-a92c-1512f5f1bdc8;470;RFDevice #112;49,7865746846471;6,64046412968578;0;0;0;0;Unknown;Unknown;96;58;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+1219c87c-542e-4575-8764-786878d7169c;16;RFDevice #113;49,7457711519997;6,66243941323028;0;0;0;0;IdealSDR;Unknown;91;45;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+62785f1a-02f2-479f-a13b-475ffb4d3005;594;RFDevice #114;49,7568751509444;6,64895337274729;0;0;0;0;Unknown;OmniDirectional;87;28;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+6aece4fe-50bb-4ed6-9ae1-12d067384192;600;RFDevice #115;49,7644451960867;6,62076988583946;0;0;0;0;TwinRx;OmniDirectional;90;72;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+aab9aeea-ad59-4f6d-9ce3-1d940e312a31;521;RFDevice #116;49,7566948693388;6,63493686354497;0;0;0;0;Unknown;Unknown;103;62;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+be275143-047a-4798-8b29-2e5d5decbc92;530;RFDevice #117;49,7705115471474;6,65156217575626;0;0;0;0;HackRF;OmniDirectional;86;61;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ef1c49fe-ad69-4180-855f-c769645e52c7;-463;RFDevice #118;49,7772618952678;6,62499030025922;0;0;0;0;TwinRx;Unknown;104;37;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+ba82de7f-24da-465b-9dd3-10aaaf6de10a;110;RFDevice #119;49,7797645102272;6,62001252170201;0;0;0;0;IdealSDR;OmniDirectional;104;54;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d0bb7ce9-ab72-4ed4-9e06-c24220ba9b32;-763;RFDevice #120;49,7542812527987;6,62916869116922;0;0;0;0;HackRF;Unknown;99;37;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+6adbc6bf-dee5-46f1-ae7e-cca2e2355a98;-35;RFDevice #121;49,7771233347016;6,61933330125624;0;0;0;0;Unknown;OmniDirectional;104;48;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+37c14733-7a9f-415a-a15b-cdec62ae1305;301;RFDevice #122;49,7893530087141;6,63644659380743;0;0;0;0;HackRF;OmniDirectional;88;11;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+46f2ce36-3776-46fa-9c1c-d8fc2aa8b52b;662;RFDevice #123;49,7845766244961;6,62471668469488;0;0;0;0;IdealSDR;Unknown;96;51;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e62bb310-eb05-4b3e-9c8a-d82d025273d6;731;RFDevice #124;49,7698212651506;6,62323477243238;0;0;0;0;IdealSDR;Unknown;92;32;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c5f069e6-c913-424b-bf7c-422383d4e25c;-501;RFDevice #125;49,7610070926299;6,62737661326196;0;0;0;0;IdealSDR;Unknown;93;26;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f43e936e-4a34-44b5-aa69-7803e79a0dfa;-738;RFDevice #126;49,7647981820808;6,64008515164274;0;0;0;0;TwinRx;Unknown;89;22;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f968dcfa-2db8-4466-9a14-286534189b87;-690;RFDevice #127;49,7693469051705;6,64048978524785;0;0;0;0;IdealSDR;Unknown;91;15;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4d760b6a-5a53-4a5c-b291-322e450cc333;-910;RFDevice #128;49,7609067209227;6,62030290372698;0;0;0;0;Unknown;Unknown;94;73;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+80b631cf-f2ab-409a-9d95-d9956a7d9a73;109;RFDevice #129;49,7909424992347;6,62417527712624;0;0;0;0;TwinRx;Unknown;103;75;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5d4836ac-44b9-4e9d-8a38-9ee6c3582433;101;RFDevice #130;49,7765618314968;6,66203329665695;0;0;0;0;HackRF;OmniDirectional;85;25;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+72e7da4f-bc9b-4d70-87a9-3fd270bb8417;-390;RFDevice #131;49,755611423603;6,66165448061747;0;0;0;0;HackRF;Unknown;88;77;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1e70eeda-7704-4d81-87a3-cad315f5f3d1;-545;RFDevice #132;49,7633692290341;6,6184363781748;0;0;0;0;TwinRx;OmniDirectional;91;63;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+9ef43d78-42cf-4741-8868-b26dcb62ce15;-52;RFDevice #133;49,7573808904417;6,6160959956266;0;0;0;0;TwinRx;OmniDirectional;93;13;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+6f74c32d-9cc3-4bbc-8dc6-e56396a1e588;76;RFDevice #134;49,7504608567684;6,64387293338504;0;0;0;0;Unknown;OmniDirectional;98;66;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8b1cf428-e493-4ea3-9788-38984e4cb9b1;-826;RFDevice #135;49,7675901291386;6,64445091734396;0;0;0;0;TwinRx;Unknown;96;37;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3fdb7645-f3fa-46b9-8a96-fa78362eb924;885;RFDevice #136;49,7578816122989;6,64097788451765;0;0;0;0;TwinRx;Unknown;92;16;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a8f66977-3133-40b7-bfa2-5d92adf56fbe;731;RFDevice #137;49,7592722672192;6,66206588149181;0;0;0;0;Unknown;Unknown;96;55;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+60d5efdc-7a6f-43a9-b80d-7e1a5b113a86;-703;RFDevice #138;49,7797123498067;6,65406764298415;0;0;0;0;Unknown;Unknown;85;49;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+2e12ab37-f157-405b-8984-0e3fb319b878;115;RFDevice #139;49,7471846232987;6,63830255769594;0;0;0;0;Unknown;Unknown;87;19;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+74075a08-7330-40ce-93a3-9a3725a9ef8e;701;RFDevice #140;49,7785672684677;6,65000228012926;0;0;0;0;Unknown;Unknown;95;38;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2fcb4037-74d5-45c5-86a5-b1df6a0da555;-994;RFDevice #141;49,7636497849307;6,61805425724404;0;0;0;0;IdealSDR;Unknown;104;13;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a179338e-0802-4859-93ea-ce6b31f7b8ff;590;RFDevice #142;49,7813879099466;6,63803928831049;0;0;0;0;Unknown;Unknown;97;62;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5f9c6f34-da40-40a3-b121-849a2cb04c45;369;RFDevice #143;49,7934313195838;6,66438147733206;0;0;0;0;Unknown;Unknown;89;42;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+21c3b0d5-7ab0-4e68-be82-f163a18ebaf5;-714;RFDevice #144;49,7484829322771;6,66482454014715;0;0;0;0;HackRF;Unknown;102;77;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+018859d9-2021-4e6c-8166-e58f3ade76e6;-455;RFDevice #145;49,7769296811664;6,65342161368752;0;0;0;0;IdealSDR;Unknown;94;68;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+464091fc-edc8-47cb-9070-03ab1d9a96cd;974;RFDevice #146;49,7933184047309;6,61857428779307;0;0;0;0;IdealSDR;Unknown;90;15;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+352f6d30-9541-4a58-9010-3d7a5443fc67;834;RFDevice #147;49,7853062616704;6,61897009553354;0;0;0;0;Unknown;Unknown;97;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f38ad1e0-943c-4a45-baa5-b7391adf9e75;791;RFDevice #148;49,7625592169987;6,66243033367336;0;0;0;0;TwinRx;Unknown;99;54;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+fa5239df-ac2a-4ca7-94b6-292cc705ab55;521;RFDevice #149;49,786505812714;6,64348105431245;0;0;0;0;IdealSDR;Unknown;94;74;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3165883b-34e7-4dd5-9205-906bdd685d59;-754;RFDevice #150;49,7646075820264;6,65553455503929;0;0;0;0;Unknown;OmniDirectional;93;12;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+14c99648-479f-430b-a743-668155d874de;978;RFDevice #151;49,7835588831954;6,63519040126143;0;0;0;0;IdealSDR;Unknown;85;18;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e2246c3d-0585-4b20-81a2-9c835ae0af30;-210;RFDevice #152;49,7951977935708;6,63258167331707;0;0;0;0;TwinRx;Unknown;88;55;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+03925fde-4ad9-43f1-b9b2-a8e68b21e332;-352;RFDevice #153;49,7534056851301;6,62814258156272;0;0;0;0;Unknown;Unknown;102;37;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+414c6c8d-481b-46e1-8bf3-93f7e8714b57;740;RFDevice #154;49,7887814110204;6,65632081196952;0;0;0;0;IdealSDR;Unknown;90;53;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e588cc63-4356-4fef-a10c-a7d9a48fd44a;-388;RFDevice #155;49,75026732207;6,64854317900671;0;0;0;0;IdealSDR;OmniDirectional;96;17;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2f60db4c-9b2f-49f0-a211-73d8aee8b188;399;RFDevice #156;49,7910033057047;6,65406691741402;0;0;0;0;Unknown;OmniDirectional;90;58;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5a917028-b274-4c40-bb11-d6fcac2d9de5;465;RFDevice #157;49,7729425665209;6,6466276548742;0;0;0;0;Unknown;OmniDirectional;88;19;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c7f5e881-dc68-41c9-bae8-60cfc590db10;-255;RFDevice #158;49,7946408617163;6,62527225767987;0;0;0;0;Unknown;OmniDirectional;104;70;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8ab83318-441e-43e1-92e3-7004cb034b21;-247;RFDevice #159;49,7904508690882;6,6312151525037;0;0;0;0;HackRF;Unknown;94;75;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+fea201ed-6ed6-462b-9b8d-4bb0eec77f18;-906;RFDevice #160;49,7709629620168;6,62296016475338;0;0;0;0;Unknown;OmniDirectional;95;29;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+26102783-edff-41cc-97d4-a683df99d342;-652;RFDevice #161;49,7894271691624;6,63498099491712;0;0;0;0;IdealSDR;Unknown;97;29;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b1ee40d9-fee9-42e2-86f2-85b3244aa327;924;RFDevice #162;49,7742957239962;6,65580400114232;0;0;0;0;HackRF;OmniDirectional;88;50;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0e64a053-db25-499c-8d16-2606ab69ddc7;-894;RFDevice #163;49,7786364160722;6,6384981699422;0;0;0;0;IdealSDR;Unknown;90;41;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6183093e-2a14-4b39-a915-f7f66dfff6b0;217;RFDevice #164;49,788729603315;6,66229416791005;0;0;0;0;TwinRx;OmniDirectional;91;78;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+10cd50c1-5352-4a36-a6d1-ece10d2dd4f9;413;RFDevice #165;49,7770293231825;6,6528352448452;0;0;0;0;HackRF;Unknown;97;43;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+54634b23-f823-4723-bcb1-5d4123ab18b1;253;RFDevice #166;49,7551795407333;6,63794396355666;0;0;0;0;Unknown;Unknown;97;39;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7d349189-d1db-4ee3-b729-832941cb1893;872;RFDevice #167;49,7678715410371;6,65254401683008;0;0;0;0;HackRF;OmniDirectional;85;52;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+3731780e-8883-4391-bcac-90d14d1a1b97;-130;RFDevice #168;49,7518895334684;6,64696633894335;0;0;0;0;Unknown;Unknown;97;18;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+80b11684-8ea1-436e-8415-d63a6d69e3dc;187;RFDevice #169;49,7947520039364;6,64630717734648;0;0;0;0;TwinRx;OmniDirectional;90;18;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ae1243a4-9905-4aff-8635-1e4ea47e0037;-624;RFDevice #170;49,7813412911515;6,64564123853852;0;0;0;0;Unknown;Unknown;95;54;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+03d2247a-2172-424d-997a-b2bfdf720304;-105;RFDevice #171;49,7494054950649;6,65143786922178;0;0;0;0;TwinRx;Unknown;95;63;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d5f482c3-c95a-4072-bc0b-42f906f63dc8;-947;RFDevice #172;49,7881250679781;6,65805272888315;0;0;0;0;HackRF;Unknown;99;15;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+50645203-9148-4d73-8d75-58ea6cf28e95;-842;RFDevice #173;49,7867793017349;6,63144442356273;0;0;0;0;TwinRx;Unknown;99;41;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+fcf9854a-6497-4704-bb86-83e0ab921184;-352;RFDevice #174;49,7608307450938;6,62779803463169;0;0;0;0;HackRF;OmniDirectional;101;16;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c57a6ee0-ff07-40d9-a294-c843c23c2956;1;RFDevice #175;49,7774190318078;6,63128877690602;0;0;0;0;TwinRx;Unknown;96;14;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d093d14a-073d-414b-8b9a-e7b386c15607;-549;RFDevice #176;49,7933047681428;6,64938483701073;0;0;0;0;TwinRx;OmniDirectional;98;43;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7d4006db-aaa2-4c30-b2f5-805438103630;283;RFDevice #177;49,7751399617172;6,64959883254017;0;0;0;0;Unknown;OmniDirectional;104;11;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8e55ad50-bd70-4b7d-8af3-0ea8719a9d6c;266;RFDevice #178;49,74893885838;6,62694953797257;0;0;0;0;HackRF;OmniDirectional;93;27;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+95fe09da-a88b-41ff-9ecd-de4a6d434efa;519;RFDevice #179;49,7928263854546;6,66269915253064;0;0;0;0;HackRF;OmniDirectional;94;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+33839718-c978-46b4-b453-f7709d702adf;540;RFDevice #180;49,7591630914169;6,63639926494877;0;0;0;0;IdealSDR;OmniDirectional;102;27;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6a112c06-84cb-47fc-8f2c-ec9a85c0ba8a;663;RFDevice #181;49,7839563866182;6,65036436579687;0;0;0;0;Unknown;OmniDirectional;87;60;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b30d7e62-ae32-4b66-91ce-32f1103258db;237;RFDevice #182;49,7745385578826;6,6630243801993;0;0;0;0;Unknown;OmniDirectional;100;64;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2f957929-7928-489b-a674-48644d73c73e;419;RFDevice #183;49,7701765281819;6,65524400197693;0;0;0;0;HackRF;Unknown;87;17;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+53188598-b6fc-4559-a2ef-bdfed88e9651;-99;RFDevice #184;49,7536845677195;6,62546460871387;0;0;0;0;Unknown;Unknown;85;61;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c1b4b411-cdbc-4795-a200-418cc446e44f;648;RFDevice #185;49,7746792781625;6,63667434657783;0;0;0;0;TwinRx;Unknown;93;13;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d8665a64-d6ff-4d17-af49-f9eca2bc897c;-553;RFDevice #186;49,7668393202781;6,6503185798836;0;0;0;0;Unknown;Unknown;91;25;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d1b7bc7d-2835-4542-b05a-bd64d58a48f3;-1;RFDevice #187;49,7761411478044;6,6304806532435;0;0;0;0;TwinRx;OmniDirectional;100;75;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b930d1dc-9623-443a-a973-6617021b30a6;315;RFDevice #188;49,7728611364479;6,63370028148591;0;0;0;0;Unknown;Unknown;101;78;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d4344ed4-d256-48ed-8ec5-4421b9e1c3c0;701;RFDevice #189;49,755880200411;6,66395478386164;0;0;0;0;TwinRx;OmniDirectional;90;17;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d3d5e647-2bc9-495f-bbd1-1707ce01171a;-121;RFDevice #190;49,7534293742744;6,62695584030228;0;0;0;0;HackRF;OmniDirectional;91;54;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d33b5b33-d074-4067-a3e5-1eff4ef7a65a;895;RFDevice #191;49,7569318116087;6,63563742301238;0;0;0;0;Unknown;Unknown;89;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+52053f3b-7089-4139-9712-4f2ece30b79d;285;RFDevice #192;49,7830433077444;6,65746265260864;0;0;0;0;IdealSDR;OmniDirectional;86;62;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+65356e85-8ca1-4418-84cf-732d401fb946;-110;RFDevice #193;49,7498810705606;6,66190202932442;0;0;0;0;HackRF;OmniDirectional;94;53;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b5271b84-9d92-4e00-a8a5-d83dc3258adb;1;RFDevice #194;49,7465661462724;6,618773049749;0;0;0;0;Unknown;Unknown;98;26;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+70cfdd3a-3539-430c-89e1-d181d4cad8ba;816;RFDevice #195;49,7585839971352;6,61616655276458;0;0;0;0;TwinRx;OmniDirectional;86;75;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+90a37898-f319-4994-b8a2-a3e6c35725a1;60;RFDevice #196;49,7923230673029;6,61898232100498;0;0;0;0;TwinRx;OmniDirectional;104;26;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d2dc4563-a81f-46c5-af07-19df163c046c;-168;RFDevice #197;49,7867747711533;6,65684247987677;0;0;0;0;HackRF;OmniDirectional;91;62;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+05348476-4ab1-417f-a2d3-c7b115419398;208;RFDevice #198;49,7544697416379;6,63628854818018;0;0;0;0;TwinRx;OmniDirectional;100;45;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+08d159e0-6b94-42de-aa41-0a19618de48d;22;RFDevice #199;49,7712058125273;6,62709174673883;0;0;0;0;Unknown;OmniDirectional;86;11;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+179f135f-4f50-448c-97b5-77bf907dd7a0;-682;RFDevice #200;49,7606049084963;6,65385863880821;0;0;0;0;HackRF;OmniDirectional;85;67;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f2a6eabd-1e05-4319-9bdb-2074ddc411de;560;RFDevice #201;49,7814155696217;6,63973282597961;0;0;0;0;TwinRx;Unknown;102;76;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+ed1dc86f-e550-497b-81ff-8711317d5573;17;RFDevice #202;49,7739719256748;6,6182558827142;0;0;0;0;IdealSDR;Unknown;90;44;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+51f5f576-04f0-455b-a857-805a53a6d945;-128;RFDevice #203;49,7502768681264;6,61940662996364;0;0;0;0;Unknown;Unknown;94;30;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+775c1221-b51f-4211-88ab-f437d4b7ac92;618;RFDevice #204;49,7678418218352;6,62449899710007;0;0;0;0;IdealSDR;Unknown;91;12;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e16625e3-9358-43db-add0-ab7af8b2a98e;-274;RFDevice #205;49,7898408009734;6,65913598637536;0;0;0;0;HackRF;OmniDirectional;100;21;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+4c6570ea-961a-439a-9845-f024ba0db2cf;127;RFDevice #206;49,7787656701182;6,62854717197774;0;0;0;0;HackRF;OmniDirectional;101;63;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+859cb31f-5f51-4cad-99c1-16911e2cf7cb;610;RFDevice #207;49,7461691524926;6,66403439773914;0;0;0;0;HackRF;Unknown;103;67;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d997e55e-73f7-447f-a1a0-c128c8a93ee5;-159;RFDevice #208;49,7530683394414;6,66008453543781;0;0;0;0;HackRF;Unknown;102;11;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e0efd255-a28d-47a4-9c8e-3cba6cbf2155;59;RFDevice #209;49,7697969202621;6,65744059637549;0;0;0;0;TwinRx;OmniDirectional;86;44;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e33e4841-d71b-4847-b7c2-cb568640a0f3;866;RFDevice #210;49,7688570375054;6,63167454894724;0;0;0;0;IdealSDR;OmniDirectional;101;33;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f98bfbbb-1ccb-4ba7-add8-ca9ee5bd7b60;372;RFDevice #211;49,7602805452114;6,6285539308185;0;0;0;0;TwinRx;OmniDirectional;99;55;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e8e973aa-d5ac-4774-99b7-3fc8a2318150;-865;RFDevice #212;49,7736656207812;6,66471811998869;0;0;0;0;IdealSDR;Unknown;100;74;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3a43e53d-4464-455b-ae25-979bd6c355aa;286;RFDevice #213;49,7503982261402;6,66272303077999;0;0;0;0;TwinRx;Unknown;85;45;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0e0baf13-e29f-4492-9600-7051306b685e;42;RFDevice #214;49,7621753973588;6,6339546033527;0;0;0;0;HackRF;Unknown;100;19;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b2c59d42-61d3-4d09-8dcc-ee42a7eeadd4;631;RFDevice #215;49,7903265326582;6,64914910634488;0;0;0;0;HackRF;Unknown;94;67;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7ba7d8b3-6bff-488a-9226-e40fac3b83ef;687;RFDevice #216;49,7657341132823;6,64842561699391;0;0;0;0;Unknown;OmniDirectional;92;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+7e7aedec-89c3-4130-9df6-f80482ac718d;92;RFDevice #217;49,7776974101092;6,63527587171438;0;0;0;0;IdealSDR;Unknown;101;13;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+53398e0e-96b7-4e0a-9de9-be21f475086e;567;RFDevice #218;49,7728687995796;6,61568552451487;0;0;0;0;IdealSDR;OmniDirectional;88;70;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+cefe5c2c-c5ee-43a4-bed7-3060a5b6edaa;-132;RFDevice #219;49,7648747395904;6,62992408548958;0;0;0;0;Unknown;OmniDirectional;95;16;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+95732182-eaa7-430f-8fd8-e9692e8e3dd3;-440;RFDevice #220;49,7531192958247;6,64861278598612;0;0;0;0;TwinRx;OmniDirectional;98;54;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3bd4ae37-bc8b-4298-9c4a-860e1512879c;147;RFDevice #221;49,7574411914131;6,66086746680139;0;0;0;0;Unknown;OmniDirectional;85;62;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+31a57f29-3697-46fe-98ab-57707a47b46b;693;RFDevice #222;49,7465564060818;6,64575554674308;0;0;0;0;IdealSDR;OmniDirectional;101;41;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+2ef266d2-53c1-4652-9053-520f8319b4fc;92;RFDevice #223;49,7640314002697;6,63394791722495;0;0;0;0;TwinRx;OmniDirectional;100;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f343e85e-367e-4e7f-a36d-c7e98cac7117;114;RFDevice #224;49,757960333038;6,6553011079764;0;0;0;0;TwinRx;OmniDirectional;95;31;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5beb0877-fed5-4b1d-995f-fecff9fd2beb;822;RFDevice #225;49,7889955393564;6,63709357573064;0;0;0;0;IdealSDR;OmniDirectional;103;75;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a8c6a031-feb4-4e92-9ea9-a866be9ea59f;279;RFDevice #226;49,7606023281507;6,62191065813518;0;0;0;0;IdealSDR;Unknown;85;57;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+36e07f8e-8ee1-4253-b6fa-ecaec2be5de4;397;RFDevice #227;49,7458545090722;6,61492472943162;0;0;0;0;Unknown;OmniDirectional;103;14;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7e46a1f5-aa97-403b-b83a-a57b2eeae594;-583;RFDevice #228;49,7901496884245;6,63391477797377;0;0;0;0;IdealSDR;OmniDirectional;85;69;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5fa93d78-4a01-4362-a982-bfb76189bdfd;430;RFDevice #229;49,7720316109228;6,62192752541147;0;0;0;0;TwinRx;OmniDirectional;92;38;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+bab8042e-61b0-4e53-b2c1-9c2d3c97d4f7;-126;RFDevice #230;49,7949017181847;6,6176985384468;0;0;0;0;Unknown;Unknown;103;18;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+519e51a2-4482-4ba7-8c57-5214db2fdb07;132;RFDevice #231;49,7619024785402;6,61511011638465;0;0;0;0;IdealSDR;Unknown;91;63;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+90ad835a-2c6f-4d01-8b97-8f3b4289b667;610;RFDevice #232;49,7776451296645;6,65974397915417;0;0;0;0;HackRF;Unknown;101;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+1404eb08-5ecc-46aa-bc05-4c8ed7e53241;-95;RFDevice #233;49,7853338242085;6,63339803049979;0;0;0;0;HackRF;Unknown;86;18;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+c0f66c65-c540-4a0e-870d-2bceaa680bc5;206;RFDevice #234;49,7642599910442;6,64209076912719;0;0;0;0;HackRF;Unknown;90;21;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+8fd01827-1620-4516-bde3-b593ca257341;551;RFDevice #235;49,7883968217821;6,64216044295228;0;0;0;0;Unknown;OmniDirectional;99;68;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6d05c51e-3fbc-4d99-a43f-a602720338aa;532;RFDevice #236;49,7540000845575;6,65460618440756;0;0;0;0;TwinRx;OmniDirectional;85;15;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+96b30e03-9815-4b9c-836c-2e1ef92a5c3a;668;RFDevice #237;49,7685401238233;6,63090966482237;0;0;0;0;Unknown;Unknown;99;53;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9a0ca13a-0c6e-496b-996c-18c3c97104c4;-580;RFDevice #238;49,7781846694657;6,64155401831113;0;0;0;0;IdealSDR;Unknown;93;15;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+67e76286-80e9-4de7-b714-e9031d7f8b1f;-39;RFDevice #239;49,7771700554066;6,6443284450493;0;0;0;0;TwinRx;OmniDirectional;90;48;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+88d11967-1cd9-40ce-b62d-767f7504ec49;923;RFDevice #240;49,7944968901194;6,64520277890167;0;0;0;0;TwinRx;OmniDirectional;93;72;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+ec086291-a259-4ea5-b695-ca4210bedbc0;-408;RFDevice #241;49,7919246590769;6,63959384797136;0;0;0;0;HackRF;Unknown;91;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+628f277d-0d5b-41af-8814-7b1850160554;-528;RFDevice #242;49,7486399614124;6,64963315980971;0;0;0;0;HackRF;OmniDirectional;99;52;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+213402aa-f6be-478c-831d-9c6c0a4e0af5;-821;RFDevice #243;49,7595280121934;6,62654333916346;0;0;0;0;Unknown;OmniDirectional;92;33;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+78eed7c7-1dac-43d9-aee1-ec4e18fb80c1;824;RFDevice #244;49,774518120451;6,65860523243849;0;0;0;0;TwinRx;OmniDirectional;102;23;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e0e1d515-a298-4695-bfea-cd02eae4fc2f;520;RFDevice #245;49,7939927901457;6,65645008189452;0;0;0;0;Unknown;Unknown;98;47;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4ab701e6-c7c9-4767-b7a5-75248f3f6144;902;RFDevice #246;49,7734030935202;6,63723009614159;0;0;0;0;IdealSDR;Unknown;88;48;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+bca0dc50-4010-4294-874b-aeeeeb035eb7;-246;RFDevice #247;49,759304121804;6,64662436569898;0;0;0;0;IdealSDR;OmniDirectional;86;17;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e131fa1e-b18c-4727-a067-ba4ccecf0a2b;191;RFDevice #248;49,7909236263087;6,64047766506242;0;0;0;0;HackRF;OmniDirectional;86;72;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6f3bee66-4c8a-40a5-8043-f0bc0a01f554;751;RFDevice #249;49,7899281520693;6,64621777445381;0;0;0;0;IdealSDR;Unknown;100;36;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+aed98530-3470-4538-9704-98dd93b59c63;488;RFDevice #250;49,7494394653818;6,65823707254535;0;0;0;0;Unknown;Unknown;87;11;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+68933f34-79e7-4975-962d-8f5d58a2d0da;-948;RFDevice #251;49,7764837474564;6,62580953145684;0;0;0;0;Unknown;OmniDirectional;88;54;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+fdf5e285-c72e-43d9-9fce-aeed4093f53f;727;RFDevice #252;49,7920310465227;6,627737310607;0;0;0;0;IdealSDR;OmniDirectional;87;58;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+28432f25-e85b-400e-adc8-f57a638e1789;345;RFDevice #253;49,750901278958;6,63179863119596;0;0;0;0;TwinRx;Unknown;91;36;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+814b6621-ac56-4529-a8de-8e624224b8c9;789;RFDevice #254;49,7555425762103;6,62812983704192;0;0;0;0;IdealSDR;OmniDirectional;89;76;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7df774ee-1534-4dd6-87db-a078b7a709ab;766;RFDevice #255;49,7835608237457;6,6331305762862;0;0;0;0;Unknown;Unknown;85;15;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6c951ec5-4f59-4797-bc1a-bd412c6ccecd;-481;RFDevice #256;49,7925608374255;6,6322088566015;0;0;0;0;Unknown;OmniDirectional;91;29;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+ec4b5f7e-bfa2-428a-b871-d0c8e8c05ea6;-234;RFDevice #257;49,7456283167794;6,62593198733694;0;0;0;0;Unknown;Unknown;92;24;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5e561e2a-7928-481c-b578-713640529b47;-505;RFDevice #258;49,7750626571471;6,66332108800002;0;0;0;0;IdealSDR;Unknown;95;43;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+94fc10cd-3453-4408-8efc-ad48cedb326f;971;RFDevice #259;49,7844694651469;6,62243708670732;0;0;0;0;HackRF;Unknown;102;79;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+15259852-b8b9-40f0-863f-4d143c2e06d7;-924;RFDevice #260;49,7774864946032;6,63518482652748;0;0;0;0;TwinRx;Unknown;93;19;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8648314b-bd27-4a52-a1c8-408d03a803f4;835;RFDevice #261;49,7787582069182;6,65037802026639;0;0;0;0;IdealSDR;Unknown;87;58;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+4c30fc44-85ff-4946-b1c8-2f4786c240e3;104;RFDevice #262;49,7795960703648;6,6441521909714;0;0;0;0;HackRF;OmniDirectional;85;64;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3e92a048-faa0-4174-b631-8100b7746af1;-59;RFDevice #263;49,7802489781305;6,66290157018378;0;0;0;0;TwinRx;OmniDirectional;103;67;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e9c5ed82-18be-4049-955d-19a81aafe119;-974;RFDevice #264;49,7740295490473;6,65505248121701;0;0;0;0;IdealSDR;Unknown;97;57;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+16aeb0ac-0b9a-432f-b8ce-73fd98f6e231;-73;RFDevice #265;49,7665757605994;6,62210622458365;0;0;0;0;IdealSDR;Unknown;90;55;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+713114f7-4a92-4b6b-aafd-cb98f3a466bb;-823;RFDevice #266;49,7768622626786;6,65646078763379;0;0;0;0;IdealSDR;OmniDirectional;99;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+79565153-7ef9-4d83-b555-d586d4d14392;721;RFDevice #267;49,7795947309832;6,62107880909991;0;0;0;0;HackRF;OmniDirectional;93;34;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+799f4a96-ba8a-43b4-8db4-619a2bc1927f;704;RFDevice #268;49,7549778573116;6,62454275035525;0;0;0;0;HackRF;OmniDirectional;96;49;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5c635a8b-27f0-4010-85af-22c77e23897d;-995;RFDevice #269;49,7836848701152;6,6555900109447;0;0;0;0;TwinRx;Unknown;95;72;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+470ce3f7-f78a-431a-b653-53783a40c452;-917;RFDevice #270;49,7493861670481;6,64616892632864;0;0;0;0;TwinRx;OmniDirectional;99;26;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1819adde-41fc-4257-b8be-19688854d3fe;961;RFDevice #271;49,7841063723703;6,62891178599988;0;0;0;0;HackRF;OmniDirectional;92;34;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+72b026fa-7f76-4f70-b382-4e687394ab97;-846;RFDevice #272;49,751771773177;6,63469277817057;0;0;0;0;TwinRx;OmniDirectional;89;50;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+65577030-48a3-4f66-8402-74a4e19d8522;-873;RFDevice #273;49,790174987453;6,61968205802142;0;0;0;0;TwinRx;Unknown;104;21;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1875fd69-ec22-495d-bb22-1b3d82ac7c85;581;RFDevice #274;49,7913713067841;6,62793864832178;0;0;0;0;HackRF;Unknown;100;76;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a1acbf79-8a74-44eb-89de-1a8d8ad43dd2;907;RFDevice #275;49,7900776309724;6,63694164351432;0;0;0;0;TwinRx;OmniDirectional;90;40;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6d42a765-cefb-4b56-bc73-91f95a0a9c54;-171;RFDevice #276;49,783678949069;6,64265564581517;0;0;0;0;TwinRx;OmniDirectional;90;19;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+8e291a5f-bb83-47a9-9ccc-fdb5c454c83d;3;RFDevice #277;49,7498300616972;6,64019371284195;0;0;0;0;IdealSDR;Unknown;99;37;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+eebca837-9944-4981-9a4e-51d977efa331;221;RFDevice #278;49,7930341023332;6,63897548207514;0;0;0;0;TwinRx;OmniDirectional;104;28;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+59342dc1-f1fc-4248-bef7-bfa4767dc3c7;-639;RFDevice #279;49,758412918347;6,64906931642414;0;0;0;0;IdealSDR;Unknown;85;28;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+777ee7ff-8623-42a9-ad98-42a6c266dbe8;-95;RFDevice #280;49,768962072601;6,61988564776731;0;0;0;0;IdealSDR;OmniDirectional;93;23;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+61438994-a9c4-46f8-bbc5-508103517cea;577;RFDevice #281;49,768027249487;6,65923694153295;0;0;0;0;TwinRx;OmniDirectional;100;46;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+10ed16c5-976e-4c16-88f9-b0595e774ad7;-12;RFDevice #282;49,76637591491;6,66078358450955;0;0;0;0;HackRF;Unknown;102;45;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9352c72c-d16d-4e03-888e-836e518f904a;14;RFDevice #283;49,7581015047999;6,6427550732312;0;0;0;0;Unknown;Unknown;104;11;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+bdf85d06-3dfe-4ba3-84b8-ac0b2791ed5d;646;RFDevice #284;49,7821747738197;6,65098759361603;0;0;0;0;IdealSDR;Unknown;90;53;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b6d38fbd-8e58-4657-8d48-905447f7de11;524;RFDevice #285;49,7927622895998;6,65413416109254;0;0;0;0;TwinRx;OmniDirectional;96;12;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e22cb870-4b3a-4557-ad17-842b153277a6;491;RFDevice #286;49,7680747495228;6,64918970262608;0;0;0;0;HackRF;OmniDirectional;103;77;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+731f4cdb-9e3d-4a9c-95ea-ab68046431f4;929;RFDevice #287;49,7777838822229;6,64625025071974;0;0;0;0;IdealSDR;Unknown;91;77;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7beb2ea2-3356-4d12-9cb9-4f36ce27e047;-126;RFDevice #288;49,7671318664173;6,65880357797681;0;0;0;0;TwinRx;OmniDirectional;92;52;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+0423f2c3-b3ff-4dea-adb0-2f46317f1a3e;604;RFDevice #289;49,782035777511;6,64272919049628;0;0;0;0;Unknown;OmniDirectional;101;36;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+3fcd7b16-bf6e-4a15-923a-6b183249d8c3;-554;RFDevice #290;49,7528142693576;6,62147082223639;0;0;0;0;IdealSDR;OmniDirectional;97;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a161fffc-6e15-4bcb-957b-e043fff3a03e;553;RFDevice #291;49,7522978973696;6,62415726129639;0;0;0;0;Unknown;Unknown;94;32;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+fc3b2d23-abe6-48d3-a5ee-3047d2d55e6f;971;RFDevice #292;49,7927056910081;6,62630049936315;0;0;0;0;TwinRx;Unknown;94;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3e6deaa5-217a-48b4-8f07-3bf3b10680aa;695;RFDevice #293;49,7682109961482;6,64344252307608;0;0;0;0;HackRF;OmniDirectional;86;44;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3db8b505-641c-4c15-aa4c-b9c4063f81e8;-458;RFDevice #294;49,7792044847053;6,66123612802547;0;0;0;0;TwinRx;OmniDirectional;101;50;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+84069f57-839f-495d-a117-660671b9b0f1;-771;RFDevice #295;49,7454408557011;6,65280236734222;0;0;0;0;Unknown;OmniDirectional;97;51;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a554650a-f8d3-413f-8d72-61805f8a9479;-168;RFDevice #296;49,7507780161568;6,65883435278625;0;0;0;0;IdealSDR;Unknown;99;29;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6a572616-2cb1-4a4d-9270-a5cea503e580;579;RFDevice #297;49,7829447357714;6,62849458279963;0;0;0;0;Unknown;OmniDirectional;103;44;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d244bed6-235c-4a26-a812-8c3e2f705afd;277;RFDevice #298;49,7485117118909;6,6501407057468;0;0;0;0;Unknown;Unknown;96;28;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+9e8f89a2-1aa6-4446-a956-612d048580bf;-256;RFDevice #299;49,7670520638306;6,64123195266888;0;0;0;0;TwinRx;Unknown;93;24;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c92aeadb-4c2a-4960-b157-345106ee9303;728;RFDevice #300;49,7571655444247;6,66405119337344;0;0;0;0;HackRF;OmniDirectional;92;45;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3f99e81e-dcde-4a60-ba32-888e84a68913;-193;RFDevice #301;49,7553386431556;6,66142489234997;0;0;0;0;HackRF;Unknown;100;60;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+82456639-b9d5-4738-8058-90fa302e4a86;26;RFDevice #302;49,7491476531247;6,62858926419583;0;0;0;0;IdealSDR;Unknown;97;65;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ecb30955-16de-4c2a-b025-10ccbbada9dc;680;RFDevice #303;49,7821303081493;6,65320605858858;0;0;0;0;IdealSDR;OmniDirectional;96;79;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+25a3e49f-14a3-4f19-bbed-bdadc105cf0f;100;RFDevice #304;49,7480985046234;6,66209863673542;0;0;0;0;Unknown;Unknown;89;42;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5c6b7e59-eed1-44d1-a831-2a1b2526a8a5;105;RFDevice #305;49,7538179902954;6,64279889477561;0;0;0;0;HackRF;Unknown;101;50;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+965de2e1-a427-4cfe-9669-be2bb189bcfc;418;RFDevice #306;49,7620436144228;6,62312510652161;0;0;0;0;TwinRx;OmniDirectional;86;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a81a14d6-f887-44ec-81c4-a7ecb0d9babd;-121;RFDevice #307;49,7535477238369;6,63697971572507;0;0;0;0;HackRF;Unknown;91;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+cfc39f74-1bf9-4f52-a3f8-7a2465e1fea4;-584;RFDevice #308;49,7747504343039;6,65893812535761;0;0;0;0;TwinRx;Unknown;102;27;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+72fad0c7-02b7-4b26-9287-c400fd2e7ed7;214;RFDevice #309;49,7952228445881;6,64313721905157;0;0;0;0;Unknown;OmniDirectional;94;20;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e71fc97c-9077-4c93-8b1a-1f7a1107a9ba;-680;RFDevice #310;49,7533816097198;6,63845905374212;0;0;0;0;Unknown;OmniDirectional;91;21;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b96e1ab0-9180-4cb3-bf37-190143fce64e;521;RFDevice #311;49,7808886117324;6,63470232650871;0;0;0;0;Unknown;Unknown;104;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2678cf2a-42ba-4de5-ad87-907e731e14a2;680;RFDevice #312;49,7828521657999;6,62155476322484;0;0;0;0;IdealSDR;Unknown;86;64;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f139716a-baca-4f4d-bdb9-76ebd2ffe0cd;-847;RFDevice #313;49,7882453664728;6,61767312770615;0;0;0;0;IdealSDR;Unknown;95;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+6a3b776d-2482-4d02-9976-ae8848e70c98;-983;RFDevice #314;49,7672601600602;6,63090546595454;0;0;0;0;HackRF;Unknown;94;36;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e7a8d245-8c2b-448f-85d4-d6cbd767ddd0;-169;RFDevice #315;49,7660731817548;6,65265565486297;0;0;0;0;IdealSDR;OmniDirectional;94;48;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+7bdbb531-0a17-4001-a221-f354b124ff4c;-372;RFDevice #316;49,7624298574339;6,66070938964887;0;0;0;0;HackRF;OmniDirectional;86;13;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+02d3ddbd-cf71-4ed5-b5bc-f350f3bbfdbf;-251;RFDevice #317;49,7778748306454;6,65483190866426;0;0;0;0;TwinRx;OmniDirectional;104;76;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+7e7e6044-28ef-41a6-9a27-ca0e26dc8918;95;RFDevice #318;49,7659041179063;6,65321061431594;0;0;0;0;HackRF;Unknown;89;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9f94665f-fd77-428b-867d-26fd715bb3a6;-260;RFDevice #319;49,758037172296;6,64803608201367;0;0;0;0;TwinRx;OmniDirectional;98;33;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+7617db55-e0d5-4975-b2fc-e04cdd98ca6c;-374;RFDevice #320;49,7671847997424;6,65799011343545;0;0;0;0;IdealSDR;Unknown;101;56;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bd775dcc-1ee1-4fd4-afec-570867e8e094;-224;RFDevice #321;49,7562874531281;6,61793178755708;0;0;0;0;IdealSDR;Unknown;101;52;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+f6b9daed-c283-4d0a-acfb-b25bc43852a3;-72;RFDevice #322;49,7719427561135;6,64310548952008;0;0;0;0;IdealSDR;Unknown;89;76;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+eebd1bb8-9e57-4346-ac7d-492828539274;948;RFDevice #323;49,7718238682699;6,66254098224586;0;0;0;0;IdealSDR;OmniDirectional;95;65;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+76a3cc1d-1f4e-43ec-92fd-20b138074c52;-362;RFDevice #324;49,7555485159528;6,62790130829355;0;0;0;0;Unknown;OmniDirectional;100;52;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+314c7b87-1d9c-4a68-b702-7c5073859c76;489;RFDevice #325;49,787063862598;6,66183332610043;0;0;0;0;HackRF;OmniDirectional;88;61;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b9e2d20c-d5df-4788-85c8-698f626e3675;289;RFDevice #326;49,7574884848582;6,61877276467116;0;0;0;0;Unknown;OmniDirectional;89;71;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+efd4550a-43ae-41ba-a8cc-9711d37cc30e;-34;RFDevice #327;49,7851209432627;6,62507947970432;0;0;0;0;IdealSDR;Unknown;96;46;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5ecfddd1-b09f-458e-9dc0-2b29a6b375f3;-164;RFDevice #328;49,763338587171;6,65933197610994;0;0;0;0;HackRF;Unknown;100;30;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+46de0f34-4053-48bb-8f03-4db7f8ef1667;854;RFDevice #329;49,7881580574028;6,63172789424287;0;0;0;0;Unknown;OmniDirectional;95;71;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+354b8425-2343-4f76-9078-337ba01d186c;589;RFDevice #330;49,7647923592891;6,63606296529824;0;0;0;0;IdealSDR;OmniDirectional;85;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e2d2f5ff-5918-44e3-95a9-606477d222f8;-356;RFDevice #331;49,7535772039682;6,63258374287881;0;0;0;0;HackRF;Unknown;95;67;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f756844e-e9d3-4394-a7e1-9499e51bda7c;-374;RFDevice #332;49,7482893527821;6,61645169335266;0;0;0;0;Unknown;OmniDirectional;90;11;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+807de9a5-644a-427e-88e7-955289efd042;908;RFDevice #333;49,7646257749472;6,65715643023022;0;0;0;0;HackRF;Unknown;104;67;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+6799ff65-33cb-475d-b4db-78abc22e5385;826;RFDevice #334;49,7648011224058;6,62976273287556;0;0;0;0;HackRF;OmniDirectional;91;41;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+560f6bc9-8550-468b-a850-ce135a5c61a0;531;RFDevice #335;49,7862838987308;6,62133373572101;0;0;0;0;HackRF;OmniDirectional;103;18;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+33570024-af73-4a25-bdae-3e93a3145aab;-936;RFDevice #336;49,7548253193631;6,64332146755588;0;0;0;0;IdealSDR;OmniDirectional;86;48;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+95880e43-306d-4e55-8c32-3550023b9976;-264;RFDevice #337;49,7728728850124;6,62575627491626;0;0;0;0;IdealSDR;OmniDirectional;91;21;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5f0347ae-5357-4e6d-b0cc-fccbfa2d0372;-310;RFDevice #338;49,7640852058017;6,6361794650678;0;0;0;0;IdealSDR;OmniDirectional;91;78;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1cda9b9f-30c7-4c4e-870f-79b85b9195ea;213;RFDevice #339;49,7773909359477;6,61798358047767;0;0;0;0;HackRF;OmniDirectional;97;41;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+6fa5d458-d663-4cc7-b96b-5f4b90d067af;-482;RFDevice #340;49,7668983849653;6,62597230387212;0;0;0;0;TwinRx;OmniDirectional;96;45;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0fc9bead-f9fc-4fbd-bbae-46b8d02ae13f;684;RFDevice #341;49,7846683125051;6,62139715604097;0;0;0;0;TwinRx;OmniDirectional;93;24;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+bf76400f-5917-410c-98b4-890369a087a8;317;RFDevice #342;49,7856678817232;6,61672930715467;0;0;0;0;IdealSDR;Unknown;103;24;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6e796d49-cc0a-4523-b104-bb558f20a767;-572;RFDevice #343;49,7755989302878;6,64558368790237;0;0;0;0;Unknown;Unknown;86;35;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+909b0b03-d3d4-4b40-9f6b-9767539fa80a;-814;RFDevice #344;49,756000207099;6,65419172208965;0;0;0;0;Unknown;OmniDirectional;93;72;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+862a743c-b5b3-447f-8468-f514ede860f1;731;RFDevice #345;49,7737082730501;6,63177755175721;0;0;0;0;HackRF;OmniDirectional;92;68;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+009aa6cd-f1f8-4ef9-b262-dac576ff895a;-139;RFDevice #346;49,7771649385108;6,65457522070262;0;0;0;0;HackRF;Unknown;93;43;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e085d2a3-4a61-470a-9eb3-b34957c75dcf;-542;RFDevice #347;49,7710999167035;6,64036412440737;0;0;0;0;Unknown;Unknown;98;70;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a67ec3a5-177b-4801-91ea-ecdd053f7979;-145;RFDevice #348;49,7653774483312;6,64145864014596;0;0;0;0;Unknown;Unknown;94;31;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b9191574-5e58-41c7-afab-d67f1946151f;825;RFDevice #349;49,7598666986142;6,62379265672718;0;0;0;0;Unknown;Unknown;100;45;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+907c2614-3f6a-4621-b320-e52c6a8ef0cb;542;RFDevice #350;49,766040351144;6,63498146097422;0;0;0;0;HackRF;OmniDirectional;85;19;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+67dfe90b-c562-456d-a879-a4b83711b978;460;RFDevice #351;49,7689821902163;6,64103349248475;0;0;0;0;TwinRx;Unknown;86;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+76a6fdac-d39d-49e0-a97e-fb382ea6a14e;397;RFDevice #352;49,7748425017105;6,61498163182069;0;0;0;0;Unknown;Unknown;103;50;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+220939fd-665e-45a2-81ec-df8a00a3048d;-347;RFDevice #353;49,7739230774798;6,63670985457814;0;0;0;0;HackRF;OmniDirectional;95;59;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5b8c4c2b-1c63-4ce5-ae90-2bce12e36338;-998;RFDevice #354;49,7776636859642;6,6176666207183;0;0;0;0;TwinRx;OmniDirectional;95;41;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9bfaed4f-d697-457a-8ae9-b7446cd3059c;-460;RFDevice #355;49,7879409573096;6,62437424497431;0;0;0;0;IdealSDR;Unknown;99;30;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+25a43a8c-f789-4374-94e1-c00ece8c44bd;52;RFDevice #356;49,7947788905905;6,62781518156087;0;0;0;0;IdealSDR;Unknown;99;13;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c0f7cfc3-0ed8-4c4f-9e9d-13da23c6525c;663;RFDevice #357;49,766801580759;6,61639887902732;0;0;0;0;TwinRx;Unknown;101;41;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+858d9125-0f68-4729-b68a-e216406967af;530;RFDevice #358;49,7486273179634;6,64502689919217;0;0;0;0;HackRF;OmniDirectional;88;74;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+697a7430-48d7-4204-a2ba-6766f9d06db9;-720;RFDevice #359;49,7745493585702;6,64114442331784;0;0;0;0;Unknown;Unknown;93;12;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5a1d0dbe-fbee-496a-9ab5-f74a80cc3638;-453;RFDevice #360;49,7748912200093;6,65417674034577;0;0;0;0;IdealSDR;OmniDirectional;98;58;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4f84f9cf-f86c-4dbd-9294-3642b9994003;200;RFDevice #361;49,7552574130143;6,6518775372031;0;0;0;0;Unknown;OmniDirectional;99;69;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+cc48923d-d18e-4363-b601-e7aaaf8aa052;-190;RFDevice #362;49,7945946615741;6,63406005272379;0;0;0;0;Unknown;OmniDirectional;85;68;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+fdfd887f-3777-4739-8f73-931fa7b4e0ce;-858;RFDevice #363;49,7488960530016;6,65883069313091;0;0;0;0;IdealSDR;OmniDirectional;86;19;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+26530f29-632b-470c-ac34-6c4859c5e84e;-223;RFDevice #364;49,7657833053449;6,63769386968482;0;0;0;0;Unknown;OmniDirectional;88;75;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4aa9ceb3-07f3-4bde-bb69-1c98050df362;-248;RFDevice #365;49,76132440564;6,64894114259595;0;0;0;0;Unknown;OmniDirectional;86;59;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5e062c91-7626-4bbc-aa61-715d665fe1ec;474;RFDevice #366;49,7489871263144;6,64304129883337;0;0;0;0;TwinRx;OmniDirectional;88;46;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+37ca892c-68ae-4d93-b41d-4071e0fd54af;508;RFDevice #367;49,7679322343514;6,62370153975859;0;0;0;0;IdealSDR;Unknown;95;16;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c2c57f23-87ae-4792-9f4e-2cc4f49b4387;-875;RFDevice #368;49,762407382385;6,63775392993263;0;0;0;0;IdealSDR;OmniDirectional;102;39;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5d36f871-8d3e-4277-ab59-f47c6aafd150;-911;RFDevice #369;49,7606854644066;6,63958802822972;0;0;0;0;Unknown;OmniDirectional;85;71;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+bf4e756e-e882-4587-9777-f96bd9c7023c;-276;RFDevice #370;49,7682693449511;6,63737816162299;0;0;0;0;IdealSDR;Unknown;92;34;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3eb7162d-a6ae-4368-8b52-badde58f9279;774;RFDevice #371;49,755290384837;6,62633095044486;0;0;0;0;TwinRx;OmniDirectional;99;28;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+02e35497-f32e-4a7d-852d-a9c166fc5b66;-547;RFDevice #372;49,7532751392932;6,65246015779803;0;0;0;0;IdealSDR;Unknown;97;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+02e2bb2f-e7c7-48fe-b7b2-c28f60ddc5d0;300;RFDevice #373;49,7631870381008;6,64965241762807;0;0;0;0;TwinRx;Unknown;99;74;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+de9964a3-9f52-4d4f-8853-3dbdc43ff735;135;RFDevice #374;49,7541608669227;6,65661785907434;0;0;0;0;HackRF;OmniDirectional;104;10;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+66bd49c5-3c8d-4a2e-ba4a-21f85cd51cea;980;RFDevice #375;49,757280165996;6,62417432685125;0;0;0;0;IdealSDR;Unknown;101;22;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+65d99ad2-dd86-4ffb-a5ac-d052a191f58e;-926;RFDevice #376;49,7763726252132;6,64273123870745;0;0;0;0;IdealSDR;OmniDirectional;100;37;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a94df0b9-e362-446c-8c52-ce1d8db71345;-402;RFDevice #377;49,7741685934355;6,63841956603747;0;0;0;0;IdealSDR;Unknown;97;48;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f8bfd149-a222-4886-b423-a1e82bbc7c0b;-451;RFDevice #378;49,7702027041437;6,61556922272121;0;0;0;0;Unknown;Unknown;103;67;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6167430b-26d8-4773-9b80-db75b24a2e3a;-704;RFDevice #379;49,7495814416899;6,62098553281337;0;0;0;0;HackRF;OmniDirectional;86;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+68e9999d-d341-4d93-87b9-f504d9a21747;-659;RFDevice #380;49,7650650679082;6,65021799073579;0;0;0;0;IdealSDR;OmniDirectional;99;42;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5262b88a-fe51-489c-a885-6522adf84e18;575;RFDevice #381;49,7507679701431;6,61751844787869;0;0;0;0;HackRF;Unknown;102;77;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+62fdb82c-0c20-4ddb-a735-423167ddaf92;387;RFDevice #382;49,7471472676941;6,65443652358127;0;0;0;0;IdealSDR;Unknown;91;37;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f7717c49-666a-46b3-8fbd-f1e9b82fdeb6;594;RFDevice #383;49,7604323089748;6,6163541622258;0;0;0;0;IdealSDR;Unknown;85;29;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+44101127-cf91-4585-8119-95e0925107a7;-330;RFDevice #384;49,7784221955585;6,66427418654998;0;0;0;0;HackRF;Unknown;94;77;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e2762cfd-3079-41a2-9d49-9c45383f744f;-932;RFDevice #385;49,7562438665098;6,61786144609012;0;0;0;0;Unknown;Unknown;91;62;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+c1264d38-9d16-4cbf-a0fd-b079c8d46a57;-769;RFDevice #386;49,7823048365331;6,64900125648794;0;0;0;0;HackRF;OmniDirectional;87;78;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a24e75f8-74a4-45a9-a57d-04af2d17fe37;-1000;RFDevice #387;49,7746949536719;6,62783897180024;0;0;0;0;Unknown;Unknown;90;20;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b19ee8f9-8857-4094-a4a5-9319b5521042;659;RFDevice #388;49,7876934586845;6,62196799894435;0;0;0;0;Unknown;Unknown;98;43;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f0a673a7-e61c-449f-876f-0028d95cc2d7;-871;RFDevice #389;49,7585009475156;6,62010997925438;0;0;0;0;TwinRx;OmniDirectional;96;27;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3ec95081-3f27-4452-b7ec-748ee4e36e34;90;RFDevice #390;49,7819860799498;6,61844871861802;0;0;0;0;Unknown;OmniDirectional;102;73;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a12e7fbd-2b2e-4894-ae6a-d798670a5dd4;354;RFDevice #391;49,7531265552048;6,63022657347402;0;0;0;0;HackRF;OmniDirectional;86;66;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+99ff3c96-6517-4cdd-b011-a52e7f2ad767;-861;RFDevice #392;49,7595596305017;6,66346194588289;0;0;0;0;IdealSDR;OmniDirectional;103;40;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+eb0658b5-b595-48b3-a9b0-4980c3ac2e45;-491;RFDevice #393;49,7692022568746;6,63240116248964;0;0;0;0;IdealSDR;Unknown;92;48;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7af50f64-e9e6-4524-8a9f-9f2480467db8;-341;RFDevice #394;49,7857332169821;6,63161788569853;0;0;0;0;Unknown;OmniDirectional;89;41;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+73da331c-3713-4d83-8c4e-c4c4ccbc94c0;882;RFDevice #395;49,7907755698378;6,62302968123151;0;0;0;0;TwinRx;OmniDirectional;88;78;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ea6db9fc-fc39-4a57-8986-a439010b1404;-100;RFDevice #396;49,7626609569352;6,64191320540021;0;0;0;0;Unknown;Unknown;89;27;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+1e767fc9-26d0-4825-89fc-80940dd50fd7;-405;RFDevice #397;49,7762041822541;6,64773946476078;0;0;0;0;Unknown;Unknown;102;26;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5fb350af-d6db-4cec-9e03-c86e57fe8a74;200;RFDevice #398;49,790326659062;6,66411661035587;0;0;0;0;HackRF;Unknown;101;48;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+25166968-82b6-4f8c-810a-e35b740aa69b;673;RFDevice #399;49,7456074969235;6,61875676857729;0;0;0;0;HackRF;Unknown;99;17;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c91deadc-bf3c-409e-8163-6ee8eeca3d32;-2;RFDevice #400;49,7642127138739;6,64439681173987;0;0;0;0;TwinRx;Unknown;96;65;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+9491ec38-e2a6-4987-887a-66876f8f7547;116;RFDevice #401;49,7806287452832;6,64926465441918;0;0;0;0;TwinRx;Unknown;96;41;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f3d42ece-9c8f-41cc-821d-d74de283db17;342;RFDevice #402;49,7882993122852;6,620331690186;0;0;0;0;HackRF;OmniDirectional;96;25;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+db0e508e-eb1f-4457-bfa6-fd6a48c3e708;580;RFDevice #403;49,780704853616;6,62283163960703;0;0;0;0;TwinRx;OmniDirectional;104;71;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f409ddc0-ec82-4362-a4c1-ba9d68ab75f8;31;RFDevice #404;49,7739762648697;6,63263100177186;0;0;0;0;IdealSDR;OmniDirectional;96;43;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5510f6ba-989d-415f-94c7-2f56c3089399;-778;RFDevice #405;49,789996921813;6,65809310227558;0;0;0;0;IdealSDR;OmniDirectional;104;27;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4b43da5a-670b-4fe1-a479-981d207d5b66;99;RFDevice #406;49,7454060583698;6,64616375860593;0;0;0;0;Unknown;Unknown;97;73;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1991736a-ae2a-4831-bc9f-8270e80f501d;-683;RFDevice #407;49,7937343109946;6,65799414967107;0;0;0;0;IdealSDR;OmniDirectional;88;75;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d2d53b24-1c62-4361-ab49-6046c4598688;655;RFDevice #408;49,7511287050438;6,61851415890679;0;0;0;0;IdealSDR;OmniDirectional;91;66;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ab67d58a-3ae3-430d-a6b9-8ef1a9946e8e;-229;RFDevice #409;49,7487589467422;6,63213171370906;0;0;0;0;HackRF;Unknown;88;43;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+eec79104-1c62-4c8d-9eae-3dcf3f3ac558;-99;RFDevice #410;49,791124070792;6,61824084048091;0;0;0;0;IdealSDR;OmniDirectional;104;76;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+67d50d3a-a2f0-44a2-b353-a121cf3dbacb;342;RFDevice #411;49,7659156824647;6,66378025512867;0;0;0;0;HackRF;Unknown;91;54;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d1c49169-55c2-4e92-b72c-e8bdfb0098e9;919;RFDevice #412;49,7582640303914;6,62611454039179;0;0;0;0;IdealSDR;Unknown;89;10;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ff1a6996-1f4b-470d-b0ef-68259094b9eb;-605;RFDevice #413;49,7723184770654;6,64034175310779;0;0;0;0;TwinRx;OmniDirectional;97;27;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a08da5cb-60fb-4584-a7d7-6f9888ff3b0d;-35;RFDevice #414;49,7473210164444;6,64868478374043;0;0;0;0;HackRF;OmniDirectional;100;29;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c85c1f34-d1e9-468f-b84a-24b5b7357f4e;-684;RFDevice #415;49,7554452664122;6,63170547544584;0;0;0;0;Unknown;OmniDirectional;94;35;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+681dfcc2-9a04-478d-a8d3-88c4ad4dfac1;-149;RFDevice #416;49,7655872906276;6,63155819607054;0;0;0;0;HackRF;Unknown;94;75;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a4b5e8a8-abe5-4512-aa6a-1747ce249110;816;RFDevice #417;49,7871340216887;6,66303180216501;0;0;0;0;Unknown;OmniDirectional;93;50;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d9e25432-816c-4685-8361-b4fc786b3799;-687;RFDevice #418;49,7946039528904;6,65613974071873;0;0;0;0;TwinRx;Unknown;88;68;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+9026bf81-1961-4978-88a2-2d7ca3690857;954;RFDevice #419;49,7643428289742;6,65823512950378;0;0;0;0;TwinRx;Unknown;88;72;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b57bcdb1-bf66-40a4-ae5a-bbe1dc4219e8;-653;RFDevice #420;49,7688174992765;6,62106783651345;0;0;0;0;Unknown;OmniDirectional;101;13;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+fd5c2e4a-82e3-4df5-830e-189ee78cf977;-781;RFDevice #421;49,7690407830723;6,64376380873568;0;0;0;0;HackRF;Unknown;94;36;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2f2d5dca-8bd1-47b1-9abe-9cb5a3bc0484;258;RFDevice #422;49,7590048325634;6,64844487893337;0;0;0;0;HackRF;Unknown;98;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3dc2e799-dbe2-4f2c-96c1-05f3a26b9f95;133;RFDevice #423;49,7526560635662;6,63771499652789;0;0;0;0;TwinRx;Unknown;89;30;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+dd4e2fa6-92c6-4c56-a145-e2e071261b56;885;RFDevice #424;49,7583904551492;6,64562171873912;0;0;0;0;IdealSDR;OmniDirectional;98;65;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+8167a03d-157a-44b1-a583-2ddf6ca68a3f;863;RFDevice #425;49,7854257020909;6,64361720859721;0;0;0;0;IdealSDR;Unknown;96;36;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+db9d1d56-424a-48e5-98e2-ed8284dabee6;-987;RFDevice #426;49,7511736064334;6,61812194951736;0;0;0;0;TwinRx;Unknown;95;12;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1f15132a-8a8d-49b5-9af0-411f5172982c;-805;RFDevice #427;49,7880537435933;6,63137251784637;0;0;0;0;IdealSDR;OmniDirectional;94;40;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d38241d6-8455-4741-8d68-3e73686e4de1;-637;RFDevice #428;49,7877589986946;6,63121566782776;0;0;0;0;TwinRx;Unknown;92;42;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+de529bde-b1fa-4b57-847f-1e154dda124c;-36;RFDevice #429;49,7620950797973;6,63611818213315;0;0;0;0;Unknown;OmniDirectional;88;58;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ddec5014-f5a4-48f5-aeb3-f2bff156fef6;532;RFDevice #430;49,7939407575725;6,64267622629785;0;0;0;0;HackRF;OmniDirectional;98;25;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7d811571-8052-48a1-a78c-cd8f243bc5c9;-547;RFDevice #431;49,7514681657894;6,66026549858533;0;0;0;0;HackRF;OmniDirectional;98;78;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+bc039df9-c85a-4d57-b116-1cb9b67aba38;-264;RFDevice #432;49,7803993943865;6,61566145376114;0;0;0;0;TwinRx;OmniDirectional;101;52;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f5a44b70-3935-4637-af29-e419dbb3a425;295;RFDevice #433;49,7509441976318;6,62277858274201;0;0;0;0;IdealSDR;OmniDirectional;88;37;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bb9c317f-2d89-4672-851d-07c8770b7f1b;-678;RFDevice #434;49,7619585620406;6,63303328395045;0;0;0;0;HackRF;Unknown;104;59;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a98ab4d2-5099-446c-b028-38231be297a4;248;RFDevice #435;49,7913803808229;6,63102268358754;0;0;0;0;Unknown;OmniDirectional;85;52;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+742d7f00-fbd4-49ed-8e58-8c9231259c5e;-280;RFDevice #436;49,7945401639297;6,63996011471854;0;0;0;0;HackRF;OmniDirectional;104;62;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f9a53e39-df48-49ab-9cab-5755e7ce0afc;-275;RFDevice #437;49,7911953391577;6,6563301464527;0;0;0;0;IdealSDR;OmniDirectional;85;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8fc08bad-acb6-439c-8a95-b46f5bc3d79c;469;RFDevice #438;49,7945670396874;6,62837468672948;0;0;0;0;IdealSDR;OmniDirectional;96;45;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a6f9a8bb-f5be-4b66-9576-3bb4d80e7b13;992;RFDevice #439;49,769640311945;6,62023268279644;0;0;0;0;HackRF;Unknown;102;22;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d3a6cbf9-82f4-476b-9881-793fc0af9952;7;RFDevice #440;49,762220721825;6,65555180960607;0;0;0;0;IdealSDR;Unknown;104;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+54d16d9d-7b54-41cc-bb4f-949aa6035ae2;149;RFDevice #441;49,7666913985929;6,61640327591761;0;0;0;0;IdealSDR;OmniDirectional;97;12;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5c149690-e89f-4f43-8001-074d22f0adeb;249;RFDevice #442;49,7583468232221;6,61596717953508;0;0;0;0;HackRF;Unknown;96;46;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+68036dac-775a-4b7b-848b-09d027f96eca;-49;RFDevice #443;49,7498347357957;6,63539944818509;0;0;0;0;TwinRx;Unknown;93;40;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+7ad1f0d8-643d-4200-9223-aeda37099845;472;RFDevice #444;49,75627947798;6,64271496177326;0;0;0;0;IdealSDR;OmniDirectional;88;38;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+94298a82-b957-4845-b1b8-5b2c90257aa1;-565;RFDevice #445;49,7488585188858;6,63691236801781;0;0;0;0;Unknown;Unknown;94;29;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a3eb73bf-1b95-46cb-ab83-7e70353b0fa3;-104;RFDevice #446;49,7719663856298;6,64979092792612;0;0;0;0;IdealSDR;Unknown;99;69;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a89b4d79-d70c-4161-ac99-1d1c01f8597f;627;RFDevice #447;49,7470615974957;6,64754780362726;0;0;0;0;TwinRx;Unknown;86;34;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3d1a5d52-4080-405b-a002-635e492930af;991;RFDevice #448;49,7713753302093;6,6290290559732;0;0;0;0;Unknown;OmniDirectional;102;33;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+67887b89-aaed-4425-9a9b-94c2d7888207;715;RFDevice #449;49,7587515566882;6,62783202187537;0;0;0;0;TwinRx;OmniDirectional;98;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0a3851eb-e5e6-4e54-ae20-74ed43663fd8;606;RFDevice #450;49,7482671907507;6,62617581210401;0;0;0;0;HackRF;Unknown;88;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+336dd50c-4aaa-4134-93d7-48a653ee9709;-252;RFDevice #451;49,777648956306;6,63208803528565;0;0;0;0;IdealSDR;Unknown;101;22;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ca4378ac-6205-404a-90c2-189ca2128575;445;RFDevice #452;49,7603728336441;6,65872604944698;0;0;0;0;IdealSDR;OmniDirectional;92;28;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8a79bd7a-5df6-4dd7-af7a-0d8de307a9ea;-616;RFDevice #453;49,7573812279763;6,63442068985883;0;0;0;0;TwinRx;OmniDirectional;87;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+79bdb2c5-bf55-473f-a2e3-a26a3f740128;608;RFDevice #454;49,7786692980456;6,65341038256591;0;0;0;0;TwinRx;Unknown;85;38;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+aae5adec-b480-4e50-ad54-8af6aedda1bb;679;RFDevice #455;49,7578893550121;6,64167695868852;0;0;0;0;HackRF;Unknown;87;76;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d5a2c467-fdfc-40d4-bac0-4e2d77cddba2;-834;RFDevice #456;49,7520319632142;6,6636631391961;0;0;0;0;Unknown;Unknown;88;64;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a10ef427-ada9-4df5-8b1d-6b452df2e72a;584;RFDevice #457;49,778234139435;6,62143411420366;0;0;0;0;HackRF;Unknown;87;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+9f41bf0a-afdd-4dca-a4a9-3924c426439e;771;RFDevice #458;49,7544249217623;6,63484347643104;0;0;0;0;Unknown;OmniDirectional;98;28;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+40393f88-764d-48c1-88e0-27340834cd0a;789;RFDevice #459;49,7485166164917;6,62446823665629;0;0;0;0;Unknown;Unknown;101;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f1520840-75b7-4f39-9237-5f4f8a345aa6;-411;RFDevice #460;49,7634271226764;6,63893431920057;0;0;0;0;HackRF;OmniDirectional;103;37;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+37603d64-1785-43ff-82e4-7aae8867eb66;767;RFDevice #461;49,7625361078122;6,65094347951992;0;0;0;0;IdealSDR;Unknown;103;11;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3c6eeedb-04f1-4e9d-a91a-8ee8f2d5f64d;323;RFDevice #462;49,7607433002836;6,64273998671353;0;0;0;0;HackRF;Unknown;86;78;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+c35fe4a3-6c4f-4e37-9884-7bb112a1511f;745;RFDevice #463;49,7591813327432;6,66278333170483;0;0;0;0;TwinRx;OmniDirectional;101;51;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0401b96b-4b80-4c50-8fee-46e016f164a8;246;RFDevice #464;49,7491416764087;6,62499020025846;0;0;0;0;HackRF;Unknown;90;14;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+428472e8-36f9-4299-aa68-78126e574ab8;582;RFDevice #465;49,7850467673078;6,66312302884339;0;0;0;0;TwinRx;Unknown;86;66;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1967f51f-94a6-493e-a63c-b0b4f0fbd113;-921;RFDevice #466;49,7687823425944;6,62961169307582;0;0;0;0;TwinRx;OmniDirectional;98;32;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+35333305-ba32-40eb-a558-24eedd554129;-224;RFDevice #467;49,7488286161901;6,63685379374174;0;0;0;0;Unknown;Unknown;98;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5cfc2f82-caf0-4931-ab22-4b5504520a04;511;RFDevice #468;49,7829739879383;6,64421193582682;0;0;0;0;Unknown;Unknown;96;16;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+56c9654c-a80c-4c5c-911b-4c33276c5bdd;-504;RFDevice #469;49,7742957845554;6,64310065225391;0;0;0;0;Unknown;OmniDirectional;90;42;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+8f312e6d-872a-4315-9c71-8d08e5d9be7f;-63;RFDevice #470;49,7939390982118;6,6484974687634;0;0;0;0;TwinRx;Unknown;86;59;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1e292a92-430d-4e83-8e87-d3bef881cf21;512;RFDevice #471;49,7455948424383;6,61703017508021;0;0;0;0;TwinRx;Unknown;88;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+26c05723-7b3a-46d8-ad00-85cdae40f4c2;-613;RFDevice #472;49,7907466272426;6,66286542404125;0;0;0;0;IdealSDR;OmniDirectional;104;29;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+fc5b711b-5e6a-46ab-8e8d-af74a37a348b;-242;RFDevice #473;49,7908323398859;6,62915841553801;0;0;0;0;TwinRx;OmniDirectional;92;14;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2d6126d3-d4a0-4e33-814a-0d0361716fec;213;RFDevice #474;49,7762077084975;6,636188731611;0;0;0;0;Unknown;OmniDirectional;86;46;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+2df30e83-56f8-4f68-8780-51b5919200d8;-904;RFDevice #475;49,7774533107883;6,61797192942271;0;0;0;0;TwinRx;Unknown;95;48;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b5122a53-4a4d-4179-b494-37b3c8ddb3c8;96;RFDevice #476;49,7679479680917;6,65243736845103;0;0;0;0;IdealSDR;OmniDirectional;90;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1cc6e777-ff00-46be-aa8d-aa934fc19d60;380;RFDevice #477;49,7566200412952;6,62289142860714;0;0;0;0;TwinRx;Unknown;85;68;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+efccd8b1-c058-4baf-aff9-1af122fba623;876;RFDevice #478;49,7909920547692;6,66291070028823;0;0;0;0;IdealSDR;Unknown;86;17;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4c2c4bd9-ebf2-4626-b7da-35c14f55dbe4;-238;RFDevice #479;49,7582770209443;6,62242841558192;0;0;0;0;Unknown;Unknown;96;72;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+eaf00198-bd13-48c1-b082-4822011621c0;-280;RFDevice #480;49,7554536928326;6,62189456495093;0;0;0;0;TwinRx;Unknown;101;68;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5d3c2348-68d8-4c3d-bcb4-b960a2d9dabd;-486;RFDevice #481;49,7927113881412;6,62931205314566;0;0;0;0;Unknown;Unknown;103;75;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5af7cc8c-7212-4fdc-8429-26ebbfe94a0a;620;RFDevice #482;49,7793491292061;6,65309435336077;0;0;0;0;TwinRx;Unknown;91;34;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+8bee1a41-c47a-4bc0-9733-c7116171cae3;-313;RFDevice #483;49,7762561771088;6,65711671004417;0;0;0;0;IdealSDR;OmniDirectional;95;48;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+0424b6f2-3a67-4ae1-af96-ee83fa2647e6;-348;RFDevice #484;49,7605099646534;6,62805156622471;0;0;0;0;TwinRx;Unknown;88;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+1d9dbf4c-b287-4e58-8de4-f7558cce2886;-842;RFDevice #485;49,7762546413578;6,66309095339542;0;0;0;0;Unknown;Unknown;91;26;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+fda8931f-9aed-40ae-b579-b3b760041af6;-352;RFDevice #486;49,7512970582932;6,61553123949833;0;0;0;0;IdealSDR;Unknown;90;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+855f3445-7224-4950-8d73-6688628cf105;710;RFDevice #487;49,7775599415653;6,63086566439418;0;0;0;0;IdealSDR;Unknown;100;26;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8ca9a32b-d537-4c72-8ab8-8cc9451562a6;-212;RFDevice #488;49,7542279712288;6,63767068799491;0;0;0;0;TwinRx;Unknown;92;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+32ed4056-7580-4e01-a5ac-d62ceb1f2410;839;RFDevice #489;49,7786746019276;6,64281443386949;0;0;0;0;Unknown;OmniDirectional;96;61;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+76febfa4-fd1f-4880-8b7c-9b1199d57c1f;-233;RFDevice #490;49,7636936627969;6,6507127228384;0;0;0;0;Unknown;Unknown;91;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+1f8467ed-bdba-48ed-9f4b-e728e0c530eb;-989;RFDevice #491;49,7569347565438;6,65050752160177;0;0;0;0;IdealSDR;Unknown;100;17;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d3cd286e-83b5-4fef-9837-aa1bc0dc9236;-227;RFDevice #492;49,7575586969412;6,63479009199659;0;0;0;0;TwinRx;Unknown;97;68;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9d889f3d-4d8f-45a6-87aa-4ed2d36cb1ce;921;RFDevice #493;49,7639108257544;6,63134856970126;0;0;0;0;IdealSDR;Unknown;92;56;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+53980f70-1364-4879-8834-5302d2200d4a;819;RFDevice #494;49,7604375340437;6,64601466277908;0;0;0;0;TwinRx;OmniDirectional;89;23;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d938addc-2661-4adf-9579-ea4297d68783;758;RFDevice #495;49,7648920138779;6,64450490832552;0;0;0;0;HackRF;Unknown;103;65;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+38f7aa49-8e64-48d6-892b-036be76df76e;125;RFDevice #496;49,7589513674298;6,6427748514959;0;0;0;0;IdealSDR;OmniDirectional;87;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+33edbf91-255f-4e5b-b750-3fa9f99d2d32;54;RFDevice #497;49,7832770125741;6,6166040051295;0;0;0;0;IdealSDR;Unknown;87;35;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f6b166a6-1551-4295-a1f1-d6e6d08d68e0;124;RFDevice #498;49,7659160276594;6,63103034040953;0;0;0;0;TwinRx;OmniDirectional;94;24;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d05e8048-6449-4a9f-ba37-6b3f6c20ee63;-908;RFDevice #499;49,7607304597667;6,65026263196047;0;0;0;0;HackRF;OmniDirectional;93;31;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+152df4cd-f94e-4faf-a12d-9a6c737f6d73;152;RFDevice #500;49,7535212414932;6,64421263429546;0;0;0;0;HackRF;Unknown;95;20;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+48d47049-d2d9-4d99-8c32-219aed0168ab;-696;RFDevice #501;49,7890883334274;6,62003669555315;0;0;0;0;HackRF;OmniDirectional;85;18;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+17c9ef38-f432-45ee-a11a-883958611556;-947;RFDevice #502;49,7923001343925;6,65723457794987;0;0;0;0;IdealSDR;Unknown;89;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+612dd9d0-cc35-4860-bfa8-b397e5d11704;-882;RFDevice #503;49,7657012335907;6,61862224403719;0;0;0;0;Unknown;OmniDirectional;98;59;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+7cb1e282-948f-4f6c-acf2-cb6fe00323d7;-96;RFDevice #504;49,7953017435591;6,64376751796066;0;0;0;0;Unknown;Unknown;103;70;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+80c12f97-51e5-4cba-8a13-323be07bcbea;-472;RFDevice #505;49,7733865578879;6,63467412070603;0;0;0;0;HackRF;OmniDirectional;102;76;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2e898aa2-4a0c-4ab0-b051-e5f85f8f3dc5;-621;RFDevice #506;49,7941998450402;6,63757494922163;0;0;0;0;IdealSDR;Unknown;86;40;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4b12b13f-3b89-4157-97f6-46f4382f77c4;-747;RFDevice #507;49,7702198767308;6,6334921153373;0;0;0;0;HackRF;OmniDirectional;90;32;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+f6e56816-c7b3-45e3-b403-1a9795c55565;-664;RFDevice #508;49,7456754841932;6,65819280594517;0;0;0;0;IdealSDR;OmniDirectional;91;21;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e8f2190e-dce2-4b8b-a4a4-3ce171a0e0d6;-844;RFDevice #509;49,7870055821775;6,66384762497812;0;0;0;0;IdealSDR;Unknown;100;60;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3283e05c-0981-404c-ac83-d79c726da893;-89;RFDevice #510;49,7489744746232;6,64787577895363;0;0;0;0;HackRF;OmniDirectional;97;45;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+007620b4-722f-4e2c-8f37-4b65168145b7;128;RFDevice #511;49,7577769097786;6,64915037785631;0;0;0;0;IdealSDR;Unknown;94;47;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b336464f-7e17-49c7-843e-61dd6c83e01c;-528;RFDevice #512;49,7909898926107;6,61933607806435;0;0;0;0;HackRF;OmniDirectional;99;47;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+91eb4446-9d6a-49aa-aa91-1176d6d6276b;613;RFDevice #513;49,7633375909585;6,61624275164518;0;0;0;0;Unknown;OmniDirectional;92;43;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1ae40ee2-c92a-4a02-b819-be07360852ca;553;RFDevice #514;49,7556851845838;6,66152714188296;0;0;0;0;HackRF;Unknown;102;28;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+51d9bd0d-09d6-4a77-8a1e-3a26aa9bb5bb;-18;RFDevice #515;49,7691778952689;6,64685339924747;0;0;0;0;IdealSDR;Unknown;87;47;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+fd66460b-7098-4f60-94be-7563c691dda4;-419;RFDevice #516;49,7459842577436;6,65520046222745;0;0;0;0;Unknown;Unknown;92;19;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+fc67f4eb-aefe-4d32-bf45-d5188d8fcd7d;69;RFDevice #517;49,7841562366849;6,64774802494238;0;0;0;0;Unknown;Unknown;100;31;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4b8ee3ea-a57e-4260-b0a6-602b0dfa19b9;537;RFDevice #518;49,7622391356556;6,62933816154005;0;0;0;0;HackRF;Unknown;87;33;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+462d76fd-a371-4257-b08a-831c0e1881fd;286;RFDevice #519;49,7714267938841;6,65856178800988;0;0;0;0;TwinRx;OmniDirectional;91;28;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+640e7cf1-0898-411b-a08f-8eb38a4cb43d;648;RFDevice #520;49,7663943943522;6,6379132319606;0;0;0;0;IdealSDR;Unknown;95;56;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+00f97c38-09f6-49e9-a127-49e45b97be89;-866;RFDevice #521;49,7565838567821;6,65826175557382;0;0;0;0;Unknown;OmniDirectional;93;79;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+ece46632-98e7-4de3-9b84-f69e517cdaaa;-664;RFDevice #522;49,7687155802234;6,63739101434019;0;0;0;0;HackRF;Unknown;88;14;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d6c3dd73-47a3-403d-b7ec-5dd1f09a2d17;363;RFDevice #523;49,7668635443741;6,62970095806289;0;0;0;0;IdealSDR;OmniDirectional;96;52;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4bcda13b-7bf4-40d7-9c05-3e751dae2039;21;RFDevice #524;49,7931106447321;6,61650883942228;0;0;0;0;IdealSDR;OmniDirectional;89;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a06275bc-275d-4429-b848-7355a1b7f18a;356;RFDevice #525;49,7887517707015;6,62926364721244;0;0;0;0;HackRF;OmniDirectional;94;22;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+bcbbe495-e621-4f5d-a749-09f06d20893d;51;RFDevice #526;49,7526414303931;6,63408003860357;0;0;0;0;TwinRx;Unknown;104;72;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+609744ee-9ce4-47d0-a791-1cb96c71cc2c;-297;RFDevice #527;49,7608534392596;6,63437641722834;0;0;0;0;IdealSDR;OmniDirectional;94;75;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1797f7e1-fd8c-4cdb-85ae-804daf8078b6;245;RFDevice #528;49,7779618590845;6,63246861527337;0;0;0;0;IdealSDR;OmniDirectional;101;39;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+faaeabea-4c70-4d24-b80b-55dac2cdfc0a;757;RFDevice #529;49,75645002021;6,64515281791587;0;0;0;0;Unknown;Unknown;100;71;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2273b8cc-8644-4115-a4b3-9ffe0bd908ca;-490;RFDevice #530;49,748671464842;6,64707873674919;0;0;0;0;HackRF;OmniDirectional;104;34;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+468aa7b9-d203-4525-8013-5838d933dfe1;-867;RFDevice #531;49,7648254910431;6,65498792205252;0;0;0;0;Unknown;Unknown;93;78;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+20048ef1-5fd2-46dc-af7d-af4d02f34433;854;RFDevice #532;49,7857458177533;6,6495204926421;0;0;0;0;TwinRx;OmniDirectional;103;69;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+1f9da90f-feda-46c6-a8d8-3a7982bb19e4;438;RFDevice #533;49,7679545761746;6,65303101397275;0;0;0;0;TwinRx;OmniDirectional;103;62;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+97c5fca5-daf1-49b0-b5fd-4365f5071036;-140;RFDevice #534;49,7541581808254;6,65994299275346;0;0;0;0;IdealSDR;Unknown;97;29;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+12049fbf-0cf8-42d7-b9dd-beb51797770c;-393;RFDevice #535;49,7864582880914;6,62399733504946;0;0;0;0;Unknown;OmniDirectional;93;16;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ff64b263-9db1-40ee-9304-2c09fb19c089;-529;RFDevice #536;49,7661901909346;6,61595058292442;0;0;0;0;IdealSDR;OmniDirectional;90;16;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+dce32056-2850-46e0-a1d1-695a2b320c9a;-570;RFDevice #537;49,7933612569781;6,64578729892899;0;0;0;0;Unknown;OmniDirectional;98;20;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2062bc05-dafc-4652-80b5-714492114587;275;RFDevice #538;49,7555555108606;6,64307395985041;0;0;0;0;TwinRx;Unknown;101;34;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+da563ea2-e0df-4e31-8e44-63b9d3ed1481;59;RFDevice #539;49,7468549613937;6,63075835747694;0;0;0;0;HackRF;Unknown;102;55;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+beaca322-d5b8-4d48-b98a-9c752671d3fd;-271;RFDevice #540;49,7611438574665;6,63548662440189;0;0;0;0;Unknown;Unknown;98;47;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+7be8a685-1882-476b-ba43-220ca03844ca;-847;RFDevice #541;49,7739526610578;6,66306009625707;0;0;0;0;Unknown;Unknown;95;42;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+33812744-6f44-44c7-b39c-2898ec6ec96a;333;RFDevice #542;49,7481456865892;6,63259312413768;0;0;0;0;Unknown;Unknown;93;74;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+cfecf040-b9cb-4624-a3c5-343353765616;-856;RFDevice #543;49,7802486899095;6,64272613091535;0;0;0;0;IdealSDR;Unknown;101;51;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+247bc466-38f8-4459-9f05-182ef1a89d70;-372;RFDevice #544;49,7619250949406;6,63425650937695;0;0;0;0;Unknown;OmniDirectional;88;24;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+900144d3-5761-4b7b-a306-3317a9e9c91f;330;RFDevice #545;49,7649501739949;6,6446105063357;0;0;0;0;Unknown;Unknown;94;33;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+23b9906f-cb8b-4550-865b-22c68f5c9b46;125;RFDevice #546;49,7810410579689;6,64631578688818;0;0;0;0;TwinRx;Unknown;101;39;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0ec00308-84e3-4f6d-b5a0-a3e7a30db2ae;-206;RFDevice #547;49,7945218157574;6,65928911173231;0;0;0;0;IdealSDR;OmniDirectional;95;26;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+501a469c-fe18-40bb-a67d-e1b5c044a798;969;RFDevice #548;49,7757254655238;6,64349242799626;0;0;0;0;TwinRx;OmniDirectional;96;32;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e78c41df-21bf-4ae1-830e-ddd3475f6e05;692;RFDevice #549;49,7644147777642;6,62346871758987;0;0;0;0;HackRF;Unknown;104;51;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5e3388ce-485e-4ed7-9cd4-1c669b872c76;-284;RFDevice #550;49,7730049893012;6,6383496363315;0;0;0;0;IdealSDR;OmniDirectional;102;69;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+fa1b2fb9-bf6a-4eb6-b28d-7c6647656c6b;823;RFDevice #551;49,7672660778235;6,63912021148923;0;0;0;0;HackRF;OmniDirectional;104;70;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+99b32fc1-f543-428e-afc8-5f5e6dc012b5;-682;RFDevice #552;49,761428020096;6,66362682539221;0;0;0;0;IdealSDR;Unknown;98;70;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+cf587a88-bb66-4d47-aa68-a3b34efa95a7;-208;RFDevice #553;49,7532153854505;6,65700944622388;0;0;0;0;IdealSDR;Unknown;103;19;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b616abc6-acb5-4252-ab03-1d49704d3aea;-207;RFDevice #554;49,759053072954;6,65806709190289;0;0;0;0;TwinRx;OmniDirectional;85;16;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+859553bf-5d54-4da7-bf3f-92b7ca574466;508;RFDevice #555;49,7486816691805;6,65205309518722;0;0;0;0;TwinRx;OmniDirectional;85;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4a4e73d0-ee31-4fb4-b71c-57f57269ec82;29;RFDevice #556;49,7460350026236;6,63081788924575;0;0;0;0;TwinRx;Unknown;91;61;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+4befe68e-6c7c-4d23-8fea-b66ee5b93084;371;RFDevice #557;49,7699536906293;6,65647082726786;0;0;0;0;IdealSDR;OmniDirectional;99;70;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+54bba1b4-5ec3-4163-8bc0-0b571317ee10;-384;RFDevice #558;49,7476497335692;6,66034076532844;0;0;0;0;IdealSDR;OmniDirectional;91;18;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+32226f32-d93c-4419-a261-24f158db70a2;-557;RFDevice #559;49,7897723672276;6,63902713683402;0;0;0;0;Unknown;Unknown;88;71;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ac9c9139-ddb5-4547-aedd-3b3d266ce730;982;RFDevice #560;49,7945351122032;6,64538610006482;0;0;0;0;TwinRx;Unknown;97;41;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+87deb161-161a-4e88-b272-6a25691907b7;87;RFDevice #561;49,7548543848231;6,65839842804647;0;0;0;0;TwinRx;OmniDirectional;86;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8bab2345-de25-4ba4-8880-dee6c53f84fc;-608;RFDevice #562;49,7840329273175;6,63452063665018;0;0;0;0;IdealSDR;OmniDirectional;87;61;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c9ed3d2e-90c4-4ef5-9881-1d61bbff4716;782;RFDevice #563;49,7535700441698;6,62882158219308;0;0;0;0;IdealSDR;Unknown;103;61;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+2318421c-c52e-4595-ab3e-87a5b71726fd;226;RFDevice #564;49,7677068144043;6,61627488998071;0;0;0;0;IdealSDR;OmniDirectional;89;34;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6650c384-f29d-45b5-89c7-51f652b39c5c;178;RFDevice #565;49,7884534273121;6,63939611005117;0;0;0;0;Unknown;OmniDirectional;96;78;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ff033889-2484-4e1b-a335-d0779d9c4d5f;711;RFDevice #566;49,7681954169143;6,64607967901341;0;0;0;0;IdealSDR;Unknown;101;29;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a279797c-ee91-4400-b5ba-4bdc0568dc0b;-507;RFDevice #567;49,7656546383814;6,65153559026859;0;0;0;0;HackRF;OmniDirectional;92;22;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+32530576-f1a8-4edc-9f6c-91421a06b5fd;-89;RFDevice #568;49,7628852289341;6,66154906773094;0;0;0;0;TwinRx;OmniDirectional;104;73;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+475d97ef-4bca-4074-af22-e363461d0e57;-150;RFDevice #569;49,7810339533979;6,63820565600344;0;0;0;0;IdealSDR;Unknown;101;63;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+862dd504-fef2-454f-b379-fb9c1964cabe;-638;RFDevice #570;49,7522298398316;6,62691251219586;0;0;0;0;HackRF;OmniDirectional;96;62;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d7f7f154-0763-4901-9dd5-6c4a564d1316;-674;RFDevice #571;49,7537850784965;6,65619909332436;0;0;0;0;TwinRx;Unknown;102;33;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e19b6a44-43fa-42cc-92c1-4b9d2e4bf52d;359;RFDevice #572;49,7881671335138;6,63883813371842;0;0;0;0;IdealSDR;Unknown;90;16;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ff982da7-a44a-4346-b1be-6508fc75b2e9;94;RFDevice #573;49,7790216554435;6,65205155510565;0;0;0;0;IdealSDR;OmniDirectional;85;25;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1cc188f3-4593-4982-9f14-ce1064552b48;280;RFDevice #574;49,766204475211;6,62881932615727;0;0;0;0;IdealSDR;OmniDirectional;100;34;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c01cdf6b-9cc2-4ec2-b526-492c6516a625;205;RFDevice #575;49,7525012789417;6,64307476327912;0;0;0;0;Unknown;OmniDirectional;88;40;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0ebbfd8f-4e21-4b94-a96a-f15e22b4d695;-234;RFDevice #576;49,757237458034;6,64297651959736;0;0;0;0;Unknown;OmniDirectional;98;57;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0813299c-8ad6-41cc-bae4-dadac83ed7bd;-906;RFDevice #577;49,7625607514923;6,65805384069605;0;0;0;0;TwinRx;Unknown;98;40;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+19a67fc3-5cdd-4b6e-847c-954086a24224;898;RFDevice #578;49,7644285631078;6,61852596728542;0;0;0;0;IdealSDR;Unknown;87;17;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c0e47d15-5cd2-4e12-afd7-064d4d649867;12;RFDevice #579;49,7748062083491;6,63928653601538;0;0;0;0;HackRF;Unknown;89;63;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5cf74b5b-9629-47c5-ba90-2e784befcf48;-533;RFDevice #580;49,7556848512867;6,64876376829998;0;0;0;0;IdealSDR;OmniDirectional;93;18;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+59debce9-9189-4f20-82f3-289c179d007c;482;RFDevice #581;49,7630423383959;6,62321567815427;0;0;0;0;Unknown;Unknown;99;14;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d98c5b2f-ed9f-459d-aeae-a9beea16bbc5;414;RFDevice #582;49,7675130914391;6,66167475297208;0;0;0;0;Unknown;OmniDirectional;91;74;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+942fc0d9-66e1-4376-9d89-abc226d1b964;-747;RFDevice #583;49,778044983373;6,62888161054309;0;0;0;0;TwinRx;OmniDirectional;88;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+50092721-eb6e-4f07-a885-1d13bd93b6ff;158;RFDevice #584;49,770967163958;6,63387805334021;0;0;0;0;TwinRx;OmniDirectional;91;54;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a263c0b4-8e58-4326-bdc2-07c1ac3c231d;-485;RFDevice #585;49,7507214902549;6,63265023684266;0;0;0;0;HackRF;Unknown;91;10;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7904d762-6e8b-4282-96aa-37f07d0bb4e0;39;RFDevice #586;49,7739950520675;6,65452253892777;0;0;0;0;IdealSDR;OmniDirectional;85;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9ad55122-a08d-462b-89a1-a82634d63796;-445;RFDevice #587;49,7659013901323;6,66453368177397;0;0;0;0;Unknown;OmniDirectional;92;64;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+23e78be3-1d1f-494a-a41f-3cdc5165deb0;-762;RFDevice #588;49,7615736168043;6,62476453665414;0;0;0;0;HackRF;OmniDirectional;94;73;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ae2f53eb-109a-42eb-9a94-57834d3e5336;602;RFDevice #589;49,7663209416625;6,63962332849853;0;0;0;0;IdealSDR;Unknown;98;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d35feb57-8716-44e5-b295-4d6902d081e5;304;RFDevice #590;49,7708392993522;6,62564762193521;0;0;0;0;TwinRx;OmniDirectional;104;50;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b2dd2bf1-270a-471e-aad0-0fc01467d897;-435;RFDevice #591;49,7698121560242;6,63182571091322;0;0;0;0;TwinRx;OmniDirectional;101;35;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+57cb9b01-7895-4ae3-ba82-2a2205e312f0;-347;RFDevice #592;49,7848287230863;6,62176016180872;0;0;0;0;TwinRx;OmniDirectional;97;39;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+1edbc4e5-fdf2-437c-b4f7-377d0db6cc49;331;RFDevice #593;49,7654056720618;6,63732570613624;0;0;0;0;Unknown;Unknown;89;73;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+415c2ed5-ad85-4290-af39-145a77d5d7b9;-816;RFDevice #594;49,7553659472517;6,62366150341181;0;0;0;0;TwinRx;OmniDirectional;88;22;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+836a36be-6838-44db-bb9b-3106cb75c85a;499;RFDevice #595;49,776911282563;6,62059496283107;0;0;0;0;Unknown;OmniDirectional;91;14;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+090e1e1d-6fe4-4b6e-8490-d1be352e240a;-893;RFDevice #596;49,7766472205522;6,6493841682047;0;0;0;0;IdealSDR;Unknown;98;55;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+6c6f903c-56cf-4064-81dc-0814e1a90590;-813;RFDevice #597;49,7527796417831;6,66236056066242;0;0;0;0;Unknown;Unknown;99;13;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ebf7d432-c583-4a67-af1e-243ae011c64c;168;RFDevice #598;49,781992260835;6,64025215349651;0;0;0;0;IdealSDR;Unknown;99;58;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2e563131-ed8f-4b52-8f69-5e1c59c95541;209;RFDevice #599;49,7454640980667;6,6587263738732;0;0;0;0;TwinRx;OmniDirectional;95;76;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+47aca1c5-0d85-45a2-a2e2-42f78d88c125;-340;RFDevice #600;49,7684308009652;6,65472846445396;0;0;0;0;Unknown;Unknown;99;15;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+dd15b992-80f7-48ad-8017-60413c1ba025;84;RFDevice #601;49,7517564174605;6,64239266623403;0;0;0;0;IdealSDR;OmniDirectional;89;52;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ef747743-e1af-4b97-9162-0b9665932737;161;RFDevice #602;49,747560145646;6,62907522065536;0;0;0;0;HackRF;Unknown;103;34;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b1ab93c1-c1a6-4881-b24c-228183d54883;857;RFDevice #603;49,7717722021721;6,64461033003633;0;0;0;0;TwinRx;Unknown;88;49;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+28e0b3f3-f32d-4019-9be8-c2bc46f5fd0b;-613;RFDevice #604;49,7749329272652;6,64750919672093;0;0;0;0;IdealSDR;Unknown;88;48;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c7e9b599-d20a-4a77-8487-954a106cd6c6;318;RFDevice #605;49,7507098639265;6,64394219251547;0;0;0;0;TwinRx;OmniDirectional;98;76;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4b142f62-7324-462a-bc5b-085d5238661c;-200;RFDevice #606;49,7879131872494;6,66116954858949;0;0;0;0;HackRF;OmniDirectional;96;49;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+16349af3-8ba5-4b21-b595-370a26ad2046;-779;RFDevice #607;49,7685594199888;6,66308969652904;0;0;0;0;Unknown;OmniDirectional;95;51;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+309d7440-d293-4f06-9086-b701d1ec6e59;138;RFDevice #608;49,7455419817564;6,65649052094519;0;0;0;0;TwinRx;Unknown;95;16;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+31b3cb55-7292-484a-869f-20312208a11e;-11;RFDevice #609;49,7656163249814;6,65103369440945;0;0;0;0;TwinRx;OmniDirectional;101;21;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9c66a824-bf5a-4929-9ac7-e16d295ce63d;161;RFDevice #610;49,7549618365144;6,62151667327239;0;0;0;0;Unknown;OmniDirectional;87;29;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a55a6ee9-27bd-43a1-abc6-d53e65b13d15;-936;RFDevice #611;49,7588457575686;6,66307209015515;0;0;0;0;HackRF;OmniDirectional;96;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c23b1001-f1e0-46a7-bfbc-887fe92060ce;40;RFDevice #612;49,7548846062872;6,66199379761344;0;0;0;0;IdealSDR;Unknown;91;69;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bf83edb8-5e01-4c6f-b071-50b9f67130e5;501;RFDevice #613;49,7704901830499;6,66250903643798;0;0;0;0;Unknown;Unknown;102;11;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b0f036fc-d019-49bd-8e0e-cd224de06957;-399;RFDevice #614;49,7806766110028;6,63560724867317;0;0;0;0;Unknown;OmniDirectional;97;21;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1053110c-5059-4a1f-bdd3-4878f0db7ce2;438;RFDevice #615;49,7558868507294;6,64454166501986;0;0;0;0;HackRF;Unknown;97;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+47c605b2-9890-4889-a21e-7981028e007b;272;RFDevice #616;49,7755744802297;6,62356855001481;0;0;0;0;IdealSDR;Unknown;104;39;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+905d84c6-6bf7-4a98-b0c1-d34e1b5807c2;-325;RFDevice #617;49,7583239690783;6,62559880240164;0;0;0;0;TwinRx;OmniDirectional;93;64;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3ff0c62e-fad9-4217-a41d-2438cf025f92;-497;RFDevice #618;49,7799523431592;6,62305122567962;0;0;0;0;HackRF;OmniDirectional;101;59;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+da27f13c-a3e5-45c3-b882-95af50e86f19;-952;RFDevice #619;49,7695771636178;6,63733001133782;0;0;0;0;TwinRx;Unknown;96;31;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+29412686-936b-4abd-9f20-d00a95d4c4cc;-458;RFDevice #620;49,7459437248855;6,62605393112933;0;0;0;0;IdealSDR;Unknown;101;36;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+69fce00c-3381-4683-8afe-06b676733ae1;-429;RFDevice #621;49,7531639643372;6,64399859685651;0;0;0;0;IdealSDR;OmniDirectional;93;30;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+61c55f28-0e5c-4bef-9e9d-32a475e2561f;-127;RFDevice #622;49,7666855854404;6,61634194355302;0;0;0;0;Unknown;OmniDirectional;99;66;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+72b5c16f-6aac-40a2-a2cf-713442f9a5a9;783;RFDevice #623;49,7591061343359;6,62250682176687;0;0;0;0;HackRF;Unknown;100;47;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0e0979b7-1afd-4b11-baa5-f023f829e1c0;895;RFDevice #624;49,750357061077;6,63751997057247;0;0;0;0;IdealSDR;OmniDirectional;95;43;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1b0ccac0-fb1e-4926-8709-d8b46068fa16;-370;RFDevice #625;49,7882605926423;6,62498935347669;0;0;0;0;Unknown;OmniDirectional;96;44;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c3f19a27-46be-4760-bf30-5046f54bab85;-633;RFDevice #626;49,7530843109018;6,62450500224475;0;0;0;0;HackRF;Unknown;93;54;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5ae9c1a7-43a5-40c4-9d58-88e2a20347cb;-583;RFDevice #627;49,7671788776484;6,63258639342286;0;0;0;0;HackRF;Unknown;104;63;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+30e89eb5-ce95-4b9a-ae5f-b588e9b3e84e;250;RFDevice #628;49,7862624776829;6,62497325503047;0;0;0;0;HackRF;Unknown;88;16;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a4974ade-a10c-448d-b608-b8649c49cdc8;900;RFDevice #629;49,7763007019181;6,64273473638251;0;0;0;0;TwinRx;Unknown;101;46;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d1b718b9-4e71-409d-af33-db71b80d4120;564;RFDevice #630;49,7738759466669;6,62636054345251;0;0;0;0;HackRF;Unknown;89;25;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d128b237-83de-4c6d-b5d5-0b9acfb73838;-86;RFDevice #631;49,7915764186836;6,6618452651669;0;0;0;0;Unknown;OmniDirectional;86;60;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4be8b5db-504b-4d06-9dfd-450e6bd5458f;-805;RFDevice #632;49,7807255232029;6,63283252409805;0;0;0;0;HackRF;OmniDirectional;88;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+db3023fb-e55e-410a-95cc-37e41c09e817;-880;RFDevice #633;49,7595248315871;6,63255941736179;0;0;0;0;Unknown;Unknown;85;79;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+2563d507-ef32-4e34-bb49-67f7cc873018;829;RFDevice #634;49,7466075891491;6,64667044330247;0;0;0;0;IdealSDR;Unknown;92;72;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+61f0f557-ff6a-450f-ab74-62de9f454be2;193;RFDevice #635;49,7800257829967;6,65743893210205;0;0;0;0;IdealSDR;OmniDirectional;91;61;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e583e3fa-7b8b-4d6d-a22d-3ae993bba9bd;791;RFDevice #636;49,7555968234452;6,64080777141783;0;0;0;0;Unknown;OmniDirectional;86;77;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+9ba2cdea-2b70-43c7-86a2-a1b95482ca75;952;RFDevice #637;49,755252855401;6,63151843444063;0;0;0;0;HackRF;Unknown;90;53;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a5af1df5-c9df-47d3-acf5-22d4414c394d;870;RFDevice #638;49,7727908205691;6,65745287034556;0;0;0;0;IdealSDR;OmniDirectional;97;53;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d907b344-0caf-497b-b559-c4bcbc9826d7;619;RFDevice #639;49,7933869120279;6,65753343887526;0;0;0;0;TwinRx;OmniDirectional;95;67;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3dc86df5-b6f8-4d9c-9d36-7777263cb9f7;92;RFDevice #640;49,7684618495601;6,61641088258787;0;0;0;0;TwinRx;Unknown;88;75;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+edec2988-5119-4ee7-9c80-969007a6b0cd;-890;RFDevice #641;49,7472768144315;6,62205551050713;0;0;0;0;TwinRx;OmniDirectional;96;46;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7a6adedd-2eb1-42e4-bca0-3fc6adf08d68;-869;RFDevice #642;49,7663904981409;6,62140994789624;0;0;0;0;TwinRx;OmniDirectional;96;42;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+421852ba-7796-413b-a9eb-a55bbb3ef159;169;RFDevice #643;49,7847922785713;6,6161254930107;0;0;0;0;HackRF;OmniDirectional;91;28;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9a5e0a05-1016-4289-bbd4-9b0e5328230a;-245;RFDevice #644;49,775407992303;6,65338361749597;0;0;0;0;HackRF;OmniDirectional;103;74;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e7a15a7a-c43b-4c1a-bcae-79d42f52f7a4;231;RFDevice #645;49,74579688407;6,61959317536554;0;0;0;0;HackRF;OmniDirectional;86;58;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d30bdef5-4e5b-462e-9001-77561dc504ce;-132;RFDevice #646;49,7729210333883;6,64503854531112;0;0;0;0;Unknown;OmniDirectional;88;27;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b26cf266-b93b-41d4-81a5-a2197e4c66b8;984;RFDevice #647;49,7822588769049;6,61957885844627;0;0;0;0;TwinRx;OmniDirectional;93;53;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+753ee220-6f44-403e-a949-d24e71ef0d27;546;RFDevice #648;49,780137585245;6,62282677731157;0;0;0;0;HackRF;Unknown;87;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+89b3dad2-2db8-4628-bc12-197c22695978;-7;RFDevice #649;49,7628237088381;6,61735633861164;0;0;0;0;HackRF;OmniDirectional;86;68;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+ee89f80a-f6b8-4653-b013-26ec3d9ef554;-816;RFDevice #650;49,7851681420156;6,61816475051849;0;0;0;0;TwinRx;Unknown;92;13;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d09fff36-c8d4-4d4a-8d9c-2f618efac201;-311;RFDevice #651;49,7859017264842;6,63590253315689;0;0;0;0;TwinRx;Unknown;89;55;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8f136163-93de-4725-a9c0-79592f011769;-233;RFDevice #652;49,7623326360416;6,64551063337634;0;0;0;0;Unknown;Unknown;90;39;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+87b627e3-5177-4cba-b965-0ea1cb829ead;24;RFDevice #653;49,7696961059205;6,63573079392129;0;0;0;0;IdealSDR;OmniDirectional;100;42;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f56ff90a-8f60-4a8d-ad69-cad47d8976fb;807;RFDevice #654;49,7750060695684;6,64629234142443;0;0;0;0;HackRF;OmniDirectional;104;14;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+8b669040-efe8-4d36-8700-c781842970de;287;RFDevice #655;49,7921498720608;6,61939654767499;0;0;0;0;IdealSDR;Unknown;95;28;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b4bcb7bb-dd56-4756-94a2-27242fd4b525;391;RFDevice #656;49,7886816782004;6,61915868926302;0;0;0;0;IdealSDR;OmniDirectional;86;50;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5ff9bf78-c524-402f-8f9b-101e78770a44;-246;RFDevice #657;49,7826301586379;6,62270394235989;0;0;0;0;IdealSDR;Unknown;85;18;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6dcb74ba-fe09-4340-9f04-219e0d9b8a35;-314;RFDevice #658;49,770997873505;6,64605642300395;0;0;0;0;HackRF;Unknown;91;67;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+68aee0a8-4587-46ed-b93e-31dd63d9757b;-439;RFDevice #659;49,7549087148061;6,62095402919746;0;0;0;0;Unknown;OmniDirectional;93;53;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+84d540a9-fca9-450a-b29b-eb344bf0e9ec;-552;RFDevice #660;49,7515166509782;6,63255411843902;0;0;0;0;IdealSDR;Unknown;91;40;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+baa8596e-7ddf-450a-b4ef-183120f9d5ef;-970;RFDevice #661;49,785210466715;6,66273418639462;0;0;0;0;TwinRx;Unknown;101;44;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+79217f56-443b-435b-9063-2226a17fa7d3;633;RFDevice #662;49,7719840200133;6,64778267794199;0;0;0;0;IdealSDR;Unknown;104;60;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e0b69fb1-b239-4fe6-a8c9-734da1fe6629;-902;RFDevice #663;49,7782619208107;6,6585647109425;0;0;0;0;HackRF;Unknown;96;56;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+3e6db8c0-3407-4d34-9358-1241665a6f6a;-766;RFDevice #664;49,7531345174773;6,66426555393476;0;0;0;0;Unknown;Unknown;102;69;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+9133bd29-5e13-4813-a4dc-bae2446bcfc7;-849;RFDevice #665;49,7847735767293;6,62729291094821;0;0;0;0;Unknown;OmniDirectional;88;53;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+77edf7a5-1dc7-4d59-8c8a-829646d59200;404;RFDevice #666;49,7693442606102;6,62354938202251;0;0;0;0;TwinRx;Unknown;93;17;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+db2dc7af-8d8b-445b-b628-b33657cefddb;-195;RFDevice #667;49,7941851781998;6,62440979760825;0;0;0;0;IdealSDR;OmniDirectional;88;72;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d7f7639a-c77f-4d6f-b0d6-8f672640633d;-730;RFDevice #668;49,7952359796125;6,64016002723037;0;0;0;0;TwinRx;Unknown;98;79;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+dc199866-a6de-411e-bdb8-1ae112234b8d;349;RFDevice #669;49,7767435959776;6,62019276330736;0;0;0;0;IdealSDR;Unknown;103;11;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d28e86fa-7608-4030-b1af-a95eb49c4ab6;-943;RFDevice #670;49,7673238170292;6,64385363798782;0;0;0;0;HackRF;OmniDirectional;85;24;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+2abe6ab9-7171-4af1-84f9-9cb446a4dfa4;-918;RFDevice #671;49,7834809330792;6,63535909048545;0;0;0;0;TwinRx;Unknown;101;51;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c041d023-bcd5-4c6e-9c38-328c70c2d974;797;RFDevice #672;49,7863996115328;6,64705956347164;0;0;0;0;HackRF;Unknown;104;50;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+1b9dd931-5135-47dd-b94d-d70e54a12f79;-30;RFDevice #673;49,7571689816802;6,66311860787841;0;0;0;0;IdealSDR;OmniDirectional;85;43;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ef89f591-e0b2-45e6-918d-c77c7c26092a;920;RFDevice #674;49,7621370626781;6,61565554421672;0;0;0;0;IdealSDR;Unknown;93;10;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+abec7b21-8040-44d4-a68c-df40f4e723f8;592;RFDevice #675;49,7870836475449;6,64509140054481;0;0;0;0;IdealSDR;OmniDirectional;91;27;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+86766f17-7d06-4372-9103-5593e50b6fa3;-930;RFDevice #676;49,7546511975948;6,62497064821202;0;0;0;0;Unknown;OmniDirectional;98;21;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+01969952-7721-496b-b284-b51dafc05769;724;RFDevice #677;49,7730111320721;6,6640467445852;0;0;0;0;IdealSDR;OmniDirectional;86;33;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e9172d80-18ff-480c-902c-11a6f5ad9b87;-427;RFDevice #678;49,7927616613761;6,65053531070744;0;0;0;0;HackRF;Unknown;96;34;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1aec4f85-c1af-45a1-bcd5-5f68891400b3;612;RFDevice #679;49,7718732020332;6,64334380383773;0;0;0;0;Unknown;OmniDirectional;94;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+501e5489-7e82-4bc9-8c94-e2a6f67723b9;973;RFDevice #680;49,7505202605735;6,61976999363865;0;0;0;0;IdealSDR;Unknown;95;21;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6dcbe829-1dd6-4911-b2aa-c1219e67cca9;-665;RFDevice #681;49,7938682265196;6,62181309725256;0;0;0;0;IdealSDR;OmniDirectional;101;13;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+9a6a336e-5e70-41a8-ad4e-4b56073e361b;4;RFDevice #682;49,7741888901442;6,65542759522597;0;0;0;0;HackRF;Unknown;102;14;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3e090449-89a2-472a-826b-951515b4c2c2;679;RFDevice #683;49,7815314714123;6,62111187303039;0;0;0;0;Unknown;OmniDirectional;91;56;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+14ce2a46-4270-4f83-b88b-a4e2cc817447;583;RFDevice #684;49,7863081377745;6,62452248826848;0;0;0;0;Unknown;Unknown;88;25;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+42b76270-7315-4b78-aafc-5c77e42f91a4;565;RFDevice #685;49,7655351116272;6,62420561640267;0;0;0;0;Unknown;OmniDirectional;91;12;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a48c419a-a524-46a3-9725-7d02384627f3;-54;RFDevice #686;49,7874116216373;6,63254266908525;0;0;0;0;Unknown;Unknown;93;48;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8a6fdb65-9bba-4e73-8a55-4a2eca896905;-924;RFDevice #687;49,7780464773773;6,6306514348001;0;0;0;0;IdealSDR;OmniDirectional;92;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c88e2de4-7683-4497-9f3e-aed446ef4ca1;-394;RFDevice #688;49,7831296120803;6,62648220111932;0;0;0;0;TwinRx;Unknown;87;63;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+57c3d953-7561-4238-aa4b-9861b5fed263;-282;RFDevice #689;49,7488076479279;6,64171204023623;0;0;0;0;IdealSDR;Unknown;89;79;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+15bb708d-db89-4a1a-b1de-e82c5bbd5569;362;RFDevice #690;49,7530133645874;6,62966047232969;0;0;0;0;IdealSDR;Unknown;102;60;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9f39e544-71ce-4038-b193-c318606b235e;-478;RFDevice #691;49,7504370463892;6,66073796825997;0;0;0;0;HackRF;Unknown;87;32;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6ba40fb2-1b2c-430f-a2e4-cffe73b7f2b1;-652;RFDevice #692;49,761904368054;6,64116464875707;0;0;0;0;TwinRx;OmniDirectional;93;33;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a5306161-8f71-425e-be78-f0ed4490f66b;-837;RFDevice #693;49,746770428899;6,63711024086336;0;0;0;0;TwinRx;Unknown;92;36;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+699a31aa-393b-454e-8b8a-dad5553c7025;322;RFDevice #694;49,7852387439269;6,63529831428341;0;0;0;0;HackRF;OmniDirectional;104;72;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+04269841-8489-42cf-83a9-8ea8858fdf69;-922;RFDevice #695;49,7894478635226;6,63279206304489;0;0;0;0;TwinRx;OmniDirectional;93;42;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+cc28ef78-9a2e-45db-8f14-fc1a1189e315;491;RFDevice #696;49,7528623620172;6,61645504215581;0;0;0;0;HackRF;Unknown;90;39;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+9563b3ed-29f4-4d2f-ad8a-bcd425c3372b;644;RFDevice #697;49,7915857215251;6,6228631332578;0;0;0;0;Unknown;OmniDirectional;87;41;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9f4fe1ce-e3b0-46ab-bf30-8828ea391d59;435;RFDevice #698;49,7511285229004;6,64771636162792;0;0;0;0;IdealSDR;Unknown;86;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+444c44fb-8a9d-40d8-9002-0cada18c02d5;-134;RFDevice #699;49,749647194158;6,64784015619109;0;0;0;0;IdealSDR;OmniDirectional;100;23;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+710591a9-ae4e-4dcd-a36d-821fa57925b4;127;RFDevice #700;49,7560016215685;6,65761684279326;0;0;0;0;Unknown;OmniDirectional;85;16;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+79134d80-af4c-4bd7-a980-7f666a1386a4;-263;RFDevice #701;49,7528633538059;6,63716875243814;0;0;0;0;IdealSDR;Unknown;104;11;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d2e37edd-a97d-4413-97c8-f740f2ad4bcf;-130;RFDevice #702;49,7678154654296;6,65607919273729;0;0;0;0;IdealSDR;Unknown;92;45;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+1f97f782-61f1-47db-a4b3-968d0085e22b;726;RFDevice #703;49,7876263642271;6,6621766318113;0;0;0;0;TwinRx;Unknown;89;23;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+7ead948a-b38f-49dd-9fef-996c75a149cb;473;RFDevice #704;49,7713193502953;6,63330178431869;0;0;0;0;IdealSDR;OmniDirectional;98;51;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+058a296b-eac0-422f-8295-b233c032f3de;-954;RFDevice #705;49,7598609261139;6,64971632027999;0;0;0;0;TwinRx;Unknown;87;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+2d1fb4e2-b2d1-4af6-8741-45a2d4e5a22b;-874;RFDevice #706;49,7821472451817;6,65359306146572;0;0;0;0;TwinRx;Unknown;87;69;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b15b63ab-bb3c-4ec9-90fd-5aeb9bc49b3a;398;RFDevice #707;49,7535611109004;6,65953105466898;0;0;0;0;HackRF;OmniDirectional;94;61;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+be3d4217-1832-4d08-8baa-c6bd2e2f00d8;910;RFDevice #708;49,7659790274872;6,63690378290005;0;0;0;0;HackRF;Unknown;101;56;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+9bb75126-fabc-4436-b557-2d0db453a148;718;RFDevice #709;49,7509105054311;6,6172588440392;0;0;0;0;HackRF;Unknown;103;15;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7c78cc9f-fe1e-44d4-ab92-47651784de05;-28;RFDevice #710;49,7692906553359;6,64303145617402;0;0;0;0;Unknown;OmniDirectional;96;14;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+fc6fc934-5758-439f-bb25-a185b79ab031;324;RFDevice #711;49,7555712514927;6,64026465410393;0;0;0;0;IdealSDR;Unknown;87;55;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a5f92109-ccea-415d-96e9-28ce1dfd4efe;114;RFDevice #712;49,7727508451773;6,6456445082491;0;0;0;0;IdealSDR;Unknown;85;70;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+1aad1cdb-0f99-4b59-ad84-947059e2b574;-856;RFDevice #713;49,7468396114514;6,65274277843677;0;0;0;0;Unknown;OmniDirectional;92;42;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+203d9bfd-765d-4be2-8549-8f6e4177619d;-838;RFDevice #714;49,7523354483657;6,66439580563674;0;0;0;0;TwinRx;Unknown;101;59;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+20b40994-b19f-4801-9a22-bc9d8107040b;-315;RFDevice #715;49,7863791890723;6,64728308321796;0;0;0;0;HackRF;OmniDirectional;96;76;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f773d09d-002d-48e2-aaef-361ec838eb8d;-89;RFDevice #716;49,7698988426447;6,66181130884314;0;0;0;0;IdealSDR;OmniDirectional;102;15;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d07a0712-5f52-4bb2-aed3-846369ebca73;214;RFDevice #717;49,7611483990843;6,65630531213088;0;0;0;0;HackRF;Unknown;89;48;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6179e1de-66e3-4fe7-81ca-b18d8332ab1f;482;RFDevice #718;49,7829490650709;6,61571885824949;0;0;0;0;TwinRx;OmniDirectional;86;55;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+4a11daa0-a2eb-435c-b8d1-3ba750665e55;686;RFDevice #719;49,757280747118;6,65764592098908;0;0;0;0;Unknown;OmniDirectional;94;75;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5c242527-ea4f-474d-b0e3-ed49207406ce;-838;RFDevice #720;49,7459124137972;6,6348551731441;0;0;0;0;TwinRx;OmniDirectional;91;39;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+0ea24a20-d25c-4843-aee4-f4bf08142104;-893;RFDevice #721;49,7730112573816;6,66357971185533;0;0;0;0;TwinRx;OmniDirectional;90;48;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d70cfbec-2754-4cf8-ae8c-f639380130f0;-464;RFDevice #722;49,7627113373189;6,64752245507567;0;0;0;0;TwinRx;Unknown;90;53;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4dca28b3-3813-42c6-ac5c-5bfaf9daf026;671;RFDevice #723;49,7560407879668;6,63052872112991;0;0;0;0;IdealSDR;OmniDirectional;89;12;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+1031ddd6-78b5-4de8-a834-6aab2430ff79;-250;RFDevice #724;49,7614579633508;6,63166717326826;0;0;0;0;Unknown;Unknown;104;71;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3f7a8259-b614-4edf-bf46-4def713a80b0;-355;RFDevice #725;49,7863572465769;6,64514653670389;0;0;0;0;TwinRx;OmniDirectional;86;60;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e189bede-20e1-489b-a2e1-ce7df7ac97b9;362;RFDevice #726;49,7817086098276;6,64395245257032;0;0;0;0;IdealSDR;Unknown;92;77;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bb4fef22-7bc8-4bed-84f6-332d597dd1d9;-227;RFDevice #727;49,7462469487544;6,6520686734665;0;0;0;0;IdealSDR;Unknown;91;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+460177eb-6290-4a15-a2d2-8f5a9fa2f78c;30;RFDevice #728;49,7875316502113;6,62554024041902;0;0;0;0;TwinRx;Unknown;99;31;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+95338947-7240-4811-b315-dedd3602209a;-66;RFDevice #729;49,7562657793658;6,62662586021094;0;0;0;0;TwinRx;Unknown;86;29;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bb674186-0a5a-435b-b1e2-3e8212cb4a62;-18;RFDevice #730;49,7832459117086;6,6353495735096;0;0;0;0;HackRF;Unknown;104;31;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+356d490f-406d-466d-b61d-fe1af0cc19f2;-275;RFDevice #731;49,772546222781;6,63611180494838;0;0;0;0;Unknown;OmniDirectional;98;40;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f3a818f8-fce4-414a-b789-c16bf07b9da0;302;RFDevice #732;49,7847232839831;6,61766453236712;0;0;0;0;HackRF;Unknown;85;52;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+675a2bac-f8ce-4563-8ca4-f405fc721f7d;-176;RFDevice #733;49,7596217984256;6,64426461434204;0;0;0;0;TwinRx;OmniDirectional;89;17;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d0be3707-c467-4e62-9488-6ac7765bd650;469;RFDevice #734;49,7940578094068;6,65082952549734;0;0;0;0;IdealSDR;Unknown;102;21;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+535acc8a-0ecf-4f9d-ac7f-24b66aad111d;71;RFDevice #735;49,7563885417907;6,63087984401322;0;0;0;0;HackRF;OmniDirectional;95;14;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4caf4926-9ca9-4d76-9818-f5b6149f7c15;551;RFDevice #736;49,7578954454892;6,6188227474732;0;0;0;0;Unknown;Unknown;85;74;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+517917f3-42bd-42d1-be1f-d54f7b51c3b6;-694;RFDevice #737;49,7690574074596;6,65943537063419;0;0;0;0;HackRF;OmniDirectional;99;69;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+fd3877ba-7688-450b-bccf-fe2702f0fc70;-132;RFDevice #738;49,7499388265301;6,6180647599317;0;0;0;0;HackRF;Unknown;89;13;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4160d250-94e3-421f-9654-8c4fd0f3465e;244;RFDevice #739;49,7715086541582;6,65097952701211;0;0;0;0;TwinRx;Unknown;88;53;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f04a72b7-b80e-4bfc-be47-0174731f1542;-568;RFDevice #740;49,7848591313738;6,6564383825272;0;0;0;0;Unknown;OmniDirectional;89;33;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+7f010d4f-3eb3-4f20-af61-a484c19f9940;-889;RFDevice #741;49,7587310588837;6,61907585682784;0;0;0;0;HackRF;Unknown;100;19;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f70279e8-89b5-48d1-a352-f7a8adb7a3f9;-251;RFDevice #742;49,7546624068536;6,66363816422128;0;0;0;0;IdealSDR;OmniDirectional;101;69;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+35da125e-03d5-4203-982d-77b1715f1bde;-612;RFDevice #743;49,7600128029863;6,6286530493614;0;0;0;0;HackRF;OmniDirectional;90;61;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7af3ca72-9f6d-4231-ac8c-c044ce4ab34a;717;RFDevice #744;49,7951096381847;6,62258216331847;0;0;0;0;TwinRx;Unknown;103;78;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c13bd1bb-774c-4bc5-803a-51207e0a71a1;510;RFDevice #745;49,7630785156213;6,62486913346926;0;0;0;0;TwinRx;OmniDirectional;96;66;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+18b51ef2-94cf-42d4-bed7-b422cf2e1fa6;-232;RFDevice #746;49,7897066822804;6,62782855016092;0;0;0;0;TwinRx;OmniDirectional;92;41;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5cdbb447-80b0-40a0-a0d0-43d55dc4e6e9;883;RFDevice #747;49,7583685657625;6,65008222041204;0;0;0;0;Unknown;Unknown;102;38;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+af89b3cc-1128-4049-8f0c-d9b271602c36;68;RFDevice #748;49,7516330986868;6,6447651305632;0;0;0;0;Unknown;Unknown;95;77;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+afd40f19-62dc-497c-901f-9558d45963af;-598;RFDevice #749;49,7829774162298;6,63867006987751;0;0;0;0;IdealSDR;Unknown;88;41;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+897be11a-6c5a-48c8-9c34-29c9f5e3f054;-40;RFDevice #750;49,7677474528977;6,61947939056427;0;0;0;0;HackRF;OmniDirectional;88;61;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+bc6d86ea-6a53-4dbf-a230-673cfa4f7a31;100;RFDevice #751;49,7829141843164;6,6481043969227;0;0;0;0;TwinRx;OmniDirectional;87;30;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+7b6919e5-ffa4-431d-ae84-91bff4a403f0;894;RFDevice #752;49,7667779603696;6,62238955589137;0;0;0;0;Unknown;OmniDirectional;101;23;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+497a450b-2981-4150-815c-0b7f0cc88964;840;RFDevice #753;49,7869570228554;6,63156257191294;0;0;0;0;HackRF;Unknown;91;65;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+d9fa2883-dfcc-4c53-a332-087ea5e7e3be;617;RFDevice #754;49,7508512735714;6,63378007762324;0;0;0;0;HackRF;Unknown;104;62;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+09a9013c-3c57-4466-b4ad-a215b7ce98d3;-229;RFDevice #755;49,7515404817766;6,63639124870612;0;0;0;0;Unknown;Unknown;92;22;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5d6ebf3d-4492-491c-b160-ac821907b705;-72;RFDevice #756;49,7744196879436;6,62248749936129;0;0;0;0;IdealSDR;OmniDirectional;94;51;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+41c45f80-10b9-4eb8-a30f-eac4daec9e22;-482;RFDevice #757;49,7573979198147;6,63975483769553;0;0;0;0;IdealSDR;Unknown;90;49;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+81cdbae9-fbc1-4d94-8009-6cf1b7a3fe6b;920;RFDevice #758;49,7896951160922;6,65495488203375;0;0;0;0;IdealSDR;Unknown;100;18;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a9f3ddb5-c30f-41f5-a8c7-755f240ef590;362;RFDevice #759;49,7860852839471;6,64544268172967;0;0;0;0;Unknown;OmniDirectional;90;78;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b2fc0ca7-a956-4473-8d21-26c4324328c2;294;RFDevice #760;49,7583251346052;6,61508627981198;0;0;0;0;HackRF;OmniDirectional;97;63;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e49d7488-1dbd-40f1-916c-f519ec301bde;33;RFDevice #761;49,7818613113629;6,62638625873564;0;0;0;0;TwinRx;OmniDirectional;96;42;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2c6e9761-e234-4c11-b6cb-a38981b8201e;113;RFDevice #762;49,7566304784875;6,66139295606487;0;0;0;0;Unknown;Unknown;85;32;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+89985fdf-6064-4c1a-bdc8-dd4d0ce9e3f7;-93;RFDevice #763;49,7550819009677;6,64013595030663;0;0;0;0;IdealSDR;Unknown;99;27;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a9535cb2-eb09-40be-b636-1aa100fd4d29;-487;RFDevice #764;49,7920422295415;6,6422555433505;0;0;0;0;TwinRx;OmniDirectional;89;10;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+184f1a85-797a-4e19-a169-97fe97ae65de;-758;RFDevice #765;49,76770545777;6,64578523844764;0;0;0;0;IdealSDR;Unknown;96;42;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3d02395b-33dc-428c-91ff-5cc572406166;-316;RFDevice #766;49,7702172877239;6,6310298952839;0;0;0;0;IdealSDR;OmniDirectional;85;10;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+059eb15a-57a2-447e-b926-f703d9682acf;864;RFDevice #767;49,7622636774723;6,65862019769797;0;0;0;0;Unknown;OmniDirectional;96;45;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b36deab4-e33e-4fb3-970f-58275cf4f55d;-35;RFDevice #768;49,7587767522934;6,62849561912883;0;0;0;0;TwinRx;OmniDirectional;102;69;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+cb9a0281-6afa-496e-816b-7cbb4a464997;-575;RFDevice #769;49,7740652964208;6,65794832194142;0;0;0;0;IdealSDR;OmniDirectional;91;16;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+aa7f0406-97db-49db-a231-f729755464e7;455;RFDevice #770;49,764172059129;6,65777597436592;0;0;0;0;HackRF;OmniDirectional;86;51;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5501bae7-8dba-4a86-83bd-869a0d4dadfb;846;RFDevice #771;49,7928617340823;6,6485954102077;0;0;0;0;Unknown;OmniDirectional;85;28;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e9e3cec1-b59c-4919-8bba-8895f7a6d5de;868;RFDevice #772;49,7860757419885;6,64172649387365;0;0;0;0;HackRF;OmniDirectional;103;18;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b61deaa9-75e3-4bfd-ad0c-c535efa47d4e;298;RFDevice #773;49,7455564308303;6,6631418132472;0;0;0;0;Unknown;OmniDirectional;103;21;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f03be2b4-9991-4377-8cba-db4e7ed49af9;-522;RFDevice #774;49,7463248001971;6,62850388368536;0;0;0;0;TwinRx;Unknown;88;38;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+31abc880-1004-4297-82c4-b2633e8ab0a1;345;RFDevice #775;49,7462113276916;6,64668899445654;0;0;0;0;IdealSDR;OmniDirectional;103;76;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f7ad7a1f-bd97-420a-ba9f-105104bec866;-369;RFDevice #776;49,7606004421294;6,62362040987421;0;0;0;0;TwinRx;Unknown;100;47;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+45ba0728-6980-42eb-9593-f68134458419;-498;RFDevice #777;49,7643945705323;6,64978491579652;0;0;0;0;HackRF;OmniDirectional;101;18;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+992bf6c8-1f48-46de-9720-c704a8c28e48;566;RFDevice #778;49,747801389532;6,64944647124025;0;0;0;0;HackRF;Unknown;95;69;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+328828da-586f-4c50-9f17-b8c019009bd9;-202;RFDevice #779;49,7515191724875;6,64629998315899;0;0;0;0;HackRF;OmniDirectional;86;30;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0b55d4e3-7e47-4e86-a777-98546fa57abc;-907;RFDevice #780;49,7836267551442;6,63880721106152;0;0;0;0;Unknown;Unknown;95;69;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+0aae60df-01a9-498f-91c3-3b245d35250e;-23;RFDevice #781;49,7679736497075;6,63853571348769;0;0;0;0;HackRF;OmniDirectional;85;31;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+32106c95-56dd-4729-ab9b-f52c70c4b00c;801;RFDevice #782;49,7760582158108;6,6285293077672;0;0;0;0;IdealSDR;OmniDirectional;97;42;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b71e110f-3770-4299-b14b-89c9bfe19e69;-92;RFDevice #783;49,7656575686249;6,62584036407813;0;0;0;0;TwinRx;OmniDirectional;89;48;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f2384ad3-8970-4f2f-8ee2-69ac42522483;-814;RFDevice #784;49,7936908655416;6,63190557699288;0;0;0;0;HackRF;OmniDirectional;90;30;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+0a9202a4-10ff-43f6-83e5-a3a419b25d6a;-616;RFDevice #785;49,7578671942612;6,6576988702165;0;0;0;0;HackRF;OmniDirectional;95;31;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a94568dd-4faf-467c-bbfe-88cdcaf5d611;624;RFDevice #786;49,7832019276018;6,63536607775635;0;0;0;0;TwinRx;Unknown;87;45;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+80ca9204-843b-415f-b592-ebfc26bc41fc;-391;RFDevice #787;49,7801941132657;6,63399812345127;0;0;0;0;HackRF;OmniDirectional;89;29;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+cf5d6c09-18da-499b-8684-9337623c67d6;804;RFDevice #788;49,7599258127081;6,62659231620696;0;0;0;0;TwinRx;Unknown;104;48;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+eebf7a7c-be14-44cd-8626-179ea6f603a7;-367;RFDevice #789;49,7472804761124;6,66243649893568;0;0;0;0;Unknown;Unknown;88;60;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1ee6f3ac-6621-4a85-8752-08e87d76de4d;-794;RFDevice #790;49,787736642529;6,65667309902933;0;0;0;0;HackRF;Unknown;102;37;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+6360eb51-20ae-4b96-a0e2-10d5500b582b;-80;RFDevice #791;49,7906523945576;6,61664619180697;0;0;0;0;TwinRx;Unknown;104;73;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b59d6483-b448-4654-9fe8-a65ffb0d901d;954;RFDevice #792;49,7747669313329;6,63423871413085;0;0;0;0;Unknown;OmniDirectional;101;57;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b9f20166-dbca-4628-8eb1-a887932765c4;-587;RFDevice #793;49,7848278387956;6,63195383368165;0;0;0;0;Unknown;OmniDirectional;95;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d2ab7daf-4f1e-4ecd-90a2-df194f1122e5;949;RFDevice #794;49,7679454588991;6,62579976155707;0;0;0;0;HackRF;OmniDirectional;102;42;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+59c8ed45-5dab-46e3-b50f-9f3ce20008a4;809;RFDevice #795;49,7596195506088;6,61696332064795;0;0;0;0;Unknown;Unknown;103;60;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+a2caa389-e564-49a3-a62f-0ae9a961cd37;-737;RFDevice #796;49,7937357029494;6,66488566952999;0;0;0;0;IdealSDR;Unknown;104;54;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7ff7a689-b8ab-47b8-9caa-dbe19174f6a1;-677;RFDevice #797;49,7951010720194;6,62523801741914;0;0;0;0;IdealSDR;Unknown;97;62;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bb12ab54-88ba-41c1-a52e-eb8e397e0714;-549;RFDevice #798;49,7904828821143;6,64750816926258;0;0;0;0;HackRF;Unknown;93;52;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f146fe9b-a20e-420f-b763-9ac919189f7f;-742;RFDevice #799;49,7642107664319;6,65819408202008;0;0;0;0;IdealSDR;Unknown;103;73;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5068d66b-5f38-4cf8-9b25-363196a46817;-869;RFDevice #800;49,7953602220021;6,64623707641686;0;0;0;0;IdealSDR;Unknown;95;34;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+bb47c980-a881-4c55-8c19-7cfdf8d5a33e;617;RFDevice #801;49,7911603918602;6,63093457018083;0;0;0;0;HackRF;Unknown;93;42;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+0ef9f20c-19bf-45cd-b619-410eaabb5378;55;RFDevice #802;49,7508824051938;6,64271940078261;0;0;0;0;IdealSDR;OmniDirectional;90;50;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8fc20e0b-98da-4208-a821-c4a9bce26142;-290;RFDevice #803;49,7894559553653;6,61685067699624;0;0;0;0;HackRF;OmniDirectional;97;48;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ddc4040a-49e0-4549-b438-25d552fa7cb8;-824;RFDevice #804;49,791534763931;6,66272771528597;0;0;0;0;TwinRx;OmniDirectional;95;38;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+9adcb958-51ca-4abc-a2ee-3d9c15f3275d;105;RFDevice #805;49,7768244080248;6,64679596693585;0;0;0;0;Unknown;OmniDirectional;89;42;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+e9c82eaa-c492-4a85-82ad-6559fe1611d8;832;RFDevice #806;49,7748343106819;6,63873739721209;0;0;0;0;TwinRx;OmniDirectional;102;10;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+413d502d-109e-4810-b404-738b7206fff2;-172;RFDevice #807;49,791304260802;6,6584450757358;0;0;0;0;TwinRx;OmniDirectional;103;75;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+32a33795-88da-49d6-ad3e-255171cb979c;-257;RFDevice #808;49,748483521036;6,62941384714549;0;0;0;0;TwinRx;OmniDirectional;103;29;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+8074042d-b516-4a0a-9f23-f17688a49edd;413;RFDevice #809;49,7874790805444;6,63896614852327;0;0;0;0;TwinRx;Unknown;99;52;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+5021013b-a97d-457f-8d65-390c8a0f42b4;-172;RFDevice #810;49,7626720426774;6,63951023327178;0;0;0;0;HackRF;OmniDirectional;102;73;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+226871f7-f758-4cb4-ba3e-e6a2f0b3e6d3;818;RFDevice #811;49,7537538555113;6,62174022475353;0;0;0;0;IdealSDR;Unknown;100;27;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+635c954b-daa0-4716-abdb-fa13c5d4f232;379;RFDevice #812;49,7687100904959;6,63841267043199;0;0;0;0;IdealSDR;Unknown;99;25;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+95a4c38e-89c4-40d6-841b-e09ebc786a17;-376;RFDevice #813;49,7693449819894;6,66202891327084;0;0;0;0;TwinRx;OmniDirectional;92;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d1ee30f5-a978-45b6-8752-0e89cfe60051;-377;RFDevice #814;49,7828049949634;6,62656862911157;0;0;0;0;IdealSDR;OmniDirectional;93;10;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+2f7d5328-de83-455c-ad0a-d565449ffd00;-702;RFDevice #815;49,7490645619681;6,65590527909631;0;0;0;0;HackRF;Unknown;88;33;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9bf7883a-0922-43bd-9779-d8c4d88f2728;197;RFDevice #816;49,7888513121114;6,66250752026812;0;0;0;0;IdealSDR;OmniDirectional;96;22;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8a0a256f-8564-452e-985e-d844787e192c;-738;RFDevice #817;49,7696576994348;6,62411106466987;0;0;0;0;TwinRx;Unknown;93;67;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+86af253a-d712-4efc-958a-de829825e43f;-969;RFDevice #818;49,7686709044;6,65342829650907;0;0;0;0;Unknown;Unknown;87;21;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+43f3b3e9-633f-44f7-a61f-abb5deec4fed;-91;RFDevice #819;49,795038962955;6,65948992837211;0;0;0;0;Unknown;Unknown;103;26;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b87f7ec7-065d-4e30-a321-0829ca5736da;-720;RFDevice #820;49,7949282587593;6,66020742277638;0;0;0;0;TwinRx;OmniDirectional;104;37;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+03da5b82-db25-4411-972c-7c07b8b87748;135;RFDevice #821;49,773223307448;6,66466672178589;0;0;0;0;Unknown;OmniDirectional;91;46;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+446a6386-1039-48d8-9833-8a5ef3141f22;-508;RFDevice #822;49,7595325320183;6,62972017238849;0;0;0;0;HackRF;OmniDirectional;93;40;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5356580d-353e-4df7-8801-bf806d3c1449;410;RFDevice #823;49,7806337724926;6,65075016805951;0;0;0;0;HackRF;Unknown;91;63;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+90960798-420d-4ca9-8119-1258d8f7e1f1;-500;RFDevice #824;49,7487091286445;6,64196641071805;0;0;0;0;Unknown;Unknown;91;18;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d438806c-6688-47b3-b88c-b5ba3f0547cc;-867;RFDevice #825;49,7465937666457;6,63207409150078;0;0;0;0;Unknown;OmniDirectional;89;79;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e121e90e-f47e-48c0-b778-088cd17fbd40;-67;RFDevice #826;49,7529259287411;6,64603149315171;0;0;0;0;TwinRx;Unknown;103;58;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b2737aba-bedf-4a74-a347-63a29555d459;120;RFDevice #827;49,7665951588379;6,65569992381893;0;0;0;0;TwinRx;OmniDirectional;87;15;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b37e3a57-0cfd-4bf4-9c4c-69bdaee0d1b1;593;RFDevice #828;49,7837164551753;6,65054539599961;0;0;0;0;IdealSDR;Unknown;96;26;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2453fb6f-3d52-4e27-baec-4849685ce43f;-671;RFDevice #829;49,7583968497497;6,62690000923686;0;0;0;0;HackRF;OmniDirectional;94;35;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+80064200-3047-46fd-b97f-1aac902f50b2;430;RFDevice #830;49,7749829530943;6,65555608414386;0;0;0;0;TwinRx;Unknown;87;53;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+52a13dea-ff13-4599-85ee-9d98a24b8736;-257;RFDevice #831;49,7868292732214;6,63494314049615;0;0;0;0;IdealSDR;OmniDirectional;93;64;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+3a2bd267-a5e7-49e8-9b11-f675d2a8d7da;901;RFDevice #832;49,7497638410998;6,62330609812103;0;0;0;0;HackRF;OmniDirectional;100;33;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ea1ec9b7-d5b4-44a4-9977-d4f85e19984a;821;RFDevice #833;49,7795008304311;6,63840363385561;0;0;0;0;HackRF;Unknown;90;54;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+67a38eb8-6589-4134-8564-e091c7326a91;-875;RFDevice #834;49,7609831356373;6,66487418662532;0;0;0;0;TwinRx;OmniDirectional;96;49;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+2ada598c-3a9d-47d4-8478-db78e8aaf9e3;-714;RFDevice #835;49,7649356034066;6,65591512096404;0;0;0;0;Unknown;OmniDirectional;88;41;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+34ca78d4-3b17-4281-8fc3-10dd62fb6c04;-29;RFDevice #836;49,7599961363169;6,63734831892776;0;0;0;0;Unknown;OmniDirectional;85;11;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+353079b9-a845-4555-8c7e-8a7b024c101c;-491;RFDevice #837;49,7909631304512;6,64550400091605;0;0;0;0;IdealSDR;Unknown;90;54;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8ddca0cd-b9f6-40bd-83ae-3e172f8b0ae3;-601;RFDevice #838;49,7607068442667;6,6156484847916;0;0;0;0;IdealSDR;OmniDirectional;87;54;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+b1f82cff-6463-44c2-9bb8-f1dbe89ef14f;39;RFDevice #839;49,7701954861376;6,62548633430423;0;0;0;0;IdealSDR;Unknown;92;61;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3fd2a717-24b3-4d95-bd92-5549859454d5;-538;RFDevice #840;49,7808277410477;6,657900111097;0;0;0;0;HackRF;Unknown;97;65;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e2449e7a-d1e5-44ef-ab75-92303fc77114;-410;RFDevice #841;49,7494783623951;6,63570169805363;0;0;0;0;HackRF;Unknown;96;11;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+535c1d63-78c2-4eb8-b453-81ffcb4cc5ac;513;RFDevice #842;49,7825792817661;6,65289180113151;0;0;0;0;Unknown;OmniDirectional;90;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7bb92751-9a88-4c83-8967-02f982e04bf7;298;RFDevice #843;49,7478291585676;6,63874473598741;0;0;0;0;Unknown;Unknown;103;75;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9c5c2732-23df-4b2e-9b9b-097730689576;-653;RFDevice #844;49,7885564243944;6,65367881415597;0;0;0;0;Unknown;OmniDirectional;89;26;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+2636644c-5520-46c4-9755-81780ee2b3f3;17;RFDevice #845;49,7933291187124;6,65904862727008;0;0;0;0;HackRF;Unknown;89;42;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+99faee86-b09a-45a6-a9fb-86c850917a19;-44;RFDevice #846;49,7627090059391;6,63192577456228;0;0;0;0;IdealSDR;Unknown;102;52;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a7dc1e27-e17e-4a24-9faa-90785796ed05;-299;RFDevice #847;49,7692860674314;6,65223783475465;0;0;0;0;Unknown;OmniDirectional;104;28;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e0bf9343-9423-486c-88be-80180667248a;-719;RFDevice #848;49,7723368236544;6,62593946106091;0;0;0;0;IdealSDR;Unknown;86;41;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f7c37fdd-6b5f-4368-8c84-3be4d5e73fea;25;RFDevice #849;49,7549946497794;6,63236556259108;0;0;0;0;IdealSDR;OmniDirectional;85;58;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+ea4d4bd9-3f4e-415c-9ec4-29ef75891db1;172;RFDevice #850;49,7712827352551;6,63104850101347;0;0;0;0;HackRF;Unknown;99;28;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+44b9a2ac-3837-4eaa-b116-669aba154e02;-478;RFDevice #851;49,7862523908308;6,64467039596521;0;0;0;0;Unknown;OmniDirectional;93;38;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8d4b484e-a1f8-4da0-848a-1455f50161b3;393;RFDevice #852;49,7707589485192;6,62396770925925;0;0;0;0;IdealSDR;OmniDirectional;92;22;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+0c53eee3-91df-47a5-baab-49946e6487fa;796;RFDevice #853;49,7864917361225;6,65093476292269;0;0;0;0;HackRF;Unknown;93;49;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4b8b83ba-bb88-40bb-a9df-6e81f0046664;565;RFDevice #854;49,7626771215985;6,62544912456802;0;0;0;0;TwinRx;Unknown;101;65;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+48fb885f-28b9-48ec-a355-e9f7acf80bc3;-443;RFDevice #855;49,7917519339433;6,65559679420939;0;0;0;0;Unknown;OmniDirectional;95;11;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+31948ef5-4f04-4248-80b0-3c7e4e4c2e72;557;RFDevice #856;49,7872385132876;6,63947634046421;0;0;0;0;Unknown;Unknown;95;36;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f102288a-68ca-4298-aaeb-f6ddb25eb328;-314;RFDevice #857;49,7912002801732;6,6424167399447;0;0;0;0;Unknown;Unknown;101;63;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c36475fa-c13b-497a-830a-546edab58ecd;-504;RFDevice #858;49,7594210589692;6,62274336047147;0;0;0;0;IdealSDR;OmniDirectional;100;68;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+5e53590c-3d3a-4f47-8026-05c52ea344ab;420;RFDevice #859;49,7827943625891;6,65839033916066;0;0;0;0;IdealSDR;Unknown;89;75;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d0abf318-94cf-4a7a-8df4-c6ae55fbd874;588;RFDevice #860;49,7774628653895;6,64722987608403;0;0;0;0;TwinRx;Unknown;98;42;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+3590e727-dccc-47eb-bb09-0b4b1127ae58;943;RFDevice #861;49,7459861024142;6,62959617058276;0;0;0;0;Unknown;OmniDirectional;85;41;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+738f81a8-c629-47bf-9488-743223d18cff;-673;RFDevice #862;49,7937222322996;6,65088911265656;0;0;0;0;IdealSDR;OmniDirectional;102;69;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+68cd9f43-df30-4d33-963d-a1ad5e372b0c;994;RFDevice #863;49,7757981860077;6,62351411504849;0;0;0;0;IdealSDR;Unknown;90;53;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f15b5e69-f8b1-4b65-9d59-622fbe832dac;970;RFDevice #864;49,7534239546988;6,66303471150032;0;0;0;0;HackRF;OmniDirectional;86;74;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0c6c1704-0074-4fce-a9f0-a11b200386ec;639;RFDevice #865;49,791402055563;6,62359455286706;0;0;0;0;IdealSDR;OmniDirectional;86;53;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+10989981-0810-4a7e-8304-dd9415032fe3;-398;RFDevice #866;49,7666551018322;6,66173142963184;0;0;0;0;TwinRx;OmniDirectional;99;12;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+770d252a-89e7-4f5f-8f8d-29cbf0ff77c0;568;RFDevice #867;49,7775555248844;6,64971506695264;0;0;0;0;HackRF;Unknown;92;49;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+61255bc6-34bb-4693-9793-5c6c9c6f7517;-229;RFDevice #868;49,7532320093257;6,65350526217083;0;0;0;0;IdealSDR;OmniDirectional;87;27;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+48550f1b-0217-43a9-8320-0bc8dba8a212;-918;RFDevice #869;49,7532931116769;6,63368865967448;0;0;0;0;HackRF;Unknown;97;46;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+62a5bbb9-68dc-49f0-ae71-06284dc39892;974;RFDevice #870;49,7704978548429;6,65517360472375;0;0;0;0;HackRF;OmniDirectional;85;55;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+6292acf2-e313-4459-bbbc-196d4a1299ff;-756;RFDevice #871;49,747912204462;6,64295566211606;0;0;0;0;TwinRx;OmniDirectional;97;13;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+18c3a2cc-6131-42ff-9b90-84449d7e442e;-282;RFDevice #872;49,7691790708541;6,65615133729132;0;0;0;0;HackRF;OmniDirectional;95;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c2fe46ff-2bcb-417d-8c70-2b68bf9ca63b;-664;RFDevice #873;49,7875246537436;6,64318440013262;0;0;0;0;HackRF;OmniDirectional;97;24;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+830c28c1-bc31-4f7b-87e9-9f7ce1c9b6fd;-758;RFDevice #874;49,7844576556507;6,63124008151774;0;0;0;0;IdealSDR;Unknown;91;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+5699e008-b414-482b-ad31-50cd1f844914;11;RFDevice #875;49,7715220108839;6,66392162568132;0;0;0;0;IdealSDR;Unknown;99;60;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3fee29b3-b320-4e5c-94a6-0cd6aea0cb31;-781;RFDevice #876;49,7909044873736;6,61849379761088;0;0;0;0;IdealSDR;Unknown;88;52;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+57379f0e-83a5-4e52-8dbf-f9c99dd466d7;817;RFDevice #877;49,775699600647;6,61905768958822;0;0;0;0;HackRF;OmniDirectional;91;72;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6705ebcc-ad89-4f4d-a8bc-04d5e1dc71c3;691;RFDevice #878;49,7665619800754;6,63606518491933;0;0;0;0;TwinRx;OmniDirectional;85;74;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b762baaf-dfd7-4864-bf63-d907071150be;-772;RFDevice #879;49,7683343572505;6,65585929900229;0;0;0;0;Unknown;Unknown;96;56;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+cd2c500f-2b5d-4cd2-9970-387a9111e58b;-757;RFDevice #880;49,7521932318928;6,62582885775069;0;0;0;0;HackRF;Unknown;104;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+16377c94-3f97-4d4c-b0ec-e4fde9664ef2;-648;RFDevice #881;49,7882808105843;6,62006043727061;0;0;0;0;Unknown;OmniDirectional;102;73;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ad834eab-605f-41f0-97dd-bff275341ded;264;RFDevice #882;49,768674197999;6,62395990370505;0;0;0;0;IdealSDR;OmniDirectional;87;20;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+60b41123-abf3-400e-919a-64c0a4de236e;986;RFDevice #883;49,7464881661442;6,62081656419258;0;0;0;0;HackRF;OmniDirectional;101;75;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+fe02b5d6-e91e-4e88-8a1b-0ed506ee0646;893;RFDevice #884;49,7767852675172;6,63353217161439;0;0;0;0;HackRF;OmniDirectional;93;78;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+3dd5e340-56eb-41ef-9f79-1aab474368e0;-787;RFDevice #885;49,7703527024454;6,63570091769844;0;0;0;0;HackRF;Unknown;104;67;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8110b95d-628c-42d0-b7a5-36706444d5aa;91;RFDevice #886;49,7771885237428;6,62266547333587;0;0;0;0;IdealSDR;OmniDirectional;95;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+349da8f0-7d9e-4da1-93e3-388b7153f647;980;RFDevice #887;49,7526226431254;6,63772284159345;0;0;0;0;TwinRx;Unknown;104;48;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+e11d54a4-b0dd-4d30-85f7-dac669cc3e27;852;RFDevice #888;49,7834240078028;6,66468638123711;0;0;0;0;TwinRx;OmniDirectional;96;15;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+f4743c4d-b47e-4090-96bd-8958560abe63;-29;RFDevice #889;49,7607739014479;6,61542461845359;0;0;0;0;Unknown;Unknown;99;19;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+7b900ea8-450b-4289-acbe-8e8dd9a23dd6;-605;RFDevice #890;49,7889729000455;6,655733033943;0;0;0;0;TwinRx;Unknown;102;77;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+55c9dbd5-9c23-4af8-8371-f0311b9a6b08;-77;RFDevice #891;49,7643826238756;6,63126428673117;0;0;0;0;Unknown;Unknown;94;11;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+22e694f8-78af-48d6-a050-89f8eca7950b;905;RFDevice #892;49,7482604472069;6,63993323453713;0;0;0;0;IdealSDR;Unknown;89;62;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1cc4a8e7-7dd0-47c3-8029-8960995eb588;112;RFDevice #893;49,7935735355212;6,64422497229396;0;0;0;0;IdealSDR;Unknown;92;29;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+c8b1fab0-9788-4082-ba5d-e5d5077a7662;-995;RFDevice #894;49,7672883147099;6,63067841756669;0;0;0;0;Unknown;OmniDirectional;101;58;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+fed0dac2-fba7-4fae-920f-fcbeece22fb7;605;RFDevice #895;49,7749335194234;6,62174971504698;0;0;0;0;IdealSDR;OmniDirectional;87;24;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+02b052a6-a936-4625-af8e-2cd8e29cfb5f;-426;RFDevice #896;49,7882858000053;6,65678182637649;0;0;0;0;TwinRx;OmniDirectional;104;12;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a2b75769-1d39-43aa-a771-d6c656ba17e5;-762;RFDevice #897;49,7886816141719;6,6241940613205;0;0;0;0;TwinRx;OmniDirectional;102;71;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+62a85ad2-8c85-41ee-a652-d6da4a1350df;-802;RFDevice #898;49,7481686942382;6,66271776475618;0;0;0;0;TwinRx;OmniDirectional;85;11;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4fbcff08-20bb-4a53-b230-5ae2fa23724b;-280;RFDevice #899;49,7670864104716;6,63337349794976;0;0;0;0;HackRF;OmniDirectional;97;57;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+59ccb91c-bb5d-4bb7-b0f4-da00df4fee3b;511;RFDevice #900;49,7737528642861;6,65439813544261;0;0;0;0;TwinRx;Unknown;97;13;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+13135e23-2c56-4424-b740-55e29eba8ac4;-205;RFDevice #901;49,762553205521;6,65805646583827;0;0;0;0;HackRF;Unknown;104;65;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e81c26dc-56dc-43fe-a662-7a9d5fb42d15;433;RFDevice #902;49,7479719017966;6,61567934386245;0;0;0;0;IdealSDR;OmniDirectional;98;70;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+ce3b2bc7-cd28-4ee1-b1a9-9003ab806bd2;684;RFDevice #903;49,7798767666815;6,62965150567235;0;0;0;0;Unknown;Unknown;98;71;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+c95156aa-13ec-4f35-b274-fd1fb391e883;-636;RFDevice #904;49,782904885922;6,66204143092145;0;0;0;0;TwinRx;OmniDirectional;89;48;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+f0630cf1-ce7b-4f38-905b-ef829fcc9afd;-998;RFDevice #905;49,7915372225294;6,62233011474024;0;0;0;0;Unknown;OmniDirectional;99;47;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+47c1446f-0dba-4c01-827e-cedf7251f280;279;RFDevice #906;49,7677571666388;6,64844869207067;0;0;0;0;IdealSDR;Unknown;94;29;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+895b3831-ba69-412a-87f1-b6a8e6d169eb;396;RFDevice #907;49,7724098629068;6,65647378566059;0;0;0;0;Unknown;OmniDirectional;90;40;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+927f7273-47af-4c3d-8b49-bf8eb3f35bfb;-83;RFDevice #908;49,7644700476612;6,61936773476641;0;0;0;0;Unknown;OmniDirectional;86;68;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+369679f8-5f8f-4911-b44b-7a0750ea29a9;8;RFDevice #909;49,7724579239945;6,62544622037827;0;0;0;0;IdealSDR;Unknown;86;15;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+734482d3-68d4-4be6-8a3b-8c84a64c0ea3;-680;RFDevice #910;49,7920429850769;6,62213308122588;0;0;0;0;IdealSDR;Unknown;101;70;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+51a8a025-4571-4235-8434-57e414a0f96a;-44;RFDevice #911;49,7878272282945;6,61526581859475;0;0;0;0;TwinRx;OmniDirectional;98;20;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+0e9cfff2-0b2d-42aa-9130-8bf04a14b58e;-22;RFDevice #912;49,7655481676056;6,63233655654948;0;0;0;0;Unknown;Unknown;98;31;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+a9648416-df6b-4c96-acbf-e7caada54f2e;230;RFDevice #913;49,7530990979759;6,64153623943303;0;0;0;0;IdealSDR;OmniDirectional;85;50;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+5f55b04a-50f1-47be-b4d5-5b2ed5153cdd;-70;RFDevice #914;49,7820593400886;6,64933838198876;0;0;0;0;HackRF;OmniDirectional;90;63;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c2e70ae8-b134-4d80-9a39-5550f5ef2161;42;RFDevice #915;49,7643083877573;6,63441002772875;0;0;0;0;IdealSDR;OmniDirectional;90;20;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2a3ab744-05ef-4336-bf51-8daea50c4136;-207;RFDevice #916;49,7693699040651;6,65251135355458;0;0;0;0;IdealSDR;Unknown;90;41;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+51f4f80f-66a4-454b-8989-4354c0dc20ba;252;RFDevice #917;49,7750851999497;6,64177635886337;0;0;0;0;Unknown;OmniDirectional;100;41;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+8cf061df-d77e-48db-9a7b-c16556e2bc47;-466;RFDevice #918;49,7639007101011;6,61915843356841;0;0;0;0;TwinRx;OmniDirectional;99;52;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+80bdb7e9-017e-4ccb-97f8-8bec10a84ab9;276;RFDevice #919;49,7822492778097;6,62848461159448;0;0;0;0;HackRF;OmniDirectional;86;42;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+291a80e5-bbb2-4947-803c-e13290317322;-989;RFDevice #920;49,7817470210397;6,64910393901607;0;0;0;0;Unknown;OmniDirectional;94;74;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b9314064-a144-4412-af94-c5b9135b3418;-422;RFDevice #921;49,7548874778108;6,65344460543419;0;0;0;0;TwinRx;Unknown;103;30;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+1dd36475-f0cb-40f4-8395-bffa2a6690e3;854;RFDevice #922;49,7925234448473;6,66188905504634;0;0;0;0;TwinRx;OmniDirectional;95;65;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+797fd75e-6b81-44c9-8d73-93f1cce2cd3f;746;RFDevice #923;49,7726108809916;6,63847196091841;0;0;0;0;Unknown;OmniDirectional;88;25;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+f7029008-e3d0-44b8-bf04-f654e0d73483;-753;RFDevice #924;49,7556032991174;6,65598013801327;0;0;0;0;TwinRx;OmniDirectional;98;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+48ee1115-3a67-46f5-b2f5-296108a7d752;-110;RFDevice #925;49,7905064052969;6,63219480925356;0;0;0;0;Unknown;Unknown;86;42;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+306fe47e-6a37-4815-a0d6-0dcef641d44a;-121;RFDevice #926;49,7718714324039;6,63236228903879;0;0;0;0;HackRF;OmniDirectional;100;19;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+dc73630a-74cc-4d69-b148-f494b8eb33b2;861;RFDevice #927;49,7471530493679;6,66028544735191;0;0;0;0;TwinRx;OmniDirectional;103;22;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+8c15eaa7-f16e-422d-8453-d071ee21ba55;923;RFDevice #928;49,7576332643542;6,63527437715119;0;0;0;0;TwinRx;OmniDirectional;99;55;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+0578af82-fe90-4a1a-a083-b2c6219e8374;546;RFDevice #929;49,7526137011482;6,62820992275072;0;0;0;0;HackRF;OmniDirectional;104;57;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+608e1e11-587c-46a3-bf76-be153ad7b9c6;-841;RFDevice #930;49,7839211340797;6,64168109459895;0;0;0;0;HackRF;Unknown;102;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+6d9c247f-ccb9-496e-92f3-e9af47f3e5c5;-866;RFDevice #931;49,7618601364482;6,64773539322803;0;0;0;0;IdealSDR;Unknown;93;65;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+aafdc758-04b2-4e4d-9466-fd4d9cba8b15;458;RFDevice #932;49,7565904477753;6,65781851729756;0;0;0;0;TwinRx;Unknown;103;50;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+bfd3ab79-6e10-41ca-956d-5b116b5b641f;764;RFDevice #933;49,7500193517068;6,64266331835322;0;0;0;0;IdealSDR;OmniDirectional;101;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4360de4b-f470-424e-9e4b-2561024aacd1;-275;RFDevice #934;49,7508770457118;6,64762189217746;0;0;0;0;IdealSDR;OmniDirectional;98;31;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+39adf83a-549f-41f1-99fd-51ea592af503;757;RFDevice #935;49,7475000070274;6,63851132920422;0;0;0;0;Unknown;OmniDirectional;96;44;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+62f68c7f-d741-42fd-84e3-6ddd18f24a8e;-303;RFDevice #936;49,783941767997;6,64315349603233;0;0;0;0;Unknown;OmniDirectional;103;19;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2f08c377-bc2f-4c99-a864-74c82f7313e3;-630;RFDevice #937;49,7856835702944;6,64482704235014;0;0;0;0;TwinRx;OmniDirectional;92;71;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+6ef580a5-c531-4610-8465-68ac33b3041c;-992;RFDevice #938;49,780505112514;6,64976866028275;0;0;0;0;TwinRx;Unknown;96;15;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+69316747-ce8d-4da8-8fd8-cb335f1ae197;839;RFDevice #939;49,7852348246421;6,65757380805345;0;0;0;0;TwinRx;OmniDirectional;100;57;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+eddee27f-6a50-4505-be0a-201e3333689b;196;RFDevice #940;49,756273327712;6,6482456181145;0;0;0;0;TwinRx;OmniDirectional;92;68;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+0a354aae-d169-4ff0-ab8e-b851a7ab0c72;957;RFDevice #941;49,7703942076742;6,61712536290634;0;0;0;0;TwinRx;OmniDirectional;96;60;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d0e879b0-1226-44a4-8796-42d06697983f;-663;RFDevice #942;49,7577741101997;6,65402903109525;0;0;0;0;HackRF;Unknown;101;48;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9a3d1044-3e77-49fa-95fc-7511f649f82a;379;RFDevice #943;49,77177897007;6,6160789588496;0;0;0;0;HackRF;OmniDirectional;95;59;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+7b536ce7-4753-4015-b65f-6298116bd81a;-743;RFDevice #944;49,7605615919849;6,62128153939805;0;0;0;0;IdealSDR;Unknown;88;76;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c61ffcba-bd6c-4913-9cc3-d303c881a5e5;730;RFDevice #945;49,7591488369661;6,64861309648906;0;0;0;0;HackRF;Unknown;94;76;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+57a3f942-c5ab-48b1-8843-1e6c2adaec2b;-841;RFDevice #946;49,7616620964536;6,63772903500499;0;0;0;0;IdealSDR;OmniDirectional;91;38;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ef607ca0-abf2-4689-b7aa-539ff957c2df;321;RFDevice #947;49,7895819278263;6,61649752676338;0;0;0;0;TwinRx;OmniDirectional;95;33;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+04338320-17dd-4d3d-a871-013b5f2252f7;596;RFDevice #948;49,7782946006172;6,63888002591169;0;0;0;0;Unknown;OmniDirectional;96;69;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2a776dac-be71-4af1-8a64-a2a3484a5169;-400;RFDevice #949;49,7534158344973;6,63918034950247;0;0;0;0;TwinRx;OmniDirectional;90;28;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+90980a10-4052-42b1-ae49-d347a555829f;166;RFDevice #950;49,7794995534482;6,62697605412327;0;0;0;0;Unknown;OmniDirectional;94;35;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+0b43d2c6-cca5-48f5-9be8-6e7a60d22248;795;RFDevice #951;49,7639399922163;6,63823154386065;0;0;0;0;Unknown;OmniDirectional;88;28;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+0c20f0f0-56b7-49be-a83a-347cf838474c;878;RFDevice #952;49,7554441040518;6,63903603517885;0;0;0;0;Unknown;Unknown;88;72;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+af5ea109-d09d-4ec1-ba68-eda58060cf7c;-40;RFDevice #953;49,7673748159973;6,66016573668479;0;0;0;0;Unknown;Unknown;100;51;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+482c97d3-2a12-48da-ac4f-0a4f266d2843;242;RFDevice #954;49,7861696423543;6,62321757979855;0;0;0;0;TwinRx;OmniDirectional;96;39;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1d2397fd-977f-4055-b8e7-01b31576ad63;-426;RFDevice #955;49,7792395471144;6,65952766051042;0;0;0;0;IdealSDR;OmniDirectional;85;72;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+4130578d-3403-4945-a2c2-0c423da44372;792;RFDevice #956;49,7521944348821;6,64866163297042;0;0;0;0;Unknown;Unknown;92;25;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+60e6f6b0-fc8b-4a46-b503-aee6a0b82372;582;RFDevice #957;49,7829917865837;6,62896044916439;0;0;0;0;TwinRx;Unknown;95;77;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+a8e42603-680c-4be5-b4c0-b4870bb4ad6c;561;RFDevice #958;49,7495068751151;6,6238128006524;0;0;0;0;HackRF;OmniDirectional;96;15;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+95264cc0-4fbe-4a0a-a830-6185f6b95acb;552;RFDevice #959;49,7544360747925;6,64369714548066;0;0;0;0;HackRF;OmniDirectional;101;35;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+d90d5123-34aa-43db-9f62-fcde7c942946;84;RFDevice #960;49,7855400168846;6,66287336445096;0;0;0;0;TwinRx;OmniDirectional;97;51;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+0bedc847-7c82-4d32-866b-f8458a009c6c;184;RFDevice #961;49,7822472178871;6,65915862936501;0;0;0;0;TwinRx;OmniDirectional;101;59;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e84f16bb-f929-4fd9-9e43-c4d38c8f2108;428;RFDevice #962;49,7846999528159;6,62984223902232;0;0;0;0;IdealSDR;Unknown;96;14;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+f4286251-a674-4d22-b6e7-eb47c0fe1c26;-880;RFDevice #963;49,7608871364429;6,62439072468071;0;0;0;0;TwinRx;Unknown;103;21;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+b6bac661-e4ae-499a-bb3c-3dbc5ed428cf;-230;RFDevice #964;49,7876950925037;6,61825599144611;0;0;0;0;Unknown;Unknown;90;79;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+7a1d1e9b-76b2-464e-af75-f1be6f60e675;-19;RFDevice #965;49,7931831408371;6,65050969591402;0;0;0;0;HackRF;Unknown;96;15;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ab6b2a0d-5ff7-4d82-a7db-2f710f9ec12a;-61;RFDevice #966;49,7855769440343;6,645011511997;0;0;0;0;HackRF;Unknown;91;49;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+886212fb-a3df-4e04-b0f0-d71326abbbf4;463;RFDevice #967;49,7779560272357;6,64710969330622;0;0;0;0;Unknown;OmniDirectional;104;37;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b24df528-e686-4880-96c8-9c4375b0b488;138;RFDevice #968;49,7906654221539;6,62174024759421;0;0;0;0;HackRF;Unknown;103;25;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+fd1f42f1-9fb1-43e3-a08f-ec86b5c82ba2;590;RFDevice #969;49,7524790172588;6,6424118145987;0;0;0;0;Unknown;Unknown;100;52;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+9289b660-8c94-4352-b2cc-5bfefd01f0ba;-527;RFDevice #970;49,7568388145792;6,62204638387186;0;0;0;0;IdealSDR;OmniDirectional;98;42;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+66d3187d-5f86-4a03-81c0-3e9b77967c02;-446;RFDevice #971;49,751292862196;6,61772965861393;0;0;0;0;Unknown;Unknown;88;60;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+3f757c7c-9746-4cf2-911c-b77e39a57909;112;RFDevice #972;49,7467322645106;6,65116409002406;0;0;0;0;Unknown;OmniDirectional;97;24;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+8b3b6c4d-1db9-4c6c-884b-5083a84a8749;173;RFDevice #973;49,7526946346632;6,64891281690877;0;0;0;0;HackRF;Unknown;98;14;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+1ea0234d-dc6a-4a76-8091-c7d2ee3f40f6;-910;RFDevice #974;49,7522640969027;6,6433524402248;0;0;0;0;IdealSDR;Unknown;92;36;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+bc9bd800-88ea-4b42-8e7a-aa70645480aa;-125;RFDevice #975;49,7492277535251;6,62336994254201;0;0;0;0;TwinRx;Unknown;91;68;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+84e4c2a8-d42d-4a06-9106-f29b992d6919;-164;RFDevice #976;49,7472969223378;6,63265713945635;0;0;0;0;Unknown;OmniDirectional;101;16;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+13c04cbc-7e1f-46cf-9210-4e06143e79ef;-969;RFDevice #977;49,7752125365189;6,63654305761533;0;0;0;0;IdealSDR;OmniDirectional;86;29;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c5ceb9f5-643b-42a1-a6c9-9c4cb4cbea60;-902;RFDevice #978;49,750502506748;6,65784072070296;0;0;0;0;HackRF;Unknown;95;57;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+55a54dd9-e536-4097-95d7-d30889478231;291;RFDevice #979;49,7878362479674;6,63288266326915;0;0;0;0;HackRF;OmniDirectional;96;57;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4b0397ad-bc68-48a5-a68a-bb07f603e7ca;-394;RFDevice #980;49,7488891596546;6,66252606674229;0;0;0;0;TwinRx;OmniDirectional;89;73;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+56636adb-abaf-4deb-821f-64d055061fe4;-907;RFDevice #981;49,7932997828196;6,6243615098133;0;0;0;0;IdealSDR;Unknown;89;70;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+0a35e49b-9151-47cd-b45d-c021a2d32646;582;RFDevice #982;49,7728634103419;6,64394824753248;0;0;0;0;Unknown;OmniDirectional;92;79;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+56abf22f-4f98-448a-a759-cbe25a22f596;-278;RFDevice #983;49,7543662523749;6,62532895587647;0;0;0;0;IdealSDR;OmniDirectional;100;20;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+1311cbd6-f9dc-47f7-a4c3-013271d0b7ba;831;RFDevice #984;49,7533487665128;6,65765805230381;0;0;0;0;Unknown;OmniDirectional;95;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+2ecbb2e3-780b-4671-b4fa-fb1cab19be57;-602;RFDevice #985;49,7764773267323;6,63637987246117;0;0;0;0;TwinRx;OmniDirectional;93;25;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+429febd1-fb95-4ec5-b548-55dd5f09ce34;968;RFDevice #986;49,7463361105743;6,64233600612852;0;0;0;0;Unknown;OmniDirectional;103;67;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+730b8975-707c-4d8c-ac1e-6cd42c7be054;-850;RFDevice #987;49,7480283838566;6,63368422380834;0;0;0;0;IdealSDR;OmniDirectional;98;65;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+61ecc397-41ea-44dd-ad28-d5b326f5ad13;606;RFDevice #988;49,7831971405107;6,6310756691831;0;0;0;0;Unknown;OmniDirectional;103;23;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+21244920-4edd-4f34-945b-258693b44813;-538;RFDevice #989;49,7827041992482;6,64315566419785;0;0;0;0;Unknown;Unknown;91;49;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+e57349ef-1c88-4c83-939b-550492c66954;901;RFDevice #990;49,7846846402197;6,62583036819293;0;0;0;0;HackRF;OmniDirectional;89;40;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+81109b19-ac11-4dfa-80df-7632f754b39f;-323;RFDevice #991;49,7912910534838;6,65827040215888;0;0;0;0;IdealSDR;OmniDirectional;88;68;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+4ce8741e-70cc-40a0-826c-e3af79ccf3f6;665;RFDevice #992;49,7520519157526;6,65761141602318;0;0;0;0;TwinRx;OmniDirectional;93;13;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+b94c1c5c-2916-4c4a-9c74-9ad74658debc;644;RFDevice #993;49,7606844142706;6,64869845818682;0;0;0;0;HackRF;OmniDirectional;104;10;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d9305cc2-7f3f-4808-8ebf-c6b0a8c8bd41;-37;RFDevice #994;49,7679734023715;6,6234986715083;0;0;0;0;IdealSDR;OmniDirectional;92;16;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+24644fe2-f237-48ba-b20d-1e78f8d195c1;-352;RFDevice #995;49,7615777985823;6,63737130785718;0;0;0;0;HackRF;OmniDirectional;87;14;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+813d7fa0-954f-4a64-9fb0-025281fcf72f;834;RFDevice #996;49,7486887510971;6,66487327646705;0;0;0;0;Unknown;OmniDirectional;104;66;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+b8da95b7-1ad2-4b12-8b54-a53ca62b7223;460;RFDevice #997;49,7532090721545;6,64528766918722;0;0;0;0;Unknown;Unknown;88;55;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+3c51f585-3005-4968-a4cc-f10e44a42533;833;RFDevice #998;49,7518736406349;6,64540478737825;0;0;0;0;TwinRx;OmniDirectional;97;11;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+442b8d02-e154-48c7-8176-5f772f5a780a;-924;RFDevice #999;49,7603006319302;6,62733963230515;0;0;0;0;Unknown;Unknown;97;10;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+d34a1b8e-5d08-4ffe-9b67-4815c0420c19;-530;RFDevice #1000;49,7773908782057;6,63182405131968;0;0;0;0;HackRF;Unknown;88;27;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.

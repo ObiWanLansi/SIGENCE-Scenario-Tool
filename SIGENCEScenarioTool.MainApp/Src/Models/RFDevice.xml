@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RFDevice>
+
+    <Property Name="PrimaryKey" Type="Guid" Init="Guid.NewGuid()"/>
+    <Property Name="Id" Type="int" Init="0"/>
+    
+    <!--<Property Name="Id" Type="Guid" Init="Guid.NewGuid()"/>-->
+    <Property Name="Name" Type="string" Init="&quot;RFDevice&quot;"/>
+
+    <Property Name="Latitude" Type="double" Init="double.NaN"/>
+    <Property Name="Longitude" Type="double" Init="double.NaN"/>
+    <Property Name="Altitude" Type="uint" Init="0"/>
+
+    <Property Name="Roll" Type="double" Init="0"/>
+    <Property Name="Pitch" Type="double" Init="0"/>
+    <Property Name="Yaw" Type="double" Init="0"/>
+
+    <Property Name="RxTxType" Type="RxTxType" Init="RxTxType.Unknown"/>
+    <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown"/>
+
+    <Property Name="CenterFrequency_Hz" Type="uint" Init="0"/>
+    <Property Name="Bandwith_Hz" Type="uint" Init="0"/>
+    <Property Name="Gain_dB" Type="uint" Init="0"/>
+    <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0"/>
+
+    <Property Name="XPos" Type="int" Init="0"/>
+    <Property Name="YPos" Type="int" Init="0"/>
+    <Property Name="ZPos" Type="int" Init="0"/>
+
+    <Property Name="StartTime" Type="uint" Init="0"/>
+    <Property Name="Remark" Type="string" Init="&quot;&quot;"/>
+
+</RFDevice>

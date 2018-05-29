@@ -1,3 +1,0 @@
-﻿<Application x:Class="TransmitterTool.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="Src/Windows/MainWindow.xaml">
-    <Application.Resources />
-</Application>

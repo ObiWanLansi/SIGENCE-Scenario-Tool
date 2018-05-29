@@ -1,0 +1,11 @@
+PrimaryKey;Id;Name;Latitude;Longitude;Altitude;Roll;Pitch;Yaw;RxTxType;AntennaType;CenterFrequency_Hz;Bandwith_Hz;Gain_dB;SignalToNoiseRatio_dB;XPos;YPos;ZPos;StartTime;Remark
+91988fd4-250d-4e50-b847-4c48fe6a8141;-66;RFDevice #1;49,7538871429058;6,65725240795759;0;0;0;0;Unknown;Unknown;98;24;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+a9012a3c-2611-4c2e-893d-845b90e69683;977;RFDevice #2;49,7706019471141;6,61717774467891;0;0;0;0;TwinRx;OmniDirectional;98;11;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+c704ffae-0581-45ce-9f10-c40d83211471;-547;RFDevice #3;49,7468137025231;6,62362572551422;0;0;0;0;HackRF;OmniDirectional;86;28;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+ce0ca259-ff35-49d5-9841-1843c498783c;-528;RFDevice #4;49,7699096295255;6,65386467827212;0;0;0;0;TwinRx;Unknown;87;47;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+c5b8f623-8046-479d-a3ec-c67cf1666729;931;RFDevice #5;49,7492524635154;6,63497003748793;0;0;0;0;HackRF;OmniDirectional;92;30;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+c701cdd6-4f95-45b2-8ec2-eace3c4fddf3;-545;RFDevice #6;49,7824546151824;6,66444313894247;0;0;0;0;Unknown;OmniDirectional;88;32;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4af63aa4-91a7-4092-b871-f05099228a33;800;RFDevice #7;49,7855173926844;6,62976591294634;0;0;0;0;Unknown;OmniDirectional;87;76;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+bd712f95-adc7-4367-bada-64f419e92f03;813;RFDevice #8;49,7455238160534;6,65205588310135;0;0;0;0;IdealSDR;Unknown;95;31;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+4326629c-8a73-4f54-8923-403723733e46;931;RFDevice #9;49,7944962733278;6,64404904655383;0;0;0;0;IdealSDR;OmniDirectional;96;41;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+f1a53d24-4741-428c-bfb5-0d711057982d;470;RFDevice #10;49,7569721459554;6,62503558481826;0;0;0;0;HackRF;OmniDirectional;92;40;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
