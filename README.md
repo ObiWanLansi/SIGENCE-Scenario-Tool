@@ -36,3 +36,9 @@ https://www.nuget.org/packages/NUnit/
 
 ### Log4Net
 https://www.nuget.org/packages/log4net/
+
+
+## License
+
+The tool is current licensed under [GNU Lesser General Public License v3.0](LICENSE)
+https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/LICENSE
