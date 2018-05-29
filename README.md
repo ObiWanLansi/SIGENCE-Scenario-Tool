@@ -1,7 +1,6 @@
-# TransmitterTool
-SIGINT AG Transmitter Tool
+# SIGENCE Scenario Tool
 
-A **little** tool to place transmitter on a map, edit, save and load them.
+A **little** tool to place RF Devices on a map, edit, save and load them.
 
 
 ## Issues
