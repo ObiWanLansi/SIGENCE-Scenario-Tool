@@ -25,16 +25,16 @@ https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki
 
 ## Dependencies
 
-### GMap.NET.Presentation
+**GMap.NET.Presentation**<br/>
 https://www.nuget.org/packages/GMap.NET.Presentation/
 
-### Newtonsoft.Json
+**Newtonsoft.Json**<br/>
 https://www.nuget.org/packages/Newtonsoft.Json/
 
-### NUnit
+**NUnit**<br/>
 https://www.nuget.org/packages/NUnit/
 
-### Log4Net
+**Log4Net**<br/>
 https://www.nuget.org/packages/log4net/
 
 
