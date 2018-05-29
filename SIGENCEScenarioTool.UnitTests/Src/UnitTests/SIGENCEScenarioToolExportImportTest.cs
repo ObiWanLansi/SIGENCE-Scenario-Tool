@@ -19,13 +19,13 @@ namespace SIGENCEScenarioTool.UnitTests
     /// 
     /// </summary>
     [TestFixture]
-    [RFDeviceTestAction]
-    sealed class RFDeviceExportImportTest
+    [SIGENCEScenarioToolTestAction]
+    sealed class SIGENCEScenarioToolExportImportTest
     {
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
-        static private readonly ILog Log = LogManager.GetLogger( typeof( RFDeviceExportImportTest ) );
+        static private readonly ILog Log = LogManager.GetLogger( typeof( SIGENCEScenarioToolExportImportTest ) );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// Test the export and import of XML.
         /// </summary>
-        [Test, Category( "ExportImport" ), RFDeviceTestCase( "28321d28-352c-462a-9d87-49b1b3ad7224" ), Description( "Tests if the RFDevices are properly exported and imported as XML." )]
+        [Test, Category( "ExportImport" ), SIGENCEScenarioToolTestCase( "28321d28-352c-462a-9d87-49b1b3ad7224" ), Description( "Tests if the RFDevices are properly exported and imported as XML." )]
         public void Test000_ExportAndImportRFDeviceXml()
         {
             SIGENCEScenarioToolTestCaseHelper.ShowTestCaseInformation();
@@ -155,7 +155,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="iCount">The i count.</param>
-        [Test, Category( "ExportImport" ), RFDeviceTestCase( "9ABC401E-9790-4FD4-9339-371914053AD8" ), Description( "Tests if the RFDevices are properly exported in different formats." )]
+        [Test, Category( "ExportImport" ), SIGENCEScenarioToolTestCase( "9ABC401E-9790-4FD4-9339-371914053AD8" ), Description( "Tests if the RFDevices are properly exported in different formats." )]
         public void Test001_ExportRFDevices( [ValueSource( "aFormats" )] FileFormat format , [Values( 10 , 50 , 200 , 1000 )] int iCount )
         {
             SIGENCEScenarioToolTestCaseHelper.ShowTestCaseInformation();
@@ -186,5 +186,5 @@ namespace SIGENCEScenarioTool.UnitTests
             Assert.True( File.Exists( strFilename ) );
         }
 
-    } // end sealed class RFDeviceExportImportTest
+    } // end sealed class SIGENCEScenarioToolExportImportTest
 }

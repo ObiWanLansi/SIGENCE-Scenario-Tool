@@ -45,7 +45,7 @@
                 <MenuItem Header="_Create Screenshot From Map" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
                 <Separator />
                 <!--<MenuItem Header="Create Some Randomized Transmitter" Tag="50" Click="MenuItem_CreateSomeRandomizedTransmitter_Click" />-->
-                <MenuItem Header="Create Some Randomized RFDevices">
+                <MenuItem Header="Create Randomized RFDevices">
                     <MenuItem Header="50" Tag="50" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                     <MenuItem Header="100" Tag="100" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                     <MenuItem Header="200" Tag="200" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />

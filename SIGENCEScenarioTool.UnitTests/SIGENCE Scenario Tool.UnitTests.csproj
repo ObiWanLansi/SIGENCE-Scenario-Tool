@@ -64,8 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Src\Framework\Attributes\RFDeviceTestActionAttribute.cs" />
-    <Compile Include="Src\Framework\Attributes\RFDeviceTestCaseAttribute.cs" />
+    <Compile Include="Src\Framework\Attributes\SIGENCEScenarioToolTestActionAttribute.cs" />
+    <Compile Include="Src\Framework\Attributes\SIGENCEScenarioToolTestCaseAttribute.cs" />
     <Compile Include="Src\Framework\SIGENCEScenarioToolInit_And_Deinit.cs" />
     <Compile Include="Src\Framework\SIGENCEScenarioToolTestCaseHelper.cs" />
     <Compile Include="Src\UnitTests\SIGENCEScenarioToolExportImportTest.cs" />

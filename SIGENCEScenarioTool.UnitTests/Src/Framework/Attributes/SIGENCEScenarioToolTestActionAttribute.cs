@@ -12,12 +12,12 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
     /// <summary>
     /// 
     /// </summary>
-    sealed public class RFDeviceTestActionAttribute : Attribute, ITestAction
+    sealed public class SIGENCEScenarioToolTestActionAttribute : Attribute, ITestAction
     {
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
-        static private readonly ILog Log = LogManager.GetLogger(typeof( RFDeviceTestActionAttribute ) );
+        static private readonly ILog Log = LogManager.GetLogger(typeof( SIGENCEScenarioToolTestActionAttribute ) );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -55,5 +55,5 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
 
         #endregion
 
-    } // end sealed public class RFDeviceTestActionAttribute
+    } // end sealed public class SIGENCEScenarioToolTestActionAttribute
 }

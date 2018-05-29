@@ -68,7 +68,7 @@ namespace SIGENCEScenarioTool.UnitTests
                 {
                     Log.InfoFormat("        Validating TestCase {0}", mi.Name);
 
-                    object[] opeaAttributes = mi.GetCustomAttributes(typeof(RFDeviceTestCaseAttribute), false);
+                    object[] opeaAttributes = mi.GetCustomAttributes(typeof(SIGENCEScenarioToolTestCaseAttribute), false);
                     object[] descAttributes = mi.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
                     if (opeaAttributes.Length != 1 || descAttributes.Length != 1)
@@ -76,7 +76,7 @@ namespace SIGENCEScenarioTool.UnitTests
                         Assert.Fail(string.Format("The testmethod {0}.{1} is no valid testmethod.", t.FullName, mi.Name));
                     }
 
-                    string strTestCasseId = (opeaAttributes[0] as RFDeviceTestCaseAttribute).Id.ToString();
+                    string strTestCasseId = (opeaAttributes[0] as SIGENCEScenarioToolTestCaseAttribute).Id.ToString();
 
                     if (hsTestCaseId.Contains(strTestCasseId) == false)
                     {
@@ -103,10 +103,10 @@ namespace SIGENCEScenarioTool.UnitTests
 
             MethodBase meba = sf.GetMethod();
 
-            object[] itcAttributes = meba.GetCustomAttributes(typeof(RFDeviceTestCaseAttribute), false);
+            object[] itcAttributes = meba.GetCustomAttributes(typeof(SIGENCEScenarioToolTestCaseAttribute), false);
             object[] descAttributes = meba.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
-            RFDeviceTestCaseAttribute tca = itcAttributes[0] as RFDeviceTestCaseAttribute;
+            SIGENCEScenarioToolTestCaseAttribute tca = itcAttributes[0] as SIGENCEScenarioToolTestCaseAttribute;
             DescriptionAttribute desc = descAttributes[0] as DescriptionAttribute;
 
             Log.InfoFormat("TestCase   : {0}", tca.Id);

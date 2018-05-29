@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
     /// <summary>
     /// 
     /// </summary>
-    public sealed class RFDeviceTestCaseAttribute : Attribute
+    public sealed class SIGENCEScenarioToolTestCaseAttribute : Attribute
     {
         /// <summary>
         /// Gets the identifier.
@@ -19,21 +19,21 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransmitterToolTestCaseAttribute"/> class.
+        /// Initializes a new instance of the <see cref="SIGENCEScenarioToolTestCaseAttribute"/> class.
         /// </summary>
         /// <param name="g">The g.</param>
-        public RFDeviceTestCaseAttribute(Guid g)
+        public SIGENCEScenarioToolTestCaseAttribute( Guid g )
         {
         }
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransmitterToolTestCaseAttributeAttribute"/> class.
+        /// Initializes a new instance of the <see cref="SIGENCEScenarioToolTestCaseAttribute"/> class.
         /// </summary>
         /// <param name="strGUID">The string unique identifier.</param>
-        public RFDeviceTestCaseAttribute(string strGUID)
+        public SIGENCEScenarioToolTestCaseAttribute( string strGUID )
         {
-            Id = new Guid(strGUID);
+            Id = new Guid( strGUID );
         }
 
 
@@ -48,5 +48,5 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
             return Id.ToString();
         }
 
-    } // end public sealed class RFDeviceTestCaseAttribute 
+    } // end public sealed class SIGENCEScenarioToolTestCaseAttribute 
 }
