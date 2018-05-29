@@ -5,17 +5,17 @@ A **little** tool to place RF Devices on a map, edit, save and load them.
 
 ## Issues
 
-https://github.com/ObiWanLansi/TransmitterTool/issues
+https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues
 
 
 ## Kanban Board
 
-https://github.com/ObiWanLansi/TransmitterTool/projects/1
+https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1
 
 
 ## Wiki
 
-https://github.com/ObiWanLansi/TransmitterTool/wiki
+https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki
 
 
 ## Screenshot
