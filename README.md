@@ -11,9 +11,9 @@ A **little** tool to place RF Devices on a map, edit, save and load them.
 
 ## Quick Links
 
-- [Issues](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues)
-- [Kanban Board](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1)
-- [Wiki](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki)
+- [Issues](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/)
+- [Kanban Board](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1/)
+- [Wiki](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki/)
 
 
 ## Screenshot
@@ -23,17 +23,13 @@ A **little** tool to place RF Devices on a map, edit, save and load them.
 
 ## Dependencies
 
-**GMap.NET.Presentation**<br/>
-https://www.nuget.org/packages/GMap.NET.Presentation/
+- [GMap.NET.Presentation](https://www.nuget.org/packages/GMap.NET.Presentation/)
 
-**Newtonsoft.Json**<br/>
-https://www.nuget.org/packages/Newtonsoft.Json/
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
 
-**NUnit**<br/>
-https://www.nuget.org/packages/NUnit/
+- [NUnit](https://www.nuget.org/packages/NUnit/)
 
-**Log4Net**<br/>
-https://www.nuget.org/packages/log4net/
+- [Log4Net](https://www.nuget.org/packages/log4net/)
 
 
 ## License
