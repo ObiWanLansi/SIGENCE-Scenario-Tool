@@ -79,7 +79,7 @@ namespace SIGENCEScenarioTool.Windows
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices( 10 );
+            CreateRandomizedRFDevices(10);
 #endif
         }
 
@@ -106,7 +106,7 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format( "{0} ({1}){2}" , Tool.ProductTitle , Tool.Version , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
+            this.Title = string.Format("{0} ({1}){2}", Tool.ProductTitle, Tool.Version, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
         }
 
 
@@ -117,32 +117,32 @@ namespace SIGENCEScenarioTool.Windows
         {
             try
             {
-                if( CurrentFile != null )
+                if (CurrentFile != null)
                 {
-                    sfdSaveScreenshot.FileName = new FileInfo( CurrentFile ).Name;
+                    sfdSaveScreenshot.FileName = new FileInfo(CurrentFile).Name;
                 }
 
-                if( sfdSaveScreenshot.ShowDialog() == true )
+                if (sfdSaveScreenshot.ShowDialog() == true)
                 {
-                    var screenshot = Tools.Windows.GetWPFScreenshot( mcMapControl );
+                    var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
 
                     PngBitmapEncoder encoder = new PngBitmapEncoder();
 
-                    encoder.Frames.Add( BitmapFrame.Create( screenshot ) );
+                    encoder.Frames.Add(BitmapFrame.Create(screenshot));
 
-                    using( BufferedStream bs = new BufferedStream( new FileStream( sfdSaveScreenshot.FileName , FileMode.Create ) ) )
+                    using (BufferedStream bs = new BufferedStream(new FileStream(sfdSaveScreenshot.FileName, FileMode.Create)))
                     {
-                        encoder.Save( bs );
+                        encoder.Save(bs);
                     }
 
-                    Tools.Windows.OpenWithDefaultApplication( sfdSaveScreenshot.FileName );
+                    Tools.Windows.OpenWithDefaultApplication(sfdSaveScreenshot.FileName);
                 }
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
         }
-                    
+
     } // end public partial class MainWindow
 }

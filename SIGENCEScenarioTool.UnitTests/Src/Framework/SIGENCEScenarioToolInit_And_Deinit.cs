@@ -59,7 +59,7 @@ namespace SIGENCEScenarioTool.UnitTests
             {
                 Layout = new XmlLayout(true),
                 AppendToFile = false,
-                File = string.Format("{0}{1}_{2}.log", Path.GetTempPath(), "SIGENCEScenarioTool.NUnit" , DateTime.Now.ToString("yyyyMMdd_HHmmssfff")),
+                File = string.Format("{0}{1}_{2}.log", Path.GetTempPath(), "SIGENCEScenarioTool.NUnit", DateTime.Now.ToString("yyyyMMdd_HHmmssfff")),
                 ImmediateFlush = true,
 #if DEBUG
                 Threshold = Level.Debug

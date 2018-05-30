@@ -22,7 +22,7 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// Initializes a new instance of the <see cref="SIGENCEScenarioToolTestCaseAttribute"/> class.
         /// </summary>
         /// <param name="g">The g.</param>
-        public SIGENCEScenarioToolTestCaseAttribute( Guid g )
+        public SIGENCEScenarioToolTestCaseAttribute(Guid g)
         {
         }
 
@@ -31,9 +31,9 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// Initializes a new instance of the <see cref="SIGENCEScenarioToolTestCaseAttribute"/> class.
         /// </summary>
         /// <param name="strGUID">The string unique identifier.</param>
-        public SIGENCEScenarioToolTestCaseAttribute( string strGUID )
+        public SIGENCEScenarioToolTestCaseAttribute(string strGUID)
         {
-            Id = new Guid( strGUID );
+            Id = new Guid(strGUID);
         }
 
 

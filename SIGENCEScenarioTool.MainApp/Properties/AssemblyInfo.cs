@@ -6,7 +6,7 @@ using System.Windows;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle( "SIGENCE Scenario Tool" )]
-[assembly: AssemblyDescription( "A Little Tool For Placing Transmitters On A Map." )]
+[assembly: AssemblyDescription( "A Little Tool For Placing RF Devices On A Map." )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "LansiTools" )]
 [assembly: AssemblyProduct( "SIGENCE Scenario Tool" )]

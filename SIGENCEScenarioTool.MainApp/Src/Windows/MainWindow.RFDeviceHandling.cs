@@ -53,13 +53,13 @@ namespace SIGENCEScenarioTool.Windows
         /// Creates the RFDevice.
         /// </summary>
         /// <param name="pll">The PLL.</param>
-        private void AddRFDevice( PointLatLng pll )
+        private void AddRFDevice(PointLatLng pll)
         {
-            AddRFDevice( new RFDevice
+            AddRFDevice(new RFDevice
             {
-                Latitude = pll.Lat ,
+                Latitude = pll.Lat,
                 Longitude = pll.Lng
-            } );
+            });
         }
 
 
@@ -67,12 +67,12 @@ namespace SIGENCEScenarioTool.Windows
         /// Adds the RFDevice.
         /// </summary>
         /// <param name="t">The t.</param>
-        private void AddRFDevice( RFDevice t )
+        private void AddRFDevice(RFDevice t)
         {
-            RFDeviceViewModel tvm = new RFDeviceViewModel( t );
+            RFDeviceViewModel tvm = new RFDeviceViewModel(t);
 
-            RFDevicesCollection.Add( tvm );
-            mcMapControl.Markers.Add( tvm.Marker );
+            RFDevicesCollection.Add(tvm);
+            mcMapControl.Markers.Add(tvm.Marker);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -82,10 +82,10 @@ namespace SIGENCEScenarioTool.Windows
         /// Deletes the RFDevice.
         /// </summary>
         /// <param name="tvm">The TVM.</param>
-        private void DeleteRFDevice( RFDeviceViewModel tvm )
+        private void DeleteRFDevice(RFDeviceViewModel tvm)
         {
-            RFDevicesCollection.Remove( tvm );
-            mcMapControl.Markers.Remove( tvm.Marker );
+            RFDevicesCollection.Remove(tvm);
+            mcMapControl.Markers.Remove(tvm.Marker);
         }
 
 
@@ -94,13 +94,13 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void DeleteRFDevice()
         {
-            if( dgRFDevices.SelectedItem != null )
+            if (dgRFDevices.SelectedItem != null)
             {
-                DeleteRFDevice( dgRFDevices.SelectedItem as RFDeviceViewModel );
+                DeleteRFDevice(dgRFDevices.SelectedItem as RFDeviceViewModel);
             }
             else
             {
-                MB.Information( "No RFDevice Is Selected In The DataGrid!" );
+                MB.Information("No RFDevice Is Selected In The DataGrid!");
             }
         }
 
@@ -112,59 +112,58 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void ExportRFDevices()
         {
-            if( RFDevicesCollection.Count == 0 )
+            if (RFDevicesCollection.Count == 0)
             {
-                MB.Warning( "No RFDevice Avaible For Export!" );
+                MB.Warning("No RFDevice Avaible For Export!");
                 return;
             }
 
-            if( CurrentFile != null )
+            if (CurrentFile != null)
             {
-                sfdExportRFDevices.FileName = new FileInfo( CurrentFile ).Name;
+                sfdExportRFDevices.FileName = new FileInfo(CurrentFile).Name;
             }
             else
             {
                 sfdExportRFDevices.FileName = DateTime.Now.Fmt_YYYYMMDDHHMMSS();
             }
 
-            if( sfdExportRFDevices.ShowDialog() == true )
+            if (sfdExportRFDevices.ShowDialog() == true)
             {
-                FileInfo fiExportFile = new FileInfo( sfdExportRFDevices.FileName );
+                FileInfo fiExportFile = new FileInfo(sfdExportRFDevices.FileName);
 
-                //List<RFDevice> tl = TransmitterCollection.Select( t => t.Transmitter ).ToList();
-                RFDeviceList tl = new RFDeviceList( RFDevicesCollection.Select( t => t.RFDevice ) );
+                RFDeviceList tl = new RFDeviceList(RFDevicesCollection.Select(t => t.RFDevice));
 
                 Cursor = Cursors.Wait;
                 DoEvents();
 
                 try
                 {
-                    switch( fiExportFile.Extension.ToLower() )
+                    switch (fiExportFile.Extension.ToLower())
                     {
                         case ".csv":
-                            tl.SaveAsCsv( fiExportFile.FullName );
+                            tl.SaveAsCsv(fiExportFile.FullName);
                             break;
 
                         case ".json":
-                            tl.SaveAsJson( fiExportFile.FullName );
+                            tl.SaveAsJson(fiExportFile.FullName);
                             break;
 
                         case ".xml":
-                            tl.SaveAsXml( fiExportFile.FullName );
+                            tl.SaveAsXml(fiExportFile.FullName);
                             break;
 
 #if EXCEL_SUPPORT
                         case ".xlsx":
-                            tl.SaveAsExcel( fiExportFile.FullName );
+                            tl.SaveAsExcel(fiExportFile.FullName);
                             break;
 #endif
                     }
 
                     //MB.Information( "File {0} successful created." , fiExportFile.Name );
                 }
-                catch( Exception ex )
+                catch (Exception ex)
                 {
-                    MB.Error( ex );
+                    MB.Error(ex);
                 }
 
                 Cursor = Cursors.Arrow;
@@ -193,36 +192,36 @@ namespace SIGENCEScenarioTool.Windows
         /// Creates the randomized RFDevices.
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
-        private void CreateRandomizedRFDevices( int iMaxCount )
+        private void CreateRandomizedRFDevices(int iMaxCount)
         {
             Cursor = Cursors.Wait;
             DoEvents();
 
-            for( int iCounter = 1 ; iCounter < iMaxCount + 1 ; iCounter++ )
+            for (int iCounter = 1; iCounter < iMaxCount + 1; iCounter++)
             {
                 RFDevice t = new RFDevice
                 {
-                    Id = r.Next( -1000 , 1000 ) ,
-                    Name = string.Format( "RFDevice #{0}" , iCounter ) ,
-                    Latitude = ( r.NextDouble() * 0.05 ) + 49.7454 ,
-                    Longitude = ( r.NextDouble() * 0.05 ) + 6.6149 ,
-                    Altitude = 0 ,
-                    RxTxType = r.NextEnum<RxTxType>() ,
-                    AntennaType = r.NextEnum<AntennaType>() ,
-                    CenterFrequency_Hz = ( uint ) r.Next( 85 , 105 ) ,
-                    Bandwith_Hz = ( uint ) r.Next( 10 , 80 ) ,
-                    Gain_dB = 0 ,
-                    SignalToNoiseRatio_dB = 0 ,
-                    Roll = 0 ,
-                    Pitch = 0 ,
-                    Yaw = 0 ,
-                    XPos = 0 ,
-                    YPos = 0 ,
-                    ZPos = 0 ,
-                    Remark = r.NextObject( Tool.ALLPANGRAMS )
+                    Id = r.Next(-1000, 1000),
+                    Name = string.Format("RFDevice #{0}", iCounter),
+                    Latitude = (r.NextDouble() * 0.05) + 49.7454,
+                    Longitude = (r.NextDouble() * 0.05) + 6.6149,
+                    Altitude = 0,
+                    RxTxType = r.NextEnum<RxTxType>(),
+                    AntennaType = r.NextEnum<AntennaType>(),
+                    CenterFrequency_Hz = (uint)r.Next(85, 105),
+                    Bandwith_Hz = (uint)r.Next(10, 80),
+                    Gain_dB = 0,
+                    SignalToNoiseRatio_dB = 0,
+                    Roll = 0,
+                    Pitch = 0,
+                    Yaw = 0,
+                    XPos = 0,
+                    YPos = 0,
+                    ZPos = 0,
+                    Remark = r.NextObject(Tool.ALLPANGRAMS)
                 };
 
-                AddRFDevice( t );
+                AddRFDevice(t);
             }
 
             Cursor = Cursors.Arrow;

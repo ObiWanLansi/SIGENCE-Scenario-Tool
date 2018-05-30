@@ -1,11 +1,12 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls.DataVisualization.Charting;
-using SIGENCEScenarioTool.ViewModels;
+
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.ViewModels;
+
+
 
 namespace SIGENCEScenarioTool.Dialogs
 {
@@ -15,56 +16,60 @@ namespace SIGENCEScenarioTool.Dialogs
     public partial class ChartingWindow : Window
     {
         /// <summary>
-        /// 
+        /// Gets or sets the rf devices collection.
         /// </summary>
+        /// <value>
+        /// The rf devices collection.
+        /// </value>
         public ObservableCollection<RFDeviceViewModel> RFDevicesCollection { get; set; }
 
 
         /// <summary>
-        /// 
+        /// Gets or sets the rx tx type distribution.
         /// </summary>
-        public ObservableCollection<KeyValuePair<string , int>> RxTxTypeDistribution { get; set; }
+        /// <value>
+        /// The rx tx type distribution.
+        /// </value>
+        public ObservableCollection<KeyValuePair<string, int>> RxTxTypeDistribution { get; set; }
 
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        
+
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="ChartingWindow" /> class.
         /// </summary>
         public ChartingWindow()
         {
             InitializeComponent();
-
-            //InitChart();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// 
+        /// Initializes the chart.
         /// </summary>
         public void InitChart()
         {
-            if( RFDevicesCollection != null && RFDevicesCollection.Count > 0 )
+            if (RFDevicesCollection != null && RFDevicesCollection.Count > 0)
             {
-                RxTxTypeDistribution = new ObservableCollection<KeyValuePair<string , int>>();
-                SortedDictionary<RxTxType , int> sd = new SortedDictionary<RxTxType , int>();
+                RxTxTypeDistribution = new ObservableCollection<KeyValuePair<string, int>>();
+                SortedDictionary<RxTxType, int> sd = new SortedDictionary<RxTxType, int>();
 
-                foreach( RFDevice device in from device in RFDevicesCollection select device.RFDevice )
+                foreach (RFDevice device in from device in RFDevicesCollection select device.RFDevice)
                 {
-                    if( sd.ContainsKey( device.RxTxType ) )
+                    if (sd.ContainsKey(device.RxTxType))
                     {
-                        sd [device.RxTxType]++;
+                        sd[device.RxTxType]++;
                     }
                     else
                     {
-                        sd.Add( device.RxTxType , 1 );
+                        sd.Add(device.RxTxType, 1);
                     }
                 }
-                foreach( RxTxType rtt in sd.Keys )
+                foreach (RxTxType rtt in sd.Keys)
                 {
-                    RxTxTypeDistribution.Add( new KeyValuePair<string , int>( rtt.ToString() , sd [rtt] ) );
+                    RxTxTypeDistribution.Add(new KeyValuePair<string, int>(rtt.ToString(), sd[rtt]));
                 }
 
                 chart.DataContext = RxTxTypeDistribution;

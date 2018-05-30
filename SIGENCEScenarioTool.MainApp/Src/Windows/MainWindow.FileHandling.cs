@@ -33,7 +33,7 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void OpenFile()
         {
-            if( ofdLoadSIGENCEScenario.ShowDialog() == true )
+            if (ofdLoadSIGENCEScenario.ShowDialog() == true)
             {
                 Cursor = Cursors.Wait;
                 DoEvents();
@@ -43,40 +43,40 @@ namespace SIGENCEScenarioTool.Windows
 
                 try
                 {
-                    XDocument xdoc = XDocument.Load( CurrentFile );
+                    XDocument xdoc = XDocument.Load(CurrentFile);
 
                     //---------------------------------------------------------
 
-                    XElement eGeneralSettings = xdoc.Root.Element( "GeneralSettings" );
-                    Zoom = eGeneralSettings.GetDoubleFromNode( "Zoom" ) ?? Zoom;
-                    ShowCenter = eGeneralSettings.GetBoolFromNode( "ShowCenter" ) ?? ShowCenter;
+                    XElement eGeneralSettings = xdoc.Root.Element("GeneralSettings");
+                    Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
+                    ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
 
-                    string strMapProvider = eGeneralSettings.GetStringFromNode( "MapProvider" ) ?? MapProvider.Name;
-                    foreach( var mp in GMapProviders.List )
+                    string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
+                    foreach (var mp in GMapProviders.List)
                     {
-                        if( mp.Name == strMapProvider )
+                        if (mp.Name == strMapProvider)
                         {
                             MapProvider = mp;
                             break;
                         }
                     }
 
-                    XElement eCenterPosition = eGeneralSettings.Element( "CenterPosition" );
-                    Latitude = eCenterPosition.GetDoubleFromNodePoint( "Latitude" ) ?? Latitude;
-                    Longitude = eCenterPosition.GetDoubleFromNodePoint( "Longitude" ) ?? Longitude;
+                    XElement eCenterPosition = eGeneralSettings.Element("CenterPosition");
+                    Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? Latitude;
+                    Longitude = eCenterPosition.GetDoubleFromNodePoint("Longitude") ?? Longitude;
 
                     //---------------------------------------------------------
 
-                    XElement eRFDeviceCollection = xdoc.Root.Element( "RFDeviceCollection" );
+                    XElement eRFDeviceCollection = xdoc.Root.Element("RFDeviceCollection");
 
-                    foreach( XElement e in eRFDeviceCollection.Elements() )
+                    foreach (XElement e in eRFDeviceCollection.Elements())
                     {
-                        AddRFDevice( RFDevice.FromXml( e ) );
+                        AddRFDevice(RFDevice.FromXml(e));
                     }
                 }
-                catch( Exception ex )
+                catch (Exception ex)
                 {
-                    MB.Error( ex );
+                    MB.Error(ex);
                 }
 
                 Cursor = Cursors.Arrow;
@@ -89,9 +89,9 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void SaveFile()
         {
-            if( CurrentFile == null )
+            if (CurrentFile == null)
             {
-                if( sfdSaveSIGENCEScenario.ShowDialog() == true )
+                if (sfdSaveSIGENCEScenario.ShowDialog() == true)
                 {
                     CurrentFile = sfdSaveSIGENCEScenario.FileName;
                 }
@@ -106,40 +106,40 @@ namespace SIGENCEScenarioTool.Windows
 
             try
             {
-                XElement eTransmitterTool = new XElement( "SIGENCEScenarioTool" , new XAttribute( "Version" , Tool.Version ) );
+                XElement eSIGENCEScenarioTool = new XElement("SIGENCEScenarioTool", new XAttribute("Version", Tool.Version));
 
                 //-------------------------------------------------------------
 
-                XElement eGeneralSettings = new XElement( "GeneralSettings" );
+                XElement eGeneralSettings = new XElement("GeneralSettings");
 
-                eGeneralSettings.Add( new XElement( "Zoom" , mcMapControl.Zoom ) );
-                eGeneralSettings.Add( new XElement( "ShowCenter" , mcMapControl.ShowCenter ) );
-                eGeneralSettings.Add( new XElement( "CenterPosition" ,
-                    new XElement( "Latitude" , mcMapControl.Position.Lat ) ,
-                    new XElement( "Longitude" , mcMapControl.Position.Lng ) )
+                eGeneralSettings.Add(new XElement("Zoom", mcMapControl.Zoom));
+                eGeneralSettings.Add(new XElement("ShowCenter", mcMapControl.ShowCenter));
+                eGeneralSettings.Add(new XElement("CenterPosition",
+                    new XElement("Latitude", mcMapControl.Position.Lat),
+                    new XElement("Longitude", mcMapControl.Position.Lng))
                 );
-                eGeneralSettings.Add( new XElement( "MapProvider" , mcMapControl.MapProvider ) );
+                eGeneralSettings.Add(new XElement("MapProvider", mcMapControl.MapProvider));
 
-                eTransmitterTool.Add( eGeneralSettings );
+                eSIGENCEScenarioTool.Add(eGeneralSettings);
 
                 //-------------------------------------------------------------
 
-                XElement eRFDeviceCollection = new XElement( "RFDeviceCollection" );
+                XElement eRFDeviceCollection = new XElement("RFDeviceCollection");
 
-                foreach( RFDevice t in from rfdevice in RFDevicesCollection select rfdevice.RFDevice )
+                foreach (RFDevice t in from rfdevice in RFDevicesCollection select rfdevice.RFDevice)
                 {
-                    eRFDeviceCollection.Add( t.ToXml() );
+                    eRFDeviceCollection.Add(t.ToXml());
                 }
 
-                eTransmitterTool.Add( eRFDeviceCollection );
+                eSIGENCEScenarioTool.Add(eRFDeviceCollection);
 
                 //-------------------------------------------------------------
 
-                eTransmitterTool.SaveDefault( CurrentFile );
+                eSIGENCEScenarioTool.SaveDefault(CurrentFile);
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
 
             Cursor = Cursors.Arrow;

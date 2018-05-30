@@ -61,16 +61,16 @@ namespace SIGENCEScenarioTool.Commands
         /// </summary>
         static RegisteredCommands()
         {
-            CreateRFDevice = new RoutedUICommand( "CreateRFDevice" , "CreateRFDevice" , typeof(RegisteredCommands));
+            CreateRFDevice = new RoutedUICommand("CreateRFDevice", "CreateRFDevice", typeof(RegisteredCommands));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Alt));
 
-            DeleteRFDevice = new RoutedUICommand( "DeleteRFDevice" , "DeleteRFDevice" , typeof(RegisteredCommands));
+            DeleteRFDevice = new RoutedUICommand("DeleteRFDevice", "DeleteRFDevice", typeof(RegisteredCommands));
             DeleteRFDevice.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Alt));
 
-            ExportRFDevice = new RoutedUICommand( "ExportRFDevice" , "ExportRFDevice" , typeof(RegisteredCommands));
+            ExportRFDevice = new RoutedUICommand("ExportRFDevice", "ExportRFDevice", typeof(RegisteredCommands));
             ExportRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Alt));
 
-            ImportRFDevice = new RoutedUICommand( "ImportRFDevice" , "ImportRFDevice" , typeof(RegisteredCommands));
+            ImportRFDevice = new RoutedUICommand("ImportRFDevice", "ImportRFDevice", typeof(RegisteredCommands));
             ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Alt));
 
             CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));

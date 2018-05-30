@@ -17,7 +17,7 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
-        static private readonly ILog Log = LogManager.GetLogger(typeof( SIGENCEScenarioToolTestActionAttribute ) );
+        static private readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolTestActionAttribute));
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -18,17 +18,17 @@ namespace SIGENCEScenarioTool.Windows
     {
 
         /// <summary>
-        /// The SFD save transmitter
+        /// The SFD save sigence scenario
         /// </summary>
         private readonly SaveFileDialog sfdSaveSIGENCEScenario = new SaveFileDialog();
 
         /// <summary>
-        /// The ofd load transmitter
+        /// The ofd load sigence scenario
         /// </summary>
         private readonly OpenFileDialog ofdLoadSIGENCEScenario = new OpenFileDialog();
 
         /// <summary>
-        /// The SFD export transmitter
+        /// The SFD export rf devices
         /// </summary>
         private readonly SaveFileDialog sfdExportRFDevices = new SaveFileDialog();
 
@@ -44,7 +44,7 @@ namespace SIGENCEScenarioTool.Windows
         /// Gets or sets the RFDevice collection.
         /// </summary>
         /// <value>
-        /// The transmitter.
+        /// The RFDevice collection.
         /// </value>
         public ObservableCollection<RFDeviceViewModel> RFDevicesCollection { get; set; }
 
@@ -54,11 +54,12 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private bool bCreatingRFDevice = false;
 
+
         /// <summary>
-        /// Gets or sets a value indicating whether [creating transmitter].
+        /// Gets or sets a value indicating whether [creating rf device].
         /// </summary>
         /// <value>
-        ///   <c>true</c> if [creating transmitter]; otherwise, <c>false</c>.
+        ///   <c>true</c> if [creating rf device]; otherwise, <c>false</c>.
         /// </value>
         public bool CreatingRFDevice
         {

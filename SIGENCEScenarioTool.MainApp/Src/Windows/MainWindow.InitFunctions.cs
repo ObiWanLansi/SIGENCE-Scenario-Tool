@@ -21,125 +21,125 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void InitCommands()
         {
-            CommandBindings.Add( new CommandBinding( ApplicationCommands.New ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.New,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     NewFile();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( ApplicationCommands.Open ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Open,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     OpenFile();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( ApplicationCommands.Save ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Save,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     SaveFile();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( ApplicationCommands.SaveAs ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.SaveAs,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     SaveAsFile();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( ApplicationCommands.Close ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Close,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     Close();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( RegisteredCommands.CreateRFDevice ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateRFDevice,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     BeginCreateRFDevice();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( RegisteredCommands.DeleteRFDevice ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.DeleteRFDevice,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     DeleteRFDevice();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( RegisteredCommands.ExportRFDevice ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportRFDevice,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     ExportRFDevices();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( RegisteredCommands.ImportRFDevice ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.ImportRFDevice,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     ImportRFDevices();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            CommandBindings.Add( new CommandBinding( RegisteredCommands.CreateScreenshot ,
-                ( object sender , ExecutedRoutedEventArgs e ) =>
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateScreenshot,
+                (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     CreateScreenshot();
                     e.Handled = true;
-                } ,
-                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
         }
 
 
@@ -160,7 +160,7 @@ namespace SIGENCEScenarioTool.Windows
             mcMapControl.MinZoom = 2;
             mcMapControl.MaxZoom = 22;
 
-            mcMapControl.Position = new PointLatLng( 49.761471 , 6.650053 );
+            mcMapControl.Position = new PointLatLng(49.761471, 6.650053);
             mcMapControl.Zoom = 14;
         }
 
@@ -172,10 +172,10 @@ namespace SIGENCEScenarioTool.Windows
         private void InitMapProvider()
         {
             // Wir fügen nur die für unsere Region sinnvollen hinzu ...
-            cbMapProvider.Items.Add( GMapProviders.GoogleMap );
-            cbMapProvider.Items.Add( GMapProviders.GoogleSatelliteMap );
-            cbMapProvider.Items.Add( GMapProviders.GoogleTerrainMap );
-            cbMapProvider.Items.Add( GMapProviders.GoogleHybridMap );
+            cbMapProvider.Items.Add(GMapProviders.GoogleMap);
+            cbMapProvider.Items.Add(GMapProviders.GoogleSatelliteMap);
+            cbMapProvider.Items.Add(GMapProviders.GoogleTerrainMap);
+            cbMapProvider.Items.Add(GMapProviders.GoogleHybridMap);
 
             //cbMapProvider.Items.Add(GMapProviders.ArcGIS_Imagery_World_2D_Map);
             //cbMapProvider.Items.Add(GMapProviders.ArcGIS_ShadedRelief_World_2D_Map);
@@ -186,11 +186,11 @@ namespace SIGENCEScenarioTool.Windows
             //cbMapProvider.Items.Add(GMapProviders.ArcGIS_World_Terrain_Base_Map);
             //cbMapProvider.Items.Add(GMapProviders.ArcGIS_World_Topo_Map);
 
-            cbMapProvider.Items.Add( GMapProviders.OpenStreetMap );
+            cbMapProvider.Items.Add(GMapProviders.OpenStreetMap);
 
-            cbMapProvider.Items.Add( GMapProviders.BingHybridMap );
-            cbMapProvider.Items.Add( GMapProviders.BingMap );
-            cbMapProvider.Items.Add( GMapProviders.BingSatelliteMap );
+            cbMapProvider.Items.Add(GMapProviders.BingHybridMap);
+            cbMapProvider.Items.Add(GMapProviders.BingMap);
+            cbMapProvider.Items.Add(GMapProviders.BingSatelliteMap);
         }
 
     } // end public partial class MainWindow 

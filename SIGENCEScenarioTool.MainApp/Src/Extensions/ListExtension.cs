@@ -9,9 +9,7 @@ using Newtonsoft.Json;
 
 using SIGENCEScenarioTool.Interfaces;
 
-#if EXCEL_SUPPORT
 using Excel = global::Microsoft.Office.Interop.Excel;
-#endif
 
 
 
@@ -29,8 +27,6 @@ namespace SIGENCEScenarioTool.Extensions
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-#if EXCEL_SUPPORT
 
         /// <summary>
         /// 
@@ -166,7 +162,6 @@ namespace SIGENCEScenarioTool.Extensions
             // Achtung: Auch wenn diese Funktion beendet wird bleibt Excel geöffnet. Die Daten sind
             // aber noch nicht in einer Datei gespeichert. Das muß in Excel der User selbst machen.
         }
-#endif
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -179,14 +174,14 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strOutputFilename">The string output filename.</param>
         static public void SaveAsXml<T>(this List<T> lValues, string strOutputFilename) where T : IXmlExport
         {
-            XElement eTransmitter = new XElement(typeof(T).Name + "List");
+            XElement element = new XElement(typeof(T).Name + "List");
 
             foreach (T t in lValues)
             {
-                eTransmitter.Add(t.ToXml());
+                element.Add(t.ToXml());
             }
 
-            eTransmitter.SaveDefault(strOutputFilename);
+            element.SaveDefault(strOutputFilename);
         }
 
 
