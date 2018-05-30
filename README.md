@@ -44,5 +44,4 @@ https://www.nuget.org/packages/log4net/
 
 ## License
 
-The tool is current licensed under GNU Lesser General Public License v3.0.<br/>
-https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/LICENSE
+The tool is current licensed under [GNU Lesser General Public License v3.0.](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/LICENSE)
