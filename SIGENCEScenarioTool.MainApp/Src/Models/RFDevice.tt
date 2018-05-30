@@ -14,8 +14,8 @@
 #>
 
 /**
+ * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
  * SourceFile     : <#=strFileName#>
- * Timestamp      : <#=DateTime.Now.ToString("dd.MM.yyyy, HH:mm") #>
  * User           : <#=Environment.UserName #>
  * Host           : <#=Environment.MachineName #>
  */
@@ -51,13 +51,13 @@ namespace SIGENCEScenarioTool.Models
         string strPropertyName = eProperty.Attribute("Name").Value;
 
         XAttribute xInitValue = eProperty.Attribute("Init");
+        string strDefaultValue = xInitValue != null ? string.Format(" = {0}",xInitValue.Value) : "";
 
-        string strDefaultValue = "";
-        
-        if(xInitValue != null)
-        {
-            strDefaultValue = string.Format(" = {0}",xInitValue.Value);
-        }
+        XAttribute xComment = eProperty.Attribute("Comment");
+        string strCommment = xComment != null ? xComment.Value : "";
+
+        strCommment = !string.IsNullOrEmpty(strCommment) ? strCommment : string.Format("{0} as {1}.",strPropertyName,strPropertyType);
+
 #>
 
         #region <#=strPropertyName#>
@@ -78,7 +78,7 @@ namespace SIGENCEScenarioTool.Models
         private <#=strPropertyType#> _<#=strPropertyName#><#=strDefaultValue#>;
 
         ///<summary>
-        /// <#=strPropertyName#> As <#=strPropertyType#>.
+        /// <#=strCommment#>
         ///</summary>
         public <#=strPropertyType#> <#=strPropertyName#> 
         {

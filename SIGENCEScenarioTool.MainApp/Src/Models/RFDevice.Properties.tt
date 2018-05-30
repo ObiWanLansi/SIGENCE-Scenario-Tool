@@ -1,0 +1,101 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ output extension=".html" #>
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+    string strFileName = this.Host.ResolvePath("RFDevice.xml");
+#>
+
+<#
+    XDocument xd = XDocument.Load(strFileName );
+
+    XElement eRoot = xd.Root;
+#>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Properties Of The Model <#=eRoot.Name#></title>
+
+        <!-- Einbinden des Bootstrap-Stylesheets -->
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+        <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"></script>
+    </head>
+    <body>
+<table style="margin: 5px; width: 75%;"><tr><td>
+        <table class="table table-striped table-bordered table-hover">
+            <tr>
+                <th>Name</th>
+                <th>DataType</th>
+                <th>DefaultValue</th>
+                <th>Comment</th>
+            </tr>
+<#
+
+    foreach(XElement eProperty in eRoot.Elements())
+    {
+        string strPropertyType = eProperty.Attribute("Type").Value;
+        string strPropertyName = eProperty.Attribute("Name").Value;
+
+        XAttribute xInitValue = eProperty.Attribute("Init");
+        string strDefaultValue = xInitValue != null ? xInitValue.Value : "";
+
+        XAttribute xComment = eProperty.Attribute("Comment");
+        string strCommment = xComment != null ? xComment.Value : "";
+
+#>
+        <tr>
+            <td><#=strPropertyName#></td>
+            <td><#=strPropertyType#></td>
+            <td><#=strDefaultValue#></td>
+            <td><#=strCommment#></td>
+        </tr>
+<!--
+        #region <#=strPropertyName#>
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For <#=strPropertyName#>.
+        ///</summary>
+        public const String <#=strPropertyName.ToUpper()#> = "<#=strPropertyName#>";
+
+        ///<summary>
+        /// The DefaultValue For <#=strPropertyName#>.
+        ///</summary>
+        static public readonly <#=strPropertyType#> DEFAULT_<#=strPropertyName.ToUpper()#><#=strDefaultValue#>;
+        
+        ///<summary>
+        /// The Internal Field For <#=strPropertyName#>.
+        ///</summary>
+        private <#=strPropertyType#> _<#=strPropertyName#><#=strDefaultValue#>;
+
+        ///<summary>
+        /// <#=strPropertyName#> As <#=strPropertyType#>.
+        ///</summary>
+        public <#=strPropertyType#> <#=strPropertyName#> 
+        {
+            get { return _<#=strPropertyName #>; }
+            set
+            {
+                _<#=strPropertyName #> = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+  <#
+ 
+}
+#>
+        </table>
+        </td></tr></table>
+    </body>
+</html>

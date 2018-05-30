@@ -14,7 +14,7 @@ namespace SIGENCEScenarioTool.Commands
         /// Gets the create RFDevice.
         /// </summary>
         /// <value>
-        /// The create transmitter.
+        /// The create RFDevice.
         /// </value>
         static public RoutedUICommand CreateRFDevice { get; private set; }
 
@@ -68,10 +68,10 @@ namespace SIGENCEScenarioTool.Commands
             DeleteRFDevice.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Alt));
 
             ExportRFDevice = new RoutedUICommand( "ExportRFDevice" , "ExportRFDevice" , typeof(RegisteredCommands));
-            ExportRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
+            ExportRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Alt));
 
             ImportRFDevice = new RoutedUICommand( "ImportRFDevice" , "ImportRFDevice" , typeof(RegisteredCommands));
-            ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
+            ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Alt));
 
             CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
             //CreateScreenshot.InputGestures.Add( new KeyGesture( Key.I , ModifierKeys.Control ) );

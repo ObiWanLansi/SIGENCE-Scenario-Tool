@@ -56,6 +56,11 @@
             <MenuItem Header="_Extras">
                 <MenuItem Header="_Settings" IsEnabled="False" />
             </MenuItem>
+            <MenuItem Header="_Test">
+                <MenuItem Header="_Charting Test" Click="MenuItem_ChartingTest_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Help" IsEnabled="False" />
+
         </Menu>
 
         <ToolBar Grid.Row="1">

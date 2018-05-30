@@ -1,0 +1,805 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Properties Of The Model RFDevice</title>
+
+        <!-- Einbinden des Bootstrap-Stylesheets -->
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+        <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"></script>
+    </head>
+    <body>
+<table style="margin: 5px; width: 75%;"><tr><td>
+        <table class="table table-striped table-bordered table-hover">
+            <tr>
+                <th>Name</th>
+                <th>DataType</th>
+                <th>DefaultValue</th>
+                <th>Comment</th>
+            </tr>
+        <tr>
+            <td>PrimaryKey</td>
+            <td>Guid</td>
+            <td>Guid.NewGuid()</td>
+            <td>The Unique PrimarKey For This RF Device.</td>
+        </tr>
+<!--
+        #region PrimaryKey
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For PrimaryKey.
+        ///</summary>
+        public const String PRIMARYKEY = "PrimaryKey";
+
+        ///<summary>
+        /// The DefaultValue For PrimaryKey.
+        ///</summary>
+        static public readonly Guid DEFAULT_PRIMARYKEYGuid.NewGuid();
+        
+        ///<summary>
+        /// The Internal Field For PrimaryKey.
+        ///</summary>
+        private Guid _PrimaryKeyGuid.NewGuid();
+
+        ///<summary>
+        /// PrimaryKey As Guid.
+        ///</summary>
+        public Guid PrimaryKey 
+        {
+            get { return _PrimaryKey; }
+            set
+            {
+                _PrimaryKey = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Id</td>
+            <td>int</td>
+            <td>0</td>
+            <td>Every scenario element (i.e. transmitter, receiver) must be assigned an unique ID. Negative ID’s are reserved for receivers while all other ID’s are transmitters by default. Some applications (i.e. TDoA Emitter Localization) require a reference transmitter. For these applications ID=0 is the reference transmitter. Receivers must be assigned first in the table, followed be transmitters (with ID=0 being the first). After the Static Scenario, update of ID’s requires no specific order. Note that definition of new transmitters/receivers after the Static Scenario is prohibited.</td>
+        </tr>
+<!--
+        #region Id
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Id.
+        ///</summary>
+        public const String ID = "Id";
+
+        ///<summary>
+        /// The DefaultValue For Id.
+        ///</summary>
+        static public readonly int DEFAULT_ID0;
+        
+        ///<summary>
+        /// The Internal Field For Id.
+        ///</summary>
+        private int _Id0;
+
+        ///<summary>
+        /// Id As int.
+        ///</summary>
+        public int Id 
+        {
+            get { return _Id; }
+            set
+            {
+                _Id = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Name</td>
+            <td>string</td>
+            <td>"RFDevice"</td>
+            <td>A Short Describing Display Name For The RF Device.</td>
+        </tr>
+<!--
+        #region Name
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Name.
+        ///</summary>
+        public const String NAME = "Name";
+
+        ///<summary>
+        /// The DefaultValue For Name.
+        ///</summary>
+        static public readonly string DEFAULT_NAME"RFDevice";
+        
+        ///<summary>
+        /// The Internal Field For Name.
+        ///</summary>
+        private string _Name"RFDevice";
+
+        ///<summary>
+        /// Name As string.
+        ///</summary>
+        public string Name 
+        {
+            get { return _Name; }
+            set
+            {
+                _Name = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Latitude</td>
+            <td>double</td>
+            <td>double.NaN</td>
+            <td>The Latitude Of The RF Device (WGS84).</td>
+        </tr>
+<!--
+        #region Latitude
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Latitude.
+        ///</summary>
+        public const String LATITUDE = "Latitude";
+
+        ///<summary>
+        /// The DefaultValue For Latitude.
+        ///</summary>
+        static public readonly double DEFAULT_LATITUDEdouble.NaN;
+        
+        ///<summary>
+        /// The Internal Field For Latitude.
+        ///</summary>
+        private double _Latitudedouble.NaN;
+
+        ///<summary>
+        /// Latitude As double.
+        ///</summary>
+        public double Latitude 
+        {
+            get { return _Latitude; }
+            set
+            {
+                _Latitude = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Longitude</td>
+            <td>double</td>
+            <td>double.NaN</td>
+            <td>The Longitude Of The RF Device (WGS84).</td>
+        </tr>
+<!--
+        #region Longitude
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Longitude.
+        ///</summary>
+        public const String LONGITUDE = "Longitude";
+
+        ///<summary>
+        /// The DefaultValue For Longitude.
+        ///</summary>
+        static public readonly double DEFAULT_LONGITUDEdouble.NaN;
+        
+        ///<summary>
+        /// The Internal Field For Longitude.
+        ///</summary>
+        private double _Longitudedouble.NaN;
+
+        ///<summary>
+        /// Longitude As double.
+        ///</summary>
+        public double Longitude 
+        {
+            get { return _Longitude; }
+            set
+            {
+                _Longitude = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Altitude</td>
+            <td>uint</td>
+            <td>0</td>
+            <td>The Elevation Of The RF Device Above The Sea Level (Meter).</td>
+        </tr>
+<!--
+        #region Altitude
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Altitude.
+        ///</summary>
+        public const String ALTITUDE = "Altitude";
+
+        ///<summary>
+        /// The DefaultValue For Altitude.
+        ///</summary>
+        static public readonly uint DEFAULT_ALTITUDE0;
+        
+        ///<summary>
+        /// The Internal Field For Altitude.
+        ///</summary>
+        private uint _Altitude0;
+
+        ///<summary>
+        /// Altitude As uint.
+        ///</summary>
+        public uint Altitude 
+        {
+            get { return _Altitude; }
+            set
+            {
+                _Altitude = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Roll</td>
+            <td>double</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region Roll
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Roll.
+        ///</summary>
+        public const String ROLL = "Roll";
+
+        ///<summary>
+        /// The DefaultValue For Roll.
+        ///</summary>
+        static public readonly double DEFAULT_ROLL0;
+        
+        ///<summary>
+        /// The Internal Field For Roll.
+        ///</summary>
+        private double _Roll0;
+
+        ///<summary>
+        /// Roll As double.
+        ///</summary>
+        public double Roll 
+        {
+            get { return _Roll; }
+            set
+            {
+                _Roll = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Pitch</td>
+            <td>double</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region Pitch
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Pitch.
+        ///</summary>
+        public const String PITCH = "Pitch";
+
+        ///<summary>
+        /// The DefaultValue For Pitch.
+        ///</summary>
+        static public readonly double DEFAULT_PITCH0;
+        
+        ///<summary>
+        /// The Internal Field For Pitch.
+        ///</summary>
+        private double _Pitch0;
+
+        ///<summary>
+        /// Pitch As double.
+        ///</summary>
+        public double Pitch 
+        {
+            get { return _Pitch; }
+            set
+            {
+                _Pitch = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Yaw</td>
+            <td>double</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region Yaw
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Yaw.
+        ///</summary>
+        public const String YAW = "Yaw";
+
+        ///<summary>
+        /// The DefaultValue For Yaw.
+        ///</summary>
+        static public readonly double DEFAULT_YAW0;
+        
+        ///<summary>
+        /// The Internal Field For Yaw.
+        ///</summary>
+        private double _Yaw0;
+
+        ///<summary>
+        /// Yaw As double.
+        ///</summary>
+        public double Yaw 
+        {
+            get { return _Yaw; }
+            set
+            {
+                _Yaw = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>RxTxType</td>
+            <td>RxTxType</td>
+            <td>RxTxType.Unknown</td>
+            <td>For All Receivers (i.e. ID’s < 0) This Parameter Defines The Radio Being Used.</td>
+        </tr>
+<!--
+        #region RxTxType
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For RxTxType.
+        ///</summary>
+        public const String RXTXTYPE = "RxTxType";
+
+        ///<summary>
+        /// The DefaultValue For RxTxType.
+        ///</summary>
+        static public readonly RxTxType DEFAULT_RXTXTYPERxTxType.Unknown;
+        
+        ///<summary>
+        /// The Internal Field For RxTxType.
+        ///</summary>
+        private RxTxType _RxTxTypeRxTxType.Unknown;
+
+        ///<summary>
+        /// RxTxType As RxTxType.
+        ///</summary>
+        public RxTxType RxTxType 
+        {
+            get { return _RxTxType; }
+            set
+            {
+                _RxTxType = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>AntennaType</td>
+            <td>AntennaType</td>
+            <td>AntennaType.Unknown</td>
+            <td>AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.</td>
+        </tr>
+<!--
+        #region AntennaType
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For AntennaType.
+        ///</summary>
+        public const String ANTENNATYPE = "AntennaType";
+
+        ///<summary>
+        /// The DefaultValue For AntennaType.
+        ///</summary>
+        static public readonly AntennaType DEFAULT_ANTENNATYPEAntennaType.Unknown;
+        
+        ///<summary>
+        /// The Internal Field For AntennaType.
+        ///</summary>
+        private AntennaType _AntennaTypeAntennaType.Unknown;
+
+        ///<summary>
+        /// AntennaType As AntennaType.
+        ///</summary>
+        public AntennaType AntennaType 
+        {
+            get { return _AntennaType; }
+            set
+            {
+                _AntennaType = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>CenterFrequency_Hz</td>
+            <td>uint</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region CenterFrequency_Hz
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For CenterFrequency_Hz.
+        ///</summary>
+        public const String CENTERFREQUENCY_HZ = "CenterFrequency_Hz";
+
+        ///<summary>
+        /// The DefaultValue For CenterFrequency_Hz.
+        ///</summary>
+        static public readonly uint DEFAULT_CENTERFREQUENCY_HZ0;
+        
+        ///<summary>
+        /// The Internal Field For CenterFrequency_Hz.
+        ///</summary>
+        private uint _CenterFrequency_Hz0;
+
+        ///<summary>
+        /// CenterFrequency_Hz As uint.
+        ///</summary>
+        public uint CenterFrequency_Hz 
+        {
+            get { return _CenterFrequency_Hz; }
+            set
+            {
+                _CenterFrequency_Hz = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Bandwith_Hz</td>
+            <td>uint</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region Bandwith_Hz
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Bandwith_Hz.
+        ///</summary>
+        public const String BANDWITH_HZ = "Bandwith_Hz";
+
+        ///<summary>
+        /// The DefaultValue For Bandwith_Hz.
+        ///</summary>
+        static public readonly uint DEFAULT_BANDWITH_HZ0;
+        
+        ///<summary>
+        /// The Internal Field For Bandwith_Hz.
+        ///</summary>
+        private uint _Bandwith_Hz0;
+
+        ///<summary>
+        /// Bandwith_Hz As uint.
+        ///</summary>
+        public uint Bandwith_Hz 
+        {
+            get { return _Bandwith_Hz; }
+            set
+            {
+                _Bandwith_Hz = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Gain_dB</td>
+            <td>uint</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region Gain_dB
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Gain_dB.
+        ///</summary>
+        public const String GAIN_DB = "Gain_dB";
+
+        ///<summary>
+        /// The DefaultValue For Gain_dB.
+        ///</summary>
+        static public readonly uint DEFAULT_GAIN_DB0;
+        
+        ///<summary>
+        /// The Internal Field For Gain_dB.
+        ///</summary>
+        private uint _Gain_dB0;
+
+        ///<summary>
+        /// Gain_dB As uint.
+        ///</summary>
+        public uint Gain_dB 
+        {
+            get { return _Gain_dB; }
+            set
+            {
+                _Gain_dB = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>SignalToNoiseRatio_dB</td>
+            <td>uint</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region SignalToNoiseRatio_dB
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For SignalToNoiseRatio_dB.
+        ///</summary>
+        public const String SIGNALTONOISERATIO_DB = "SignalToNoiseRatio_dB";
+
+        ///<summary>
+        /// The DefaultValue For SignalToNoiseRatio_dB.
+        ///</summary>
+        static public readonly uint DEFAULT_SIGNALTONOISERATIO_DB0;
+        
+        ///<summary>
+        /// The Internal Field For SignalToNoiseRatio_dB.
+        ///</summary>
+        private uint _SignalToNoiseRatio_dB0;
+
+        ///<summary>
+        /// SignalToNoiseRatio_dB As uint.
+        ///</summary>
+        public uint SignalToNoiseRatio_dB 
+        {
+            get { return _SignalToNoiseRatio_dB; }
+            set
+            {
+                _SignalToNoiseRatio_dB = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>XPos</td>
+            <td>int</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region XPos
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For XPos.
+        ///</summary>
+        public const String XPOS = "XPos";
+
+        ///<summary>
+        /// The DefaultValue For XPos.
+        ///</summary>
+        static public readonly int DEFAULT_XPOS0;
+        
+        ///<summary>
+        /// The Internal Field For XPos.
+        ///</summary>
+        private int _XPos0;
+
+        ///<summary>
+        /// XPos As int.
+        ///</summary>
+        public int XPos 
+        {
+            get { return _XPos; }
+            set
+            {
+                _XPos = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>YPos</td>
+            <td>int</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region YPos
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For YPos.
+        ///</summary>
+        public const String YPOS = "YPos";
+
+        ///<summary>
+        /// The DefaultValue For YPos.
+        ///</summary>
+        static public readonly int DEFAULT_YPOS0;
+        
+        ///<summary>
+        /// The Internal Field For YPos.
+        ///</summary>
+        private int _YPos0;
+
+        ///<summary>
+        /// YPos As int.
+        ///</summary>
+        public int YPos 
+        {
+            get { return _YPos; }
+            set
+            {
+                _YPos = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>ZPos</td>
+            <td>int</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+<!--
+        #region ZPos
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For ZPos.
+        ///</summary>
+        public const String ZPOS = "ZPos";
+
+        ///<summary>
+        /// The DefaultValue For ZPos.
+        ///</summary>
+        static public readonly int DEFAULT_ZPOS0;
+        
+        ///<summary>
+        /// The Internal Field For ZPos.
+        ///</summary>
+        private int _ZPos0;
+
+        ///<summary>
+        /// ZPos As int.
+        ///</summary>
+        public int ZPos 
+        {
+            get { return _ZPos; }
+            set
+            {
+                _ZPos = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>StartTime</td>
+            <td>uint</td>
+            <td>0</td>
+            <td>This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.</td>
+        </tr>
+<!--
+        #region StartTime
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For StartTime.
+        ///</summary>
+        public const String STARTTIME = "StartTime";
+
+        ///<summary>
+        /// The DefaultValue For StartTime.
+        ///</summary>
+        static public readonly uint DEFAULT_STARTTIME0;
+        
+        ///<summary>
+        /// The Internal Field For StartTime.
+        ///</summary>
+        private uint _StartTime0;
+
+        ///<summary>
+        /// StartTime As uint.
+        ///</summary>
+        public uint StartTime 
+        {
+            get { return _StartTime; }
+            set
+            {
+                _StartTime = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          <tr>
+            <td>Remark</td>
+            <td>string</td>
+            <td>""</td>
+            <td>A Comment Or Remark For The RF Device.</td>
+        </tr>
+<!--
+        #region Remark
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Remark.
+        ///</summary>
+        public const String REMARK = "Remark";
+
+        ///<summary>
+        /// The DefaultValue For Remark.
+        ///</summary>
+        static public readonly string DEFAULT_REMARK"";
+        
+        ///<summary>
+        /// The Internal Field For Remark.
+        ///</summary>
+        private string _Remark"";
+
+        ///<summary>
+        /// Remark As string.
+        ///</summary>
+        public string Remark 
+        {
+            get { return _Remark; }
+            set
+            {
+                _Remark = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+-->
+          </table>
+        </td></tr></table>
+    </body>
+</html>

@@ -56,26 +56,6 @@
   <PropertyGroup>
     <StartupObject>SIGENCEScenarioTool.App</StartupObject>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SIGENCEScenarioTool.Basic Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\TransmitterTool.Basic\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SIGENCEScenarioTool.Basic Release|AnyCPU' ">
-    <OutputPath>bin\TransmitterTool.Basic Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
       <HintPath>..\packages\GMap.NET.Presentation.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
@@ -90,6 +70,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Controls.DataVisualization.Toolkit.4.0.0.0\lib\net40-Client\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -109,6 +93,9 @@
     <Compile Include="Src\Commands\RegisteredCommands.cs" />
     <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
     <Compile Include="Src\Datatypes\Standard\StringList.cs" />
+    <Compile Include="Src\Dialogs\ChartingWindow.xaml.cs">
+      <DependentUpon>ChartingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Extensions\ColorExtension.cs" />
     <Compile Include="Src\Extensions\DateTimeExtension.cs" />
     <Compile Include="Src\Extensions\DictionaryExtension.cs" />
@@ -131,6 +118,10 @@
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
     <Compile Include="Src\ViewModels\RFDeviceViewModel.cs" />
+    <Page Include="Src\Dialogs\ChartingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Src\Markers\Cross.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -150,6 +141,7 @@
     <Compile Include="Src\Markers\Cross.xaml.cs">
       <DependentUpon>Cross.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Windows\MainWindow.TestStuff.cs" />
     <Compile Include="Src\Windows\MainWindow.EventHandling.cs" />
     <Compile Include="Src\Windows\MainWindow.FileHandling.cs" />
     <Compile Include="Src\Windows\MainWindow.FieldsAndProperties.cs" />
@@ -178,6 +170,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -200,6 +193,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Src\Models\RFDevice.Properties.html">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFDevice.Properties.tt</DependentUpon>
+    </Content>
+    <Content Include="Src\Models\RFDevice.Properties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RFDevice.Properties.html</LastGenOutput>
+    </Content>
     <Content Include="Src\Models\RFDevice.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RFDevice.cs</LastGenOutput>

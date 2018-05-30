@@ -143,6 +143,6 @@ namespace SIGENCEScenarioTool.Windows
                 MB.Error( ex );
             }
         }
-
+                    
     } // end public partial class MainWindow
 }

@@ -1,7 +1,7 @@
 ﻿
 /**
- * SourceFile     : C:\Lanser\Entwicklung\GitRepositories\TransmitterTool\SIGENCEScenarioTool.MainApp\Src\Models\RFDevice.xml
- * Timestamp      : 29.05.2018, 12:16
+ * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
+ * SourceFile     : C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\SIGENCEScenarioTool.MainApp\Src\Models\RFDevice.xml
  * User           : I142985D
  * Host           : 20NB449896
  */
@@ -44,7 +44,7 @@ namespace SIGENCEScenarioTool.Models
         private Guid _PrimaryKey = Guid.NewGuid();
 
         ///<summary>
-        /// PrimaryKey As Guid.
+        /// The Unique PrimarKey For This RF Device.
         ///</summary>
         public Guid PrimaryKey 
         {
@@ -78,7 +78,7 @@ namespace SIGENCEScenarioTool.Models
         private int _Id = 0;
 
         ///<summary>
-        /// Id As int.
+        /// Every scenario element (i.e. transmitter, receiver) must be assigned an unique ID. Negative ID’s are reserved for receivers while all other ID’s are transmitters by default. Some applications (i.e. TDoA Emitter Localization) require a reference transmitter. For these applications ID=0 is the reference transmitter. Receivers must be assigned first in the table, followed be transmitters (with ID=0 being the first). After the Static Scenario, update of ID’s requires no specific order. Note that definition of new transmitters/receivers after the Static Scenario is prohibited.
         ///</summary>
         public int Id 
         {
@@ -112,7 +112,7 @@ namespace SIGENCEScenarioTool.Models
         private string _Name = "RFDevice";
 
         ///<summary>
-        /// Name As string.
+        /// A Short Describing Display Name For The RF Device.
         ///</summary>
         public string Name 
         {
@@ -146,7 +146,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Latitude = double.NaN;
 
         ///<summary>
-        /// Latitude As double.
+        /// The Latitude Of The RF Device (WGS84).
         ///</summary>
         public double Latitude 
         {
@@ -180,7 +180,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Longitude = double.NaN;
 
         ///<summary>
-        /// Longitude As double.
+        /// The Longitude Of The RF Device (WGS84).
         ///</summary>
         public double Longitude 
         {
@@ -214,7 +214,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _Altitude = 0;
 
         ///<summary>
-        /// Altitude As uint.
+        /// The Elevation Of The RF Device Above The Sea Level (Meter).
         ///</summary>
         public uint Altitude 
         {
@@ -248,7 +248,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Roll = 0;
 
         ///<summary>
-        /// Roll As double.
+        /// Roll as double.
         ///</summary>
         public double Roll 
         {
@@ -282,7 +282,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Pitch = 0;
 
         ///<summary>
-        /// Pitch As double.
+        /// Pitch as double.
         ///</summary>
         public double Pitch 
         {
@@ -316,7 +316,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Yaw = 0;
 
         ///<summary>
-        /// Yaw As double.
+        /// Yaw as double.
         ///</summary>
         public double Yaw 
         {
@@ -350,7 +350,7 @@ namespace SIGENCEScenarioTool.Models
         private RxTxType _RxTxType = RxTxType.Unknown;
 
         ///<summary>
-        /// RxTxType As RxTxType.
+        /// For All Receivers (i.e. ID’s < 0) This Parameter Defines The Radio Being Used.
         ///</summary>
         public RxTxType RxTxType 
         {
@@ -384,7 +384,7 @@ namespace SIGENCEScenarioTool.Models
         private AntennaType _AntennaType = AntennaType.Unknown;
 
         ///<summary>
-        /// AntennaType As AntennaType.
+        /// AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.
         ///</summary>
         public AntennaType AntennaType 
         {
@@ -418,7 +418,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _CenterFrequency_Hz = 0;
 
         ///<summary>
-        /// CenterFrequency_Hz As uint.
+        /// CenterFrequency_Hz as uint.
         ///</summary>
         public uint CenterFrequency_Hz 
         {
@@ -452,7 +452,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _Bandwith_Hz = 0;
 
         ///<summary>
-        /// Bandwith_Hz As uint.
+        /// Bandwith_Hz as uint.
         ///</summary>
         public uint Bandwith_Hz 
         {
@@ -486,7 +486,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _Gain_dB = 0;
 
         ///<summary>
-        /// Gain_dB As uint.
+        /// Gain_dB as uint.
         ///</summary>
         public uint Gain_dB 
         {
@@ -520,7 +520,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _SignalToNoiseRatio_dB = 0;
 
         ///<summary>
-        /// SignalToNoiseRatio_dB As uint.
+        /// SignalToNoiseRatio_dB as uint.
         ///</summary>
         public uint SignalToNoiseRatio_dB 
         {
@@ -554,7 +554,7 @@ namespace SIGENCEScenarioTool.Models
         private int _XPos = 0;
 
         ///<summary>
-        /// XPos As int.
+        /// XPos as int.
         ///</summary>
         public int XPos 
         {
@@ -588,7 +588,7 @@ namespace SIGENCEScenarioTool.Models
         private int _YPos = 0;
 
         ///<summary>
-        /// YPos As int.
+        /// YPos as int.
         ///</summary>
         public int YPos 
         {
@@ -622,7 +622,7 @@ namespace SIGENCEScenarioTool.Models
         private int _ZPos = 0;
 
         ///<summary>
-        /// ZPos As int.
+        /// ZPos as int.
         ///</summary>
         public int ZPos 
         {
@@ -656,7 +656,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _StartTime = 0;
 
         ///<summary>
-        /// StartTime As uint.
+        /// This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
         ///</summary>
         public uint StartTime 
         {
@@ -690,7 +690,7 @@ namespace SIGENCEScenarioTool.Models
         private string _Remark = "";
 
         ///<summary>
-        /// Remark As string.
+        /// A Comment Or Remark For The RF Device.
         ///</summary>
         public string Remark 
         {
