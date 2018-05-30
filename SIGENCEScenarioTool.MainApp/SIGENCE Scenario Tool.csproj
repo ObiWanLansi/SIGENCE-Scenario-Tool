@@ -176,6 +176,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Src\Models\RFDevice.Properties.md">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFDevice.Properties.tt</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -193,14 +198,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Src\Models\RFDevice.Properties.html">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RFDevice.Properties.tt</DependentUpon>
-    </Content>
     <Content Include="Src\Models\RFDevice.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RFDevice.Properties.html</LastGenOutput>
+      <LastGenOutput>RFDevice.Properties.md</LastGenOutput>
     </Content>
     <Content Include="Src\Models\RFDevice.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

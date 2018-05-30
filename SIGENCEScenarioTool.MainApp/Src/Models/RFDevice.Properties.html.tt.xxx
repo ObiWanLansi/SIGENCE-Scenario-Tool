@@ -18,8 +18,26 @@
 
     XElement eRoot = xd.Root;
 #>
-Name|DataType|DefaultValue|Comment
-----|--------|------------|-------
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Properties Of The Model <#=eRoot.Name#></title>
+
+        <!-- Einbinden des Bootstrap-Stylesheets -->
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+        <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"></script>
+    </head>
+    <body>
+<table style="margin: 5px; width: 75%;"><tr><td>
+        <table class="table table-striped table-bordered table-hover">
+            <tr>
+                <th>Name</th>
+                <th>DataType</th>
+                <th>DefaultValue</th>
+                <th>Comment</th>
+            </tr>
 <#
 
     foreach(XElement eProperty in eRoot.Elements())
@@ -34,7 +52,16 @@ Name|DataType|DefaultValue|Comment
         string strCommment = xComment != null ? xComment.Value : "";
 
 #>
-<#=strPropertyName#>|<#=strPropertyType#>|<#=strDefaultValue#>|<#=strCommment#>
+        <tr>
+            <td><#=strPropertyName#></td>
+            <td><#=strPropertyType#></td>
+            <td><#=strDefaultValue#></td>
+            <td><#=strCommment#></td>
+        </tr>
 <#
 }
 #>
+        </table>
+        </td></tr></table>
+    </body>
+</html>
