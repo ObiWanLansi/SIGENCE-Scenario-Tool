@@ -24,11 +24,8 @@ A **little** tool to place RF Devices on a map, edit, save and load them.
 ## Dependencies
 
 - [GMap.NET.Presentation](https://www.nuget.org/packages/GMap.NET.Presentation/)
-
 - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
-
 - [NUnit](https://www.nuget.org/packages/NUnit/)
-
 - [Log4Net](https://www.nuget.org/packages/log4net/)
 
 
