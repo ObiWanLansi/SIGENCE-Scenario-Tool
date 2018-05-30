@@ -1,7 +1,7 @@
 # Documentation From And For The SIGENCE Scenario Tool
 
 ## A Short Overview Of The Model Of An RF Device
-https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SIGENCEScenarioTool.MainApp/Src/Models/RFDevice.Properties.html
+https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SIGENCEScenarioTool.MainApp/Src/Models/RFDevice.Properties.md
 
 <hr/>
 
