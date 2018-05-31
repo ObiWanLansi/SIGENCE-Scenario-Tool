@@ -9,8 +9,6 @@ using Newtonsoft.Json;
 
 using SIGENCEScenarioTool.Interfaces;
 
-using Excel = global::Microsoft.Office.Interop.Excel;
-
 
 
 namespace SIGENCEScenarioTool.Extensions
@@ -28,140 +26,140 @@ namespace SIGENCEScenarioTool.Extensions
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sheet"></param>
-        /// <param name="iColumn"></param>
-        /// <param name="iRow"></param>
-        /// <param name="value"></param>
-        /// <param name="strFormat"></param>
-        /// <param name="cTextColor"></param>
-        /// <param name="haTextAlign"></param>
-        static private void AddCell(Excel.Worksheet sheet, int iColumn, int iRow, object value, string strFormat, Excel.XlRgbColor? cTextColor, Excel.XlHAlign? haTextAlign)
-        {
-            Excel.Range cell = sheet.Cells[iRow, iColumn] as Excel.Range;
-            cell.Value2 = value;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="sheet"></param>
+        ///// <param name="iColumn"></param>
+        ///// <param name="iRow"></param>
+        ///// <param name="value"></param>
+        ///// <param name="strFormat"></param>
+        ///// <param name="cTextColor"></param>
+        ///// <param name="haTextAlign"></param>
+        //static private void AddCell(Excel.Worksheet sheet, int iColumn, int iRow, object value, string strFormat, Excel.XlRgbColor? cTextColor, Excel.XlHAlign? haTextAlign)
+        //{
+        //    Excel.Range cell = sheet.Cells[iRow, iColumn] as Excel.Range;
+        //    cell.Value2 = value;
 
-            if (strFormat != null)
-            {
-                cell.NumberFormat = strFormat;
-            }
+        //    if (strFormat != null)
+        //    {
+        //        cell.NumberFormat = strFormat;
+        //    }
 
-            if (cTextColor != null)
-            {
-                cell.Font.Color = cTextColor.Value;
-            }
+        //    if (cTextColor != null)
+        //    {
+        //        cell.Font.Color = cTextColor.Value;
+        //    }
 
-            if (haTextAlign != null)
-            {
-                cell.HorizontalAlignment = haTextAlign;
-            }
-        }
+        //    if (haTextAlign != null)
+        //    {
+        //        cell.HorizontalAlignment = haTextAlign;
+        //    }
+        //}
 
 
-        /// <summary>
-        /// Saves as excel.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="lValues">The l values.</param>
-        /// <param name="strOutputFilename">The string output filename.</param>
-        static public void SaveAsExcel<T>(this List<T> lValues, string strOutputFilename)
-        {
-            if (lValues == null || lValues.Count == 0)
-            {
-                throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
-            }
+        ///// <summary>
+        ///// Saves as excel.
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="lValues">The l values.</param>
+        ///// <param name="strOutputFilename">The string output filename.</param>
+        //static public void SaveAsExcel<T>(this List<T> lValues, string strOutputFilename)
+        //{
+        //    if (lValues == null || lValues.Count == 0)
+        //    {
+        //        throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
+        //    }
 
-            if (strOutputFilename.IsEmpty())
-            {
-                throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
-            }
+        //    if (strOutputFilename.IsEmpty())
+        //    {
+        //        throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
+        //    }
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            object Missing = Type.Missing;
-            Type tType = typeof(T);
+        //    object Missing = Type.Missing;
+        //    Type tType = typeof(T);
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            Excel.Application excel = new Excel.Application();
-            excel.SheetsInNewWorkbook = 1;
+        //    Excel.Application excel = new Excel.Application();
+        //    excel.SheetsInNewWorkbook = 1;
 
-            Excel.Workbook wb = excel.Workbooks.Add(Missing);
-            Excel.Worksheet sheet = wb.Sheets[1] as Excel.Worksheet;
+        //    Excel.Workbook wb = excel.Workbooks.Add(Missing);
+        //    Excel.Worksheet sheet = wb.Sheets[1] as Excel.Worksheet;
 
-            sheet.Name = tType.Name;
+        //    sheet.Name = tType.Name;
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            // Create Header Columns
-            {
-                int iColumnCounter = 1;
+        //    // Create Header Columns
+        //    {
+        //        int iColumnCounter = 1;
 
-                foreach (PropertyInfo pi in tType.GetProperties())
-                {
-                    if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
-                    {
-                        continue;
-                    }
+        //        foreach (PropertyInfo pi in tType.GetProperties())
+        //        {
+        //            if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
+        //            {
+        //                continue;
+        //            }
 
-                    Excel.Range cell = sheet.Cells[1, iColumnCounter++] as Excel.Range;
-                    cell.Font.Bold = true;
-                    cell.Orientation = Excel.XlOrientation.xlUpward;
-                    cell.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-                    cell.VerticalAlignment = Excel.XlVAlign.xlVAlignBottom;
-                    cell.Value2 = " " + pi.Name;
-                }
-            }
+        //            Excel.Range cell = sheet.Cells[1, iColumnCounter++] as Excel.Range;
+        //            cell.Font.Bold = true;
+        //            cell.Orientation = Excel.XlOrientation.xlUpward;
+        //            cell.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+        //            cell.VerticalAlignment = Excel.XlVAlign.xlVAlignBottom;
+        //            cell.Value2 = " " + pi.Name;
+        //        }
+        //    }
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            // Create Data Columns And Rows
-            {
-                int iRowCounter = 2;
+        //    // Create Data Columns And Rows
+        //    {
+        //        int iRowCounter = 2;
 
-                foreach (T row in lValues)
-                {
-                    int iColumnCounter = 1;
+        //        foreach (T row in lValues)
+        //        {
+        //            int iColumnCounter = 1;
 
-                    foreach (PropertyInfo pi in tType.GetProperties())
-                    {
-                        if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
-                        {
-                            continue;
-                        }
+        //            foreach (PropertyInfo pi in tType.GetProperties())
+        //            {
+        //                if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
+        //                {
+        //                    continue;
+        //                }
 
-                        object value = pi.GetValue(row, null);
+        //                object value = pi.GetValue(row, null);
 
-                        if (value != DBNull.Value && value != null)
-                        {
-                            if (value is Guid)
-                            {
-                                value = value.ToString();
-                            }
+        //                if (value != DBNull.Value && value != null)
+        //                {
+        //                    if (value is Guid)
+        //                    {
+        //                        value = value.ToString();
+        //                    }
 
-                            AddCell(sheet, iColumnCounter, iRowCounter, value, null, null, value is string ? Excel.XlHAlign.xlHAlignLeft : Excel.XlHAlign.xlHAlignRight);
-                        }
+        //                    AddCell(sheet, iColumnCounter, iRowCounter, value, null, null, value is string ? Excel.XlHAlign.xlHAlignLeft : Excel.XlHAlign.xlHAlignRight);
+        //                }
 
-                        iColumnCounter++;
-                    }
+        //                iColumnCounter++;
+        //            }
 
-                    iRowCounter++;
-                }
-            }
+        //            iRowCounter++;
+        //        }
+        //    }
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            sheet.Columns.AutoFit();
+        //    sheet.Columns.AutoFit();
 
-            excel.Visible = true;
+        //    excel.Visible = true;
 
-            wb.SaveAs(strOutputFilename, Missing, Missing, Missing, Missing, Missing, Excel.XlSaveAsAccessMode.xlNoChange, Missing, Missing, Missing, Missing, Missing);
+        //    wb.SaveAs(strOutputFilename, Missing, Missing, Missing, Missing, Missing, Excel.XlSaveAsAccessMode.xlNoChange, Missing, Missing, Missing, Missing, Missing);
 
-            // Achtung: Auch wenn diese Funktion beendet wird bleibt Excel geöffnet. Die Daten sind
-            // aber noch nicht in einer Datei gespeichert. Das muß in Excel der User selbst machen.
-        }
+        //    // Achtung: Auch wenn diese Funktion beendet wird bleibt Excel geöffnet. Die Daten sind
+        //    // aber noch nicht in einer Datei gespeichert. Das muß in Excel der User selbst machen.
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
@@ -16,6 +17,10 @@ namespace SIGENCEScenarioTool.Windows
     /// </summary>
     public partial class MainWindow
     {
+        /// <summary>
+        /// The missing
+        /// </summary>
+        private readonly object Missing = Type.Missing;
 
         /// <summary>
         /// The SFD save sigence scenario

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Windows.Input;
 
 using GMap.NET;
-
+using SIGENCEScenarioTool.Datatypes.Standard;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
+
+using Excel = global::Microsoft.Office.Interop.Excel;
 
 
 
@@ -106,6 +108,123 @@ namespace SIGENCEScenarioTool.Windows
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        #region Specialied Excel Export
+
+
+        /// <summary>
+        /// Adds the cell.
+        /// </summary>
+        /// <param name="sheet">The sheet.</param>
+        /// <param name="iColumn">The i column.</param>
+        /// <param name="iRow">The i row.</param>
+        /// <param name="value">The value.</param>
+        private void AddCell(Excel.Worksheet sheet, int iColumn, int iRow, object value)
+        {
+            Excel.Range cell = sheet.Cells[iRow, iColumn] as Excel.Range;
+            cell.Value2 = value;
+            cell.HorizontalAlignment = value is string ? Excel.XlHAlign.xlHAlignLeft : Excel.XlHAlign.xlHAlignRight;
+        }
+
+
+        /// <summary>
+        /// Saves as excel file.
+        /// </summary>
+        /// <param name="dl">The dl.</param>
+        /// <param name="strOutputFilename">The string output filename.</param>
+        /// <exception cref="ArgumentException">Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
+        private void SaveAsExcel(RFDeviceList dl, string strOutputFilename)
+        {
+            if (strOutputFilename.IsEmpty())
+            {
+                throw new ArgumentException("The output filename can not be empty!", "strOutputFilename");
+            }
+
+            //-----------------------------------------------------------------
+
+            Excel.Application excel = new Excel.Application
+            {
+                SheetsInNewWorkbook = 1
+            };
+
+            Excel.Workbook wb = excel.Workbooks.Add(Missing);
+            Excel.Worksheet sheet = wb.Sheets[1] as Excel.Worksheet;
+
+            sheet.Name = "RF Devices";
+
+            //-----------------------------------------------------------------
+
+            StringList slColumnNames = new StringList
+            {
+                RFDevice.STARTTIME,RFDevice.ID,
+                RFDevice.LATITUDE,RFDevice.LONGITUDE,RFDevice.ALTITUDE,
+                RFDevice.ROLL,RFDevice.PITCH,RFDevice.YAW ,
+                RFDevice.RXTXTYPE,RFDevice.ANTENNATYPE,
+                RFDevice.GAIN_DB,RFDevice.CENTERFREQUENCY_HZ,RFDevice.BANDWITH_HZ,RFDevice.SIGNALTONOISERATIO_DB,
+                RFDevice.XPOS,RFDevice.YPOS,RFDevice.ZPOS,
+                RFDevice.REMARK
+            };
+
+            // Create Header Columns
+            {
+                int iColumnCounter = 1;
+
+                foreach (string strColumn in slColumnNames)
+                {
+                    Excel.Range cell = sheet.Cells[1, iColumnCounter++] as Excel.Range;
+                    cell.Font.Bold = true;
+                    cell.Orientation = Excel.XlOrientation.xlUpward;
+                    cell.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                    cell.VerticalAlignment = Excel.XlVAlign.xlVAlignBottom;
+                    cell.Value2 = " " + strColumn;
+                }
+            }
+
+            //-----------------------------------------------------------------
+
+            // Create Data Columns And Rows
+            {
+                int iRowCounter = 2;
+
+                foreach (RFDevice device in dl)
+                {
+                    AddCell(sheet, 1, iRowCounter, device.StartTime);
+                    AddCell(sheet, 2, iRowCounter, device.Id);
+                    AddCell(sheet, 3, iRowCounter, device.Latitude);
+                    AddCell(sheet, 4, iRowCounter, device.Longitude);
+                    AddCell(sheet, 5, iRowCounter, device.Altitude);
+                    AddCell(sheet, 6, iRowCounter, device.Roll);
+                    AddCell(sheet, 7, iRowCounter, device.Pitch);
+                    AddCell(sheet, 8, iRowCounter, device.Yaw);
+                    AddCell(sheet, 9, iRowCounter, device.RxTxType);
+                    AddCell(sheet, 10, iRowCounter, device.AntennaType);
+                    AddCell(sheet, 11, iRowCounter, device.Gain_dB);
+                    AddCell(sheet, 12, iRowCounter, device.CenterFrequency_Hz);
+                    AddCell(sheet, 13, iRowCounter, device.Bandwith_Hz);
+                    AddCell(sheet, 14, iRowCounter, device.SignalToNoiseRatio_dB);
+                    AddCell(sheet, 15, iRowCounter, device.XPos);
+                    AddCell(sheet, 16, iRowCounter, device.YPos);
+                    AddCell(sheet, 17, iRowCounter, device.ZPos);
+                    AddCell(sheet, 18, iRowCounter, device.Remark);
+
+                    iRowCounter++;
+                }
+            }
+
+            //-----------------------------------------------------------------
+
+            sheet.Columns.AutoFit();
+
+            excel.Visible = true;
+
+            wb.SaveAs(strOutputFilename, Missing, Missing, Missing, Missing, Missing, Excel.XlSaveAsAccessMode.xlNoChange, Missing, Missing, Missing, Missing, Missing);
+
+            // Achtung: Auch wenn diese Funktion beendet wird bleibt Excel geöffnet. Die Daten sind
+            // aber noch nicht in einer Datei gespeichert. Das muß in Excel der User selbst machen.
+        }
+
+        #endregion
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// Exports the RFDevices.
@@ -131,7 +250,7 @@ namespace SIGENCEScenarioTool.Windows
             {
                 FileInfo fiExportFile = new FileInfo(sfdExportRFDevices.FileName);
 
-                RFDeviceList tl = new RFDeviceList(RFDevicesCollection.Select(t => t.RFDevice));
+                RFDeviceList dl = new RFDeviceList(RFDevicesCollection.Select(t => t.RFDevice));
 
                 Cursor = Cursors.Wait;
                 DoEvents();
@@ -141,22 +260,20 @@ namespace SIGENCEScenarioTool.Windows
                     switch (fiExportFile.Extension.ToLower())
                     {
                         case ".csv":
-                            tl.SaveAsCsv(fiExportFile.FullName);
+                            dl.SaveAsCsv(fiExportFile.FullName);
                             break;
 
                         case ".json":
-                            tl.SaveAsJson(fiExportFile.FullName);
+                            dl.SaveAsJson(fiExportFile.FullName);
                             break;
 
                         case ".xml":
-                            tl.SaveAsXml(fiExportFile.FullName);
+                            dl.SaveAsXml(fiExportFile.FullName);
                             break;
 
-#if EXCEL_SUPPORT
                         case ".xlsx":
-                            tl.SaveAsExcel(fiExportFile.FullName);
+                            SaveAsExcel(dl, fiExportFile.FullName);
                             break;
-#endif
                     }
 
                     //MB.Information( "File {0} successful created." , fiExportFile.Name );
