@@ -14,9 +14,11 @@ using GMap.NET.WindowsPresentation;
 namespace SIGENCEScenarioTool.Markers
 {
     /// <summary>
-    /// Interaction logic for CustomMarkerDemo.xaml
+    /// 
     /// </summary>
-    public partial class CustomMarker
+    /// <seealso cref="System.Windows.Controls.UserControl" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
+    public partial class RectangleMarker
     {
         /// <summary>
         /// The popup
@@ -33,20 +35,16 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         private readonly GMapMarker Marker = null;
 
-        ///// <summary>
-        ///// The main window
-        ///// </summary>
-        //private readonly MainWindow MainWindow = null;
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
-        /// Gets or sets the title.
+        /// Gets or sets the marker tool tip.
         /// </summary>
         /// <value>
-        /// The title.
+        /// The marker tool tip.
         /// </value>
-        public string Title
+        public string MarkerToolTip
         {
             get { return Label.Content as string; }
             set { Label.Content = value; }
@@ -56,11 +54,11 @@ namespace SIGENCEScenarioTool.Markers
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomMarker" /> class.
+        /// Initializes a new instance of the <see cref="RectangleMarker"/> class.
         /// </summary>
         /// <param name="marker">The marker.</param>
-        /// <param name="strTitle">The title.</param>
-        public CustomMarker(GMapMarker marker, string strTitle)
+        /// <param name="strToolTip">The tooltip.</param>
+        public RectangleMarker(GMapMarker marker, string strToolTip)
         {
             this.InitializeComponent();
 
@@ -75,7 +73,7 @@ namespace SIGENCEScenarioTool.Markers
                 Padding = new Thickness(3),
                 FontSize = 14,
                 FontFamily = new FontFamily("Courier New"),
-                Content = strTitle
+                Content = strToolTip
             };
 
             Popup = new Popup
@@ -89,13 +87,13 @@ namespace SIGENCEScenarioTool.Markers
             //this.MouseMove += new MouseEventHandler(CustomMarkerDemo_MouseMove);
             //this.MouseLeftButtonUp += new MouseButtonEventHandler(CustomMarkerDemo_MouseLeftButtonUp);
             //this.MouseLeftButtonDown += new MouseButtonEventHandler(CustomMarkerDemo_MouseLeftButtonDown);
-
-
+                                                                
             this.MouseEnter += new MouseEventHandler(MarkerControl_MouseEnter);
             this.MouseLeave += new MouseEventHandler(MarkerControl_MouseLeave);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         ///// <summary>
         ///// Handles the Loaded event of the CustomMarkerDemo control.
@@ -185,5 +183,5 @@ namespace SIGENCEScenarioTool.Markers
             Popup.IsOpen = true;
         }
 
-    } // end public partial class CustomMarkerRed
+    } // end public partial class RectangleMarker
 }

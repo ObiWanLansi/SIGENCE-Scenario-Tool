@@ -105,8 +105,11 @@
     <Compile Include="Src\Extensions\StringExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
     <Compile Include="Src\Interfaces\IXmlExport.cs" />
-    <Compile Include="Src\Markers\CustomMarker.xaml.cs">
-      <DependentUpon>CustomMarker.xaml</DependentUpon>
+    <Compile Include="Src\Markers\TriangleMarker.xaml.cs">
+      <DependentUpon>TriangleMarker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Markers\RectangleMarker.xaml.cs">
+      <DependentUpon>RectangleMarker.xaml</DependentUpon>
     </Compile>
     <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\RFDevice.cs">
@@ -122,11 +125,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Src\Markers\Cross.xaml">
+    <Page Include="Src\Markers\TriangleMarker.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Src\Markers\CustomMarker.xaml">
+    <Page Include="Src\Markers\RectangleMarker.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -137,9 +140,6 @@
     <Compile Include="Src\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Src\Markers\Cross.xaml.cs">
-      <DependentUpon>Cross.xaml</DependentUpon>
     </Compile>
     <Compile Include="Src\Windows\MainWindow.TestStuff.cs" />
     <Compile Include="Src\Windows\MainWindow.EventHandling.cs" />

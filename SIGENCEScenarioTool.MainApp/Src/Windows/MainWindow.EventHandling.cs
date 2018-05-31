@@ -75,7 +75,7 @@ namespace SIGENCEScenarioTool.Windows
                 RFDeviceViewModel item = (sender as DataGrid).SelectedItem as RFDeviceViewModel;
 
                 mcMapControl.Position = new PointLatLng(item.RFDevice.Latitude, item.RFDevice.Longitude);
-                mcMapControl.Zoom = 20;
+                mcMapControl.Zoom = 18;
 
                 e.Handled = true;
                 return;
