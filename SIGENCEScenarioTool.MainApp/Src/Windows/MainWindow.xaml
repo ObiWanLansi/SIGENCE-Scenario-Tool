@@ -43,6 +43,12 @@
             </MenuItem>
             <MenuItem Header="_Tools">
                 <MenuItem Header="_Create Screenshot From Map" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+            </MenuItem>
+            <MenuItem Header="_Extras">
+                <MenuItem Header="_Settings" IsEnabled="False" />
+            </MenuItem>
+            <MenuItem Header="_Test">
+                <MenuItem Header="_Charting Test" Click="MenuItem_ChartingTest_Click"/>
                 <Separator />
                 <MenuItem Header="Create Randomized RFDevices">
                     <MenuItem Header="50" Tag="50" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
@@ -51,12 +57,6 @@
                     <MenuItem Header="500" Tag="500" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                     <MenuItem Header="1000" Tag="1000" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                 </MenuItem>
-            </MenuItem>
-            <MenuItem Header="_Extras">
-                <MenuItem Header="_Settings" IsEnabled="False" />
-            </MenuItem>
-            <MenuItem Header="_Test">
-                <MenuItem Header="_Charting Test" Click="MenuItem_ChartingTest_Click"/>
             </MenuItem>
             <MenuItem Header="_Help" IsEnabled="False" />
 
