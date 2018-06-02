@@ -10,21 +10,21 @@
     <Property Name="Longitude" Type="double" Init="double.NaN" Comment="The Longitude Of The RF Device (WGS84)." />
     <Property Name="Altitude" Type="uint" Init="0" Comment="The Elevation Of The RF Device Above The Sea Level (Meter)." />
 
-    <Property Name="Roll" Type="double" Init="0" Comment="" />
-    <Property Name="Pitch" Type="double" Init="0" Comment="" />
-    <Property Name="Yaw" Type="double" Init="0" Comment="" />
+    <Property Name="Roll" Type="double" Init="0" Comment="These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers." />
+    <Property Name="Pitch" Type="double" Init="0" Comment="These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers." />
+    <Property Name="Yaw" Type="double" Init="0" Comment="These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers." />
 
     <Property Name="RxTxType" Type="RxTxType" Init="RxTxType.Unknown" Comment="For All Receivers (i.e. ID’s &lt; 0) This Parameter Defines The Radio Being Used." />
     <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown" Comment="AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported." />
 
-    <Property Name="CenterFrequency_Hz" Type="uint" Init="0" Comment="" />
+    <Property Name="CenterFrequency_Hz" Type="uint" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
     <Property Name="Bandwith_Hz" Type="uint" Init="0" Comment="" />
-    <Property Name="Gain_dB" Type="uint" Init="0" Comment="" />
-    <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0" Comment="" />
+    <Property Name="Gain_dB" Type="uint" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
+    <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0" Comment="For receivers (i.e. ID’s &lt; 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused." />
 
-    <Property Name="XPos" Type="int" Init="0" Comment="" />
-    <Property Name="YPos" Type="int" Init="0" Comment="" />
-    <Property Name="ZPos" Type="int" Init="0" Comment="" />
+    <Property Name="XPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
+    <Property Name="YPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
+    <Property Name="ZPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
 
     <Property Name="StartTime" Type="uint" Init="0" Comment="This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s." />
     <Property Name="Remark" Type="string" Init="&quot;&quot;" Comment="A Comment Or Remark For The RF Device." />

@@ -1,9 +1,9 @@
 ﻿
 /**
  * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
- * SourceFile     : C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\SIGENCEScenarioTool.MainApp\Src\Models\RFDevice.xml
- * User           : I142985D
- * Host           : 20NB449896
+ * SourceFile     : D:\BigData\GitHub\SIGENCE-Scenario-Tool\SIGENCEScenarioTool.MainApp\Src\Models\RFDevice.xml
+ * User           : Jörg Lanser Lokal
+ * Host           : MARUSHA
  */
 
 using System;
@@ -248,7 +248,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Roll = 0;
 
         ///<summary>
-        /// Roll as double.
+        /// These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
         ///</summary>
         public double Roll 
         {
@@ -282,7 +282,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Pitch = 0;
 
         ///<summary>
-        /// Pitch as double.
+        /// These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
         ///</summary>
         public double Pitch 
         {
@@ -316,7 +316,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Yaw = 0;
 
         ///<summary>
-        /// Yaw as double.
+        /// These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
         ///</summary>
         public double Yaw 
         {
@@ -418,7 +418,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _CenterFrequency_Hz = 0;
 
         ///<summary>
-        /// CenterFrequency_Hz as uint.
+        /// For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
         ///</summary>
         public uint CenterFrequency_Hz 
         {
@@ -486,7 +486,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _Gain_dB = 0;
 
         ///<summary>
-        /// Gain_dB as uint.
+        /// For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
         ///</summary>
         public uint Gain_dB 
         {
@@ -520,7 +520,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _SignalToNoiseRatio_dB = 0;
 
         ///<summary>
-        /// SignalToNoiseRatio_dB as uint.
+        /// For receivers (i.e. ID’s < 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused.
         ///</summary>
         public uint SignalToNoiseRatio_dB 
         {
@@ -554,7 +554,7 @@ namespace SIGENCEScenarioTool.Models
         private int _XPos = 0;
 
         ///<summary>
-        /// XPos as int.
+        /// XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
         ///</summary>
         public int XPos 
         {
@@ -588,7 +588,7 @@ namespace SIGENCEScenarioTool.Models
         private int _YPos = 0;
 
         ///<summary>
-        /// YPos as int.
+        /// XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
         ///</summary>
         public int YPos 
         {
@@ -622,7 +622,7 @@ namespace SIGENCEScenarioTool.Models
         private int _ZPos = 0;
 
         ///<summary>
-        /// ZPos as int.
+        /// XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
         ///</summary>
         public int ZPos 
         {

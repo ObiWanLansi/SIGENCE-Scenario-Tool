@@ -7,17 +7,17 @@ Name|string|"RFDevice"|A Short Describing Display Name For The RF Device.
 Latitude|double|double.NaN|The Latitude Of The RF Device (WGS84).
 Longitude|double|double.NaN|The Longitude Of The RF Device (WGS84).
 Altitude|uint|0|The Elevation Of The RF Device Above The Sea Level (Meter).
-Roll|double|0|
-Pitch|double|0|
-Yaw|double|0|
+Roll|double|0|These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
+Pitch|double|0|These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
+Yaw|double|0|These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
 RxTxType|RxTxType|RxTxType.Unknown|For All Receivers (i.e. ID’s < 0) This Parameter Defines The Radio Being Used.
 AntennaType|AntennaType|AntennaType.Unknown|AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.
-CenterFrequency_Hz|uint|0|
+CenterFrequency_Hz|uint|0|For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
 Bandwith_Hz|uint|0|
-Gain_dB|uint|0|
-SignalToNoiseRatio_dB|uint|0|
-XPos|int|0|
-YPos|int|0|
-ZPos|int|0|
+Gain_dB|uint|0|For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
+SignalToNoiseRatio_dB|uint|0|For receivers (i.e. ID’s < 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused.
+XPos|int|0|XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
+YPos|int|0|XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
+ZPos|int|0|XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
 StartTime|uint|0|This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
 Remark|string|""|A Comment Or Remark For The RF Device.
