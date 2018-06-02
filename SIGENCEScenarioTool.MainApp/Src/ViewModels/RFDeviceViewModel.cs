@@ -441,6 +441,12 @@ namespace SIGENCEScenarioTool.ViewModels
                 this.Marker.Shape = null;
             }
 
+            if (RFDevice.Id == 0)
+            {
+                this.Marker.Shape = new CircleMarker(this.Marker, GetToolTip());
+                return;
+            }
+
             if (RFDevice.Id < 0)
             {
                 this.Marker.Shape = new RectangleMarker(this.Marker, GetToolTip());
@@ -456,6 +462,12 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateMarkerTooltip()
         {
+            if (this.Marker.Shape is CircleMarker)
+            {
+                (this.Marker.Shape as CircleMarker).MarkerToolTip = GetToolTip();
+                return;
+            }
+
             if (this.Marker.Shape is RectangleMarker)
             {
                 (this.Marker.Shape as RectangleMarker).MarkerToolTip = GetToolTip();
