@@ -110,19 +110,15 @@ namespace SIGENCEScenarioTool.Windows
 
             try
             {
-
-                using( MemoryStream ms = new MemoryStream() )
+                using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
                 {
-                    using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
-                    {
-                        IPEndPoint endpoint = new IPEndPoint( IPADDRESS , settings.UDPPort );
+                    IPEndPoint endpoint = new IPEndPoint( IPADDRESS , settings.UDPPort );
 
-                        byte [] baMessage = Encoding.Default.GetBytes( eDeviceList.ToDefaultString() );
+                    byte [] baMessage = Encoding.Default.GetBytes( eDeviceList.ToDefaultString() );
 
-                        sender.SendTo( baMessage , endpoint );
+                    sender.SendTo( baMessage , endpoint );
 
-                        sender.Close();
-                    }
+                    sender.Close();
                 }
             }
             catch( Exception ex )
