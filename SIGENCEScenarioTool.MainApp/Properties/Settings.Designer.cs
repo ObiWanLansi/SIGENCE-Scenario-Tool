@@ -31,5 +31,14 @@ namespace SIGENCEScenarioTool.Properties {
                 return ((int)(this["UDPPort"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public int UDPDelay {
+            get {
+                return ((int)(this["UDPDelay"]));
+            }
+        }
     }
 }

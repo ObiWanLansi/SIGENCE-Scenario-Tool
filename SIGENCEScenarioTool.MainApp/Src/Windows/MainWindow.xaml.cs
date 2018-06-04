@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using System.Xml;
 using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
@@ -101,22 +101,23 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void SendDataUDP()
         {
-            XElement eDeviceList = new XElement( "DeviceList" );
-
-            foreach( RFDevice device in from devicemodel in RFDevicesCollection select devicemodel.RFDevice )
-            {
-                eDeviceList.Add( device.ToXml() );
-            }
-
             try
             {
                 using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
                 {
                     IPEndPoint endpoint = new IPEndPoint( IPADDRESS , settings.UDPPort );
 
-                    byte [] baMessage = Encoding.Default.GetBytes( eDeviceList.ToDefaultString() );
+                    foreach( RFDevice device in from devicemodel in RFDevicesCollection select devicemodel.RFDevice )
+                    {
+                        XElement eDevice = device.ToXml();
 
-                    sender.SendTo( baMessage , endpoint );
+                        byte [] baMessage = Encoding.Default.GetBytes( eDevice.ToDefaultString() );
+
+                        sender.SendTo( baMessage , endpoint );
+
+                        // Give the poor client some time to process the data ...
+                        Thread.Sleep( settings.UDPDelay );
+                    }
 
                     sender.Close();
                 }
@@ -126,6 +127,40 @@ namespace SIGENCEScenarioTool.Windows
                 MB.Error( ex );
             }
         }
+
+
+        ///// <summary>
+        ///// Sends the RFDeviceList via UDP to any connect client.
+        ///// This function is not asynchron, so the main thread is blocked when sending data. 
+        ///// Maybe in oen of the next versions me make this function asynchron.
+        ///// </summary>
+        //private void xSendDataUDP()
+        //{
+        //    XElement eDeviceList = new XElement( "DeviceList" );
+
+        //    foreach( RFDevice device in from devicemodel in RFDevicesCollection select devicemodel.RFDevice )
+        //    {
+        //        eDeviceList.Add( device.ToXml() );
+        //    }
+
+        //    try
+        //    {
+        //        using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
+        //        {
+        //            IPEndPoint endpoint = new IPEndPoint( IPADDRESS , settings.UDPPort );
+
+        //            byte [] baMessage = Encoding.Default.GetBytes( eDeviceList.ToDefaultString() );
+
+        //            sender.SendTo( baMessage , endpoint );
+
+        //            sender.Close();
+        //        }
+        //    }
+        //    catch( Exception ex )
+        //    {
+        //        MB.Error( ex );
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
