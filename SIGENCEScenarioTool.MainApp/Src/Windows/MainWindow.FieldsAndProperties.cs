@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-
+using System.Net;
 using GMap.NET;
 using GMap.NET.MapProviders;
 
@@ -41,6 +41,16 @@ namespace SIGENCEScenarioTool.Windows
         /// The SFD save screenshot
         /// </summary>
         private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private readonly Properties.Settings settings = Properties.Settings.Default;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private readonly IPAddress IPADDRESS = IPAddress.Parse( "127.0.0.1" );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -152,7 +162,7 @@ namespace SIGENCEScenarioTool.Windows
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
+                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -170,7 +180,7 @@ namespace SIGENCEScenarioTool.Windows
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
+                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
 
                 FirePropertyChanged();
             }

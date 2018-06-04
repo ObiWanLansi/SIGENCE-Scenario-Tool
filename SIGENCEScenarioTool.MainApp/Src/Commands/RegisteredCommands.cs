@@ -53,6 +53,11 @@ namespace SIGENCEScenarioTool.Commands
         static public RoutedUICommand CreateScreenshot { get; private set; }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        static public RoutedUICommand SendDataUDP { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -61,20 +66,23 @@ namespace SIGENCEScenarioTool.Commands
         /// </summary>
         static RegisteredCommands()
         {
-            CreateRFDevice = new RoutedUICommand("CreateRFDevice", "CreateRFDevice", typeof(RegisteredCommands));
-            CreateRFDevice.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Alt));
+            CreateRFDevice = new RoutedUICommand( "CreateRFDevice" , "CreateRFDevice" , typeof( RegisteredCommands ) );
+            CreateRFDevice.InputGestures.Add( new KeyGesture( Key.C , ModifierKeys.Alt ) );
 
-            DeleteRFDevice = new RoutedUICommand("DeleteRFDevice", "DeleteRFDevice", typeof(RegisteredCommands));
-            DeleteRFDevice.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Alt));
+            DeleteRFDevice = new RoutedUICommand( "DeleteRFDevice" , "DeleteRFDevice" , typeof( RegisteredCommands ) );
+            DeleteRFDevice.InputGestures.Add( new KeyGesture( Key.D , ModifierKeys.Alt ) );
 
-            ExportRFDevice = new RoutedUICommand("ExportRFDevice", "ExportRFDevice", typeof(RegisteredCommands));
-            ExportRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Alt));
+            ExportRFDevice = new RoutedUICommand( "ExportRFDevice" , "ExportRFDevice" , typeof( RegisteredCommands ) );
+            ExportRFDevice.InputGestures.Add( new KeyGesture( Key.E , ModifierKeys.Alt ) );
 
-            ImportRFDevice = new RoutedUICommand("ImportRFDevice", "ImportRFDevice", typeof(RegisteredCommands));
-            ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Alt));
+            ImportRFDevice = new RoutedUICommand( "ImportRFDevice" , "ImportRFDevice" , typeof( RegisteredCommands ) );
+            ImportRFDevice.InputGestures.Add( new KeyGesture( Key.I , ModifierKeys.Alt ) );
 
-            CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
-            //CreateScreenshot.InputGestures.Add( new KeyGesture( Key.I , ModifierKeys.Control ) );
+            CreateScreenshot = new RoutedUICommand( "CreateScreenshot" , "CreateScreenshot" , typeof( RegisteredCommands ) );
+            CreateScreenshot.InputGestures.Add( new KeyGesture( Key.M , ModifierKeys.Control ) );
+
+            SendDataUDP = new RoutedUICommand( "SendDataUDP" , "SendDataUDP" , typeof( RegisteredCommands ) );
+            SendDataUDP.InputGestures.Add( new KeyGesture( Key.U , ModifierKeys.Control ) );
         }
 
     } // end static public class RegisteredCommands

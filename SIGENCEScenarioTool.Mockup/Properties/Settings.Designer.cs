@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIGENCEScenarioTool.Properties {
+namespace SIGENCEScenarioTool.Mockup.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,9 +26,21 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4242")]
-        public int UDPPort {
+        public int UDPServerPort {
             get {
-                return ((int)(this["UDPPort"]));
+                return ((int)(this["UDPServerPort"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string UDPServerHost {
+            get {
+                return ((string)(this["UDPServerHost"]));
+            }
+            set {
+                this["UDPServerHost"] = value;
             }
         }
     }

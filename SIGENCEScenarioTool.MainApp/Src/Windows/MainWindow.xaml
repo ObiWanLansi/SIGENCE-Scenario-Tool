@@ -43,12 +43,13 @@
             </MenuItem>
             <MenuItem Header="_Tools">
                 <MenuItem Header="_Create Screenshot From Map" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+                <MenuItem Header="_Send Data via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
             </MenuItem>
             <MenuItem Header="_Extras">
                 <MenuItem Header="_Settings" IsEnabled="False" />
             </MenuItem>
             <MenuItem Header="_Test">
-                <MenuItem Header="_Charting Test" Click="MenuItem_ChartingTest_Click"/>
+                <MenuItem Header="_Charting Test" Click="MenuItem_ChartingTest_Click" />
                 <Separator />
                 <MenuItem Header="Create Randomized RFDevices">
                     <MenuItem Header="50" Tag="50" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
@@ -69,14 +70,19 @@
             <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
             <Separator />
             <Button Content="Create RFDevice" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
+            <Separator />
             <Button Content="Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
+            <Separator />
+            <Button Content="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+            <Separator />
+            <Button Content="Send Data via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
             <Separator />
         </ToolBar>
 
         <gmap:GMapControl x:Name="mcMapControl" Grid.Row="2" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
-        <ScrollViewer Grid.Row="3">
-            <DataGrid x:Name="dgRFDevices" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" KeyDown="DataGrid_KeyDown">
+        <!--<ScrollViewer Grid.Row="3">-->
+        <DataGrid x:Name="dgRFDevices" Grid.Row="3" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" KeyDown="DataGrid_KeyDown">
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
@@ -217,7 +223,7 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-        </ScrollViewer>
+        <!--</ScrollViewer>-->
 
         <GridSplitter Grid.Row="3" Background="Blue" Height="3" HorizontalAlignment="Stretch" ShowsPreview="True" VerticalAlignment="Top" />
 

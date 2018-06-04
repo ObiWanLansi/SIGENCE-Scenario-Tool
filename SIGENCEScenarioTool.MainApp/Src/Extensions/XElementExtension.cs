@@ -17,7 +17,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// 
         /// </summary>
-        static private readonly string[] formats = new[] {
+        static private readonly string [] formats = new [] {
             "dd.MM.yyyy, HH:mm:ss" , "dd.MM.yyyy HH:mm:ss" ,
             "ddMMyyyy_HHmmss" , "yyyyMMdd_HHmmss" ,
             "yyyy-MM-dd" , "dd.MM.yyyy" , "dd-MM-yyyy" ,
@@ -27,7 +27,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// Damit double Zahlen die mit . wegeschrieben sind geparst werden können.
         /// </summary>
-        static private readonly CultureInfo ci = new CultureInfo("en-US");
+        static private readonly CultureInfo ci = new CultureInfo( "en-US" );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,15 +62,15 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public DateTime? GetDateTimeFromNodeUTC(this XElement xCurrentElement, string strElementName)
+        static public DateTime? GetDateTimeFromNodeUTC( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
                 //string strDatetime = bIsUTC == false ? x.Value : x.Value.Replace('T', ' ');
 
-                DateTime dt = DateTime.ParseExact(x.Value, formats, CultureInfo.CurrentCulture, DateTimeStyles.AssumeUniversal);
+                DateTime dt = DateTime.ParseExact( x.Value , formats , CultureInfo.CurrentCulture , DateTimeStyles.AssumeUniversal );
                 return dt;
             }
 
@@ -84,13 +84,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The be current element.</param>
         /// <param name="strElementName">Name of the STR element.</param>
         /// <returns></returns>
-        static public long? GetLongFromNode(this XElement xCurrentElement, string strElementName)
+        static public long? GetLongFromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return long.Parse(x.Value);
+                return long.Parse( x.Value );
             }
 
             return null;
@@ -103,13 +103,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public int? GetInt32FromNode(this XElement xCurrentElement, string strElementName)
+        static public int? GetInt32FromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return int.Parse(x.Value);
+                return int.Parse( x.Value );
             }
 
             return null;
@@ -122,13 +122,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public uint? GetUInt32FromNode(this XElement xCurrentElement, string strElementName)
+        static public uint? GetUInt32FromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return uint.Parse(x.Value);
+                return uint.Parse( x.Value );
             }
 
             return null;
@@ -142,13 +142,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public float? GetSingleFromNode(this XElement xCurrentElement, string strElementName)
+        static public float? GetSingleFromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return float.Parse(x.Value);
+                return float.Parse( x.Value );
             }
 
             return null;
@@ -161,13 +161,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public float? GetSingleFromNodeComma(this XElement xCurrentElement, string strElementName)
+        static public float? GetSingleFromNodeComma( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return float.Parse(x.Value);
+                return float.Parse( x.Value );
             }
 
             return null;
@@ -180,13 +180,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public float? GetSingleFromNodePoint(this XElement xCurrentElement, string strElementName)
+        static public float? GetSingleFromNodePoint( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return float.Parse(x.Value, ci);
+                return float.Parse( x.Value , ci );
             }
 
             return null;
@@ -199,13 +199,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public double? GetDoubleFromNode(this XElement xCurrentElement, string strElementName)
+        static public double? GetDoubleFromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return double.Parse(x.Value);
+                return double.Parse( x.Value );
             }
 
             return null;
@@ -218,13 +218,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public double? GetDoubleFromNodeComma(this XElement xCurrentElement, string strElementName)
+        static public double? GetDoubleFromNodeComma( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return double.Parse(x.Value);
+                return double.Parse( x.Value );
             }
 
             return null;
@@ -237,13 +237,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public double? GetDoubleFromNodePoint(this XElement xCurrentElement, string strElementName)
+        static public double? GetDoubleFromNodePoint( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return double.Parse(x.Value, ci);
+                return double.Parse( x.Value , ci );
             }
 
             return null;
@@ -256,12 +256,12 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The be current element.</param>
         /// <param name="strElementName">Name of the STR element.</param>
         /// <returns></returns>
-        static public string GetStringFromNode(this XElement xCurrentElement, string strElementName)
+        static public string GetStringFromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
             // Es wird NULL zurückgeliefert wenn das Element nicht da ist oder es ist da aber der Content ist leer ...
-            return x != null ? string.IsNullOrEmpty(x.Value) ? null : x.Value : null;
+            return x != null ? string.IsNullOrEmpty( x.Value ) ? null : x.Value : null;
         }
 
 
@@ -272,11 +272,11 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strNamespace">The STR namespace.</param>
         /// <param name="strElementName">Name of the STR element.</param>
         /// <returns></returns>
-        static public string GetStringFromNode(this XElement xCurrentElement, string strNamespace, string strElementName)
+        static public string GetStringFromNode( this XElement xCurrentElement , string strNamespace , string strElementName )
         {
-            string strName = string.Format("{{{0}}}{1}", strNamespace, strElementName);
+            string strName = string.Format( "{{{0}}}{1}" , strNamespace , strElementName );
 
-            XElement x = xCurrentElement.Element(strName);
+            XElement x = xCurrentElement.Element( strName );
 
             return x != null ? x.Value : null;
         }
@@ -288,9 +288,9 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement"></param>
         /// <param name="strElementName"></param>
         /// <returns></returns>
-        static public string GetStringFromCData(this XElement xCurrentElement, string strElementName)
+        static public string GetStringFromCData( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
             return x != null ? x.Value : null;
         }
@@ -302,13 +302,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public bool? GetBoolFromNode(this XElement xCurrentElement, string strElementName)
+        static public bool? GetBoolFromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return bool.Parse(x.Value);
+                return bool.Parse( x.Value );
             }
 
             return null;
@@ -321,13 +321,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public Guid? GetGuidFromNode(this XElement xCurrentElement, string strElementName)
+        static public Guid? GetGuidFromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return Guid.Parse(x.Value);
+                return Guid.Parse( x.Value );
             }
 
             return null;
@@ -397,17 +397,17 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public BitmapSource GetBitmapSourceFromNode(this XElement xCurrentElement, string strElementName)
+        static public BitmapSource GetBitmapSourceFromNode( this XElement xCurrentElement , string strElementName )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                PngBitmapDecoder decoder = new PngBitmapDecoder(new MemoryStream(Convert.FromBase64String(x.Value)), BitmapCreateOptions.None, BitmapCacheOption.Default);
+                PngBitmapDecoder decoder = new PngBitmapDecoder( new MemoryStream( Convert.FromBase64String( x.Value ) ) , BitmapCreateOptions.None , BitmapCacheOption.Default );
 
-                if (decoder != null && decoder.Frames.Count > 0)
+                if( decoder != null && decoder.Frames.Count > 0 )
                 {
-                    return decoder.Frames[0];
+                    return decoder.Frames [0];
                 }
             }
 
@@ -425,13 +425,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="tDefault">The t default.</param>
         /// <returns></returns>
-        static public T GetEnumFromNode<T>(this XElement xCurrentElement, string strElementName, T tDefault)
+        static public T GetEnumFromNode<T>( this XElement xCurrentElement , string strElementName , T tDefault )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty() == true)
+            if( x != null && x.Value.IsNotEmpty() == true )
             {
-                return (T)Enum.Parse(typeof(T), x.Value);
+                return ( T ) Enum.Parse( typeof( T ) , x.Value );
             }
 
             return tDefault;
@@ -445,13 +445,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="cDefault">The c default.</param>
         /// <returns></returns>
-        static public Color GetColorFromNode(this XElement xCurrentElement, string strElementName, Color cDefault)
+        static public Color GetColorFromNode( this XElement xCurrentElement , string strElementName , Color cDefault )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return x.Value.ToColor(cDefault);
+                return x.Value.ToColor( cDefault );
             }
 
             return cDefault;
@@ -465,13 +465,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="fiDefault">The fi default.</param>
         /// <returns></returns>
-        static public FileInfo GetFileInfoFromNode(this XElement xCurrentElement, string strElementName, FileInfo fiDefault)
+        static public FileInfo GetFileInfoFromNode( this XElement xCurrentElement , string strElementName , FileInfo fiDefault )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return new FileInfo(x.Value);
+                return new FileInfo( x.Value );
             }
 
             return fiDefault;
@@ -485,13 +485,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="diDefault">The di default.</param>
         /// <returns></returns>
-        static public DirectoryInfo GetDirectoryInfoFromNode(this XElement xCurrentElement, string strElementName, DirectoryInfo diDefault)
+        static public DirectoryInfo GetDirectoryInfoFromNode( this XElement xCurrentElement , string strElementName , DirectoryInfo diDefault )
         {
-            XElement x = xCurrentElement.Element(strElementName);
+            XElement x = xCurrentElement.Element( strElementName );
 
-            if (x != null && x.Value.IsNotEmpty())
+            if( x != null && x.Value.IsNotEmpty() )
             {
-                return new DirectoryInfo(x.Value);
+                return new DirectoryInfo( x.Value );
             }
 
             return diDefault;
@@ -511,15 +511,15 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strName">Name of the string.</param>
         /// <param name="bIsUTC">if set to <c>true</c> [b is UTC].</param>
         /// <returns></returns>
-        static public DateTime? GetDateTimeAttribute(this XElement eParent, string strName, bool bIsUTC = false)
+        static public DateTime? GetDateTimeAttribute( this XElement eParent , string strName , bool bIsUTC = false )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
-                string strDatetime = bIsUTC == false ? a.Value : a.Value.Replace('T', ' ');
+                string strDatetime = bIsUTC == false ? a.Value : a.Value.Replace( 'T' , ' ' );
 
-                return DateTime.ParseExact(strDatetime, formats, CultureInfo.CurrentCulture, bIsUTC == false ? DateTimeStyles.None : DateTimeStyles.AssumeUniversal);
+                return DateTime.ParseExact( strDatetime , formats , CultureInfo.CurrentCulture , bIsUTC == false ? DateTimeStyles.None : DateTimeStyles.AssumeUniversal );
             }
 
             return null;
@@ -532,11 +532,11 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public string GetStringAttribute(this XElement eParent, string strName)
+        static public string GetStringAttribute( this XElement eParent , string strName )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
                 return a.Value.Trim();
             }
@@ -551,13 +551,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public bool? GetBoolAttribute(this XElement eParent, string strName)
+        static public bool? GetBoolAttribute( this XElement eParent , string strName )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
-                return bool.Parse(a.Value);
+                return bool.Parse( a.Value );
             }
 
             return null;
@@ -570,13 +570,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public uint? GetUInt32Attribute(this XElement eParent, string strName)
+        static public uint? GetUInt32Attribute( this XElement eParent , string strName )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
-                return uint.Parse(a.Value);
+                return uint.Parse( a.Value );
             }
 
             return null;
@@ -589,13 +589,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public int? GetInt32Attribute(this XElement eParent, string strName)
+        static public int? GetInt32Attribute( this XElement eParent , string strName )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
-                return int.Parse(a.Value);
+                return int.Parse( a.Value );
             }
 
             return null;
@@ -608,13 +608,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public long? GetInt64Attribute(this XElement eParent, string strName)
+        static public long? GetInt64Attribute( this XElement eParent , string strName )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
-                return long.Parse(a.Value);
+                return long.Parse( a.Value );
             }
 
             return null;
@@ -627,18 +627,18 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public double? GetDoubleAttribute(this XElement eParent, string strName)
+        static public double? GetDoubleAttribute( this XElement eParent , string strName )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
-                if (a.Value.Equals("NaN"))
+                if( a.Value.Equals( "NaN" ) )
                 {
                     return double.NaN;
                 }
 
-                return double.Parse(a.Value.Replace('.', ','));
+                return double.Parse( a.Value.Replace( '.' , ',' ) );
             }
 
             return null;
@@ -651,18 +651,18 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public float? GetSingleAttribute(this XElement eParent, string strName)
+        static public float? GetSingleAttribute( this XElement eParent , string strName )
         {
-            XAttribute a = eParent.Attribute(strName);
+            XAttribute a = eParent.Attribute( strName );
 
-            if (a != null)
+            if( a != null )
             {
-                if (a.Value.Equals("NaN"))
+                if( a.Value.Equals( "NaN" ) )
                 {
                     return float.NaN;
                 }
 
-                return float.Parse(a.Value.Replace('.', ','));
+                return float.Parse( a.Value.Replace( '.' , ',' ) );
             }
 
             return null;
@@ -679,7 +679,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strPropertyName">Name of the string property.</param>
         /// <param name="o">The o.</param>
         /// <returns></returns>
-        static public XElement GetXElement(string strPropertyName, object o)
+        static public XElement GetXElement( string strPropertyName , object o )
         {
             //if( o is MapPoint )
             //{
@@ -707,30 +707,30 @@ namespace SIGENCEScenarioTool.Extensions
             //    return new XElement(strPropertyName, eViewPoint);
             //}
 
-            if (o is BitmapSource)
+            if( o is BitmapSource )
             {
                 BitmapSource bs = o as BitmapSource;
 
-                using (MemoryStream ms = new MemoryStream(8192))
+                using( MemoryStream ms = new MemoryStream( 8192 ) )
                 {
                     PngBitmapEncoder encoder = new PngBitmapEncoder();
-                    encoder.Frames.Add(BitmapFrame.Create(bs));
+                    encoder.Frames.Add( BitmapFrame.Create( bs ) );
 
-                    encoder.Save(ms);
+                    encoder.Save( ms );
 
-                    return new XElement(strPropertyName, new XCData(Convert.ToBase64String(ms.GetBuffer())));
+                    return new XElement( strPropertyName , new XCData( Convert.ToBase64String( ms.GetBuffer() ) ) );
                 }
             }
 
             // Bei DateTime immer UTC rausschreiben ...
-            if (o is DateTime)
+            if( o is DateTime )
             {
-                DateTime dt = (DateTime)o;
+                DateTime dt = ( DateTime ) o;
                 dt = dt.ToUniversalTime();
-                return new XElement(strPropertyName, dt.Fmt_DD_MM_YYYY_HH_MM_SS());
+                return new XElement( strPropertyName , dt.Fmt_DD_MM_YYYY_HH_MM_SS() );
             }
 
-            return new XElement(strPropertyName, o);
+            return new XElement( strPropertyName , o );
         }
 
 
@@ -743,88 +743,88 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="tDefault">The t default.</param>
         /// <returns></returns>
         /// <exception cref="NotSupportedException"></exception>
-        static public T GetProperty<T>(this XElement eParent, string strElementName, T tDefault)
+        static public T GetProperty<T>( this XElement eParent , string strElementName , T tDefault )
         {
-            Type t = typeof(T);
+            Type t = typeof( T );
 
-            if (t.IsEnum)
+            if( t.IsEnum )
             {
-                return GetEnumFromNode<T>(eParent, strElementName, tDefault);
+                return GetEnumFromNode<T>( eParent , strElementName , tDefault );
             }
 
             //-----------------------------------------------------------------
 
             // Standard DataTypes
 
-            if (t == typeof(string))
+            if( t == typeof( string ) )
             {
-                string xDefault = (string)((object)tDefault);
-                return (T)((object)GetStringFromNode(eParent, strElementName) ?? xDefault);
+                string xDefault = ( string ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetStringFromNode( eParent , strElementName ) ?? xDefault );
             }
 
-            if (t == typeof(bool))
+            if( t == typeof( bool ) )
             {
-                bool xDefault = (bool)((object)tDefault);
-                return (T)((object)GetBoolFromNode(eParent, strElementName) ?? xDefault);
+                bool xDefault = ( bool ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetBoolFromNode( eParent , strElementName ) ?? xDefault );
             }
 
-            if (t == typeof(double))
+            if( t == typeof( double ) )
             {
-                double xDefault = (double)((object)tDefault);
-                return (T)((object)GetDoubleFromNodePoint(eParent, strElementName) ?? xDefault);
+                double xDefault = ( double ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetDoubleFromNodePoint( eParent , strElementName ) ?? xDefault );
             }
 
-            if (t == typeof(uint))
+            if( t == typeof( uint ) )
             {
-                uint xDefault = (uint)((object)tDefault);
-                return (T)((object)GetUInt32FromNode(eParent, strElementName) ?? xDefault);
+                uint xDefault = ( uint ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetUInt32FromNode( eParent , strElementName ) ?? xDefault );
             }
 
-            if (t == typeof(int))
+            if( t == typeof( int ) )
             {
-                int xDefault = (int)((object)tDefault);
-                return (T)((object)GetInt32FromNode(eParent, strElementName) ?? xDefault);
+                int xDefault = ( int ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetInt32FromNode( eParent , strElementName ) ?? xDefault );
             }
 
-            if (t == typeof(byte))
+            if( t == typeof( byte ) )
             {
-                byte xDefault = (byte)((object)tDefault);
-                return (T)((object)((byte)(GetUInt32FromNode(eParent, strElementName) ?? xDefault)));
+                byte xDefault = ( byte ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) ( ( byte ) ( GetUInt32FromNode( eParent , strElementName ) ?? xDefault ) ) );
             }
 
             //-----------------------------------------------------------------
 
             // Standard Classes && Structs ...
 
-            if (t == typeof(Guid))
+            if( t == typeof( Guid ) )
             {
-                Guid xDefault = (Guid)((object)tDefault);
-                return (T)((object)((Guid)(GetGuidFromNode(eParent, strElementName) ?? xDefault)));
+                Guid xDefault = ( Guid ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) ( ( Guid ) ( GetGuidFromNode( eParent , strElementName ) ?? xDefault ) ) );
             }
 
-            if (t == typeof(DateTime))
+            if( t == typeof( DateTime ) )
             {
-                DateTime xDefault = (DateTime)((object)tDefault);
-                return (T)((object)((DateTime)(GetDateTimeFromNodeUTC(eParent, strElementName) ?? xDefault)));
+                DateTime xDefault = ( DateTime ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) ( ( DateTime ) ( GetDateTimeFromNodeUTC( eParent , strElementName ) ?? xDefault ) ) );
                 //return tDefault; ;
             }
 
-            if (t == typeof(Color))
+            if( t == typeof( Color ) )
             {
-                Color xDefault = (Color)((object)tDefault);
-                return (T)((object)GetColorFromNode(eParent, strElementName, xDefault));
+                Color xDefault = ( Color ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetColorFromNode( eParent , strElementName , xDefault ) );
             }
 
-            if (t == typeof(FileInfo))
+            if( t == typeof( FileInfo ) )
             {
-                FileInfo xDefault = (FileInfo)((object)tDefault);
-                return (T)((object)GetFileInfoFromNode(eParent, strElementName, xDefault));
+                FileInfo xDefault = ( FileInfo ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetFileInfoFromNode( eParent , strElementName , xDefault ) );
             }
 
-            if (t == typeof(DirectoryInfo))
+            if( t == typeof( DirectoryInfo ) )
             {
-                DirectoryInfo xDefault = (DirectoryInfo)((object)tDefault);
-                return (T)((object)GetDirectoryInfoFromNode(eParent, strElementName, xDefault));
+                DirectoryInfo xDefault = ( DirectoryInfo ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) GetDirectoryInfoFromNode( eParent , strElementName , xDefault ) );
             }
 
             //-----------------------------------------------------------------
@@ -842,10 +842,10 @@ namespace SIGENCEScenarioTool.Extensions
             //    return (T)((object)((Viewpoint)(GetViewpointFromNode(eParent, strElementName) ?? xDefault)));
             //}
 
-            if (t == typeof(BitmapSource))
+            if( t == typeof( BitmapSource ) )
             {
-                BitmapSource xDefault = (BitmapSource)((object)tDefault);
-                return (T)((object)((BitmapSource)(GetBitmapSourceFromNode(eParent, strElementName) ?? xDefault)));
+                BitmapSource xDefault = ( BitmapSource ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) ( ( BitmapSource ) ( GetBitmapSourceFromNode( eParent , strElementName ) ?? xDefault ) ) );
             }
 
             //-----------------------------------------------------------------
@@ -860,19 +860,54 @@ namespace SIGENCEScenarioTool.Extensions
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        static private readonly XmlWriterSettings XML_WRITER_SETTINGS = new XmlWriterSettings
+        {
+            Indent = true ,
+            IndentChars = "    " ,
+            Encoding = Encoding.Unicode
+        };
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static private readonly XDeclaration XML_DECLARATION = new XDeclaration( "1.0" , "ISO-8859-1" , "yes" );
+
+
+        /// <summary>
         /// Speichert einen XML Baum mit den Standardoptionen.
         /// </summary>
         /// <param name="element"></param>
         /// <param name="strOutputFilename"></param>
-        static public void SaveDefault(this XElement element, string strOutputFilename)
+        static public void SaveDefault( this XElement element , string strOutputFilename )
         {
-            using (BufferedStream bs = new BufferedStream(new FileStream(strOutputFilename, FileMode.Create, FileAccess.Write)))
+            using( BufferedStream bs = new BufferedStream( new FileStream( strOutputFilename , FileMode.Create , FileAccess.Write ) ) )
             {
-                using (XmlWriter xtw = XmlWriter.Create(bs, new XmlWriterSettings { Indent = true, IndentChars = "    ", Encoding = Encoding.Unicode }))
+                using( XmlWriter xtw = XmlWriter.Create( bs , XML_WRITER_SETTINGS ) )
                 {
-                    new XDocument(new XDeclaration("1.0", "ISO-8859-1", "yes"), element).WriteTo(xtw);
+                    new XDocument( XML_DECLARATION , element ).WriteTo( xtw );
                 }
             }
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        static public string ToDefaultString( this XElement element )
+        {
+            StringBuilder sb = new StringBuilder( 8192 );
+
+            using( XmlWriter xtw = XmlWriter.Create( sb , XML_WRITER_SETTINGS ) )
+            {
+                new XDocument( XML_DECLARATION , element ).WriteTo( xtw );
+            }
+
+            return sb.ToString();
         }
 
     } // end static public class XElementExtension

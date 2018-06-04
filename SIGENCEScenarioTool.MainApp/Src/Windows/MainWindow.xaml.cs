@@ -2,9 +2,17 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using System.Xml;
+using System.Xml.Linq;
 
+using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -79,8 +87,48 @@ namespace SIGENCEScenarioTool.Windows
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices(10);
+            CreateRandomizedRFDevices( 100 );
 #endif
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Sends the RFDeviceList via UDP to any connect client.
+        /// This function is not asynchron, so the main thread is blocked when sending data. 
+        /// Maybe in oen of the next versions me make this function asynchron.
+        /// </summary>
+        private void SendDataUDP()
+        {
+            XElement eDeviceList = new XElement( "DeviceList" );
+
+            foreach( RFDevice device in from devicemodel in RFDevicesCollection select devicemodel.RFDevice )
+            {
+                eDeviceList.Add( device.ToXml() );
+            }
+
+            try
+            {
+
+                using( MemoryStream ms = new MemoryStream() )
+                {
+                    using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
+                    {
+                        IPEndPoint endpoint = new IPEndPoint( IPADDRESS , settings.UDPPort );
+
+                        byte [] baMessage = Encoding.Default.GetBytes( eDeviceList.ToDefaultString() );
+
+                        sender.SendTo( baMessage , endpoint );
+
+                        sender.Close();
+                    }
+                }
+            }
+            catch( Exception ex )
+            {
+                MB.Error( ex );
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,8 +154,10 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format("{0} ({1}){2}", Tool.ProductTitle, Tool.Version, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
+            this.Title = string.Format( "{0} ({1}){2}" , Tool.ProductTitle , Tool.Version , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -117,30 +167,30 @@ namespace SIGENCEScenarioTool.Windows
         {
             try
             {
-                if (CurrentFile != null)
+                if( CurrentFile != null )
                 {
-                    sfdSaveScreenshot.FileName = new FileInfo(CurrentFile).Name;
+                    sfdSaveScreenshot.FileName = new FileInfo( CurrentFile ).Name;
                 }
 
-                if (sfdSaveScreenshot.ShowDialog() == true)
+                if( sfdSaveScreenshot.ShowDialog() == true )
                 {
-                    var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
+                    var screenshot = Tools.Windows.GetWPFScreenshot( mcMapControl );
 
                     PngBitmapEncoder encoder = new PngBitmapEncoder();
 
-                    encoder.Frames.Add(BitmapFrame.Create(screenshot));
+                    encoder.Frames.Add( BitmapFrame.Create( screenshot ) );
 
-                    using (BufferedStream bs = new BufferedStream(new FileStream(sfdSaveScreenshot.FileName, FileMode.Create)))
+                    using( BufferedStream bs = new BufferedStream( new FileStream( sfdSaveScreenshot.FileName , FileMode.Create ) ) )
                     {
-                        encoder.Save(bs);
+                        encoder.Save( bs );
                     }
 
-                    Tools.Windows.OpenWithDefaultApplication(sfdSaveScreenshot.FileName);
+                    Tools.Windows.OpenWithDefaultApplication( sfdSaveScreenshot.FileName );
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Error(ex);
+                MB.Error( ex );
             }
         }
 

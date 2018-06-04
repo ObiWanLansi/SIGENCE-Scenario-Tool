@@ -19,7 +19,7 @@
       <Compartment Name="Events" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AACCAAAAAEgAACEAACAIwQQAoAAhAAABABBAAAAAAYA=</HashCode>
+      <HashCode>AACCEAAAAEgAACMAACAIwQQAoAAhAAABABBAAAAAAYA=</HashCode>
       <FileName>Src\ViewModels\RFDeviceViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -38,7 +38,7 @@
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>gAYwEAIUgkgABAEIEQIKBQgIgAAAUEAABBChYABAmAU=</HashCode>
+      <HashCode>gAcwEAIUokgABAEIEQIKhQgIgAAAUEAABBChYABAmAU=</HashCode>
       <FileName>Src\Windows\MainWindow.EventHandling.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />

@@ -140,6 +140,18 @@ namespace SIGENCEScenarioTool.Windows
                     e.CanExecute = true;
                 }
             ));
+
+            CommandBindings.Add( new CommandBinding( RegisteredCommands.SendDataUDP,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
+                {
+                    SendDataUDP();
+                    e.Handled = true;
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                {
+                    e.CanExecute = true;
+                }
+            ) );
         }
 
 
