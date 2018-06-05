@@ -152,6 +152,18 @@ namespace SIGENCEScenarioTool.Windows
                     e.CanExecute = true;
                 }
             ) );
+
+            CommandBindings.Add( new CommandBinding( RegisteredCommands.ZoomToRFDevice ,
+                ( object sender , ExecutedRoutedEventArgs e ) =>
+                {
+                    ZoomToRFDevice();
+                    e.Handled = true;
+                } ,
+                ( object sender , CanExecuteRoutedEventArgs e ) =>
+                {
+                    e.CanExecute = true;
+                }
+            ) );
         }
 
 

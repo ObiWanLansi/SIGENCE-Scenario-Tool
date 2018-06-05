@@ -309,6 +309,27 @@ namespace SIGENCEScenarioTool.Windows
             mcMapControl.Zoom = settings.MapZoomLevel;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ZoomToRFDevice()
+        {
+            if( dgRFDevices.SelectedItem == null )
+            {
+                MB.Information( "No RFDevice Is Selected In The DataGrid!" );
+                return;
+            }
+
+            if( dgRFDevices.SelectedItems.Count > 1 )
+            {
+                MB.Information( "There Are More Than One RFDevice Selected In The DataGrid!" );
+                return;
+            }
+
+            ZoomToRFDevice( ( dgRFDevices.SelectedItem as RFDeviceViewModel ).RFDevice );
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

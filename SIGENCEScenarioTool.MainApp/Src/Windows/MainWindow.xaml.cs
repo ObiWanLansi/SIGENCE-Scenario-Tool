@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Xml.Linq;
@@ -101,13 +102,17 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void SendDataUDP()
         {
+            //Task.Run( () =>
+            //     Speech.Say( "Starting transfer of radio frequency devices" )
+            //);
+
             try
             {
                 using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
                 {
                     IPEndPoint endpoint = new IPEndPoint( IPADDRESS , settings.UDPPort );
 
-                    foreach( RFDevice device in from devicemodel in RFDevicesCollection select devicemodel.RFDevice )
+                    foreach( RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice )
                     {
                         XElement eDevice = device.ToXml();
 
@@ -126,6 +131,10 @@ namespace SIGENCEScenarioTool.Windows
             {
                 MB.Error( ex );
             }
+
+            //Task.Run( () =>
+            //    Speech.Say( "Finished with sending the data" )
+            //);
         }
 
 

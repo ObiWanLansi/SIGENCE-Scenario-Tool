@@ -58,6 +58,11 @@ namespace SIGENCEScenarioTool.Commands
         /// </summary>
         static public RoutedUICommand SendDataUDP { get; private set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        static public RoutedUICommand ZoomToRFDevice { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -83,6 +88,9 @@ namespace SIGENCEScenarioTool.Commands
 
             SendDataUDP = new RoutedUICommand( "SendDataUDP" , "SendDataUDP" , typeof( RegisteredCommands ) );
             SendDataUDP.InputGestures.Add( new KeyGesture( Key.U , ModifierKeys.Control ) );
+
+            ZoomToRFDevice = new RoutedUICommand( "ZoomToRFDevice" , "ZoomToRFDevice" , typeof( RegisteredCommands ) );
+            ZoomToRFDevice.InputGestures.Add( new KeyGesture( Key.Z , ModifierKeys.Control ) );
         }
 
     } // end static public class RegisteredCommands

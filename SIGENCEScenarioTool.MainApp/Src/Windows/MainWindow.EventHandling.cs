@@ -72,9 +72,33 @@ namespace SIGENCEScenarioTool.Windows
         {
             if( e.Key == Key.Space )
             {
-                RFDeviceViewModel item = ( sender as DataGrid ).SelectedItem as RFDeviceViewModel;
+                foreach( RFDeviceViewModel x in ( sender as DataGrid ).SelectedItems )
+                {
+                    x.IsSelected = !x.IsSelected;
+                }
 
-                ZoomToRFDevice( item.RFDevice );
+                e.Handled = true;
+                return;
+            }
+
+
+            if( e.Key == Key.Add )
+            {
+                foreach( RFDeviceViewModel x in ( sender as DataGrid ).SelectedItems )
+                {
+                    x.IsSelected = true;
+                }
+
+                e.Handled = true;
+                return;
+            }
+
+            if( e.Key == Key.Subtract )
+            {
+                foreach( RFDeviceViewModel x in ( sender as DataGrid ).SelectedItems )
+                {
+                    x.IsSelected = false;
+                }
 
                 e.Handled = true;
                 return;
