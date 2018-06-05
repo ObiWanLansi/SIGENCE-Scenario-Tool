@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -29,9 +30,15 @@ namespace SIGENCEScenarioTool.Mockup
         {
             Console.Title = Tool.ProductTitle;
 
+            //-------------------------
+
             var settings = Properties.Settings.Default;
 
+            string strTempPath = Path.GetTempPath();
+
             ulong iReceivedCounter = 0;
+
+            //-------------------------
 
             using( UdpClient client = new UdpClient( settings.UDPServerPort ) )
             {
@@ -51,9 +58,13 @@ namespace SIGENCEScenarioTool.Mockup
                     //    goto END;
                     //}
 
+                    string strDateTime = DateTime.Now.Fmt_YYYYMMDD_HHMMSSFFF();
                     Console.Out.WriteLine( DIVIDER );
-                    Console.Out.WriteLine( "[{0}] {1} ({2} Bytes)" , ++iReceivedCounter , DateTime.Now.Fmt_YYYYMMDD_HHMMSSFFF() , strReceived.Length );
+                    Console.Out.WriteLine( "[{0}] {1} ({2} Bytes)" , ++iReceivedCounter , strDateTime , strReceived.Length );
                     Console.Out.WriteLine( strReceived );
+                    
+                    string strFilename = string.Format( "{0}sigence_data_{1}.xml" , strTempPath , strDateTime );
+                    File.WriteAllText( strFilename , strReceived );
                 }
 
                 //END:

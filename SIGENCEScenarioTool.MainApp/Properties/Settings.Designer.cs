@@ -40,5 +40,14 @@ namespace SIGENCEScenarioTool.Properties {
                 return ((int)(this["UDPDelay"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("18")]
+        public int MapZoomLevel {
+            get {
+                return ((int)(this["MapZoomLevel"]));
+            }
+        }
     }
 }

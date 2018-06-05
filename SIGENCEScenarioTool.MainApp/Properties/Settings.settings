@@ -8,5 +8,8 @@
     <Setting Name="UDPDelay" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">500</Value>
     </Setting>
+    <Setting Name="MapZoomLevel" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">18</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
