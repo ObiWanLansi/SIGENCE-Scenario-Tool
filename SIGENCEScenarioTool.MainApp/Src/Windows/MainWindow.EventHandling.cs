@@ -81,7 +81,6 @@ namespace SIGENCEScenarioTool.Windows
                 return;
             }
 
-
             if( e.Key == Key.Add )
             {
                 foreach( RFDeviceViewModel x in ( sender as DataGrid ).SelectedItems )
@@ -106,6 +105,8 @@ namespace SIGENCEScenarioTool.Windows
 
             //if( e.Key == Key.Delete )
             //{
+            //    DeleteRFDevices();
+
             //    e.Handled = true;
             //    return;
             //}

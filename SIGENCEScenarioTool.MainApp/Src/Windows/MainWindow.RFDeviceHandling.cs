@@ -96,13 +96,30 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void DeleteRFDevice()
         {
-            if( dgRFDevices.SelectedItem != null )
-            {
-                DeleteRFDevice( dgRFDevices.SelectedItem as RFDeviceViewModel );
-            }
-            else
+            if( dgRFDevices.SelectedItem == null )
             {
                 MB.Information( "No RFDevice Is Selected In The DataGrid!" );
+                return;
+            }
+
+            if( dgRFDevices.SelectedItems.Count > 1 )
+            {
+                MB.Information( "There Are More Than One RFDevice Selected In The DataGrid!" );
+                return;
+            }
+
+            DeleteRFDevice( dgRFDevices.SelectedItem as RFDeviceViewModel );
+        }
+
+
+        /// <summary>
+        /// Deletes the RFDevices.
+        /// </summary>
+        private void DeleteRFDevices()
+        {
+            foreach( RFDeviceViewModel device in ( from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel ).ToList() )
+            {
+                DeleteRFDevice( device );
             }
         }
 
