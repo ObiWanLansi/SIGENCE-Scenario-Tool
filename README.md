@@ -5,6 +5,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them.
 ## Documentation
 
 - [RF Device Model](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SIGENCEScenarioTool.MainApp/Src/Models/RFDevice.Properties.md)
+- [RF Device Schema](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SchemaFiles/RFDevice.xsd)
 
 ## Quick Links
 
