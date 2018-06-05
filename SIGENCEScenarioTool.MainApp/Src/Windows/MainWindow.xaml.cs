@@ -87,7 +87,7 @@ namespace SIGENCEScenarioTool.Windows
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices( 100 );
+            CreateRandomizedRFDevices( 10 );
 #endif
         }
 

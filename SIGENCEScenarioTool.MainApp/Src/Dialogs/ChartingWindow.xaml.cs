@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Forms.DataVisualization.Charting;
+
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.ViewModels;
 
 
 
@@ -29,7 +28,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartingWindow" /> class.
         /// </summary>
-        public ChartingWindow(RFDeviceList lRFDevices)
+        public ChartingWindow( RFDeviceList lRFDevices )
         {
             this.lRFDevices = lRFDevices;
 
@@ -46,19 +45,19 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </summary>
         public void InitChart()
         {
-            if (lRFDevices != null && lRFDevices.Count > 0)
+            if( lRFDevices != null && lRFDevices.Count > 0 )
             {
-                SortedDictionary<RxTxType, int> sd = new SortedDictionary<RxTxType, int>();
+                SortedDictionary<RxTxType , int> sd = new SortedDictionary<RxTxType , int>();
 
-                foreach (RFDevice device in lRFDevices)
+                foreach( RFDevice device in lRFDevices )
                 {
-                    if (sd.ContainsKey(device.RxTxType))
+                    if( sd.ContainsKey( device.RxTxType ) )
                     {
-                        sd[device.RxTxType]++;
+                        sd [device.RxTxType]++;
                     }
                     else
                     {
-                        sd.Add(device.RxTxType, 1);
+                        sd.Add( device.RxTxType , 1 );
                     }
                 }
 
@@ -73,61 +72,60 @@ namespace SIGENCEScenarioTool.Dialogs
                     ca.AxisY.Title = "Count";
                     ca.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
 
-                    cRxTxTypeDistribution.ChartAreas.Add(ca);
+                    cRxTxTypeDistribution.ChartAreas.Add( ca );
 
                     //-------------------------
 
                     Series series = new Series
                     {
-                        ChartType = SeriesChartType.Column,
+                        ChartType = SeriesChartType.Column ,
                         IsValueShownAsLabel = true
                     };
 
-                    foreach (RxTxType rtt in sd.Keys)
+                    foreach( RxTxType rtt in sd.Keys )
                     {
-                        series.Points.AddXY(rtt.ToString(), sd[rtt]);
+                        series.Points.AddXY( rtt.ToString() , sd [rtt] );
                     }
 
-                    cRxTxTypeDistribution.Series.Add(series);
-                    cRxTxTypeDistribution.Titles.Add("RxTxType Distribution");
+                    cRxTxTypeDistribution.Series.Add( series );
+                    cRxTxTypeDistribution.Titles.Add( "RxTxType Distribution" );
                 }
 
                 //-----------------------------------------------------------------
 
                 {
                     ChartArea ca = new ChartArea();
-
                     //ca.AxisX.Title = "RxTxType";
                     //ca.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
 
                     //ca.AxisY.Title = "Count";
                     //ca.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
 
-                    cReceiverTransmitterDistribution.ChartAreas.Add(ca);
+                    cReceiverTransmitterDistribution.ChartAreas.Add( ca );
 
                     //-------------------------
 
                     Series series = new Series
                     {
-                        ChartType = SeriesChartType.Pie,
-                        IsValueShownAsLabel = true
+                        ChartType = SeriesChartType.Pie ,
+                        IsValueShownAsLabel = true ,
+                        IsVisibleInLegend = true
                     };
 
-                    int iReceiver = lRFDevices.Count((d) => d.Id > 0);
+                    int iReceiver = lRFDevices.Count( ( d ) => d.Id > 0 );
                     DataPoint dpReceiver = new DataPoint { ToolTip = "Receiver" };
-                    dpReceiver.SetValueXY("Receiver", iReceiver);
-                    series.Points.Add(dpReceiver);
+                    dpReceiver.SetValueXY( "Receiver" , iReceiver );
+                    series.Points.Add( dpReceiver );
 
-                    int iTransmitter = lRFDevices.Count((d) => d.Id < 0);
+                    int iTransmitter = lRFDevices.Count( ( d ) => d.Id < 0 );
                     DataPoint dpTransmitter = new DataPoint { ToolTip = "Transmitter" };
-                    dpTransmitter.SetValueXY("Transmitter", iTransmitter);
-                    series.Points.Add(dpTransmitter);
+                    dpTransmitter.SetValueXY( "Transmitter" , iTransmitter );
+                    series.Points.Add( dpTransmitter );
 
-                    cReceiverTransmitterDistribution.Series.Add(series);
-                    cReceiverTransmitterDistribution.Titles.Add("Transmitter / Receiver Distribution");
+                    cReceiverTransmitterDistribution.Legends.Add( new Legend() );
+                    cReceiverTransmitterDistribution.Series.Add( series );
+                    cReceiverTransmitterDistribution.Titles.Add( "Transmitter / Receiver Distribution" );
                 }
-
-                //-----------------------------------------------------------------
             }
         }
 
