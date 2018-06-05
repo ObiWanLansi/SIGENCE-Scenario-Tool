@@ -391,8 +391,17 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// The b is selected
+        /// </summary>
         private bool bIsSelected = false;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is selected.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is selected; otherwise, <c>false</c>.
+        /// </value>
         public bool IsSelected
         {
             get { return bIsSelected; }

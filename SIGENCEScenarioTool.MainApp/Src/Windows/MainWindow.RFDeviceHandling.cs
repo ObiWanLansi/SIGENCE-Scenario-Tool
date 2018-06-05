@@ -125,8 +125,8 @@ namespace SIGENCEScenarioTool.Windows
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        #region Specialied Excel Export
 
+        #region Specialied Excel Export
 
         /// <summary>
         /// Adds the cell.
@@ -243,6 +243,7 @@ namespace SIGENCEScenarioTool.Windows
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// Exports the RFDevices.
         /// </summary>
@@ -317,9 +318,9 @@ namespace SIGENCEScenarioTool.Windows
 
 
         /// <summary>
-        /// 
+        /// Zooms to rf device.
         /// </summary>
-        /// <param name="device"></param>
+        /// <param name="device">The device.</param>
         private void ZoomToRFDevice( RFDevice device )
         {
             mcMapControl.Position = new PointLatLng( device.Latitude , device.Longitude );
@@ -328,7 +329,7 @@ namespace SIGENCEScenarioTool.Windows
 
 
         /// <summary>
-        /// 
+        /// Zooms to rf device.
         /// </summary>
         private void ZoomToRFDevice()
         {

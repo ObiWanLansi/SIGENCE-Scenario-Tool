@@ -43,12 +43,12 @@ namespace SIGENCEScenarioTool.Windows
         private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();
 
         /// <summary>
-        /// 
+        /// The settings
         /// </summary>
         private readonly Properties.Settings settings = Properties.Settings.Default;
 
         /// <summary>
-        /// 
+        /// The ipaddress
         /// </summary>
         private readonly IPAddress IPADDRESS = IPAddress.Parse( "127.0.0.1" );
 

@@ -54,13 +54,19 @@ namespace SIGENCEScenarioTool.Commands
 
 
         /// <summary>
-        /// 
+        /// Gets the send data UDP.
         /// </summary>
+        /// <value>
+        /// The send data UDP.
+        /// </value>
         static public RoutedUICommand SendDataUDP { get; private set; }
 
         /// <summary>
-        /// 
+        /// Gets the zoom to rf device.
         /// </summary>
+        /// <value>
+        /// The zoom to rf device.
+        /// </value>
         static public RoutedUICommand ZoomToRFDevice { get; private set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
