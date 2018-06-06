@@ -65,7 +65,6 @@
                 <MenuItem Header="_Cheat Sheet" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
                 <MenuItem Header="_About" IsEnabled="False" />
             </MenuItem>
-
         </Menu>
 
         <ToolBar Grid.Row="1">
@@ -300,7 +299,6 @@
             </StatusBarItem>
 
             <Separator />
-
             <StatusBarItem />
         </StatusBar>
     </Grid>
