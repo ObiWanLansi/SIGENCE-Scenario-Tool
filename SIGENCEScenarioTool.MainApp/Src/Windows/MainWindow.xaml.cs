@@ -35,22 +35,33 @@ namespace SIGENCEScenarioTool.Windows
 
             //-----------------------------------------------------------------
 
-            if (settings.UDPPort < 1025 || settings.UDPPort > 65535)
+            if( string.IsNullOrEmpty( settings.UDPHost ) )
             {
-                MB.Warning("The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application.");
-                Application.Current.Shutdown(-1);
+                MB.Warning( "The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application." );
+                //Application.Current.Shutdown( -1 );
+                settings.UDPHost = "127.0.0.1";
             }
 
-            if (settings.UDPDelay < 0 || settings.UDPDelay > 10000)
+
+            if( settings.UDPPort < 1025 || settings.UDPPort > 65535 )
             {
-                MB.Warning("The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application.");
-                Application.Current.Shutdown(-1);
+                MB.Warning( "The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application." );
+                //Application.Current.Shutdown( -1 );
+                settings.UDPPort = 4242;
             }
 
-            if (settings.MapZoomLevel < 1 || settings.MapZoomLevel > 20)
+            if( settings.UDPDelay < 0 || settings.UDPDelay > 10000 )
             {
-                MB.Warning("The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application.");
-                Application.Current.Shutdown(-1);
+                MB.Warning( "The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application." );
+                //Application.Current.Shutdown( -1 );
+                settings.UDPDelay = 500;
+            }
+
+            if( settings.MapZoomLevel < 1 || settings.MapZoomLevel > 20 )
+            {
+                MB.Warning( "The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application." );
+                //Application.Current.Shutdown( -1 );
+                settings.MapZoomLevel = 18;
             }
 
             //-----------------------------------------------------------------
@@ -107,7 +118,7 @@ namespace SIGENCEScenarioTool.Windows
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices(10);
+            CreateRandomizedRFDevices( 10 );
 #endif
         }
 
@@ -127,31 +138,31 @@ namespace SIGENCEScenarioTool.Windows
 
             try
             {
-                using (Socket sender = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp))
+                using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
                 {
-                    IPEndPoint endpoint = new IPEndPoint(IPADDRESS, settings.UDPPort);
+                    IPEndPoint endpoint = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPort );
 
-                    foreach (RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice)
+                    foreach( RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice )
                     {
                         XElement eDevice = device.ToXml();
 
-                        byte[] baMessage = Encoding.Default.GetBytes(eDevice.ToDefaultString());
+                        byte [] baMessage = Encoding.Default.GetBytes( eDevice.ToDefaultString() );
 
-                        sender.SendTo(baMessage, endpoint);
+                        sender.SendTo( baMessage , endpoint );
 
                         // Give the poor client some time to process the data when he need or bleed ...
-                        if (settings.UDPDelay > 0)
+                        if( settings.UDPDelay > 0 )
                         {
-                            Thread.Sleep(settings.UDPDelay);
+                            Thread.Sleep( settings.UDPDelay );
                         }
                     }
 
                     sender.Close();
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Error(ex);
+                MB.Error( ex );
             }
 
             //Task.Run( () =>
@@ -216,7 +227,7 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format("{0} ({1}){2}", Tool.ProductTitle, Tool.Version, CurrentFile != null ? string.Format(" [{0}]", CurrentFile) : "");
+            this.Title = string.Format( "{0} ({1}){2}" , Tool.ProductTitle , Tool.Version , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -229,30 +240,30 @@ namespace SIGENCEScenarioTool.Windows
         {
             try
             {
-                if (CurrentFile != null)
+                if( CurrentFile != null )
                 {
-                    sfdSaveScreenshot.FileName = new FileInfo(CurrentFile).Name;
+                    sfdSaveScreenshot.FileName = new FileInfo( CurrentFile ).Name;
                 }
 
-                if (sfdSaveScreenshot.ShowDialog() == true)
+                if( sfdSaveScreenshot.ShowDialog() == true )
                 {
-                    var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
+                    var screenshot = Tools.Windows.GetWPFScreenshot( mcMapControl );
 
                     PngBitmapEncoder encoder = new PngBitmapEncoder();
 
-                    encoder.Frames.Add(BitmapFrame.Create(screenshot));
+                    encoder.Frames.Add( BitmapFrame.Create( screenshot ) );
 
-                    using (BufferedStream bs = new BufferedStream(new FileStream(sfdSaveScreenshot.FileName, FileMode.Create)))
+                    using( BufferedStream bs = new BufferedStream( new FileStream( sfdSaveScreenshot.FileName , FileMode.Create ) ) )
                     {
-                        encoder.Save(bs);
+                        encoder.Save( bs );
                     }
 
-                    Tools.Windows.OpenWithDefaultApplication(sfdSaveScreenshot.FileName);
+                    Tools.Windows.OpenWithDefaultApplication( sfdSaveScreenshot.FileName );
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Error(ex);
+                MB.Error( ex );
             }
         }
 

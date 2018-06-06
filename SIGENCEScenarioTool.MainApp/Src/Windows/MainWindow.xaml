@@ -60,7 +60,11 @@
                     <MenuItem Header="1000" Tag="1000" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Help" IsEnabled="False" />
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />
+                <MenuItem Header="_Cheat Sheet" IsEnabled="False" />
+                <MenuItem Header="_About" IsEnabled="False" />
+            </MenuItem>
 
         </Menu>
 
@@ -265,6 +269,33 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="RFDevices:" />
                     <Label Content="{Binding RFDevicesCollection.Count}" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem Background="LightYellow">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="UDPHost:" />
+                    <Label Content="{Binding UDPHost}" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem Background="LightYellow">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="UDPPort:" />
+                    <Label Content="{Binding UDPPort}" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem Background="LightYellow">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="UDPDelay:" />
+                    <Label Content="{Binding UDPDelay}" />
                 </StackPanel>
             </StatusBarItem>
 

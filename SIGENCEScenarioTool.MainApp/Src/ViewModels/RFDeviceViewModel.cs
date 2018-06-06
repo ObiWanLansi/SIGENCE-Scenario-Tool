@@ -394,7 +394,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <summary>
         /// The b is selected
         /// </summary>
-        private bool bIsSelected = false;
+        private bool bIsSelected = true;
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is selected.

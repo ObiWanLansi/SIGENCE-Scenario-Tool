@@ -23,30 +23,51 @@ namespace SIGENCEScenarioTool.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4242")]
         public int UDPPort {
             get {
                 return ((int)(this["UDPPort"]));
             }
+            set {
+                this["UDPPort"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("500")]
         public int UDPDelay {
             get {
                 return ((int)(this["UDPDelay"]));
             }
+            set {
+                this["UDPDelay"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("18")]
         public int MapZoomLevel {
             get {
                 return ((int)(this["MapZoomLevel"]));
+            }
+            set {
+                this["MapZoomLevel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string UDPHost {
+            get {
+                return ((string)(this["UDPHost"]));
+            }
+            set {
+                this["UDPHost"] = value;
             }
         }
     }

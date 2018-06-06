@@ -47,11 +47,6 @@ namespace SIGENCEScenarioTool.Windows
         /// </summary>
         private readonly Properties.Settings settings = Properties.Settings.Default;
 
-        /// <summary>
-        /// The ipaddress
-        /// </summary>
-        private readonly IPAddress IPADDRESS = IPAddress.Parse( "127.0.0.1" );
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -208,6 +203,23 @@ namespace SIGENCEScenarioTool.Windows
                 SetTitle();
                 FirePropertyChanged();
             }
+        }
+
+        //---------------------------------------------------------------------
+
+        public string UDPHost
+        {
+            get { return settings.UDPHost; }
+        }
+
+        public int UDPPort
+        {
+            get { return settings.UDPPort; }
+        }
+
+        public int UDPDelay
+        {
+            get { return settings.UDPDelay; }
         }
 
     } // end public partial class MainWindow

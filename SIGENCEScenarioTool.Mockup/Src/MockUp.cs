@@ -12,7 +12,9 @@ using SIGENCEScenarioTool.Tools;
 namespace SIGENCEScenarioTool.Mockup
 {
     /// <summary>
-    /// 
+    /// This is a small mockup application to receive the data which is send from the SIGENCE Scenario Tool.
+    /// The main thread is blocking as long as data are received. The received data is
+    /// displayed in the console window and stored in a file in the TEMP directory to check it.
     /// </summary>
     sealed class MockUp
     {
@@ -46,17 +48,12 @@ namespace SIGENCEScenarioTool.Mockup
 
                 Console.Out.WriteLine( "Connected to {0}:{1} and waiting for incoming data ..." , settings.UDPServerHost , settings.UDPServerPort );
 
-                // The neverending story ...
+                // A neverending story ...
                 while( true )
                 {
                     byte [] baReceived = client.Receive( ref ep );
 
                     string strReceived = Encoding.Default.GetString( baReceived );
-
-                    //if( strReceived.Equals( "end" ) )
-                    //{
-                    //    goto END;
-                    //}
 
                     string strDateTime = DateTime.Now.Fmt_YYYYMMDD_HHMMSSFFF();
                     Console.Out.WriteLine( DIVIDER );
@@ -66,9 +63,6 @@ namespace SIGENCEScenarioTool.Mockup
                     string strFilename = string.Format( "{0}sigence_data_{1}.xml" , strTempPath , strDateTime );
                     File.WriteAllText( strFilename , strReceived );
                 }
-
-                //END:
-                //client.Close();
             }
         }
 

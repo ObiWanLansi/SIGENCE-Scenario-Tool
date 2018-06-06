@@ -78,25 +78,36 @@ namespace SIGENCEScenarioTool.Commands
         static RegisteredCommands()
         {
             CreateRFDevice = new RoutedUICommand( "CreateRFDevice" , "CreateRFDevice" , typeof( RegisteredCommands ) );
+            CreateRFDevice.InputGestures.Add( new KeyGesture( Key.F5 ) );
             CreateRFDevice.InputGestures.Add( new KeyGesture( Key.C , ModifierKeys.Alt ) );
 
             DeleteRFDevice = new RoutedUICommand( "DeleteRFDevice" , "DeleteRFDevice" , typeof( RegisteredCommands ) );
+            DeleteRFDevice.InputGestures.Add( new KeyGesture( Key.F6 ) );
             DeleteRFDevice.InputGestures.Add( new KeyGesture( Key.D , ModifierKeys.Alt ) );
 
             ExportRFDevice = new RoutedUICommand( "ExportRFDevice" , "ExportRFDevice" , typeof( RegisteredCommands ) );
+            ExportRFDevice.InputGestures.Add( new KeyGesture( Key.F7 ) );
             ExportRFDevice.InputGestures.Add( new KeyGesture( Key.E , ModifierKeys.Alt ) );
 
             ImportRFDevice = new RoutedUICommand( "ImportRFDevice" , "ImportRFDevice" , typeof( RegisteredCommands ) );
+            ImportRFDevice.InputGestures.Add( new KeyGesture( Key.F8 ) );
             ImportRFDevice.InputGestures.Add( new KeyGesture( Key.I , ModifierKeys.Alt ) );
 
-            CreateScreenshot = new RoutedUICommand( "CreateScreenshot" , "CreateScreenshot" , typeof( RegisteredCommands ) );
-            CreateScreenshot.InputGestures.Add( new KeyGesture( Key.M , ModifierKeys.Control ) );
-
-            SendDataUDP = new RoutedUICommand( "SendDataUDP" , "SendDataUDP" , typeof( RegisteredCommands ) );
-            SendDataUDP.InputGestures.Add( new KeyGesture( Key.U , ModifierKeys.Control ) );
 
             ZoomToRFDevice = new RoutedUICommand( "ZoomToRFDevice" , "ZoomToRFDevice" , typeof( RegisteredCommands ) );
+            ZoomToRFDevice.InputGestures.Add( new KeyGesture( Key.F9 ) );
             ZoomToRFDevice.InputGestures.Add( new KeyGesture( Key.Z , ModifierKeys.Control ) );
+
+            CreateScreenshot = new RoutedUICommand( "CreateScreenshot" , "CreateScreenshot" , typeof( RegisteredCommands ) );
+            CreateScreenshot.InputGestures.Add( new KeyGesture( Key.F10 ) );
+            CreateScreenshot.InputGestures.Add( new KeyGesture( Key.M , ModifierKeys.Control ) );
+
+            // F11 is reserved for fullscreen ...
+
+            SendDataUDP = new RoutedUICommand( "SendDataUDP" , "SendDataUDP" , typeof( RegisteredCommands ) );
+            SendDataUDP.InputGestures.Add( new KeyGesture( Key.F12 ) );
+            SendDataUDP.InputGestures.Add( new KeyGesture( Key.U , ModifierKeys.Control ) );
+
         }
 
     } // end static public class RegisteredCommands

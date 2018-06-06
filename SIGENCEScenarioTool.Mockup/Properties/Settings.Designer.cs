@@ -23,12 +23,15 @@ namespace SIGENCEScenarioTool.Mockup.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4242")]
         public int UDPServerPort {
             get {
                 return ((int)(this["UDPServerPort"]));
+            }
+            set {
+                this["UDPServerPort"] = value;
             }
         }
         
