@@ -11,7 +11,7 @@ using SIGENCEScenarioTool.Tools;
 
 
 
-namespace SIGENCEScenarioTool.Windows
+namespace SIGENCEScenarioTool.Windows.MainWindow
 {
     /// <summary>
     /// 

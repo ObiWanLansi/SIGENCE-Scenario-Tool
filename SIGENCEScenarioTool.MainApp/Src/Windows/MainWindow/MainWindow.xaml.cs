@@ -2,23 +2,15 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using System.Xml.Linq;
 
-using SIGENCEScenarioTool.Extensions;
-using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
 
 
-namespace SIGENCEScenarioTool.Windows
+namespace SIGENCEScenarioTool.Windows.MainWindow
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -93,9 +85,7 @@ namespace SIGENCEScenarioTool.Windows
 
             sfdExportRFDevices.Title = "Export SIGENCE Scenario Tool File";
             sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
-#if EXCEL_SUPPORT
             sfdExportRFDevices.Filter += "|Office Open XML File Format (*.xlsx)|*.xlsx";
-#endif
             sfdExportRFDevices.AddExtension = true;
             sfdExportRFDevices.CheckPathExists = true;
 
@@ -126,88 +116,6 @@ namespace SIGENCEScenarioTool.Windows
 
 
         /// <summary>
-        /// Sends the RFDeviceList via UDP to any connect client.
-        /// This function is not asynchron, so the main thread is blocked when sending data. 
-        /// Maybe in oen of the next versions me make this function asynchron.
-        /// </summary>
-        private void SendDataUDP()
-        {
-            //Task.Run( () =>
-            //     Speech.Say( "Starting transfer of radio frequency devices" )
-            //);
-
-            try
-            {
-                using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
-                {
-                    IPEndPoint endpoint = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPort );
-
-                    foreach( RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice )
-                    {
-                        XElement eDevice = device.ToXml();
-
-                        byte [] baMessage = Encoding.Default.GetBytes( eDevice.ToDefaultString() );
-
-                        sender.SendTo( baMessage , endpoint );
-
-                        // Give the poor client some time to process the data when he need or bleed ...
-                        if( settings.UDPDelay > 0 )
-                        {
-                            Thread.Sleep( settings.UDPDelay );
-                        }
-                    }
-
-                    sender.Close();
-                }
-            }
-            catch( Exception ex )
-            {
-                MB.Error( ex );
-            }
-
-            //Task.Run( () =>
-            //    Speech.Say( "Finished with sending the data" )
-            //);
-        }
-
-
-        ///// <summary>
-        ///// Sends the RFDeviceList via UDP to any connect client.
-        ///// This function is not asynchron, so the main thread is blocked when sending data. 
-        ///// Maybe in oen of the next versions me make this function asynchron.
-        ///// </summary>
-        //private void xSendDataUDP()
-        //{
-        //    XElement eDeviceList = new XElement( "DeviceList" );
-
-        //    foreach( RFDevice device in from devicemodel in RFDevicesCollection select devicemodel.RFDevice )
-        //    {
-        //        eDeviceList.Add( device.ToXml() );
-        //    }
-
-        //    try
-        //    {
-        //        using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
-        //        {
-        //            IPEndPoint endpoint = new IPEndPoint( IPADDRESS , settings.UDPPort );
-
-        //            byte [] baMessage = Encoding.Default.GetBytes( eDeviceList.ToDefaultString() );
-
-        //            sender.SendTo( baMessage , endpoint );
-
-        //            sender.Close();
-        //        }
-        //    }
-        //    catch( Exception ex )
-        //    {
-        //        MB.Error( ex );
-        //    }
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
         /// Resets this instance.
         /// </summary>
         private void Reset()
@@ -231,6 +139,15 @@ namespace SIGENCEScenarioTool.Windows
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void OpenCheatSheet()
+        {
+            new HelpWindow.HelpWindow().Show();
+        }
 
 
         /// <summary>

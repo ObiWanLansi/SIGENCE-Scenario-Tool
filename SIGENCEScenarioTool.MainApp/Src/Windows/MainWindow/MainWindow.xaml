@@ -1,4 +1,4 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -62,7 +62,7 @@
             </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />
-                <MenuItem Header="_Cheat Sheet" IsEnabled="False" />
+                <MenuItem Header="_Cheat Sheet" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
                 <MenuItem Header="_About" IsEnabled="False" />
             </MenuItem>
 

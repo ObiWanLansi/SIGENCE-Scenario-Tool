@@ -6,7 +6,7 @@ using SIGENCEScenarioTool.Models;
 
 
 
-namespace SIGENCEScenarioTool.Windows
+namespace SIGENCEScenarioTool.Windows.MainWindow
 {
     /// <summary>
     /// 

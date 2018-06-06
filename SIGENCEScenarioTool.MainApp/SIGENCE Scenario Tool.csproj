@@ -67,6 +67,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -140,7 +141,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Src\Windows\MainWindow.xaml">
+    <Page Include="Src\Windows\HelpWindow\HelpWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Src\Windows\MainWindow\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -148,13 +153,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Src\Windows\MainWindow.TestStuff.cs" />
-    <Compile Include="Src\Windows\MainWindow.EventHandling.cs" />
-    <Compile Include="Src\Windows\MainWindow.FileHandling.cs" />
-    <Compile Include="Src\Windows\MainWindow.FieldsAndProperties.cs" />
-    <Compile Include="Src\Windows\MainWindow.InitFunctions.cs" />
-    <Compile Include="Src\Windows\MainWindow.RFDeviceHandling.cs" />
-    <Compile Include="Src\Windows\MainWindow.xaml.cs">
+    <Compile Include="Src\Windows\HelpWindow\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Windows\MainWindow\MainWindow.TestStuff.cs" />
+    <Compile Include="Src\Windows\MainWindow\MainWindow.EventHandling.cs" />
+    <Compile Include="Src\Windows\MainWindow\MainWindow.FileHandling.cs" />
+    <Compile Include="Src\Windows\MainWindow\MainWindow.FieldsAndProperties.cs" />
+    <Compile Include="Src\Windows\MainWindow\MainWindow.InitFunctions.cs" />
+    <Compile Include="Src\Windows\MainWindow\MainWindow.RFDeviceHandling.cs" />
+    <Compile Include="Src\Windows\MainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

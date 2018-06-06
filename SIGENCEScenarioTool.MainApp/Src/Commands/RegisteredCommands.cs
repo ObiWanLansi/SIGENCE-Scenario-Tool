@@ -9,6 +9,9 @@ namespace SIGENCEScenarioTool.Commands
     /// </summary>
     static public class RegisteredCommands
     {
+        static public RoutedUICommand OpenCheatSheet { get; private set; }
+
+        //---------------------------------------------------------------------
 
         /// <summary>
         /// Gets the create RFDevice.
@@ -43,6 +46,7 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         static public RoutedUICommand ImportRFDevice { get; private set; }
 
+        //---------------------------------------------------------------------
 
         /// <summary>
         /// Gets the create screenshot.
@@ -77,6 +81,9 @@ namespace SIGENCEScenarioTool.Commands
         /// </summary>
         static RegisteredCommands()
         {
+            OpenCheatSheet = new RoutedUICommand( "OpenCheatSheet" , "OpenCheatSheet" , typeof( RegisteredCommands ) );
+            OpenCheatSheet.InputGestures.Add( new KeyGesture( Key.F1 , ModifierKeys.Control ) );
+
             CreateRFDevice = new RoutedUICommand( "CreateRFDevice" , "CreateRFDevice" , typeof( RegisteredCommands ) );
             CreateRFDevice.InputGestures.Add( new KeyGesture( Key.F5 ) );
             CreateRFDevice.InputGestures.Add( new KeyGesture( Key.C , ModifierKeys.Alt ) );
@@ -107,7 +114,6 @@ namespace SIGENCEScenarioTool.Commands
             SendDataUDP = new RoutedUICommand( "SendDataUDP" , "SendDataUDP" , typeof( RegisteredCommands ) );
             SendDataUDP.InputGestures.Add( new KeyGesture( Key.F12 ) );
             SendDataUDP.InputGestures.Add( new KeyGesture( Key.U , ModifierKeys.Control ) );
-
         }
 
     } // end static public class RegisteredCommands

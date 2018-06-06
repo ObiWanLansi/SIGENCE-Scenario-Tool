@@ -1,9 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 using GMap.NET;
+
 using SIGENCEScenarioTool.Datatypes.Standard;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
@@ -14,7 +20,7 @@ using Excel = global::Microsoft.Office.Interop.Excel;
 
 
 
-namespace SIGENCEScenarioTool.Windows
+namespace SIGENCEScenarioTool.Windows.MainWindow
 {
     /// <summary>
     /// 
@@ -268,7 +274,14 @@ namespace SIGENCEScenarioTool.Windows
             {
                 FileInfo fiExportFile = new FileInfo( sfdExportRFDevices.FileName );
 
-                RFDeviceList dl = new RFDeviceList( RFDevicesCollection.Select( t => t.RFDevice ) );
+                //RFDeviceList dl = new RFDeviceList( RFDevicesCollection.Select( t => t.RFDevice ) );
+                
+                RFDeviceList dl = new RFDeviceList();
+                
+                foreach( RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice )
+                {
+                    dl.Add( device );
+                }
 
                 Cursor = Cursors.Wait;
                 DoEvents();
@@ -346,6 +359,54 @@ namespace SIGENCEScenarioTool.Windows
             }
 
             ZoomToRFDevice( ( dgRFDevices.SelectedItem as RFDeviceViewModel ).RFDevice );
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Sends the RFDeviceList via UDP to any connect client.
+        /// This function is not asynchron, so the main thread is blocked when sending data. 
+        /// Maybe in oen of the next versions me make this function asynchron.
+        /// </summary>
+        private void SendDataUDP()
+        {
+            //Task.Run( () =>
+            //     Speech.Say( "Starting transfer of radio frequency devices" )
+            //);
+
+            try
+            {
+                using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
+                {
+                    IPEndPoint endpoint = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPort );
+
+                    foreach( RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice )
+                    {
+                        XElement eDevice = device.ToXml();
+
+                        byte [] baMessage = Encoding.Default.GetBytes( eDevice.ToDefaultString() );
+
+                        sender.SendTo( baMessage , endpoint );
+
+                        // Give the poor client some time to process the data when he need or bleed ...
+                        if( settings.UDPDelay > 0 )
+                        {
+                            Thread.Sleep( settings.UDPDelay );
+                        }
+                    }
+
+                    sender.Close();
+                }
+            }
+            catch( Exception ex )
+            {
+                MB.Error( ex );
+            }
+
+            //Task.Run( () =>
+            //    Speech.Say( "Finished with sending the data" )
+            //);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
