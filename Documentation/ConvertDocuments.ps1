@@ -1,4 +1,5 @@
-$documents_path = 'C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Documentation'
+# $documents_path = 'C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Documentation'
+$documents_path = 'D:\BigData\GitHub\SIGENCE-Scenario-Tool\Documentation'
 
 $word_app = New-Object -ComObject Word.Application
 

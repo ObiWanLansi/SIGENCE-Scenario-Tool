@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<project name="SIGENCEScenarioTool" basedir="." default="compile">
+
+    <property name="DeployTarget" value=".\SIGENCEScenarioTool.Executable" />
+    <!--<property name="DeployTarget" value="D:\BigData\GitHub\SIGENCE-Scenario-Tool\SIGENCEScenarioTool.Executable" />-->
+
+
+	<target name="clean">
+        
+		<delete dir=".\bin" />
+        <delete dir=".\obj" />
+		
+		<delete dir=".\SIGENCEScenarioTool.MainApp\bin" />
+        <delete dir=".\SIGENCEScenarioTool.MainApp\obj" />
+
+		<delete dir=".\SIGENCEScenarioTool.Mockup\bin" />
+        <delete dir=".\SIGENCEScenarioTool.Mockup\obj" />
+
+		<delete dir=".\SIGENCEScenarioTool.UnitTests\bin" />
+        <delete dir=".\SIGENCEScenarioTool.UnitTests\obj" />
+    </target>
+
+
+	
+	<target name="doc">
+
+		<exec program="powershell.exe" workingdir=".\Documentation">
+			<arg value="-File" />
+			<arg value="ConvertDocuments.ps1" />
+		</exec>
+	</target>
+
+
+	
+	<target name="compile" depends="clean">
+
+		<exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" workingdir=".">
+
+			<arg value="SIGENCE Scenario Tool.sln" />
+			<arg value="/rebuild" />
+			<arg value="Release|AnyCPU" />
+		</exec>
+	</target>
+	
+
+	
+	<target name="deploy" depends="doc,compile">
+	
+		<delete dir="${DeployTarget}" />
+		<mkdir dir="${DeployTarget}" />
+
+		<copy todir="${DeployTarget}">
+			<fileset basedir=".\bin\Release">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+
+</project>

@@ -189,6 +189,10 @@
       <Link>Cheat Sheet.xps</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\Documentation\Generated\Cheat Sheet.pdf">
+      <Link>Cheat Sheet.pdf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
