@@ -1,6 +1,6 @@
 # SIGENCE Scenario Tool
 
-A **little** tool to place RF Devices on a map, edit, save and load them.
+A **little** tool to place RF Devices on a map, edit, save and load them, or export the devicelist to a file (.cs,.json,.xml,.xlsx). Look into the [Wiki](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki) for more information and usage.
 
 ## Documentation
 
