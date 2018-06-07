@@ -107,7 +107,7 @@ namespace SIGENCEScenarioTool.Commands
 
             CreateScreenshot = new RoutedUICommand( "CreateScreenshot" , "CreateScreenshot" , typeof( RegisteredCommands ) );
             CreateScreenshot.InputGestures.Add( new KeyGesture( Key.F10 ) );
-            CreateScreenshot.InputGestures.Add( new KeyGesture( Key.M , ModifierKeys.Control ) );
+            CreateScreenshot.InputGestures.Add( new KeyGesture( Key.T , ModifierKeys.Control ) );
 
             // F11 is reserved for fullscreen ...
 
