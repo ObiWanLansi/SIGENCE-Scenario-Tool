@@ -30,7 +30,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             if( string.IsNullOrEmpty( settings.UDPHost ) )
             {
                 MB.Warning( "The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application." );
-                //Application.Current.Shutdown( -1 );
                 settings.UDPHost = "127.0.0.1";
             }
 
@@ -38,21 +37,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             if( settings.UDPPort < 1025 || settings.UDPPort > 65535 )
             {
                 MB.Warning( "The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application." );
-                //Application.Current.Shutdown( -1 );
                 settings.UDPPort = 4242;
             }
 
             if( settings.UDPDelay < 0 || settings.UDPDelay > 10000 )
             {
                 MB.Warning( "The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application." );
-                //Application.Current.Shutdown( -1 );
                 settings.UDPDelay = 500;
             }
 
             if( settings.MapZoomLevel < 1 || settings.MapZoomLevel > 20 )
             {
                 MB.Warning( "The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application." );
-                //Application.Current.Shutdown( -1 );
                 settings.MapZoomLevel = 18;
             }
 

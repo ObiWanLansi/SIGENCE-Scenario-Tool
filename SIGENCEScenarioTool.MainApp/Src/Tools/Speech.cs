@@ -48,7 +48,7 @@ namespace SIGENCEScenarioTool.Tools
         /// Gibt den übergebenen Text aus.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
-        public void Speak( string strContent )
+        public void Speak(string strContent)
         {
             //// Falls er noch am quatschen ist warten wir.
             //while( speech.State == SynthesizerState.Speaking )
@@ -56,7 +56,7 @@ namespace SIGENCEScenarioTool.Tools
             //    Thread.Sleep( 10 );
             //}
 
-            speech.Speak( strContent );
+            speech.Speak(strContent);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,11 +66,11 @@ namespace SIGENCEScenarioTool.Tools
         /// Says the specified string content.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
-        static public void Say( string strContent )
+        static public void Say(string strContent)
         {
-            using( Speech speech = new Speech() )
+            using (Speech speech = new Speech())
             {
-                speech.Speak( strContent );
+                speech.Speak(strContent);
             }
         }
 
@@ -82,7 +82,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         public void Dispose()
         {
-            if( speech != null )
+            if (speech != null)
             {
                 speech.Dispose();
                 speech = null;

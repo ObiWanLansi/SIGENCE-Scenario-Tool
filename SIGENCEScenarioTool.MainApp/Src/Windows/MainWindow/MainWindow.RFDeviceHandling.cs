@@ -29,6 +29,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     {
 
         /// <summary>
+        /// Gets the device list.
+        /// </summary>
+        /// <returns>A RFDeviceList with all selected RFDevices from the DataGrid.</returns>
+        private RFDeviceList GetDeviceList()
+        {
+            return new RFDeviceList(from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice);
+        }
+
+
+        /// <summary>
         /// Sets the map to creating RFDevice mode.
         /// </summary>
         private void SetMapToCreatingRFDeviceMode()
@@ -61,13 +71,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the RFDevice.
         /// </summary>
         /// <param name="pll">The PLL.</param>
-        private void AddRFDevice( PointLatLng pll )
+        private void AddRFDevice(PointLatLng pll)
         {
-            AddRFDevice( new RFDevice
+            AddRFDevice(new RFDevice
             {
-                Latitude = pll.Lat ,
+                Latitude = pll.Lat,
                 Longitude = pll.Lng
-            } );
+            });
         }
 
 
@@ -75,12 +85,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Adds the RFDevice.
         /// </summary>
         /// <param name="t">The t.</param>
-        private void AddRFDevice( RFDevice t )
+        private void AddRFDevice(RFDevice t)
         {
-            RFDeviceViewModel tvm = new RFDeviceViewModel( t );
+            RFDeviceViewModel tvm = new RFDeviceViewModel(t);
 
-            RFDevicesCollection.Add( tvm );
-            mcMapControl.Markers.Add( tvm.Marker );
+            RFDevicesCollection.Add(tvm);
+            mcMapControl.Markers.Add(tvm.Marker);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -90,10 +100,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Deletes the RFDevice.
         /// </summary>
         /// <param name="tvm">The TVM.</param>
-        private void DeleteRFDevice( RFDeviceViewModel tvm )
+        private void DeleteRFDevice(RFDeviceViewModel tvm)
         {
-            RFDevicesCollection.Remove( tvm );
-            mcMapControl.Markers.Remove( tvm.Marker );
+            RFDevicesCollection.Remove(tvm);
+            mcMapControl.Markers.Remove(tvm.Marker);
         }
 
 
@@ -102,19 +112,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void DeleteRFDevice()
         {
-            if( dgRFDevices.SelectedItem == null )
+            if (dgRFDevices.SelectedItem == null)
             {
-                MB.Information( "No RFDevice Is Selected In The DataGrid!" );
+                MB.Information("No RFDevice Is Selected In The DataGrid!");
                 return;
             }
 
-            if( dgRFDevices.SelectedItems.Count > 1 )
+            if (dgRFDevices.SelectedItems.Count > 1)
             {
-                MB.Information( "There Are More Than One RFDevice Selected In The DataGrid!" );
+                MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
                 return;
             }
 
-            DeleteRFDevice( dgRFDevices.SelectedItem as RFDeviceViewModel );
+            DeleteRFDevice(dgRFDevices.SelectedItem as RFDeviceViewModel);
         }
 
 
@@ -123,9 +133,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void DeleteRFDevices()
         {
-            foreach( RFDeviceViewModel device in ( from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel ).ToList() )
+            foreach (RFDeviceViewModel device in (from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel).ToList())
             {
-                DeleteRFDevice( device );
+                DeleteRFDevice(device);
             }
         }
 
@@ -141,9 +151,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="iColumn">The i column.</param>
         /// <param name="iRow">The i row.</param>
         /// <param name="value">The value.</param>
-        private void AddCell( Excel.Worksheet sheet , int iColumn , int iRow , object value )
+        private void AddCell(Excel.Worksheet sheet, int iColumn, int iRow, object value)
         {
-            Excel.Range cell = sheet.Cells [iRow , iColumn] as Excel.Range;
+            Excel.Range cell = sheet.Cells[iRow, iColumn] as Excel.Range;
             cell.Value2 = value;
             cell.HorizontalAlignment = value is string ? Excel.XlHAlign.xlHAlignLeft : Excel.XlHAlign.xlHAlignRight;
         }
@@ -155,11 +165,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="dl">The dl.</param>
         /// <param name="strOutputFilename">The string output filename.</param>
         /// <exception cref="ArgumentException">Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
-        private void SaveAsExcel( RFDeviceList dl , string strOutputFilename )
+        private void SaveAsExcel(RFDeviceList dl, string strOutputFilename)
         {
-            if( strOutputFilename.IsEmpty() )
+            if (strOutputFilename.IsEmpty())
             {
-                throw new ArgumentException( "The output filename can not be empty!" , "strOutputFilename" );
+                throw new ArgumentException("The output filename can not be empty!", "strOutputFilename");
             }
 
             //-----------------------------------------------------------------
@@ -169,8 +179,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 SheetsInNewWorkbook = 1
             };
 
-            Excel.Workbook wb = excel.Workbooks.Add( Missing );
-            Excel.Worksheet sheet = wb.Sheets [1] as Excel.Worksheet;
+            Excel.Workbook wb = excel.Workbooks.Add(Missing);
+            Excel.Worksheet sheet = wb.Sheets[1] as Excel.Worksheet;
 
             sheet.Name = "RF Devices";
 
@@ -191,9 +201,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 int iColumnCounter = 1;
 
-                foreach( string strColumn in slColumnNames )
+                foreach (string strColumn in slColumnNames)
                 {
-                    Excel.Range cell = sheet.Cells [1 , iColumnCounter++] as Excel.Range;
+                    Excel.Range cell = sheet.Cells[1, iColumnCounter++] as Excel.Range;
                     cell.Font.Bold = true;
                     cell.Orientation = Excel.XlOrientation.xlUpward;
                     cell.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -208,26 +218,26 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 int iRowCounter = 2;
 
-                foreach( RFDevice device in dl )
+                foreach (RFDevice device in dl)
                 {
-                    AddCell( sheet , 1 , iRowCounter , device.StartTime );
-                    AddCell( sheet , 2 , iRowCounter , device.Id );
-                    AddCell( sheet , 3 , iRowCounter , device.Latitude );
-                    AddCell( sheet , 4 , iRowCounter , device.Longitude );
-                    AddCell( sheet , 5 , iRowCounter , device.Altitude );
-                    AddCell( sheet , 6 , iRowCounter , device.Roll );
-                    AddCell( sheet , 7 , iRowCounter , device.Pitch );
-                    AddCell( sheet , 8 , iRowCounter , device.Yaw );
-                    AddCell( sheet , 9 , iRowCounter , device.RxTxType );
-                    AddCell( sheet , 10 , iRowCounter , device.AntennaType );
-                    AddCell( sheet , 11 , iRowCounter , device.Gain_dB );
-                    AddCell( sheet , 12 , iRowCounter , device.CenterFrequency_Hz );
-                    AddCell( sheet , 13 , iRowCounter , device.Bandwith_Hz );
-                    AddCell( sheet , 14 , iRowCounter , device.SignalToNoiseRatio_dB );
-                    AddCell( sheet , 15 , iRowCounter , device.XPos );
-                    AddCell( sheet , 16 , iRowCounter , device.YPos );
-                    AddCell( sheet , 17 , iRowCounter , device.ZPos );
-                    AddCell( sheet , 18 , iRowCounter , device.Remark );
+                    AddCell(sheet, 1, iRowCounter, device.StartTime);
+                    AddCell(sheet, 2, iRowCounter, device.Id);
+                    AddCell(sheet, 3, iRowCounter, device.Latitude);
+                    AddCell(sheet, 4, iRowCounter, device.Longitude);
+                    AddCell(sheet, 5, iRowCounter, device.Altitude);
+                    AddCell(sheet, 6, iRowCounter, device.Roll);
+                    AddCell(sheet, 7, iRowCounter, device.Pitch);
+                    AddCell(sheet, 8, iRowCounter, device.Yaw);
+                    AddCell(sheet, 9, iRowCounter, device.RxTxType);
+                    AddCell(sheet, 10, iRowCounter, device.AntennaType);
+                    AddCell(sheet, 11, iRowCounter, device.Gain_dB);
+                    AddCell(sheet, 12, iRowCounter, device.CenterFrequency_Hz);
+                    AddCell(sheet, 13, iRowCounter, device.Bandwith_Hz);
+                    AddCell(sheet, 14, iRowCounter, device.SignalToNoiseRatio_dB);
+                    AddCell(sheet, 15, iRowCounter, device.XPos);
+                    AddCell(sheet, 16, iRowCounter, device.YPos);
+                    AddCell(sheet, 17, iRowCounter, device.ZPos);
+                    AddCell(sheet, 18, iRowCounter, device.Remark);
 
                     iRowCounter++;
                 }
@@ -239,7 +249,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             excel.Visible = true;
 
-            wb.SaveAs( strOutputFilename , Missing , Missing , Missing , Missing , Missing , Excel.XlSaveAsAccessMode.xlNoChange , Missing , Missing , Missing , Missing , Missing );
+            wb.SaveAs(strOutputFilename, Missing, Missing, Missing, Missing, Missing, Excel.XlSaveAsAccessMode.xlNoChange, Missing, Missing, Missing, Missing, Missing);
 
             // Achtung: Auch wenn diese Funktion beendet wird bleibt Excel geöffnet. Die Daten sind
             // aber noch nicht in einer Datei gespeichert. Das muß in Excel der User selbst machen.
@@ -251,70 +261,67 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Exports the rf devices.
+        /// </summary>
+        /// <param name="devicelist">The devicelist.</param>
+        /// <param name="fiExportFile">The fi export file.</param>
+        private void ExportRFDevices(RFDeviceList devicelist, FileInfo fiExportFile)
+        {
+            Cursor = Cursors.Wait;
+
+            DoEvents();
+
+            try
+            {
+                switch (fiExportFile.Extension.ToLower())
+                {
+                    case ".csv":
+                        devicelist.SaveAsCsv(fiExportFile.FullName);
+                        MB.Information("File {0} successful created.", fiExportFile.Name);
+                        break;
+
+                    case ".json":
+                        devicelist.SaveAsJson(fiExportFile.FullName);
+                        MB.Information("File {0} successful created.", fiExportFile.Name);
+                        break;
+
+                    case ".xml":
+                        devicelist.SaveAsXml(fiExportFile.FullName);
+                        MB.Information("File {0} successful created.", fiExportFile.Name);
+                        break;
+
+                    case ".xlsx":
+                        SaveAsExcel(devicelist, fiExportFile.FullName);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
+
+            Cursor = Cursors.Arrow;
+        }
+
+
+        /// <summary>
         /// Exports the RFDevices.
         /// </summary>
         private void ExportRFDevices()
         {
-            if( RFDevicesCollection.Count == 0 )
+            RFDeviceList devicelist = GetDeviceList();
+
+            if (devicelist.Count == 0)
             {
-                MB.Warning( "No RFDevice Avaible For Export!" );
+                MB.Warning("No Selected RFDevice Avaible For Export!");
                 return;
             }
 
-            if( CurrentFile != null )
+            sfdExportRFDevices.FileName = CurrentFile != null ? new FileInfo(CurrentFile).Name : DateTime.Now.Fmt_YYYYMMDDHHMMSS();
+
+            if (sfdExportRFDevices.ShowDialog() == true)
             {
-                sfdExportRFDevices.FileName = new FileInfo( CurrentFile ).Name;
-            }
-            else
-            {
-                sfdExportRFDevices.FileName = DateTime.Now.Fmt_YYYYMMDDHHMMSS();
-            }
-
-            if( sfdExportRFDevices.ShowDialog() == true )
-            {
-                FileInfo fiExportFile = new FileInfo( sfdExportRFDevices.FileName );
-
-                //RFDeviceList dl = new RFDeviceList( RFDevicesCollection.Select( t => t.RFDevice ) );
-                
-                RFDeviceList dl = new RFDeviceList();
-                
-                foreach( RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice )
-                {
-                    dl.Add( device );
-                }
-
-                Cursor = Cursors.Wait;
-                DoEvents();
-
-                try
-                {
-                    switch( fiExportFile.Extension.ToLower() )
-                    {
-                        case ".csv":
-                            dl.SaveAsCsv( fiExportFile.FullName );
-                            break;
-
-                        case ".json":
-                            dl.SaveAsJson( fiExportFile.FullName );
-                            break;
-
-                        case ".xml":
-                            dl.SaveAsXml( fiExportFile.FullName );
-                            break;
-
-                        case ".xlsx":
-                            SaveAsExcel( dl , fiExportFile.FullName );
-                            break;
-                    }
-
-                    //MB.Information( "File {0} successful created." , fiExportFile.Name );
-                }
-                catch( Exception ex )
-                {
-                    MB.Error( ex );
-                }
-
-                Cursor = Cursors.Arrow;
+                ExportRFDevices(devicelist, new FileInfo(sfdExportRFDevices.FileName));
             }
         }
 
@@ -334,9 +341,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Zooms to rf device.
         /// </summary>
         /// <param name="device">The device.</param>
-        private void ZoomToRFDevice( RFDevice device )
+        private void ZoomToRFDevice(RFDevice device)
         {
-            mcMapControl.Position = new PointLatLng( device.Latitude , device.Longitude );
+            mcMapControl.Position = new PointLatLng(device.Latitude, device.Longitude);
             mcMapControl.Zoom = settings.MapZoomLevel;
         }
 
@@ -346,19 +353,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ZoomToRFDevice()
         {
-            if( dgRFDevices.SelectedItem == null )
+            if (dgRFDevices.SelectedItem == null)
             {
-                MB.Information( "No RFDevice Is Selected In The DataGrid!" );
+                MB.Information("No RFDevice Is Selected In The DataGrid!");
                 return;
             }
 
-            if( dgRFDevices.SelectedItems.Count > 1 )
+            if (dgRFDevices.SelectedItems.Count > 1)
             {
-                MB.Information( "There Are More Than One RFDevice Selected In The DataGrid!" );
+                MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
                 return;
             }
 
-            ZoomToRFDevice( ( dgRFDevices.SelectedItem as RFDeviceViewModel ).RFDevice );
+            ZoomToRFDevice((dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -369,7 +376,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// This function is not asynchron, so the main thread is blocked when sending data. 
         /// Maybe in oen of the next versions me make this function asynchron.
         /// </summary>
-        private void SendDataUDP()
+        /// <param name="devicelist">The devicelist.</param>
+        private void SendDataUDP(RFDeviceList devicelist)
         {
             //Task.Run( () =>
             //     Speech.Say( "Starting transfer of radio frequency devices" )
@@ -377,36 +385,53 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                using( Socket sender = new Socket( AddressFamily.InterNetwork , SocketType.Dgram , ProtocolType.Udp ) )
+                using (Socket sender = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp))
                 {
-                    IPEndPoint endpoint = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPort );
+                    IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPort);
 
-                    foreach( RFDevice device in from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice )
+                    foreach (RFDevice device in devicelist)
                     {
                         XElement eDevice = device.ToXml();
 
-                        byte [] baMessage = Encoding.Default.GetBytes( eDevice.ToDefaultString() );
+                        byte[] baMessage = Encoding.Default.GetBytes(eDevice.ToDefaultString());
 
-                        sender.SendTo( baMessage , endpoint );
+                        sender.SendTo(baMessage, endpoint);
 
                         // Give the poor client some time to process the data when he need or bleed ...
-                        if( settings.UDPDelay > 0 )
+                        if (settings.UDPDelay > 0)
                         {
-                            Thread.Sleep( settings.UDPDelay );
+                            Thread.Sleep(settings.UDPDelay);
                         }
                     }
 
                     sender.Close();
                 }
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
 
             //Task.Run( () =>
             //    Speech.Say( "Finished with sending the data" )
             //);
+        }
+
+
+        /// <summary>
+        /// Sends the data UDP.
+        /// </summary>
+        private void SendDataUDP()
+        {
+            RFDeviceList devicelist = GetDeviceList();
+
+            if (devicelist.Count == 0)
+            {
+                MB.Warning("No Selected RFDevice Avaible For Sending!");
+                return;
+            }
+
+            SendDataUDP(devicelist);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -422,36 +447,36 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the randomized RFDevices.
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
-        private void CreateRandomizedRFDevices( int iMaxCount )
+        private void CreateRandomizedRFDevices(int iMaxCount)
         {
             Cursor = Cursors.Wait;
             DoEvents();
 
-            for( int iCounter = 1 ; iCounter < iMaxCount + 1 ; iCounter++ )
+            for (int iCounter = 1; iCounter < iMaxCount + 1; iCounter++)
             {
                 RFDevice t = new RFDevice
                 {
-                    Id = r.Next( -1000 , 1000 ) ,
-                    Name = string.Format( "RFDevice #{0}" , iCounter ) ,
-                    Latitude = ( r.NextDouble() * 0.05 ) + 49.7454 ,
-                    Longitude = ( r.NextDouble() * 0.05 ) + 6.6149 ,
-                    Altitude = 0 ,
-                    RxTxType = r.NextEnum<RxTxType>() ,
-                    AntennaType = r.NextEnum<AntennaType>() ,
-                    CenterFrequency_Hz = ( uint ) r.Next( 85 , 105 ) * 100000 ,
-                    Bandwith_Hz = ( uint ) r.Next( 10 , 20 ) * 1000 ,
-                    Gain_dB = 0 ,
-                    SignalToNoiseRatio_dB = 0 ,
-                    Roll = 0 ,
-                    Pitch = 0 ,
-                    Yaw = 0 ,
-                    XPos = 0 ,
-                    YPos = 0 ,
-                    ZPos = 0 ,
-                    Remark = r.NextObject( Tool.ALLPANGRAMS )
+                    Id = r.Next(-1000, 1000),
+                    Name = string.Format("RFDevice #{0}", iCounter),
+                    Latitude = (r.NextDouble() * 0.05) + 49.7454,
+                    Longitude = (r.NextDouble() * 0.05) + 6.6149,
+                    Altitude = 0,
+                    RxTxType = r.NextEnum<RxTxType>(),
+                    AntennaType = r.NextEnum<AntennaType>(),
+                    CenterFrequency_Hz = (uint)r.Next(85, 105) * 100000,
+                    Bandwith_Hz = (uint)r.Next(10, 20) * 1000,
+                    Gain_dB = 0,
+                    SignalToNoiseRatio_dB = 0,
+                    Roll = 0,
+                    Pitch = 0,
+                    Yaw = 0,
+                    XPos = 0,
+                    YPos = 0,
+                    ZPos = 0,
+                    Remark = r.NextObject(Tool.ALLPANGRAMS)
                 };
 
-                AddRFDevice( t );
+                AddRFDevice(t);
             }
 
             Cursor = Cursors.Arrow;

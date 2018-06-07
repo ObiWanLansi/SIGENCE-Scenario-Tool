@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Net;
+
 using GMap.NET;
 using GMap.NET.MapProviders;
 
@@ -86,11 +86,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //---------------------------------------------------------------------
 
 
-        //public GMapControl MapControl
-        //{
-        //    get { return mcMapControl; }
-        //}
-
         /// <summary>
         /// Gets or sets the map provider.
         /// </summary>
@@ -157,7 +152,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
+                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
 
                 FirePropertyChanged();
             }
@@ -175,7 +170,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
+                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
 
                 FirePropertyChanged();
             }
@@ -207,19 +202,55 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //---------------------------------------------------------------------
 
+
+        /// <summary>
+        /// Gets the UDP host.
+        /// </summary>
+        /// <value>
+        /// The UDP host.
+        /// </value>
         public string UDPHost
         {
             get { return settings.UDPHost; }
+            set
+            {
+                settings.UDPHost = value;
+                FirePropertyChanged();
+            }
         }
 
+
+        /// <summary>
+        /// Gets the UDP port.
+        /// </summary>
+        /// <value>
+        /// The UDP port.
+        /// </value>
         public int UDPPort
         {
             get { return settings.UDPPort; }
+            set
+            {
+                settings.UDPPort = value;
+                FirePropertyChanged();
+            }
         }
 
+
+        /// <summary>
+        /// Gets the UDP delay.
+        /// </summary>
+        /// <value>
+        /// The UDP delay.
+        /// </value>
         public int UDPDelay
         {
             get { return settings.UDPDelay; }
+            set
+            {
+                settings.UDPDelay = value;
+                FirePropertyChanged();
+            }
         }
 
     } // end public partial class MainWindow

@@ -276,7 +276,8 @@
             <StatusBarItem Background="LightYellow">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="UDPHost:" />
-                    <Label Content="{Binding UDPHost}" />
+                    <!--<Label Content="{Binding UDPHost}" />-->
+                    <TextBox Text="{Binding UDPHost,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" VerticalContentAlignment="Center" />
                 </StackPanel>
             </StatusBarItem>
 
@@ -285,7 +286,8 @@
             <StatusBarItem Background="LightYellow">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="UDPPort:" />
-                    <Label Content="{Binding UDPPort}" />
+                    <!--<Label Content="{Binding UDPPort}" />-->
+                    <TextBox Text="{Binding UDPPort,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="50" TextAlignment="Right" VerticalContentAlignment="Center" />
                 </StackPanel>
             </StatusBarItem>
 
@@ -294,7 +296,8 @@
             <StatusBarItem Background="LightYellow">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="UDPDelay:" />
-                    <Label Content="{Binding UDPDelay}" />
+                    <!--<Label Content="{Binding UDPDelay}" />-->
+                    <TextBox Text="{Binding UDPDelay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Right" VerticalContentAlignment="Center" />
                 </StackPanel>
             </StatusBarItem>
 

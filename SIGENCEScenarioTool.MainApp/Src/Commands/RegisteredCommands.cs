@@ -9,6 +9,12 @@ namespace SIGENCEScenarioTool.Commands
     /// </summary>
     static public class RegisteredCommands
     {
+        /// <summary>
+        /// Gets the open cheat sheet.
+        /// </summary>
+        /// <value>
+        /// The open cheat sheet.
+        /// </value>
         static public RoutedUICommand OpenCheatSheet { get; private set; }
 
         //---------------------------------------------------------------------
