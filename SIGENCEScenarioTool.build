@@ -2,8 +2,6 @@
 <project name="SIGENCEScenarioTool" basedir="." default="compile">
 
     <property name="DeployTarget" value=".\SIGENCEScenarioTool.Executable" />
-    <!--<property name="DeployTarget" value="D:\BigData\GitHub\SIGENCE-Scenario-Tool\SIGENCEScenarioTool.Executable" />-->
-
 
 	<target name="clean">
         
