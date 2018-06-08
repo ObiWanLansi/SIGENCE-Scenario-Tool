@@ -46,6 +46,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The settings
         /// </summary>
         private readonly Properties.Settings settings = Properties.Settings.Default;
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        private DateTime dtStartTime = DateTime.Now;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

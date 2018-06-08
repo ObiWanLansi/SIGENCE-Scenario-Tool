@@ -333,21 +333,21 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
-        /// <summary>
-        /// Gets or sets the start time.
-        /// </summary>
-        /// <value>
-        /// The start time.
-        /// </value>
-        public uint StartTime
-        {
-            get { return RFDevice.StartTime; }
-            set
-            {
-                RFDevice.StartTime = value;
-                FirePropertyChanged();
-            }
-        }
+        ///// <summary>
+        ///// Gets or sets the start time.
+        ///// </summary>
+        ///// <value>
+        ///// The start time.
+        ///// </value>
+        //public uint StartTime
+        //{
+        //    get { return RFDevice.StartTime; }
+        //    set
+        //    {
+        //        RFDevice.StartTime = value;
+        //        FirePropertyChanged();
+        //    }
+        //}
 
 
         /// <summary>

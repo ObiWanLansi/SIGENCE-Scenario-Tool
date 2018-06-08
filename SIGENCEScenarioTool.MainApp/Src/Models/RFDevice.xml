@@ -26,7 +26,7 @@
     <Property Name="YPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
     <Property Name="ZPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
 
-    <Property Name="StartTime" Type="uint" Init="0" Comment="This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s." />
+    <Property Name="StartTime" Type="double" Init="0" Comment="This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s." />
     <Property Name="Remark" Type="string" Init="&quot;&quot;" Comment="A Comment Or Remark For The RF Device." />
 
 </RFDevice>
