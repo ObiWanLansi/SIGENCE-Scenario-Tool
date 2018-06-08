@@ -277,7 +277,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="UDPHost:" />
                     <!--<Label Content="{Binding UDPHost}" />-->
-                    <TextBox Text="{Binding UDPHost,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" VerticalContentAlignment="Center" />
+                    <TextBox Text="{Binding UDPHost,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" TextAlignment="Center" VerticalContentAlignment="Center" />
                 </StackPanel>
             </StatusBarItem>
 

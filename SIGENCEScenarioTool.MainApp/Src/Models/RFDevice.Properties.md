@@ -1,6 +1,8 @@
 ﻿
 # RFDevice
 
+*Represent A Device Based On A Radio Frequency.*
+
 Name|DataType|DefaultValue|Comment
 ----|--------|------------|-------
 PrimaryKey|Guid|Guid.NewGuid()|The Unique PrimarKey For This RF Device.

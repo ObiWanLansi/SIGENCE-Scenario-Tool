@@ -1,9 +1,6 @@
 ﻿
 /**
  * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
- * SourceFile     : C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\SIGENCEScenarioTool.MainApp\Src\Models\RFDevice.xml
- * User           : I142985D
- * Host           : 20NB449896
  */
 
 using System;
@@ -19,7 +16,7 @@ using SIGENCEScenarioTool.Interfaces;
 namespace SIGENCEScenarioTool.Models
 {
     ///<summary>
-    /// Generated Model Class from RFDevice.xml.
+    /// Represent A Device Based On A Radio Frequency.
     ///</summary>
     sealed public class RFDevice : IEquatable<RFDevice>, INotifyPropertyChanged, ICloneable, IXmlExport
     {
@@ -554,7 +551,7 @@ namespace SIGENCEScenarioTool.Models
         private int _XPos = 0;
 
         ///<summary>
-        /// XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
+        /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
         ///</summary>
         public int XPos 
         {
@@ -588,7 +585,7 @@ namespace SIGENCEScenarioTool.Models
         private int _YPos = 0;
 
         ///<summary>
-        /// XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
+        /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
         ///</summary>
         public int YPos 
         {
@@ -622,7 +619,7 @@ namespace SIGENCEScenarioTool.Models
         private int _ZPos = 0;
 
         ///<summary>
-        /// XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
+        /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
         ///</summary>
         public int ZPos 
         {

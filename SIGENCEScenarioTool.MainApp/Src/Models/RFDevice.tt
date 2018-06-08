@@ -15,9 +15,6 @@
 
 /**
  * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
- * SourceFile     : <#=strFileName#>
- * User           : <#=Environment.UserName #>
- * Host           : <#=Environment.MachineName #>
  */
 
 using System;
@@ -33,12 +30,17 @@ using SIGENCEScenarioTool.Interfaces;
     XDocument xd = XDocument.Load(strFileName );
 
     XElement eRoot = xd.Root;
+
+    XAttribute xClassComment = eRoot.Attribute("Comment");
+    string strClassCommment = xClassComment != null ? xClassComment.Value : "";
+
+    strClassCommment = !string.IsNullOrEmpty(strClassCommment) ? strClassCommment : string.Format("Generated Model Class from {0}.",new FileInfo(strFileName).Name);
 #>
 
 namespace SIGENCEScenarioTool.Models
 {
     ///<summary>
-    /// Generated Model Class from <#=new FileInfo(strFileName).Name#>.
+    /// <#=strClassCommment#>
     ///</summary>
     sealed public class <#=eRoot.Name#> : IEquatable<<#=eRoot.Name#>>, INotifyPropertyChanged, ICloneable, IXmlExport
     {

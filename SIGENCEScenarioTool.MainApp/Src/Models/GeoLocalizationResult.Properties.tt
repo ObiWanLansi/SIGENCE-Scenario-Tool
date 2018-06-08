@@ -17,8 +17,15 @@
     XDocument xd = XDocument.Load(strFileName );
 
     XElement eRoot = xd.Root;
+
+    XAttribute xClassComment = eRoot.Attribute("Comment");
+    string strClassCommment = xClassComment != null ? xClassComment.Value : "";
+
+    strClassCommment = !string.IsNullOrEmpty(strClassCommment) ? strClassCommment : string.Format("Generated Model Class from {0}.",new FileInfo(strFileName).Name);
 #>
 # <#=eRoot.Name#>
+
+*<#=strClassCommment#>*
 
 Name|DataType|DefaultValue|Comment
 ----|--------|------------|-------

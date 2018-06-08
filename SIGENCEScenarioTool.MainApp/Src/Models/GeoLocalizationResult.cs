@@ -1,9 +1,6 @@
 ﻿
 /**
  * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
- * SourceFile     : D:\BigData\GitHub\SIGENCE-Scenario-Tool\SIGENCEScenarioTool.MainApp\Src\Models\GeoLocalizationResult.xml
- * User           : Jörg Lanser Lokal
- * Host           : MARUSHA
  */
 
 using System;
@@ -19,7 +16,7 @@ using SIGENCEScenarioTool.Interfaces;
 namespace SIGENCEScenarioTool.Models
 {
     ///<summary>
-    /// Generated Model Class from GeoLocalizationResult.xml.
+    /// Represent The Geo Localization Result Of A RFDevice.
     ///</summary>
     sealed public class GeoLocalizationResult : IEquatable<GeoLocalizationResult>, INotifyPropertyChanged, ICloneable, IXmlExport
     {

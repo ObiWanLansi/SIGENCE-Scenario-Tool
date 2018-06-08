@@ -1,6 +1,8 @@
 ﻿
 # GeoLocalizationResult
 
+*Represent The Geo Localization Result Of A RFDevice.*
+
 Name|DataType|DefaultValue|Comment
 ----|--------|------------|-------
 PrimaryKey|Guid|Guid.NewGuid()|The Unique PrimarKey For This Result.
