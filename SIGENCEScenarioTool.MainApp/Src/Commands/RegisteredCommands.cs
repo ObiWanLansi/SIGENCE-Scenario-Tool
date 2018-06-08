@@ -88,7 +88,7 @@ namespace SIGENCEScenarioTool.Commands
         static RegisteredCommands()
         {
             OpenCheatSheet = new RoutedUICommand( "OpenCheatSheet" , "OpenCheatSheet" , typeof( RegisteredCommands ) );
-            OpenCheatSheet.InputGestures.Add( new KeyGesture( Key.F1 , ModifierKeys.Control ) );
+            OpenCheatSheet.InputGestures.Add( new KeyGesture( Key.F1 ) );
 
             CreateRFDevice = new RoutedUICommand( "CreateRFDevice" , "CreateRFDevice" , typeof( RegisteredCommands ) );
             CreateRFDevice.InputGestures.Add( new KeyGesture( Key.F5 ) );

@@ -61,7 +61,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />
+                <!--<MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />-->
                 <MenuItem Header="_Cheat Sheet" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
                 <MenuItem Header="_About" IsEnabled="False" />
             </MenuItem>

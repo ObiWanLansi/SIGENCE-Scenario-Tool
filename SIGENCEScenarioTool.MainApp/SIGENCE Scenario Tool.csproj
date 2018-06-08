@@ -185,12 +185,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="..\Documentation\Generated\Cheat Sheet.xps">
-      <Link>Cheat Sheet.xps</Link>
+    <None Include="..\Documentation\Generated\CheatSheet.xps">
+      <Link>CheatSheet.xps</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="..\Documentation\Generated\Cheat Sheet.pdf">
-      <Link>Cheat Sheet.pdf</Link>
+    <None Include="..\Documentation\Generated\CheatSheet.pdf">
+      <Link>CheatSheet.pdf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ClassDiagram.cd" />
