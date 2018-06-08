@@ -5,10 +5,8 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 ## Documentation
 
 - [Cheat Sheet](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/Documentation/Generated/CheatSheet.pdf)
-
 - [RF Device Model](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SIGENCEScenarioTool.MainApp/Src/Models/RFDevice.Properties.md)
 - [RF Device Schema](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SchemaFiles/RFDevice.xsd)
-
 - [GeoLocalizationResult Model](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SIGENCEScenarioTool.MainApp/Src/Models/GeoLocalizationResult.Properties.md)
 - [GeoLocalizationResult Schema](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SchemaFiles/GeoLocalizationResult.xsd)
 
