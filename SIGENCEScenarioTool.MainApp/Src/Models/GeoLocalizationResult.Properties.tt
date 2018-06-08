@@ -10,7 +10,7 @@
 <#@ output extension=".md" #>
 <#
     EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
-    string strFileName = this.Host.ResolvePath("RFDevice.xml");
+    string strFileName = this.Host.ResolvePath("GeoLocalizationResult.xml");
 #>
 
 <#

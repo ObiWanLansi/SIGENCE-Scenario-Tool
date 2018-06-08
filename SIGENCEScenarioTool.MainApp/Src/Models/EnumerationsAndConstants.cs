@@ -28,11 +28,19 @@ namespace SIGENCEScenarioTool.Models
     } // end public enum AntennaType
 
 
-
     /// <summary>
     /// 
     /// </summary>
-    static public class EnumerationsAndConstants
+    public enum DeviceType : byte
     {
-    } // end static public class EnumerationsAndConstants
+        Unknown,
+        
+        Receiver,
+        
+        Transmitter,
+        
+        Reference
+
+    } // end public enum DeviceType
+
 }

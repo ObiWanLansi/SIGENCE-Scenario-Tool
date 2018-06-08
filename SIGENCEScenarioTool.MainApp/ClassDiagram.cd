@@ -1,31 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SIGENCEScenarioTool.Models.RFDevice" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="0.5" Width="2.75" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Events" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AMZHCDAgIWiTgCGcgCG4oAQKoEAhEAClpLFBuQkkoVA=</HashCode>
-      <FileName>Src\Models\RFDevice.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="SIGENCEScenarioTool.ViewModels.RFDeviceViewModel" BaseTypeListCollapsed="true">
-    <Position X="4.25" Y="0.5" Width="1.75" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Events" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AACCEAAAAEwAECMAACAIwQQAoAAhAAABABBAAAAAAYA=</HashCode>
-      <FileName>Src\ViewModels\RFDeviceViewModel.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
   <Class Name="SIGENCEScenarioTool.Windows.MainWindow.MainWindow">
-    <Position X="7" Y="0.5" Width="3.5" />
+    <Position X="6.25" Y="1" Width="3.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Events" Collapsed="true" />
@@ -38,22 +14,64 @@
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>gAcwEAIUpkwABAEIEQIOhQgIgACAUEAEBBChYABImAU=</HashCode>
+      <HashCode>gAcyEAIUpkwABAEIEQIOhQgIgACAUEAEBBChYABImAU=</HashCode>
       <FileName>Src\Windows\MainWindow\MainWindow.EventHandling.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="SIGENCEScenarioTool.Models.GeoLocalizationResult">
+    <Position X="13" Y="1" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIACACAgAUgSgAAIgAAIgAAAgECAEAAEBKEAgAmEgBA=</HashCode>
+      <FileName>Src\Models\GeoLocalizationResult.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SIGENCEScenarioTool.Models.RFDevice">
+    <Position X="0.5" Y="1" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AMZHCDAgIWiTgCGcgCG4oAQKoEAhEAClpLFBuQkkoVA=</HashCode>
+      <FileName>Src\Models\RFDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SIGENCEScenarioTool.ViewModels.RFDeviceViewModel">
+    <Position X="3.5" Y="1" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACCEAAAAEwAECMAACAIwQQAoAAhAAABABBAAAAAAYA=</HashCode>
+      <FileName>Src\ViewModels\RFDeviceViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Enum Name="SIGENCEScenarioTool.Models.RxTxType">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SIGENCEScenarioTool.Models.AntennaType">
-    <Position X="0.5" Y="9.5" Width="1.5" />
+    <Position X="0.5" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABA=</HashCode>
+      <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SIGENCEScenarioTool.Models.DeviceType">
+    <Position X="2.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAABA=</HashCode>
       <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
     </TypeIdentifier>
   </Enum>

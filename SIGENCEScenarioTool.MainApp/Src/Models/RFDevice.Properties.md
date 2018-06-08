@@ -1,4 +1,6 @@
 ﻿
+# RFDevice
+
 Name|DataType|DefaultValue|Comment
 ----|--------|------------|-------
 PrimaryKey|Guid|Guid.NewGuid()|The Unique PrimarKey For This RF Device.
@@ -16,8 +18,8 @@ CenterFrequency_Hz|uint|0|For transmitters (i.e. ID’s >= 0) this parameter def
 Bandwith_Hz|uint|0|
 Gain_dB|uint|0|For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
 SignalToNoiseRatio_dB|uint|0|For receivers (i.e. ID’s < 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused.
-XPos|int|0|XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
-YPos|int|0|XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
-ZPos|int|0|XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position.
+XPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
+YPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
+ZPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
 StartTime|double|0|This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
 Remark|string|""|A Comment Or Remark For The RF Device.

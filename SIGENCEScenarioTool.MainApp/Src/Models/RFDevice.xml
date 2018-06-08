@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<RFDevice Comment="Represent a device based on a radio frequency">
+<RFDevice Comment="Represent A Device Based On A Radio Frequency.">
 
     <Property Name="PrimaryKey" Type="Guid" Init="Guid.NewGuid()" Comment="The Unique PrimarKey For This RF Device." />
     <Property Name="Id" Type="int" Init="0" Comment="Every scenario element (i.e. transmitter, receiver) must be assigned an unique ID. Negative ID’s are reserved for receivers while all other ID’s are transmitters by default. Some applications (i.e. TDoA Emitter Localization) require a reference transmitter. For these applications ID=0 is the reference transmitter. Receivers must be assigned first in the table, followed be transmitters (with ID=0 being the first). After the Static Scenario, update of ID’s requires no specific order. Note that definition of new transmitters/receivers after the Static Scenario is prohibited." />
@@ -22,9 +22,9 @@
     <Property Name="Gain_dB" Type="uint" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
     <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0" Comment="For receivers (i.e. ID’s &lt; 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused." />
 
-    <Property Name="XPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
-    <Property Name="YPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
-    <Property Name="ZPos" Type="int" Init="0" Comment="XPos,YPos,ZPos define the transmitter / receiver positions in a local coordinate system with the transmitter (ID=0) being the center position." />
+    <Property Name="XPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />
+    <Property Name="YPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />
+    <Property Name="ZPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />
 
     <Property Name="StartTime" Type="double" Init="0" Comment="This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s." />
     <Property Name="Remark" Type="string" Init="&quot;&quot;" Comment="A Comment Or Remark For The RF Device." />

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GeoLocalizationResult Comment="Represent The Geo Localization Result Of A RFDevice.">
+
+    <Property Name="PrimaryKey" Type="Guid" Init="Guid.NewGuid()" Comment="The Unique PrimarKey For This Result." />
+    <Property Name="Id" Type="int" Init="0" Comment="The Id Of The Localized RFDevice." />
+
+    <Property Name="Latitude" Type="double" Init="double.NaN" Comment="The Latitude Of The Localized RF Device (WGS84)." />
+    <Property Name="Longitude" Type="double" Init="double.NaN" Comment="The Longitude Of The Localized RF Device (WGS84)." />
+    <Property Name="Altitude" Type="uint" Init="0" Comment="The Elevation Of The Localized RF Device Above The Sea Level (Meter)." />
+
+    <Property Name="LocalizationTime" Type="double" Init="0" Comment="The Localization Time." />
+
+</GeoLocalizationResult>
