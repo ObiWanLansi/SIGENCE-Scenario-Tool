@@ -55,8 +55,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Src\ExtendedMockup.cs" />
     <Compile Include="Src\MockUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\SimpleMockup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

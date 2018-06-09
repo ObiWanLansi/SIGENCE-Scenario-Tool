@@ -36,7 +36,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             if (ofdLoadSIGENCEScenario.ShowDialog() == true)
             {
                 Cursor = Cursors.Wait;
-                DoEvents();
 
                 Reset();
                 CurrentFile = ofdLoadSIGENCEScenario.FileName;
@@ -102,7 +101,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             Cursor = Cursors.Wait;
-            DoEvents();
 
             try
             {

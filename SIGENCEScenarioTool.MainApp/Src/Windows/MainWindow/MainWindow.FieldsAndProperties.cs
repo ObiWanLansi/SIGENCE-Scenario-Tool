@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-
+using System.Net;
+using System.Net.Sockets;
 using GMap.NET;
 using GMap.NET.MapProviders;
 
@@ -17,11 +18,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     /// </summary>
     public partial class MainWindow
     {
-        /// <summary>
-        /// The missing
-        /// </summary>
-        private readonly object Missing = Type.Missing;
-
         /// <summary>
         /// The SFD save sigence scenario
         /// </summary>
@@ -42,17 +38,25 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();
 
+        //---------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The missing
+        /// </summary>
+        private readonly object Missing = Type.Missing;
+
         /// <summary>
         /// The settings
         /// </summary>
         private readonly Properties.Settings settings = Properties.Settings.Default;
-        
+
         /// <summary>
         /// 
         /// </summary>
         private DateTime dtStartTime = DateTime.Now;
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------
 
 
         /// <summary>
@@ -233,10 +237,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public int UDPPort
         {
-            get { return settings.UDPPort; }
+            get { return settings.UDPPortSending; }
             set
             {
-                settings.UDPPort = value;
+                settings.UDPPortSending = value;
                 FirePropertyChanged();
             }
         }
@@ -254,6 +258,28 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 settings.UDPDelay = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// The string received data
+        /// </summary>
+        private String strReceivedData = null;
+
+        /// <summary>
+        /// Gets or sets the received data.
+        /// </summary>
+        /// <value>
+        /// The received data.
+        /// </value>
+        public String ReceivedData
+        {
+            get { return strReceivedData; }
+            set
+            {
+                strReceivedData = value;
                 FirePropertyChanged();
             }
         }

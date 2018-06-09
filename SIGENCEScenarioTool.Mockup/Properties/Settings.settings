@@ -2,11 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIGENCEScenarioTool.Mockup.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="UDPServerPort" Type="System.Int32" Scope="User">
+    <Setting Name="UDPPortReceiving" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4242</Value>
     </Setting>
     <Setting Name="UDPServerHost" Type="System.String" Scope="User">
       <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="UDPPortSending" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7474</Value>
     </Setting>
   </Settings>
 </SettingsFile>

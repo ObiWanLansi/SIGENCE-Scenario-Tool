@@ -12,7 +12,7 @@ namespace SIGENCEScenarioTool.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,18 +26,18 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4242")]
-        public int UDPPort {
+        public int UDPPortSending {
             get {
-                return ((int)(this["UDPPort"]));
+                return ((int)(this["UDPPortSending"]));
             }
             set {
-                this["UDPPort"] = value;
+                this["UDPPortSending"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int UDPDelay {
             get {
                 return ((int)(this["UDPDelay"]));
@@ -68,6 +68,18 @@ namespace SIGENCEScenarioTool.Properties {
             }
             set {
                 this["UDPHost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7474")]
+        public int UDPPortReceiving {
+            get {
+                return ((int)(this["UDPPortReceiving"]));
+            }
+            set {
+                this["UDPPortReceiving"] = value;
             }
         }
     }

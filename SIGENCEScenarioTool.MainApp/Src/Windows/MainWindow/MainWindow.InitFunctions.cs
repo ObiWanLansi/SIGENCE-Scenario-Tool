@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Threading;
 using System.Windows.Input;
 
 using GMap.NET;
@@ -233,6 +234,51 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             cbMapProvider.Items.Add(GMapProviders.BingHybridMap);
             cbMapProvider.Items.Add(GMapProviders.BingMap);
             cbMapProvider.Items.Add(GMapProviders.BingSatelliteMap);
+        }
+
+
+        /// <summary>
+        /// Initializes the file open save dialogs.
+        /// </summary>
+        private void InitFileOpenSaveDialogs()
+        {
+            sfdSaveSIGENCEScenario.Title = "Save SIGENCE Scenario Tool File";
+            sfdSaveSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario Tool File (*.stf)|*.stf";
+            sfdSaveSIGENCEScenario.AddExtension = true;
+            sfdSaveSIGENCEScenario.CheckPathExists = true;
+
+            //-----------------------------------------------------------------
+
+            ofdLoadSIGENCEScenario.Title = "Load SIGENCE Scenario Tool File";
+            ofdLoadSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario ToolFile (*.stf)|*.stf";
+            ofdLoadSIGENCEScenario.AddExtension = true;
+            ofdLoadSIGENCEScenario.CheckPathExists = true;
+            ofdLoadSIGENCEScenario.CheckFileExists = true;
+            ofdLoadSIGENCEScenario.Multiselect = false;
+
+            //-----------------------------------------------------------------
+
+            sfdExportRFDevices.Title = "Export SIGENCE Scenario Tool File";
+            sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
+            sfdExportRFDevices.Filter += "|Office Open XML File Format (*.xlsx)|*.xlsx";
+            sfdExportRFDevices.AddExtension = true;
+            sfdExportRFDevices.CheckPathExists = true;
+
+            //-----------------------------------------------------------------
+
+            sfdSaveScreenshot.Title = "Save Screenshot";
+            sfdSaveScreenshot.Filter = "Portable Network Graphics (*.png)|*.png";
+            sfdSaveScreenshot.AddExtension = true;
+            sfdSaveScreenshot.CheckPathExists = true;
+        }
+
+
+        /// <summary>
+        /// Initializes the UDP server.
+        /// </summary>
+        private void InitUDPServer()
+        {
+            new Thread(UDPReceiveData) { IsBackground = true }.Start();
         }
 
     } // end public partial class MainWindow 
