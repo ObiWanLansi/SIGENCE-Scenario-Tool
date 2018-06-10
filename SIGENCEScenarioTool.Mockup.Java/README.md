@@ -6,3 +6,12 @@ This is a small example to show how to create a Java access class for a GeoLocai
 
 - Type the required code
 And test it soon. For testig i used the hardcoded settings 127.0.0.1 as host and 7474 as port. The SIGNENCE Scenarion Tool must nur running, but when, you should see some output in the tabitem "Data Receiver".
+
+
+Link to the XSD:
+
+https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SchemaFiles/GeoLocalizationResult.xsd
+
+Link to the Model:
+
+https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SIGENCEScenarioTool.MainApp/Src/Models/GeoLocalizationResult.Properties.md
