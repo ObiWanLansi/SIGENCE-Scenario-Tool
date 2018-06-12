@@ -645,17 +645,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For StartTime.
         ///</summary>
-        static public readonly double DEFAULT_STARTTIME = 0;
+        static public readonly ulong DEFAULT_STARTTIME = 0;
         
         ///<summary>
         /// The Internal Field For StartTime.
         ///</summary>
-        private double _StartTime = 0;
+        private ulong _StartTime = 0;
 
         ///<summary>
         /// This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
         ///</summary>
-        public double StartTime 
+        public ulong StartTime 
         {
             get { return _StartTime; }
             set
@@ -767,7 +767,7 @@ namespace SIGENCEScenarioTool.Models
                 XPos = eChild.GetProperty<int>("XPos",0),
                 YPos = eChild.GetProperty<int>("YPos",0),
                 ZPos = eChild.GetProperty<int>("ZPos",0),
-                StartTime = eChild.GetProperty<double>("StartTime",0),
+                StartTime = eChild.GetProperty<ulong>("StartTime",0),
                 Remark = eChild.GetProperty<string>("Remark","")            
             };
         }

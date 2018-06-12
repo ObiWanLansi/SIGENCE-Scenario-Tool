@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Net;
-using System.Net.Sockets;
+
 using GMap.NET;
 using GMap.NET.MapProviders;
 
@@ -66,6 +65,21 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The RFDevice collection.
         /// </value>
         public ObservableCollection<RFDeviceViewModel> RFDevicesCollection { get; set; }
+
+
+        private String strScenarioDescription = null;
+
+        public String ScenarioDescription
+        {
+            get { return strScenarioDescription; }
+            set
+            {
+                strScenarioDescription = value;
+                FirePropertyChanged();
+            }
+        }
+
+        //---------------------------------------------------------------------
 
 
         /// <summary>
@@ -161,7 +175,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
+                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -179,7 +193,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
+                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
 
                 FirePropertyChanged();
             }

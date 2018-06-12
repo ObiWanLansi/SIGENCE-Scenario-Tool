@@ -385,9 +385,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     foreach (RFDevice device in devicelist)
                     {
-                        // Settings the StartTime relativ to the starttime of the tool in milliseconds ...
-                        device.StartTime = (DateTime.Now - dtStartTime).TotalMilliseconds;
-
                         XElement eDevice = device.ToXml();
 
                         byte[] baMessage = Encoding.Default.GetBytes(eDevice.ToDefaultString());
