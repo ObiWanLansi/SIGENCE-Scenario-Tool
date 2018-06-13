@@ -1,0 +1,11 @@
+PrimaryKey;Id;Name;Latitude;Longitude;Altitude;Roll;Pitch;Yaw;RxTxType;AntennaType;CenterFrequency_Hz;Bandwith_Hz;Gain_dB;SignalToNoiseRatio_dB;XPos;YPos;ZPos;StartTime;Remark
+f9e01cd2-6a92-4203-aa47-20abf03dbe47;20;RFDevice #1;49,7610489833797;6,64800422023437;0;0;0;0;Unknown;Unknown;9200000;16000;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+60f4e2fd-d65a-4fdc-8efa-16fd99c09b3e;-983;RFDevice #2;49,7460455037979;6,62848043449632;0;0;0;0;TwinRx;Unknown;8600000;13000;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+d73cf91d-6f4b-45ca-964b-86f027b22128;-788;RFDevice #3;49,7862368180696;6,65883562359919;0;0;0;0;TwinRx;OmniDirectional;10100000;17000;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+2f3570da-bbc6-4e5f-a96f-22f1318ec6af;839;RFDevice #4;49,7605482463419;6,66312482345543;0;0;0;0;IdealSDR;Unknown;9700000;18000;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+c428ac37-78c0-4a71-91fe-a11744118023;-775;RFDevice #5;49,7878557655549;6,66006474667246;0;0;0;0;QPSK;Unknown;8700000;15000;0;0;0;0;0;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+243a4d77-53c9-4edb-a0ee-a0ad08fb938c;-339;RFDevice #6;49,7887521138706;6,66059475855478;0;0;0;0;QPSK;OmniDirectional;9500000;15000;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+20f0a0c1-eaa2-4ef7-aec0-bd9aba51ce2f;-632;RFDevice #7;49,7802010178817;6,64652639426609;0;0;0;0;TwinRx;OmniDirectional;8700000;13000;0;0;0;0;0;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+6d9b35bc-6379-4cd3-b6f1-256707de38e6;109;RFDevice #8;49,7778431241175;6,66253330172172;0;0;0;0;SIN;OmniDirectional;9700000;11000;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.
+74671a61-2a64-47aa-aa7a-689a4d8c5083;-637;RFDevice #9;49,7456102350119;6,62810462828186;0;0;0;0;Unknown;OmniDirectional;10100000;13000;0;0;0;0;0;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+53af80f0-85d6-4965-84eb-69dbe3165b0e;-369;RFDevice #10;49,7792420024066;6,61962158952836;0;0;0;0;HackRF;Unknown;9100000;18000;0;0;0;0;0;0;The quick brown fox jumps over a lazy dog.

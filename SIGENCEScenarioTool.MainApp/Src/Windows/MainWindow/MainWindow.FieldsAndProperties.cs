@@ -67,7 +67,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         public ObservableCollection<RFDeviceViewModel> RFDevicesCollection { get; set; }
 
 
-        private String strScenarioDescription = null;
+        private String strScenarioDescription = "";
 
         public String ScenarioDescription
         {

@@ -792,6 +792,12 @@ namespace SIGENCEScenarioTool.Extensions
                 return ( T ) ( ( object ) ( ( byte ) ( GetUInt32FromNode( eParent , strElementName ) ?? xDefault ) ) );
             }
 
+            if( t == typeof( ulong ) )
+            {
+                ulong xDefault = ( ulong ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) ( ( ulong ) ( GetUInt32FromNode( eParent , strElementName ) ?? xDefault ) ) );
+            }
+
             //-----------------------------------------------------------------
 
             // Standard Classes && Structs ...
