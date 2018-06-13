@@ -267,9 +267,11 @@
                             <Separator />
                             <Button x:Name="btnViewScenarioDescription" Content="View" IsEnabled="False"  Click="Button_ViewScenarioDescription_Click"/>
                             <Separator />
+                            <Button  Content="Refresh" Click="Button_RefreshScenarioDescription_Click" />
+                            <Separator />
                         </ToolBar>
                         <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
-                        <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />
+                        <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />
                     </Grid>
                 </TabItem>
                 <TabItem Header="Data Receiver">

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -175,6 +176,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             e.Handled = true;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_RefreshScenarioDescription_Click( object sender , RoutedEventArgs e )
+        {
+            UpdateScenarioDescription();
+
+            e.Handled = true;
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -204,15 +218,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if( e.PropertyName == "ScenarioDescription" )
             {
-                if( string.IsNullOrEmpty( ScenarioDescription ) == false )
-                {
-                    wbScenarioDescription.NavigateToString( ScenarioDescription );
-                }
-                else
-                {
-                    wbScenarioDescription.NavigateToString( "<html/>" );
-                }
-                //wbScenarioDescription.Refresh();
+                UpdateScenarioDescription();
             }
         }
 

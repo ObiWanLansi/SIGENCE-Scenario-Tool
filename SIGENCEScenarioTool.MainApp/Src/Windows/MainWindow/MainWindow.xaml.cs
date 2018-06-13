@@ -164,5 +164,21 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             btnViewScenarioDescription.IsEnabled = bEditMode;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void UpdateScenarioDescription()
+        {
+            if( string.IsNullOrEmpty( ScenarioDescription ) == false )
+            {
+                wbScenarioDescription.NavigateToString( ScenarioDescription );
+            }
+            else
+            {
+                wbScenarioDescription.NavigateToString( "<html/>" );
+            }
+        }
+
     } // end public partial class MainWindow
 }
