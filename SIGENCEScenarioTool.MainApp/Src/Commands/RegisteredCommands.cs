@@ -35,6 +35,17 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         static public RoutedUICommand DeleteRFDevice { get; private set; }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static public RoutedUICommand CopyRFDevice { get; private set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static public RoutedUICommand PasteRFDevice { get; private set; }
+
         /// <summary>
         /// Gets the export RFDevice.
         /// </summary>
@@ -97,6 +108,12 @@ namespace SIGENCEScenarioTool.Commands
             DeleteRFDevice = new RoutedUICommand( "DeleteRFDevice" , "DeleteRFDevice" , typeof( RegisteredCommands ) );
             DeleteRFDevice.InputGestures.Add( new KeyGesture( Key.F6 ) );
             DeleteRFDevice.InputGestures.Add( new KeyGesture( Key.D , ModifierKeys.Alt ) );
+
+            CopyRFDevice = new RoutedUICommand( "CopyRFDevice" , "CopyRFDevice" , typeof( RegisteredCommands ) );
+            //CopyRFDevice.InputGestures.Add( new KeyGesture( Key.C , ModifierKeys.Control ) );
+
+            PasteRFDevice = new RoutedUICommand( "PasteRFDevice" , "PasteRFDevice" , typeof( RegisteredCommands ) );
+            //PasteRFDevice.InputGestures.Add( new KeyGesture( Key.V , ModifierKeys.Control ) );
 
             ExportRFDevice = new RoutedUICommand( "ExportRFDevice" , "ExportRFDevice" , typeof( RegisteredCommands ) );
             ExportRFDevice.InputGestures.Add( new KeyGesture( Key.F7 ) );

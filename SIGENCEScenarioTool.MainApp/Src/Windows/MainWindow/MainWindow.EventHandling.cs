@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 using GMap.NET;
-
+using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -103,6 +103,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
+
+            //if( e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control )
+            //{
+            //    CopyCurrentRFDevice();
+
+            //    e.Handled = true;
+            //    return;
+            //}
+
+
+            //MB.HereIAm();
             //if( e.Key == Key.Delete )
             //{
             //    DeleteRFDevices();
@@ -135,18 +146,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void MenuItem_CreateSomeRandomizedRFDevices_Click( object sender , RoutedEventArgs e )
         {
             CreateRandomizedRFDevices( int.Parse( ( sender as MenuItem ).Tag as string ) );
+
             e.Handled = true;
         }
 
 
         /// <summary>
-        /// Handles the ClearReceivedData event of the Button control.
+        /// 
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_ClearReceivedData_Click( object sender , RoutedEventArgs e )
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_ClearDebugOutput_Click( object sender , RoutedEventArgs e )
         {
-            ReceivedData = "";
+            DebugOutput = "";
+
             e.Handled = true;
         }
 

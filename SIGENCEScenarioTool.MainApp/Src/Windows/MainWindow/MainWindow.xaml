@@ -77,6 +77,12 @@
             <Separator />
             <Button Content="Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
             <Separator />
+            <Button Content="Copy RFDevice" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
+            <!--<Button Content="Copy RFDevice" Command="{x:Static ApplicationCommands.Copy}" />-->
+            <Separator />
+            <Button Content="Paste RFDevice" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
+            <!--<Button Content="Paste RFDevice" Command="{x:Static ApplicationCommands.Paste}" />-->
+            <Separator />
             <Button Content="Zoom To RFDevice" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
             <Separator />
             <Button Content="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
@@ -263,28 +269,28 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0">
-                            <Button x:Name="btnEditScenarioDescription" Content="Edit" IsEnabled="true"  Click="Button_EditScenarioDescription_Click"/>
+                            <Button x:Name="btnEditScenarioDescription" Content="Edit" IsEnabled="true" Click="Button_EditScenarioDescription_Click" />
                             <Separator />
-                            <Button x:Name="btnViewScenarioDescription" Content="View" IsEnabled="False"  Click="Button_ViewScenarioDescription_Click"/>
+                            <Button x:Name="btnViewScenarioDescription" Content="View" IsEnabled="False" Click="Button_ViewScenarioDescription_Click" />
                             <Separator />
-                            <Button  Content="Refresh" Click="Button_RefreshScenarioDescription_Click" />
+                            <Button Content="Refresh" Click="Button_RefreshScenarioDescription_Click" />
                             <Separator />
                         </ToolBar>
                         <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
                         <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />
                     </Grid>
                 </TabItem>
-                <TabItem Header="Data Receiver">
+                <TabItem Header="Debug Output">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0">
-                            <Button Content="Clear" Click="Button_ClearReceivedData_Click" />
+                            <Button Content="Clear" Click="Button_ClearDebugOutput_Click" />
                             <Separator />
                         </ToolBar>
-                        <TextBox Grid.Row="1" Text="{Binding ReceivedData}" AcceptsReturn="True" IsReadOnly="True" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
+                        <TextBox Grid.Row="1" Text="{Binding DebugOutput}" AcceptsReturn="True" IsReadOnly="True" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
                     </Grid>
                 </TabItem>
             </TabControl>

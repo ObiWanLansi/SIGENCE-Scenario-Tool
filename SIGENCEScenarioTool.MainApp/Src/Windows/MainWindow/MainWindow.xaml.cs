@@ -73,7 +73,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices( 10 );
+            CreateRandomizedRFDevices( 1 );
             //ScenarioDescription = "<h3>Enter a short description of the scenario here ...</h3>";
 #endif
         }
@@ -102,7 +102,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format( "{0} ({1}){2}" , Tool.ProductTitle , Tool.Version , CurrentFile != null ? string.Format( " [{0}]" , CurrentFile ) : "" );
+            this.Title = string.Format( "{0} ({1}){2}" , Tool.ProductTitle , Tool.Version , CurrentFile != null ? string.Format( " [{0}]" , new FileInfo( CurrentFile ).Name ) : "" );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -176,7 +176,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
             else
             {
-                wbScenarioDescription.NavigateToString( "<html/>" );
+                //wbScenarioDescription.NavigateToString( "<html/>" );
+                wbScenarioDescription.NavigateToString( "<i>No scenario description avaible.</i>" );
             }
         }
 

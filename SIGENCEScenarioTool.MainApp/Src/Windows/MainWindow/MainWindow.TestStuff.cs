@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -27,9 +26,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_ChartingTest_Click( object sender , RoutedEventArgs e )
         {
-            ChartingWindow cw = new ChartingWindow(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
+            ChartingWindow cw = new ChartingWindow( new RFDeviceList( from device in RFDevicesCollection select device.RFDevice ) );
             cw.ShowDialog();
             cw = null;
         }
@@ -40,26 +39,27 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void UDPReceiveData()
         {
-            using (UdpClient client = new UdpClient(7474))
+            using( UdpClient client = new UdpClient( 7474 ) )
             {
-                IPEndPoint ep = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPortReceiving);
+                IPEndPoint ep = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPortReceiving );
 
                 // A neverending story ...
-                while (true)
+                while( true )
                 {
                     try
                     {
-                        byte[] baReceived = client.Receive(ref ep);
+                        byte [] baReceived = client.Receive( ref ep );
 
-                        string strReceived = Encoding.Default.GetString(baReceived);
+                        string strReceived = Encoding.Default.GetString( baReceived );
 
-                        ReceivedData += strReceived+"\n\n";
+                        DebugOutput += strReceived + "\n\n";
 
                         //Debug.WriteLine(strReceived);
                     }
-                    catch (Exception ex)
+                    catch( Exception ex )
                     {
-                        Debug.WriteLine(ex.Message);
+                        //Debug.WriteLine( ex.Message );
+                        MB.Error( ex );
                     }
                 }
             }
@@ -78,33 +78,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the randomized RFDevices.
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
-        private void CreateRandomizedRFDevices(int iMaxCount)
+        private void CreateRandomizedRFDevices( int iMaxCount )
         {
             Cursor = Cursors.Wait;
 
-            for (int iCounter = 1; iCounter < iMaxCount + 1; iCounter++)
+            for( int iCounter = 1 ; iCounter < iMaxCount + 1 ; iCounter++ )
             {
-                AddRFDevice(new RFDevice
+                AddRFDevice( new RFDevice
                 {
-                    Id = r.Next(-1000, 1000),
-                    Name = string.Format("RFDevice #{0}", iCounter),
-                    Latitude = (r.NextDouble() * 0.05) + 49.7454,
-                    Longitude = (r.NextDouble() * 0.05) + 6.6149,
-                    Altitude = 0,
-                    RxTxType = r.NextEnum<RxTxType>(),
-                    AntennaType = r.NextEnum<AntennaType>(),
-                    CenterFrequency_Hz = (uint)r.Next(85, 105) * 100000,
-                    Bandwith_Hz = (uint)r.Next(10, 20) * 1000,
-                    Gain_dB = 0,
-                    SignalToNoiseRatio_dB = 0,
-                    Roll = 0,
-                    Pitch = 0,
-                    Yaw = 0,
-                    XPos = 0,
-                    YPos = 0,
-                    ZPos = 0,
-                    Remark = r.NextObject(Tool.ALLPANGRAMS)
-                });
+                    Id = r.Next( -1000 , 1000 ) ,
+                    Name = string.Format( "RFDevice #{0}" , iCounter ) ,
+                    Latitude = ( r.NextDouble() * 0.05 ) + 49.7454 ,
+                    Longitude = ( r.NextDouble() * 0.05 ) + 6.6149 ,
+                    Altitude = 0 ,
+                    RxTxType = r.NextEnum<RxTxType>() ,
+                    AntennaType = r.NextEnum<AntennaType>() ,
+                    CenterFrequency_Hz = ( uint ) r.Next( 85 , 105 ) * 100000 ,
+                    Bandwith_Hz = ( uint ) r.Next( 10 , 20 ) * 1000 ,
+                    Gain_dB = 0 ,
+                    SignalToNoiseRatio_dB = 0 ,
+                    Roll = 0 ,
+                    Pitch = 0 ,
+                    Yaw = 0 ,
+                    XPos = 0 ,
+                    YPos = 0 ,
+                    ZPos = 0 ,
+                    Remark = r.NextObject( Tool.ALLPANGRAMS )
+                } );
             }
 
             Cursor = Cursors.Arrow;

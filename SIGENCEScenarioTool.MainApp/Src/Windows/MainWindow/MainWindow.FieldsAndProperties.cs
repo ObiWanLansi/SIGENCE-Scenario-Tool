@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 using GMap.NET;
@@ -54,6 +55,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// 
         /// </summary>
         private DateTime dtStartTime = DateTime.Now;
+
+
+        /// <summary>
+        /// A list with temporery devices to copy and paste.
+        /// </summary>
+        private readonly List<RFDeviceViewModel> lCopiedRFDevices = new List<RFDeviceViewModel>();
 
         //---------------------------------------------------------------------
 
@@ -288,7 +295,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The received data.
         /// </value>
-        public String ReceivedData
+        public String DebugOutput
         {
             get { return strReceivedData; }
             set
