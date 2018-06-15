@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-
+using System.Windows.Input;
 using GMap.NET;
 using GMap.NET.MapProviders;
 
@@ -140,7 +140,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 this.bScenarioDescriptionEditMode = value;
-                
+
                 SwitchScenarioEditMode();
 
                 FirePropertyChanged();
@@ -169,22 +169,84 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Gets or sets a value indicating whether [show center].
+        /// The b is tile loading
+        /// </summary>
+        private bool bIsTileLoading = false;
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is tile loading.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if [show center]; otherwise, <c>false</c>.
+        ///   <c>true</c> if this instance is tile loading; otherwise, <c>false</c>.
         /// </value>
-        public bool ShowCenter
+        public bool IsTileLoading
         {
-            get { return mcMapControl.ShowCenter; }
+            get { return bIsTileLoading; }
             set
             {
-                mcMapControl.ShowCenter = value;
-                mcMapControl.ReloadMap();
+                bIsTileLoading = value;
+                
+                FirePropertyChanged();
+            }
+        }
+
+        ///// <summary>
+        ///// Gets or sets the drag button.
+        ///// </summary>
+        ///// <value>
+        ///// The drag button.
+        ///// </value>
+        //public MouseButton DragButton
+        //{
+        //    get { return mcMapControl.DragButton; }
+        //    set
+        //    {
+        //        mcMapControl.DragButton = value;
+
+        //        FirePropertyChanged();
+        //    }
+        //}
+
+
+        /// <summary>
+        /// The b is device moving mode
+        /// </summary>
+        private bool bIsDeviceMovingMode = false;
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is device moving mode.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is device moving mode; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsDeviceMovingMode
+        {
+            get { return bIsDeviceMovingMode; }
+            set
+            {
+                bIsDeviceMovingMode = value;
+
+                mcMapControl.DragButton = bIsDeviceMovingMode ? MouseButton.Right : MouseButton.Left;
 
                 FirePropertyChanged();
             }
         }
+
+        ///// <summary>
+        ///// Gets or sets a value indicating whether [show center].
+        ///// </summary>
+        ///// <value>
+        /////   <c>true</c> if [show center]; otherwise, <c>false</c>.
+        ///// </value>
+        //public bool ShowCenter
+        //{
+        //    get { return mcMapControl.ShowCenter; }
+        //    set
+        //    {
+        //        mcMapControl.ShowCenter = value;
+        //        mcMapControl.ReloadMap();
+
+        //        FirePropertyChanged();
+        //    }
+        //}
 
 
         /// <summary>

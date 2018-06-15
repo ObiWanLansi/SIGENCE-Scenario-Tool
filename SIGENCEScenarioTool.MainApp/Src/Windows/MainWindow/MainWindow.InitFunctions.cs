@@ -122,6 +122,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.MoveRFDevice,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    IsDeviceMovingMode = true;
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
+
             CommandBindings.Add(new CommandBinding(RegisteredCommands.CopyRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
@@ -218,6 +230,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             GMapProvider.WebProxy = WebRequest.DefaultWebProxy;
             GMapProvider.WebProxy.Credentials = CredentialCache.DefaultCredentials;
 
+            //mcMapControl.DragButton = MouseButton.Middle;
             mcMapControl.DragButton = MouseButton.Left;
             mcMapControl.MapProvider = GMapProviders.GoogleMap;
             mcMapControl.Manager.Mode = AccessMode.ServerAndCache;
@@ -229,6 +242,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             mcMapControl.Position = new PointLatLng(49.761471, 6.650053);
             mcMapControl.Zoom = 14;
+
+            mcMapControl.OnTileLoadStart += MapControl_OnTileLoadStart;
+            mcMapControl.OnTileLoadComplete += MapControl_OnTileLoadComplete;
         }
 
 

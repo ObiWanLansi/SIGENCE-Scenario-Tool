@@ -87,7 +87,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void AddRFDevice(RFDevice d)
         {
-            AddRFDevice(new RFDeviceViewModel(d));
+            AddRFDevice(new RFDeviceViewModel(this.mcMapControl, d));
         }
 
 

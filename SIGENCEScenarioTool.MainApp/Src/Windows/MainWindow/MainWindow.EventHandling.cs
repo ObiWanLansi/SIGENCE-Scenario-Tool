@@ -60,6 +60,25 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             FirePropertyChanged("Zoom");
         }
 
+
+        /// <summary>
+        /// Maps the control on tile load start.
+        /// </summary>
+        private void MapControl_OnTileLoadStart()
+        {
+            IsTileLoading = true;
+        }
+
+
+        /// <summary>
+        /// Maps the control on tile load complete.
+        /// </summary>
+        /// <param name="ElapsedMilliseconds">The elapsed milliseconds.</param>
+        private void MapControl_OnTileLoadComplete(long ElapsedMilliseconds)
+        {
+            IsTileLoading = false;
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

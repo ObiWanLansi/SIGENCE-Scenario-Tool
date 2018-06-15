@@ -1,4 +1,4 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
 
         <Image x:Key="ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/add.png" />
@@ -23,6 +23,7 @@
         <Image x:Key="EDIT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/edit.png" />
         <Image x:Key="NUT_AND_BOLT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/nut_and_bolt.png" />
         <Image x:Key="GARBAGE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/garbage.png" />
+        <Image x:Key="MOVE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/move.png" />
 
 
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
@@ -31,11 +32,19 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
 
+
         <ObjectDataProvider x:Key="eAntennaType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="models:AntennaType" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+
+        <!--<ObjectDataProvider x:Key="eMouseButton" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="input:MouseButton" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>-->
+
     </Window.Resources>
 
     <Grid>
@@ -95,15 +104,17 @@
             </MenuItem>
         </Menu>
 
-        <ToolBar Grid.Row="1">
+        <ToolBar Grid.Row="1" Margin="3">
             <Label Content="MapProvider" />
             <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
             <Separator />
-            <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
-            <Separator />
+            <!--<Separator />
+            <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />-->
             <Button Content="{StaticResource ADD}" ToolTip="Create RFDevice" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
             <Separator />
             <Button Content="{StaticResource DELETE}" ToolTip="Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
+            <Separator />
+            <ToggleButton Content="{StaticResource MOVE}" ToolTip="Move RFDevice" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <Separator />
             <Button Content="{StaticResource COPY}" ToolTip="Copy RFDevice" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
             <Separator />
@@ -372,6 +383,12 @@
                     <Label Content="/" />
                     <Label Content="{Binding Longitude}" ContentStringFormat="F8" />
                 </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem>
+                <ProgressBar Width="80" Height="10" IsIndeterminate="{Binding IsTileLoading}" ToolTip="Indicator Whether Tiles Are Loaded" />
             </StatusBarItem>
 
             <Separator />

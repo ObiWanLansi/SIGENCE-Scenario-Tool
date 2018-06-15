@@ -49,7 +49,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     XElement eGeneralSettings = xdoc.Root.Element("GeneralSettings");
                     Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
-                    ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
+                    //ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
+                    ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
 
                     string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
                     foreach (var mp in GMapProviders.List)
@@ -65,7 +66,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? Latitude;
                     Longitude = eCenterPosition.GetDoubleFromNodePoint("Longitude") ?? Longitude;
 
-                    ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
 
                     //---------------------------------------------------------
 
@@ -114,14 +114,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 XElement eGeneralSettings = new XElement("GeneralSettings");
 
-                eGeneralSettings.Add(new XElement("ScenarioDescription", new XCData(ScenarioDescription != null ? ScenarioDescription : "")));
-                eGeneralSettings.Add(new XElement("Zoom", mcMapControl.Zoom));
-                eGeneralSettings.Add(new XElement("ShowCenter", mcMapControl.ShowCenter));
+                eGeneralSettings.Add(new XElement("ScenarioDescription", new XCData(ScenarioDescription ?? "")));
+                eGeneralSettings.Add(new XElement("Zoom", Zoom));
+                //eGeneralSettings.Add(new XElement("ShowCenter", mcMapControl.ShowCenter));
                 eGeneralSettings.Add(new XElement("CenterPosition",
-                    new XElement("Latitude", mcMapControl.Position.Lat),
-                    new XElement("Longitude", mcMapControl.Position.Lng))
+                    new XElement("Latitude", Latitude),
+                    new XElement("Longitude", Longitude))
                 );
-                eGeneralSettings.Add(new XElement("MapProvider", mcMapControl.MapProvider));
+                eGeneralSettings.Add(new XElement("MapProvider", MapProvider));
 
                 eSIGENCEScenarioTool.Add(eGeneralSettings);
 

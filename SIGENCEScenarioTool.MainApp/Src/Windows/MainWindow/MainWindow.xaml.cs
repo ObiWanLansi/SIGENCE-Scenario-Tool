@@ -72,7 +72,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices(1);
+            CreateRandomizedRFDevices(100);
 #endif
         }
 

@@ -4,6 +4,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 
+using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
 
@@ -23,17 +24,38 @@ namespace SIGENCEScenarioTool.Markers
         /// <summary>
         /// The popup
         /// </summary>
-        private readonly Popup Popup = null;
+        private readonly Popup popup = null;
 
         /// <summary>
         /// The label
         /// </summary>
-        private readonly Label Label = null;
+        private readonly Label label = null;
 
         /// <summary>
         /// The marker
         /// </summary>
-        private readonly GMapMarker Marker = null;
+        private readonly GMapMarker mmMarker = null;
+
+        /// <summary>
+        /// The mc map control
+        /// </summary>
+        private readonly GMapControl mcMapControl = null;
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="pll">The PLL.</param>
+        public delegate void PositionChangedHandler(object sender, PointLatLng pll);
+
+
+        /// <summary>
+        /// Occurs when [on position changed].
+        /// </summary>
+        public event PositionChangedHandler OnPositionChanged;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -46,8 +68,8 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public string MarkerToolTip
         {
-            get { return Label.Content as string; }
-            set { Label.Content = value; }
+            get { return label.Content as string; }
+            set { label.Content = value; }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -56,15 +78,17 @@ namespace SIGENCEScenarioTool.Markers
         /// <summary>
         /// Initializes a new instance of the <see cref="TriangleMarker"/> class.
         /// </summary>
-        /// <param name="marker">The marker.</param>
-        /// <param name="strToolTip">The tooltip.</param>
-        public TriangleMarker(GMapMarker marker, string strToolTip)
+        /// <param name="mmMarker">The marker.</param>
+        /// <param name="mcMapControl">The mc map control.</param>
+        /// <param name="strToolTip">The string tool tip.</param>
+        public TriangleMarker(GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip)
         {
             this.InitializeComponent();
 
-            this.Marker = marker;
+            this.mcMapControl = mcMapControl;
+            this.mmMarker = mmMarker;
 
-            Label = new Label
+            label = new Label
             {
                 Background = Brushes.Yellow,
                 Foreground = Brushes.Black,
@@ -76,18 +100,16 @@ namespace SIGENCEScenarioTool.Markers
                 Content = strToolTip
             };
 
-            Popup = new Popup
+            popup = new Popup
             {
                 Placement = PlacementMode.Mouse,
-                Child = Label
+                Child = label
             };
 
-            //this.Loaded += new RoutedEventHandler(CustomMarkerDemo_Loaded);
-            //this.SizeChanged += new SizeChangedEventHandler(CustomMarkerDemo_SizeChanged);
-            //this.MouseMove += new MouseEventHandler(CustomMarkerDemo_MouseMove);
-            //this.MouseLeftButtonUp += new MouseButtonEventHandler(CustomMarkerDemo_MouseLeftButtonUp);
-            //this.MouseLeftButtonDown += new MouseButtonEventHandler(CustomMarkerDemo_MouseLeftButtonDown);
-                                         
+            this.MouseMove += new MouseEventHandler(MarkerControl_MouseMove);
+            this.MouseLeftButtonUp += new MouseButtonEventHandler(MarkerControl_MouseLeftButtonUp);
+            this.MouseLeftButtonDown += new MouseButtonEventHandler(MarkerControl_MouseLeftButtonDown);
+
             this.MouseEnter += new MouseEventHandler(MarkerControl_MouseEnter);
             this.MouseLeave += new MouseEventHandler(MarkerControl_MouseLeave);
         }
@@ -95,68 +117,63 @@ namespace SIGENCEScenarioTool.Markers
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// Handles the Loaded event of the CustomMarkerDemo control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        //private void CustomMarkerDemo_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    //if (icon.Source.CanFreeze)
-        //    //{
-        //    //    icon.Source.Freeze();
-        //    //}
-        //}
+        /// <summary>
+        /// Handles the MouseMove event of the CustomMarkerDemo control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
+        private void MarkerControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed && IsMouseCaptured)
+            {
+                Point p = e.GetPosition(mcMapControl);
+                
+                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
 
-        ///// <summary>
-        ///// Handles the SizeChanged event of the CustomMarkerDemo control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="SizeChangedEventArgs"/> instance containing the event data.</param>
-        //private void CustomMarkerDemo_SizeChanged(object sender, SizeChangedEventArgs e)
-        //{
-        //    Marker.Offset = new Point(-e.NewSize.Width / 2, -e.NewSize.Height);
-        //}
+                mmMarker.Position = pll;
 
-        ///// <summary>
-        ///// Handles the MouseMove event of the CustomMarkerDemo control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        //private void CustomMarkerDemo_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    if (e.LeftButton == MouseButtonState.Pressed && IsMouseCaptured)
-        //    {
-        //        Point p = e.GetPosition(MainWindow.mcMapControl);
-        //        Marker.Position = MainWindow.mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
-        //    }
-        //}
+                OnPositionChanged?.Invoke(this, pll);
 
-        ///// <summary>
-        ///// Handles the MouseLeftButtonDown event of the CustomMarkerDemo control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        //private void CustomMarkerDemo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    if (!IsMouseCaptured)
-        //    {
-        //        Mouse.Capture(this);
-        //    }
-        //}
+                e.Handled = true;
+            }
+        }
 
-        ///// <summary>
-        ///// Handles the MouseLeftButtonUp event of the CustomMarkerDemo control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        //private void CustomMarkerDemo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        //{
-        //    if (IsMouseCaptured)
-        //    {
-        //        Mouse.Capture(null);
-        //    }
-        //}
+
+        /// <summary>
+        /// Handles the MouseLeftButtonDown event of the CustomMarkerDemo control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void MarkerControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (mcMapControl.DragButton == MouseButton.Left)
+            {
+                return;
+            }
+
+            if (!IsMouseCaptured)
+            {
+                Mouse.Capture(this);
+
+                e.Handled = true;
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the MouseLeftButtonUp event of the CustomMarkerDemo control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void MarkerControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (IsMouseCaptured)
+            {
+                Mouse.Capture(null);
+
+                e.Handled = true;
+            }
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -168,8 +185,10 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         private void MarkerControl_MouseLeave(object sender, MouseEventArgs e)
         {
-            Marker.ZIndex -= 10000;
-            Popup.IsOpen = false;
+            mmMarker.ZIndex -= 10000;
+            popup.IsOpen = false;
+
+            e.Handled = true;
         }
 
         /// <summary>
@@ -179,8 +198,10 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         private void MarkerControl_MouseEnter(object sender, MouseEventArgs e)
         {
-            Marker.ZIndex += 10000;
-            Popup.IsOpen = true;
+            mmMarker.ZIndex += 10000;
+            popup.IsOpen = true;
+
+            e.Handled = true;
         }
 
     } // end public partial class TriangleMarker

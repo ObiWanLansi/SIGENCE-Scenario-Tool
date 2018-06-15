@@ -259,6 +259,7 @@
     <Resource Include="Images\edit.png" />
     <Resource Include="Images\text_rich_colored.png" />
     <Resource Include="Images\garbage.png" />
+    <Resource Include="Images\move.png" />
     <Content Include="Src\Models\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>
