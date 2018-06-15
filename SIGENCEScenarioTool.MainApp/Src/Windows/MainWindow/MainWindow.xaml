@@ -299,12 +299,37 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0">
-                            <Button x:Name="btnEditScenarioDescription" Content="{StaticResource EDIT}" ToolTip="Edit" IsEnabled="true" Click="Button_EditScenarioDescription_Click" />
+                            <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description" Click="ToogleButton_EditScenarioDescription_Click" />
                             <Separator />
-                            <Button x:Name="btnViewScenarioDescription" Content="{StaticResource TEXT_RICH_COLORED}" ToolTip="View" IsEnabled="False" Click="Button_ViewScenarioDescription_Click" />
-                            <Separator />
-                            <Button Content="{StaticResource REFRESH}" ToolTip="Refresh" Click="Button_RefreshScenarioDescription_Click" />
-                            <Separator />
+                            <Button Content="{StaticResource HELP}" Click="Button_HtmlHelp_Click" />
+                            <!--<Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
+                                <MenuItem Header="Font">
+                                    <MenuItem Header="Bold" Tag="b" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Cursiv" Tag="i" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Underline" Tag="u" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Preformatted" Tag="pre" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                </MenuItem>
+                                <MenuItem Header="Table">
+                                    <MenuItem Header="Table" Tag="table" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Row" Tag="tr" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Header" Tag="th" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Column" Tag="td" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                </MenuItem>
+                                <MenuItem Header="Header">
+                                    <MenuItem Header="H1" Tag="h1" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="H2" Tag="h2" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="H3" Tag="h3" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="H4" Tag="h4" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="H5" Tag="h5" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="H6" Tag="h6" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                </MenuItem>
+                                <MenuItem Header="Misc">
+                                    <MenuItem Header="Line Break" Tag="br" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Horizontal Line" Tag="hr" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Image" Tag="image" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                    <MenuItem Header="Link" Tag="link" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                </MenuItem>
+                            </Menu>-->
                         </ToolBar>
                         <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
                         <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />

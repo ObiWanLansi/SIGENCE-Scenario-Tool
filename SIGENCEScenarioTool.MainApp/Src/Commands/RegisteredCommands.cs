@@ -37,13 +37,19 @@ namespace SIGENCEScenarioTool.Commands
 
 
         /// <summary>
-        /// 
+        /// Gets the copy rf device.
         /// </summary>
+        /// <value>
+        /// The copy rf device.
+        /// </value>
         static public RoutedUICommand CopyRFDevice { get; private set; }
 
         /// <summary>
-        /// 
+        /// Gets the paste rf device.
         /// </summary>
+        /// <value>
+        /// The paste rf device.
+        /// </value>
         static public RoutedUICommand PasteRFDevice { get; private set; }
 
         /// <summary>

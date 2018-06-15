@@ -52,12 +52,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private readonly Properties.Settings settings = Properties.Settings.Default;
 
         /// <summary>
-        /// 
-        /// </summary>
-        private DateTime dtStartTime = DateTime.Now;
-
-
-        /// <summary>
         /// A list with temporery devices to copy and paste.
         /// </summary>
         private readonly List<RFDeviceViewModel> lCopiedRFDevices = new List<RFDeviceViewModel>();
@@ -74,15 +68,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         public ObservableCollection<RFDeviceViewModel> RFDevicesCollection { get; set; }
 
 
+        /// <summary>
+        /// The string scenario description
+        /// </summary>
         private String strScenarioDescription = "";
 
+        /// <summary>
+        /// Gets or sets the scenario description.
+        /// </summary>
+        /// <value>
+        /// The scenario description.
+        /// </value>
         public String ScenarioDescription
         {
             get { return strScenarioDescription; }
             set
             {
                 strScenarioDescription = value;
-                
+
                 UpdateScenarioDescription();
 
                 FirePropertyChanged();
@@ -112,6 +115,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.bCreatingRFDevice = value;
 
                 SetMapToCreatingRFDeviceMode();
+
+                FirePropertyChanged();
+            }
+        }
+
+        //---------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The b scenario description edit mode
+        /// </summary>
+        private bool bScenarioDescriptionEditMode = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [scenario description edit mode].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [scenario description edit mode]; otherwise, <c>false</c>.
+        /// </value>
+        public bool ScenarioDescriptionEditMode
+        {
+            get { return bScenarioDescriptionEditMode; }
+            set
+            {
+                this.bScenarioDescriptionEditMode = value;
+                
+                SwitchScenarioEditMode();
 
                 FirePropertyChanged();
             }
@@ -186,7 +216,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
+                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
 
                 FirePropertyChanged();
             }
@@ -204,7 +234,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
+                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
 
                 FirePropertyChanged();
             }

@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
-using System.Net;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -28,27 +27,27 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if( string.IsNullOrEmpty( settings.UDPHost ) )
+            if (string.IsNullOrEmpty(settings.UDPHost))
             {
-                MB.Warning( "The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application.");
                 settings.UDPHost = "127.0.0.1";
             }
 
-            if( settings.UDPPortSending < 1025 || settings.UDPPortSending > 65535 )
+            if (settings.UDPPortSending < 1025 || settings.UDPPortSending > 65535)
             {
-                MB.Warning( "The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application.");
                 settings.UDPPortSending = 4242;
             }
 
-            if( settings.UDPDelay < 0 || settings.UDPDelay > 10000 )
+            if (settings.UDPDelay < 0 || settings.UDPDelay > 10000)
             {
-                MB.Warning( "The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application.");
                 settings.UDPDelay = 500;
             }
 
-            if( settings.MapZoomLevel < 1 || settings.MapZoomLevel > 20 )
+            if (settings.MapZoomLevel < 1 || settings.MapZoomLevel > 20)
             {
-                MB.Warning( "The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application.");
                 settings.MapZoomLevel = 18;
             }
 
@@ -56,7 +55,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             this.RFDevicesCollection = new ObservableCollection<RFDeviceViewModel>();
             this.DataContext = this;
-            //this.PropertyChanged += MainWindow_PropertyChanged;
 
             //-----------------------------------------------------------------
 
@@ -74,8 +72,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices( 1 );
-            //ScenarioDescription = "<h3>Enter a short description of the scenario here ...</h3>";
+            CreateRandomizedRFDevices(1);
 #endif
         }
 
@@ -103,14 +100,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format( "{0} ({1}){2}" , Tool.ProductTitle , Tool.Version , CurrentFile != null ? string.Format( " [{0}]" , new FileInfo( CurrentFile ).Name ) : "" );
+            this.Title = string.Format("{0} ({1}){2}", Tool.ProductTitle, Tool.Version, CurrentFile != null ? string.Format(" [{0}]", new FileInfo(CurrentFile).Name) : "");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// 
+        /// Opens the cheat sheet.
         /// </summary>
         private void OpenCheatSheet()
         {
@@ -125,62 +122,105 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                if( CurrentFile != null )
+                if (CurrentFile != null)
                 {
-                    sfdSaveScreenshot.FileName = new FileInfo( CurrentFile ).Name;
+                    sfdSaveScreenshot.FileName = new FileInfo(CurrentFile).Name;
                 }
 
-                if( sfdSaveScreenshot.ShowDialog() == true )
+                if (sfdSaveScreenshot.ShowDialog() == true)
                 {
-                    var screenshot = Tools.Windows.GetWPFScreenshot( mcMapControl );
+                    var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
 
                     PngBitmapEncoder encoder = new PngBitmapEncoder();
 
-                    encoder.Frames.Add( BitmapFrame.Create( screenshot ) );
+                    encoder.Frames.Add(BitmapFrame.Create(screenshot));
 
-                    using( BufferedStream bs = new BufferedStream( new FileStream( sfdSaveScreenshot.FileName , FileMode.Create ) ) )
+                    using (BufferedStream bs = new BufferedStream(new FileStream(sfdSaveScreenshot.FileName, FileMode.Create)))
                     {
-                        encoder.Save( bs );
+                        encoder.Save(bs);
                     }
 
-                    Tools.Windows.OpenWithDefaultApplication( sfdSaveScreenshot.FileName );
+                    Tools.Windows.OpenWithDefaultApplication(sfdSaveScreenshot.FileName);
                 }
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
         }
 
 
         /// <summary>
-        /// 
+        /// Switches the scenario edit mode.
         /// </summary>
-        /// <param name="bEditMode"></param>
-        private void SwitchScenarioEditMode( bool bEditMode )
+        private void SwitchScenarioEditMode()
         {
-            wbScenarioDescription.Visibility = bEditMode ? Visibility.Hidden : Visibility.Visible;
-            tbScenarioDescription.Visibility = bEditMode ? Visibility.Visible : Visibility.Hidden;
-            btnEditScenarioDescription.IsEnabled = !bEditMode;
-            btnViewScenarioDescription.IsEnabled = bEditMode;
+            wbScenarioDescription.Visibility = ScenarioDescriptionEditMode ? Visibility.Hidden : Visibility.Visible;
+            tbScenarioDescription.Visibility = ScenarioDescriptionEditMode ? Visibility.Visible : Visibility.Hidden;
         }
 
 
         /// <summary>
-        /// 
+        /// Updates the scenario description.
         /// </summary>
         private void UpdateScenarioDescription()
         {
-            if( string.IsNullOrEmpty( ScenarioDescription ) == false )
+            if (string.IsNullOrEmpty(ScenarioDescription) == false)
             {
-                wbScenarioDescription.NavigateToString( ScenarioDescription );
+                wbScenarioDescription.NavigateToString(ScenarioDescription);
             }
             else
             {
                 //wbScenarioDescription.NavigateToString( "<html/>" );
-                wbScenarioDescription.NavigateToString( "<i>No scenario description avaible.</i>" );
+                wbScenarioDescription.NavigateToString("<i>No scenario description avaible.</i>");
             }
         }
+
+
+        ///// <summary>
+        ///// Inserts the HTML snippet.
+        ///// </summary>
+        ///// <param name="strSnippetId">The string snippet identifier.</param>
+        //private void InsertHtmlSnippet(string strSnippetId)
+        //{
+        //    string strSnippet = null;
+
+        //    Func<string, string> GetDefaultTag = ((tag) => { return string.Format("<{0}></{0}>", tag); });
+
+        //    strSnippetId = strSnippetId.ToLower();
+
+        //    switch (strSnippetId)
+        //    {
+
+        //        case "table":
+        //            strSnippet = "<table border=\"1\">\n</table>";
+        //            break;
+
+        //        case "br":
+        //            strSnippet = "<br />";
+        //            break;
+
+        //        case "hr":
+        //            strSnippet = "<hr />";
+        //            break;
+
+        //        case "image":
+        //            strSnippet = "<image src=\"url\" />";
+        //            break;
+
+        //        case "link":
+        //            strSnippet = "<a href=\"url\">Link Text</a>";
+        //            break;
+
+        //        default:
+        //            strSnippet = GetDefaultTag(strSnippetId);
+        //            break;
+        //    }
+
+        //    int iOldCaretIndex = tbScenarioDescription.CaretIndex;
+        //    ScenarioDescription = ScenarioDescription.Insert(iOldCaretIndex, strSnippet);
+        //    tbScenarioDescription.CaretIndex = iOldCaretIndex;
+        //}
 
     } // end public partial class MainWindow
 }

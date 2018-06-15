@@ -53,12 +53,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         string strReceived = Encoding.Default.GetString( baReceived );
 
                         DebugOutput += strReceived + "\n\n";
-
-                        //Debug.WriteLine(strReceived);
                     }
                     catch( Exception ex )
                     {
-                        //Debug.WriteLine( ex.Message );
                         MB.Error( ex );
                     }
                 }

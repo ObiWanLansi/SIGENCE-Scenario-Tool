@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 using GMap.NET;
@@ -24,15 +24,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void MapControl_MouseLeftButtonDown( object sender , MouseButtonEventArgs e )
+        private void MapControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if( CreatingRFDevice == true )
+            if (CreatingRFDevice == true)
             {
-                Point p = e.GetPosition( mcMapControl );
+                Point p = e.GetPosition(mcMapControl);
 
-                PointLatLng pll = mcMapControl.FromLocalToLatLng( ( int ) p.X , ( int ) p.Y );
+                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
 
-                AddRFDevice( pll );
+                AddRFDevice(pll);
 
                 EndCreateRFDevice();
 
@@ -45,10 +45,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Maps the control on position changed.
         /// </summary>
         /// <param name="point">The point.</param>
-        private void MapControl_OnPositionChanged( PointLatLng point )
+        private void MapControl_OnPositionChanged(PointLatLng point)
         {
-            FirePropertyChanged( "Latitude" );
-            FirePropertyChanged( "Longitude" );
+            FirePropertyChanged("Latitude");
+            FirePropertyChanged("Longitude");
         }
 
 
@@ -57,7 +57,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void MapControl_OnMapZoomChanged()
         {
-            FirePropertyChanged( "Zoom" );
+            FirePropertyChanged("Zoom");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -68,11 +68,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.Input.KeyEventArgs" /> instance containing the event data.</param>
-        private void DataGrid_KeyDown( object sender , KeyEventArgs e )
+        private void DataGrid_KeyDown(object sender, KeyEventArgs e)
         {
-            if( e.Key == Key.Space )
+            if (e.Key == Key.Space)
             {
-                foreach( RFDeviceViewModel x in ( sender as DataGrid ).SelectedItems )
+                foreach (RFDeviceViewModel x in (sender as DataGrid).SelectedItems)
                 {
                     x.IsSelected = !x.IsSelected;
                 }
@@ -81,9 +81,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            if( e.Key == Key.Add )
+            if (e.Key == Key.Add)
             {
-                foreach( RFDeviceViewModel x in ( sender as DataGrid ).SelectedItems )
+                foreach (RFDeviceViewModel x in (sender as DataGrid).SelectedItems)
                 {
                     x.IsSelected = true;
                 }
@@ -92,9 +92,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            if( e.Key == Key.Subtract )
+            if (e.Key == Key.Subtract)
             {
-                foreach( RFDeviceViewModel x in ( sender as DataGrid ).SelectedItems )
+                foreach (RFDeviceViewModel x in (sender as DataGrid).SelectedItems)
                 {
                     x.IsSelected = false;
                 }
@@ -102,38 +102,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 e.Handled = true;
                 return;
             }
-
-
-            //if( e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control )
-            //{
-            //    CopyCurrentRFDevice();
-
-            //    e.Handled = true;
-            //    return;
-            //}
-
-
-            //MB.HereIAm();
-            //if( e.Key == Key.Delete )
-            //{
-            //    DeleteRFDevices();
-
-            //    e.Handled = true;
-            //    return;
-            //}
         }
-
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void DataGrid_PreviewKeyDown( object sender , KeyEventArgs e )
-        //{
-        //    Debug.Write( "private void DataGrid_PreviewKeyDown( object sender , KeyEventArgs e )" );
-        //}
-
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -143,20 +112,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_CreateSomeRandomizedRFDevices_Click( object sender , RoutedEventArgs e )
+        private void MenuItem_CreateSomeRandomizedRFDevices_Click(object sender, RoutedEventArgs e)
         {
-            CreateRandomizedRFDevices( int.Parse( ( sender as MenuItem ).Tag as string ) );
+            CreateRandomizedRFDevices(int.Parse((sender as MenuItem).Tag as string));
 
             e.Handled = true;
         }
 
 
         /// <summary>
-        /// 
+        /// Handles the Click event of the Button_ClearDebugOutput control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_ClearDebugOutput_Click( object sender , RoutedEventArgs e )
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        private void Button_ClearDebugOutput_Click(object sender, RoutedEventArgs e)
         {
             DebugOutput = "";
 
@@ -164,70 +133,66 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_EditScenarioDescription_Click( object sender , RoutedEventArgs e )
-        {
-            SwitchScenarioEditMode( true );
-
-            e.Handled = true;
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_ViewScenarioDescription_Click( object sender , RoutedEventArgs e )
-        {
-            SwitchScenarioEditMode( false );
-
-            e.Handled = true;
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_RefreshScenarioDescription_Click( object sender , RoutedEventArgs e )
-        {
-            UpdateScenarioDescription();
-
-            e.Handled = true;
-        }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         ///// <summary>
-        ///// 
+        ///// Handles the Click event of the Button_RefreshScenarioDescription control.
         ///// </summary>
-        //delegate void DoForegoroundEvents();
-
-        ///// <summary>
-        ///// Does the events.
-        ///// </summary>
-        //public static void DoEvents()
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void Button_RefreshScenarioDescription_Click(object sender, RoutedEventArgs e)
         //{
-        //    DoForegoroundEvents add = () => { }; //looks strange but it works
-        //    Application.Current.Dispatcher.Invoke( DispatcherPriority.Background , add );
+        //    UpdateScenarioDescription();
+
+        //    e.Handled = true;
         //}
 
+
+        /// <summary>
+        /// Handles the Click event of the ToogleButton_EditScenarioDescription control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void ToogleButton_EditScenarioDescription_Click(object sender, RoutedEventArgs e)
+        {
+            ScenarioDescriptionEditMode = (sender as ToggleButton).IsChecked ?? false;
+
+            e.Handled = true;
+        }
+
+
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_InsertHtmlSnippet control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_InsertHtmlSnippet_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InsertHtmlSnippet((sender as Control).Tag as string);
+
+        //    e.Handled = true;
+        //}
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_HtmlHelp control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_HtmlHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Tools.Windows.OpenWebAdress("https://www.w3schools.com/html/default.asp");
+
+            e.Handled = true;
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// 
+        /// Handles the Copy event of the DataGrid_CommandBinding_CanExecute control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGrid_CommandBinding_CanExecute_Copy( object sender , CanExecuteRoutedEventArgs e )
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="CanExecuteRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_CommandBinding_CanExecute_Copy(object sender, CanExecuteRoutedEventArgs e)
         {
             // For the first step we'll return every time true ...
             e.CanExecute = true;
@@ -235,11 +200,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// Handles the Paste event of the DataGrid_CommandBinding_CanExecute control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGrid_CommandBinding_CanExecute_Paste( object sender , CanExecuteRoutedEventArgs e )
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="CanExecuteRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_CommandBinding_CanExecute_Paste(object sender, CanExecuteRoutedEventArgs e)
         {
             // For the first step we'll return every time true ...
             e.CanExecute = true;
@@ -247,38 +212,25 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// Handles the Copy event of the DataGrid_Execute control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGrid_Execute_Copy( object sender , ExecutedRoutedEventArgs e )
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ExecutedRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_Execute_Copy(object sender, ExecutedRoutedEventArgs e)
         {
             CopyRFDevice();
         }
 
 
         /// <summary>
-        /// 
+        /// Handles the Paste event of the DataGrid_Execute control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGrid_Execute_Paste( object sender , ExecutedRoutedEventArgs e )
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ExecutedRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_Execute_Paste(object sender, ExecutedRoutedEventArgs e)
         {
             PasteRFDevice();
         }
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void MainWindow_PropertyChanged( object sender , PropertyChangedEventArgs e )
-        //{
-        //    //if( e.PropertyName == "ScenarioDescription" )
-        //    //{
-        //    //    UpdateScenarioDescription();
-        //    //}
-        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -293,9 +245,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
-            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }
 
     } // end public partial class MainWindow
