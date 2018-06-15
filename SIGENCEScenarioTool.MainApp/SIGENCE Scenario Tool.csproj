@@ -108,6 +108,9 @@
     <Compile Include="Src\Extensions\StringExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
     <Compile Include="Src\Interfaces\IXmlExport.cs" />
+    <Compile Include="Src\Markers\DiamondMarker.xaml.cs">
+      <DependentUpon>DiamondMarker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Markers\CircleMarker.xaml.cs">
       <DependentUpon>CircleMarker.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
     <Page Include="Src\Dialogs\ChartingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Src\Markers\DiamondMarker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Src\Markers\CircleMarker.xaml">
       <Generator>MSBuild:Compile</Generator>
