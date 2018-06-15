@@ -170,7 +170,7 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}" IsReadOnly="True">
+                    <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="HorizontalAlignment" Value="Right" />
@@ -179,7 +179,7 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}" IsReadOnly="True">
+                    <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="HorizontalAlignment" Value="Right" />

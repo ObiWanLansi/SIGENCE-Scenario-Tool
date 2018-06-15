@@ -31,9 +31,9 @@ namespace SIGENCEScenarioTool.ViewModels
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
-            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -69,6 +69,12 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// Gets or sets the start time.
+        /// </summary>
+        /// <value>
+        /// The start time.
+        /// </value>
         public ulong StartTime
         {
             get { return RFDevice.StartTime; }
@@ -105,9 +111,20 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The latitude.
         /// </value>
-        public string Latitude
+        //public string Latitude
+        //{
+        //    get { return string.Format( "{0:F8}" , RFDevice.Latitude ); }
+        //}
+        public double Latitude
         {
-            get { return string.Format( "{0:F8}" , RFDevice.Latitude ); }
+            get { return RFDevice.Latitude; }
+            set
+            {
+                RFDevice.Latitude = value;
+                
+                UpdateMarkerPosition();
+                FirePropertyChanged();
+            }
         }
 
 
@@ -117,9 +134,20 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The longitude.
         /// </value>
-        public string Longitude
+        //public string Longitude
+        //{
+        //    get { return string.Format( "{0:F8}" , RFDevice.Longitude ); }
+        //}
+        public double Longitude
         {
-            get { return string.Format( "{0:F8}" , RFDevice.Longitude ); }
+            get { return RFDevice.Longitude; }
+            set
+            {
+                RFDevice.Longitude = value;
+
+                UpdateMarkerPosition();
+                FirePropertyChanged();
+            }
         }
 
 
@@ -135,6 +163,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.Altitude = value;
+
                 FirePropertyChanged();
             }
         }
@@ -152,6 +181,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.Roll = value;
+
                 FirePropertyChanged();
             }
         }
@@ -169,6 +199,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.Pitch = value;
+
                 FirePropertyChanged();
             }
         }
@@ -186,6 +217,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.Yaw = value;
+
                 FirePropertyChanged();
             }
         }
@@ -203,6 +235,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.RxTxType = value;
+
                 FirePropertyChanged();
             }
         }
@@ -220,6 +253,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.AntennaType = value;
+
                 FirePropertyChanged();
             }
         }
@@ -237,6 +271,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.Gain_dB = value;
+
                 FirePropertyChanged();
             }
         }
@@ -254,6 +289,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.CenterFrequency_Hz = value;
+
                 FirePropertyChanged();
             }
         }
@@ -271,6 +307,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.Bandwith_Hz = value;
+
                 FirePropertyChanged();
             }
         }
@@ -288,6 +325,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.SignalToNoiseRatio_dB = value;
+
                 FirePropertyChanged();
             }
         }
@@ -305,6 +343,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.XPos = value;
+
                 FirePropertyChanged();
             }
         }
@@ -322,6 +361,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.YPos = value;
+
                 FirePropertyChanged();
             }
         }
@@ -339,6 +379,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 RFDevice.ZPos = value;
+
                 FirePropertyChanged();
             }
         }
@@ -397,6 +438,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 _Marker = value;
+
                 FirePropertyChanged();
             }
         }
@@ -419,6 +461,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 bIsSelected = value;
+
                 FirePropertyChanged();
             }
         }
@@ -434,17 +477,17 @@ namespace SIGENCEScenarioTool.ViewModels
         {
             get
             {
-                if( RFDevice.Id == 0 )
+                if (RFDevice.Id == 0)
                 {
                     return DeviceType.Reference;
                 }
 
-                if( RFDevice.Id > 0 )
+                if (RFDevice.Id > 0)
                 {
                     return DeviceType.Transmitter;
                 }
 
-                if( RFDevice.Id < 0 )
+                if (RFDevice.Id < 0)
                 {
                     return DeviceType.Receiver;
                 }
@@ -461,20 +504,20 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         /// <param name="device">The device.</param>
         /// <exception cref="ArgumentNullException">device</exception>
-        public RFDeviceViewModel( RFDevice device )
+        public RFDeviceViewModel(RFDevice device)
         {
-            if( device == null )
+            if (device == null)
             {
-                throw new ArgumentNullException( "device" );
+                throw new ArgumentNullException("device");
             }
 
             //-----------------------------------------------------------------
 
             this.RFDevice = device;
 
-            this.Marker = new GMapMarker( new PointLatLng( device.Latitude , device.Longitude ) )
+            this.Marker = new GMapMarker(new PointLatLng(device.Latitude, device.Longitude))
             {
-                Offset = new Point( -15 , -15 ) ,
+                Offset = new Point(-15, -15),
                 ZIndex = int.MaxValue
             };
 
@@ -490,33 +533,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <returns></returns>
         private string GetToolTip()
         {
-            return string.Format( "{0} ({1})\n{2,1:00.########}\n{3,1:00.########}" , RFDevice.Name , RFDevice.Id , RFDevice.Latitude , RFDevice.Longitude );
-        }
-
-
-        /// <summary>
-        /// Updates the marker shape.
-        /// </summary>
-        private void UpdateMarkerShape()
-        {
-            if( this.Marker.Shape != null )
-            {
-                this.Marker.Shape = null;
-            }
-
-            if( RFDevice.Id == 0 )
-            {
-                this.Marker.Shape = new CircleMarker( this.Marker , GetToolTip() );
-                return;
-            }
-
-            if( RFDevice.Id < 0 )
-            {
-                this.Marker.Shape = new RectangleMarker( this.Marker , GetToolTip() );
-                return;
-            }
-
-            this.Marker.Shape = new TriangleMarker( this.Marker , GetToolTip() );
+            return string.Format("{0} ({1})\n{2,1:00.########}\n{3,1:00.########}", RFDevice.Name, RFDevice.Id, RFDevice.Latitude, RFDevice.Longitude);
         }
 
 
@@ -525,22 +542,58 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateMarkerTooltip()
         {
-            if( this.Marker.Shape is CircleMarker )
+            if (this.Marker.Shape is CircleMarker)
             {
-                ( this.Marker.Shape as CircleMarker ).MarkerToolTip = GetToolTip();
+                (this.Marker.Shape as CircleMarker).MarkerToolTip = GetToolTip();
                 return;
             }
 
-            if( this.Marker.Shape is RectangleMarker )
+            if (this.Marker.Shape is RectangleMarker)
             {
-                ( this.Marker.Shape as RectangleMarker ).MarkerToolTip = GetToolTip();
+                (this.Marker.Shape as RectangleMarker).MarkerToolTip = GetToolTip();
                 return;
             }
 
-            if( this.Marker.Shape is TriangleMarker )
+            if (this.Marker.Shape is TriangleMarker)
             {
-                ( this.Marker.Shape as TriangleMarker ).MarkerToolTip = GetToolTip();
+                (this.Marker.Shape as TriangleMarker).MarkerToolTip = GetToolTip();
+                return;
             }
+        }
+
+
+        /// <summary>
+        /// Updates the marker shape.
+        /// </summary>
+        private void UpdateMarkerShape()
+        {
+            if (this.Marker.Shape != null)
+            {
+                this.Marker.Shape = null;
+            }
+
+            if (RFDevice.Id == 0)
+            {
+                this.Marker.Shape = new CircleMarker(this.Marker, GetToolTip());
+                return;
+            }
+
+            if (RFDevice.Id < 0)
+            {
+                this.Marker.Shape = new RectangleMarker(this.Marker, GetToolTip());
+                return;
+            }
+
+            this.Marker.Shape = new TriangleMarker(this.Marker, GetToolTip());
+        }
+
+
+        /// <summary>
+        /// Updates the marker position.
+        /// </summary>
+        private void UpdateMarkerPosition()
+        {
+            this.Marker.Position = new PointLatLng(RFDevice.Latitude, RFDevice.Longitude);
         }
 
     } // end sealed public class RFDeviceViewModel
