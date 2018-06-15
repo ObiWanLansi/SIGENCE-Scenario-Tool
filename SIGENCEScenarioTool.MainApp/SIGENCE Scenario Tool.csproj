@@ -56,6 +56,9 @@
   <PropertyGroup>
     <StartupObject>SIGENCEScenarioTool.App</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mobilephone.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
       <HintPath>..\packages\GMap.NET.Presentation.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
@@ -233,6 +236,29 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Src\Models\GeoLocalizationResult.xml" />
+    <Resource Include="mobilephone.ico" />
+    <Resource Include="Images\copy.png" />
+    <Resource Include="Images\paste.png" />
+    <Resource Include="Images\floppy_disk.png" />
+    <Resource Include="Images\save_as.png" />
+    <Resource Include="Images\document_plain.png" />
+    <Resource Include="Images\folder_document.png" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\add.png" />
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\document_out.png" />
+    <Resource Include="Images\document_into.png" />
+    <Resource Include="Images\fit_to_size.png" />
+    <Resource Include="Images\client_network.png" />
+    <Resource Include="Images\camera.png" />
+    <Resource Include="Images\help.png" />
+    <Resource Include="Images\chart_bubble.png" />
+    <Resource Include="Images\satellite.png" />
+    <Resource Include="Images\refresh.png" />
+    <Resource Include="Images\nut_and_bolt.png" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\text_rich_colored.png" />
+    <Resource Include="Images\garbage.png" />
     <Content Include="Src\Models\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>

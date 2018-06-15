@@ -1,5 +1,30 @@
 ﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
+
+        <Image x:Key="ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/add.png" />
+        <Image x:Key="CAMERA" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/camera.png" />
+        <Image x:Key="SEND" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/client_network.png" />
+        <Image x:Key="COPY" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/copy.png" />
+        <Image x:Key="DELETE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/delete.png" />
+        <Image x:Key="IMPORT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/document_into.png" />
+        <Image x:Key="EXPORT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/document_out.png" />
+        <Image x:Key="NEW" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/document_plain.png" />
+        <Image x:Key="EXIT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/exit.png" />
+        <Image x:Key="ZOOMTO" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/fit_to_size.png" />
+        <Image x:Key="SAVE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/floppy_disk.png" />
+        <Image x:Key="OPEN" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/folder_document.png" />
+        <Image x:Key="PASTE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/paste.png" />
+        <Image x:Key="SAVEAS" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/save_as.png" />
+        <Image x:Key="HELP" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/help.png" />
+        <Image x:Key="CHART" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/chart_bubble.png" />
+        <Image x:Key="SATELLITE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/satellite.png" />
+        <Image x:Key="REFRESH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/refresh.png" />
+        <Image x:Key="TEXT_RICH_COLORED" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/text_rich_colored.png" />
+        <Image x:Key="EDIT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/edit.png" />
+        <Image x:Key="NUT_AND_BOLT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/nut_and_bolt.png" />
+        <Image x:Key="GARBAGE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/garbage.png" />
+
+
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="models:RxTxType" />
@@ -25,45 +50,48 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="_SIGENCE Scenario Tool">
-                <MenuItem Header="_New File" Command="{x:Static ApplicationCommands.New}" />
+                <MenuItem Header="_New File" Icon="{StaticResource NEW}" Command="{x:Static ApplicationCommands.New}" />
                 <Separator />
-                <MenuItem Header="_Open File" Command="{x:Static ApplicationCommands.Open}" />
+                <MenuItem Header="_Open File" Icon="{StaticResource OPEN}" Command="{x:Static ApplicationCommands.Open}" />
                 <Separator />
-                <MenuItem Header="_Save File" Command="{x:Static ApplicationCommands.Save}" />
-                <MenuItem Header="_Save File As" Command="{x:Static ApplicationCommands.SaveAs}" />
+                <MenuItem Header="_Save File" Icon="{StaticResource SAVE}" Command="{x:Static ApplicationCommands.Save}" />
+                <MenuItem Header="_Save File As" Icon="{StaticResource SAVEAS}" Command="{x:Static ApplicationCommands.SaveAs}" />
                 <Separator />
-                <MenuItem Header="Quit" Command="{x:Static ApplicationCommands.Close}" />
+                <MenuItem Header="Quit" Icon="{StaticResource EXIT}" Command="{x:Static ApplicationCommands.Close}" />
             </MenuItem>
             <MenuItem Header="_Actions">
-                <MenuItem Header="_Create RFDevice" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
-                <MenuItem Header="_Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
+                <MenuItem Header="_Create RFDevice" Icon="{StaticResource ADD}" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
+                <MenuItem Header="_Delete RFDevice" Icon="{StaticResource DELETE}" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
                 <Separator />
-                <MenuItem Header="_Export RFDevices" Command="{x:Static cmd:RegisteredCommands.ExportRFDevice}" />
-                <MenuItem Header="_Import RFDevices" Command="{x:Static cmd:RegisteredCommands.ImportRFDevice}" />
+                <MenuItem Header="Copy RFDevice" Icon="{StaticResource COPY}" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
+                <MenuItem Header="Paste RFDevice" Icon="{StaticResource PASTE}" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
+                <Separator />
+                <MenuItem Header="_Export RFDevices" Icon="{StaticResource EXPORT}" Command="{x:Static cmd:RegisteredCommands.ExportRFDevice}" />
+                <MenuItem Header="_Import RFDevices" Icon="{StaticResource IMPORT}" Command="{x:Static cmd:RegisteredCommands.ImportRFDevice}" />
             </MenuItem>
             <MenuItem Header="_Tools">
-                <MenuItem Header="_Zoom To RFDevice" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
-                <MenuItem Header="_Create Screenshot From Map" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
-                <MenuItem Header="_Send Data via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
+                <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
+                <MenuItem Header="_Create Screenshot From Map" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+                <MenuItem Header="_Send Data via UDP" Icon="{StaticResource SEND}" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
             </MenuItem>
             <MenuItem Header="_Extras">
-                <MenuItem Header="_Settings" IsEnabled="False" />
+                <MenuItem Header="_Settings" Icon="{StaticResource NUT_AND_BOLT}" IsEnabled="False" />
             </MenuItem>
             <MenuItem Header="_Test">
-                <MenuItem Header="_Charting Test" Click="MenuItem_ChartingTest_Click" />
+                <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
                 <Separator />
-                <MenuItem Header="Create Randomized RFDevices">
-                    <MenuItem Header="50" Tag="50" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
-                    <MenuItem Header="100" Tag="100" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
-                    <MenuItem Header="200" Tag="200" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
-                    <MenuItem Header="500" Tag="500" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
-                    <MenuItem Header="1000" Tag="1000" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
+                <MenuItem Header="Create Randomized RFDevices" Icon="{StaticResource SATELLITE}">
+                    <MenuItem Header="50" Tag="50" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
+                    <MenuItem Header="100" Tag="100" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
+                    <MenuItem Header="200" Tag="200" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
+                    <MenuItem Header="500" Tag="500" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
+                    <MenuItem Header="1000" Tag="1000" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Help">
                 <!--<MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />-->
-                <MenuItem Header="_Cheat Sheet" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
-                <MenuItem Header="_About" IsEnabled="False" />
+                <MenuItem Header="_Cheat Sheet" Icon="{StaticResource HELP}" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
+                <!--<MenuItem Header="_About" IsEnabled="False" />-->
             </MenuItem>
         </Menu>
 
@@ -73,21 +101,19 @@
             <Separator />
             <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
             <Separator />
-            <Button Content="Create RFDevice" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
+            <Button Content="{StaticResource ADD}" ToolTip="Create RFDevice" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
             <Separator />
-            <Button Content="Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
+            <Button Content="{StaticResource DELETE}" ToolTip="Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
             <Separator />
-            <Button Content="Copy RFDevice" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
-            <!--<Button Content="Copy RFDevice" Command="{x:Static ApplicationCommands.Copy}" />-->
+            <Button Content="{StaticResource COPY}" ToolTip="Copy RFDevice" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
             <Separator />
-            <Button Content="Paste RFDevice" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
-            <!--<Button Content="Paste RFDevice" Command="{x:Static ApplicationCommands.Paste}" />-->
+            <Button Content="{StaticResource PASTE}" ToolTip="Paste RFDevice" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
             <Separator />
-            <Button Content="Zoom To RFDevice" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
+            <Button Content="{StaticResource ZOOMTO}" ToolTip="Zoom To RFDevice" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
             <Separator />
-            <Button Content="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+            <Button Content="{StaticResource CAMERA}" ToolTip="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
             <Separator />
-            <Button Content="Send Data via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
+            <Button Content="{StaticResource SEND}" ToolTip="Send Data via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
             <Separator />
         </ToolBar>
 
@@ -273,11 +299,11 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0">
-                            <Button x:Name="btnEditScenarioDescription" Content="Edit" IsEnabled="true" Click="Button_EditScenarioDescription_Click" />
+                            <Button x:Name="btnEditScenarioDescription" Content="{StaticResource EDIT}" ToolTip="Edit" IsEnabled="true" Click="Button_EditScenarioDescription_Click" />
                             <Separator />
-                            <Button x:Name="btnViewScenarioDescription" Content="View" IsEnabled="False" Click="Button_ViewScenarioDescription_Click" />
+                            <Button x:Name="btnViewScenarioDescription" Content="{StaticResource TEXT_RICH_COLORED}" ToolTip="View" IsEnabled="False" Click="Button_ViewScenarioDescription_Click" />
                             <Separator />
-                            <Button Content="Refresh" Click="Button_RefreshScenarioDescription_Click" />
+                            <Button Content="{StaticResource REFRESH}" ToolTip="Refresh" Click="Button_RefreshScenarioDescription_Click" />
                             <Separator />
                         </ToolBar>
                         <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
@@ -291,7 +317,7 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <ToolBar Grid.Row="0">
-                            <Button Content="Clear" Click="Button_ClearDebugOutput_Click" />
+                            <Button Content="{StaticResource GARBAGE}" ToolTip="Clear" Click="Button_ClearDebugOutput_Click" />
                             <Separator />
                         </ToolBar>
                         <TextBox Grid.Row="1" Text="{Binding DebugOutput}" AcceptsReturn="True" IsReadOnly="True" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
