@@ -102,6 +102,10 @@
             </Grid.ColumnDefinitions>
 
             <DataGrid x:Name="dgRFDevices" Grid.Column="0" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown">
+                <DataGrid.CommandBindings>
+                    <CommandBinding Command="{x:Static ApplicationCommands.Copy}" CanExecute="DataGrid_CommandBinding_CanExecute_Copy" Executed="DataGrid_Execute_Copy" />
+                    <CommandBinding Command="{x:Static ApplicationCommands.Paste}" CanExecute="DataGrid_CommandBinding_CanExecute_Paste" Executed="DataGrid_Execute_Paste" />
+                </DataGrid.CommandBindings>
                 <DataGrid.Columns>
 
                     <DataGridCheckBoxColumn Header="" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">

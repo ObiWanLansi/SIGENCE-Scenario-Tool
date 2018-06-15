@@ -222,6 +222,51 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGrid_CommandBinding_CanExecute_Copy( object sender , CanExecuteRoutedEventArgs e )
+        {
+            // For the first step we'll return every time true ...
+            e.CanExecute = true;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGrid_CommandBinding_CanExecute_Paste( object sender , CanExecuteRoutedEventArgs e )
+        {
+            // For the first step we'll return every time true ...
+            e.CanExecute = true;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGrid_Execute_Copy( object sender , ExecutedRoutedEventArgs e )
+        {
+            CopyRFDevice();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGrid_Execute_Paste( object sender , ExecutedRoutedEventArgs e )
+        {
+            PasteRFDevice();
+        }
+
         ///// <summary>
         ///// 
         ///// </summary>
