@@ -222,18 +222,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainWindow_PropertyChanged( object sender , PropertyChangedEventArgs e )
-        {
-            if( e.PropertyName == "ScenarioDescription" )
-            {
-                UpdateScenarioDescription();
-            }
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void MainWindow_PropertyChanged( object sender , PropertyChangedEventArgs e )
+        //{
+        //    //if( e.PropertyName == "ScenarioDescription" )
+        //    //{
+        //    //    UpdateScenarioDescription();
+        //    //}
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

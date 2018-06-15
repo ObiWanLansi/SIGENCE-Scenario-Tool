@@ -56,7 +56,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             this.RFDevicesCollection = new ObservableCollection<RFDeviceViewModel>();
             this.DataContext = this;
-            this.PropertyChanged += MainWindow_PropertyChanged;
+            //this.PropertyChanged += MainWindow_PropertyChanged;
 
             //-----------------------------------------------------------------
 
@@ -69,6 +69,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
             SetTitle();
+            UpdateScenarioDescription();
 
             //-----------------------------------------------------------------
 

@@ -82,6 +82,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 strScenarioDescription = value;
+                
+                UpdateScenarioDescription();
+
                 FirePropertyChanged();
             }
         }
@@ -109,6 +112,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.bCreatingRFDevice = value;
 
                 SetMapToCreatingRFDeviceMode();
+
                 FirePropertyChanged();
             }
         }
