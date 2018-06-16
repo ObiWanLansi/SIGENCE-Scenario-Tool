@@ -200,23 +200,6 @@ namespace SIGENCEScenarioTool.Tools
         }
 
 
-        /// <summary>
-        /// Gets the bitmap image.
-        /// </summary>
-        /// <param name="baData">The ba data.</param>
-        /// <returns></returns>
-        static public BitmapImage GetBitmapImage(byte[] baData)
-        {
-            BitmapImage bi = new BitmapImage();
-
-            bi.BeginInit();
-            bi.StreamSource = new MemoryStream(baData);
-            bi.CacheOption = BitmapCacheOption.OnLoad;
-            bi.EndInit();
-
-            return bi;
-        }
-
 
         /// <summary>
         /// Reads the resource as string.

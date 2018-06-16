@@ -6,7 +6,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 using GMap.NET;
-using SIGENCEScenarioTool.Tools;
+
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -202,6 +202,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             e.Handled = true;
         }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_ScenarioReport control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        private void MenuItem_ScenarioReport_Click(object sender, RoutedEventArgs e)
+        {
+            CreateScenarioReport();
+
+            e.Handled = true;
+        }
+
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

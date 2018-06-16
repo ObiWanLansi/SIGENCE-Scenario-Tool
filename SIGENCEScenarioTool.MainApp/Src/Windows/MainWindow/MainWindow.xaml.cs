@@ -2,9 +2,12 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Text;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
+using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -72,8 +75,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices(100);
+            //CreateRandomizedRFDevices(100);
+            OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 #endif
+            //-----------------------------------------------------------------
+
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,6 +90,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void Reset()
         {
+            Cursor = Cursors.Wait;
+
             CurrentFile = null;
 
             RFDevicesCollection.Clear();
@@ -92,6 +100,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             GC.WaitForPendingFinalizers();
             GC.Collect();
+
+            Cursor = Cursors.Arrow;
         }
 
 
@@ -131,14 +141,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
 
-                    PngBitmapEncoder encoder = new PngBitmapEncoder();
-
-                    encoder.Frames.Add(BitmapFrame.Create(screenshot));
-
-                    using (BufferedStream bs = new BufferedStream(new FileStream(sfdSaveScreenshot.FileName, FileMode.Create)))
-                    {
-                        encoder.Save(bs);
-                    }
+                    Tools.Windows.SaveWPFScreenshot(screenshot, sfdSaveScreenshot.FileName);
 
                     Tools.Windows.OpenWithDefaultApplication(sfdSaveScreenshot.FileName);
                 }
@@ -176,6 +179,63 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
         }
 
+
+        /// <summary>
+        /// Creates the scenario report.
+        /// </summary>
+        private void CreateScenarioReport()
+        {
+            if (string.IsNullOrEmpty(CurrentFile))
+            {
+                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
+                return;
+            }
+
+            Cursor = Cursors.Wait;
+
+            FileInfo fiCurrentFile = new FileInfo(CurrentFile);
+
+            string strOutputFilename = string.Format("{0}{1}.html", Path.GetTempPath(), fiCurrentFile.GetFilenameWithoutExtension());
+
+            StringBuilder sb = new StringBuilder(8192);
+
+            sb.Append("<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>");
+
+            //-----------------------------------------------------------------
+
+            sb.AppendFormat("<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension());
+
+            sb.Append("<hr />");
+
+            //-----------------------------------------------------------------
+
+            if (string.IsNullOrEmpty(ScenarioDescription) == false)
+            {
+                sb.Append(ScenarioDescription);
+            }
+
+            //-----------------------------------------------------------------
+
+            //Guid gScreenshot = Guid.NewGuid();
+            //string strOutputFilenameScreenshot = string.Format("{0}{1}.png", Path.GetTempPath(), gScreenshot);
+            //var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
+            //Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
+            //sb.AppendFormat("<center><img src=\"{0}.png\" style=\"border: 1px solid black;\"/></center>", gScreenshot);
+
+            //-----------------------------------------------------------------
+
+
+
+            //-----------------------------------------------------------------
+
+            sb.Append("</body></html> ");
+
+            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.Default);
+
+            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
+
+            Cursor = Cursors.Arrow;
+        }
 
         ///// <summary>
         ///// Inserts the HTML snippet.

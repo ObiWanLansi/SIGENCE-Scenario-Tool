@@ -95,5 +95,23 @@ namespace SIGENCEScenarioTool.Tools
             return rtb;
         }
 
+
+        /// <summary>
+        /// Saves the WPF screenshot.
+        /// </summary>
+        /// <param name="screenshot">The screenshot.</param>
+        /// <param name="strOutputFilename">The string output filename.</param>
+        static public void SaveWPFScreenshot(BitmapSource screenshot, string strOutputFilename)
+        {
+            PngBitmapEncoder encoder = new PngBitmapEncoder();
+
+            encoder.Frames.Add(BitmapFrame.Create(screenshot));
+
+            using (BufferedStream bs = new BufferedStream(new FileStream(strOutputFilename, FileMode.Create)))
+            {
+                encoder.Save(bs);
+            }
+        }
+
     } // end static public class Windows
 }

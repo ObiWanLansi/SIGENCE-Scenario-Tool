@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Linq;
 
@@ -32,57 +31,66 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Opens the file.
         /// </summary>
+        /// <param name="strInputFilename">The string input filename.</param>
+        private void OpenFile(string strInputFilename)
+        {
+            Cursor = Cursors.Wait;
+
+            CurrentFile = strInputFilename;
+
+            try
+            {
+                XDocument xdoc = XDocument.Load(strInputFilename);
+
+                //---------------------------------------------------------
+
+                XElement eGeneralSettings = xdoc.Root.Element("GeneralSettings");
+                Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
+                //ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
+                ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
+
+                string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
+                foreach (var mp in GMapProviders.List)
+                {
+                    if (mp.Name == strMapProvider)
+                    {
+                        MapProvider = mp;
+                        break;
+                    }
+                }
+
+                XElement eCenterPosition = eGeneralSettings.Element("CenterPosition");
+                Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? Latitude;
+                Longitude = eCenterPosition.GetDoubleFromNodePoint("Longitude") ?? Longitude;
+
+                //---------------------------------------------------------
+
+                XElement eRFDeviceCollection = xdoc.Root.Element("RFDeviceCollection");
+
+                foreach (XElement e in eRFDeviceCollection.Elements())
+                {
+                    AddRFDevice(RFDevice.FromXml(e));
+                }
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
+
+            Cursor = Cursors.Arrow;
+        }
+
+
+        /// <summary>
+        /// Opens the file.
+        /// </summary>
         private void OpenFile()
         {
             if (ofdLoadSIGENCEScenario.ShowDialog() == true)
             {
-                Cursor = Cursors.Wait;
-
                 Reset();
-                CurrentFile = ofdLoadSIGENCEScenario.FileName;
 
-                try
-                {
-                    XDocument xdoc = XDocument.Load(CurrentFile);
-
-                    //---------------------------------------------------------
-
-                    XElement eGeneralSettings = xdoc.Root.Element("GeneralSettings");
-                    Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
-                    //ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
-                    ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
-
-                    string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
-                    foreach (var mp in GMapProviders.List)
-                    {
-                        if (mp.Name == strMapProvider)
-                        {
-                            MapProvider = mp;
-                            break;
-                        }
-                    }
-
-                    XElement eCenterPosition = eGeneralSettings.Element("CenterPosition");
-                    Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? Latitude;
-                    Longitude = eCenterPosition.GetDoubleFromNodePoint("Longitude") ?? Longitude;
-
-
-                    //---------------------------------------------------------
-
-                    XElement eRFDeviceCollection = xdoc.Root.Element("RFDeviceCollection");
-
-                    foreach (XElement e in eRFDeviceCollection.Elements())
-                    {
-                        AddRFDevice(RFDevice.FromXml(e));
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MB.Error(ex);
-                }
-
-                Cursor = Cursors.Arrow;
+                OpenFile(ofdLoadSIGENCEScenario.FileName);
             }
         }
 
@@ -90,20 +98,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Saves the file.
         /// </summary>
-        private void SaveFile()
+        /// <param name="strOutputFilename">The string output filename.</param>
+        private void SaveFile(string strOutputFilename)
         {
-            if (CurrentFile == null)
-            {
-                if (sfdSaveSIGENCEScenario.ShowDialog() == true)
-                {
-                    CurrentFile = sfdSaveSIGENCEScenario.FileName;
-                }
-                else
-                {
-                    return;
-                }
-            }
-
             Cursor = Cursors.Wait;
 
             try
@@ -138,7 +135,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 //-------------------------------------------------------------
 
-                eSIGENCEScenarioTool.SaveDefault(CurrentFile);
+                eSIGENCEScenarioTool.SaveDefault(strOutputFilename);
             }
             catch (Exception ex)
             {
@@ -146,6 +143,27 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             Cursor = Cursors.Arrow;
+        }
+
+
+        /// <summary>
+        /// Saves the file.
+        /// </summary>
+        private void SaveFile()
+        {
+            if (CurrentFile == null)
+            {
+                if (sfdSaveSIGENCEScenario.ShowDialog() == true)
+                {
+                    CurrentFile = sfdSaveSIGENCEScenario.FileName;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            SaveFile(CurrentFile);
         }
 
 
