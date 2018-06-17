@@ -76,7 +76,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 #if DEBUG
             //CreateRandomizedRFDevices(100);
-            OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+            //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 #endif
             //-----------------------------------------------------------------
 

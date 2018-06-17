@@ -22,7 +22,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// News the file.
         /// </summary>
-        private void NewFile()
+        public void NewFile()
         {
             Reset();
         }
@@ -32,7 +32,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Opens the file.
         /// </summary>
         /// <param name="strInputFilename">The string input filename.</param>
-        private void OpenFile(string strInputFilename)
+        public void OpenFile(string strInputFilename)
         {
             Cursor = Cursors.Wait;
 
@@ -48,7 +48,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
                 //ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
                 ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
-
+                
                 string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
                 foreach (var mp in GMapProviders.List)
                 {
@@ -84,7 +84,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Opens the file.
         /// </summary>
-        private void OpenFile()
+        public void OpenFile()
         {
             if (ofdLoadSIGENCEScenario.ShowDialog() == true)
             {
@@ -99,7 +99,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Saves the file.
         /// </summary>
         /// <param name="strOutputFilename">The string output filename.</param>
-        private void SaveFile(string strOutputFilename)
+        public void SaveFile(string strOutputFilename)
         {
             Cursor = Cursors.Wait;
 
@@ -149,7 +149,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Saves the file.
         /// </summary>
-        private void SaveFile()
+        public void SaveFile()
         {
             if (CurrentFile == null)
             {
@@ -170,7 +170,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Saves with different filename.
         /// </summary>
-        private void SaveAsFile()
+        public void SaveAsFile()
         {
             CurrentFile = null;
 
