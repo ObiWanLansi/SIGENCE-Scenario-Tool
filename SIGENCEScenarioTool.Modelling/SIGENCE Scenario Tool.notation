@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_1VyhMHJeEeibW_hIROZ2Hw" type="PapyrusUMLComponentDiagram" name="Component Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_IvMl4HJfEeiJGryEtWEtuQ" type="Component_PackagedElementShape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_IvVv0HJfEeiJGryEtWEtuQ" type="Component_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_IvVv0XJfEeiJGryEtWEtuQ" type="Component_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_IvVv0nJfEeiJGryEtWEtuQ" y="15"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_IvWW4HJfEeiJGryEtWEtuQ" type="Component_StructureCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_IvWW4XJfEeiJGryEtWEtuQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvWW4nJfEeiJGryEtWEtuQ"/>
+      </children>
+      <element xmi:type="uml:Component" href="SIGENCE%20Scenario%20Tool.uml#_IuCIQHJfEeiJGryEtWEtuQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvMl4XJfEeiJGryEtWEtuQ" x="300" y="240"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_LwbiQHJfEeiJGryEtWEtuQ" type="Component_PackagedElementShape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LwbiQnJfEeiJGryEtWEtuQ" type="Component_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LwbiQ3JfEeiJGryEtWEtuQ" type="Component_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LwbiRHJfEeiJGryEtWEtuQ" y="15"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_LwbiRXJfEeiJGryEtWEtuQ" type="Component_StructureCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_LwbiRnJfEeiJGryEtWEtuQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LwbiR3JfEeiJGryEtWEtuQ"/>
+      </children>
+      <element xmi:type="uml:Component" href="SIGENCE%20Scenario%20Tool.uml#_LwZGAHJfEeiJGryEtWEtuQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LwbiQXJfEeiJGryEtWEtuQ" x="380" y="100"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1VyhMXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1VyhMnJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1VyhM3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.component.root.package">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    <edges xmi:type="notation:Connector" xmi:id="_R-9hEHJfEeiJGryEtWEtuQ" type="Usage_Edge" source="_LwbiQHJfEeiJGryEtWEtuQ" target="_IvMl4HJfEeiJGryEtWEtuQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_R-9hE3JfEeiJGryEtWEtuQ" type="Usage_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_Sr-YEHJfEeiJGryEtWEtuQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_R-9hFHJfEeiJGryEtWEtuQ" x="-1" y="57"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_R--IIHJfEeiJGryEtWEtuQ" type="Usage_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_SsD3oHJfEeiJGryEtWEtuQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_R--IIXJfEeiJGryEtWEtuQ" x="-1" y="27"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_R-9hEXJfEeiJGryEtWEtuQ"/>
+      <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_R-1lQHJfEeiJGryEtWEtuQ"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_R-9hEnJfEeiJGryEtWEtuQ" points="[500, 230, -643984, -643984]$[320, 160, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SAOFUHJfEeiJGryEtWEtuQ" id="(0.34285714285714286,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SAOFUXJfEeiJGryEtWEtuQ" id="(0.8,0.0)"/>
+    </edges>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1WivIHJeEeibW_hIROZ2Hw" type="PapyrusUMLCommunicationDiagram" name="Communication Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_1WivIXJeEeibW_hIROZ2Hw" type="Interaction_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1WivInJeEeibW_hIROZ2Hw" type="Interaction_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_1WivI3JeEeibW_hIROZ2Hw" type="Interaction_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1WivJHJeEeibW_hIROZ2Hw" x="50"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1WivJXJeEeibW_hIROZ2Hw" type="Interaction_SubfragmentCompartment">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1WivJnJeEeibW_hIROZ2Hw"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="SIGENCE%20Scenario%20Tool.uml#_1WKUoHJeEeibW_hIROZ2Hw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1WivJ3JeEeibW_hIROZ2Hw"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1WivKHJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1WivKXJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1WivKnJeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.communication">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Interaction" href="SIGENCE%20Scenario%20Tool.uml#_1WKUoHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1Wqq8HJeEeibW_hIROZ2Hw" type="PapyrusUMLSequenceDiagram" name="Sequence Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_1Wqq8XJeEeibW_hIROZ2Hw" type="Interaction_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1Wqq8nJeEeibW_hIROZ2Hw" type="Interaction_NameLabel"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1Wqq83JeEeibW_hIROZ2Hw" type="Interaction_SubfragmentCompartment">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1Wqq9HJeEeibW_hIROZ2Hw"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="SIGENCE%20Scenario%20Tool.uml#_1WlycHJeEeibW_hIROZ2Hw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1Wqq9XJeEeibW_hIROZ2Hw"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1Wqq9nJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1Wqq93JeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1Wqq-HJeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.sequence">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Interaction" href="SIGENCE%20Scenario%20Tool.uml#_1WlycHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1XETkHJeEeibW_hIROZ2Hw" type="PapyrusUMLStateMachineDiagram" name="State Machine Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_1XETkXJeEeibW_hIROZ2Hw" type="StateMachine_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1XETknJeEeibW_hIROZ2Hw" type="StateMachine_NameLabel">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XETk3JeEeibW_hIROZ2Hw" width="700" height="20"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1XETlHJeEeibW_hIROZ2Hw" type="StateMachine_RegionCompartment">
+        <children xmi:type="notation:Shape" xmi:id="_1XETlXJeEeibW_hIROZ2Hw" type="Region_Shape">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1XETlnJeEeibW_hIROZ2Hw" source="RegionAnnotationKey">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1XETl3JeEeibW_hIROZ2Hw" key="RegionZoneKey" value=""/>
+          </eAnnotations>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_1XETmHJeEeibW_hIROZ2Hw" type="Region_SubvertexCompartment">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XETmXJeEeibW_hIROZ2Hw"/>
+          </children>
+          <element xmi:type="uml:Region" href="SIGENCE%20Scenario%20Tool.uml#_1XBQQHJeEeibW_hIROZ2Hw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XETmnJeEeibW_hIROZ2Hw" width="700" height="280"/>
+        </children>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XETm3JeEeibW_hIROZ2Hw" y="20" width="700" height="280"/>
+      </children>
+      <element xmi:type="uml:StateMachine" href="SIGENCE%20Scenario%20Tool.uml#_1WwxkHJeEeibW_hIROZ2Hw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XETnHJeEeibW_hIROZ2Hw" x="30" y="30" width="700" height="300"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XETnXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1XETnnJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1XETn3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.stateMachine">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:StateMachine" href="SIGENCE%20Scenario%20Tool.uml#_1WwxkHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1XfKUHJeEeibW_hIROZ2Hw" type="PapyrusUMLActivityDiagram" name="Activity Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_1XfKUXJeEeibW_hIROZ2Hw" type="Activity_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1XfKUnJeEeibW_hIROZ2Hw" type="Activity_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_1XfKU3JeEeibW_hIROZ2Hw" type="Activity_KeywordLabel"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1XfKVHJeEeibW_hIROZ2Hw" type="Activity_ParameterCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_1XfKVXJeEeibW_hIROZ2Hw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_1XfKVnJeEeibW_hIROZ2Hw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XfKV3JeEeibW_hIROZ2Hw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1XfKWHJeEeibW_hIROZ2Hw" type="Activity_PreconditionCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_1XfKWXJeEeibW_hIROZ2Hw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_1XfKWnJeEeibW_hIROZ2Hw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XfKW3JeEeibW_hIROZ2Hw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1XfKXHJeEeibW_hIROZ2Hw" type="Activity_PostconditionCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_1XfKXXJeEeibW_hIROZ2Hw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_1XfKXnJeEeibW_hIROZ2Hw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XfKX3JeEeibW_hIROZ2Hw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_1XfKYHJeEeibW_hIROZ2Hw" type="Activity_ActivityNodeCompartment">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XfKYXJeEeibW_hIROZ2Hw"/>
+      </children>
+      <element xmi:type="uml:Activity" href="SIGENCE%20Scenario%20Tool.uml#_1XLBQHJeEeibW_hIROZ2Hw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XfKYnJeEeibW_hIROZ2Hw"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XfKY3JeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1XfKZHJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1XfKZXJeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.activity">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Activity" href="SIGENCE%20Scenario%20Tool.uml#_1XLBQHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1XrXkHJeEeibW_hIROZ2Hw" type="CompositeStructure" name="Composite Structure Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XrXkXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1XrXknJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1XrXk3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.compositeStructure.root.package">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1Xz6cHJeEeibW_hIROZ2Hw" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1Xz6cXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1Xz6cnJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1Xz6c3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1X1voHJeEeibW_hIROZ2Hw" type="PapyrusUMLClassDiagram" name="Package Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1X1voXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1X1vonJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1X1vo3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.package">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1X7PMHJeEeibW_hIROZ2Hw" type="PapyrusUMLTimingDiagram" name="Timing Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1X7PMXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1X7PMnJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1X7PM3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.timing">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_1YAuwHJeEeibW_hIROZ2Hw" type="UseCase" name="Use Case Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1YAuwXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1YAuwnJeEeibW_hIROZ2Hw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1YAuw3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.useCase">
+      <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
+  </notation:Diagram>
+</xmi:XMI>

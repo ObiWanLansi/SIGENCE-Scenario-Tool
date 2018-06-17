@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1RvusHJeEeibW_hIROZ2Hw" name="SIGENCE Scenario Tool">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_1huEYHJeEeibW_hIROZ2Hw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_1WKUoHJeEeibW_hIROZ2Hw" name="Interaction1"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_1WlycHJeEeibW_hIROZ2Hw" name="Interaction2"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_1WwxkHJeEeibW_hIROZ2Hw" name="StateMachine3">
+    <region xmi:type="uml:Region" xmi:id="_1XBQQHJeEeibW_hIROZ2Hw" name="Region1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_1XLBQHJeEeibW_hIROZ2Hw" name="Activity4"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_IuCIQHJfEeiJGryEtWEtuQ" name="SIGENCE Scenario Tool"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_LwZGAHJfEeiJGryEtWEtuQ" name="SIGENCE Scenario Simulation">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_R-1lQHJfEeiJGryEtWEtuQ" client="_LwZGAHJfEeiJGryEtWEtuQ" supplier="_IuCIQHJfEeiJGryEtWEtuQ"/>
+  </packagedElement>
+</uml:Model>
