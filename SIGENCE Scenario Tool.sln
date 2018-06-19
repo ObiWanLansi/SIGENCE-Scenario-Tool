@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.UnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Mockup", "SIGENCEScenarioTool.Mockup\SIGENCE Scenario Tool.Mockup.csproj", "{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool Dashboard", "SIGENCEScenarioTool.Dashboard\SIGENCE Scenario Tool Dashboard.csproj", "{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
