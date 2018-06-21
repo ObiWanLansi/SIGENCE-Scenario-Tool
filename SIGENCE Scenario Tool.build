@@ -52,6 +52,12 @@
 				<include name="**/*" />
 			</fileset>
 		</copy>
+
+        <delete>
+			<fileset basedir="${DeployTarget}">
+				<include name="*.pdb" />
+			</fileset>
+        </delete>
 	</target>
 
 </project>
