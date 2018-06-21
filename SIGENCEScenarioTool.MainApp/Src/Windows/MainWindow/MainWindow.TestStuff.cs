@@ -39,26 +39,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void UDPReceiveData()
         {
-            using( UdpClient client = new UdpClient( 7474 ) )
+            try
             {
-                IPEndPoint ep = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPortReceiving );
-
-                // A neverending story ...
-                while( true )
+                using( UdpClient client = new UdpClient( 7474 ) )
                 {
-                    try
-                    {
-                        byte [] baReceived = client.Receive( ref ep );
+                    IPEndPoint ep = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPortReceiving );
 
-                        string strReceived = Encoding.Default.GetString( baReceived );
-
-                        DebugOutput += strReceived + "\n\n";
-                    }
-                    catch( Exception ex )
+                    // A neverending story ...
+                    while( true )
                     {
-                        MB.Error( ex );
+                        try
+                        {
+                            byte [] baReceived = client.Receive( ref ep );
+
+                            string strReceived = Encoding.Default.GetString( baReceived );
+
+                            DebugOutput += strReceived + "\n\n";
+                        }
+                        catch( Exception ex )
+                        {
+                            MB.Error( ex );
+                        }
                     }
                 }
+            }
+            catch( Exception ex )
+            {
+                MB.Warning( ex.Message );
             }
         }
 
@@ -71,6 +78,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         static private readonly Random r = new Random();
 
 
+
+
         /// <summary>
         /// Creates the randomized RFDevices.
         /// </summary>
@@ -79,12 +88,30 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             Cursor = Cursors.Wait;
 
-            for( int iCounter = 1 ; iCounter < iMaxCount + 1 ; iCounter++ )
+            foreach( var device in CreateRandomizedRFDeviceList( iMaxCount ) )
             {
-                AddRFDevice( new RFDevice
+                AddRFDevice( device );
+            }
+
+            Cursor = Cursors.Arrow;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="iMaxCount"></param>
+        /// <returns></returns>
+        static public RFDeviceList CreateRandomizedRFDeviceList( int iMaxCount )
+        {
+            RFDeviceList list = new RFDeviceList( iMaxCount );
+
+            for( int i = 0 ; i < iMaxCount ; i++ )
+            {
+                list.Add( new RFDevice
                 {
                     Id = r.Next( -1000 , 1000 ) ,
-                    Name = string.Format( "RFDevice #{0}" , iCounter ) ,
+                    Name = string.Format( "RFDevice #{0}" , i ) ,
                     Latitude = ( r.NextDouble() * 0.05 ) + 49.7454 ,
                     Longitude = ( r.NextDouble() * 0.05 ) + 6.6149 ,
                     Altitude = 0 ,
@@ -104,7 +131,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 } );
             }
 
-            Cursor = Cursors.Arrow;
+            return list;
         }
 
     } // end public partial class MainWindow
