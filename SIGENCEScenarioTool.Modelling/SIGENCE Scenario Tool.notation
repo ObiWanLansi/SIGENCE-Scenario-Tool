@@ -11,7 +11,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvWW4nJfEeiJGryEtWEtuQ"/>
       </children>
       <element xmi:type="uml:Component" href="SIGENCE%20Scenario%20Tool.uml#_IuCIQHJfEeiJGryEtWEtuQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvMl4XJfEeiJGryEtWEtuQ" x="180" y="220" width="181"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvMl4XJfEeiJGryEtWEtuQ" x="180" y="260" width="181"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_LwbiQHJfEeiJGryEtWEtuQ" type="Component_PackagedElementShape">
       <children xmi:type="notation:DecorationNode" xmi:id="_LwbiQnJfEeiJGryEtWEtuQ" type="Component_NameLabel"/>
@@ -23,9 +23,33 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LwbiR3JfEeiJGryEtWEtuQ"/>
       </children>
       <element xmi:type="uml:Component" href="SIGENCE%20Scenario%20Tool.uml#_LwZGAHJfEeiJGryEtWEtuQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LwbiQXJfEeiJGryEtWEtuQ" x="520" y="220" width="181"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LwbiQXJfEeiJGryEtWEtuQ" x="180" y="420" width="181"/>
     </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1VyhMXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <children xmi:type="notation:Shape" xmi:id="_b3_wkHVxEeiRhr0KmGiG4Q" type="Component_PackagedElementShape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_b4PBIHVxEeiRhr0KmGiG4Q" type="Component_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_b4PBIXVxEeiRhr0KmGiG4Q" type="Component_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_b4PBInVxEeiRhr0KmGiG4Q" y="15"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_b4PBI3VxEeiRhr0KmGiG4Q" type="Component_StructureCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_b4PBJHVxEeiRhr0KmGiG4Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b4PBJXVxEeiRhr0KmGiG4Q"/>
+      </children>
+      <element xmi:type="uml:Component" href="SIGENCE%20Scenario%20Tool.uml#_b3s1oHVxEeiRhr0KmGiG4Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b3_wkXVxEeiRhr0KmGiG4Q" x="180" y="120" width="181"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_m-HwcHVxEeiRhr0KmGiG4Q" type="Component_PackagedElementShape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_m-HwcnVxEeiRhr0KmGiG4Q" type="Component_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_m-Hwc3VxEeiRhr0KmGiG4Q" type="Component_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_m-HwdHVxEeiRhr0KmGiG4Q" y="15"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_m-HwdXVxEeiRhr0KmGiG4Q" type="Component_StructureCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_m-HwdnVxEeiRhr0KmGiG4Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m-Hwd3VxEeiRhr0KmGiG4Q"/>
+      </children>
+      <element xmi:type="uml:Component" href="SIGENCE%20Scenario%20Tool.uml#_m-EtIHVxEeiRhr0KmGiG4Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m-HwcXVxEeiRhr0KmGiG4Q" x="480" y="180" width="181"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1VyhMXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1VyhMnJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1VyhM3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.component.root.package">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -33,16 +57,48 @@
     <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
     <edges xmi:type="notation:Connector" xmi:id="_io0dgHOXEeiJYNnfhU95tQ" type="Usage_Edge" source="_IvMl4HJfEeiJGryEtWEtuQ" target="_LwbiQHJfEeiJGryEtWEtuQ">
       <children xmi:type="notation:DecorationNode" xmi:id="_io1EkHOXEeiJYNnfhU95tQ" type="Usage_NameLabel">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_io1EkXOXEeiJYNnfhU95tQ" y="60"/>
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_ku7VAHVxEeiRhr0KmGiG4Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_io1EkXOXEeiJYNnfhU95tQ" y="59"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_io1EknOXEeiJYNnfhU95tQ" type="Usage_StereotypeLabel">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_io1Ek3OXEeiJYNnfhU95tQ" y="30"/>
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_kvA0kHVxEeiRhr0KmGiG4Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_io1Ek3OXEeiJYNnfhU95tQ" x="-1" y="29"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_io0dgXOXEeiJYNnfhU95tQ"/>
       <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_ioshsHOXEeiJYNnfhU95tQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_io0dgnOXEeiJYNnfhU95tQ" points="[361, 260, -643984, -643984]$[520, 240, -643984, -643984]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ipLC0HOXEeiJYNnfhU95tQ" id="(1.0,0.5714285714285714)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ipLp4HOXEeiJYNnfhU95tQ" id="(0.0,0.2857142857142857)"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ipLC0HOXEeiJYNnfhU95tQ" id="(0.5524861878453039,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ipLp4HOXEeiJYNnfhU95tQ" id="(0.5524861878453039,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_sSHZoHVxEeiRhr0KmGiG4Q" type="Usage_Edge" source="_b3_wkHVxEeiRhr0KmGiG4Q" target="_m-HwcHVxEeiRhr0KmGiG4Q">
+      <children xmi:type="notation:DecorationNode" xmi:id="_sSHZo3VxEeiRhr0KmGiG4Q" type="Usage_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_zD0W8HVxEeiRhr0KmGiG4Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_sSHZpHVxEeiRhr0KmGiG4Q" x="-1" y="59"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_sSHZpXVxEeiRhr0KmGiG4Q" type="Usage_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_zD6dkHVxEeiRhr0KmGiG4Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_sSHZpnVxEeiRhr0KmGiG4Q" y="29"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_sSHZoXVxEeiRhr0KmGiG4Q"/>
+      <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_sR9BkHVxEeiRhr0KmGiG4Q"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sSHZonVxEeiRhr0KmGiG4Q" points="[320, 190, -643984, -643984]$[500, 140, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sSaUkHVxEeiRhr0KmGiG4Q" id="(1.0,0.5714285714285714)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sSaUkXVxEeiRhr0KmGiG4Q" id="(0.0,0.5714285714285714)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_tkDioHVxEeiRhr0KmGiG4Q" type="Usage_Edge" source="_IvMl4HJfEeiJGryEtWEtuQ" target="_m-HwcHVxEeiRhr0KmGiG4Q">
+      <children xmi:type="notation:DecorationNode" xmi:id="_tkDio3VxEeiRhr0KmGiG4Q" type="Usage_NameLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_zD_9IHVxEeiRhr0KmGiG4Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tkDipHVxEeiRhr0KmGiG4Q" y="59"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_tkDipXVxEeiRhr0KmGiG4Q" type="Usage_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_zEK8QHVxEeiRhr0KmGiG4Q" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tkDipnVxEeiRhr0KmGiG4Q" y="29"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_tkDioXVxEeiRhr0KmGiG4Q"/>
+      <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_tj4jgHVxEeiRhr0KmGiG4Q"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tkDionVxEeiRhr0KmGiG4Q" points="[340, 260, -643984, -643984]$[580, 170, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tkTaQHVxEeiRhr0KmGiG4Q" id="(1.0,0.5714285714285714)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tkTaQXVxEeiRhr0KmGiG4Q" id="(0.0,0.5714285714285714)"/>
     </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_1WivIHJeEeibW_hIROZ2Hw" type="PapyrusUMLCommunicationDiagram" name="Communication Diagram" measurementUnit="Pixel">
@@ -57,7 +113,7 @@
       <element xmi:type="uml:Interaction" href="SIGENCE%20Scenario%20Tool.uml#_1WKUoHJeEeibW_hIROZ2Hw"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1WivJ3JeEeibW_hIROZ2Hw"/>
     </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1WivKHJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1WivKHJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1WivKXJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1WivKnJeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.communication">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -101,7 +157,7 @@
       <element xmi:type="uml:StateMachine" href="SIGENCE%20Scenario%20Tool.uml#_1WwxkHJeEeibW_hIROZ2Hw"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XETnHJeEeibW_hIROZ2Hw" x="30" y="30" width="700" height="300"/>
     </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XETnXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XETnXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1XETnnJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1XETn3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.stateMachine">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -133,7 +189,7 @@
       <element xmi:type="uml:Activity" href="SIGENCE%20Scenario%20Tool.uml#_1XLBQHJeEeibW_hIROZ2Hw"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XfKYnJeEeibW_hIROZ2Hw"/>
     </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XfKY3JeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XfKY3JeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1XfKZHJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1XfKZXJeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.activity">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -141,7 +197,7 @@
     <element xmi:type="uml:Activity" href="SIGENCE%20Scenario%20Tool.uml#_1XLBQHJeEeibW_hIROZ2Hw"/>
   </notation:Diagram>
   <notation:Diagram xmi:id="_1XrXkHJeEeibW_hIROZ2Hw" type="CompositeStructure" name="Composite Structure Diagram" measurementUnit="Pixel">
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XrXkXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1XrXkXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1XrXknJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1XrXk3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.compositeStructure.root.package">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -149,7 +205,7 @@
     <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
   </notation:Diagram>
   <notation:Diagram xmi:id="_1Xz6cHJeEeibW_hIROZ2Hw" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1Xz6cXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1Xz6cXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1Xz6cnJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1Xz6c3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -157,7 +213,7 @@
     <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
   </notation:Diagram>
   <notation:Diagram xmi:id="_1X1voHJeEeibW_hIROZ2Hw" type="PapyrusUMLClassDiagram" name="Package Diagram" measurementUnit="Pixel">
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1X1voXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1X1voXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1X1vonJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1X1vo3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.package">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -165,7 +221,7 @@
     <element xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
   </notation:Diagram>
   <notation:Diagram xmi:id="_1X7PMHJeEeibW_hIROZ2Hw" type="PapyrusUMLTimingDiagram" name="Timing Diagram" measurementUnit="Pixel">
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1X7PMXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1X7PMXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1X7PMnJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1X7PM3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.timing">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -200,7 +256,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rKs0c3OWEeiJYNnfhU95tQ"/>
       </children>
       <element xmi:type="uml:UseCase" href="SIGENCE%20Scenario%20Tool.uml#_rKk4oHOWEeiJYNnfhU95tQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rKq_QXOWEeiJYNnfhU95tQ" x="480" y="240" width="161"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rKq_QXOWEeiJYNnfhU95tQ" x="480" y="240" width="181"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_w5m4AHOWEeiJYNnfhU95tQ" type="UseCase_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_w5m4AnOWEeiJYNnfhU95tQ" type="UseCase_NameLabel"/>
@@ -213,7 +269,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w5m4CHOWEeiJYNnfhU95tQ"/>
       </children>
       <element xmi:type="uml:UseCase" href="SIGENCE%20Scenario%20Tool.uml#_w5lC0HOWEeiJYNnfhU95tQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w5m4AXOWEeiJYNnfhU95tQ" x="480" y="320" width="161"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w5m4AXOWEeiJYNnfhU95tQ" x="480" y="320" width="181"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_zqY9kHOWEeiJYNnfhU95tQ" type="UseCase_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_zqZkoHOWEeiJYNnfhU95tQ" type="UseCase_NameLabel"/>
@@ -226,7 +282,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqZkpnOWEeiJYNnfhU95tQ"/>
       </children>
       <element xmi:type="uml:UseCase" href="SIGENCE%20Scenario%20Tool.uml#_zqWhUHOWEeiJYNnfhU95tQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqY9kXOWEeiJYNnfhU95tQ" x="480" y="400" width="161"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqY9kXOWEeiJYNnfhU95tQ" x="480" y="400" width="181"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_1m9_AHOWEeiJYNnfhU95tQ" type="UseCase_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_1m9_AnOWEeiJYNnfhU95tQ" type="UseCase_NameLabel"/>
@@ -239,7 +295,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1m9_CHOWEeiJYNnfhU95tQ"/>
       </children>
       <element xmi:type="uml:UseCase" href="SIGENCE%20Scenario%20Tool.uml#_1m8w4HOWEeiJYNnfhU95tQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1m9_AXOWEeiJYNnfhU95tQ" x="480" y="480" width="161"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1m9_AXOWEeiJYNnfhU95tQ" x="480" y="480" width="181"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_6walEHOWEeiJYNnfhU95tQ" type="UseCase_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_6wbMIHOWEeiJYNnfhU95tQ" type="UseCase_NameLabel"/>
@@ -252,9 +308,9 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6wbzNXOWEeiJYNnfhU95tQ"/>
       </children>
       <element xmi:type="uml:UseCase" href="SIGENCE%20Scenario%20Tool.uml#_6wW6sHOWEeiJYNnfhU95tQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6walEXOWEeiJYNnfhU95tQ" x="480" y="560" width="161"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6walEXOWEeiJYNnfhU95tQ" x="480" y="560" width="181"/>
     </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_1YAuwXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1YAuwXJeEeibW_hIROZ2Hw" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_1YAuwnJeEeibW_hIROZ2Hw"/>
     <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_1YAuw3JeEeibW_hIROZ2Hw" diagramKindId="org.eclipse.papyrus.uml.diagram.useCase">
       <owner xmi:type="uml:Model" href="SIGENCE%20Scenario%20Tool.uml#_1RvusHJeEeibW_hIROZ2Hw"/>
@@ -272,8 +328,8 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_FWWB8XOXEeiJYNnfhU95tQ"/>
       <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_FWHYcHOXEeiJYNnfhU95tQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FWWB8nOXEeiJYNnfhU95tQ" points="[280, 420, -643984, -643984]$[380, 360, -643984, -643984]$[484, 280, -643984, -643984]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FXPZ0HOXEeiJYNnfhU95tQ" id="(0.0,0.4)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FXPZ0XOXEeiJYNnfhU95tQ" id="(0.024844720496894408,0.6666666666666666)"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FXPZ0HOXEeiJYNnfhU95tQ" id="(1.0,0.8)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FXPZ0XOXEeiJYNnfhU95tQ" id="(0.0,0.6666666666666666)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_KA0NAHOXEeiJYNnfhU95tQ" type="Usage_Edge" source="_QL-skHOIEeiH8tR31R692w" target="_w5m4AHOWEeiJYNnfhU95tQ">
       <children xmi:type="notation:DecorationNode" xmi:id="_KA2CMHOXEeiJYNnfhU95tQ" type="Usage_NameLabel">
@@ -287,8 +343,8 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_KA0NAXOXEeiJYNnfhU95tQ"/>
       <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_KAxJsHOXEeiJYNnfhU95tQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KA0NAnOXEeiJYNnfhU95tQ" points="[280, 420, -643984, -643984]$[380, 400, -643984, -643984]$[484, 360, -643984, -643984]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KBW_kHOXEeiJYNnfhU95tQ" id="(0.0,0.4)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KBW_kXOXEeiJYNnfhU95tQ" id="(0.024844720496894408,0.6666666666666666)"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KBW_kHOXEeiJYNnfhU95tQ" id="(1.0,0.8)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KBW_kXOXEeiJYNnfhU95tQ" id="(0.0,0.6666666666666666)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_L7rXMHOXEeiJYNnfhU95tQ" type="Usage_Edge" source="_QL-skHOIEeiH8tR31R692w" target="_zqY9kHOWEeiJYNnfhU95tQ">
       <children xmi:type="notation:DecorationNode" xmi:id="_L7r-QHOXEeiJYNnfhU95tQ" type="Usage_NameLabel">
@@ -302,7 +358,7 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_L7rXMXOXEeiJYNnfhU95tQ"/>
       <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_L7ns0HOXEeiJYNnfhU95tQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_L7rXMnOXEeiJYNnfhU95tQ" points="[340, 420, -643984, -643984]$[484, 420, -643984, -643984]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L8DxsHOXEeiJYNnfhU95tQ" id="(0.0,0.4)"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L8DxsHOXEeiJYNnfhU95tQ" id="(1.0,0.8)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_L8DxsXOXEeiJYNnfhU95tQ" id="(0.0,0.3333333333333333)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_N4b-0HOXEeiJYNnfhU95tQ" type="Usage_Edge" source="_QL-skHOIEeiH8tR31R692w" target="_1m9_AHOWEeiJYNnfhU95tQ">
@@ -318,7 +374,7 @@
       <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_N4Y7gHOXEeiJYNnfhU95tQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_N4b-0nOXEeiJYNnfhU95tQ" points="[310, 440, -643984, -643984]$[380, 440, -643984, -643984]$[484, 500, -643984, -643984]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_N44qwHOXEeiJYNnfhU95tQ" id="(1.0,0.8)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_N44qwXOXEeiJYNnfhU95tQ" id="(0.024844720496894408,0.3333333333333333)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_N44qwXOXEeiJYNnfhU95tQ" id="(0.0,0.3333333333333333)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_Paj44HOXEeiJYNnfhU95tQ" type="Usage_Edge" source="_QL-skHOIEeiH8tR31R692w" target="_6walEHOWEeiJYNnfhU95tQ">
       <children xmi:type="notation:DecorationNode" xmi:id="_Pakf8HOXEeiJYNnfhU95tQ" type="Usage_NameLabel">
@@ -333,7 +389,7 @@
       <element xmi:type="uml:Usage" href="SIGENCE%20Scenario%20Tool.uml#_Pag1kHOXEeiJYNnfhU95tQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Paj44nOXEeiJYNnfhU95tQ" points="[310, 440, -643984, -643984]$[380, 460, -643984, -643984]$[484, 580, -643984, -643984]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Pa-IkHOXEeiJYNnfhU95tQ" id="(1.0,0.8)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Pa-IkXOXEeiJYNnfhU95tQ" id="(0.024844720496894408,0.3333333333333333)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Pa-IkXOXEeiJYNnfhU95tQ" id="(0.0,0.3333333333333333)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>

@@ -11,6 +11,7 @@
   <packagedElement xmi:type="uml:Activity" xmi:id="_1XLBQHJeEeibW_hIROZ2Hw" name="Activity4"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_IuCIQHJfEeiJGryEtWEtuQ" name="SIGENCE Scenario Tool">
     <packagedElement xmi:type="uml:Usage" xmi:id="_ioshsHOXEeiJYNnfhU95tQ" client="_IuCIQHJfEeiJGryEtWEtuQ" supplier="_LwZGAHJfEeiJGryEtWEtuQ"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_tj4jgHVxEeiRhr0KmGiG4Q" client="_IuCIQHJfEeiJGryEtWEtuQ" supplier="_m-EtIHVxEeiRhr0KmGiG4Q"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_LwZGAHJfEeiJGryEtWEtuQ" name="SIGENCE Scenario Simulation"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_QL07kHOIEeiH8tR31R692w" name="SIGINT Developer"/>
@@ -19,9 +20,13 @@
   <packagedElement xmi:type="uml:UseCase" xmi:id="_zqWhUHOWEeiJYNnfhU95tQ" name="Send Scenario"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_1m8w4HOWEeiJYNnfhU95tQ" name="Verify Simulation Result"/>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_6wW6sHOWEeiJYNnfhU95tQ" name="Delete Scenario"/>
-  <packagedElement xmi:type="uml:Usage" xmi:id="_FWHYcHOXEeiJYNnfhU95tQ" client="_QL07kHOIEeiH8tR31R692w" supplier="_rKk4oHOWEeiJYNnfhU95tQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_FWHYcHOXEeiJYNnfhU95tQ" client="_1RvusHJeEeibW_hIROZ2Hw _QL07kHOIEeiH8tR31R692w" supplier="_rKk4oHOWEeiJYNnfhU95tQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_KAxJsHOXEeiJYNnfhU95tQ" client="_QL07kHOIEeiH8tR31R692w" supplier="_w5lC0HOWEeiJYNnfhU95tQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_L7ns0HOXEeiJYNnfhU95tQ" client="_QL07kHOIEeiH8tR31R692w" supplier="_zqWhUHOWEeiJYNnfhU95tQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_N4Y7gHOXEeiJYNnfhU95tQ" client="_QL07kHOIEeiH8tR31R692w" supplier="_1m8w4HOWEeiJYNnfhU95tQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_Pag1kHOXEeiJYNnfhU95tQ" client="_QL07kHOIEeiH8tR31R692w" supplier="_6wW6sHOWEeiJYNnfhU95tQ"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_b3s1oHVxEeiRhr0KmGiG4Q" name="SIGENCE Scenario TestSuite">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_sR9BkHVxEeiRhr0KmGiG4Q" client="_b3s1oHVxEeiRhr0KmGiG4Q" supplier="_m-EtIHVxEeiRhr0KmGiG4Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_m-EtIHVxEeiRhr0KmGiG4Q" name="SIGENCE Scenario Library"/>
 </uml:Model>
