@@ -1,6 +1,5 @@
 ﻿using System.Windows;
-
-
+using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.TestSuite
 {
@@ -51,6 +50,8 @@ namespace SIGENCEScenarioTool.TestSuite
         private void Button_FindScenario_Click(object sender, RoutedEventArgs e)
         {
             //Dirty Hack ..
+
+            MB.Information("There Is Only One Scenario,\nso we load it!");
 
             foreach (var w in App.Current.Windows)
             {
