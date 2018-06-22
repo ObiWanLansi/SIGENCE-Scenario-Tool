@@ -78,8 +78,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         static private readonly Random r = new Random();
 
 
-
-
         /// <summary>
         /// Creates the randomized RFDevices.
         /// </summary>

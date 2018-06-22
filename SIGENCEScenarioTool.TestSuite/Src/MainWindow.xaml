@@ -50,7 +50,7 @@
         </WrapPanel>
 
         <WrapPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="{StaticResource FIND}" ToolTip="Find A Existing Scenario" />
+            <Button Content="{StaticResource FIND}" ToolTip="Find A Existing Scenario" Click="Button_FindScenario_Click"/>
             <Button Content="{StaticResource EDIT}" ToolTip="Edit A Existing Scenario" Click="Button_LoadScenario_Click" />
         </WrapPanel>
 

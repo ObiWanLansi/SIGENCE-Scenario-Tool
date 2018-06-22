@@ -264,11 +264,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     wb.Sheets.Add( Missing , maindatasheet );
                 }
 
-                //string strHtml = "<html><b>Hello World!</b><hr /></html>";
                 Excel.Worksheet descriptionsheet = wb.Sheets [2] as Excel.Worksheet;
                 descriptionsheet.Name = "Scenario Description";
                 Excel.Range cell = descriptionsheet.Cells [1 , 1] as Excel.Range;
-                //cell.Value2 = strHtml;
 
                 Clipboard.SetDataObject( ScenarioDescription );
                 cell.PasteSpecial();

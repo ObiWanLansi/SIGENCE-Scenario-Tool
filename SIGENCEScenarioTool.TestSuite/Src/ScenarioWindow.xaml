@@ -6,7 +6,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="TestScenario Porta Nigra" FontSize="16" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" />
+        <Label x:Name="l" Grid.Row="0" FontSize="16" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" />
         <WebBrowser x:Name="wb" Grid.Row="1" />
         <DataGrid x:Name="dg" Grid.Row="2" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" FontFamily="Courier New" FontSize="12" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" />
     </Grid>
