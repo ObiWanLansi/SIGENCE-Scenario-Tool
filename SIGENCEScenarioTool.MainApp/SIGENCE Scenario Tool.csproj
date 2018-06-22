@@ -233,7 +233,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="SIGENCE Scenario Tool_TemporaryKey.pfx" />
     <None Include="Src\Models\GeoLocalizationResult.Properties.md">
       <DependentUpon>GeoLocalizationResult.Properties.tt</DependentUpon>
       <AutoGen>True</AutoGen>
