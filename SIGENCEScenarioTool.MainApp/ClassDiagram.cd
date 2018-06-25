@@ -1,26 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="SIGENCEScenarioTool.Windows.MainWindow.MainWindow">
-    <Position X="6.25" Y="1" Width="3.5" />
+    <Position X="6.75" Y="1" Width="4.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Events" Collapsed="true" />
     </Compartments>
-    <NestedTypes>
-      <Delegate Name="SIGENCEScenarioTool.Windows.MainWindow.MainWindow.DoForegoroundEvents" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Src\Windows\MainWindow\MainWindow.EventHandling.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Delegate>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>gAcyEAIUpkwABAEIEQIOhQgIgACAUEAEBBChYABImAU=</HashCode>
+      <HashCode>gBcwMFCVrG5ABgEIESIPhQiIwSiAVEBNBRKhYABI2AU=</HashCode>
       <FileName>Src\Windows\MainWindow\MainWindow.EventHandling.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SIGENCEScenarioTool.Models.GeoLocalizationResult">
-    <Position X="13" Y="1" Width="1.75" />
+    <Position X="12.5" Y="1" Width="2.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Events" Collapsed="true" />
@@ -32,7 +25,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SIGENCEScenarioTool.Models.RFDevice">
-    <Position X="0.5" Y="1" Width="2" />
+    <Position X="0.5" Y="1" Width="2.25" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Events" Collapsed="true" />
@@ -44,12 +37,13 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SIGENCEScenarioTool.ViewModels.RFDeviceViewModel">
-    <Position X="3.5" Y="1" Width="1.75" />
+    <Position X="3.5" Y="1" Width="2.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AACCEAAAAEwAECMAACAIwQQAoAAhAAABABBAAAAAAYA=</HashCode>
+      <HashCode>IACCEAAAAEyCkCMAACAIwQQAoAAhAAABABBAAAAAAYA=</HashCode>
       <FileName>Src\ViewModels\RFDeviceViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -57,19 +51,19 @@
   <Enum Name="SIGENCEScenarioTool.Models.RxTxType">
     <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAACAAAAABAAAAAAAAAAAIAAAAAAAABBABA=</HashCode>
       <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SIGENCEScenarioTool.Models.AntennaType">
-    <Position X="0.5" Y="10" Width="1.5" />
+    <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABA=</HashCode>
       <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SIGENCEScenarioTool.Models.DeviceType">
-    <Position X="2.25" Y="8.25" Width="1.5" />
+    <Position X="0.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAABA=</HashCode>
       <FileName>Src\Models\EnumerationsAndConstants.cs</FileName>
