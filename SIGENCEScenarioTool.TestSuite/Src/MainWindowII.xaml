@@ -1,0 +1,66 @@
+﻿<Window x:Class="SIGENCEScenarioTool.TestSuite.Src.MainWindowII" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SIGENCEScenarioTool.TestSuite.Src" mc:Ignorable="d" Title="TestSuite" Height="900" Width="1200" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Ribbon Grid.Row="0">
+            <Ribbon.HelpPaneContent>
+                <RibbonButton SmallImageSource="/Images/data_information.png" />
+            </Ribbon.HelpPaneContent>
+            <Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar>
+                    <RibbonButton SmallImageSource="/Images/data_find.png" />
+                    <RibbonButton SmallImageSource="/Images/media_play.png" />
+                    <RibbonButton SmallImageSource="/Images/media_stop.png" />
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>
+            <Ribbon.ApplicationMenu>
+                <!--<RibbonApplicationMenu SmallImageSource="/Images/AirbusLogo.png">-->
+                <RibbonApplicationMenu >
+                    <RibbonApplicationMenu.AuxiliaryPaneContent>
+                        <StackPanel Margin="5">
+                            <!--<TextBlock TextWrapping="Wrap">Hier ist das sogenannte AuxiliaryPane :-)<LineBreak />Es lassen sich beliebige WPF-Elemente einbinden.</TextBlock>-->
+                            <Image Source="/Images/AirbusLogo.png" />
+                        </StackPanel>
+                    </RibbonApplicationMenu.AuxiliaryPaneContent>
+                    <RibbonApplicationMenuItem Header="New" ImageSource="/Images/package_new.png" />
+                    <RibbonApplicationMenuItem Header="Edit" ImageSource="/Images/package_edit.png" />
+                    <RibbonApplicationMenu.FooterPaneContent>
+                        <RibbonButton Label="Close" SmallImageSource="/Images/package_error.png" HorizontalAlignment="Right" />
+                    </RibbonApplicationMenu.FooterPaneContent>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="TestSuite">
+                <RibbonGroup Header="Scenario">
+                    <RibbonButton SmallImageSource="/Images/package_new.png" Label="New" />
+                    <RibbonButton SmallImageSource="/Images/package_find.png" Label="Search" />
+                    <RibbonButton SmallImageSource="/Images/package_edit.png" Label="Edit" />
+                    <RibbonButton SmallImageSource="/Images/package_view.png" Label="View" />
+                    <RibbonButton SmallImageSource="/Images/package_delete.png" Label="Delete" />
+                </RibbonGroup>
+                <RibbonGroup Header="Test">
+                    <RibbonButton SmallImageSource="/Images/media_play.png" Label="Play" />
+                    <RibbonButton SmallImageSource="/Images/media_stop.png" Label="Stop" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="View">
+                <RibbonGroup Header="Description">
+                    <CheckBox Content="Checkbox" Margin="10" />
+                    <Slider Width="120" Margin="10" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <RadialGradientBrush GradientOrigin="0,0" RadiusX="1" RadiusY="1">
+                    <GradientStop Color="WhiteSmoke" Offset="0.5" />
+                    <GradientStop Color="LightBlue" Offset="1" />
+                </RadialGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+    </Grid>
+</Window>
