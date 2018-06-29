@@ -16,6 +16,9 @@
 
 		<delete dir=".\SIGENCEScenarioTool.UnitTests\bin" />
         <delete dir=".\SIGENCEScenarioTool.UnitTests\obj" />
+
+        <delete dir=".\SIGENCEScenarioTool.TestSuite\bin" />
+        <delete dir=".\SIGENCEScenarioTool.TestSuite\obj" />
     </target>
 
 
