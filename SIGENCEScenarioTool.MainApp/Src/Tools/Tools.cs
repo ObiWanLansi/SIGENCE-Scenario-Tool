@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
-using System.Windows.Media.Imaging;
 
 
 
@@ -152,7 +151,6 @@ namespace SIGENCEScenarioTool.Tools
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
         /// <summary>
         /// Gets the size of the human.
         /// </summary>
@@ -198,7 +196,6 @@ namespace SIGENCEScenarioTool.Tools
 
             return string.Format("{0:F} km", (float)lLengthInMeter / 1000);
         }
-
 
 
         /// <summary>

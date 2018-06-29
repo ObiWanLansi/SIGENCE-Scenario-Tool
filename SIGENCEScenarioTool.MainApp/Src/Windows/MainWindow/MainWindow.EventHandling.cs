@@ -173,7 +173,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void ToogleButton_EditScenarioDescription_Click(object sender, RoutedEventArgs e)
         {
             ScenarioDescriptionEditMode = (sender as ToggleButton).IsChecked ?? false;
-            
+
             UpdateScenarioDescription();
 
             e.Handled = true;

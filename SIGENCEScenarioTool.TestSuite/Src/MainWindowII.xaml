@@ -18,7 +18,7 @@
             </Ribbon.QuickAccessToolBar>
             <Ribbon.ApplicationMenu>
                 <!--<RibbonApplicationMenu SmallImageSource="/Images/AirbusLogo.png">-->
-                <RibbonApplicationMenu >
+                <RibbonApplicationMenu>
                     <RibbonApplicationMenu.AuxiliaryPaneContent>
                         <StackPanel Margin="5">
                             <!--<TextBlock TextWrapping="Wrap">Hier ist das sogenannte AuxiliaryPane :-)<LineBreak />Es lassen sich beliebige WPF-Elemente einbinden.</TextBlock>-->

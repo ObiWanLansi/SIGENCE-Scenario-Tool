@@ -35,6 +35,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private readonly SaveFileDialog sfdExportRFDevices = new SaveFileDialog();
 
         /// <summary>
+        /// The ofd import rf devices
+        /// </summary>
+        private readonly OpenFileDialog ofdImportRFDevices = new OpenFileDialog();
+
+        /// <summary>
         /// The SFD save screenshot
         /// </summary>
         private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();
@@ -185,7 +190,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 bIsTileLoading = value;
-                
+
                 FirePropertyChanged();
             }
         }
@@ -304,6 +309,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
         //---------------------------------------------------------------------
+
 
         /// <summary>
         /// The string current file

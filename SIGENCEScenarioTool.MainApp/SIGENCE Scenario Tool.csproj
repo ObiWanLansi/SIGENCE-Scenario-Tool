@@ -145,18 +145,18 @@
       <DependentUpon>RectangleMarker.xaml</DependentUpon>
     </Compile>
     <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
-    <Compile Include="Src\Models\GeoLocalizationResult.cs">
+    <Compile Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.cs">
       <DependentUpon>GeoLocalizationResult.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Src\Models\GeoLocalizationResultList.cs" />
-    <Compile Include="Src\Models\RFDevice.cs">
+    <Compile Include="Src\Models\GeoLocalizationResult\GeoLocalizationResultList.cs" />
+    <Compile Include="Src\Models\RFDevice\RFDevice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RFDevice.tt</DependentUpon>
     </Compile>
-    <Compile Include="Src\Models\RFDeviceList.cs" />
+    <Compile Include="Src\Models\RFDevice\RFDeviceList.cs" />
     <Compile Include="Src\Tools\Speech.cs" />
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
@@ -240,12 +240,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Src\Models\GeoLocalizationResult.Properties.md">
+    <None Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.md">
       <DependentUpon>GeoLocalizationResult.Properties.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </None>
-    <None Include="Src\Models\RFDevice.Properties.md">
+    <None Include="Src\Models\RFDevice\RFDevice.Properties.md">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RFDevice.Properties.tt</DependentUpon>
@@ -267,7 +267,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Src\Models\GeoLocalizationResult.xml" />
+    <Resource Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.xml" />
     <Resource Include="mobilephone.ico" />
     <Resource Include="Images\copy.png" />
     <Resource Include="Images\paste.png" />
@@ -292,23 +292,23 @@
     <Resource Include="Images\text_rich_colored.png" />
     <Resource Include="Images\garbage.png" />
     <Resource Include="Images\move.png" />
-    <Content Include="Src\Models\GeoLocalizationResult.Properties.tt">
+    <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>
     </Content>
-    <Content Include="Src\Models\GeoLocalizationResult.tt">
+    <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
     </Content>
-    <Content Include="Src\Models\RFDevice.Properties.tt">
+    <Content Include="Src\Models\RFDevice\RFDevice.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RFDevice.Properties.md</LastGenOutput>
     </Content>
-    <Content Include="Src\Models\RFDevice.tt">
+    <Content Include="Src\Models\RFDevice\RFDevice.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RFDevice.cs</LastGenOutput>
     </Content>
-    <Resource Include="Src\Models\RFDevice.xml">
+    <Resource Include="Src\Models\RFDevice\RFDevice.xml">
       <SubType>Designer</SubType>
     </Resource>
   </ItemGroup>

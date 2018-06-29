@@ -298,11 +298,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            sfdExportRFDevices.Title = "Export SIGENCE Scenario Tool File";
-            sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
-            sfdExportRFDevices.Filter += "|Office Open XML File Format (*.xlsx)|*.xlsx";
+            sfdExportRFDevices.Title = "Export RF Devices";
+            sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json|Office Open XML File Format (*.xlsx)|*.xlsx";
             sfdExportRFDevices.AddExtension = true;
             sfdExportRFDevices.CheckPathExists = true;
+
+            //-----------------------------------------------------------------
+
+            ofdImportRFDevices.Title = "Import RF Devices";
+            ofdImportRFDevices.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx";
+            ofdImportRFDevices.AddExtension = true;
+            ofdImportRFDevices.CheckPathExists = true;
+            ofdImportRFDevices.CheckFileExists = true;
+            ofdImportRFDevices.Multiselect = false;
 
             //-----------------------------------------------------------------
 

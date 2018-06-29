@@ -93,6 +93,7 @@ namespace SIGENCEScenarioTool.ViewModels
             }
         }
 
+
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -618,7 +619,6 @@ namespace SIGENCEScenarioTool.ViewModels
             FirePropertyChanged("Latitude");
             FirePropertyChanged("Longitude");
         }
-
 
     } // end sealed public class RFDeviceViewModel
 }
