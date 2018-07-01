@@ -24,6 +24,7 @@
         <Image x:Key="NUT_AND_BOLT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/nut_and_bolt.png" />
         <Image x:Key="GARBAGE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/garbage.png" />
         <Image x:Key="MOVE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/move.png" />
+        <Image x:Key="PIN_BLUE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/pin_blue.png" />
 
 
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
@@ -82,6 +83,7 @@
                 <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
                 <MenuItem Header="_Create Screenshot From Map" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
                 <MenuItem Header="_Send Data via UDP" Icon="{StaticResource SEND}" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
+                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click"/>
             </MenuItem>
             <MenuItem Header="_Extras">
                 <MenuItem Header="_Settings" Icon="{StaticResource NUT_AND_BOLT}" IsEnabled="False" />

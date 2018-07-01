@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -174,7 +175,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             Excel.Application excel = new Excel.Application();
-
 
             try
             {
@@ -700,6 +700,47 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 MB.Information("There are no copied RFDevices in the list.\nPlease mark a RFDevice and copied it.");
             }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Opens the rf device in google maps.
+        /// </summary>
+        /// <param name="rfdefvice">The rfdefvice.</param>
+        private void OpenRFDeviceInGoogleMaps(RFDeviceViewModel rfdefvice)
+        {
+            if (rfdefvice == null)
+            {
+                throw new ArgumentNullException("rfdefvice");
+            }
+
+            //string strUrl = string.Format(new NumberFormatInfo { NumberDecimalSeparator = "." }, "https://www.google.de/maps/@{0},{1},500m/sensorset=!3m1!1e3", rfdefvice.Latitude, rfdefvice.Longitude);
+            string strUrl = string.Format(new NumberFormatInfo { NumberDecimalSeparator = "." }, "https://www.google.de/maps/@{0},{1},100m", rfdefvice.Latitude, rfdefvice.Longitude);
+
+            Tools.Windows.OpenWebAdress(strUrl);
+        }
+
+
+        /// <summary>
+        /// Opens the rf device in google maps.
+        /// </summary>
+        private void OpenRFDeviceInGoogleMaps()
+        {
+            if (dgRFDevices.SelectedItem == null)
+            {
+                MB.Information("No RFDevice Is Selected In The DataGrid!");
+                return;
+            }
+
+            if (dgRFDevices.SelectedItems.Count > 1)
+            {
+                MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
+                return;
+            }
+
+            OpenRFDeviceInGoogleMaps(dgRFDevices.SelectedItem as RFDeviceViewModel);
         }
 
     } // end public partial class MainWindow

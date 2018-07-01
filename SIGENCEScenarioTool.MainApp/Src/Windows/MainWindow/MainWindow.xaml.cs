@@ -2,12 +2,9 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
-using System.Text;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 
-using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -178,109 +175,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 wbScenarioDescription.NavigateToString("<i>No scenario description avaible.</i>");
             }
         }
-
-
-        /// <summary>
-        /// Creates the scenario report.
-        /// </summary>
-        private void CreateScenarioReport()
-        {
-            if (string.IsNullOrEmpty(CurrentFile))
-            {
-                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
-                return;
-            }
-
-            Cursor = Cursors.Wait;
-
-            FileInfo fiCurrentFile = new FileInfo(CurrentFile);
-
-            string strOutputFilename = string.Format("{0}{1}.html", Path.GetTempPath(), fiCurrentFile.GetFilenameWithoutExtension());
-
-            StringBuilder sb = new StringBuilder(8192);
-
-            sb.Append("<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>");
-
-            //-----------------------------------------------------------------
-
-            sb.AppendFormat("<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension());
-
-            sb.Append("<hr />");
-
-            //-----------------------------------------------------------------
-
-            if (string.IsNullOrEmpty(ScenarioDescription) == false)
-            {
-                sb.Append(ScenarioDescription);
-            }
-
-            //-----------------------------------------------------------------
-
-            //Guid gScreenshot = Guid.NewGuid();
-            //string strOutputFilenameScreenshot = string.Format("{0}{1}.png", Path.GetTempPath(), gScreenshot);
-            //var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
-            //Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
-            //sb.AppendFormat("<center><img src=\"{0}.png\" style=\"border: 1px solid black;\"/></center>", gScreenshot);
-
-            //-----------------------------------------------------------------
-
-
-
-            //-----------------------------------------------------------------
-
-            sb.Append("</body></html> ");
-
-            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.Default);
-
-            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
-
-            Cursor = Cursors.Arrow;
-        }
-
-        ///// <summary>
-        ///// Inserts the HTML snippet.
-        ///// </summary>
-        ///// <param name="strSnippetId">The string snippet identifier.</param>
-        //private void InsertHtmlSnippet(string strSnippetId)
-        //{
-        //    string strSnippet = null;
-
-        //    Func<string, string> GetDefaultTag = ((tag) => { return string.Format("<{0}></{0}>", tag); });
-
-        //    strSnippetId = strSnippetId.ToLower();
-
-        //    switch (strSnippetId)
-        //    {
-
-        //        case "table":
-        //            strSnippet = "<table border=\"1\">\n</table>";
-        //            break;
-
-        //        case "br":
-        //            strSnippet = "<br />";
-        //            break;
-
-        //        case "hr":
-        //            strSnippet = "<hr />";
-        //            break;
-
-        //        case "image":
-        //            strSnippet = "<image src=\"url\" />";
-        //            break;
-
-        //        case "link":
-        //            strSnippet = "<a href=\"url\">Link Text</a>";
-        //            break;
-
-        //        default:
-        //            strSnippet = GetDefaultTag(strSnippetId);
-        //            break;
-        //    }
-
-        //    int iOldCaretIndex = tbScenarioDescription.CaretIndex;
-        //    ScenarioDescription = ScenarioDescription.Insert(iOldCaretIndex, strSnippet);
-        //    tbScenarioDescription.CaretIndex = iOldCaretIndex;
-        //}
 
     } // end public partial class MainWindow
 }
