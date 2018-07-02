@@ -1,0 +1,11 @@
+PrimaryKey;Id;Name;Latitude;Longitude;Altitude;Roll;Pitch;Yaw;RxTxType;AntennaType;CenterFrequency_Hz;Bandwith_Hz;Gain_dB;SignalToNoiseRatio_dB;XPos;YPos;ZPos;StartTime;Remark
+f58757dc-a794-440e-9dab-d6eb54165058;-221;RFDevice #0;49,7613535939879;6,6578928208203;2893;26;-32;70;HackRF;Unknown;9600000;19000;91;89;-17;66;-15;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+bb9cda43-578a-421c-a1b1-ed9caede5583;-491;RFDevice #1;49,7532383722379;6,65555943397147;11065;-86;-68;-79;TwinRx;OmniDirectional;9100000;18000;84;136;36;60;-8;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+be27c39c-fe32-4f38-a503-56865be37dfb;-866;RFDevice #2;49,7489468527598;6,66452357021851;5268;44;22;-84;Unknown;OmniDirectional;8900000;16000;69;99;26;12;-28;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
+aa7e6a9b-f36e-4d69-94b4-36eacdf19b98;455;RFDevice #3;49,7739536300757;6,66452219893915;6900;10;60;16;IdealSDR;OmniDirectional;9500000;13000;90;79;58;35;55;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+9c5a59ab-8ea6-42a0-af2e-09233fa3f2d6;-356;RFDevice #4;49,7892292300533;6,63542515422484;2104;15;-41;11;TwinRx;Unknown;9700000;12000;118;41;-31;-9;46;0;The quick brown fox jumps over a lazy dog.
+adfd5dbb-c2f9-4cef-bafa-7184faf4ed61;-958;RFDevice #5;49,7623062166786;6,6378497835147;6400;25;63;72;IdealSDR;Unknown;9400000;10000;44;125;47;-73;36;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+69215734-8376-4a3a-8ce2-c68a28b2ca0b;-285;RFDevice #6;49,780809625217;6,66010510125216;5295;80;-80;-76;QPSK;Unknown;9200000;13000;29;1;-34;-57;-71;0;Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+e6814b24-fdf8-4945-89e8-a60c4bcda3b6;741;RFDevice #7;49,765352929588;6,6357239654176;3657;85;-27;79;TwinRx;OmniDirectional;10300000;10000;135;111;-4;11;4;0;The quick brown fox jumps over a lazy dog.
+a788f6f6-cea8-49c0-8822-ccb92bc628ca;868;RFDevice #8;49,7820154421291;6,66028327881386;443;3;-85;-48;SIN;OmniDirectional;8600000;11000;112;104;17;2;48;0;Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+07573170-1f54-4c3f-9287-eca5a816773a;895;RFDevice #9;49,7758363973348;6,63142942107363;11428;-17;-90;-42;IdealSDR;Unknown;10400000;13000;66;11;4;-20;4;0;Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.
