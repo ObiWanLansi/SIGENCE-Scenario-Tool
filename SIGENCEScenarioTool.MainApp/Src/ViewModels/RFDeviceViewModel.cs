@@ -82,7 +82,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The start time.
         /// </value>
-        public ulong StartTime
+        public double StartTime
         {
             get { return RFDevice.StartTime; }
             set

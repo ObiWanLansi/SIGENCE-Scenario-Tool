@@ -214,10 +214,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                             continue;
                         }
 
+                        // Hier ist zu überlegen wie wir das ganze generisch machen können falls sich das Model nochmal ändert ...
                         switch (iColumn)
                         {
                             case 1:
-                                device.StartTime = Convert.ToUInt64(value);
+                                device.StartTime = Convert.ToDouble(value);
                                 break;
 
                             case 2:
