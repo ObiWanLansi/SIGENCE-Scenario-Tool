@@ -294,6 +294,33 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
 
+                    <DataGridTextColumn Header="XPos" Binding="{Binding XPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Right" />
+                                <Setter Property="Margin" Value="5" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="YPos" Binding="{Binding YPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Right" />
+                                <Setter Property="Margin" Value="5" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="ZPos" Binding="{Binding ZPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Right" />
+                                <Setter Property="Margin" Value="5" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
                     <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
