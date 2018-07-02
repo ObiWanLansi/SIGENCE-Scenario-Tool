@@ -54,7 +54,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
@@ -83,12 +82,12 @@
                 <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
                 <MenuItem Header="_Create Screenshot From Map" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
                 <MenuItem Header="_Send Data via UDP" Icon="{StaticResource SEND}" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
-                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click"/>
+                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click" />
             </MenuItem>
             <MenuItem Header="_Extras">
                 <MenuItem Header="_Settings" Icon="{StaticResource NUT_AND_BOLT}" IsEnabled="False" />
                 <Separator />
-                <MenuItem Header="_Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click"/>
+                <MenuItem Header="_Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
             </MenuItem>
             <MenuItem Header="_Test">
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
@@ -108,7 +107,7 @@
             </MenuItem>
         </Menu>
 
-        <ToolBar Grid.Row="1" Margin="3">
+        <ToolBar Grid.Row="1">
             <Label Content="MapProvider" />
             <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
             <Separator />
@@ -132,219 +131,223 @@
             <Separator />
         </ToolBar>
 
-        <gmap:GMapControl x:Name="mcMapControl" Grid.Row="2" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
+        <TabControl Grid.Row="2">
+            <TabItem Header="Map">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <!--<RowDefinition Height="Auto" />-->
+                    </Grid.RowDefinitions>
+
+                    <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
+
+                    <DataGrid x:Name="dgRFDevices" Grid.Row="1" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown">
+                        <DataGrid.CommandBindings>
+                            <CommandBinding Command="{x:Static ApplicationCommands.Copy}" CanExecute="DataGrid_CommandBinding_CanExecute_Copy" Executed="DataGrid_Execute_Copy" />
+                            <CommandBinding Command="{x:Static ApplicationCommands.Paste}" CanExecute="DataGrid_CommandBinding_CanExecute_Paste" Executed="DataGrid_Execute_Paste" />
+                        </DataGrid.CommandBindings>
+                        <DataGrid.Columns>
+
+                            <DataGridCheckBoxColumn Header="" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridCheckBoxColumn.ElementStyle>
+                                    <Style TargetType="CheckBox">
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridCheckBoxColumn.ElementStyle>
+                            </DataGridCheckBoxColumn>
+
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Roll" Binding="{Binding Roll,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Pitch" Binding="{Binding Pitch,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Yaw" Binding="{Binding Yaw,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
 
-        <Grid Grid.Row="3" Margin="5">
+                            <DataGridComboBoxColumn Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eRxTxType}}">
+                                <DataGridComboBoxColumn.ElementStyle>
+                                    <Style TargetType="ComboBox">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridComboBoxColumn.ElementStyle>
+                            </DataGridComboBoxColumn>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+                            <DataGridComboBoxColumn Header="AntennaType" SelectedItemBinding="{Binding AntennaType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eAntennaType}}">
+                                <DataGridComboBoxColumn.ElementStyle>
+                                    <Style TargetType="ComboBox">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridComboBoxColumn.ElementStyle>
+                            </DataGridComboBoxColumn>
 
-            <DataGrid x:Name="dgRFDevices" Grid.Column="0" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown">
-                <DataGrid.CommandBindings>
-                    <CommandBinding Command="{x:Static ApplicationCommands.Copy}" CanExecute="DataGrid_CommandBinding_CanExecute_Copy" Executed="DataGrid_Execute_Copy" />
-                    <CommandBinding Command="{x:Static ApplicationCommands.Paste}" CanExecute="DataGrid_CommandBinding_CanExecute_Paste" Executed="DataGrid_Execute_Paste" />
-                </DataGrid.CommandBindings>
-                <DataGrid.Columns>
+                            <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridCheckBoxColumn Header="" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridCheckBoxColumn.ElementStyle>
-                            <Style TargetType="CheckBox">
-                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridCheckBoxColumn.ElementStyle>
-                    </DataGridCheckBoxColumn>
+                            <DataGridTextColumn Header="Bandwith" Binding="{Binding Bandwith,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                            <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Left" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                            <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                            <DataGridTextColumn Header="XPos" Binding="{Binding XPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                            <DataGridTextColumn Header="YPos" Binding="{Binding YPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                            <DataGridTextColumn Header="ZPos" Binding="{Binding ZPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                            <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Roll" Binding="{Binding Roll,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
 
-                    <DataGridTextColumn Header="Pitch" Binding="{Binding Pitch,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
+                    <GridSplitter Grid.Row="1" Background="Blue" Height="3" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
 
-                    <DataGridTextColumn Header="Yaw" Binding="{Binding Yaw,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-
-                    <DataGridComboBoxColumn Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eRxTxType}}">
-                        <DataGridComboBoxColumn.ElementStyle>
-                            <Style TargetType="ComboBox">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridComboBoxColumn.ElementStyle>
-                    </DataGridComboBoxColumn>
-
-                    <DataGridComboBoxColumn Header="AntennaType" SelectedItemBinding="{Binding AntennaType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eAntennaType}}">
-                        <DataGridComboBoxColumn.ElementStyle>
-                            <Style TargetType="ComboBox">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridComboBoxColumn.ElementStyle>
-                    </DataGridComboBoxColumn>
-
-                    <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Header="Bandwith" Binding="{Binding Bandwith,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Header="XPos" Binding="{Binding XPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Header="YPos" Binding="{Binding YPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Header="ZPos" Binding="{Binding ZPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Right" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="HorizontalAlignment" Value="Left" />
-                                <Setter Property="Margin" Value="5" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-
-                </DataGrid.Columns>
-            </DataGrid>
-
-            <TabControl Grid.Column="1">
-                <TabItem Header="Scenario Description">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <ToolBar Grid.Row="0">
-                            <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description" Click="ToogleButton_EditScenarioDescription_Click" />
-                            <Separator />
-                            <Button Content="{StaticResource HELP}" Click="Button_HtmlHelp_Click" />
-                            <!--<Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
+            <TabItem Header="Description">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ToolBar Grid.Row="0">
+                        <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description" Click="ToogleButton_EditScenarioDescription_Click" />
+                        <Separator />
+                        <Button Content="{StaticResource HELP}" Click="Button_HtmlHelp_Click" />
+                        <!--<Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
                                 <MenuItem Header="Font">
                                     <MenuItem Header="Bold" Tag="b" Click="MenuItem_InsertHtmlSnippet_Click" />
                                     <MenuItem Header="Cursiv" Tag="i" Click="MenuItem_InsertHtmlSnippet_Click" />
@@ -372,31 +375,41 @@
                                     <MenuItem Header="Link" Tag="link" Click="MenuItem_InsertHtmlSnippet_Click" />
                                 </MenuItem>
                             </Menu>-->
-                        </ToolBar>
-                        <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
-                        <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />
-                    </Grid>
-                </TabItem>
-                <TabItem Header="Debug Output">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <ToolBar Grid.Row="0">
-                            <Button Content="{StaticResource GARBAGE}" ToolTip="Clear" Click="Button_ClearDebugOutput_Click" />
-                            <Separator />
-                        </ToolBar>
-                        <TextBox Grid.Row="1" Text="{Binding DebugOutput}" AcceptsReturn="True" IsReadOnly="True" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
-                    </Grid>
+                    </ToolBar>
+                    <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
+                    <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Debug Output">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ToolBar Grid.Row="0">
+                        <Button Content="{StaticResource GARBAGE}" ToolTip="Clear" Click="Button_ClearDebugOutput_Click" />
+                        <Separator />
+                    </ToolBar>
+                    <TextBox Grid.Row="1" Text="{Binding DebugOutput}" AcceptsReturn="True" IsReadOnly="True" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <!--
+        <Grid Grid.Row="3" Margin="5">
+
+            <TabControl Grid.Column="1">
+                <TabItem Header="Scenario Description">
                 </TabItem>
             </TabControl>
 
             <GridSplitter Grid.Column="1" Background="Blue" Width="3" ShowsPreview="True" HorizontalAlignment="Left" VerticalAlignment="Stretch" />
         </Grid>
-        <GridSplitter Grid.Row="3" Background="Blue" Height="3" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                -->
+        <!--<GridSplitter Grid.Row="3" Background="Blue" Height="3" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />-->
 
-        <StatusBar Grid.Row="4">
+        <StatusBar Grid.Row="3">
 
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
