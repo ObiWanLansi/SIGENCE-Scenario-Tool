@@ -45,7 +45,7 @@
 	
 
 	
-	<target name="deploy" depends="doc,compile">
+	<target name="deploy" depends="compile,doc">
 	
 		<delete dir="${DeployTarget}" />
 		<mkdir dir="${DeployTarget}" />
@@ -62,5 +62,32 @@
 			</fileset>
         </delete>
 	</target>
+
+
+
+	<target name="sfx" depends="deploy">
+		
+		<delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+		
+		<mkdir dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+		
+		<exec program="C:\Program Files\7-Zip\7z.exe">
+			<arg line="a -sfx .\SIGENCEScenarioTool.SelfExtractingZip\opea_sfx.exe ${DeployTarget}\*" />
+		</exec>
+	</target>
+
+
+	
+	<target name="installer" depends="deploy">
+		
+		<delete dir=".\SIGENCEScenarioTool.Installer" />
+		
+		<mkdir dir=".\SIGENCEScenarioTool.Installer" />
+		
+		<exec program="C:\Program Files (x86)\NSIS\makensis.exe">
+			<arg line="SIGENCE Scenario Tool.nsi" />
+		</exec>
+	</target>
+
 
 </project>
