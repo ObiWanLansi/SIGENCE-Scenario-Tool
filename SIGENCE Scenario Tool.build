@@ -3,18 +3,18 @@
 
     <property name="DeployTarget" value=".\SIGENCEScenarioTool.Executable" />
 
-	<target name="clean">
+    <target name="clean">
         
-		<delete dir=".\bin" />
+        <delete dir=".\bin" />
         <delete dir=".\obj" />
-		
-		<delete dir=".\SIGENCEScenarioTool.MainApp\bin" />
+        
+        <delete dir=".\SIGENCEScenarioTool.MainApp\bin" />
         <delete dir=".\SIGENCEScenarioTool.MainApp\obj" />
 
-		<delete dir=".\SIGENCEScenarioTool.Mockup\bin" />
+        <delete dir=".\SIGENCEScenarioTool.Mockup\bin" />
         <delete dir=".\SIGENCEScenarioTool.Mockup\obj" />
 
-		<delete dir=".\SIGENCEScenarioTool.UnitTests\bin" />
+        <delete dir=".\SIGENCEScenarioTool.UnitTests\bin" />
         <delete dir=".\SIGENCEScenarioTool.UnitTests\obj" />
 
         <delete dir=".\SIGENCEScenarioTool.TestSuite\bin" />
@@ -22,72 +22,71 @@
     </target>
 
 
-	
-	<target name="doc">
+    
+    <target name="doc">
 
-		<exec program="powershell.exe" workingdir=".\Documentation">
-			<arg value="-File" />
-			<arg value="ConvertDocuments.ps1" />
-		</exec>
-	</target>
+        <exec program="powershell.exe" workingdir=".\Documentation">
+            <arg value="-File" />
+            <arg value="ConvertDocuments.ps1" />
+        </exec>
+    </target>
 
 
-	
-	<target name="compile" depends="clean">
+    
+    <target name="compile" depends="clean">
 
-		<exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" workingdir=".">
+        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" workingdir=".">
 
-			<arg value="SIGENCE Scenario Tool.sln" />
-			<arg value="/rebuild" />
-			<arg value="Release|AnyCPU" />
-		</exec>
-	</target>
-	
+            <arg value="SIGENCE Scenario Tool.sln" />
+            <arg value="/rebuild" />
+            <arg value="Release|AnyCPU" />
+        </exec>
+    </target>
+    
 
-	
-	<target name="deploy" depends="compile,doc">
-	
-		<delete dir="${DeployTarget}" />
-		<mkdir dir="${DeployTarget}" />
+    
+    <target name="deploy" depends="compile,doc">
+    
+        <delete dir="${DeployTarget}" />
+        <mkdir dir="${DeployTarget}" />
 
-		<copy todir="${DeployTarget}">
-			<fileset basedir=".\bin\Release">
-				<include name="**/*" />
-			</fileset>
-		</copy>
+        <copy todir="${DeployTarget}">
+            <fileset basedir=".\bin\Release">
+                <include name="**/*" />
+            </fileset>
+        </copy>
 
         <delete>
-			<fileset basedir="${DeployTarget}">
-				<include name="*.pdb" />
-			</fileset>
+            <fileset basedir="${DeployTarget}">
+                <include name="*.pdb" />
+            </fileset>
         </delete>
-	</target>
+    </target>
 
 
 
-	<target name="sfx" depends="deploy">
-		
-		<delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
-		
-		<mkdir dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
-		
-		<exec program="C:\Program Files\7-Zip\7z.exe">
-			<arg line="a -sfx .\SIGENCEScenarioTool.SelfExtractingZip\SIGENCEScenarioTool_SelfExtracting.exe ${DeployTarget}\*" />
-		</exec>
-	</target>
+    <target name="sfx" depends="deploy">
+        
+        <delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+        
+        <mkdir dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+        
+        <exec program="C:\Program Files\7-Zip\7z.exe">
+            <arg line="a -sfx .\SIGENCEScenarioTool.SelfExtractingZip\SIGENCEScenarioTool_SelfExtracting.exe ${DeployTarget}\*" />
+        </exec>
+    </target>
 
 
-	
-	<target name="installer" depends="deploy">
-		
-		<delete dir=".\SIGENCEScenarioTool.Installer" />
-		
-		<mkdir dir=".\SIGENCEScenarioTool.Installer" />
-		
-		<exec program="C:\Program Files (x86)\NSIS\makensis.exe">
-			<arg line="SIGENCE Scenario Tool.nsi" />
-		</exec>
-	</target>
-
+    
+    <target name="installer" depends="deploy">
+        
+        <delete dir=".\SIGENCEScenarioTool.Installer" />
+        
+        <mkdir dir=".\SIGENCEScenarioTool.Installer" />
+        
+        <exec program="C:\Program Files (x86)\NSIS\makensis.exe">
+            <arg line="SIGENCE Scenario Tool.nsi" />
+        </exec>
+    </target>
 
 </project>
