@@ -72,7 +72,7 @@
 		<mkdir dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
 		
 		<exec program="C:\Program Files\7-Zip\7z.exe">
-			<arg line="a -sfx .\SIGENCEScenarioTool.SelfExtractingZip\opea_sfx.exe ${DeployTarget}\*" />
+			<arg line="a -sfx .\SIGENCEScenarioTool.SelfExtractingZip\SIGENCEScenarioTool_SelfExtracting.exe ${DeployTarget}\*" />
 		</exec>
 	</target>
 
