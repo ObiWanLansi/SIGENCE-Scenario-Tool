@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<project name="SIGENCEScenarioTool" basedir="." default="compile">
+
+    <property name="DeployTarget" value=".\SIGENCEScenarioTool.Executable" />
+
+    <target name="clean">
+        
+        <delete dir=".\bin" />
+        <delete dir=".\obj" />
+        
+        <delete dir=".\SIGENCEScenarioTool.MainApp\bin" />
+        <delete dir=".\SIGENCEScenarioTool.MainApp\obj" />
+
+        <delete dir=".\SIGENCEScenarioTool.Mockup\bin" />
+        <delete dir=".\SIGENCEScenarioTool.Mockup\obj" />
+
+        <delete dir=".\SIGENCEScenarioTool.UnitTests\bin" />
+        <delete dir=".\SIGENCEScenarioTool.UnitTests\obj" />
+
+        <delete dir=".\SIGENCEScenarioTool.TestSuite\bin" />
+        <delete dir=".\SIGENCEScenarioTool.TestSuite\obj" />
+    </target>
+
+
+    
+    <target name="doc">
+
+        <exec program="powershell.exe" workingdir=".\Documentation">
+            <arg value="-File" />
+            <arg value="ConvertDocuments.ps1" />
+        </exec>
+    </target>
+
+
+    
+    <target name="compile" depends="clean">
+
+        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" workingdir=".">
+
+            <arg value="SIGENCEScenarioTool.sln" />
+            <arg value="/rebuild" />
+            <arg value="Release|AnyCPU" />
+        </exec>
+    </target>
+    
+
+    
+    <target name="deploy" depends="compile,doc">
+    
+        <delete dir="${DeployTarget}" />
+        <mkdir dir="${DeployTarget}" />
+
+        <copy todir="${DeployTarget}">
+            <fileset basedir=".\bin\Release">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+
+        <delete>
+            <fileset basedir="${DeployTarget}">
+                <include name="*.pdb" />
+            </fileset>
+        </delete>
+    </target>
+
+
+
+    <target name="sfx" depends="deploy">
+        
+        <delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+        
+        <mkdir dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+        
+        <exec program="C:\Program Files\7-Zip\7z.exe">
+            <arg line="a -sfx .\SIGENCEScenarioTool.SelfExtractingZip\SIGENCEScenarioTool_SelfExtracting.exe ${DeployTarget}\*" />
+        </exec>
+
+        <exec program="cmd5.exe" workingdir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+    </target>
+
+
+    
+    <target name="installer" depends="deploy">
+        
+        <delete dir=".\SIGENCEScenarioTool.Installer" />
+        
+        <mkdir dir=".\SIGENCEScenarioTool.Installer" />
+        
+        <exec program="C:\Program Files (x86)\NSIS\makensis.exe">
+            <arg line="SIGENCEScenarioTool.nsi" />
+        </exec>
+
+        <exec program="cmd5.exe" workingdir=".\SIGENCEScenarioTool.Installer" />
+    </target>
+
+
+
+    <target name="all" depends="sfx,installer" />
+
+</project>
