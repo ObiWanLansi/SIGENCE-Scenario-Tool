@@ -27,6 +27,9 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
 - [NUnit](https://www.nuget.org/packages/NUnit/)
 - [Log4Net](https://www.nuget.org/packages/log4net/)
+- [Blink1](https://www.nuget.org/packages/Blink1.ObiWanLansi/)
+- [NetTopologySuite](https://www.nuget.org/packages/NetTopologySuite/)
+- [iTextSharp](https://www.nuget.org/packages/iTextSharp/)
 
 
 ## License
