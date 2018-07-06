@@ -389,7 +389,7 @@ namespace SIGENCEScenarioTool.ViewModels
             }
         }
 
-    
+
         /// <summary>
         /// Gets or sets the remark.
         /// </summary>
@@ -529,7 +529,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <returns></returns>
         private string GetToolTip()
         {
-            return string.Format("{0} ({1})\n{2,1:00.########}\n{3,1:00.########}", RFDevice.Name, RFDevice.Id, RFDevice.Latitude, RFDevice.Longitude);
+            return string.Format("- {0} -\n{1} ({2})\n{3,1:00.########}\n{4,1:00.########}", DeviceType, RFDevice.Name, RFDevice.Id, RFDevice.Latitude, RFDevice.Longitude);
         }
 
 
@@ -569,6 +569,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 this.Marker.Shape = null;
             }
 
+            // Reference Transmitter
             if (RFDevice.Id == 0)
             {
                 var shape = new CircleMarker(this.mcMapControl, this.Marker, GetToolTip());
@@ -577,6 +578,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 return;
             }
 
+            // Receiver
             if (RFDevice.Id < 0)
             {
                 var shape = new RectangleMarker(this.mcMapControl, this.Marker, GetToolTip());
@@ -585,7 +587,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 return;
             }
 
-            // Last but not least ...
+            // Last but not least all other are transmitters ... 
             {
                 var shape = new TriangleMarker(this.mcMapControl, this.Marker, GetToolTip());
                 shape.OnPositionChanged += Shape_OnPositionChanged;
