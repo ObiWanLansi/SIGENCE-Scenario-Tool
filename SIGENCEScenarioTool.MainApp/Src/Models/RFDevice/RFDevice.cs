@@ -407,17 +407,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For CenterFrequency_Hz.
         ///</summary>
-        static public readonly uint DEFAULT_CENTERFREQUENCY_HZ = 0;
+        static public readonly ulong DEFAULT_CENTERFREQUENCY_HZ = 0;
         
         ///<summary>
         /// The Internal Field For CenterFrequency_Hz.
         ///</summary>
-        private uint _CenterFrequency_Hz = 0;
+        private ulong _CenterFrequency_Hz = 0;
 
         ///<summary>
         /// For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
         ///</summary>
-        public uint CenterFrequency_Hz 
+        public ulong CenterFrequency_Hz 
         {
             get { return _CenterFrequency_Hz; }
             set
@@ -760,7 +760,7 @@ namespace SIGENCEScenarioTool.Models
                 Yaw = eChild.GetProperty<double>("Yaw",0),
                 RxTxType = eChild.GetProperty<RxTxType>("RxTxType",RxTxType.Unknown),
                 AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
-                CenterFrequency_Hz = eChild.GetProperty<uint>("CenterFrequency_Hz",0),
+                CenterFrequency_Hz = eChild.GetProperty<ulong>("CenterFrequency_Hz",0),
                 Bandwith_Hz = eChild.GetProperty<uint>("Bandwith_Hz",0),
                 Gain_dB = eChild.GetProperty<uint>("Gain_dB",0),
                 SignalToNoiseRatio_dB = eChild.GetProperty<uint>("SignalToNoiseRatio_dB",0),

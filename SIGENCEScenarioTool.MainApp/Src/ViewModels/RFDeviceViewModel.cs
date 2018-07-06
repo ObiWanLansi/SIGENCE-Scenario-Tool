@@ -288,7 +288,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The center frequency.
         /// </value>
-        public uint CenterFrequency
+        public ulong CenterFrequency
         {
             get { return RFDevice.CenterFrequency_Hz; }
             set

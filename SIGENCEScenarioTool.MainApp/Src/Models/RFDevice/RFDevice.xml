@@ -17,7 +17,7 @@
     <Property Name="RxTxType" Type="RxTxType" Init="RxTxType.Unknown" Comment="For All Receivers (i.e. ID’s &lt; 0) This Parameter Defines The Radio Being Used." />
     <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown" Comment="AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported." />
 
-    <Property Name="CenterFrequency_Hz" Type="uint" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
+    <Property Name="CenterFrequency_Hz" Type="ulong" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
     <Property Name="Bandwith_Hz" Type="uint" Init="0" Comment="" />
     <Property Name="Gain_dB" Type="uint" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
     <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0" Comment="For receivers (i.e. ID’s &lt; 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused." />
