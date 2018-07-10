@@ -258,7 +258,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                 break;
 
                             case 11:
-                                device.Gain_dB = Convert.ToUInt32(value);
+                                device.Gain_dB = Convert.ToInt32(value);
                                 break;
 
                             case 12:
@@ -719,7 +719,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //string strUrl = string.Format(new NumberFormatInfo { NumberDecimalSeparator = "." }, "https://www.google.de/maps/@{0},{1},500m/sensorset=!3m1!1e3", rfdefvice.Latitude, rfdefvice.Longitude);
             //string strUrl = string.Format( new NumberFormatInfo { NumberDecimalSeparator = "." } , "https://www.google.de/maps/@{0},{1},100m" , rfdefvice.Latitude , rfdefvice.Longitude );
-            string strUrl = string.Format( new NumberFormatInfo { NumberDecimalSeparator = "." } , "https://www.google.de/maps/place/{0},{1}" , rfdefvice.Latitude , rfdefvice.Longitude );
+            string strUrl = string.Format(new NumberFormatInfo { NumberDecimalSeparator = "." }, "https://www.google.de/maps/place/{0},{1}", rfdefvice.Latitude, rfdefvice.Longitude);
 
             Tools.Windows.OpenWebAdress(strUrl);
         }

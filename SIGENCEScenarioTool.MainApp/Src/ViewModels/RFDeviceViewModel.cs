@@ -270,7 +270,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The gain.
         /// </value>
-        public uint Gain
+        public int Gain
         {
             get { return RFDevice.Gain_dB; }
             set

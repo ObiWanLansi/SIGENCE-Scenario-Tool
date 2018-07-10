@@ -475,17 +475,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Gain_dB.
         ///</summary>
-        static public readonly uint DEFAULT_GAIN_DB = 0;
+        static public readonly int DEFAULT_GAIN_DB = 0;
         
         ///<summary>
         /// The Internal Field For Gain_dB.
         ///</summary>
-        private uint _Gain_dB = 0;
+        private int _Gain_dB = 0;
 
         ///<summary>
         /// For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
         ///</summary>
-        public uint Gain_dB 
+        public int Gain_dB 
         {
             get { return _Gain_dB; }
             set
@@ -762,7 +762,7 @@ namespace SIGENCEScenarioTool.Models
                 AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
                 CenterFrequency_Hz = eChild.GetProperty<ulong>("CenterFrequency_Hz",0),
                 Bandwith_Hz = eChild.GetProperty<uint>("Bandwith_Hz",0),
-                Gain_dB = eChild.GetProperty<uint>("Gain_dB",0),
+                Gain_dB = eChild.GetProperty<int>("Gain_dB",0),
                 SignalToNoiseRatio_dB = eChild.GetProperty<uint>("SignalToNoiseRatio_dB",0),
                 XPos = eChild.GetProperty<int>("XPos",0),
                 YPos = eChild.GetProperty<int>("YPos",0),

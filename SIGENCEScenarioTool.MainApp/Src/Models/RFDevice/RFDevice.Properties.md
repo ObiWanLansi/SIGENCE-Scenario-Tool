@@ -18,7 +18,7 @@ RxTxType|RxTxType|RxTxType.Unknown|For All Receivers (i.e. ID’s < 0) This Para
 AntennaType|AntennaType|AntennaType.Unknown|AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.
 CenterFrequency_Hz|ulong|0|For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
 Bandwith_Hz|uint|0|
-Gain_dB|uint|0|For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
+Gain_dB|int|0|For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
 SignalToNoiseRatio_dB|uint|0|For receivers (i.e. ID’s < 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused.
 XPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
 YPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.

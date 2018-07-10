@@ -19,7 +19,7 @@
 
     <Property Name="CenterFrequency_Hz" Type="ulong" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
     <Property Name="Bandwith_Hz" Type="uint" Init="0" Comment="" />
-    <Property Name="Gain_dB" Type="uint" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
+    <Property Name="Gain_dB" Type="int" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
     <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0" Comment="For receivers (i.e. ID’s &lt; 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused." />
 
     <Property Name="XPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />

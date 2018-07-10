@@ -311,6 +311,7 @@
     <Resource Include="Images\garbage.png" />
     <Resource Include="Images\move.png" />
     <Resource Include="Images\pin_blue.png" />
+    <Resource Include="Images\earth.png" />
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>

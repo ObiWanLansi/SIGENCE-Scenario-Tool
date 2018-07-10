@@ -25,6 +25,7 @@
         <Image x:Key="GARBAGE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/garbage.png" />
         <Image x:Key="MOVE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/move.png" />
         <Image x:Key="PIN_BLUE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/pin_blue.png" />
+        <Image x:Key="EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/earth.png" />
 
 
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
@@ -132,7 +133,13 @@
         </ToolBar>
 
         <TabControl Grid.Row="2">
-            <TabItem Header="Map">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource EARTH}" />
+                        <Label Content="Map" />
+                    </StackPanel>
+                </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -143,10 +150,13 @@
                     <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
                     <DataGrid x:Name="dgRFDevices" Grid.Row="1" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown">
+
                         <DataGrid.CommandBindings>
+
                             <CommandBinding Command="{x:Static ApplicationCommands.Copy}" CanExecute="DataGrid_CommandBinding_CanExecute_Copy" Executed="DataGrid_Execute_Copy" />
                             <CommandBinding Command="{x:Static ApplicationCommands.Paste}" CanExecute="DataGrid_CommandBinding_CanExecute_Paste" Executed="DataGrid_Execute_Paste" />
                         </DataGrid.CommandBindings>
+
                         <DataGrid.Columns>
 
                             <DataGridCheckBoxColumn Header="" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
@@ -337,7 +347,14 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Description">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource TEXT_RICH_COLORED}" />
+                        <Label Content="Description" />
+                    </StackPanel>
+                </TabItem.Header>
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -381,7 +398,13 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Debug Output">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource NUT_AND_BOLT}" />
+                        <Label Content="Messages" />
+                    </StackPanel>
+                </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
