@@ -17,6 +17,8 @@ namespace SIGENCEScenarioTool.Models
         SIN = 102,
         FMRadio = 103,
 
+        B200Mini = 200,
+
         // Should not happen, but you never know ...
         Unknown = 255
 
@@ -29,6 +31,11 @@ namespace SIGENCEScenarioTool.Models
     public enum AntennaType : byte
     {
         OmniDirectional = 0,
+
+        OmniLOG30800 = 1,
+        HyperLOG60200 = 2,
+        SimradArgusRadar = 3,
+
 
         Unknown = 255
 
