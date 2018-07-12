@@ -157,6 +157,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        private bool bDataGridInEditMode = false;
+
+
+        /// <summary>
         /// Gets or sets the map provider.
         /// </summary>
         /// <value>

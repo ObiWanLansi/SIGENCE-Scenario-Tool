@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SIGENCEScenarioTool.Markers.TriangleMarker" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="30" Width="30">
+﻿<marker:AbstractMarker x:Class="SIGENCEScenarioTool.Markers.TriangleMarker" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:marker="clr-namespace:SIGENCEScenarioTool.Markers" Height="30" Width="30">
     <Grid>
         <Polygon Fill="Blue" Opacity="0.5">
             <Polygon.Points>
@@ -18,4 +18,4 @@
         <Line X1="15" Y1="0" X2="15" Y2="20" Stroke="Black" />
         <Line X1="30" Y1="30" X2="15" Y2="20" Stroke="Black" />
     </Grid>
-</UserControl>
+</marker:AbstractMarker>
