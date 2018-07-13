@@ -103,6 +103,14 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         static public RoutedUICommand ZoomToRFDevice { get; private set; }
 
+        /// <summary>
+        /// Gets the rf device qr code.
+        /// </summary>
+        /// <value>
+        /// The rf device qr code.
+        /// </value>
+        static public RoutedUICommand RFDeviceQRCode { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -151,6 +159,9 @@ namespace SIGENCEScenarioTool.Commands
             SendDataUDP = new RoutedUICommand("SendDataUDP", "SendDataUDP", typeof(RegisteredCommands));
             SendDataUDP.InputGestures.Add(new KeyGesture(Key.F12));
             SendDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
+
+            RFDeviceQRCode = new RoutedUICommand("RFDeviceQRCode", "RFDeviceQRCode", typeof(RegisteredCommands));
+            RFDeviceQRCode.InputGestures.Add(new KeyGesture(Key.Q, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands

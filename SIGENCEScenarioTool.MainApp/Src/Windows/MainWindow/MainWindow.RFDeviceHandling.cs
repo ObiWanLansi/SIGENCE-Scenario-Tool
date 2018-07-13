@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using GMap.NET;
 
 using SIGENCEScenarioTool.Datatypes.Standard;
+using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
@@ -743,6 +744,29 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             OpenRFDeviceInGoogleMaps(dgRFDevices.SelectedItem as RFDeviceViewModel);
+        }
+
+
+        /// <summary>
+        /// Rfs the device qr code.
+        /// </summary>
+        private void RFDeviceQRCode()
+        {
+            if (dgRFDevices.SelectedItem == null)
+            {
+                MB.Information("No RFDevice Is Selected In The DataGrid!");
+                return;
+            }
+
+            if (dgRFDevices.SelectedItems.Count > 1)
+            {
+                MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
+                return;
+            }
+
+            QRCodeDialog dlg = new QRCodeDialog(dgRFDevices.SelectedItem as RFDeviceViewModel);
+            dlg.ShowDialog();
+            dlg = null;
         }
 
     } // end public partial class MainWindow

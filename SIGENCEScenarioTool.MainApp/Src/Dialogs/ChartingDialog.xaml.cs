@@ -10,9 +10,9 @@ using SIGENCEScenarioTool.Models;
 namespace SIGENCEScenarioTool.Dialogs
 {
     /// <summary>
-    /// Interaktionslogik für ChartingWindow.xaml
+    /// Interaktionslogik für ChartingDialog.xaml
     /// </summary>
-    public partial class ChartingWindow : Window
+    public partial class ChartingDialog : Window
     {
         /// <summary>
         /// Gets or sets the rf devices collection.
@@ -27,9 +27,9 @@ namespace SIGENCEScenarioTool.Dialogs
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChartingWindow" /> class.
+        /// Initializes a new instance of the <see cref="ChartingDialog" /> class.
         /// </summary>
-        public ChartingWindow(RFDeviceList lRFDevices)
+        public ChartingDialog(RFDeviceList lRFDevices)
         {
             this.lRFDevices = lRFDevices;
 
@@ -130,5 +130,5 @@ namespace SIGENCEScenarioTool.Dialogs
             }
         }
 
-    } // end public partial class ChartingWindow
+    } // end public partial class ChartingDialog
 }

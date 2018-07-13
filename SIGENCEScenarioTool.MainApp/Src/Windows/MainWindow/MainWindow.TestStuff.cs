@@ -29,7 +29,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
         {
-            ChartingWindow cw = new ChartingWindow(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
+            ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
             cw.ShowDialog();
             cw = null;
         }

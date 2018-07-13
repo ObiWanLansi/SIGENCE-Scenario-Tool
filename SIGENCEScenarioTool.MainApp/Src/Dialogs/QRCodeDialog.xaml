@@ -1,0 +1,25 @@
+﻿<Window x:Class="SIGENCEScenarioTool.Dialogs.QRCodeDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SIGENCEScenarioTool.Dialogs" mc:Ignorable="d" Title="QRCode" Width="400" Height="280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="imgQRCode" Grid.Column="0" Margin="10" />
+
+        <StackPanel Grid.Column="1" Margin="10">
+            <Label Content="Devicename" FontWeight="Bold" />
+            <Label Content="{Binding Name}" />
+
+            <Label Content="Latitude" FontWeight="Bold" Margin="0,5,0,0" />
+            <Label Content="{Binding Latitude}" />
+
+            <Label Content="Longitude" FontWeight="Bold" Margin="0,5,0,0" />
+            <Label Content="{Binding Longitude}" />
+
+            <Label Content="Altitude" FontWeight="Bold" Margin="0,5,0,0" />
+            <Label Content="{Binding Altitude}" />
+        </StackPanel>
+
+    </Grid>
+</Window>
