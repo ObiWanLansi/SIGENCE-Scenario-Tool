@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetTopologySuite.CoordinateSystems</name>
+    </assembly>
+    <members>
+        <member name="T:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform">
+            <summary>
+            Helper class for transforming <see cref="T:GeoAPI.Geometries.IGeometry" /> objects.
+            </summary>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformBox(GeoAPI.Geometries.Envelope,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.Envelope" /> object.
+            </summary>
+            <param name="box"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformGeometry(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.IGeometry,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.IGeometry" /> object.
+            </summary>
+            <param name="factory"></param>
+            <param name="g"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformPoint(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.IPoint,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.IPoint" /> object.
+            </summary>
+            <param name="factory"></param>
+            <param name="p"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformLineString(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.ILineString,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.ILineString" /> object.
+            </summary>
+            <param name="factory"></param>
+            <param name="l"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformLinearRing(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.ILinearRing,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.ILinearRing" /> object.
+            </summary>
+            <param name="factory"></param>
+            <param name="r"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformPolygon(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.IPolygon,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.IPolygon" /> object.
+            </summary>
+            <param name="factory"></param>
+            <param name="p"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformMultiPoint(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.IMultiPoint,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.IMultiPoint" /> object.
+            </summary>
+            <param name="factory"></param>
+            <param name="points"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformMultiLineString(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.IMultiLineString,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.IMultiLineString" /> object.
+            </summary>
+            <param name="factory"></param>
+            <param name="lines"></param>
+            <param name="transform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformMultiPolygon(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.IMultiPolygon,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.IMultiPolygon" /> object.
+            </summary>
+            <param name="factory">The factory to create the new <see cref="T:GeoAPI.Geometries.IMultiPolygon"/></param>
+            <param name="polys">The input <see cref="T:GeoAPI.Geometries.IMultiPolygon"/></param>
+            <param name="transform">The <see cref="T:GeoAPI.CoordinateSystems.Transformations.IMathTransform"/></param>
+            <returns>A transformed <see cref="T:GeoAPI.Geometries.IMultiPolygon"/></returns>
+        </member>
+        <member name="M:NetTopologySuite.CoordinateSystems.Transformations.GeometryTransform.TransformGeometryCollection(GeoAPI.Geometries.IGeometryFactory,GeoAPI.Geometries.IGeometryCollection,GeoAPI.CoordinateSystems.Transformations.IMathTransform)">
+            <summary>
+            Transforms a <see cref="T:GeoAPI.Geometries.IGeometryCollection" /> object.
+            </summary>
+            <param name="factory">The factory to create the new <see cref="T:GeoAPI.Geometries.IGeometryCollection"/></param>
+            <param name="geoms">The input <see cref="T:GeoAPI.Geometries.IGeometryCollection"/></param>
+            <param name="transform">The <see cref="T:GeoAPI.CoordinateSystems.Transformations.IMathTransform"/></param>
+            <returns>A transformed <see cref="T:GeoAPI.Geometries.IGeometryCollection"/></returns>
+        </member>
+    </members>
+</doc>
