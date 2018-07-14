@@ -4,7 +4,6 @@ using System.Windows.Xps.Packaging;
 
 
 
-
 namespace SIGENCEScenarioTool.Windows.HelpWindow
 {
 
@@ -14,13 +13,13 @@ namespace SIGENCEScenarioTool.Windows.HelpWindow
     public partial class HelpWindow : Window
     {
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="HelpWindow" /> class.
         /// </summary>
         public HelpWindow()
         {
             InitializeComponent();
 
-            XpsDocument xps = new XpsDocument( "CheatSheet.xps" , FileAccess.Read );
+            XpsDocument xps = new XpsDocument("CheatSheet.xps", FileAccess.Read);
             documentViewer.Document = xps.GetFixedDocumentSequence();
         }
 

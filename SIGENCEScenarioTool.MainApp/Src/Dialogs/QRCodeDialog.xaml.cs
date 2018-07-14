@@ -3,6 +3,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
+
 using QRCoder;
 
 using SIGENCEScenarioTool.ViewModels;

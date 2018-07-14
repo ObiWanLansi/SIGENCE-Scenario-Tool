@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
+using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -72,7 +73,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices( 10 );
+            CreateRandomizedRFDevices(10);
             //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 #endif
             //-----------------------------------------------------------------
@@ -173,6 +174,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 //wbScenarioDescription.NavigateToString( "<html/>" );
                 wbScenarioDescription.NavigateToString("<i>No scenario description avaible.</i>");
+            }
+        }
+
+
+        /// <summary>
+        /// HTMLs the convert german umlauts.
+        /// </summary>
+        private void HtmlConvertGermanUmlauts()
+        {
+            if (string.IsNullOrEmpty(tbScenarioDescription.Text) == false)
+            {
+                tbScenarioDescription.Text = tbScenarioDescription.Text.ReplaceHtml();
             }
         }
 

@@ -157,7 +157,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// The b data grid in edit mode
         /// </summary>
         private bool bDataGridInEditMode = false;
 

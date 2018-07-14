@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Windows.Media;
 
 
@@ -115,6 +116,39 @@ namespace SIGENCEScenarioTool.Extensions
             }
 
             return cDefault;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The sd HTML entinities
+        /// </summary>
+        private static readonly SortedDictionary<string, string> sdHtmlEntinities = new SortedDictionary<string, string>
+        {
+            { "ä" , "&auml;" } , { "ö" , "&ouml;" } , { "ü" , "&uuml;" } ,
+            { "Ä" , "&Auml;" } , { "Ö" , "&Ouml;" } , { "Ü" , "&Uuml;" } ,
+            { "ß" , "&szlig;" }, { "<" , "&lt;" } , { ">" , "&gt;" } ,
+            { " " , "&nbsp;" }
+        };
+
+
+        /// <summary>
+        /// Replaces the HTML.
+        /// </summary>
+        /// <param name="strContent">Content of the STR.</param>
+        /// <returns></returns>
+        static public string ReplaceHtml(this string strContent)
+        {
+            if (strContent.IsNotEmpty() == true)
+            {
+                sdHtmlEntinities.ForEach((k, v) =>
+                {
+                    strContent = strContent.Replace(k, v);
+                });
+            }
+
+            return strContent;
         }
 
     } // end static public class StringExtension

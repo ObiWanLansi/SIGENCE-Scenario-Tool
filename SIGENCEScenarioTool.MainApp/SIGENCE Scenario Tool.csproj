@@ -162,7 +162,9 @@
     <Compile Include="Src\Extensions\FileInfoExtension.cs" />
     <Compile Include="Src\Extensions\ListExtension.cs" />
     <Compile Include="Src\Extensions\RandomExtension.cs" />
+    <Compile Include="Src\Extensions\StringBuilderExtension.cs" />
     <Compile Include="Src\Extensions\StringExtension.cs" />
+    <Compile Include="Src\Extensions\TimeSpanExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
     <Compile Include="Src\Interfaces\IXmlExport.cs" />
     <Compile Include="Src\Markers\AbstractMarker.cs" />
@@ -332,6 +334,7 @@
     <Resource Include="Images\move.png" />
     <Resource Include="Images\pin_blue.png" />
     <Resource Include="Images\earth.png" />
+    <Resource Include="Images\magic_wand.png" />
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>

@@ -26,6 +26,7 @@
         <Image x:Key="MOVE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/move.png" />
         <Image x:Key="PIN_BLUE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/pin_blue.png" />
         <Image x:Key="EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/earth.png" />
+        <Image x:Key="MAGIC_WAND" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/magic_wand.png" />
 
 
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
@@ -110,7 +111,7 @@
 
         <ToolBar Grid.Row="1">
             <Label Content="MapProvider" />
-            <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="3" />
+            <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Here You Can Change The MapProvider For The Map." Margin="3" />
             <Separator />
             <!--<Separator />
             <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />-->
@@ -128,7 +129,7 @@
             <Separator />
             <Button Content="{StaticResource CAMERA}" ToolTip="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
             <Separator />
-            <Button Content="{StaticResource SEND}" ToolTip="Send Data via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
+            <Button Content="{StaticResource SEND}" ToolTip="Send Data Via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
             <Separator />
         </ToolBar>
 
@@ -362,8 +363,9 @@
                     </Grid.RowDefinitions>
                     <ToolBar Grid.Row="0">
                         <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description" Click="ToogleButton_EditScenarioDescription_Click" />
+                        <Button Content="{StaticResource MAGIC_WAND}" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The German Umlauts To HTML" Click="Button_HtmlConvertGermanUmlauts_Click" />
                         <Separator />
-                        <Button Content="{StaticResource HELP}" Click="Button_HtmlHelp_Click" />
+                        <Button Content="{StaticResource HELP}" ToolTip="Open The W3 School Page For HTML" Click="Button_HtmlHelp_Click" />
                         <!--<Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
                                 <MenuItem Header="Font">
                                     <MenuItem Header="Bold" Tag="b" Click="MenuItem_InsertHtmlSnippet_Click" />

@@ -866,7 +866,7 @@ namespace SIGENCEScenarioTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// The XML writer settings
         /// </summary>
         static private readonly XmlWriterSettings XML_WRITER_SETTINGS = new XmlWriterSettings
         {
@@ -877,7 +877,7 @@ namespace SIGENCEScenarioTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// The XML declaration
         /// </summary>
         static private readonly XDeclaration XML_DECLARATION = new XDeclaration( "1.0" , "ISO-8859-1" , "yes" );
 
@@ -900,9 +900,9 @@ namespace SIGENCEScenarioTool.Extensions
 
 
         /// <summary>
-        /// 
+        /// To the default string.
         /// </summary>
-        /// <param name="element"></param>
+        /// <param name="element">The element.</param>
         /// <returns></returns>
         static public string ToDefaultString( this XElement element )
         {
