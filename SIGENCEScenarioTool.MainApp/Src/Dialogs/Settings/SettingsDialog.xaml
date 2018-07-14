@@ -1,0 +1,58 @@
+﻿<Window x:Class="SIGENCEScenarioTool.Dialogs.SettingsDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SIGENCEScenarioTool.Dialogs" mc:Ignorable="d" Title="SIGENCE Scenario Tool - Settings" Width="800" Height="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Image x:Key="ACCEPT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/ok.png" />
+        <Image x:Key="CANCEL" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/delete2.png" />
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Column="0" ItemsSource="{Binding Panels}" SelectedIndex="0" Margin="10" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Image}" />
+                        <Label Content="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10">
+            <ContentControl Content="{Binding SelectedPanel}"/>
+        </Border>
+
+        <GridSplitter Grid.Column="1" Background="Black" Width="3" ShowsPreview="True" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0,10,0,10" />
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="120" Height="32" IsDefault="True" Margin="10,0,0,10" Click="Button_Accept_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource ACCEPT}" />
+                        <Label Content="Ok" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Width="120" Height="32" IsCancel="True" Margin="10,0,10,10">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource CANCEL}" />
+                        <Label Content="Cancel" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</Window>

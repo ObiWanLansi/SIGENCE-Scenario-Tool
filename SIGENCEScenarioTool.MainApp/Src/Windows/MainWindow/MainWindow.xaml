@@ -87,7 +87,7 @@
                 <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click" />
             </MenuItem>
             <MenuItem Header="_Extras">
-                <MenuItem Header="_Settings" Icon="{StaticResource NUT_AND_BOLT}" IsEnabled="False" />
+                <MenuItem Header="_Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
                 <Separator />
                 <MenuItem Header="_Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
             </MenuItem>

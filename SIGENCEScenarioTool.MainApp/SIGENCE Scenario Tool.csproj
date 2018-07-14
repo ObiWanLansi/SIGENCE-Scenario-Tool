@@ -156,6 +156,22 @@
     <Compile Include="Src\Dialogs\QRCodeDialog.xaml.cs">
       <DependentUpon>QRCodeDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Dialogs\Settings\Panels\ExportSettings.xaml.cs">
+      <DependentUpon>ExportSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Dialogs\Settings\Panels\NetworkSettings.xaml.cs">
+      <DependentUpon>NetworkSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Dialogs\Settings\Panels\ImportSettings.xaml.cs">
+      <DependentUpon>ImportSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Dialogs\Settings\Panels\GeneralSettings.xaml.cs">
+      <DependentUpon>GeneralSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Src\Dialogs\Settings\Panels\ISettingsControl.cs" />
+    <Compile Include="Src\Dialogs\Settings\SettingsDialog.xaml.cs">
+      <DependentUpon>SettingsDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Extensions\ColorExtension.cs" />
     <Compile Include="Src\Extensions\DateTimeExtension.cs" />
     <Compile Include="Src\Extensions\DictionaryExtension.cs" />
@@ -202,6 +218,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Src\Dialogs\QRCodeDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Src\Dialogs\Settings\Panels\ExportSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Src\Dialogs\Settings\Panels\NetworkSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Src\Dialogs\Settings\Panels\ImportSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Src\Dialogs\Settings\Panels\GeneralSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Src\Dialogs\Settings\SettingsDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -335,6 +371,8 @@
     <Resource Include="Images\pin_blue.png" />
     <Resource Include="Images\earth.png" />
     <Resource Include="Images\magic_wand.png" />
+    <Resource Include="Images\ok.png" />
+    <Resource Include="Images\delete2.png" />
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>

@@ -111,6 +111,14 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         static public RoutedUICommand RFDeviceQRCode { get; private set; }
 
+        /// <summary>
+        /// Gets the open settings.
+        /// </summary>
+        /// <value>
+        /// The open settings.
+        /// </value>
+        static public RoutedUICommand OpenSettings { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -162,6 +170,9 @@ namespace SIGENCEScenarioTool.Commands
 
             RFDeviceQRCode = new RoutedUICommand("RFDeviceQRCode", "RFDeviceQRCode", typeof(RegisteredCommands));
             RFDeviceQRCode.InputGestures.Add(new KeyGesture(Key.Q, ModifierKeys.Control));
+
+            OpenSettings = new RoutedUICommand("OpenSettings", "OpenSettings", typeof(RegisteredCommands));
+            OpenSettings.InputGestures.Add(new KeyGesture(Key.X, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands

@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
+using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
@@ -187,6 +188,26 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 tbScenarioDescription.Text = tbScenarioDescription.Text.ReplaceHtml();
             }
+        }
+
+
+        /// <summary>
+        /// Opens the settings.
+        /// </summary>
+        private void OpenSettings()
+        {
+            SettingsDialog dlg = new SettingsDialog();
+
+            if (dlg.ShowDialog() == true)
+            {
+                MB.Information("Saving The Settings ...");
+            }
+            else
+            {
+                MB.Warning("Not Saving The Settings ...");
+            }
+
+            dlg = null;
         }
 
     } // end public partial class MainWindow
