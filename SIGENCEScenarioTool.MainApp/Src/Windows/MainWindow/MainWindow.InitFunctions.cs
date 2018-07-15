@@ -264,8 +264,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             mcMapControl.MinZoom = 2;
             mcMapControl.MaxZoom = 22;
 
-            mcMapControl.Position = new PointLatLng(49.761471, 6.650053);
-            mcMapControl.Zoom = 14;
+            //mcMapControl.Position = new PointLatLng(49.761471, 6.650053);
+            mcMapControl.Position = new PointLatLng(settings.InitialLatitude, settings.InitialLongitude);
+            mcMapControl.Zoom = settings.InitialZoom;
 
             mcMapControl.OnTileLoadStart += MapControl_OnTileLoadStart;
             mcMapControl.OnTileLoadComplete += MapControl_OnTileLoadComplete;

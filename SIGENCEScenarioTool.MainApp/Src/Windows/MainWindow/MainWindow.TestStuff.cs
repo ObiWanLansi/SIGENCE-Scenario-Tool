@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using GMap.NET;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
@@ -106,7 +107,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             Cursor = Cursors.Wait;
 
-            foreach (var device in CreateRandomizedRFDeviceList(iMaxCount))
+            foreach (var device in CreateRandomizedRFDeviceList(iMaxCount, mcMapControl.Position))
             {
                 AddRFDevice(device);
             }
@@ -120,7 +121,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
         /// <returns></returns>
-        static public RFDeviceList CreateRandomizedRFDeviceList(int iMaxCount)
+        static public RFDeviceList CreateRandomizedRFDeviceList(int iMaxCount, PointLatLng pllCenter)
         {
             RFDeviceList list = new RFDeviceList(iMaxCount);
 
@@ -130,8 +131,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     Id = r.Next(-1000, 1000),
                     Name = string.Format("RFDevice #{0}", i),
-                    Latitude = (r.NextDouble() * 0.05) + 49.7454,
-                    Longitude = (r.NextDouble() * 0.05) + 6.6149,
+                    Latitude = (r.NextDouble() * 0.05) + pllCenter.Lat,
+                    Longitude = (r.NextDouble() * 0.05) + pllCenter.Lng,
                     Altitude = (uint)r.Next(12345),
                     RxTxType = r.NextEnum<RxTxType>(),
                     AntennaType = r.NextEnum<AntennaType>(),
@@ -151,7 +152,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             return list;
         }
-
 
 
         /// <summary>

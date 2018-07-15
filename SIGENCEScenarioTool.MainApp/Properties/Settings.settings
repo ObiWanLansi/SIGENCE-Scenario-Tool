@@ -20,5 +20,14 @@
     <Setting Name="DeviceCopyTimeAddValue" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
+    <Setting Name="InitialLatitude" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="InitialLongitude" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="InitialZoom" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

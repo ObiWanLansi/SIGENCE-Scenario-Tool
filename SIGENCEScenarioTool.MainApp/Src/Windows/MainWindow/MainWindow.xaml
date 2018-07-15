@@ -1,4 +1,4 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Window.Resources>
 
         <Image x:Key="ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/add.png" />
@@ -89,9 +89,10 @@
                 <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click" />
             </MenuItem>
             <MenuItem Header="_Extras">
-                <MenuItem Header="_Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
+                <MenuItem Header="Edit _Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
+                <MenuItem Header="Save _Center" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_SaveCurrentCenter_Click" />
                 <Separator />
-                <MenuItem Header="_Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
+                <MenuItem Header="Create _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
             </MenuItem>
             <MenuItem Header="_Test">
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />

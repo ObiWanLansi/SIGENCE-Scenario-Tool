@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-
+using GMap.NET;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
@@ -208,6 +208,22 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             dlg = null;
+        }
+
+
+        /// <summary>
+        /// Saves the current center.
+        /// </summary>
+        private void SaveCurrentCenter()
+        {
+            PointLatLng pll = mcMapControl.Position;
+            uint iZoom = (uint)mcMapControl.Zoom;
+
+            settings.InitialLatitude = pll.Lat;
+            settings.InitialLongitude = pll.Lng;
+            settings.InitialZoom = iZoom;
+
+            settings.Save();
         }
 
     } // end public partial class MainWindow
