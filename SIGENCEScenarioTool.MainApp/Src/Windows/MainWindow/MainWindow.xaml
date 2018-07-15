@@ -27,6 +27,8 @@
         <Image x:Key="PIN_BLUE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/pin_blue.png" />
         <Image x:Key="EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/earth.png" />
         <Image x:Key="MAGIC_WAND" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/magic_wand.png" />
+        <Image x:Key="LED_WHITE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/led_white.png" />
+
 
 
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
@@ -413,8 +415,9 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <ToolBar Grid.Row="0">
-                        <Button Content="{StaticResource GARBAGE}" ToolTip="Clear" Click="Button_ClearDebugOutput_Click" />
+                        <Button Content="{StaticResource LED_WHITE}" ToolTip="Clear" Click="Button_Acknowledge_Click" />
                         <Separator />
+                        <Button Content="{StaticResource GARBAGE}" ToolTip="Clear" Click="Button_ClearDebugOutput_Click" />
                     </ToolBar>
                     <TextBox Grid.Row="1" Text="{Binding DebugOutput}" AcceptsReturn="True" IsReadOnly="True" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
                 </Grid>

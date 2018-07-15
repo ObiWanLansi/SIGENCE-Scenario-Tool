@@ -209,6 +209,7 @@
       <DependentUpon>RFDevice.tt</DependentUpon>
     </Compile>
     <Compile Include="Src\Models\RFDevice\RFDeviceList.cs" />
+    <Compile Include="Src\Tools\Blink.cs" />
     <Compile Include="Src\Tools\Speech.cs" />
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
@@ -373,6 +374,7 @@
     <Resource Include="Images\magic_wand.png" />
     <Resource Include="Images\ok.png" />
     <Resource Include="Images\delete2.png" />
+    <Resource Include="Images\led_white.png" />
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>

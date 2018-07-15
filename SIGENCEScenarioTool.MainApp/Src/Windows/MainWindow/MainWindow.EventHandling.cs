@@ -192,6 +192,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
+        /// <summary>
+        /// Handles the Click event of the Button_Acknowledge control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        private void Button_Acknowledge_Click(object sender, RoutedEventArgs e)
+        {
+            ReceivedData = false;
+
+            e.Handled = true;
+        }
+
+
         ///// <summary>
         ///// Handles the Click event of the Button_RefreshScenarioDescription control.
         ///// </summary>

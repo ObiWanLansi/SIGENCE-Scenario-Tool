@@ -130,6 +130,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// The b received data
+        /// </summary>
+        private bool bReceivedData = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [received data].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [received data]; otherwise, <c>false</c>.
+        /// </value>
+        public bool ReceivedData
+        {
+            get { return bReceivedData; }
+            set
+            {
+                this.bReceivedData = value;
+
+                SetBlink1();
+
+                FirePropertyChanged();
+            }
+        }
+
+        //---------------------------------------------------------------------
+
+
+        /// <summary>
         /// The b scenario description edit mode
         /// </summary>
         private bool bScenarioDescriptionEditMode = false;

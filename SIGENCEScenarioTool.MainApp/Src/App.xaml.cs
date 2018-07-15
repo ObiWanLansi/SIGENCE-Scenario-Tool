@@ -49,6 +49,17 @@ namespace SIGENCEScenarioTool
             }
         }
 
+
+        /// <summary>
+        /// Handles the Exit event of the Application control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.ExitEventArgs" /> instance containing the event data.</param>
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            Blink.Off();
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

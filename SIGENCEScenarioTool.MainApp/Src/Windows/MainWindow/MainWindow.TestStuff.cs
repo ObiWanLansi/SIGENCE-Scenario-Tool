@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
-
+using System.Windows.Media;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
@@ -34,6 +34,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             cw = null;
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Sets the blink1.
+        /// </summary>
+        private void SetBlink1()
+        {
+            if (ReceivedData == true)
+            {
+                Blink.SetColor(Colors.Green);
+            }
+            else
+            {
+                Blink.Off();
+            }
+        }
+
 
         /// <summary>
         /// UDPs the receive data.
@@ -56,6 +74,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                             string strReceived = Encoding.Default.GetString(baReceived);
 
                             DebugOutput += strReceived + "\n\n";
+                            ReceivedData = true;
                         }
                         catch (Exception ex)
                         {
