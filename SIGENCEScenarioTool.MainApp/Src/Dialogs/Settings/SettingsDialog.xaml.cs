@@ -102,11 +102,13 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </summary>
         private void InitPanels()
         {
-            Panels = new ObservableCollection<SettingsPanelViewModel>();
-            Panels.Add(new SettingsPanelViewModel(new GeneralSettings()));
-            Panels.Add(new SettingsPanelViewModel(new NetworkSettings()));
-            Panels.Add(new SettingsPanelViewModel(new ImportSettings()));
-            Panels.Add(new SettingsPanelViewModel(new ExportSettings()));
+            Panels = new ObservableCollection<SettingsPanelViewModel>
+            {
+                new SettingsPanelViewModel(new GeneralSettings()),
+                new SettingsPanelViewModel(new NetworkSettings()),
+                new SettingsPanelViewModel(new ImportSettings()),
+                new SettingsPanelViewModel(new ExportSettings())
+            };
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -120,6 +122,22 @@ namespace SIGENCEScenarioTool.Dialogs
         private void Button_Accept_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
+            Properties.Settings.Default.Save();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_Cancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Properties.Settings.Default.Reload();
+            
             e.Handled = true;
         }
 
@@ -131,7 +149,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs" /> instance containing the event data.</param>
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            // TODO: Switch Panel
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

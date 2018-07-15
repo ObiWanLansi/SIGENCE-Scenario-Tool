@@ -44,7 +44,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <Button Width="120" Height="32" IsCancel="True" Margin="10,0,10,10">
+            <Button Width="120" Height="32" IsCancel="True" Margin="10,0,10,10" Click="Button_Cancel_Click">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource CANCEL}" />
