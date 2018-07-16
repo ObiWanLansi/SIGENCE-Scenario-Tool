@@ -17,13 +17,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent">Content of the STR.</param>
         /// <returns></returns>
-        static public string RemoveQuotation(this string strContent)
+        static public string RemoveQuotation( this string strContent )
         {
             string strTemp = strContent.Trim();
 
-            if (strTemp.StartsWith("\"") && strTemp.EndsWith("\""))
+            if( strTemp.StartsWith( "\"" ) && strTemp.EndsWith( "\"" ) )
             {
-                return strTemp.Substring(1, strContent.Length - 2);
+                return strTemp.Substring( 1 , strContent.Length - 2 );
             }
 
             return strContent;
@@ -37,9 +37,9 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent"></param>
         /// <returns></returns>
-        static public bool IsEmpty(this string strContent)
+        static public bool IsEmpty( this string strContent )
         {
-            return string.IsNullOrEmpty(strContent);
+            return string.IsNullOrEmpty( strContent );
         }
 
 
@@ -48,9 +48,9 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent"></param>
         /// <returns></returns>
-        static public bool IsNotEmpty(this string strContent)
+        static public bool IsNotEmpty( this string strContent )
         {
-            return !string.IsNullOrEmpty(strContent);
+            return !string.IsNullOrEmpty( strContent );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -61,32 +61,32 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
-        static public string Capitalize(this string strContent)
+        static public string Capitalize( this string strContent )
         {
-            char[] aData = strContent.ToLower().ToCharArray();
+            char [] aData = strContent.ToLower().ToCharArray();
 
-            for (int iCounter = 0; iCounter < aData.Length; iCounter++)
+            for( int iCounter = 0 ; iCounter < aData.Length ; iCounter++ )
             {
-                if (iCounter == 0)
+                if( iCounter == 0 )
                 {
-                    if (Char.IsLetter(aData[iCounter]))
+                    if( Char.IsLetter( aData [iCounter] ) )
                     {
-                        aData[iCounter] -= (char)0x20;
+                        aData [iCounter] -= ( char ) 0x20;
                     }
                 }
                 else
                 {
-                    if (Char.IsLetter(aData[iCounter - 1]) == false && aData[iCounter - 1] != '\'')
+                    if( Char.IsLetter( aData [iCounter - 1] ) == false && aData [iCounter - 1] != '\'' )
                     {
-                        if (Char.IsLetter(aData[iCounter]))
+                        if( Char.IsLetter( aData [iCounter] ) )
                         {
-                            aData[iCounter] -= (char)0x20;
+                            aData [iCounter] -= ( char ) 0x20;
                         }
                     }
                 }
             }
 
-            return new string(aData);
+            return new string( aData );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -99,17 +99,17 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="cDefault"></param>
         /// <returns></returns>
         /// <remarks>Es könnten auch die .NET symbolischen Farbnamen wie "SlateBlue" übergeben werden.</remarks>
-        static public Color ToColor(this string strColor, Color cDefault)
+        static public Color ToColor( this string strColor , Color cDefault )
         {
-            if (!string.IsNullOrEmpty(strColor))
+            if( !string.IsNullOrEmpty( strColor ) )
             {
-                if (strColor[0] == '#')
+                if( strColor [0] == '#' )
                 {
                     try
                     {
-                        return (Color)ColorConverter.ConvertFromString(strColor);
+                        return ( Color ) ColorConverter.ConvertFromString( strColor );
                     }
-                    catch (Exception)
+                    catch( Exception )
                     {
                     }
                 }
@@ -124,12 +124,12 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// The sd HTML entinities
         /// </summary>
-        private static readonly SortedDictionary<string, string> sdHtmlEntinities = new SortedDictionary<string, string>
+        private static readonly SortedDictionary<string , string> sdHtmlEntinities = new SortedDictionary<string , string>
         {
             { "ä" , "&auml;" } , { "ö" , "&ouml;" } , { "ü" , "&uuml;" } ,
             { "Ä" , "&Auml;" } , { "Ö" , "&Ouml;" } , { "Ü" , "&Uuml;" } ,
-            { "ß" , "&szlig;" }, { "<" , "&lt;" } , { ">" , "&gt;" } ,
-            { " " , "&nbsp;" }
+            { "ß" , "&szlig;" }, { "<" , "&lt;" } , { ">" , "&gt;" } 
+            //{ " " , "&nbsp;" }
         };
 
 
@@ -138,14 +138,14 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent">Content of the STR.</param>
         /// <returns></returns>
-        static public string ReplaceHtml(this string strContent)
+        static public string ReplaceHtml( this string strContent )
         {
-            if (strContent.IsNotEmpty() == true)
+            if( strContent.IsNotEmpty() == true )
             {
-                sdHtmlEntinities.ForEach((k, v) =>
-                {
-                    strContent = strContent.Replace(k, v);
-                });
+                sdHtmlEntinities.ForEach( ( k , v ) =>
+                 {
+                     strContent = strContent.Replace( k , v );
+                 } );
             }
 
             return strContent;
