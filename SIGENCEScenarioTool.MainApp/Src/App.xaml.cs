@@ -30,16 +30,16 @@ namespace SIGENCEScenarioTool
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.StartupEventArgs" /> instance containing the event data.</param>
-        private void Application_Startup(object sender, StartupEventArgs e)
+        private void Application_Startup( object sender , StartupEventArgs e )
         {
-            if (e.Args.Length == 1)
+            if( e.Args.Length == 1 )
             {
-                string strFilename = e.Args[0];
+                string strFilename = e.Args [0];
 
-                if (File.Exists(strFilename))
+                if( File.Exists( strFilename ) )
                 {
                     var window = new MainWindow();
-                    window.OpenFile(strFilename);
+                    window.OpenFile( strFilename );
                     window.Show();
                 }
             }
@@ -55,9 +55,15 @@ namespace SIGENCEScenarioTool
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.ExitEventArgs" /> instance containing the event data.</param>
-        private void Application_Exit(object sender, ExitEventArgs e)
+        private void Application_Exit( object sender , ExitEventArgs e )
         {
-            Blink.Off();
+            try
+            {
+                Blink.Off();
+            }
+            catch( Exception )
+            {
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -68,11 +74,11 @@ namespace SIGENCEScenarioTool
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="UnhandledExceptionEventArgs"/> instance containing the event data.</param>
-        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        private void CurrentDomain_UnhandledException( object sender , UnhandledExceptionEventArgs e )
         {
-            if (e.ExceptionObject is Exception)
+            if( e.ExceptionObject is Exception )
             {
-                MB.Error(e.ExceptionObject as Exception);
+                MB.Error( e.ExceptionObject as Exception );
             }
         }
 
