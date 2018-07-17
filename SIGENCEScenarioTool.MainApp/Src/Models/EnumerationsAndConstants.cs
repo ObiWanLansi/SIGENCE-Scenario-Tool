@@ -5,22 +5,21 @@ namespace SIGENCEScenarioTool.Models
     /// <summary>
     /// 
     /// </summary>
-    public enum RxTxType : byte
+    public enum RxTxType : int
     {
         // For all receivers (i.e. ID’s < 0) this parameter defines the radio being used:
-        IdealSDR = 0,
-        HackRF = 1,
-        TwinRx = 2,
+        HackRF = -1,
+        TwinRx = -2,
+        B200Mini = -3,
+        IdealSDR = -4,
 
         // For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal type:
-        QPSK = 101,
-        SIN = 102,
-        FMRadio = 103,
-
-        B200Mini = 200,
+        QPSK = 1,
+        SIN = 2,
+        FMRadio = 3,
 
         // Should not happen, but you never know ...
-        Unknown = 255
+        Unknown = 4242
 
     } // end public enum RxTxType
 
