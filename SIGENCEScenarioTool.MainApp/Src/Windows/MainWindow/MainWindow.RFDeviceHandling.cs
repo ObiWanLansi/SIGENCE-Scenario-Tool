@@ -359,7 +359,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 "Lat","Long","Alt",
                 "Roll","Pitch","Yaw",
                 "RxTxType","AntType",
-                "Gain","CenterFreq","BandWith","SNR",
+                "Gain","CenterFreq","BandWidth","SNR",
                 "x","y","z",
                 "Remark"
             };
