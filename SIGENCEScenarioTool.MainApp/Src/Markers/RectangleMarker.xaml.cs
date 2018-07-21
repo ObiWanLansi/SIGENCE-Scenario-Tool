@@ -24,6 +24,9 @@ namespace SIGENCEScenarioTool.Markers
             base(mcMapControl, mmMarker, strToolTip)
         {
             this.InitializeComponent();
+
+            //this.DirectionArrow.Visibility = System.Windows.Visibility.Hidden;
+            this.DirectionAngle.Angle = 0;
         }
 
     } // end public partial class RectangleMarker

@@ -1,0 +1,4 @@
+﻿<UserControl x:Class="SIGENCEScenarioTool.Markers.AbstractMarker" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:marker="clr-namespace:SIGENCEScenarioTool.Markers" Height="30" Width="30">
+    <Grid>
+    </Grid>
+</UserControl>

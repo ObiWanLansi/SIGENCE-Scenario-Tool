@@ -130,5 +130,17 @@ namespace SIGENCEScenarioTool.Properties {
                 this["InitialZoom"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("GoogleMap")]
+        public string InitialMap {
+            get {
+                return ((string)(this["InitialMap"]));
+            }
+            set {
+                this["InitialMap"] = value;
+            }
+        }
     }
 }

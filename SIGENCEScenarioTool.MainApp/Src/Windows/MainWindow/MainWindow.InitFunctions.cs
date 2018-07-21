@@ -256,7 +256,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //mcMapControl.DragButton = MouseButton.Middle;
             mcMapControl.DragButton = MouseButton.Left;
+            
             mcMapControl.MapProvider = GMapProviders.GoogleMap;
+
+            string strMapProvider = settings.InitialMap;
+            foreach (var mp in GMapProviders.List)
+            {
+                if (mp.Name == strMapProvider)
+                {
+                    mcMapControl.MapProvider = mp;
+                    break;
+                }
+            }
+
             mcMapControl.Manager.Mode = AccessMode.ServerAndCache;
 
             mcMapControl.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;

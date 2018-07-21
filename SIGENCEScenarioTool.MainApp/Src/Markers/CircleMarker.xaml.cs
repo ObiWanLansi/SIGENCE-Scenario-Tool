@@ -26,5 +26,5 @@ namespace SIGENCEScenarioTool.Markers
             this.InitializeComponent();
         }
 
-    } // end public partial class TriangleMarker
+    } // end public partial class CircleMarker
 }

@@ -158,9 +158,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_SaveCurrentCenter_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_SaveInitialMapValues_Click(object sender, RoutedEventArgs e)
         {
-            SaveCurrentCenter();
+            SaveInitialMapValues();
 
             e.Handled = true;
         }

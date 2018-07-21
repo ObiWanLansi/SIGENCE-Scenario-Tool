@@ -29,5 +29,8 @@
     <Setting Name="InitialZoom" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">14</Value>
     </Setting>
+    <Setting Name="InitialMap" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GoogleMap</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

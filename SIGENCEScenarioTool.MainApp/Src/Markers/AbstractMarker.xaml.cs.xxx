@@ -17,7 +17,7 @@ namespace SIGENCEScenarioTool.Markers
     /// 
     /// </summary>
     /// <seealso cref="System.Windows.Controls.UserControl" />
-    public abstract class AbstractMarker : UserControl, INotifyPropertyChanged
+    public abstract partial class AbstractMarker : UserControl, INotifyPropertyChanged
     {
         /// <summary>
         /// The popup
@@ -159,7 +159,6 @@ namespace SIGENCEScenarioTool.Markers
             this.MouseLeave += new MouseEventHandler(MarkerControl_MouseLeave);
 
         }
-
 
         /// <summary>
         /// Handles the MouseMove event of the CustomMarkerDemo control.

@@ -89,7 +89,7 @@
             </MenuItem>
             <MenuItem Header="_Extras">
                 <MenuItem Header="Edit _Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
-                <MenuItem Header="Save _Center Position" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_SaveCurrentCenter_Click" />
+                <MenuItem Header="Save _Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_SaveInitialMapValues_Click" />
                 <Separator />
                 <MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
             </MenuItem>
