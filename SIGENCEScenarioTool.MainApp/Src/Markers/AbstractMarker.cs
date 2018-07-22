@@ -73,6 +73,19 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         public event PositionChangedHandler OnPositionChanged;
 
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="sender">The sender.</param>
+        ///// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        //public delegate void SelectionChangedHandler(object sender, bool bIsSelected);
+
+        ///// <summary>
+        ///// Occurs when [on selection changed].
+        ///// </summary>
+        //public event SelectionChangedHandler OnSelectionChanged;
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -89,26 +102,76 @@ namespace SIGENCEScenarioTool.Markers
         }
 
 
-        ///// <summary>
-        ///// The f direction angle
-        ///// </summary>
-        //private float? fDirectionAngle = null;
+        /// <summary>
+        /// The b is selected
+        /// </summary>
+        private bool bIsSelected = false;
 
-        ///// <summary>
-        ///// Gets or sets the direction angle.
-        ///// </summary>
-        ///// <value>
-        ///// The direction angle.
-        ///// </value>
-        //public float? DirectionAngle
-        //{
-        //    get { return fDirectionAngle; }
-        //    set
-        //    {
-        //        fDirectionAngle = value;
-        //        FirePropertyChanged();
-        //    }
-        //}
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is selected.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is selected; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsSelected
+        {
+            get { return bIsSelected; }
+            set
+            {
+                bIsSelected = value;
+
+                Stroke = bIsSelected ? Brushes.Blue : Brushes.Black;
+                StrokeThickness = bIsSelected ? 4 : 1;
+
+                //OnSelectionChanged?.Invoke(this, bIsSelected);
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// The b stroke
+        /// </summary>
+        private Brush bStroke = Brushes.Black;
+
+        /// <summary>
+        /// Gets or sets the stroke.
+        /// </summary>
+        /// <value>
+        /// The stroke.
+        /// </value>
+        public Brush Stroke
+        {
+            get { return bStroke; }
+            set
+            {
+                bStroke = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// The d stroke thickness
+        /// </summary>
+        private double dStrokeThickness = 1;
+
+        /// <summary>
+        /// Gets or sets the stroke thickness.
+        /// </summary>
+        /// <value>
+        /// The stroke thickness.
+        /// </value>
+        public double StrokeThickness
+        {
+            get { return dStrokeThickness; }
+            set
+            {
+                dStrokeThickness = value;
+                FirePropertyChanged();
+            }
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -130,6 +193,7 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="fDirectionAngle">The f direction angle.</param>
         public AbstractMarker(GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip)
         {
+            this.DataContext = this;
             this.mcMapControl = mcMapControl;
             this.mmMarker = mmMarker;
 
@@ -192,13 +256,14 @@ namespace SIGENCEScenarioTool.Markers
         {
             if (mcMapControl.DragButton == MouseButton.Left)
             {
+                IsSelected = !IsSelected;
+                e.Handled = true;
                 return;
             }
 
             if (!IsMouseCaptured)
             {
                 Mouse.Capture(this);
-
                 e.Handled = true;
             }
         }

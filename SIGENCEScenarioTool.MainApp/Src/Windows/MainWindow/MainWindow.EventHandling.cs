@@ -98,7 +98,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 foreach (RFDeviceViewModel x in (sender as DataGrid).SelectedItems)
                 {
-                    x.IsSelected = !x.IsSelected;
+                    x.IsMarked = !x.IsMarked;
                 }
 
                 e.Handled = true;
@@ -109,7 +109,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 foreach (RFDeviceViewModel x in (sender as DataGrid).SelectedItems)
                 {
-                    x.IsSelected = true;
+                    x.IsMarked = true;
                 }
 
                 e.Handled = true;
@@ -120,7 +120,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 foreach (RFDeviceViewModel x in (sender as DataGrid).SelectedItems)
                 {
-                    x.IsSelected = false;
+                    x.IsMarked = false;
                 }
 
                 e.Handled = true;
@@ -148,6 +148,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void DataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
             bDataGridInEditMode = false;
+        }
+
+
+        /// <summary>
+        /// Handles the SelectionChanged event of the DataGrid control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs" /> instance containing the event data.</param>
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (var item in e.AddedItems)
+            {
+                if (item is RFDeviceViewModel)
+                {
+                    (item as RFDeviceViewModel).IsSelected = true;
+                }
+            }
+
+            foreach (var item in e.RemovedItems)
+            {
+                if (item is RFDeviceViewModel)
+                {
+                    (item as RFDeviceViewModel).IsSelected = false;
+                }
+            }
+
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -37,7 +37,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <returns>A RFDeviceList with all selected RFDevices from the DataGrid.</returns>
         private RFDeviceList GetDeviceList()
         {
-            return new RFDeviceList( from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel.RFDevice );
+            return new RFDeviceList( from devicemodel in RFDevicesCollection where devicemodel.IsMarked == true select devicemodel.RFDevice );
         }
 
 
@@ -153,7 +153,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void DeleteRFDevices()
         {
-            foreach( RFDeviceViewModel device in ( from devicemodel in RFDevicesCollection where devicemodel.IsSelected == true select devicemodel ).ToList() )
+            foreach( RFDeviceViewModel device in ( from devicemodel in RFDevicesCollection where devicemodel.IsMarked == true select devicemodel ).ToList() )
             {
                 DeleteRFDevice( device );
             }

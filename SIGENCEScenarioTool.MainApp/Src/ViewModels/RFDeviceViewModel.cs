@@ -433,9 +433,32 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
+        /// The b is marked
+        /// </summary>
+        private bool bIsMarked = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is marked.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is marked; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsMarked
+        {
+            get { return bIsMarked; }
+            set
+            {
+                bIsMarked = value;
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
         /// The b is selected
         /// </summary>
-        private bool bIsSelected = true;
+        private bool bIsSelected = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is selected.
@@ -449,6 +472,8 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 bIsSelected = value;
+
+                UpdateSelectionChanged();
 
                 FirePropertyChanged();
             }
@@ -495,21 +520,11 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <exception cref="ArgumentNullException">device</exception>
         public RFDeviceViewModel(GMapControl mcMapControl, RFDevice device)
         {
-            if (device == null)
-            {
-                throw new ArgumentNullException("device");
-            }
+            this.mcMapControl = mcMapControl ?? throw new ArgumentNullException("mcMapControl");
 
-            if (mcMapControl == null)
-            {
-                throw new ArgumentNullException("mcMapControl");
-            }
+            this.RFDevice = device ?? throw new ArgumentNullException("device");
 
             //-----------------------------------------------------------------
-
-            this.mcMapControl = mcMapControl;
-
-            this.RFDevice = device;
 
             this.Marker = new GMapMarker(new PointLatLng(device.Latitude, device.Longitude))
             {
@@ -539,24 +554,6 @@ namespace SIGENCEScenarioTool.ViewModels
         private void UpdateMarkerTooltip()
         {
             (this.Marker.Shape as AbstractMarker).MarkerToolTip = GetToolTip();
-
-            //if ( this.Marker.Shape is CircleMarker )
-            //{
-            //    ( this.Marker.Shape as CircleMarker ).MarkerToolTip = GetToolTip();
-            //    return;
-            //}
-
-            //if( this.Marker.Shape is RectangleMarker )
-            //{
-            //    ( this.Marker.Shape as RectangleMarker ).MarkerToolTip = GetToolTip();
-            //    return;
-            //}
-
-            //if( this.Marker.Shape is TriangleMarker )
-            //{
-            //    ( this.Marker.Shape as TriangleMarker ).MarkerToolTip = GetToolTip();
-            //    return;
-            //}
         }
 
 
@@ -567,47 +564,60 @@ namespace SIGENCEScenarioTool.ViewModels
         {
             if (this.Marker.Shape != null)
             {
-                (this.Marker.Shape as AbstractMarker).OnPositionChanged -= Shape_OnPositionChanged;
+                (this.Marker.Shape as AbstractMarker).OnPositionChanged -= Marker_OnPositionChanged;
+                //(this.Marker.Shape as AbstractMarker).OnSelectionChanged -= Marker_OnSelectionChanged;
 
                 this.Marker.Shape = null;
             }
 
-
-            //#if DEBUG
-            //            if( RFDevice.Id == 42 )
-            //            {
-            //                var shape = new DiamondMarker( this.mcMapControl , this.Marker , GetToolTip() );
-            //                shape.OnPositionChanged += Shape_OnPositionChanged;
-            //                this.Marker.Shape = shape;
-            //                return;
-            //            }
-
-            //#endif
+            AbstractMarker marker = null;
 
             // Reference Transmitter
             if (RFDevice.Id == 0)
             {
-                var shape = new CircleMarker(this.mcMapControl, this.Marker, GetToolTip());
-                shape.OnPositionChanged += Shape_OnPositionChanged;
-                this.Marker.Shape = shape;
-                return;
+                marker = new CircleMarker(this.mcMapControl, this.Marker, GetToolTip());
+                //shape.OnPositionChanged += Shape_OnPositionChanged;
+                //this.Marker.Shape = shape;
+                //return;
             }
 
             // Receiver
             if (RFDevice.Id < 0)
             {
-                var shape = new RectangleMarker(this.mcMapControl, this.Marker, GetToolTip());
-                shape.OnPositionChanged += Shape_OnPositionChanged;
-                this.Marker.Shape = shape;
-                return;
+                marker = new RectangleMarker(this.mcMapControl, this.Marker, GetToolTip());
+                //shape.OnPositionChanged += Shape_OnPositionChanged;
+                //this.Marker.Shape = shape;
+                //return;
             }
 
             // Last but not least all other are transmitters ... 
+            if (RFDevice.Id > 0)
             {
-                var shape = new TriangleMarker(this.mcMapControl, this.Marker, GetToolTip());
-                shape.OnPositionChanged += Shape_OnPositionChanged;
-                this.Marker.Shape = shape;
+                marker = new TriangleMarker(this.mcMapControl, this.Marker, GetToolTip());
+                //shape.OnPositionChanged += Shape_OnPositionChanged;
+                //this.Marker.Shape = shape;
             }
+
+#if DEBUG
+            if (RFDevice.Id == 42)
+            {
+                marker = new DiamondMarker(this.mcMapControl, this.Marker, GetToolTip());
+            }
+#endif
+
+            marker.OnPositionChanged += Marker_OnPositionChanged;
+            //marker.OnSelectionChanged += Marker_OnSelectionChanged;
+
+            this.Marker.Shape = marker;
+        }
+
+
+        /// <summary>
+        /// Updates the selection changed.
+        /// </summary>
+        private void UpdateSelectionChanged()
+        {
+            (this.Marker.Shape as AbstractMarker).IsSelected = this.IsSelected;
         }
 
 
@@ -619,18 +629,19 @@ namespace SIGENCEScenarioTool.ViewModels
             this.Marker.Position = new PointLatLng(RFDevice.Latitude, RFDevice.Longitude);
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Shapes the on position changed.
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="pll">The PLL.</param>
-        private void Shape_OnPositionChanged(object sender, PointLatLng pll)
+        private void Marker_OnPositionChanged(object sender, PointLatLng pll)
         {
             RFDevice.Latitude = pll.Lat;
             RFDevice.Longitude = pll.Lng;
 
-            //UpdateMarkerPosition();
             UpdateMarkerTooltip();
 
             // TODO:
@@ -639,6 +650,21 @@ namespace SIGENCEScenarioTool.ViewModels
             FirePropertyChanged("Latitude");
             FirePropertyChanged("Longitude");
         }
+
+
+        ///// <summary>
+        ///// Markers the on selection changed.
+        ///// </summary>
+        ///// <param name="sender">The sender.</param>
+        ///// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        //private void Marker_OnSelectionChanged(object sender, bool bIsSelected)
+        //{
+        //    // Hier dürfen wir natürlich nicht über das Property gehen da sonst wieder 
+        //    // ein FirePropertyChanged bekommen und wir uns im Kreis drehen ...
+
+        //    this.bIsSelected = bIsSelected;
+        //    FirePropertyChanged("IsSelected");
+        //}
 
     } // end sealed public class RFDeviceViewModel
 }

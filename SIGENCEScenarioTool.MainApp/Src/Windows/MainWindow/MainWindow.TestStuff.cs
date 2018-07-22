@@ -7,7 +7,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+
 using GMap.NET;
+
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
@@ -28,9 +30,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_ChartingTest_Click( object sender , RoutedEventArgs e )
+        private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
         {
-            ChartingDialog cw = new ChartingDialog( new RFDeviceList( from device in RFDevicesCollection select device.RFDevice ) );
+            ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
             cw.ShowDialog();
             cw = null;
         }
@@ -45,16 +47,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                if( ReceivedData == true )
+                if (ReceivedData == true)
                 {
-                    Blink.SetColor( Colors.Green );
+                    Blink.SetColor(Colors.Green);
                 }
                 else
                 {
                     Blink.Off();
                 }
             }
-            catch( Exception )
+            catch (Exception)
             {
             }
         }
@@ -67,32 +69,32 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                using( UdpClient client = new UdpClient( 7474 ) )
+                using (UdpClient client = new UdpClient(7474))
                 {
-                    IPEndPoint ep = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPortReceiving );
+                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPortReceiving);
 
                     // A neverending story ...
-                    while( true )
+                    while (true)
                     {
                         try
                         {
-                            byte [] baReceived = client.Receive( ref ep );
+                            byte[] baReceived = client.Receive(ref ep);
 
-                            string strReceived = Encoding.Default.GetString( baReceived );
+                            string strReceived = Encoding.Default.GetString(baReceived);
 
                             DebugOutput += strReceived + "\n\n";
                             ReceivedData = true;
                         }
-                        catch( Exception ex )
+                        catch (Exception ex)
                         {
-                            MB.Error( ex );
+                            MB.Error(ex);
                         }
                     }
                 }
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Warning( ex.Message );
+                MB.Warning(ex.Message);
             }
         }
 
@@ -109,13 +111,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the randomized RFDevices.
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
-        private void CreateRandomizedRFDevices( int iMaxCount )
+        private void CreateRandomizedRFDevices(int iMaxCount)
         {
             Cursor = Cursors.Wait;
 
-            foreach( var device in CreateRandomizedRFDeviceList( iMaxCount , mcMapControl.Position ) )
+            foreach (var device in CreateRandomizedRFDeviceList(iMaxCount, mcMapControl.Position))
             {
-                AddRFDevice( device );
+                AddRFDevice(device);
             }
 
             Cursor = Cursors.Arrow;
@@ -127,33 +129,38 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
         /// <returns></returns>
-        static public RFDeviceList CreateRandomizedRFDeviceList( int iMaxCount , PointLatLng pllCenter )
+        static public RFDeviceList CreateRandomizedRFDeviceList(int iMaxCount, PointLatLng pllCenter)
         {
-            RFDeviceList list = new RFDeviceList( iMaxCount );
+            RFDeviceList list = new RFDeviceList(iMaxCount);
 
-            for( int i = 0 ; i < iMaxCount ; i++ )
+            for (int i = 0; i < iMaxCount; i++)
             {
-                list.Add( new RFDevice
+                list.Add(new RFDevice
                 {
-                    Id = r.Next( -1000 , 1000 ) ,
-                    Name = string.Format( "RFDevice #{0}" , i ) ,
-                    Latitude = ( r.NextDouble() * 0.05 ) + pllCenter.Lat ,
-                    Longitude = ( r.NextDouble() * 0.05 ) + pllCenter.Lng ,
-                    Altitude = ( uint ) r.Next( 12345 ) ,
-                    RxTxType = r.NextEnum<RxTxType>() ,
-                    AntennaType = r.NextEnum<AntennaType>() ,
-                    CenterFrequency_Hz = ( uint ) r.Next( 85 , 105 ) * 100000 ,
-                    Bandwith_Hz = ( uint ) r.Next( 10 , 20 ) * 1000 ,
-                    Gain_dB = r.Next( 140 ) ,
-                    SignalToNoiseRatio_dB = ( uint ) r.Next( 140 ) ,
-                    Roll = r.Next( -90 , 90 ) ,
-                    Pitch = r.Next( -90 , 90 ) ,
-                    Yaw = r.Next( -90 , 90 ) ,
-                    XPos = r.Next( -74 , 74 ) ,
-                    YPos = r.Next( -74 , 74 ) ,
-                    ZPos = r.Next( -74 , 74 ) ,
-                    Remark = r.NextObject( Tool.ALLPANGRAMS )
-                } );
+                    Id = r.Next(-1000, 1000),
+                    Name = string.Format("RFDevice #{0}", i),
+                    Latitude = (r.NextDouble() * 0.05) + pllCenter.Lat,
+                    Longitude = (r.NextDouble() * 0.05) + pllCenter.Lng,
+                    Altitude = (uint)r.Next(12345),
+                    RxTxType = r.NextEnum<RxTxType>(),
+                    AntennaType = r.NextEnum<AntennaType>(),
+                    CenterFrequency_Hz = (uint)r.Next(85, 105) * 100000,
+                    Bandwith_Hz = (uint)r.Next(10, 20) * 1000,
+                    Gain_dB = r.Next(140),
+                    SignalToNoiseRatio_dB = (uint)r.Next(140),
+                    Roll = r.Next(-90, 90),
+                    Pitch = r.Next(-90, 90),
+                    Yaw = r.Next(-90, 90),
+                    XPos = r.Next(-74, 74),
+                    YPos = r.Next(-74, 74),
+                    ZPos = r.Next(-74, 74),
+                    Remark = r.NextObject(Tool.ALLPANGRAMS)
+                });
+            }
+
+            if (list.Exists(d => d.Id == 0) == false)
+            {
+                list.First().Id = 0;
             }
 
             return list;
@@ -165,33 +172,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CreateScenarioReport()
         {
-            if( string.IsNullOrEmpty( CurrentFile ) )
+            if (string.IsNullOrEmpty(CurrentFile))
             {
-                MB.Information( "The scenario has not been saved yet.\nSave it first and then try again." );
+                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
                 return;
             }
 
             Cursor = Cursors.Wait;
 
-            FileInfo fiCurrentFile = new FileInfo( CurrentFile );
+            FileInfo fiCurrentFile = new FileInfo(CurrentFile);
 
-            string strOutputFilename = string.Format( "{0}{1}.html" , Path.GetTempPath() , fiCurrentFile.GetFilenameWithoutExtension() );
+            string strOutputFilename = string.Format("{0}{1}.html", Path.GetTempPath(), fiCurrentFile.GetFilenameWithoutExtension());
 
-            StringBuilder sb = new StringBuilder( 8192 );
+            StringBuilder sb = new StringBuilder(8192);
 
-            sb.Append( "<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>" );
-
-            //-----------------------------------------------------------------
-
-            sb.AppendFormat( "<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>" , fiCurrentFile.GetFilenameWithoutExtension() );
-
-            sb.Append( "<hr />" );
+            sb.Append("<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>");
 
             //-----------------------------------------------------------------
 
-            if( string.IsNullOrEmpty( ScenarioDescription ) == false )
+            sb.AppendFormat("<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension());
+
+            sb.Append("<hr />");
+
+            //-----------------------------------------------------------------
+
+            if (string.IsNullOrEmpty(ScenarioDescription) == false)
             {
-                sb.Append( ScenarioDescription );
+                sb.Append(ScenarioDescription);
             }
 
             //-----------------------------------------------------------------
@@ -208,11 +215,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            sb.Append( "</body></html> " );
+            sb.Append("</body></html> ");
 
-            File.WriteAllText( strOutputFilename , sb.ToString() , Encoding.Default );
+            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.Default);
 
-            Tools.Windows.OpenWithDefaultApplication( strOutputFilename );
+            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
 
             Cursor = Cursors.Arrow;
         }
