@@ -37,9 +37,9 @@ namespace SIGENCEScenarioTool.ViewModels
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -490,17 +490,17 @@ namespace SIGENCEScenarioTool.ViewModels
         {
             get
             {
-                if (RFDevice.Id == 0)
+                if( RFDevice.Id == 0 )
                 {
                     return DeviceType.Reference;
                 }
 
-                if (RFDevice.Id > 0)
+                if( RFDevice.Id > 0 )
                 {
                     return DeviceType.Transmitter;
                 }
 
-                if (RFDevice.Id < 0)
+                if( RFDevice.Id < 0 )
                 {
                     return DeviceType.Receiver;
                 }
@@ -518,17 +518,31 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <param name="mcMapControl">The mc map control.</param>
         /// <param name="device">The device.</param>
         /// <exception cref="ArgumentNullException">device</exception>
-        public RFDeviceViewModel(GMapControl mcMapControl, RFDevice device)
+        public RFDeviceViewModel( GMapControl mcMapControl , RFDevice device )
         {
-            this.mcMapControl = mcMapControl ?? throw new ArgumentNullException("mcMapControl");
+            if( mcMapControl == null )
+            {
+                throw new ArgumentNullException( "mcMapControl" );
+            }
+            
+            //this.mcMapControl = mcMapControl ?? throw new ArgumentNullException("mcMapControl");
 
-            this.RFDevice = device ?? throw new ArgumentNullException("device");
+            if( device == null )
+            {
+                throw new ArgumentNullException( "device" );
+            }
+
+            //this.RFDevice = device ?? throw new ArgumentNullException( "device" );
+
+
+            this.mcMapControl = mcMapControl;
+            this.RFDevice = device;
 
             //-----------------------------------------------------------------
 
-            this.Marker = new GMapMarker(new PointLatLng(device.Latitude, device.Longitude))
+            this.Marker = new GMapMarker( new PointLatLng( device.Latitude , device.Longitude ) )
             {
-                Offset = new Point(-15, -15),
+                Offset = new Point( -15 , -15 ) ,
                 ZIndex = int.MaxValue
             };
 
@@ -544,7 +558,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <returns></returns>
         private string GetToolTip()
         {
-            return string.Format("- {0} -\n{1} ({2})\n{3,1:00.########}\n{4,1:00.########}", DeviceType, RFDevice.Name, RFDevice.Id, RFDevice.Latitude, RFDevice.Longitude);
+            return string.Format( "- {0} -\n{1} ({2})\n{3,1:00.########}\n{4,1:00.########}" , DeviceType , RFDevice.Name , RFDevice.Id , RFDevice.Latitude , RFDevice.Longitude );
         }
 
 
@@ -553,7 +567,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateMarkerTooltip()
         {
-            (this.Marker.Shape as AbstractMarker).MarkerToolTip = GetToolTip();
+            ( this.Marker.Shape as AbstractMarker ).MarkerToolTip = GetToolTip();
         }
 
 
@@ -562,9 +576,9 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateMarkerShape()
         {
-            if (this.Marker.Shape != null)
+            if( this.Marker.Shape != null )
             {
-                (this.Marker.Shape as AbstractMarker).OnPositionChanged -= Marker_OnPositionChanged;
+                ( this.Marker.Shape as AbstractMarker ).OnPositionChanged -= Marker_OnPositionChanged;
                 //(this.Marker.Shape as AbstractMarker).OnSelectionChanged -= Marker_OnSelectionChanged;
 
                 this.Marker.Shape = null;
@@ -573,35 +587,35 @@ namespace SIGENCEScenarioTool.ViewModels
             AbstractMarker marker = null;
 
             // Reference Transmitter
-            if (RFDevice.Id == 0)
+            if( RFDevice.Id == 0 )
             {
-                marker = new CircleMarker(this.mcMapControl, this.Marker, GetToolTip());
+                marker = new CircleMarker( this.mcMapControl , this.Marker , GetToolTip() );
                 //shape.OnPositionChanged += Shape_OnPositionChanged;
                 //this.Marker.Shape = shape;
                 //return;
             }
 
             // Receiver
-            if (RFDevice.Id < 0)
+            if( RFDevice.Id < 0 )
             {
-                marker = new RectangleMarker(this.mcMapControl, this.Marker, GetToolTip());
+                marker = new RectangleMarker( this.mcMapControl , this.Marker , GetToolTip() );
                 //shape.OnPositionChanged += Shape_OnPositionChanged;
                 //this.Marker.Shape = shape;
                 //return;
             }
 
             // Last but not least all other are transmitters ... 
-            if (RFDevice.Id > 0)
+            if( RFDevice.Id > 0 )
             {
-                marker = new TriangleMarker(this.mcMapControl, this.Marker, GetToolTip());
+                marker = new TriangleMarker( this.mcMapControl , this.Marker , GetToolTip() );
                 //shape.OnPositionChanged += Shape_OnPositionChanged;
                 //this.Marker.Shape = shape;
             }
 
 #if DEBUG
-            if (RFDevice.Id == 42)
+            if( RFDevice.Id == 42 )
             {
-                marker = new DiamondMarker(this.mcMapControl, this.Marker, GetToolTip());
+                marker = new DiamondMarker( this.mcMapControl , this.Marker , GetToolTip() );
             }
 #endif
 
@@ -617,7 +631,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateSelectionChanged()
         {
-            (this.Marker.Shape as AbstractMarker).IsSelected = this.IsSelected;
+            ( this.Marker.Shape as AbstractMarker ).IsSelected = this.IsSelected;
         }
 
 
@@ -626,7 +640,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateMarkerPosition()
         {
-            this.Marker.Position = new PointLatLng(RFDevice.Latitude, RFDevice.Longitude);
+            this.Marker.Position = new PointLatLng( RFDevice.Latitude , RFDevice.Longitude );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -637,7 +651,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="pll">The PLL.</param>
-        private void Marker_OnPositionChanged(object sender, PointLatLng pll)
+        private void Marker_OnPositionChanged( object sender , PointLatLng pll )
         {
             RFDevice.Latitude = pll.Lat;
             RFDevice.Longitude = pll.Lng;
@@ -647,8 +661,8 @@ namespace SIGENCEScenarioTool.ViewModels
             // TODO:
             //UpdateDirection();
 
-            FirePropertyChanged("Latitude");
-            FirePropertyChanged("Longitude");
+            FirePropertyChanged( "Latitude" );
+            FirePropertyChanged( "Longitude" );
         }
 
 
