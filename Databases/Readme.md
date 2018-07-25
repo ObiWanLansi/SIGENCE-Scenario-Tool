@@ -32,6 +32,8 @@ In the generated databases are only single points stored, no ways or areas. It i
 
     Is the SQLite Database from : [freiburg-regbez-latest.osm.bz2](http://download.geofabrik.de/europe/germany/baden-wuerttemberg/freiburg-regbez-latest.osm.bz2)
     
+    ![BorderMap](546px-Baden-Württemberg_RB_Freiburg.svg.png)
+    
     NodeCount: 119718
     
     Tag|Count
@@ -52,6 +54,8 @@ In the generated databases are only single points stored, no ways or areas. It i
 - [tuebingen-regbez-latest.osm.sqlite](tuebingen-regbez-latest.osm.sqlite)
 
     Is the SQLite Database from : [tuebingen-regbez-latest.osm.bz2](http://download.geofabrik.de/europe/germany/baden-wuerttemberg/tuebingen-regbez-latest.osm.bz2)
+    
+    ![BorderMap](546px-Baden-Württemberg_RB_Tübingen.svg.png)
     
     NodeCount: 94259
     
