@@ -28,7 +28,7 @@ The idea is to have a small set of geodata for
 
 In the generated databases are only single points stored, no ways or areas. It is optimized to query location of places, man made objects, ... .
 
-- freiburg-regbez-latest.osm.sqlite
+- [freiburg-regbez-latest.osm.sqlite](freiburg-regbez-latest.osm.sqlite)
 
     Is the SQLite Database from : [freiburg-regbez-latest.osm.bz2](http://download.geofabrik.de/europe/germany/baden-wuerttemberg/freiburg-regbez-latest.osm.bz2)
     
@@ -49,7 +49,7 @@ In the generated databases are only single points stored, no ways or areas. It i
     vending|1508
 
 
-- tuebingen-regbez-latest.osm.sqlite
+- [tuebingen-regbez-latest.osm.sqlite](tuebingen-regbez-latest.osm.sqlite)
 
     Is the SQLite Database from : [tuebingen-regbez-latest.osm.bz2](http://download.geofabrik.de/europe/germany/baden-wuerttemberg/tuebingen-regbez-latest.osm.bz2)
     
