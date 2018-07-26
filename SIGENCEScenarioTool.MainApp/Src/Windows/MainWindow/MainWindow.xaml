@@ -1,4 +1,4 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
+﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models" xmlns:geodb="clr-namespace:SIGENCEScenarioTool.Models.Database.GeoDb" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
 
         <Image x:Key="ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/add.png" />
@@ -40,6 +40,13 @@
         <ObjectDataProvider x:Key="eAntennaType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="models:AntennaType" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+
+        <ObjectDataProvider x:Key="eGeoTag" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="geodb:GeoTag" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
 
@@ -350,6 +357,7 @@
                 </Grid>
             </TabItem>
 
+
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -401,6 +409,83 @@
                     <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />
                 </Grid>
             </TabItem>
+
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource EARTH}" />
+                        <Label Content="GeoNodes" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <ToolBar Grid.Row="0">
+                        <CheckBox Content="Name:" />
+                        <TextBox Text="" Width="120" />
+                        <Separator />
+                        <CheckBox Content="GeoTag:" IsChecked="{Binding UseGeoTagFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
+                    </ToolBar>
+
+                    <DataGrid Grid.Row=" 1" ItemsSource="{Binding GeoNodeCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False">
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+
+                            <DataGridTextColumn Header="Tag" Binding="{Binding Tag}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Value" Binding="{Binding Value}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
 
             <TabItem>
                 <TabItem.Header>

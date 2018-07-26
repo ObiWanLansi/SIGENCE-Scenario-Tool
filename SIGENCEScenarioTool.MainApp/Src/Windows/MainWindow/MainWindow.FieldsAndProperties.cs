@@ -7,7 +7,7 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 
 using Microsoft.Win32;
-
+using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -72,6 +72,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The RFDevice collection.
         /// </value>
         public ObservableCollection<RFDeviceViewModel> RFDevicesCollection { get; set; }
+
+        //---------------------------------------------------------------------
 
 
         /// <summary>
@@ -318,7 +320,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
+                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
 
                 FirePropertyChanged();
             }
@@ -336,7 +338,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
+                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
 
                 FirePropertyChanged();
             }
@@ -422,22 +424,76 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// The string received data
+        /// The string debug output
         /// </summary>
-        private String strReceivedData = null;
+        private String strDebugOutput = null;
 
         /// <summary>
-        /// Gets or sets the received data.
+        /// Gets or sets the debug output.
         /// </summary>
         /// <value>
-        /// The received data.
+        /// The debug output.
         /// </value>
         public String DebugOutput
         {
-            get { return strReceivedData; }
+            get { return strDebugOutput; }
             set
             {
-                strReceivedData = value;
+                strDebugOutput = value;
+                FirePropertyChanged();
+            }
+        }
+
+        //---------------------------------------------------------------------
+
+        /// <summary>
+        /// Gets or sets the geo node collection.
+        /// </summary>
+        /// <value>
+        /// The geo node collection.
+        /// </value>
+        public GeoNodeCollection GeoNodeCollection { get; set; }
+
+
+        /// <summary>
+        /// The gt filter
+        /// </summary>
+        private GeoTag gtFilter = GeoTag.Place;
+
+        /// <summary>
+        /// Gets or sets the geo tag filter.
+        /// </summary>
+        /// <value>
+        /// The geo tag filter.
+        /// </value>
+        public GeoTag GeoTagFilter
+        {
+            get { return gtFilter; }
+            set
+            {
+                this.gtFilter = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// The b use geo tag filter
+        /// </summary>
+        private bool bUseGeoTagFilter = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [use geo tag filter].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [use geo tag filter]; otherwise, <c>false</c>.
+        /// </value>
+        public bool UseGeoTagFilter
+        {
+            get { return bUseGeoTagFilter; }
+            set
+            {
+                this.bUseGeoTagFilter = value;
                 FirePropertyChanged();
             }
         }

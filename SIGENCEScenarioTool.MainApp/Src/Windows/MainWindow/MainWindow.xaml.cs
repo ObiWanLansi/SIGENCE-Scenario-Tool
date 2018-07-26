@@ -9,6 +9,7 @@ using GMap.NET;
 
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -21,7 +22,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
@@ -76,11 +76,31 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices(30);
-            //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
-#endif
-            //-----------------------------------------------------------------
+            CreateRandomizedRFDevices(10);
 
+            //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+
+            try
+            {
+                this.GeoNodeCollection = GeoNodeCollection.GetCollection(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite");
+
+                //-----------------------------------------------------------------
+
+                //ListCollectionView _listCollectionView = CollectionViewSource.GetDefaultView(ocServices) as ListCollectionView;
+
+                //if (_listCollectionView != null)
+                //{
+                //    _listCollectionView.IsLiveSorting = true;
+                //    _listCollectionView.CustomSort = new ServiceComparer();
+                //}
+
+                //-----------------------------------------------------------------
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
+#endif
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
