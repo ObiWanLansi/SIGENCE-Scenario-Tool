@@ -52,7 +52,7 @@ namespace SIGENCEScenarioTool.Markers
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }

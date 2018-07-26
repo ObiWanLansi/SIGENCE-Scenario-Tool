@@ -223,6 +223,7 @@ namespace SIGENCEScenarioTool.ViewModels
             {
                 RFDevice.Yaw = value;
 
+                UpdateDirectionAngle();
                 FirePropertyChanged();
             }
         }
@@ -639,6 +640,9 @@ namespace SIGENCEScenarioTool.ViewModels
             marker.OnSelectionChanged += Marker_OnSelectionChanged;
 
             this.Marker.Shape = marker;
+
+            // Das können wir direkt mal aktualisieren da es ja noch nicht gesetzt wurde ...
+            UpdateDirectionAngle();
         }
 
 
@@ -657,6 +661,23 @@ namespace SIGENCEScenarioTool.ViewModels
         private void UpdateMarkerPosition()
         {
             this.Marker.Position = new PointLatLng(RFDevice.Latitude, RFDevice.Longitude);
+        }
+
+
+        /// <summary>
+        /// Updates the direction angle.
+        /// </summary>
+        private void UpdateDirectionAngle()
+        {
+            if (this.Marker.Shape is RectangleMarker)
+            {
+                (this.Marker.Shape as RectangleMarker).DirectionAngle = this.Yaw;
+            }
+
+            if (this.Marker.Shape is TriangleMarker)
+            {
+                (this.Marker.Shape as TriangleMarker).DirectionAngle = this.Yaw;
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
