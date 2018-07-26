@@ -99,6 +99,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="dvm"></param>
         private void AddRFDevice( RFDeviceViewModel dvm )
         {
+            dvm.OnSelectionChanged += DeviceViewModel_OnSelectionChanged;
             RFDevicesCollection.Add( dvm );
             mcMapControl.Markers.Add( dvm.Marker );
         }
@@ -119,11 +120,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Deletes the RFDevice.
         /// </summary>
-        /// <param name="tvm">The TVM.</param>
-        private void DeleteRFDevice( RFDeviceViewModel tvm )
+        /// <param name="dvm">The DVM.</param>
+        private void DeleteRFDevice( RFDeviceViewModel dvm )
         {
-            RFDevicesCollection.Remove( tvm );
-            mcMapControl.Markers.Remove( tvm.Marker );
+            dvm.OnSelectionChanged -= DeviceViewModel_OnSelectionChanged;
+            RFDevicesCollection.Remove( dvm );
+            mcMapControl.Markers.Remove( dvm.Marker );
         }
 
 

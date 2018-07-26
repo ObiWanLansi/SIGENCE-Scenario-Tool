@@ -74,17 +74,17 @@ namespace SIGENCEScenarioTool.Markers
         public event PositionChangedHandler OnPositionChanged;
 
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="sender">The sender.</param>
-        ///// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
-        //public delegate void SelectionChangedHandler(object sender, bool bIsSelected);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        public delegate void SelectionChangedHandler(object sender, bool bIsSelected);
 
-        ///// <summary>
-        ///// Occurs when [on selection changed].
-        ///// </summary>
-        //public event SelectionChangedHandler OnSelectionChanged;
+        /// <summary>
+        /// Occurs when [on selection changed].
+        /// </summary>
+        public event SelectionChangedHandler OnSelectionChanged;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -257,6 +257,9 @@ namespace SIGENCEScenarioTool.Markers
             if (mcMapControl.DragButton == MouseButton.Left)
             {
                 IsSelected = !IsSelected;
+
+                OnSelectionChanged?.Invoke(this, bIsSelected);
+
                 e.Handled = true;
                 return;
             }

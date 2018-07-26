@@ -377,6 +377,39 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Devices the view model on selection changed.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        private void DeviceViewModel_OnSelectionChanged(object sender, bool bIsSelected)
+        {
+            // Mark Or Unmark The Device in the DataGrid And Scroll To It If it is neccary ...
+
+            if (bIsSelected == true)
+            {
+                dgRFDevices.SelectedItems.Clear();
+                dgRFDevices.SelectedItems.Add(sender);
+                dgRFDevices.ScrollIntoView(sender);
+                dgRFDevices.Focus();
+            }
+            else
+            {
+
+                foreach (var item in dgRFDevices.SelectedItems)
+                {
+                    if (item == sender)
+                    {
+                        dgRFDevices.SelectedItems.Remove(item);
+                        break;
+                    }
+                }
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
