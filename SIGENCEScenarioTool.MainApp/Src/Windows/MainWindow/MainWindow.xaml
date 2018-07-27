@@ -93,12 +93,13 @@
                 <MenuItem Header="_Create Screenshot From Map" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
                 <MenuItem Header="_Send Data via UDP" Icon="{StaticResource SEND}" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
                 <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click" />
-            </MenuItem>
-            <MenuItem Header="_Extras">
-                <MenuItem Header="Edit _Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
-                <MenuItem Header="Save _Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_SaveInitialMapValues_Click" />
                 <Separator />
                 <MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
+            </MenuItem>
+            <MenuItem Header="_Extras">
+                <MenuItem Header="Save _Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_SaveInitialMapValues_Click" />
+                <Separator />
+                <MenuItem Header="Edit _Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
             </MenuItem>
             <MenuItem Header="_Test">
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
@@ -114,6 +115,7 @@
             <MenuItem Header="_Help">
                 <!--<MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />-->
                 <MenuItem Header="_Cheat Sheet" Icon="{StaticResource HELP}" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
+                <MenuItem Header="_Open Wiki" Icon="{StaticResource HELP}" Click="MenuItem_OpenWiki_Click"/>
                 <!--<MenuItem Header="_About" IsEnabled="False" />-->
             </MenuItem>
         </Menu>
