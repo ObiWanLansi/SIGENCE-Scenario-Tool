@@ -15,5 +15,5 @@ And test it soon. For testig i used the hardcoded settings 127.0.0.1 as host and
 
 *Link to the Model:*
 
-[GeoLocalizationResult](/Source/SIGENCEScenarioTool.MainApp/Src/Models/GeoLocalizationResult.Properties.md)
+[GeoLocalizationResult](/Source/SIGENCEScenarioTool.MainApp/Src/Models/GeoLocalizationResult/GeoLocalizationResult.Properties.md)
 
