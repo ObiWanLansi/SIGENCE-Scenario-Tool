@@ -11,8 +11,9 @@ And test it soon. For testig i used the hardcoded settings 127.0.0.1 as host and
 
 *Link to the XSD:*
 
-https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SchemaFiles/GeoLocalizationResult.xsd
+[GeoLocalizationResult](/SchemaFiles/GeoLocalizationResult.xsd)
 
 *Link to the Model:*
 
-https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/SIGENCEScenarioTool.MainApp/Src/Models/GeoLocalizationResult.Properties.md
+[GeoLocalizationResult](/Source/SIGENCEScenarioTool.MainApp/Src/Models/GeoLocalizationResult.Properties.md)
+
