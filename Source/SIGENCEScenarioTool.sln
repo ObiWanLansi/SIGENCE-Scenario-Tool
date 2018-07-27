@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool", "SI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.UnitTests", "SIGENCEScenarioTool.UnitTests\SIGENCE Scenario Tool.UnitTests.csproj", "{4A837532-76D1-4A78-99CB-E53BE9525C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Mockup", "SIGENCEScenarioTool.Mockup\SIGENCE Scenario Tool.Mockup.csproj", "{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Mockup", "SIGENCEScenarioTool.Mockup.Net\SIGENCE Scenario Tool.Mockup.csproj", "{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.TestSuite", "SIGENCEScenarioTool.TestSuite\SIGENCE Scenario Tool.TestSuite.csproj", "{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}"
 EndProject
