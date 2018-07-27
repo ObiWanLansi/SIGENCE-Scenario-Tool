@@ -348,23 +348,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        ///// <summary>
-        ///// Gets or sets a value indicating whether [show center].
-        ///// </summary>
-        ///// <value>
-        /////   <c>true</c> if [show center]; otherwise, <c>false</c>.
-        ///// </value>
-        //public bool ShowCenter
-        //{
-        //    get { return mcMapControl.ShowCenter; }
-        //    set
-        //    {
-        //        mcMapControl.ShowCenter = value;
-        //        mcMapControl.ReloadMap();
+        /// <summary>
+        /// Gets or sets a value indicating whether [show center].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [show center]; otherwise, <c>false</c>.
+        /// </value>
+        public bool ShowCenter
+        {
+            get { return mcMapControl.ShowCenter; }
+            set
+            {
+                mcMapControl.ShowCenter = value;
+                mcMapControl.ReloadMap();
 
-        //        FirePropertyChanged();
-        //    }
-        //}
+                FirePropertyChanged();
+            }
+        }
 
         //---------------------------------------------------------------------
 

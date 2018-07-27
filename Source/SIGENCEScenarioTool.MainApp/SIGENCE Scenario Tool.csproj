@@ -286,6 +286,7 @@
     <Compile Include="Src\Windows\HelpWindow\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Windows\MainWindow\MainWindow.GeoDataHandling.cs" />
     <Compile Include="Src\Windows\MainWindow\MainWindow.TestStuff.cs" />
     <Compile Include="Src\Windows\MainWindow\MainWindow.EventHandling.cs" />
     <Compile Include="Src\Windows\MainWindow\MainWindow.FileHandling.cs" />

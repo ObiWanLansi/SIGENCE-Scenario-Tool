@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
-
+using GMap.NET;
 using SIGENCEScenarioTool.Extensions;
 
 
@@ -41,7 +41,7 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         /// <value>
         /// The node identifier.
         /// </value>
-        public long NodeId { get; set; }
+        public long NodeId { get; internal set; }
 
         /// <summary>
         /// Gets or sets the latitude.
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         /// <value>
         /// The latitude.
         /// </value>
-        public double Latitude { get; set; }
+        public double Latitude { get; internal set; }
 
         /// <summary>
         /// Gets or sets the longitude.
@@ -57,7 +57,7 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         /// <value>
         /// The longitude.
         /// </value>
-        public double Longitude { get; set; }
+        public double Longitude { get; internal set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -65,7 +65,7 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         /// <value>
         /// The name.
         /// </value>
-        public string Name { get; set; }
+        public string Name { get; internal set; }
 
         /// <summary>
         /// Gets or sets the tag.
@@ -73,7 +73,7 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         /// <value>
         /// The tag.
         /// </value>
-        public GeoTag Tag { get; set; }
+        public GeoTag Tag { get; internal set; }
 
         /// <summary>
         /// Gets or sets the value.
@@ -81,7 +81,34 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         /// <value>
         /// The value.
         /// </value>
-        public string Value { get; set; }
+        public string Value { get; internal set; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The PLL position
+        /// </summary>
+        private PointLatLng? pllPosition = null;
+
+        /// <summary>
+        /// Gets the position.
+        /// </summary>
+        /// <value>
+        /// The position.
+        /// </value>
+        public PointLatLng Position
+        {
+            get
+            {
+                if (pllPosition == null)
+                {
+                    pllPosition = new PointLatLng(Latitude, Longitude);
+                }
+
+                return pllPosition.Value;
+            }
+        }
 
     } // end sealed public class GeoNode
 

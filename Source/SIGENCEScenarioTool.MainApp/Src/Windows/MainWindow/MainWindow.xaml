@@ -130,9 +130,8 @@
         <ToolBar Grid.Row="1">
             <Label Content="MapProvider" />
             <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Here You Can Change The MapProvider For The Map." Margin="3" />
+            <ToggleButton Content="+" Foreground="Red" FontWeight="ExtraBold" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <Separator />
-            <!--<Separator />
-            <ToggleButton Content="Display Center" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />-->
             <Button Content="{StaticResource ADD}" ToolTip="Create RFDevice" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
             <Separator />
             <Button Content="{StaticResource DELETE}" ToolTip="Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
@@ -155,7 +154,7 @@
         </ToolBar>
 
         <TabControl Grid.Row="2">
-            <TabItem>
+            <TabItem x:Name="tiMap">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource EARTH}" />
@@ -444,7 +443,7 @@
                         <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
                     </ToolBar>
 
-                    <DataGrid Grid.Row=" 1" ItemsSource="{Binding GeoNodeCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False">
+                    <DataGrid Grid.Row=" 1" ItemsSource="{Binding GeoNodeCollection}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}">

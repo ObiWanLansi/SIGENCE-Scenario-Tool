@@ -6,6 +6,8 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 using GMap.NET;
+
+using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -191,6 +193,71 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Handles the Copy event of the DataGrid_CommandBinding_CanExecute control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="CanExecuteRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_CommandBinding_CanExecute_Copy(object sender, CanExecuteRoutedEventArgs e)
+        {
+            // For the first step we'll return every time true ...
+            e.CanExecute = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Paste event of the DataGrid_CommandBinding_CanExecute control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="CanExecuteRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_CommandBinding_CanExecute_Paste(object sender, CanExecuteRoutedEventArgs e)
+        {
+            // For the first step we'll return every time true ...
+            e.CanExecute = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Copy event of the DataGrid_Execute control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ExecutedRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_Execute_Copy(object sender, ExecutedRoutedEventArgs e)
+        {
+            CopyRFDevice();
+        }
+
+
+        /// <summary>
+        /// Handles the Paste event of the DataGrid_Execute control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ExecutedRoutedEventArgs"/> instance containing the event data.</param>
+        private void DataGrid_Execute_Paste(object sender, ExecutedRoutedEventArgs e)
+        {
+            PasteRFDevice();
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Handles the MouseDoubleClick event of the DataGridGeoData control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void DataGridGeoData_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            GeoNode gn = (sender as DataGrid).SelectedItem as GeoNode;
+
+            JumpToGeoNode(gn);
+
+            e.Handled = true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Handles the Click event of the MenuItem_RestoreInitialMapValues control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -358,55 +425,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             CreateScenarioReport();
 
             e.Handled = true;
-        }
-
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
-        /// Handles the Copy event of the DataGrid_CommandBinding_CanExecute control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="CanExecuteRoutedEventArgs"/> instance containing the event data.</param>
-        private void DataGrid_CommandBinding_CanExecute_Copy(object sender, CanExecuteRoutedEventArgs e)
-        {
-            // For the first step we'll return every time true ...
-            e.CanExecute = true;
-        }
-
-
-        /// <summary>
-        /// Handles the Paste event of the DataGrid_CommandBinding_CanExecute control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="CanExecuteRoutedEventArgs"/> instance containing the event data.</param>
-        private void DataGrid_CommandBinding_CanExecute_Paste(object sender, CanExecuteRoutedEventArgs e)
-        {
-            // For the first step we'll return every time true ...
-            e.CanExecute = true;
-        }
-
-
-        /// <summary>
-        /// Handles the Copy event of the DataGrid_Execute control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="ExecutedRoutedEventArgs"/> instance containing the event data.</param>
-        private void DataGrid_Execute_Copy(object sender, ExecutedRoutedEventArgs e)
-        {
-            CopyRFDevice();
-        }
-
-
-        /// <summary>
-        /// Handles the Paste event of the DataGrid_Execute control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="ExecutedRoutedEventArgs"/> instance containing the event data.</param>
-        private void DataGrid_Execute_Paste(object sender, ExecutedRoutedEventArgs e)
-        {
-            PasteRFDevice();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
