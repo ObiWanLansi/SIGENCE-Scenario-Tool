@@ -48,6 +48,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// The b data grid in edit mode
+        /// </summary>
+        private bool bDataGridInEditMode = false;
+
+        /// <summary>
+        /// The b no flash back
+        /// </summary>
+        private bool bNoFlashBack = false;
+
+        /// <summary>
         /// The missing
         /// </summary>
         private readonly object Missing = Type.Missing;
@@ -186,31 +196,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// The b data grid in edit mode
-        /// </summary>
-        private bool bDataGridInEditMode = false;
-
-
-        /// <summary>
-        /// Gets or sets the map provider.
-        /// </summary>
-        /// <value>
-        /// The map provider.
-        /// </value>
-        public GMapProvider MapProvider
-        {
-            get { return mcMapControl.MapProvider; }
-            set
-            {
-                mcMapControl.MapProvider = value;
-                mcMapControl.Manager.Mode = value != GMapProviders.EmptyProvider ? AccessMode.ServerAndCache : AccessMode.CacheOnly;
-
-                FirePropertyChanged();
-            }
-        }
-
-
-        /// <summary>
         /// The b is tile loading
         /// </summary>
         private bool bIsTileLoading = false;
@@ -230,23 +215,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 FirePropertyChanged();
             }
         }
-
-        ///// <summary>
-        ///// Gets or sets the drag button.
-        ///// </summary>
-        ///// <value>
-        ///// The drag button.
-        ///// </value>
-        //public MouseButton DragButton
-        //{
-        //    get { return mcMapControl.DragButton; }
-        //    set
-        //    {
-        //        mcMapControl.DragButton = value;
-
-        //        FirePropertyChanged();
-        //    }
-        //}
 
 
         /// <summary>
@@ -272,23 +240,26 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
         }
 
-        ///// <summary>
-        ///// Gets or sets a value indicating whether [show center].
-        ///// </summary>
-        ///// <value>
-        /////   <c>true</c> if [show center]; otherwise, <c>false</c>.
-        ///// </value>
-        //public bool ShowCenter
-        //{
-        //    get { return mcMapControl.ShowCenter; }
-        //    set
-        //    {
-        //        mcMapControl.ShowCenter = value;
-        //        mcMapControl.ReloadMap();
+        //---------------------------------------------------------------------
 
-        //        FirePropertyChanged();
-        //    }
-        //}
+
+        /// <summary>
+        /// Gets or sets the map provider.
+        /// </summary>
+        /// <value>
+        /// The map provider.
+        /// </value>
+        public GMapProvider MapProvider
+        {
+            get { return mcMapControl.MapProvider; }
+            set
+            {
+                mcMapControl.MapProvider = value;
+                mcMapControl.Manager.Mode = value != GMapProviders.EmptyProvider ? AccessMode.ServerAndCache : AccessMode.CacheOnly;
+
+                FirePropertyChanged();
+            }
+        }
 
 
         /// <summary>
@@ -344,6 +315,25 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
         }
 
+
+        ///// <summary>
+        ///// Gets or sets a value indicating whether [show center].
+        ///// </summary>
+        ///// <value>
+        /////   <c>true</c> if [show center]; otherwise, <c>false</c>.
+        ///// </value>
+        //public bool ShowCenter
+        //{
+        //    get { return mcMapControl.ShowCenter; }
+        //    set
+        //    {
+        //        mcMapControl.ShowCenter = value;
+        //        mcMapControl.ReloadMap();
+
+        //        FirePropertyChanged();
+        //    }
+        //}
+
         //---------------------------------------------------------------------
 
 
@@ -365,6 +355,30 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.strCurrentFile = value;
                 SetTitle();
+                FirePropertyChanged();
+            }
+        }
+
+        //---------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The b synchronize map and grid
+        /// </summary>
+        private bool bSyncMapAndGrid = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [synchronize map and grid].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [synchronize map and grid]; otherwise, <c>false</c>.
+        /// </value>
+        public bool SyncMapAndGrid
+        {
+            get { return bSyncMapAndGrid; }
+            set
+            {
+                bSyncMapAndGrid = value;
                 FirePropertyChanged();
             }
         }

@@ -125,7 +125,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             CommandBindings.Add( new CommandBinding( RegisteredCommands.MoveRFDevice ,
                 ( object sender , ExecutedRoutedEventArgs e ) =>
                 {
-                    IsDeviceMovingMode = true;
+                    IsDeviceMovingMode = !IsDeviceMovingMode;
                     e.Handled = true;
                 } ,
                 ( object sender , CanExecuteRoutedEventArgs e ) =>
@@ -243,6 +243,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     e.CanExecute = true;
                 }
             ) );
+
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.SyncMapAndGrid,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    SyncMapAndGrid = !SyncMapAndGrid;
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
         }
 
 

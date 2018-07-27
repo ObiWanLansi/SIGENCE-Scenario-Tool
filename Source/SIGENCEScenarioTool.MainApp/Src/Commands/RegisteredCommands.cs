@@ -119,6 +119,15 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         static public RoutedUICommand OpenSettings { get; private set; }
 
+
+        /// <summary>
+        /// Gets the synchronize map and grid.
+        /// </summary>
+        /// <value>
+        /// The synchronize map and grid.
+        /// </value>
+        static public RoutedUICommand SyncMapAndGrid { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -173,6 +182,9 @@ namespace SIGENCEScenarioTool.Commands
 
             OpenSettings = new RoutedUICommand("OpenSettings", "OpenSettings", typeof(RegisteredCommands));
             OpenSettings.InputGestures.Add(new KeyGesture(Key.X, ModifierKeys.Control));
+
+            SyncMapAndGrid = new RoutedUICommand("SyncMapAndGrid", "SyncMapAndGrid", typeof(RegisteredCommands));
+            SyncMapAndGrid.InputGestures.Add(new KeyGesture(Key.G, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands
