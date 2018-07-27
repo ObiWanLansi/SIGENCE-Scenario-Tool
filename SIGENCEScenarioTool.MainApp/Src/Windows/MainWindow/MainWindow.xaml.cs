@@ -82,7 +82,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                this.GeoNodeCollection = GeoNodeCollection.GetCollection(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite");
+                //this.GeoNodeCollection = GeoNodeCollection.GetCollection( @"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite" );
+                this.GeoNodeCollection = GeoNodeCollection.GetCollection( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite" );
 
                 //-----------------------------------------------------------------
 
