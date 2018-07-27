@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -61,40 +63,95 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// The t UDP server
+        /// </summary>
+        private Thread tUDPServer = null;
+
+        /// <summary>
+        /// Initializes the UDP server.
+        /// </summary>
+        private void StartUDPServer()
+        {
+            if (tUDPServer == null)
+            {
+                tUDPServer = new Thread(UDPReceiveData)
+                {
+                    IsBackground = true,
+                    Name = "UDPServerThread"
+                };
+                tUDPServer.Start();
+            }
+        }
+
+
+        /// <summary>
+        /// Stops the UDP server.
+        /// </summary>
+        private void StopUDPServer()
+        {
+            if (tUDPServer != null)
+            {
+                tUDPServer.Abort();
+
+                tUDPServer = null;
+            }
+        }
+
 
         /// <summary>
         /// UDPs the receive data.
         /// </summary>
         private void UDPReceiveData()
         {
+            UdpClient client = null;
+
             try
             {
-                using (UdpClient client = new UdpClient(7474))
+                client = new UdpClient(settings.UDPPortReceiving);
                 {
                     IPEndPoint ep = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPortReceiving);
 
                     // A neverending story ...
                     while (true)
                     {
-                        try
-                        {
-                            byte[] baReceived = client.Receive(ref ep);
+                        // Obwohl der Thread Aborted wird beendet er das Receiver nicht und somit auch nicht Thread :-(
+                        // Erst wenn er was empfangen hat merkt er das er Aborted ist und die Expcetion tritt auf ...
+                        byte[] baReceived = client.Receive(ref ep);
 
-                            string strReceived = Encoding.Default.GetString(baReceived);
+                        string strReceived = Encoding.Default.GetString(baReceived);
 
-                            DebugOutput += strReceived + "\n\n";
-                            ReceivedData = true;
-                        }
-                        catch (Exception ex)
-                        {
-                            MB.Error(ex);
-                        }
+                        DebugOutput += strReceived + "\n\n";
+                        ReceivedData = true;
                     }
                 }
+            }
+            catch (ThreadAbortException ex)
+            {
+                // Do nothing ...
+                Debug.WriteLine(ex.Message);
             }
             catch (Exception ex)
             {
                 MB.Warning(ex.Message);
+            }
+            finally
+            {
+                if (client != null)
+                {
+                    try
+                    {
+                        client.Close();
+                        client.Dispose();
+                        client = null;
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
             }
         }
 

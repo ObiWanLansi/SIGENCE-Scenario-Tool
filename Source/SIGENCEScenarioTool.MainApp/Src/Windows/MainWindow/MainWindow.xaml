@@ -28,6 +28,8 @@
         <Image x:Key="EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/earth.png" />
         <Image x:Key="MAGIC_WAND" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/magic_wand.png" />
         <Image x:Key="LED_WHITE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/led_white.png" />
+        <Image x:Key="SERVER_FROM_CLIENT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_from_client.png" />
+        <Image x:Key="SERVER_TO_CLIENT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_to_client.png" />
 
 
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
@@ -147,7 +149,8 @@
             <Separator />
             <Button Content="{StaticResource CAMERA}" ToolTip="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
             <Separator />
-            <Button Content="{StaticResource SEND}" ToolTip="Send Data Via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
+            <ToggleButton Content="{StaticResource SERVER_FROM_CLIENT}" ToolTip="Receive Data Via UDP" IsChecked="{Binding IsReceiveDataUDP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="{StaticResource SERVER_TO_CLIENT}" ToolTip="Send Data Via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
             <Separator />
         </ToolBar>
 

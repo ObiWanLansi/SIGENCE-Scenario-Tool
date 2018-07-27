@@ -65,7 +65,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             InitMapControl();
             InitMapProvider();
             InitCommands();
-            InitUDPServer();
             InitFileOpenSaveDialogs();
 
             //-----------------------------------------------------------------

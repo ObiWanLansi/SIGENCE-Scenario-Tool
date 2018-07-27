@@ -96,6 +96,14 @@ namespace SIGENCEScenarioTool.Commands
         static public RoutedUICommand SendDataUDP { get; private set; }
 
         /// <summary>
+        /// Gets the receive data UDP.
+        /// </summary>
+        /// <value>
+        /// The receive data UDP.
+        /// </value>
+        static public RoutedUICommand ReceiveDataUDP { get; private set; }
+
+        /// <summary>
         /// Gets the zoom to rf device.
         /// </summary>
         /// <value>
@@ -139,6 +147,7 @@ namespace SIGENCEScenarioTool.Commands
             OpenCheatSheet = new RoutedUICommand("OpenCheatSheet", "OpenCheatSheet", typeof(RegisteredCommands));
             OpenCheatSheet.InputGestures.Add(new KeyGesture(Key.F1));
 
+            //-----------------------------------------------------------------
             CreateRFDevice = new RoutedUICommand("CreateRFDevice", "CreateRFDevice", typeof(RegisteredCommands));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.F5));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Alt));
@@ -162,10 +171,14 @@ namespace SIGENCEScenarioTool.Commands
             ImportRFDevice.InputGestures.Add(new KeyGesture(Key.F8));
             ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
 
-
             ZoomToRFDevice = new RoutedUICommand("ZoomToRFDevice", "ZoomToRFDevice", typeof(RegisteredCommands));
             ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.F9));
             ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.Z, ModifierKeys.Control));
+
+            RFDeviceQRCode = new RoutedUICommand("RFDeviceQRCode", "RFDeviceQRCode", typeof(RegisteredCommands));
+            RFDeviceQRCode.InputGestures.Add(new KeyGesture(Key.Q, ModifierKeys.Control));
+
+            //-----------------------------------------------------------------
 
             CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
             CreateScreenshot.InputGestures.Add(new KeyGesture(Key.F10));
@@ -175,10 +188,13 @@ namespace SIGENCEScenarioTool.Commands
 
             SendDataUDP = new RoutedUICommand("SendDataUDP", "SendDataUDP", typeof(RegisteredCommands));
             SendDataUDP.InputGestures.Add(new KeyGesture(Key.F12));
-            SendDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
+            //SendDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
 
-            RFDeviceQRCode = new RoutedUICommand("RFDeviceQRCode", "RFDeviceQRCode", typeof(RegisteredCommands));
-            RFDeviceQRCode.InputGestures.Add(new KeyGesture(Key.Q, ModifierKeys.Control));
+            ReceiveDataUDP = new RoutedUICommand("ReceiveDataUDP", "ReceiveDataUDP", typeof(RegisteredCommands));
+            ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.F12, ModifierKeys.Control));
+            //ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
+
+            //-----------------------------------------------------------------
 
             OpenSettings = new RoutedUICommand("OpenSettings", "OpenSettings", typeof(RegisteredCommands));
             OpenSettings.InputGestures.Add(new KeyGesture(Key.X, ModifierKeys.Control));

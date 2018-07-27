@@ -165,6 +165,38 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
         }
 
+
+        /// <summary>
+        /// The b is receive data UDP
+        /// </summary>
+        private bool bIsReceiveDataUDP = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is receive data UDP.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is receive data UDP; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsReceiveDataUDP
+        {
+            get { return bIsReceiveDataUDP; }
+            set
+            {
+                this.bIsReceiveDataUDP = value;
+
+                if (bIsReceiveDataUDP == true)
+                {
+                    StartUDPServer();
+                }
+                else
+                {
+                    StopUDPServer();
+                }
+
+                FirePropertyChanged();
+            }
+        }
+
         //---------------------------------------------------------------------
 
 

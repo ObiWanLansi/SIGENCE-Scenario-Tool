@@ -389,6 +389,8 @@
     <Resource Include="Images\ok.png" />
     <Resource Include="Images\delete2.png" />
     <Resource Include="Images\led_white.png" />
+    <Resource Include="Images\server_to_client.png" />
+    <Resource Include="Images\server_from_client.png" />
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>
