@@ -5,9 +5,8 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 ## Documentation
 
 - [Cheat Sheet](Documentation/Generated/CheatSheet.pdf)
-- [RF Device Model](Source/SIGENCEScenarioTool.MainApp/Src/Models/RFDevice/RFDevice.Properties.md)
 - [Enumerations](Source/SIGENCEScenarioTool.MainApp/Src/Models/EnumerationsAndConstants.md)
-- [GeoLocalizationResult Model](Source/SIGENCEScenarioTool.MainApp/Src/Models/GeoLocalizationResult/GeoLocalizationResult.Properties.md)
+- [RF Device Model](Source/SIGENCEScenarioTool.MainApp/Src/Models/RFDevice/RFDevice.Properties.md)
 
 
 ## Quick Links
