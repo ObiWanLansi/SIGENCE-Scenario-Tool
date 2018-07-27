@@ -48,16 +48,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
                 //ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
                 ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
-                
+
                 string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
-                foreach (var mp in GMapProviders.List)
-                {
-                    if (mp.Name == strMapProvider)
-                    {
-                        MapProvider = mp;
-                        break;
-                    }
-                }
+                //foreach (var mp in GMapProviders.List)
+                //{
+                //    if (mp.Name == strMapProvider)
+                //    {
+                //        MapProvider = mp;
+                //        break;
+                //    }
+                //}
+                MapProvider = GetProviderFromString(strMapProvider);
 
                 XElement eCenterPosition = eGeneralSettings.Element("CenterPosition");
                 Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? Latitude;

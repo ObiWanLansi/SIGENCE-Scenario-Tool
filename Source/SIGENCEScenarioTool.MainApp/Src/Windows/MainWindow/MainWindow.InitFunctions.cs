@@ -254,31 +254,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             GMapProvider.WebProxy = WebRequest.DefaultWebProxy;
             GMapProvider.WebProxy.Credentials = CredentialCache.DefaultCredentials;
 
-            //mcMapControl.DragButton = MouseButton.Middle;
             mcMapControl.DragButton = MouseButton.Left;
-            
-            mcMapControl.MapProvider = GMapProviders.GoogleMap;
-
-            string strMapProvider = settings.InitialMap;
-            foreach (var mp in GMapProviders.List)
-            {
-                if (mp.Name == strMapProvider)
-                {
-                    mcMapControl.MapProvider = mp;
-                    break;
-                }
-            }
-
             mcMapControl.Manager.Mode = AccessMode.ServerAndCache;
-
             mcMapControl.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
             mcMapControl.ShowCenter = false;
             mcMapControl.MinZoom = 2;
             mcMapControl.MaxZoom = 22;
 
-            //mcMapControl.Position = new PointLatLng(49.761471, 6.650053);
-            mcMapControl.Position = new PointLatLng( settings.InitialLatitude , settings.InitialLongitude );
-            mcMapControl.Zoom = settings.InitialZoom;
+            RestoreInitialMapValues();
 
             mcMapControl.OnTileLoadStart += MapControl_OnTileLoadStart;
             mcMapControl.OnTileLoadComplete += MapControl_OnTileLoadComplete;
@@ -296,15 +279,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             cbMapProvider.Items.Add( GMapProviders.GoogleSatelliteMap );
             cbMapProvider.Items.Add( GMapProviders.GoogleTerrainMap );
             cbMapProvider.Items.Add( GMapProviders.GoogleHybridMap );
-
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_Imagery_World_2D_Map);
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_ShadedRelief_World_2D_Map);
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_StreetMap_World_2D_Map);
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_World_Physical_Map);
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_World_Shaded_Relief_Map);
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_World_Street_Map);
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_World_Terrain_Base_Map);
-            //cbMapProvider.Items.Add(GMapProviders.ArcGIS_World_Topo_Map);
 
             cbMapProvider.Items.Add( GMapProviders.OpenStreetMap );
 

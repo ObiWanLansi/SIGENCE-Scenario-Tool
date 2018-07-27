@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 
 using GMap.NET;
-
+using GMap.NET.MapProviders;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
@@ -82,8 +82,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                //this.GeoNodeCollection = GeoNodeCollection.GetCollection( @"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite" );
-                this.GeoNodeCollection = GeoNodeCollection.GetCollection( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite" );
+                this.GeoNodeCollection = GeoNodeCollection.GetCollection(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite");
+                //this.GeoNodeCollection = GeoNodeCollection.GetCollection( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite" );
 
                 //-----------------------------------------------------------------
 
@@ -234,20 +234,50 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
+
+        /// <summary>
+        /// Restores the initial map values.
+        /// </summary>
+        private void RestoreInitialMapValues()
+        {
+            mcMapControl.Position = new PointLatLng(settings.InitialLatitude, settings.InitialLongitude);
+            mcMapControl.Zoom = settings.InitialZoom;
+            mcMapControl.MapProvider = GetProviderFromString(settings.InitialMap);
+        }
+
+
         /// <summary>
         /// Saves the initial map values.
         /// </summary>
         private void SaveInitialMapValues()
         {
             PointLatLng pll = mcMapControl.Position;
-            uint iZoom = (uint)mcMapControl.Zoom;
-
             settings.InitialLatitude = pll.Lat;
             settings.InitialLongitude = pll.Lng;
-            settings.InitialZoom = iZoom;
+
+            settings.InitialZoom = (uint)mcMapControl.Zoom;
             settings.InitialMap = mcMapControl.MapProvider.ToString();
 
             settings.Save();
+        }
+
+
+        /// <summary>
+        /// Gets the provider from string.
+        /// </summary>
+        /// <param name="strMapProvider">The string map provider.</param>
+        /// <returns></returns>
+        static private GMapProvider GetProviderFromString(string strMapProvider)
+        {
+            foreach (var mp in GMapProviders.List)
+            {
+                if (mp.Name == strMapProvider)
+                {
+                    return mp;
+                }
+            }
+
+            return GMapProviders.GoogleMap;
         }
 
     } // end public partial class MainWindow
