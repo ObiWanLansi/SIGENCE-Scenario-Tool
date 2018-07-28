@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Data;
 using System.Windows.Input;
 
 using GMap.NET;
@@ -500,11 +501,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public GeoNodeCollection GeoNodeCollection { get; set; }
 
+        /// <summary>
+        /// The LCV
+        /// </summary>
+        private ListCollectionView lcv = null;
+
+
+        /// <summary>
+        /// Gets the current nodes.
+        /// </summary>
+        /// <value>
+        /// The current nodes.
+        /// </value>
+        public int CurrentNodes
+        {
+            get
+            {
+                return lcv.Count;
+            }
+        }
+
+        //-----------------------------
+
 
         /// <summary>
         /// The gt filter
         /// </summary>
-        private GeoTag gtFilter = GeoTag.Place;
+        private GeoTag gtGeoTagFilter = GeoTag.Place;
 
         /// <summary>
         /// Gets or sets the geo tag filter.
@@ -514,11 +537,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public GeoTag GeoTagFilter
         {
-            get { return gtFilter; }
+            get { return gtGeoTagFilter; }
             set
             {
-                this.gtFilter = value;
+                this.gtGeoTagFilter = value;
+
+                lcv.Refresh();
+
                 FirePropertyChanged();
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -540,7 +567,62 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 this.bUseGeoTagFilter = value;
+
+                lcv.Refresh();
+
                 FirePropertyChanged();
+                FirePropertyChanged("CurrentNodes");
+            }
+        }
+
+
+        /// <summary>
+        /// The string name filter
+        /// </summary>
+        private string strNameFilter = "";
+
+        /// <summary>
+        /// Gets or sets the name filter.
+        /// </summary>
+        /// <value>
+        /// The name filter.
+        /// </value>
+        public string NameFilter
+        {
+            get { return strNameFilter; }
+            set
+            {
+                this.strNameFilter = value;
+
+                lcv.Refresh();
+
+                FirePropertyChanged();
+                FirePropertyChanged("CurrentNodes");
+            }
+        }
+
+        /// <summary>
+        /// The b use name filter
+        /// </summary>
+        private bool bUseNameFilter = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [use name filter].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [use name filter]; otherwise, <c>false</c>.
+        /// </value>
+        public bool UseNameFilter
+        {
+            get { return bUseNameFilter; }
+            set
+            {
+                this.bUseNameFilter = value;
+
+                lcv.Refresh();
+
+                FirePropertyChanged();
+                FirePropertyChanged("CurrentNodes");
             }
         }
 

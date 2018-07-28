@@ -221,7 +221,6 @@ namespace SIGENCEScenarioTool.Markers
 
             this.MouseEnter += new MouseEventHandler(MarkerControl_MouseEnter);
             this.MouseLeave += new MouseEventHandler(MarkerControl_MouseLeave);
-
         }
 
 

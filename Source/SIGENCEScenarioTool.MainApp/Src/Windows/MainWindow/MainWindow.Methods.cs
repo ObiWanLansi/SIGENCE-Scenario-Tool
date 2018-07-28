@@ -8,6 +8,7 @@ using GMap.NET.MapProviders;
 
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 
 
@@ -197,6 +198,44 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             return GMapProviders.GoogleMap;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Determines whether [is wanted geo node] [the specified object].
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>
+        ///   <c>true</c> if [is wanted geo node] [the specified object]; otherwise, <c>false</c>.
+        /// </returns>
+        private bool IsWantedGeoNode(object obj)
+        {
+            if (obj == null || obj is GeoNode == false)
+            {
+                return false;
+            }
+
+            GeoNode gn = obj as GeoNode;
+
+            if (UseGeoTagFilter == true)
+            {
+                if (gn.Tag != GeoTagFilter)
+                {
+                    return false;
+                }
+            }
+
+            if (UseNameFilter == true && NameFilter.IsNotEmpty())
+            {
+                if (gn.Name.ToLower().Contains(NameFilter.ToLower()) == false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
     } // end public partial class MainWindow

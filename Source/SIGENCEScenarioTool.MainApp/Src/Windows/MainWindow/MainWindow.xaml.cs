@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Data;
 
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
@@ -72,29 +73,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             CreateRandomizedRFDevices(10);
 
             //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+#endif
+            //-----------------------------------------------------------------
 
             try
             {
-                this.GeoNodeCollection = GeoNodeCollection.GetCollection(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite");
-                //this.GeoNodeCollection = GeoNodeCollection.GetCollection( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Databases\GeoDb\freiburg-regbez-latest.osm.sqlite" );
-
-                //-----------------------------------------------------------------
-
-                //ListCollectionView _listCollectionView = CollectionViewSource.GetDefaultView(ocServices) as ListCollectionView;
-
-                //if (_listCollectionView != null)
-                //{
-                //    _listCollectionView.IsLiveSorting = true;
-                //    _listCollectionView.CustomSort = new ServiceComparer();
-                //}
-
-                //-----------------------------------------------------------------
+                string strFilename = string.Format("{0}\\tuebingen-regbez-latest.osm.sqlite", Tool.StartupPath);
+                this.GeoNodeCollection = GeoNodeCollection.GetCollection(strFilename);
             }
             catch (Exception ex)
             {
                 MB.Error(ex);
             }
-#endif
+
+            lcv = CollectionViewSource.GetDefaultView(this.GeoNodeCollection) as ListCollectionView;
+
+            lcv.IsLiveFiltering = true;
+            lcv.Filter = IsWantedGeoNode;
         }
 
     } // end public partial class MainWindow

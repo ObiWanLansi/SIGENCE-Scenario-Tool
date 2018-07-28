@@ -202,6 +202,9 @@
     <Compile Include="Src\Markers\CircleMarker.xaml.cs">
       <DependentUpon>CircleMarker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Markers\GeoNodeMarker.xaml.cs">
+      <DependentUpon>GeoNodeMarker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Markers\TriangleMarker.xaml.cs">
       <DependentUpon>TriangleMarker.xaml</DependentUpon>
     </Compile>
@@ -263,6 +266,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Src\Markers\GeoNodeMarker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Src\Markers\TriangleMarker.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -317,6 +324,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="..\..\Databases\GeoDb\tuebingen-regbez-latest.osm.sqlite">
+      <Link>tuebingen-regbez-latest.osm.sqlite</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="..\..\Documentation\Generated\CheatSheet.xps">
       <Link>CheatSheet.xps</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

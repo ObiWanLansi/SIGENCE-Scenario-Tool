@@ -436,8 +436,8 @@
                     </Grid.RowDefinitions>
 
                     <ToolBar Grid.Row="0">
-                        <CheckBox Content="Name:" />
-                        <TextBox Text="" Width="120" />
+                        <CheckBox Content="Name:" IsChecked="{Binding UseNameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Text="{Binding NameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" />
                         <Separator />
                         <CheckBox Content="GeoTag:" IsChecked="{Binding UseGeoTagFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                         <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
@@ -596,6 +596,18 @@
             </StatusBarItem>
 
             <Separator />
+
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="GeoNodes:" />
+                    <Label Content="{Binding CurrentNodes}" />
+                    <Label Content="/" />
+                    <Label Content="{Binding GeoNodeCollection.Count}" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
             <StatusBarItem />
         </StatusBar>
     </Grid>
