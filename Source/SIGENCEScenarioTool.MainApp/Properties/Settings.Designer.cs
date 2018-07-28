@@ -142,5 +142,65 @@ namespace SIGENCEScenarioTool.Properties {
                 this["InitialMap"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastWidth {
+            get {
+                return ((double)(this["LastWidth"]));
+            }
+            set {
+                this["LastWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastHeight {
+            get {
+                return ((double)(this["LastHeight"]));
+            }
+            set {
+                this["LastHeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastLeft {
+            get {
+                return ((double)(this["LastLeft"]));
+            }
+            set {
+                this["LastLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastTop {
+            get {
+                return ((double)(this["LastTop"]));
+            }
+            set {
+                this["LastTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastWindowState {
+            get {
+                return ((string)(this["LastWindowState"]));
+            }
+            set {
+                this["LastWindowState"] = value;
+            }
+        }
     }
 }

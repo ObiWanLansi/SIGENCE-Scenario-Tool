@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -7,8 +8,8 @@ using System.Windows.Input;
 
 using GMap.NET;
 
+using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
-using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -20,6 +21,47 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     /// </summary>
     public partial class MainWindow
     {
+
+        /// <summary>
+        /// Handles the Loaded event of the MainWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Left = settings.LastLeft;
+            this.Top = settings.LastTop;
+            this.Width = settings.LastWidth >= MinWidth ? settings.LastWidth : MinWidth;
+            this.Height = settings.LastHeight >= MinHeight ? settings.LastHeight : MinHeight;
+
+            try
+            {
+                this.WindowState = settings.LastWindowState.IsNotEmpty() ? (WindowState)Enum.Parse(typeof(WindowState), settings.LastWindowState, true) : WindowState;
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the Closed event of the MainWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void MainWindow_Closed(object sender, EventArgs e)
+        {
+            settings.LastLeft = this.Left;
+            settings.LastTop = this.Top;
+            settings.LastWidth = this.Width;
+            settings.LastHeight = this.Height;
+            settings.LastWindowState = this.WindowState.ToString();
+
+            settings.Save();
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Handles the MouseLeftButtonDown event of the McMapControl control.
