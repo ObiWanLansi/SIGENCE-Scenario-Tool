@@ -78,6 +78,7 @@ namespace SIGENCEScenarioTool.Commands
 
         //---------------------------------------------------------------------
 
+
         /// <summary>
         /// Gets the create screenshot.
         /// </summary>
@@ -135,6 +136,14 @@ namespace SIGENCEScenarioTool.Commands
         /// The synchronize map and grid.
         /// </value>
         static public RoutedUICommand SyncMapAndGrid { get; private set; }
+
+        /// <summary>
+        /// Gets the toggle dalf.
+        /// </summary>
+        /// <value>
+        /// The toggle dalf.
+        /// </value>
+        static public RoutedUICommand ToggleDALF { get; private set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -201,6 +210,9 @@ namespace SIGENCEScenarioTool.Commands
 
             SyncMapAndGrid = new RoutedUICommand("SyncMapAndGrid", "SyncMapAndGrid", typeof(RegisteredCommands));
             SyncMapAndGrid.InputGestures.Add(new KeyGesture(Key.G, ModifierKeys.Control));
+
+            ToggleDALF = new RoutedUICommand("ToggleDALF", "ToggleDALF", typeof(RegisteredCommands));
+            ToggleDALF.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands

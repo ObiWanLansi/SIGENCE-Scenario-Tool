@@ -87,19 +87,20 @@
                 <MenuItem Header="Copy RFDevice" Icon="{StaticResource COPY}" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
                 <MenuItem Header="Paste RFDevice" Icon="{StaticResource PASTE}" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
                 <Separator />
-                <MenuItem Header="Move RFDevice" IsCheckable="True" Icon="{StaticResource MOVE}" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <MenuItem Header="Move RFDevice" Icon="{StaticResource MOVE}" IsCheckable="True" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Separator />
                 <MenuItem Header="_Export RFDevices" Icon="{StaticResource EXPORT}" Command="{x:Static cmd:RegisteredCommands.ExportRFDevice}" />
                 <MenuItem Header="_Import RFDevices" Icon="{StaticResource IMPORT}" Command="{x:Static cmd:RegisteredCommands.ImportRFDevice}" />
             </MenuItem>
             <MenuItem Header="_Tools">
-                <MenuItem Header="Sync Map And Grid Selection" IsCheckable="True" Icon="{StaticResource NUT_AND_BOLT}" IsChecked="{Binding SyncMapAndGrid,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                <MenuItem Header="Sync Map And Grid Selection" Icon="{StaticResource NUT_AND_BOLT}" IsCheckable="True" IsChecked="{Binding SyncMapAndGrid,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                 <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
                 <MenuItem Header="_Create Screenshot From Map" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+                <MenuItem Header="Create RFDevices Along A Line" Icon="{StaticResource MAGIC_WAND}" IsCheckable="True" IsChecked="{Binding StartedDALF,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                <!--<Separator />
+                <MenuItem Header="_Send Data via UDP" Icon="{StaticResource SEND}" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />-->
                 <Separator />
                 <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click" />
-                <MenuItem Header="_Send Data via UDP" Icon="{StaticResource SEND}" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
-                <Separator />
                 <MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
             </MenuItem>
             <MenuItem Header="_Extras">
@@ -144,6 +145,8 @@
             <Separator />
             <Button Content="{StaticResource ZOOMTO}" ToolTip="Zoom To RFDevice" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
             <Separator />
+            <ToggleButton Content="{StaticResource MAGIC_WAND}" ToolTip="Create RFDevices Along A Line" IsChecked="{Binding StartedDALF,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+            <Separator />
             <ToggleButton Content="{StaticResource NUT_AND_BOLT}" ToolTip="Sync Map And Grid Selection" IsChecked="{Binding SyncMapAndGrid,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
             <Separator />
             <Button Content="{StaticResource CAMERA}" ToolTip="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
@@ -168,7 +171,7 @@
                         <!--<RowDefinition Height="Auto" />-->
                     </Grid.RowDefinitions>
 
-                    <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
+                    <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
                     <DataGrid x:Name="dgRFDevices" Grid.Row="1" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown" BeginningEdit="DataGrid_BeginningEdit" CellEditEnding="DataGrid_CellEditEnding" SelectionChanged="DataGrid_SelectionChanged">
 

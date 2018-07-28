@@ -205,6 +205,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.ToggleDALF,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    StartedDALF = !StartedDALF;
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
+
             //---------------------------------------------------------------------
 
             CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateScreenshot,

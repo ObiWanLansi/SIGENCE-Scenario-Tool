@@ -8,6 +8,7 @@ using GMap.NET.MapProviders;
 
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 
@@ -202,6 +203,69 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+        ///// <summary>
+        ///// Creates the rf devices along a line.
+        ///// </summary>
+        //private void CreateRFDevicesAlongALine()
+        //{
+        //    bStartedDALF = true;
+        //}
+
+        /// <summary>
+        /// Removes the old dalf.
+        /// </summary>
+        private void RemoveOldDALF()
+        {
+            if (mcMapControl.Markers.Contains(mrDALF))
+            {
+                if (MessageBox.Show("Should the existing line be continued or a new one started?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                {
+                    mcMapControl.Markers.Remove(mrDALF);
+                    mrDALF = null;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Checks for RFD evices.
+        /// </summary>
+        private void CheckForRFDEvices()
+        {
+            //TODO: Abfragen ob der Benutzer jetzt schon RFDevices anlegen möchte und wenn ja welche Standardparameter
+
+            //TODO: Die hier muss nactprlich vom Benutzer abgefragt werden ...
+            int iDeviceId = 74;
+
+            //TODO: Bereits vorhanden sollte natürlich gelöscht werden ...
+
+            if (mrDALF != null && mrDALF.Points.Count > 0)
+            {
+                int iCounter = 1;
+
+                foreach (PointLatLng pos in mrDALF.Points)
+                {
+                    // An jeden der Punkte einen Marker setzten ..
+                    RFDevice device = new RFDevice
+                    {
+                        Id = iDeviceId,
+                        Name = string.Format("{0} #{1}", iDeviceId < 0 ? "Receiver" : "Transmitter", iCounter),
+                        Latitude = pos.Lat,
+                        Longitude = pos.Lng,
+                        StartTime = settings.DeviceCopyTimeAddValue * iCounter,
+                        Remark = "Automatic Generated RFDevice From The DeviceLineFeature."
+                    };
+
+                    AddRFDevice(device);
+
+                    iCounter++;
+                }
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// Determines whether [is wanted geo node] [the specified object].

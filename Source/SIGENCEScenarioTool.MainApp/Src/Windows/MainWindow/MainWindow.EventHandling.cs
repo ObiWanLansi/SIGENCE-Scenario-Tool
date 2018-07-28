@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -7,7 +8,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 using GMap.NET;
-
+using GMap.NET.WindowsPresentation;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.ViewModels;
@@ -79,6 +80,37 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 AddRFDevice(pll);
 
                 EndCreateRFDevice();
+
+                e.Handled = true;
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the MouseRightButtonDown event of the MapControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void MapControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (StartedDALF == true)
+            {
+                Point p = e.GetPosition(mcMapControl);
+
+                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
+
+                if (mrDALF == null)
+                {
+                    mrDALF = new GMapRoute(new List<PointLatLng> { pll });
+
+                }
+                else
+                {
+                    mrDALF.Points.Add(pll);
+                }
+
+                mcMapControl.Markers.Remove(mrDALF);
+                mcMapControl.Markers.Add(mrDALF);
 
                 e.Handled = true;
             }
@@ -352,10 +384,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// Handles the Click event of the MenuItem_OpenWiki control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void MenuItem_OpenWiki_Click(object sender, RoutedEventArgs e)
         {
             Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki");
@@ -468,6 +500,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             e.Handled = true;
         }
+
+
+        ///// <summary>
+        ///// Handles the Click event of the Button_CreateRFDevicesAlongALine control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        //private void Button_CreateRFDevicesAlongALine_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CreateRFDevicesAlongALine();
+        //    e.Handled = true;
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

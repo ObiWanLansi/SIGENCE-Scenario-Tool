@@ -695,9 +695,6 @@ namespace SIGENCEScenarioTool.ViewModels
 
             UpdateMarkerTooltip();
 
-            // TODO:
-            //UpdateDirection();
-
             FirePropertyChanged("Latitude");
             FirePropertyChanged("Longitude");
         }

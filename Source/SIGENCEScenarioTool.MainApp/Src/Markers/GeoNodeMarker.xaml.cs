@@ -1,14 +1,13 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 
-using GMap.NET.WindowsPresentation;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
+
+
 
 namespace SIGENCEScenarioTool.Markers
 {
@@ -17,25 +16,10 @@ namespace SIGENCEScenarioTool.Markers
     /// </summary>
     public partial class GeoNodeMarker : UserControl
     {
-        ///// <summary>
-        ///// The marker
-        ///// </summary>
-        //private readonly GMapMarker mmMarker = null;
-
-        ///// <summary>
-        ///// The mc map control
-        ///// </summary>
-        //private readonly GMapControl mcMapControl = null;
-
         /// <summary>
         /// The popup
         /// </summary>
         private readonly Popup popup = null;
-
-        ///// <summary>
-        ///// The label
-        ///// </summary>
-        //private readonly Label label = null;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -63,12 +47,11 @@ namespace SIGENCEScenarioTool.Markers
                 }
             };
 
-            //this.mcMapControl = mcMapControl;
-            //this.mmMarker = mmMarker;
-
             this.MouseEnter += new MouseEventHandler(MarkerControl_MouseEnter);
             this.MouseLeave += new MouseEventHandler(MarkerControl_MouseLeave);
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -78,7 +61,6 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         private void MarkerControl_MouseLeave(object sender, MouseEventArgs e)
         {
-            //mmMarker.ZIndex -= 10000;
             popup.IsOpen = false;
 
             e.Handled = true;
@@ -92,7 +74,6 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         private void MarkerControl_MouseEnter(object sender, MouseEventArgs e)
         {
-            //mmMarker.ZIndex += 10000;
             popup.IsOpen = true;
 
             e.Handled = true;
