@@ -10,6 +10,7 @@ using GMap.NET.WindowsPresentation;
 
 using Microsoft.Win32;
 
+using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -79,6 +80,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The mr dalf
         /// </summary>
         private GMapRoute mrDALF = null;
+
+        /// <summary>
+        /// The DVM last selected device
+        /// </summary>
+        private RFDevice dvmLastSelectedDevice = null;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -652,17 +658,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bStartedDALF; }
             set
             {
-                this.bStartedDALF = value;
-
-                if (bStartedDALF == true)
+                if (value == true)
                 {
-                    RemoveOldDALF();
+                    // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
+                    if (StartDALF() == false)
+                    {
+                        return;
+                    }
                 }
                 else
                 {
-                    CheckForRFDEvices();
+                    StopDALF();
                 }
 
+                this.bStartedDALF = value;
                 FirePropertyChanged();
             }
         }

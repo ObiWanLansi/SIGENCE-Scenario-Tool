@@ -9,9 +9,11 @@ using System.Windows.Input;
 
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
+
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
+using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -102,8 +104,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 if (mrDALF == null)
                 {
-                    mrDALF = new GMapRoute(new List<PointLatLng> { pll });
+                    var list = new List<PointLatLng>(2);
 
+                    if (dvmLastSelectedDevice != null)
+                    {
+                        list.Add(new PointLatLng(dvmLastSelectedDevice.Latitude, dvmLastSelectedDevice.Longitude));
+                    }
+                    else
+                    {
+                        MB.Warning("Strange ...");
+                    }
+
+                    list.Add(pll);
+
+                    mrDALF = new GMapRoute(list);
                 }
                 else
                 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -11,6 +12,7 @@ using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
+using SIGENCEScenarioTool.ViewModels;
 
 
 
@@ -204,60 +206,71 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-        ///// <summary>
-        ///// Creates the rf devices along a line.
-        ///// </summary>
-        //private void CreateRFDevicesAlongALine()
-        //{
-        //    bStartedDALF = true;
-        //}
-
         /// <summary>
         /// Removes the old dalf.
         /// </summary>
-        private void RemoveOldDALF()
+        private bool StartDALF()
         {
             if (mcMapControl.Markers.Contains(mrDALF))
             {
-                if (MessageBox.Show("Should the existing line be continued or a new one started?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+                if (MessageBox.Show("Should The Existing Line Be Continued Or A New One Started?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
                 {
                     mcMapControl.Markers.Remove(mrDALF);
                     mrDALF = null;
+                    dvmLastSelectedDevice = null;
                 }
             }
+
+            if (dvmLastSelectedDevice == null)
+            {
+                if (dgRFDevices.SelectedItems.Count != 1)
+                {
+                    MB.Information("There Are No One Or More Than One RFDevice Selected In The DataGrid!");
+                    return false;
+                }
+
+                RFDevice selectedDevice = (dgRFDevices.SelectedItems[0] as RFDeviceViewModel).RFDevice;
+
+                if (selectedDevice.Id == 0)
+                {
+                    MB.Information("There Reference Transmitter Is Not Good For DALF!");
+                    return false;
+                }
+
+                if (selectedDevice.DeviceSource == DeviceSource.Automatic)
+                {
+                    MB.Information("There DeviceSource Is Automatic. That's Not Good For Copying The Device!");
+                    return false;
+                }
+
+                dvmLastSelectedDevice = selectedDevice;
+            }
+
+            return true;
         }
 
 
         /// <summary>
         /// Checks for RFD evices.
         /// </summary>
-        private void CheckForRFDEvices()
+        private void StopDALF()
         {
-            //TODO: Abfragen ob der Benutzer jetzt schon RFDevices anlegen möchte und wenn ja welche Standardparameter
-
-            //TODO: Die hier muss nactprlich vom Benutzer abgefragt werden ...
-            int iDeviceId = 74;
-
-            //TODO: Bereits vorhanden sollte natürlich gelöscht werden ...
-
             if (mrDALF != null && mrDALF.Points.Count > 0)
             {
+                // Erst die alten löschen ...
+                DeleteRFDevices(device => device.Id == dvmLastSelectedDevice.Id && device.DeviceSource == DeviceSource.Automatic);
+
                 int iCounter = 1;
 
                 foreach (PointLatLng pos in mrDALF.Points)
                 {
-                    // An jeden der Punkte einen Marker setzten ..
-                    RFDevice device = new RFDevice
-                    {
-                        Id = iDeviceId,
-                        DeviceSource = DeviceSource.Automatic,
-                        Name = string.Format("{0} #{1}", iDeviceId < 0 ? "Receiver" : "Transmitter", iCounter),
-                        Latitude = pos.Lat,
-                        Longitude = pos.Lng,
-                        StartTime = settings.DeviceCopyTimeAddValue * iCounter,
-                        Remark = "Automatic Generated RFDevice From The DeviceLineFeature."
-                    };
+                    RFDevice device = dvmLastSelectedDevice.Clone();
+
+                    device.DeviceSource = DeviceSource.Automatic;
+                    //device.Name = string.Format("{0} #{1}", 42 < 0 ? "Receiver" : "Transmitter", iCounter);
+                    device.Latitude = pos.Lat;
+                    device.Longitude = pos.Lng;
+                    device.StartTime = settings.DeviceCopyTimeAddValue * iCounter;
 
                     AddRFDevice(device);
 

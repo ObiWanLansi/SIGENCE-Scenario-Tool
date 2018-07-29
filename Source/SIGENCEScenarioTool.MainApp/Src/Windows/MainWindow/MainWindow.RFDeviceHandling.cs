@@ -75,7 +75,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="pll">The PLL.</param>
         /// <param name="ds">The ds.</param>
-        private void AddRFDevice(PointLatLng pll,DeviceSource ds)
+        private void AddRFDevice(PointLatLng pll, DeviceSource ds)
         {
             AddRFDevice(new RFDevice
             {
@@ -166,6 +166,22 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             foreach (RFDeviceViewModel device in (from devicemodel in RFDevicesCollection where devicemodel.IsMarked == true select devicemodel).ToList())
             {
                 DeleteRFDevice(device);
+            }
+        }
+
+
+        /// <summary>
+        /// Deletes the rf devices.
+        /// </summary>
+        /// <param name="predicator">The predicator.</param>
+        private void DeleteRFDevices(Predicate<RFDeviceViewModel> predicator)
+        {
+            foreach (RFDeviceViewModel device in (from devicemodel in RFDevicesCollection where devicemodel.IsMarked == true select devicemodel).ToList())
+            {
+                if (predicator(device) == true)
+                {
+                    DeleteRFDevice(device);
+                }
             }
         }
 
