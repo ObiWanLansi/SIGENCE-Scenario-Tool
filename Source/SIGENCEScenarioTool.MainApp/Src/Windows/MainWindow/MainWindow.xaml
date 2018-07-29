@@ -118,6 +118,7 @@
                     <MenuItem Header="200" Tag="200" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                     <MenuItem Header="500" Tag="500" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                     <MenuItem Header="1000" Tag="1000" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
+                    <MenuItem Header="2000" Tag="1000" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Help">
@@ -129,30 +130,40 @@
         </Menu>
 
         <ToolBar Grid.Row="1">
+
+            <Button Content="{StaticResource NEW}" ToolTip="New File" Command="{x:Static ApplicationCommands.New}" />
+            <Button Content="{StaticResource OPEN}" ToolTip="Open File" Command="{x:Static ApplicationCommands.Open}" />
+            <Button Content="{StaticResource SAVE}" ToolTip="Save File" Command="{x:Static ApplicationCommands.Save}" />
+
+            <Separator />
+
             <Label Content="MapProvider" />
             <ComboBox x:Name="cbMapProvider" Width="120" SelectedItem="{Binding MapProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Here You Can Change The MapProvider For The Map." Margin="3" />
-            <ToggleButton Content="+" Foreground="Red" FontWeight="ExtraBold" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ToggleButton Content="+" ToolTip="Display The Center Marker In The Map" Foreground="Red" FontWeight="ExtraBold" IsChecked="{Binding ShowCenter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
             <Separator />
+
             <Button Content="{StaticResource ADD}" ToolTip="Create RFDevice" Command="{x:Static cmd:RegisteredCommands.CreateRFDevice}" />
-            <Separator />
             <Button Content="{StaticResource DELETE}" ToolTip="Delete RFDevice" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
-            <Separator />
             <ToggleButton Content="{StaticResource MOVE}" ToolTip="Move RFDevice" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
             <Separator />
+
             <Button Content="{StaticResource COPY}" ToolTip="Copy RFDevice" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
-            <Separator />
             <Button Content="{StaticResource PASTE}" ToolTip="Paste RFDevice" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
+
             <Separator />
+
             <Button Content="{StaticResource ZOOMTO}" ToolTip="Zoom To RFDevice" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
-            <Separator />
             <ToggleButton Content="{StaticResource MAGIC_WAND}" ToolTip="Create RFDevices Along A Line" IsChecked="{Binding StartedDALF,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-            <Separator />
             <ToggleButton Content="{StaticResource NUT_AND_BOLT}" ToolTip="Sync Map And Grid Selection" IsChecked="{Binding SyncMapAndGrid,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-            <Separator />
             <Button Content="{StaticResource CAMERA}" ToolTip="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
+
             <Separator />
+
             <ToggleButton Content="{StaticResource SERVER_FROM_CLIENT}" ToolTip="Receive Data Via UDP" IsChecked="{Binding IsReceiveDataUDP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
             <Button Content="{StaticResource SERVER_TO_CLIENT}" ToolTip="Send Data Via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
+
             <Separator />
         </ToolBar>
 
