@@ -2,7 +2,10 @@
 <RFDevice Comment="Represent A Device Based On A Radio Frequency.">
 
     <Property Name="PrimaryKey" Type="Guid" Init="Guid.NewGuid()" Comment="The Unique PrimarKey For This RF Device." />
-    <Property Name="Id" Type="int" Init="0" Comment="Every scenario element (i.e. transmitter, receiver) must be assigned an unique ID. Negative ID’s are reserved for receivers while all other ID’s are transmitters by default. Some applications (i.e. TDoA Emitter Localization) require a reference transmitter. For these applications ID=0 is the reference transmitter. Receivers must be assigned first in the table, followed be transmitters (with ID=0 being the first). After the Static Scenario, update of ID’s requires no specific order. Note that definition of new transmitters/receivers after the Static Scenario is prohibited." />
+
+    <Property Name="Id" Type="int" Init="0" Comment="Every Scenario Element (I.E. Transmitter, Receiver) Must Be Assigned An Unique Id. Negative Id’S Are Reserved For Receivers While All Other Id’S Are Transmitters By Default. Some Applications (I.E. Tdoa Emitter Localization) Require A Reference Transmitter. For These Applications Id=0 Is The Reference Transmitter. Receivers Must Be Assigned First In The Table, Followed Be Transmitters (With Id=0 Being The First). After The Static Scenario, Update Of Id’S Requires No Specific Order. Note That Definition Of New Transmitters/Receivers After The Static Scenario Is Prohibited." />
+    <Property Name="DeviceSource" Type="DeviceSource" Init="DeviceSource.Unknown" Comment="The Source Of This RF Device." />
+    <Property Name="StartTime" Type="double" Init="0" Comment="This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s." />
 
     <Property Name="Name" Type="string" Init="&quot;RFDevice&quot;" Comment="A Short Describing Display Name For The RF Device." />
 
@@ -10,23 +13,22 @@
     <Property Name="Longitude" Type="double" Init="double.NaN" Comment="The Longitude Of The RF Device (WGS84)." />
     <Property Name="Altitude" Type="uint" Init="0" Comment="The Elevation Of The RF Device Above The Sea Level (Meter)." />
 
-    <Property Name="Roll" Type="double" Init="0" Comment="These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers." />
-    <Property Name="Pitch" Type="double" Init="0" Comment="These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers." />
-    <Property Name="Yaw" Type="double" Init="0" Comment="These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers." />
+    <Property Name="Roll" Type="double" Init="0" Comment="These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers." />
+    <Property Name="Pitch" Type="double" Init="0" Comment="These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers." />
+    <Property Name="Yaw" Type="double" Init="0" Comment="These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers." />
 
     <Property Name="RxTxType" Type="RxTxType" Init="RxTxType.Unknown" Comment="For All Receivers (i.e. ID’s &lt; 0) This Parameter Defines The Radio Being Used." />
     <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown" Comment="AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported." />
 
-    <Property Name="CenterFrequency_Hz" Type="ulong" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
-    <Property Name="Bandwith_Hz" Type="uint" Init="0" Comment="" />
-    <Property Name="Gain_dB" Type="int" Init="0" Comment="For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s &lt; 0) this parameter is currently unused." />
-    <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0" Comment="For receivers (i.e. ID’s &lt; 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused." />
+    <Property Name="CenterFrequency_Hz" Type="ulong" Init="0" Comment="For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused." />
+    <Property Name="Bandwith_Hz" Type="uint" Init="0" Comment="The Bandwith Of The Transmitter." />
+    <Property Name="Gain_dB" Type="int" Init="0" Comment="For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused." />
+    <Property Name="SignalToNoiseRatio_dB" Type="uint" Init="0" Comment="For Receivers (I.E. Id’s &lt; 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s >= 0) This Parameter Is Unused." />
 
     <Property Name="XPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />
     <Property Name="YPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />
     <Property Name="ZPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />
 
-    <Property Name="StartTime" Type="double" Init="0" Comment="This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s." />
     <Property Name="Remark" Type="string" Init="&quot;&quot;" Comment="A Comment Or Remark For The RF Device." />
 
 </RFDevice>

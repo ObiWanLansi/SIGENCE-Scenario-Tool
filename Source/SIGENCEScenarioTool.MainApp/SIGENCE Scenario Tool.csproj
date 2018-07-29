@@ -224,6 +224,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RFDevice.tt</DependentUpon>
     </Compile>
+    <Compile Include="Src\Models\RFDevice\RFDevice.Ext.cs" />
     <Compile Include="Src\Models\RFDevice\RFDeviceList.cs" />
     <Compile Include="Src\Tools\Blink.cs" />
     <Compile Include="Src\Tools\Speech.cs" />
@@ -450,32 +451,32 @@
   <ItemGroup>
     <PublishFile Include="Src\Models\GeoLocalizationResult.Properties.tt">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="Src\Models\GeoLocalizationResult.tt">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="Src\Models\RFDevice.tt">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

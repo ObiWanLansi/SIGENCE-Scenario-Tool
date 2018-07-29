@@ -24,6 +24,7 @@ namespace SIGENCEScenarioTool.Models
     } // end public enum RxTxType
 
 
+
     /// <summary>
     /// 
     /// </summary>
@@ -41,19 +42,65 @@ namespace SIGENCEScenarioTool.Models
     } // end public enum AntennaType
 
 
+
     /// <summary>
     /// 
     /// </summary>
     public enum DeviceType : byte
     {
+        /// <summary>
+        /// Unknown DeviceType
+        /// </summary>
         Unknown,
 
+        /// <summary>
+        /// Receiver
+        /// </summary>
         Receiver,
 
+        /// <summary>
+        /// Transmitter
+        /// </summary>
         Transmitter,
 
+        /// <summary>
+        /// Reference Transmitter
+        /// </summary>
         Reference
 
     } // end public enum DeviceType
 
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum DeviceSource : byte
+    {
+        /// <summary>
+        /// The source of the device is unknown
+        /// </summary>
+        Unknown,
+
+        /// <summary>
+        /// The device was created by the user
+        /// </summary>
+        User,
+
+        /// <summary>
+        /// The device was automatically generated
+        /// </summary>
+        Automatic,
+
+        /// <summary>
+        /// The device comes from a data import
+        /// </summary>
+        DataImport,
+
+        /// <summary>
+        /// The device comes from a simulation result
+        /// </summary>
+        SimulationResult
+
+    } // end public enum DeviceSource 
 }

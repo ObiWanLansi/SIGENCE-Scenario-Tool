@@ -251,6 +251,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     RFDevice device = new RFDevice
                     {
                         Id = iDeviceId,
+                        DeviceSource = DeviceSource.Automatic,
                         Name = string.Format("{0} #{1}", iDeviceId < 0 ? "Receiver" : "Transmitter", iCounter),
                         Latitude = pos.Lat,
                         Longitude = pos.Lng,

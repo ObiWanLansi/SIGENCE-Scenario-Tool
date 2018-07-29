@@ -77,6 +77,18 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
+        /// Gets the device source.
+        /// </summary>
+        /// <value>
+        /// The device source.
+        /// </value>
+        public DeviceSource DeviceSource
+        {
+            get { return RFDevice.DeviceSource; }
+        }
+
+
+        /// <summary>
         /// Gets or sets the start time.
         /// </summary>
         /// <value>

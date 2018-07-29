@@ -74,10 +74,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the RFDevice.
         /// </summary>
         /// <param name="pll">The PLL.</param>
-        private void AddRFDevice(PointLatLng pll)
+        /// <param name="ds">The ds.</param>
+        private void AddRFDevice(PointLatLng pll,DeviceSource ds)
         {
             AddRFDevice(new RFDevice
             {
+                DeviceSource = ds,
                 Latitude = pll.Lat,
                 Longitude = pll.Lng
             });
@@ -89,6 +91,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void AddRFDevice(RFDevice d)
         {
+            if (d.IsValid() == false)
+            {
+                MB.Warning("Device Is Not Valid And Will Not Be Added To The Scenario!");
+                return;
+            }
+
             AddRFDevice(new RFDeviceViewModel(this.mcMapControl, d));
         }
 
@@ -206,7 +214,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 for (int iRow = 2; iRow < iRowCount + 1; iRow++)
                 {
-                    RFDevice device = new RFDevice();
+                    RFDevice device = new RFDevice
+                    {
+                        DeviceSource = DeviceSource.DataImport,
+                    };
 
                     for (int iColumn = 1; iColumn < 17 + 1; iColumn++)
                     {

@@ -42,7 +42,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// <#=strClassCommment#>
     ///</summary>
-    sealed public class <#=eRoot.Name#> : IEquatable<<#=eRoot.Name#>>, INotifyPropertyChanged, ICloneable, IXmlExport
+    sealed public partial class <#=eRoot.Name#> : IEquatable<<#=eRoot.Name#>>, INotifyPropertyChanged, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -104,6 +104,10 @@ namespace SIGENCEScenarioTool.Models
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// To the XML.
+        /// </summary>
+        /// <returns></returns>
         public XElement ToXml()
         {
             return new XElement("<#=eRoot.Name#>",
@@ -124,6 +128,11 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
+        /// <summary>
+        /// Froms the XML.
+        /// </summary>
+        /// <param name="eRoot">The e root.</param>
+        /// <returns></returns>
         static public <#=eRoot.Name#> FromXml(XElement eRoot)
         {
             XElement eChild = null;
@@ -166,6 +175,13 @@ namespace SIGENCEScenarioTool.Models
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Gibt an, ob das aktuelle Objekt gleich einem anderen Objekt des gleichen Typs ist.
+        /// </summary>
+        /// <param name="other">Ein Objekt, das mit diesem Objekt verglichen werden soll.</param>
+        /// <returns>
+        /// true, wenn das aktuelle Objekt gleich dem <paramref name="other" />-Parameter ist, andernfalls false.
+        /// </returns>
         public bool Equals(<#=eRoot.Name#> other)
         {
             if (other == null)
@@ -221,9 +237,11 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return string.IsNullOrEmpty(Name) ? "Unknown" : Name;
@@ -233,7 +251,7 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Clones this instance.
         /// </summary>
         /// <returns></returns>
         public <#=eRoot.Name#> Clone()
@@ -243,9 +261,11 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Erstellt ein neues Objekt, das eine Kopie der aktuellen Instanz darstellt.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Ein neues Objekt, das eine Kopie dieser Instanz ist.
+        /// </returns>
         object ICloneable.Clone()
         {
             return this.MemberwiseClone();
@@ -261,9 +281,9 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Fires the property changed.
         /// </summary>
-        /// <param name="strPropertyName"></param>
+        /// <param name="strPropertyName">Name of the string property.</param>
         private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
             // Wir cachen das Event lokal da es während der Abfrage in der if Anweisung und

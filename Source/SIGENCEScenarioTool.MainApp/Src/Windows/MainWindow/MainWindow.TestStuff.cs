@@ -195,6 +195,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 list.Add(new RFDevice
                 {
                     Id = r.Next(-1000, 1000),
+                    DeviceSource = DeviceSource.Automatic,
                     Name = string.Format("RFDevice #{0}", i),
                     Latitude = (r.NextDouble() * 0.05) + pllCenter.Lat,
                     Longitude = (r.NextDouble() * 0.05) + pllCenter.Lng,

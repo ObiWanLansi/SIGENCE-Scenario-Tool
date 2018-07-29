@@ -18,7 +18,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent A Device Based On A Radio Frequency.
     ///</summary>
-    sealed public class RFDevice : IEquatable<RFDevice>, INotifyPropertyChanged, ICloneable, IXmlExport
+    sealed public partial class RFDevice : IEquatable<RFDevice>, INotifyPropertyChanged, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -75,7 +75,7 @@ namespace SIGENCEScenarioTool.Models
         private int _Id = 0;
 
         ///<summary>
-        /// Every scenario element (i.e. transmitter, receiver) must be assigned an unique ID. Negative ID’s are reserved for receivers while all other ID’s are transmitters by default. Some applications (i.e. TDoA Emitter Localization) require a reference transmitter. For these applications ID=0 is the reference transmitter. Receivers must be assigned first in the table, followed be transmitters (with ID=0 being the first). After the Static Scenario, update of ID’s requires no specific order. Note that definition of new transmitters/receivers after the Static Scenario is prohibited.
+        /// Every Scenario Element (I.E. Transmitter, Receiver) Must Be Assigned An Unique Id. Negative Id’S Are Reserved For Receivers While All Other Id’S Are Transmitters By Default. Some Applications (I.E. Tdoa Emitter Localization) Require A Reference Transmitter. For These Applications Id=0 Is The Reference Transmitter. Receivers Must Be Assigned First In The Table, Followed Be Transmitters (With Id=0 Being The First). After The Static Scenario, Update Of Id’S Requires No Specific Order. Note That Definition Of New Transmitters/Receivers After The Static Scenario Is Prohibited.
         ///</summary>
         public int Id 
         {
@@ -83,6 +83,74 @@ namespace SIGENCEScenarioTool.Models
             set
             {
                 _Id = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+
+        //---------------------------------------------------------------------
+
+        #region DeviceSource
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For DeviceSource.
+        ///</summary>
+        public const String DEVICESOURCE = "DeviceSource";
+
+        ///<summary>
+        /// The DefaultValue For DeviceSource.
+        ///</summary>
+        static public readonly DeviceSource DEFAULT_DEVICESOURCE = DeviceSource.Unknown;
+        
+        ///<summary>
+        /// The Internal Field For DeviceSource.
+        ///</summary>
+        private DeviceSource _DeviceSource = DeviceSource.Unknown;
+
+        ///<summary>
+        /// The Source Of This RF Device.
+        ///</summary>
+        public DeviceSource DeviceSource 
+        {
+            get { return _DeviceSource; }
+            set
+            {
+                _DeviceSource = value;
+                FirePropertyChanged();
+            }
+        }
+
+        #endregion        
+
+        //---------------------------------------------------------------------
+
+        #region StartTime
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For StartTime.
+        ///</summary>
+        public const String STARTTIME = "StartTime";
+
+        ///<summary>
+        /// The DefaultValue For StartTime.
+        ///</summary>
+        static public readonly double DEFAULT_STARTTIME = 0;
+        
+        ///<summary>
+        /// The Internal Field For StartTime.
+        ///</summary>
+        private double _StartTime = 0;
+
+        ///<summary>
+        /// This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
+        ///</summary>
+        public double StartTime 
+        {
+            get { return _StartTime; }
+            set
+            {
+                _StartTime = value;
                 FirePropertyChanged();
             }
         }
@@ -245,7 +313,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Roll = 0;
 
         ///<summary>
-        /// These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
+        /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
         ///</summary>
         public double Roll 
         {
@@ -279,7 +347,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Pitch = 0;
 
         ///<summary>
-        /// These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
+        /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
         ///</summary>
         public double Pitch 
         {
@@ -313,7 +381,7 @@ namespace SIGENCEScenarioTool.Models
         private double _Yaw = 0;
 
         ///<summary>
-        /// These parameters set the orientation of transmitter / receiver antennas. The respective antenna type is defined by AntennaType. The RF simulation uses the antenna orientation to compute the resulting signal power at the receivers.
+        /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
         ///</summary>
         public double Yaw 
         {
@@ -415,7 +483,7 @@ namespace SIGENCEScenarioTool.Models
         private ulong _CenterFrequency_Hz = 0;
 
         ///<summary>
-        /// For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal center frequency [Hz]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
+        /// For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
         ///</summary>
         public ulong CenterFrequency_Hz 
         {
@@ -449,7 +517,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _Bandwith_Hz = 0;
 
         ///<summary>
-        /// Bandwith_Hz as uint.
+        /// The Bandwith Of The Transmitter.
         ///</summary>
         public uint Bandwith_Hz 
         {
@@ -483,7 +551,7 @@ namespace SIGENCEScenarioTool.Models
         private int _Gain_dB = 0;
 
         ///<summary>
-        /// For transmitters (i.e. ID’s >= 0) this parameter defines transmitter signal power [dBm]. For receivers (i.e. ID’s < 0) this parameter is currently unused.
+        /// For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
         ///</summary>
         public int Gain_dB 
         {
@@ -517,7 +585,7 @@ namespace SIGENCEScenarioTool.Models
         private uint _SignalToNoiseRatio_dB = 0;
 
         ///<summary>
-        /// For receivers (i.e. ID’s < 0) this parameter is imposes Gaussian White Noise to the respective receiver signal. For transmitters (i.e. ID’s >= 0) this parameter is unused.
+        /// For Receivers (I.E. Id’s < 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s >= 0) This Parameter Is Unused.
         ///</summary>
         public uint SignalToNoiseRatio_dB 
         {
@@ -635,40 +703,6 @@ namespace SIGENCEScenarioTool.Models
 
         //---------------------------------------------------------------------
 
-        #region StartTime
-
-        ///<summary>
-        /// The PropertyName As ReadOnly String For StartTime.
-        ///</summary>
-        public const String STARTTIME = "StartTime";
-
-        ///<summary>
-        /// The DefaultValue For StartTime.
-        ///</summary>
-        static public readonly double DEFAULT_STARTTIME = 0;
-        
-        ///<summary>
-        /// The Internal Field For StartTime.
-        ///</summary>
-        private double _StartTime = 0;
-
-        ///<summary>
-        /// This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
-        ///</summary>
-        public double StartTime 
-        {
-            get { return _StartTime; }
-            set
-            {
-                _StartTime = value;
-                FirePropertyChanged();
-            }
-        }
-
-        #endregion        
-
-        //---------------------------------------------------------------------
-
         #region Remark
 
         ///<summary>
@@ -706,12 +740,18 @@ namespace SIGENCEScenarioTool.Models
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// To the XML.
+        /// </summary>
+        /// <returns></returns>
         public XElement ToXml()
         {
             return new XElement("RFDevice",
 
                 XElementExtension.GetXElement("PrimaryKey", PrimaryKey),
                 XElementExtension.GetXElement("Id", Id),
+                XElementExtension.GetXElement("DeviceSource", DeviceSource),
+                XElementExtension.GetXElement("StartTime", StartTime),
                 XElementExtension.GetXElement("Name", Name),
                 XElementExtension.GetXElement("Latitude", Latitude),
                 XElementExtension.GetXElement("Longitude", Longitude),
@@ -728,12 +768,16 @@ namespace SIGENCEScenarioTool.Models
                 XElementExtension.GetXElement("XPos", XPos),
                 XElementExtension.GetXElement("YPos", YPos),
                 XElementExtension.GetXElement("ZPos", ZPos),
-                XElementExtension.GetXElement("StartTime", StartTime),
                 XElementExtension.GetXElement("Remark", Remark)  
             );
         }
 
 
+        /// <summary>
+        /// Froms the XML.
+        /// </summary>
+        /// <param name="eRoot">The e root.</param>
+        /// <returns></returns>
         static public RFDevice FromXml(XElement eRoot)
         {
             XElement eChild = null;
@@ -751,6 +795,8 @@ namespace SIGENCEScenarioTool.Models
             {
                 PrimaryKey = eChild.GetProperty<Guid>("PrimaryKey",Guid.NewGuid()),
                 Id = eChild.GetProperty<int>("Id",0),
+                DeviceSource = eChild.GetProperty<DeviceSource>("DeviceSource",DeviceSource.Unknown),
+                StartTime = eChild.GetProperty<double>("StartTime",0),
                 Name = eChild.GetProperty<string>("Name","RFDevice"),
                 Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
                 Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
@@ -767,7 +813,6 @@ namespace SIGENCEScenarioTool.Models
                 XPos = eChild.GetProperty<int>("XPos",0),
                 YPos = eChild.GetProperty<int>("YPos",0),
                 ZPos = eChild.GetProperty<int>("ZPos",0),
-                StartTime = eChild.GetProperty<double>("StartTime",0),
                 Remark = eChild.GetProperty<string>("Remark","")            
             };
         }
@@ -775,6 +820,13 @@ namespace SIGENCEScenarioTool.Models
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Gibt an, ob das aktuelle Objekt gleich einem anderen Objekt des gleichen Typs ist.
+        /// </summary>
+        /// <param name="other">Ein Objekt, das mit diesem Objekt verglichen werden soll.</param>
+        /// <returns>
+        /// true, wenn das aktuelle Objekt gleich dem <paramref name="other" />-Parameter ist, andernfalls false.
+        /// </returns>
         public bool Equals(RFDevice other)
         {
             if (other == null)
@@ -788,6 +840,16 @@ namespace SIGENCEScenarioTool.Models
             }
 
             if (Id != other.Id )
+            {
+                return false;
+            }
+
+            if (DeviceSource != other.DeviceSource )
+            {
+                return false;
+            }
+
+            if (StartTime != other.StartTime )
             {
                 return false;
             }
@@ -872,11 +934,6 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (StartTime != other.StartTime )
-            {
-                return false;
-            }
-
             if (Remark != other.Remark )
             {
                 return false;
@@ -889,9 +946,11 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return string.IsNullOrEmpty(Name) ? "Unknown" : Name;
@@ -901,7 +960,7 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Clones this instance.
         /// </summary>
         /// <returns></returns>
         public RFDevice Clone()
@@ -911,9 +970,11 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Erstellt ein neues Objekt, das eine Kopie der aktuellen Instanz darstellt.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Ein neues Objekt, das eine Kopie dieser Instanz ist.
+        /// </returns>
         object ICloneable.Clone()
         {
             return this.MemberwiseClone();
@@ -929,9 +990,9 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// 
+        /// Fires the property changed.
         /// </summary>
-        /// <param name="strPropertyName"></param>
+        /// <param name="strPropertyName">Name of the string property.</param>
         private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
             // Wir cachen das Event lokal da es während der Abfrage in der if Anweisung und

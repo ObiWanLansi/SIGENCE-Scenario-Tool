@@ -10,6 +10,7 @@ using System.Windows.Input;
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -77,7 +78,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
 
-                AddRFDevice(pll);
+                AddRFDevice(pll, DeviceSource.User);
 
                 EndCreateRFDevice();
 
