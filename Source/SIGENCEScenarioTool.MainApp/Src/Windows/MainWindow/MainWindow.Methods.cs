@@ -143,11 +143,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             if (dlg.ShowDialog() == true)
             {
-                MB.Information("Saving The Settings ...");
+                //MB.Information("Saving The Settings ...");
             }
             else
             {
-                MB.Warning("Not Saving The Settings ...");
+                //MB.Warning("Not Saving The Settings ...");
             }
 
             dlg = null;

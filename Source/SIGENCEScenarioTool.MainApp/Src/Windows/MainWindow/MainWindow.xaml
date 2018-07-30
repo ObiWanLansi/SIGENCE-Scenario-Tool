@@ -111,6 +111,7 @@
             </MenuItem>
             <MenuItem Header="_Test">
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
+                <MenuItem Header="_Scripting Test" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScriptingTest_Click" />
                 <Separator />
                 <MenuItem Header="Create Randomized RFDevices" Icon="{StaticResource SATELLITE}">
                     <MenuItem Header="50" Tag="50" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />

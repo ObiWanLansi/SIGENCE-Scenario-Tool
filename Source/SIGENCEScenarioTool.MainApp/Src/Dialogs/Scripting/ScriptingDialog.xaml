@@ -1,0 +1,74 @@
+﻿<Window x:Class="SIGENCEScenarioTool.Dialogs.Scripting.ScriptingDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SIGENCEScenarioTool.Dialogs.Scripting" xmlns:icsharpcode="clr-namespace:ICSharpCode.TextEditor;assembly=ICSharpCode.TextEditor" Title="SIGENCE Scenario Tool - Scripting" Width="800" Height="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <Image x:Key="NEW" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/document_plain.png" />
+        <Image x:Key="SAVE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/floppy_disk.png" />
+        <Image x:Key="OPEN" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/folder_document.png" />
+        <Image x:Key="COPY" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/copy.png" />
+        <Image x:Key="PASTE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/paste.png" />
+        <Image x:Key="PLAY" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/media_play.png" />
+        <Image x:Key="PAUSE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/media_pause.png" />
+        <Image x:Key="STOP" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/media_stop.png" />
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ToolBar Grid.Row="0">
+            <Button Content="{StaticResource NEW}" />
+            <Separator />
+            <Button Content="{StaticResource OPEN}" />
+            <Button Content="{StaticResource SAVE}" />
+            <Separator />
+            <Button Content="{StaticResource COPY}" />
+            <Button Content="{StaticResource PASTE}" />
+            <Separator />
+            <Button Content="{StaticResource PLAY}" />
+            <Button Content="{StaticResource PAUSE}" />
+            <Button Content="{StaticResource STOP}" />
+        </ToolBar>
+
+        <Border Grid.Row="1" Margin="5" BorderBrush="Black" BorderThickness="1">
+            <WindowsFormsHost>
+                <icsharpcode:TextEditorControl x:Name="tecTextEditorControl" />
+            </WindowsFormsHost>
+        </Border>
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Language:" />
+                    <Label Content="Python" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Line:" />
+                    <Label Content="{Binding Line}" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Column:" />
+                    <Label Content="{Binding Column}" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem />
+
+        </StatusBar>
+    </Grid>
+</Window>

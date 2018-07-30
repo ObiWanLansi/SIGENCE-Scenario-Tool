@@ -101,6 +101,9 @@
     <Reference Include="HidLibrary, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Blink1.ObiWanLansi.1.0.0\lib\net46\HidLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.TextEditor, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSharpCode.TextEditor.3.2.1.6466\lib\Net20\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
@@ -168,6 +171,9 @@
     <Compile Include="Src\Dialogs\QRCodeDialog.xaml.cs">
       <DependentUpon>QRCodeDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Dialogs\Scripting\ScriptingDialog.xaml.cs">
+      <DependentUpon>ScriptingDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Dialogs\Settings\Panels\ExportSettings.xaml.cs">
       <DependentUpon>ExportSettings.xaml</DependentUpon>
     </Compile>
@@ -227,6 +233,7 @@
     <Compile Include="Src\Models\RFDevice\RFDevice.Ext.cs" />
     <Compile Include="Src\Models\RFDevice\RFDeviceList.cs" />
     <Compile Include="Src\Tools\Blink.cs" />
+    <Compile Include="Src\Tools\PythonSyntaxModeFileProvider.cs" />
     <Compile Include="Src\Tools\Speech.cs" />
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
@@ -236,6 +243,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Src\Dialogs\QRCodeDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Src\Dialogs\Scripting\ScriptingDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -344,6 +355,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EmbeddedResource Include="Python.xshd" />
     <None Include="Src\Models\EnumerationsAndConstants.md" />
     <None Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.md">
       <DependentUpon>GeoLocalizationResult.Properties.tt</DependentUpon>
@@ -405,6 +417,15 @@
     <Resource Include="Images\led_white.png" />
     <Resource Include="Images\server_to_client.png" />
     <Resource Include="Images\server_from_client.png" />
+    <None Include="HelloWorld.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Images\media_play_green.png" />
+    <Resource Include="Images\media_play.png" />
+    <Resource Include="Images\media_pause.png" />
+    <Resource Include="Images\media_stop.png" />
+    <Resource Include="Images\media_stop_red.png" />
+    <Resource Include="Images\handheld_device.png" />
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>

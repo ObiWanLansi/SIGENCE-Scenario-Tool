@@ -282,6 +282,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     e.CanExecute = true;
                 }
             ));
+
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenScriptEditor,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    OpenScriptEditor();
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
         }
 
 

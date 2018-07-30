@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using GMap.NET;
 
 using SIGENCEScenarioTool.Dialogs;
+using SIGENCEScenarioTool.Dialogs.Scripting;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
@@ -37,6 +37,34 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
             cw.ShowDialog();
             cw = null;
+
+            e.Handled = true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Opens the script editor.
+        /// </summary>
+        private void OpenScriptEditor()
+        {
+            ScriptingDialog sd = new ScriptingDialog();
+            sd.ShowDialog();
+            sd = null;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_ScriptingTest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_ScriptingTest_Click(object sender, RoutedEventArgs e)
+        {
+            OpenScriptEditor();
+
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,10 +156,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     }
                 }
             }
-            catch (ThreadAbortException ex)
+            catch (ThreadAbortException)
             {
                 // Do nothing ...
-                Debug.WriteLine(ex.Message);
+                //Debug.WriteLine(ex.Message);
             }
             catch (Exception ex)
             {
@@ -185,6 +213,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the randomized rf device list.
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
+        /// <param name="pllCenter">The PLL center.</param>
         /// <returns></returns>
         static public RFDeviceList CreateRandomizedRFDeviceList(int iMaxCount, PointLatLng pllCenter)
         {
@@ -223,6 +252,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             return list;
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -281,6 +312,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             Cursor = Cursors.Arrow;
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         ///// <summary>

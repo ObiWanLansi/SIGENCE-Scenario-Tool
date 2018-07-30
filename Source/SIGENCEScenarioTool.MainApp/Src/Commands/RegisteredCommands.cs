@@ -145,6 +145,14 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         static public RoutedUICommand ToggleDALF { get; private set; }
 
+        /// <summary>
+        /// Gets the open script editor.
+        /// </summary>
+        /// <value>
+        /// The open script editor.
+        /// </value>
+        static public RoutedUICommand OpenScriptEditor { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -213,6 +221,10 @@ namespace SIGENCEScenarioTool.Commands
 
             ToggleDALF = new RoutedUICommand("ToggleDALF", "ToggleDALF", typeof(RegisteredCommands));
             ToggleDALF.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Control));
+
+
+            OpenScriptEditor = new RoutedUICommand("OpenScriptEditor", "OpenScriptEditor", typeof(RegisteredCommands));
+            OpenScriptEditor.InputGestures.Add(new KeyGesture(Key.P, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands
