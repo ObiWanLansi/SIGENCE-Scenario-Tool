@@ -2,10 +2,14 @@
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Windows;
 
 using ICSharpCode.TextEditor.Document;
 
+using IronPython.Hosting;
+
+using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
 
 
@@ -67,8 +71,11 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             this.tecTextEditorControl.LineViewerStyle = LineViewerStyle.FullRow;
             this.tecTextEditorControl.ConvertTabsToSpaces = true;
 
-            this.tecTextEditorControl.ShowSpaces = false;
-            this.tecTextEditorControl.ShowTabs = false;
+            this.tecTextEditorControl.ShowSpaces = true;
+            this.tecTextEditorControl.ShowTabs = true;
+            //this.tecTextEditorControl.ShowSpaces = false;
+            //this.tecTextEditorControl.ShowTabs = false;
+
             this.tecTextEditorControl.ShowEOLMarkers = false;
             this.tecTextEditorControl.ShowLineNumbers = true;
 
@@ -91,6 +98,47 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             //this.tecTextEditorControl.ActiveTextAreaControl.Document.DocumentChanged += Document_DocumentChanged;
 
             this.Title += string.Format(" [{0}]", strFilename);
+        }
+
+
+        /// <summary>
+        /// Executes the specified string content.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        private void Execute(string strContent)
+        {
+            try
+            {
+                using (StringWriter sw = new StringWriter())
+                {
+                    //Console.SetOut(TextWriter.Synchronized(sw));
+                    Console.SetOut(sw);
+
+                    var engine = Python.CreateEngine();
+                    var scope = engine.CreateScope();
+
+                    engine.Runtime.IO.RedirectToConsole();
+                    engine.Execute(strContent, scope);
+
+                    MB.Information(sw.ToString());
+
+                    StringBuilder sb = new StringBuilder();
+                    foreach (String strVariable in scope.GetVariableNames())
+                    {
+                        sb.AppendLine(strVariable);
+                        //var r = scope.GetVariable(strVariable);
+                        //sb.AppendLine("{0}",strVariable,r. );
+                    }
+                    
+                    MB.Information(sb.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
+
+            this.tecTextEditorControl.Focus();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -118,6 +166,24 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             this.tecTextEditorControl.Focus();
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_Play control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        private void Button_Play_Click(object sender, RoutedEventArgs e)
+        {
+            string strEditorContent = tecTextEditorControl.ActiveTextAreaControl.SelectionManager.HasSomethingSelected ?
+                tecTextEditorControl.ActiveTextAreaControl.SelectionManager.SelectedText :
+                tecTextEditorControl.Text;
+
+            if (strEditorContent.IsNotEmpty() == true)
+            {
+                Execute(strEditorContent);
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

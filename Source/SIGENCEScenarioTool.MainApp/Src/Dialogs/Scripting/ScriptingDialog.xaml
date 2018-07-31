@@ -20,17 +20,17 @@
         </Grid.RowDefinitions>
 
         <ToolBar Grid.Row="0">
-            <Button Content="{StaticResource NEW}" />
+            <Button Content="{StaticResource NEW}" IsEnabled="False" />
             <Separator />
-            <Button Content="{StaticResource OPEN}" />
-            <Button Content="{StaticResource SAVE}" />
+            <Button Content="{StaticResource OPEN}" IsEnabled="False" />
+            <Button Content="{StaticResource SAVE}" IsEnabled="False" />
             <Separator />
-            <Button Content="{StaticResource COPY}" />
-            <Button Content="{StaticResource PASTE}" />
+            <Button Content="{StaticResource COPY}" IsEnabled="False" />
+            <Button Content="{StaticResource PASTE}" IsEnabled="False" />
             <Separator />
-            <Button Content="{StaticResource PLAY}" />
-            <Button Content="{StaticResource PAUSE}" />
-            <Button Content="{StaticResource STOP}" />
+            <Button Content="{StaticResource PLAY}" Click="Button_Play_Click"/>
+            <Button Content="{StaticResource PAUSE}" IsEnabled="False" />
+            <Button Content="{StaticResource STOP}" IsEnabled="False" />
         </ToolBar>
 
         <Border Grid.Row="1" Margin="5" BorderBrush="Black" BorderThickness="1">
