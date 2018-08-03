@@ -2,12 +2,14 @@
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows;
+using System.Windows.Input;
 
 using ICSharpCode.TextEditor.Document;
 
 using IronPython.Hosting;
+
+using Microsoft.Scripting.Hosting;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
@@ -44,6 +46,27 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             get { return tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Column + 1; }
         }
 
+
+        /// <summary>
+        /// The string last output
+        /// </summary>
+        private string strLastOutput = "";
+
+        /// <summary>
+        /// Gets or sets the last output.
+        /// </summary>
+        /// <value>
+        /// The last output.
+        /// </value>
+        public string LastOutput
+        {
+            get { return strLastOutput; }
+            set
+            {
+                this.strLastOutput = value;
+                FirePropertyChanged();
+            }
+        }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -107,30 +130,42 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// <param name="strContent">Content of the string.</param>
         private void Execute(string strContent)
         {
+            Cursor = Cursors.Wait;
+
             try
             {
+                //TODO: Hier muss natrülich ein eigener TextWriter her der das dann direkt in die 
+                //      TextBox schreibt, das hier ist nur für das schnelle MockUp sinnvoll ...
                 using (StringWriter sw = new StringWriter())
                 {
+                    DateTime dtStarted = DateTime.Now;
+                    sw.WriteLine("[{0}] Execution Started ...", dtStarted.Fmt_DD_MM_YYYY_HH_MM_SS());
                     //Console.SetOut(TextWriter.Synchronized(sw));
                     Console.SetOut(sw);
 
-                    var engine = Python.CreateEngine();
-                    var scope = engine.CreateScope();
+                    ScriptEngine engine = Python.CreateEngine();
+                    ScriptScope scope = engine.CreateScope();
 
                     engine.Runtime.IO.RedirectToConsole();
                     engine.Execute(strContent, scope);
 
-                    MB.Information(sw.ToString());
+                    //MB.Information(sw.ToString());
+                    DateTime dtStopped = DateTime.Now;
+                    sw.WriteLine("[{0}] Execution Ended ...", dtStopped.Fmt_DD_MM_YYYY_HH_MM_SS());
+                    sw.WriteLine("[{0}] Execution Time: {1}", DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS(),(dtStopped-dtStarted).ToShortString());
 
-                    StringBuilder sb = new StringBuilder();
-                    foreach (String strVariable in scope.GetVariableNames())
-                    {
-                        sb.AppendLine(strVariable);
-                        //var r = scope.GetVariable(strVariable);
-                        //sb.AppendLine("{0}",strVariable,r. );
-                    }
-                    
-                    MB.Information(sb.ToString());
+                    LastOutput = sw.ToString();
+
+                    // Hier kann man nun die erzeugten Variablen abfragen ...
+                    //StringBuilder sb = new StringBuilder();
+                    //foreach (String strVariable in scope.GetVariableNames())
+                    //{
+                    //    sb.AppendLine(strVariable);
+                    //    //var r = scope.GetVariable(strVariable);
+                    //    //sb.AppendLine("{0}",strVariable,r. );
+                    //}
+
+                    //MB.Information(sb.ToString());
                 }
             }
             catch (Exception ex)
@@ -139,6 +174,8 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             }
 
             this.tecTextEditorControl.Focus();
+
+            Cursor = Cursors.Arrow;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

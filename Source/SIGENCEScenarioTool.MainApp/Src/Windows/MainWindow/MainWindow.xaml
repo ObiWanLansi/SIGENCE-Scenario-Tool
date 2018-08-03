@@ -388,7 +388,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <GridSplitter Grid.Row="1" Background="Blue" Height="3" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                    <GridSplitter Grid.Row="1" Background="Blue" Height="2" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
                 </Grid>
             </TabItem>
 
