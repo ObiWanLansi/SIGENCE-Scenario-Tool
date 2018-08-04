@@ -192,6 +192,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Src\Commands\RegisteredCommands.cs" />
     <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
     <Compile Include="Src\Datatypes\Standard\StringList.cs" />
@@ -349,9 +354,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <None Include="..\VERSION">
+      <Link>Properties\VERSION</Link>
+    </None>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -456,6 +461,10 @@
     <Resource Include="Images\media_stop.png" />
     <Resource Include="Images\media_stop_red.png" />
     <Resource Include="Images\handheld_device.png" />
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.Properties.md</LastGenOutput>

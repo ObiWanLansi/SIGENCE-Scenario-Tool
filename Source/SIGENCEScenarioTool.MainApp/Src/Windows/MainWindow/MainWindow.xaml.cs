@@ -26,6 +26,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
+            settings.Upgrade();
+
             if (string.IsNullOrEmpty(settings.UDPHost))
             {
                 MB.Warning("The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application.");

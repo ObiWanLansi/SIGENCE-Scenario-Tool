@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "SIGENCE Scenario Tool"
-!define PRODUCT_VERSION "1.2"
+!define PRODUCT_VERSION "1.3"
 !define PRODUCT_PUBLISHER "ObiWanLansi"
 !define PRODUCT_WEB_SITE "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -39,8 +39,8 @@ var ICONS_GROUP
 
 ; Language files
 !insertmacro MUI_LANGUAGE "English" ; The first language is the default language
-!insertmacro MUI_LANGUAGE "French"
 !insertmacro MUI_LANGUAGE "German"
+!insertmacro MUI_LANGUAGE "French"
 !insertmacro MUI_LANGUAGE "Spanish"
 
 ; MUI end ------
@@ -61,7 +61,7 @@ Section "Hauptgruppe" SEC01
 
   SetOutPath "$INSTDIR"
 
-  File /r "SIGENCEScenarioTool.Executable\*.*"
+  File /r "..\Executable\*.*"
 
 SectionEnd
 

@@ -22,6 +22,9 @@
 
         <delete dir=".\SIGENCEScenarioTool.TestSuite\bin" />
         <delete dir=".\SIGENCEScenarioTool.TestSuite\obj" />
+
+        <delete dir=".\SIGENCEScenarioTool.Installer" />
+        <delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
     </target>
 
 
@@ -67,7 +70,7 @@
     </target>
 
 
-<!--
+
     <target name="sfx" depends="deploy">
         
         <delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
@@ -97,7 +100,7 @@
     </target>
 
 
+
     <target name="all" depends="sfx,installer" />
--->
 
 </project>

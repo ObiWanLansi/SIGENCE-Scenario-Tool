@@ -11,6 +11,9 @@
 <#
     EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
     string strFileName = this.Host.ResolvePath("GeoLocalizationResult.xml");
+
+    string strVersion = File.ReadAllText(this.Host.ResolvePath("..\\..\\..\\..\\VERSION"));
+    strVersion = strVersion.Trim();
 #>
 
 <#
@@ -23,7 +26,7 @@
 
     strClassCommment = !string.IsNullOrEmpty(strClassCommment) ? strClassCommment : string.Format("Generated Model Class from {0}.",new FileInfo(strFileName).Name);
 #>
-# <#=eRoot.Name#>
+# <#=eRoot.Name#> (Version <#=strVersion#>)
 
 *<#=strClassCommment#>*
 
