@@ -34,10 +34,10 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (DeviceSource == DeviceSource.Unknown)
-            {
-                return false;
-            }
+            //if (DeviceSource == DeviceSource.Unknown)
+            //{
+            //    return false;
+            //}
 
             return true;
         }
