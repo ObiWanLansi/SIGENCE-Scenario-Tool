@@ -4,8 +4,12 @@ $file = ".\README.md"
 
 Get-ChildItem -Path $documents_path -Filter *.png | ForEach-Object {
     
-    "![Sorry, But Here Should Be A Screenshot To See](" + $_.Name + ")" | Add-Content $file
+    #"" | Add-Content $file
 
-    # ![Sorry, but here should be a Screenshot :-(](Screenshots/MainApplication.jpg "Screenshot from the MainWindow.")
+    "" | Add-Content $file
+    "![Sorry, But Here Should Be A Screenshot To See](" + $_.Name + ")" | Add-Content $file
+    "" | Add-Content $file
+    "*" + $_.Name + " (" + $_.LastWriteTime.ToShortDateString() + ", " + $_.LastWriteTime.ToShortTimeString() + ")*" | Add-Content $file
+    "<hr/>" | Add-Content $file
 }
 
