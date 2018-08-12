@@ -745,7 +745,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Opens the rf device in google maps.
         /// </summary>
         /// <param name="rfdefvice">The rfdefvice.</param>
-        private void OpenRFDeviceInGoogleMaps(RFDeviceViewModel rfdefvice)
+        private void OpenInGoogleMaps(RFDeviceViewModel rfdefvice)
         {
             if (rfdefvice == null)
             {
@@ -763,7 +763,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Opens the rf device in google maps.
         /// </summary>
-        private void OpenRFDeviceInGoogleMaps()
+        private void OpenInGoogleMaps()
         {
             if (dgRFDevices.SelectedItem == null)
             {
@@ -777,7 +777,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            OpenRFDeviceInGoogleMaps(dgRFDevices.SelectedItem as RFDeviceViewModel);
+            OpenInGoogleMaps(dgRFDevices.SelectedItem as RFDeviceViewModel);
         }
 
 

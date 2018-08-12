@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -8,6 +7,7 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 
 using SIGENCEScenarioTool.Dialogs;
+using SIGENCEScenarioTool.Dialogs.Scripting;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
@@ -88,6 +88,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 MB.Error(ex);
             }
+        }
+
+
+        /// <summary>
+        /// Opens the script editor.
+        /// </summary>
+        private void OpenScriptEditor()
+        {
+            ScriptingDialog sd = new ScriptingDialog(this);
+            sd.ShowDialog();
+            sd = null;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

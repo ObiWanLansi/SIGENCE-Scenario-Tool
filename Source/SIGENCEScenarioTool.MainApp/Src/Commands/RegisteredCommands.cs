@@ -153,6 +153,14 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         static public RoutedUICommand OpenScriptEditor { get; private set; }
 
+        /// <summary>
+        /// Gets the open in google maps.
+        /// </summary>
+        /// <value>
+        /// The open in google maps.
+        /// </value>
+        static public RoutedUICommand OpenInGoogleMaps { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -222,9 +230,11 @@ namespace SIGENCEScenarioTool.Commands
             ToggleDALF = new RoutedUICommand("ToggleDALF", "ToggleDALF", typeof(RegisteredCommands));
             ToggleDALF.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Control));
 
-
             OpenScriptEditor = new RoutedUICommand("OpenScriptEditor", "OpenScriptEditor", typeof(RegisteredCommands));
             OpenScriptEditor.InputGestures.Add(new KeyGesture(Key.P, ModifierKeys.Control));
+
+            OpenInGoogleMaps= new RoutedUICommand("OpenInGoogleMaps", "OpenInGoogleMaps", typeof(RegisteredCommands));
+            OpenInGoogleMaps.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Control));
         }
 
     } // end static public class RegisteredCommands

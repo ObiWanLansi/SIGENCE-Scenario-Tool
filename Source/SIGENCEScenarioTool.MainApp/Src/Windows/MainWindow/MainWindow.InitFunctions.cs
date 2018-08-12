@@ -294,6 +294,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     e.CanExecute = true;
                 }
             ));
+
+            CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenInGoogleMaps,
+                (object sender, ExecutedRoutedEventArgs e) =>
+                {
+                    OpenInGoogleMaps();
+                    e.Handled = true;
+                },
+                (object sender, CanExecuteRoutedEventArgs e) =>
+                {
+                    e.CanExecute = true;
+                }
+            ));
         }
 
 

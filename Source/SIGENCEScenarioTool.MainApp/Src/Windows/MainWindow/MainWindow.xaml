@@ -100,8 +100,9 @@
                 <!--<Separator />
                 <MenuItem Header="_Send Data via UDP" Icon="{StaticResource SEND}" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />-->
                 <Separator />
-                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click" />
+                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
                 <MenuItem Header="_QRCode From RFDevice" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.RFDeviceQRCode}" />
+                <MenuItem Header="Open _Scripting Editor" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.OpenScriptEditor}" />
             </MenuItem>
             <MenuItem Header="_Extras">
                 <MenuItem Header="_Restore Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_RestoreInitialMapValues_Click" />
@@ -111,7 +112,6 @@
             </MenuItem>
             <MenuItem Header="_Test">
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
-                <MenuItem Header="_Scripting Test" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScriptingTest_Click" />
                 <MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
                 <Separator />
                 <MenuItem Header="Create Randomized RFDevices" Icon="{StaticResource SATELLITE}">
@@ -198,7 +198,7 @@
                                 <Separator />
                                 <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
                                 <MenuItem Header="_QRCode From RFDevice" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.RFDeviceQRCode}" />
-                                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Click="MenuItem_OpenInGoogleMaps_Click" />
+                                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
                             </ContextMenu>
                         </DataGrid.ContextMenu>
                         <DataGrid.CommandBindings>
@@ -647,6 +647,15 @@
             <Separator />
 
             <StatusBarItem />
+
+            <Separator />
+
+            <StatusBarItem HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="QuickCommander:" />
+                    <TextBox Width="120" />
+                </StackPanel>
+            </StatusBarItem>
         </StatusBar>
     </Grid>
 </Window>
