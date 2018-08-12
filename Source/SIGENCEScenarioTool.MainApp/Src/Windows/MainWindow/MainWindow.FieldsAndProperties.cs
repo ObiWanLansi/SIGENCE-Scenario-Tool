@@ -676,5 +676,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
         }
 
-    } // end public partial class MainWindow
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The quick commands
+        /// </summary>
+        public ObservableCollection<string> QuickCommands  { get; set; }
+
+} // end public partial class MainWindow
 }

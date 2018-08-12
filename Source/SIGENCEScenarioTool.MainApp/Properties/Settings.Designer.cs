@@ -49,6 +49,18 @@ namespace SIGENCEScenarioTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("18")]
+        public int MapZoomLevel {
+            get {
+                return ((int)(this["MapZoomLevel"]));
+            }
+            set {
+                this["MapZoomLevel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
         public string UDPHost {
             get {
@@ -70,22 +82,7 @@ namespace SIGENCEScenarioTool.Properties {
                 this["UDPPortReceiving"] = value;
             }
         }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("18")]
-        public int MapZoomLevel
-        {
-            get
-            {
-                return ((int)(this["MapZoomLevel"]));
-            }
-            set
-            {
-                this["MapZoomLevel"] = value;
-            }
-        }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
@@ -145,37 +142,7 @@ namespace SIGENCEScenarioTool.Properties {
                 this["InitialMap"] = value;
             }
         }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double LastLeft
-        {
-            get
-            {
-                return ((double)(this["LastLeft"]));
-            }
-            set
-            {
-                this["LastLeft"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double LastTop
-        {
-            get
-            {
-                return ((double)(this["LastTop"]));
-            }
-            set
-            {
-                this["LastTop"] = value;
-            }
-        }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
@@ -202,6 +169,30 @@ namespace SIGENCEScenarioTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastLeft {
+            get {
+                return ((double)(this["LastLeft"]));
+            }
+            set {
+                this["LastLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double LastTop {
+            get {
+                return ((double)(this["LastTop"]));
+            }
+            set {
+                this["LastTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LastWindowState {
             get {
@@ -209,6 +200,18 @@ namespace SIGENCEScenarioTool.Properties {
             }
             set {
                 this["LastWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsUpgraded {
+            get {
+                return ((bool)(this["IsUpgraded"]));
+            }
+            set {
+                this["IsUpgraded"] = value;
             }
         }
     }

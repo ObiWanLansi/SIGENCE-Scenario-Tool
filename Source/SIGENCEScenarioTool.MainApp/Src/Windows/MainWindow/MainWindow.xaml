@@ -648,12 +648,13 @@
 
             <StatusBarItem />
 
-            <Separator />
+            <!--<Separator />-->
 
             <StatusBarItem HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="QuickCommander:" />
-                    <TextBox Width="120" />
+                    <!--<TextBox Width="240" VerticalContentAlignment="Center" />-->
+                    <ComboBox x:Name="cbQuickCommand" ItemsSource="{Binding QuickCommands}" Width="180" IsEditable="True" VerticalContentAlignment="Center" KeyDown="ComboBox_KeyDown" />
                 </StackPanel>
             </StatusBarItem>
         </StatusBar>

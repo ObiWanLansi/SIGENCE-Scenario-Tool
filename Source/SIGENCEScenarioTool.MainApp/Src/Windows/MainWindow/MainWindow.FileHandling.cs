@@ -3,8 +3,6 @@ using System.Linq;
 using System.Windows.Input;
 using System.Xml.Linq;
 
-using GMap.NET.MapProviders;
-
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;

@@ -26,7 +26,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            settings.Upgrade();
+            if (settings.IsUpgraded == false)
+            {
+                settings.Upgrade();
+                settings.IsUpgraded = true;
+                settings.Save();
+            }
 
             if (string.IsNullOrEmpty(settings.UDPHost))
             {
@@ -55,6 +60,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
             this.RFDevicesCollection = new ObservableCollection<RFDeviceViewModel>();
+            this.QuickCommands = new ObservableCollection<string>();
             this.DataContext = this;
 
             //-----------------------------------------------------------------
@@ -73,6 +79,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 #if DEBUG
             CreateRandomizedRFDevices(10);
+
+            QuickCommands.Add("new");
+            QuickCommands.Add("rand 20");
+            QuickCommands.Add("export csv");
+            QuickCommands.Add("set rxtxtype unknown");
+            QuickCommands.Add("set name nasenbär");
+            QuickCommands.Add("save");
+            QuickCommands.Add("exit");
 
             //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 #endif

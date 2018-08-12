@@ -9,8 +9,6 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
-using GMap.NET;
-
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
@@ -160,76 +158,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// The randomizer.
-        /// </summary>
-        static private readonly Random r = new Random();
-
-
-        /// <summary>
-        /// Creates the randomized RFDevices.
-        /// </summary>
-        /// <param name="iMaxCount">The i maximum count.</param>
-        private void CreateRandomizedRFDevices(int iMaxCount)
-        {
-            Cursor = Cursors.Wait;
-
-            foreach (var device in CreateRandomizedRFDeviceList(iMaxCount, mcMapControl.Position))
-            {
-                AddRFDevice(device);
-            }
-
-            Cursor = Cursors.Arrow;
-        }
-
-
-        /// <summary>
-        /// Creates the randomized rf device list.
-        /// </summary>
-        /// <param name="iMaxCount">The i maximum count.</param>
-        /// <param name="pllCenter">The PLL center.</param>
-        /// <returns></returns>
-        static public RFDeviceList CreateRandomizedRFDeviceList(int iMaxCount, PointLatLng pllCenter)
-        {
-            RFDeviceList list = new RFDeviceList(iMaxCount);
-
-            for (int i = 0; i < iMaxCount; i++)
-            {
-                list.Add(new RFDevice
-                {
-                    Id = r.Next(-1000, 1000),
-                    DeviceSource = DeviceSource.Automatic,
-                    Name = string.Format("RFDevice #{0}", i),
-                    Latitude = (r.NextDouble() * 0.05) + pllCenter.Lat,
-                    Longitude = (r.NextDouble() * 0.05) + pllCenter.Lng,
-                    Altitude = (uint)r.Next(12345),
-                    RxTxType = r.NextEnum<RxTxType>(),
-                    AntennaType = r.NextEnum<AntennaType>(),
-                    CenterFrequency_Hz = (uint)r.Next(85, 105) * 100000,
-                    Bandwith_Hz = (uint)r.Next(10, 20) * 1000,
-                    Gain_dB = r.Next(140),
-                    SignalToNoiseRatio_dB = (uint)r.Next(140),
-                    Roll = r.Next(-90, 90),
-                    Pitch = r.Next(-90, 90),
-                    Yaw = r.Next(-90, 90),
-                    XPos = r.Next(-74, 74),
-                    YPos = r.Next(-74, 74),
-                    ZPos = r.Next(-74, 74),
-                    Remark = r.NextObject(Tool.ALLPANGRAMS)
-                });
-            }
-
-            if (list.Exists(d => d.Id == 0) == false)
-            {
-                list.First().Id = 0;
-            }
-
-            return list;
-        }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
         /// Creates the scenario report.
         /// </summary>
         private void CreateScenarioReport()
@@ -287,6 +215,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_InsertHtmlSnippet control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_InsertHtmlSnippet_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InsertHtmlSnippet((sender as Control).Tag as string);
+
+        //    e.Handled = true;
+        //}
 
 
         ///// <summary>

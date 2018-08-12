@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -292,6 +293,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// Determines whether [is wanted geo node] [the specified object].
         /// </summary>
@@ -325,6 +327,178 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             return true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Quicks the command action.
+        /// </summary>
+        /// <param name="strCommand">The string command.</param>
+        private void QuickCommandAction(string strCommand)
+        {
+            if (strCommand.IsEmpty())
+            {
+                return;
+            }
+
+            string[] strSplitted = strCommand.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (strSplitted.Length > 0)
+            {
+                string strMainCommand = strSplitted[0].ToLower();
+
+                switch (strMainCommand)
+                {
+                    case "new":
+                        NewFile();
+                        break;
+
+                    case "rand":
+                        if (strSplitted.Length > 1)
+                        {
+                            try
+                            {
+                                int iCount = int.Parse(strSplitted[1]);
+                                CreateRandomizedRFDevices(iCount);
+                            }
+                            catch (Exception ex)
+                            {
+                                MB.Error(ex);
+                            }
+                        }
+                        break;
+
+                    case "close":
+                    case "exit":
+                    case "quit":
+                        Close();
+                        break;
+
+                    /*
+                     * save [fullname] ansonsten aktuelle datei
+                     * set "property" "value" --> Aber nur die markierten
+                     * export csv|xml|json
+                     * load [fullname]
+                     * sendudp
+                     * startreceive
+                     * goto lat/lon
+                     */
+
+                    default:
+                        MB.Warning("Unknown Command \"{0}\".", strMainCommand);
+                        break;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Quicks the command action.
+        /// </summary>
+        private void QuickCommandAction()
+        {
+            string strCommand = cbQuickCommand.Text;
+
+            if (strCommand.IsEmpty())
+            {
+                return;
+            }
+
+            Cursor = Cursors.Wait;
+
+            string[] strSplitted = strCommand.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (strSplitted.Length > 0)
+            {
+                foreach (string strSubCommand in strSplitted)
+                {
+                    QuickCommandAction(strSubCommand);
+                }
+            }
+
+            QuickCommands.Add(strCommand);
+
+            Cursor = Cursors.Arrow;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The randomizer.
+        /// </summary>
+        static private readonly Random r = new Random();
+
+
+        /// <summary>
+        /// Creates the randomized RFDevices.
+        /// </summary>
+        /// <param name="iMaxCount">The i maximum count.</param>
+        private void CreateRandomizedRFDevices(int iMaxCount)
+        {
+            Cursor = Cursors.Wait;
+
+            foreach (var device in CreateRandomizedRFDeviceList(iMaxCount, mcMapControl.Position))
+            {
+                AddRFDevice(device);
+            }
+
+            Cursor = Cursors.Arrow;
+        }
+
+
+        /// <summary>
+        /// Creates the randomized rf device list.
+        /// </summary>
+        /// <param name="iMaxCount">The i maximum count.</param>
+        /// <param name="pllCenter">The PLL center.</param>
+        /// <returns></returns>
+        static public RFDeviceList CreateRandomizedRFDeviceList(int iMaxCount, PointLatLng pllCenter)
+        {
+            RFDeviceList list = new RFDeviceList(iMaxCount);
+
+            for (int i = 0; i < iMaxCount; i++)
+            {
+                list.Add(new RFDevice
+                {
+                    Id = r.Next(-1000, 1000),
+                    DeviceSource = DeviceSource.Automatic,
+                    Name = string.Format("RFDevice #{0}", i),
+                    Latitude = pllCenter.Lat + (r.NextBool() ? (r.NextDouble() * 0.05) : (r.NextDouble() * 0.05) * -1),
+                    Longitude = pllCenter.Lng + (r.NextBool() ? (r.NextDouble() * 0.05) : (r.NextDouble() * 0.05) * -1),
+                    //Latitude = (r.NextDouble() * 0.05) + pllCenter.Lat,
+                    //Longitude = (r.NextDouble() * 0.05) + pllCenter.Lng,
+                    Altitude = (uint)r.Next(12345),
+                    RxTxType = r.NextEnum<RxTxType>(),
+                    AntennaType = r.NextEnum<AntennaType>(),
+                    CenterFrequency_Hz = (uint)r.Next(85, 105) * 100000,
+                    Bandwith_Hz = (uint)r.Next(10, 20) * 1000,
+                    Gain_dB = r.Next(140),
+                    SignalToNoiseRatio_dB = (uint)r.Next(140),
+                    Roll = r.Next(-90, 90),
+                    Pitch = r.Next(-90, 90),
+                    Yaw = r.Next(-90, 90),
+                    XPos = r.Next(-74, 74),
+                    YPos = r.Next(-74, 74),
+                    ZPos = r.Next(-74, 74),
+                    Remark = r.NextObject(Tool.ALLPANGRAMS)
+                });
+            }
+
+            RFDevice refdev = list.FirstOrDefault(d => d.Id == 0);
+
+            if (refdev == null)
+            {
+                refdev = list.First();
+            }
+
+            refdev.Id = 0;
+            refdev.Latitude = pllCenter.Lat;
+            refdev.Longitude = pllCenter.Lng;
+
+            return list;
         }
 
     } // end public partial class MainWindow

@@ -173,6 +173,7 @@ namespace SIGENCEScenarioTool.Commands
             OpenCheatSheet.InputGestures.Add(new KeyGesture(Key.F1));
 
             //-----------------------------------------------------------------
+
             CreateRFDevice = new RoutedUICommand("CreateRFDevice", "CreateRFDevice", typeof(RegisteredCommands));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.F5));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Alt));
@@ -182,7 +183,7 @@ namespace SIGENCEScenarioTool.Commands
             DeleteRFDevice.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Alt));
 
             MoveRFDevice = new RoutedUICommand("MoveRFDevice", "MoveRFDevice", typeof(RegisteredCommands));
-            MoveRFDevice.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Control));
+            MoveRFDevice.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Alt));
 
             CopyRFDevice = new RoutedUICommand("CopyRFDevice", "CopyRFDevice", typeof(RegisteredCommands));
 
@@ -197,7 +198,7 @@ namespace SIGENCEScenarioTool.Commands
             ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
 
             ZoomToRFDevice = new RoutedUICommand("ZoomToRFDevice", "ZoomToRFDevice", typeof(RegisteredCommands));
-            ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.F9));
+            //ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.F9));
             ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.Z, ModifierKeys.Control));
 
             RFDeviceQRCode = new RoutedUICommand("RFDeviceQRCode", "RFDeviceQRCode", typeof(RegisteredCommands));
@@ -205,21 +206,20 @@ namespace SIGENCEScenarioTool.Commands
 
             //-----------------------------------------------------------------
 
-            CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
-            CreateScreenshot.InputGestures.Add(new KeyGesture(Key.F10));
-            CreateScreenshot.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control));
-
-            // F11 is reserved for fullscreen ...
-
             SendDataUDP = new RoutedUICommand("SendDataUDP", "SendDataUDP", typeof(RegisteredCommands));
-            SendDataUDP.InputGestures.Add(new KeyGesture(Key.F12));
+            SendDataUDP.InputGestures.Add(new KeyGesture(Key.F9));
             //SendDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
 
             ReceiveDataUDP = new RoutedUICommand("ReceiveDataUDP", "ReceiveDataUDP", typeof(RegisteredCommands));
-            ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.F12, ModifierKeys.Control));
+            ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.F10));
             //ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
 
+            // F11 is reserved for fullscreen ...
+
             //-----------------------------------------------------------------
+
+            CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
+            CreateScreenshot.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control));
 
             OpenSettings = new RoutedUICommand("OpenSettings", "OpenSettings", typeof(RegisteredCommands));
             OpenSettings.InputGestures.Add(new KeyGesture(Key.X, ModifierKeys.Control));
@@ -233,7 +233,7 @@ namespace SIGENCEScenarioTool.Commands
             OpenScriptEditor = new RoutedUICommand("OpenScriptEditor", "OpenScriptEditor", typeof(RegisteredCommands));
             OpenScriptEditor.InputGestures.Add(new KeyGesture(Key.P, ModifierKeys.Control));
 
-            OpenInGoogleMaps= new RoutedUICommand("OpenInGoogleMaps", "OpenInGoogleMaps", typeof(RegisteredCommands));
+            OpenInGoogleMaps = new RoutedUICommand("OpenInGoogleMaps", "OpenInGoogleMaps", typeof(RegisteredCommands));
             OpenInGoogleMaps.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Control));
         }
 

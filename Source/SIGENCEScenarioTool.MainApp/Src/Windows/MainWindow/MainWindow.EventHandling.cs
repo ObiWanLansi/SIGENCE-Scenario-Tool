@@ -372,19 +372,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        ///// <summary>
-        ///// Handles the Click event of the MenuItem_OpenInGoogleMaps control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        //private void MenuItem_OpenInGoogleMaps_Click(object sender, RoutedEventArgs e)
-        //{
-        //    OpenDeviceInGoogleMaps();
-
-        //    e.Handled = true;
-        //}
-
-
         /// <summary>
         /// Handles the Click event of the MenuItem_CreateSomeRandomizedRFDevices_Click control.
         /// </summary>
@@ -437,19 +424,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        ///// <summary>
-        ///// Handles the Click event of the Button_RefreshScenarioDescription control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        //private void Button_RefreshScenarioDescription_Click(object sender, RoutedEventArgs e)
-        //{
-        //    UpdateScenarioDescription();
-
-        //    e.Handled = true;
-        //}
-
-
         /// <summary>
         /// Handles the Click event of the ToogleButton_EditScenarioDescription control.
         /// </summary>
@@ -464,18 +438,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             e.Handled = true;
         }
 
-
-        ///// <summary>
-        ///// Handles the Click event of the MenuItem_InsertHtmlSnippet control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        //private void MenuItem_InsertHtmlSnippet_Click(object sender, RoutedEventArgs e)
-        //{
-        //    InsertHtmlSnippet((sender as Control).Tag as string);
-
-        //    e.Handled = true;
-        //}
 
 
         /// <summary>
@@ -515,18 +477,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             e.Handled = true;
         }
-
-
-        ///// <summary>
-        ///// Handles the Click event of the Button_CreateRFDevicesAlongALine control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        //private void Button_CreateRFDevicesAlongALine_Click(object sender, RoutedEventArgs e)
-        //{
-        //    CreateRFDevicesAlongALine();
-        //    e.Handled = true;
-        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -574,6 +524,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         break;
                     }
                 }
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Handles the KeyDown event of the ComboBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Input.KeyEventArgs" /> instance containing the event data.</param>
+        private void ComboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                QuickCommandAction();
+                e.Handled = true;
             }
         }
 
