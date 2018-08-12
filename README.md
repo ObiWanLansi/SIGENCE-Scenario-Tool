@@ -33,6 +33,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [QRCoder](https://github.com/codebude/QRCoder/)
 - [System.Data.SQLite](https://www.nuget.org/packages/System.Data.SQLite/)
 - [ICSharpCode.TextEditor](https://www.nuget.org/packages/ICSharpCode.TextEditor/)
+- [IronPython](https://www.nuget.org/packages/IronPython/)
 
 
 ## License
