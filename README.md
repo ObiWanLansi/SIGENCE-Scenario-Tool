@@ -16,6 +16,19 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [Wiki](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki/)
 
 
+## Useful Links
+
+- [Git Tutorial](https://www.tutorialspoint.com/git/index.htm)
+- [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
+- [C# Tutorial](https://www.tutorialspoint.com/csharp/index.htm)
+- [WPF Tutorial](https://www.tutorialspoint.com/wpf/index.htm)
+- [HTML Tutorial](https://www.w3schools.com/html/default.asp)
+- [Python Tutorial](https://www.tutorialspoint.com/python/index.htm)
+- [IronPython](http://ironpython.net/documentation/dotnet/)
+- [SQLite](https://sqlite.org/index.html)
+
+
 ## Screenshot
 
 ![Sorry, but here should be a Screenshot :-(](Screenshots/MainApplication.jpg  "Screenshot from the MainWindow.")
