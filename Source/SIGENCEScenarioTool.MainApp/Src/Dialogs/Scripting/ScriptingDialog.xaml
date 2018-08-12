@@ -40,7 +40,7 @@
         </WindowsFormsHost>
         <!--</Border>-->
 
-        <TextBox Grid.Row="2" Text="{Binding LastOutput}" FontFamily="Courier New" FontSize="12" IsReadOnly="True" AutoWordSelection="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" />
+        <TextBox Grid.Row="2" Text="{Binding LastOutput}" FontFamily="Courier New" FontSize="14" IsReadOnly="True" AutoWordSelection="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" />
 
         <GridSplitter Grid.Row="2" Background="Blue" Height="2" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
 
@@ -48,7 +48,7 @@
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Language:" />
-                    <Label Content="Python 2.7" />
+                    <Label Content="Python 2.7" FontWeight="Bold" />
                 </StackPanel>
             </StatusBarItem>
 
@@ -57,7 +57,7 @@
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Line:" />
-                    <Label Content="{Binding Line}" />
+                    <Label Content="{Binding Line}" FontWeight="Bold" />
                 </StackPanel>
             </StatusBarItem>
 
@@ -66,7 +66,16 @@
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Column:" />
-                    <Label Content="{Binding Column}" />
+                    <Label Content="{Binding Column}" FontWeight="Bold" />
+                </StackPanel>
+            </StatusBarItem>
+
+            <Separator />
+
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Execution Time:" />
+                    <Label Content="{Binding ExecutionTime}" FontWeight="Bold" />
                 </StackPanel>
             </StatusBarItem>
 

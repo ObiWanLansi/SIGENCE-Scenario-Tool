@@ -13,6 +13,7 @@ using Microsoft.Scripting.Hosting;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
+using SIGENCEScenarioTool.Windows.MainWindow;
 
 
 
@@ -25,6 +26,14 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
     {
 
         /// <summary>
+        /// The mw
+        /// </summary>
+        private MainWindow mw = null;
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Gets the line.
         /// </summary>
         /// <value>
@@ -34,6 +43,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         {
             get { return tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Line + 1; }
         }
+
 
         /// <summary>
         /// Gets the column.
@@ -45,6 +55,8 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         {
             get { return tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Column + 1; }
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -67,14 +79,40 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
                 FirePropertyChanged();
             }
         }
+
+
+        /// <summary>
+        /// The string execution time
+        /// </summary>
+        private string strExecutionTime = "";
+
+        /// <summary>
+        /// Gets or sets the execution time.
+        /// </summary>
+        /// <value>
+        /// The execution time.
+        /// </value>
+        public string ExecutionTime
+        {
+            get { return strExecutionTime; }
+            set
+            {
+                this.strExecutionTime = value;
+                FirePropertyChanged();
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScriptingDialog"/> class.
+        /// Initializes a new instance of the <see cref="ScriptingDialog" /> class.
         /// </summary>
-        public ScriptingDialog()
+        /// <param name="mw">The mw.</param>
+        public ScriptingDialog(MainWindow mw)
         {
+            this.mw = mw;
+
             InitializeComponent();
 
             this.DataContext = this;
@@ -132,6 +170,9 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         {
             Cursor = Cursors.Wait;
 
+            LastOutput = "";
+            //ExecutionTime = "-";
+
             try
             {
                 //TODO: Hier muss natrülich ein eigener TextWriter her der das dann direkt in die 
@@ -146,13 +187,19 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
                     ScriptEngine engine = Python.CreateEngine();
                     ScriptScope scope = engine.CreateScope();
 
+                    // Hier nur die Devices übergeben, aber nicht das komplette MainWindow ...
+                    scope.SetVariable("devices", mw.RFDevicesCollection);
+
                     engine.Runtime.IO.RedirectToConsole();
+
                     engine.Execute(strContent, scope);
 
                     //MB.Information(sw.ToString());
                     DateTime dtStopped = DateTime.Now;
+                    ExecutionTime = (dtStopped - dtStarted).ToShortString();
+
                     sw.WriteLine("[{0}] Execution Ended ...", dtStopped.Fmt_DD_MM_YYYY_HH_MM_SS());
-                    sw.WriteLine("[{0}] Execution Time: {1}", DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS(),(dtStopped-dtStarted).ToShortString());
+                    sw.WriteLine("[{0}] Execution Time: {1}", DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS(), ExecutionTime);
 
                     LastOutput = sw.ToString();
 

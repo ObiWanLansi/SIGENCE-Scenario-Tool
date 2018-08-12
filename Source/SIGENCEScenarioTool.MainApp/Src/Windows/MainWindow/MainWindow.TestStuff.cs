@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void OpenScriptEditor()
         {
-            ScriptingDialog sd = new ScriptingDialog();
+            ScriptingDialog sd = new ScriptingDialog(this);
             sd.ShowDialog();
             sd = null;
         }

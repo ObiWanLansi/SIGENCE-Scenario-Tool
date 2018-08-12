@@ -17,10 +17,29 @@ while i>0:
 
 ###################################################################################################
 
-# PSEUDO CODE zum besseren erklären der Möglichkeiten ...
+for device in devices:
+    print ("{0}: {1} / {2}".format(device.Name,device.Latitude,device.Longitude))
 
-for device in devicelist:
-    if device.Id == 1974:
+for device in devices:
+    if device.Id > 0:
         device.StartTime = device.StartTime + 10
         device.Latitude = device.Latitude + 0.125
+
+
+iStartTime = 0
+for device in devices:
+    if device.Id == 1974:
+        device.StartTime = iStartTime 
+        iStartTime += 20
+
+###################################################################################################
+
+import clr 
+
+clr.AddReference("SIGENCEScenarioTool")
+
+from SIGENCEScenarioTool.Models import *
+
+for device in devices:
+    device.RxTxType = RxTxType.HackRF
     
