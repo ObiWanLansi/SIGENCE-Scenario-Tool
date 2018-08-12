@@ -18,6 +18,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 
 ## Useful Links
 
+- [SIGINT](https://en.wikipedia.org/wiki/Signals_intelligence)
 - [Git Tutorial](https://www.tutorialspoint.com/git/index.htm)
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
