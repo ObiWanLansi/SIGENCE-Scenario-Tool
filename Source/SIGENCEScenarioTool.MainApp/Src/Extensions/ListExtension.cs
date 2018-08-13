@@ -362,7 +362,21 @@ namespace SIGENCEScenarioTool.Extensions
 
             Type tType = typeof(T);
 
-            SortedDictionary<PropertyInfo, SQLiteParameter> sdInsertParameters = new SortedDictionary<PropertyInfo, SQLiteParameter>();
+            List<PropertyInfo> lProperties = new List<PropertyInfo>();
+
+            foreach (PropertyInfo pi in from property in tType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty) select property)
+            {
+                if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
+                {
+                    continue;
+                }
+
+                lProperties.Add(pi);
+            }
+
+            //-----------------------------------------------------------------
+
+            SortedDictionary<string, SQLiteParameter> sdInsertParameters = new SortedDictionary<string, SQLiteParameter>();
 
             StringBuilder sbCreateTable = new StringBuilder(1024);
             StringBuilder sbInsertStatement = new StringBuilder(1024);
@@ -372,14 +386,11 @@ namespace SIGENCEScenarioTool.Extensions
 
             int iColumnCounter = 0;
 
-            foreach (PropertyInfo pi in tType.GetProperties())
+            foreach (PropertyInfo pi in lProperties)
             {
-                if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
-                {
-                    continue;
-                }
+                SQLiteParameter param = SQLiteHelper.GetSQLiteParameter(pi);
 
-                sdInsertParameters.Add(pi, SQLiteHelper.GetSQLiteParameter(pi.PropertyType));
+                sdInsertParameters.Add(pi.Name, param);
 
                 if (iColumnCounter > 0)
                 {
@@ -396,15 +407,29 @@ namespace SIGENCEScenarioTool.Extensions
             sbCreateTable.Append("\n)");
             sbInsertStatement.Append(") VALUES (");
 
-            for (int iCounter = 0; iCounter < iColumnCounter; iCounter++)
+            iColumnCounter = 0;
+
+            foreach (PropertyInfo pi in lProperties)
             {
-                if (iCounter > 0)
+                if (iColumnCounter > 0)
                 {
                     sbInsertStatement.Append(',');
                 }
 
-                sbInsertStatement.Append('?');
+                sbInsertStatement.AppendFormat("@{0}", pi.Name);
+
+                iColumnCounter++;
             }
+            
+            //for (int iCounter = 0; iCounter < iColumnCounter; iCounter++)
+            //{
+            //    if (iCounter > 0)
+            //    {
+            //        sbInsertStatement.Append(',');
+            //    }
+
+            //    sbInsertStatement.Append('?');
+            //}
 
             sbInsertStatement.Append(')');
 
@@ -431,7 +456,7 @@ namespace SIGENCEScenarioTool.Extensions
 
                     using (SQLiteCommand dbInsertData = new SQLiteCommand(sbInsertStatement.ToString(), dbSQLiteConnection))
                     {
-                        foreach (var p in sdInsertParameters.Values)
+                        foreach (SQLiteParameter p in sdInsertParameters.Values)
                         {
                             dbInsertData.Parameters.Add(p);
                         }
@@ -439,8 +464,20 @@ namespace SIGENCEScenarioTool.Extensions
                         dbInsertData.Prepare();
 
                         foreach (T row in lValues)
-                        { 
-                            // Hier weiter machen.
+                        {
+                            dbInsertData.ResetParameters();
+
+                            foreach (PropertyInfo pi in lProperties)
+                            {
+                                object oValue = pi.GetValue(row);
+
+                                SQLiteParameter param = sdInsertParameters[pi.Name];
+
+                                param.Value = oValue != null ? oValue : DBNull.Value;
+                                //sdInsertParameters[pi.Name].Value = oValue != null ? oValue : DBNull.Value;
+                            }
+
+                            dbInsertData.ExecuteNonQuery();
                         }
                     }
                 }

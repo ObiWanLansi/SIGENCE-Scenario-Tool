@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -71,16 +72,19 @@ namespace SIGENCEScenarioTool.Database.SQLite
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// Gets the sq lite parameter.
         /// </summary>
-        /// <param name="t">The t.</param>
+        /// <param name="pi">The pi.</param>
         /// <returns></returns>
-        static public SQLiteParameter GetSQLiteParameter(Type t)
+        static public SQLiteParameter GetSQLiteParameter(PropertyInfo pi)
         {
-            if (SQLiteHelper.TypeMapping.ContainsKey(t) == true)
+            Type t = pi.PropertyType;
+
+            if (TypeMapping.ContainsKey(t) == true)
             {
-                return new SQLiteParameter(SQLiteHelper.TypeMapping[t].Item2) { IsNullable = SQLiteHelper.TypeMapping[t].Item3 };
+                return new SQLiteParameter("@" + pi.Name, TypeMapping[t].Item2) { IsNullable = TypeMapping[t].Item3 };
             }
 
             //-------------------------------------------------------------------------------------
@@ -88,14 +92,14 @@ namespace SIGENCEScenarioTool.Database.SQLite
             if (t == typeof(string))
             {
                 // Der ist mal statisch immer auf NOT NULL ...
-                return new SQLiteParameter(DbType.String) { IsNullable = false };
+                return new SQLiteParameter("@" + pi.Name, DbType.String) { IsNullable = false };
             }
 
             //-------------------------------------------------------------------------------------
 
             if (t.IsEnum == true)
             {
-                return new SQLiteParameter(DbType.String) { IsNullable = false };
+                return new SQLiteParameter("@" + pi.Name, DbType.String) { IsNullable = false };
             }
 
             if (t.IsGenericType)
@@ -104,7 +108,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
                 {
                     if (t.GenericTypeArguments[0].IsEnum == true)
                     {
-                        return new SQLiteParameter(DbType.String) { IsNullable = true };
+                        return new SQLiteParameter("@" + pi.Name, DbType.String) { IsNullable = true };
                     }
                 }
             }
@@ -115,22 +119,22 @@ namespace SIGENCEScenarioTool.Database.SQLite
 
             //if (t == typeof(Color) || t == typeof(Rectangle) || t == typeof(Size) || t == typeof(Point))
             //{
-            //    return new SQLiteParameter(DbType.String) { IsNullable = false };
+            //    return new SQLiteParameter("@" + pi.Name,DbType.String) { IsNullable = false };
             //}
 
             //if (t == typeof(Color?) || t == typeof(Rectangle?) || t == typeof(Size?) || t == typeof(Point?))
             //{
-            //    return new SQLiteParameter(DbType.String) { IsNullable = true };
+            //    return new SQLiteParameter("@" + pi.Name,DbType.String) { IsNullable = true };
             //}
 
             //if (t == typeof(TimeSpan))
             //{
-            //    return new SQLiteParameter(DbType.Double) { IsNullable = false };
+            //    return new SQLiteParameter("@" + pi.Name,DbType.Double) { IsNullable = false };
             //}
 
             //if (t == typeof(TimeSpan?))
             //{
-            //    return new SQLiteParameter(DbType.Double) { IsNullable = true };
+            //    return new SQLiteParameter("@" + pi.Name,DbType.Double) { IsNullable = true };
             //}
 
             #endregion
@@ -138,7 +142,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
             //-------------------------------------------------------------------------------------
 
             // Dann nehmen wir an das es Binärdaten sind ...
-            return new SQLiteParameter(DbType.Binary) { IsNullable = true };
+            return new SQLiteParameter("@" + pi.Name, DbType.Binary) { IsNullable = true };
         }
 
 
