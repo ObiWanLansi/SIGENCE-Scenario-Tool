@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Data;
-
+using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
@@ -77,21 +78,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-#if DEBUG
-            CreateRandomizedRFDevices(10);
-
-            QuickCommands.Add("new");
-            QuickCommands.Add("rand 20");
-            QuickCommands.Add("export csv");
-            QuickCommands.Add("set rxtxtype unknown");
-            QuickCommands.Add("set name nasenbär");
-            QuickCommands.Add("save");
-            QuickCommands.Add("exit");
-
-            //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
-#endif
-            //-----------------------------------------------------------------
-
             try
             {
                 string strFilename = string.Format("{0}\\tuebingen-regbez-latest.osm.sqlite", Tool.StartupPath);
@@ -106,6 +92,29 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             lcv.IsLiveFiltering = true;
             lcv.Filter = IsWantedGeoNode;
+
+            //-----------------------------------------------------------------
+
+#if DEBUG
+            CreateRandomizedRFDevices(100);
+
+            RFDeviceList devicelist = GetDeviceList();
+            ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.sqlite"));
+            //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.csv"));
+            //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.json"));
+            //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.xml"));
+            //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.xlsx"));
+
+            QuickCommands.Add("new");
+            QuickCommands.Add("rand 20");
+            QuickCommands.Add("export csv");
+            QuickCommands.Add("set rxtxtype unknown");
+            QuickCommands.Add("set name nasenbär");
+            QuickCommands.Add("save");
+            QuickCommands.Add("exit");
+
+            //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+#endif
         }
 
     } // end public partial class MainWindow

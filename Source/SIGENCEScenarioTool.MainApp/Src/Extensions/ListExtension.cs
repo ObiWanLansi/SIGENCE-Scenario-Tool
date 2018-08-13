@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Linq;
 using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
 
 using Newtonsoft.Json;
-
+using SIGENCEScenarioTool.Database.SQLite;
 using SIGENCEScenarioTool.Interfaces;
 
 
@@ -26,6 +28,7 @@ namespace SIGENCEScenarioTool.Extensions
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        #region OldStuff But Mayve Needful
         ///// <summary>
         ///// 
         ///// </summary>
@@ -160,6 +163,7 @@ namespace SIGENCEScenarioTool.Extensions
         //    // Achtung: Auch wenn diese Funktion beendet wird bleibt Excel geöffnet. Die Daten sind
         //    // aber noch nicht in einer Datei gespeichert. Das muß in Excel der User selbst machen.
         //}
+        #endregion
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -326,6 +330,135 @@ namespace SIGENCEScenarioTool.Extensions
             //---------------------------------------------
 
             File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.GetEncoding("ISO-8859-1"));
+        }
+
+
+        /// <summary>
+        /// Saves as sq lite.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="lValues">The l values.</param>
+        /// <param name="strOutputFilename">The string output filename.</param>
+        static public void SaveAsSQLite<T>(this List<T> lValues, string strOutputFilename)
+        {
+            if (lValues == null || lValues.Count == 0)
+            {
+                throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
+            }
+
+            if (strOutputFilename.IsEmpty())
+            {
+                throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
+            }
+
+            //-----------------------------------------------------------------
+
+            if (File.Exists(strOutputFilename) == true)
+            {
+                File.Delete(strOutputFilename);
+            }
+
+            //-----------------------------------------------------------------
+
+            Type tType = typeof(T);
+
+            SortedDictionary<PropertyInfo, SQLiteParameter> sdInsertParameters = new SortedDictionary<PropertyInfo, SQLiteParameter>();
+
+            StringBuilder sbCreateTable = new StringBuilder(1024);
+            StringBuilder sbInsertStatement = new StringBuilder(1024);
+
+            sbCreateTable.AppendFormat("CREATE TABLE {0} (", tType.Name);
+            sbInsertStatement.AppendFormat("INSERT INTO {0} (", tType.Name);
+
+            int iColumnCounter = 0;
+
+            foreach (PropertyInfo pi in tType.GetProperties())
+            {
+                if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
+                {
+                    continue;
+                }
+
+                sdInsertParameters.Add(pi, SQLiteHelper.GetSQLiteParameter(pi.PropertyType));
+
+                if (iColumnCounter > 0)
+                {
+                    sbCreateTable.Append(',');
+                    sbInsertStatement.Append(',');
+                }
+
+                sbCreateTable.AppendFormat("\n    \"{0}\" {1}", pi.Name, SQLiteHelper.GetSQLiteColumn(pi.PropertyType));
+                sbInsertStatement.AppendFormat("\"{0}\"", pi.Name);
+
+                iColumnCounter++;
+            }
+
+            sbCreateTable.Append("\n)");
+            sbInsertStatement.Append(") VALUES (");
+
+            for (int iCounter = 0; iCounter < iColumnCounter; iCounter++)
+            {
+                if (iCounter > 0)
+                {
+                    sbInsertStatement.Append(',');
+                }
+
+                sbInsertStatement.Append('?');
+            }
+
+            sbInsertStatement.Append(')');
+
+            //-----------------------------------------------------------------
+
+            SQLiteConnectionStringBuilder csbSQLiteDatabase = new SQLiteConnectionStringBuilder
+            {
+                DataSource = strOutputFilename
+            };
+
+            using (SQLiteConnection dbSQLiteConnection = new SQLiteConnection(csbSQLiteDatabase.ConnectionString))
+            {
+                dbSQLiteConnection.Open();
+
+                // First Step Without Transaction ...
+                // SQLiteTransaction dbTransaction = dbSQLiteConnection.BeginTransaction();
+
+                try
+                {
+                    using (SQLiteCommand dbCreateTable = new SQLiteCommand(sbCreateTable.ToString(), dbSQLiteConnection))
+                    {
+                        dbCreateTable.ExecuteNonQuery();
+                    }
+
+                    using (SQLiteCommand dbInsertData = new SQLiteCommand(sbInsertStatement.ToString(), dbSQLiteConnection))
+                    {
+                        foreach (var p in sdInsertParameters.Values)
+                        {
+                            dbInsertData.Parameters.Add(p);
+                        }
+
+                        dbInsertData.Prepare();
+
+                        foreach (T row in lValues)
+                        { 
+                            // Hier weiter machen.
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    dbSQLiteConnection.Vacuum();
+                    dbSQLiteConnection.Analyze();
+                    dbSQLiteConnection.Reindex();
+
+                    dbSQLiteConnection.Close();
+                }
+            }
+
+            //-----------------------------------------------------------------
         }
 
     } // end static public class ListExtension

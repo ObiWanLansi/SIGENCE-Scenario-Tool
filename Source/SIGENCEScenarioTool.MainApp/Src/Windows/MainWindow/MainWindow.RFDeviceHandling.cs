@@ -500,6 +500,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     //    MB.Information("File {0} successful created.", fiExportFile.Name);
                     //    break;
 
+                    //case ".sqlite":
+                    //    break;
+
                     case ".xlsx":
                         LoadFromExcel(fiImportFile.FullName);
                         break;
@@ -546,9 +549,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         MB.Information("File {0} successful created.", fiExportFile.Name);
                         break;
 
+                    case ".sqlite":
+                        devicelist.SaveAsSQLite(fiExportFile.FullName);
+                        MB.Information("File {0} successful created.", fiExportFile.Name);
+                        break;
+
                     case ".xlsx":
                         SaveAsExcel(devicelist, fiExportFile.FullName);
                         break;
+
                 }
             }
             catch (Exception ex)

@@ -140,6 +140,20 @@ namespace SIGENCEScenarioTool.Extensions
 
 
         /// <summary>
+        /// Vergleicht zwei String wobei nicht zwischen Groﬂ- und Kleinschreibung unterschieden wird.
+        /// </summary>
+        /// <param name="strContent">Content of the string.</param>
+        /// <param name="strOtherString">The string other string.</param>
+        /// <returns></returns>
+        static public bool EqualsIgnoreCase(this string strContent, string strOtherString)
+        {
+            return strContent.Equals(strOtherString, StringComparison.CurrentCultureIgnoreCase);
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// The sd HTML entinities
         /// </summary>
         private static readonly SortedDictionary<string, string> sdHtmlEntinities = new SortedDictionary<string, string>

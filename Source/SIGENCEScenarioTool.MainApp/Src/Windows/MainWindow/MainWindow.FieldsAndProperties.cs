@@ -530,7 +530,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             get
             {
-                return lcv.Count;
+                return lcv != null ? lcv.Count : 0;
             }
         }
 
@@ -682,7 +682,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The quick commands
         /// </summary>
-        public ObservableCollection<string> QuickCommands  { get; set; }
+        public ObservableCollection<string> QuickCommands { get; set; }
 
-} // end public partial class MainWindow
+    } // end public partial class MainWindow
 }

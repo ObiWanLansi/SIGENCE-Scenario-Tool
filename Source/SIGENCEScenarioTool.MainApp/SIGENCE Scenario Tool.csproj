@@ -198,6 +198,8 @@
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
     <Compile Include="Src\Commands\RegisteredCommands.cs" />
+    <Compile Include="Src\Database\SQLite\SQLiteHelper.cs" />
+    <Compile Include="Src\Database\SQLite\SQLiteMemoryDatabase.cs" />
     <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
     <Compile Include="Src\Datatypes\Standard\StringList.cs" />
     <Compile Include="Src\Dialogs\ChartingDialog.xaml.cs">
@@ -227,10 +229,13 @@
     </Compile>
     <Compile Include="Src\Extensions\ColorExtension.cs" />
     <Compile Include="Src\Extensions\DateTimeExtension.cs" />
+    <Compile Include="Src\Extensions\DbCommandExtension.cs" />
     <Compile Include="Src\Extensions\DictionaryExtension.cs" />
     <Compile Include="Src\Extensions\FileInfoExtension.cs" />
+    <Compile Include="Src\Extensions\IDbConnectionExtension.cs" />
     <Compile Include="Src\Extensions\ListExtension.cs" />
     <Compile Include="Src\Extensions\RandomExtension.cs" />
+    <Compile Include="Src\Extensions\SQLiteExtension.cs" />
     <Compile Include="Src\Extensions\StringBuilderExtension.cs" />
     <Compile Include="Src\Extensions\StringExtension.cs" />
     <Compile Include="Src\Extensions\TimeSpanExtension.cs" />
