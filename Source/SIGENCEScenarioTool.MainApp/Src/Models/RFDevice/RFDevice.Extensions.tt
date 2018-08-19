@@ -1,0 +1,58 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ output extension=".cs" #>
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+    string strFileName = this.Host.ResolvePath("RFDevice.xml");
+#>
+
+/**
+ * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
+ */
+
+using System;
+
+
+<#
+    XDocument xd = XDocument.Load(strFileName );
+
+    XElement eRoot = xd.Root;
+
+    XAttribute xClassComment = eRoot.Attribute("Comment");
+    string strClassCommment = xClassComment != null ? xClassComment.Value : "";
+
+    strClassCommment = !string.IsNullOrEmpty(strClassCommment) ? strClassCommment : string.Format("Generated Model Class from {0}.",new FileInfo(strFileName).Name);
+#>
+
+namespace SIGENCEScenarioTool.Models
+{
+    ///<summary>
+    /// <#=strClassCommment#>
+    ///</summary>
+    public static class <#=eRoot.Name#>Extensions
+    {
+        <#
+        foreach(XElement e in eRoot.Elements())
+        {
+            string strPropertyType = e.Attribute("Type").Value;
+            string strPropertyName = e.Attribute("Name").Value;
+#>
+
+        static public <#=eRoot.Name#> With<#=strPropertyName#>(this <#=eRoot.Name#> instance,<#=strPropertyType#> value)
+        {
+            instance.<#=strPropertyName#> = value;
+            return instance;
+        }
+
+<#
+        }
+#>
+    } // end public static class  <#=eRoot.Name#>Extensions
+}

@@ -265,6 +265,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Src\Models\GeoLocalizationResult\GeoLocalizationResultList.cs" />
+    <Compile Include="Src\Models\RFDevice\RFDevice.Extensions.cs">
+      <DependentUpon>RFDevice.Extensions.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Src\Models\RFDevice\RFDevice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -477,6 +482,10 @@
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
+    </Content>
+    <Content Include="Src\Models\RFDevice\RFDevice.Extensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RFDevice.Extensions.cs</LastGenOutput>
     </Content>
     <Content Include="Src\Models\RFDevice\RFDevice.Properties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -75,7 +75,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             get { return strLastOutput; }
             set
             {
-                this.strLastOutput = value;
+                strLastOutput = value;
                 FirePropertyChanged();
             }
         }
@@ -97,7 +97,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             get { return strExecutionTime; }
             set
             {
-                this.strExecutionTime = value;
+                strExecutionTime = value;
                 FirePropertyChanged();
             }
         }
@@ -115,7 +115,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
 
             InitializeComponent();
 
-            this.DataContext = this;
+            DataContext = this;
 
             InitTextEditor();
         }
@@ -128,37 +128,37 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// </summary>
         private void InitTextEditor()
         {
-            this.tecTextEditorControl.HideMouseCursor = true;
-            this.tecTextEditorControl.LineViewerStyle = LineViewerStyle.FullRow;
-            this.tecTextEditorControl.ConvertTabsToSpaces = true;
+            tecTextEditorControl.HideMouseCursor = true;
+            tecTextEditorControl.LineViewerStyle = LineViewerStyle.FullRow;
+            tecTextEditorControl.ConvertTabsToSpaces = true;
 
-            this.tecTextEditorControl.ShowSpaces = true;
-            this.tecTextEditorControl.ShowTabs = true;
+            tecTextEditorControl.ShowSpaces = true;
+            tecTextEditorControl.ShowTabs = true;
             //this.tecTextEditorControl.ShowSpaces = false;
             //this.tecTextEditorControl.ShowTabs = false;
 
-            this.tecTextEditorControl.ShowEOLMarkers = false;
-            this.tecTextEditorControl.ShowLineNumbers = true;
+            tecTextEditorControl.ShowEOLMarkers = false;
+            tecTextEditorControl.ShowLineNumbers = true;
 
-            this.tecTextEditorControl.IsIconBarVisible = true;
-            this.tecTextEditorControl.AllowCaretBeyondEOL = true;
-            this.tecTextEditorControl.AllowDrop = true;
-            this.tecTextEditorControl.VRulerRow = 80;
+            tecTextEditorControl.IsIconBarVisible = true;
+            tecTextEditorControl.AllowCaretBeyondEOL = true;
+            tecTextEditorControl.AllowDrop = true;
+            tecTextEditorControl.VRulerRow = 80;
 
 
             HighlightingManager.Manager.AddSyntaxModeFileProvider(new PythonSyntaxModeFileProvider());
-            this.tecTextEditorControl.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
+            tecTextEditorControl.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
 
             //this.tecTextEditorControl.Document.FoldingManager.FoldingStrategy = sfs;
             //this.tecTextEditorControl.Document.FoldingManager.UpdateFoldings(null, null);
 
             string strFilename = string.Format("{0}\\HelloWorld.py", Tool.StartupPath);
-            this.tecTextEditorControl.Text = File.ReadAllText(strFilename);
+            tecTextEditorControl.Text = File.ReadAllText(strFilename);
 
-            this.tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.PositionChanged += Caret_PositionChanged;
+            tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.PositionChanged += Caret_PositionChanged;
             //this.tecTextEditorControl.ActiveTextAreaControl.Document.DocumentChanged += Document_DocumentChanged;
 
-            this.Title += string.Format(" [{0}]", strFilename);
+            Title += string.Format(" [{0}]", strFilename);
         }
 
 
@@ -220,7 +220,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
                 MB.Error(ex);
             }
 
-            this.tecTextEditorControl.Focus();
+            tecTextEditorControl.Focus();
 
             Cursor = Cursors.Arrow;
         }
@@ -249,7 +249,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.tecTextEditorControl.Focus();
+            tecTextEditorControl.Focus();
         }
 
 

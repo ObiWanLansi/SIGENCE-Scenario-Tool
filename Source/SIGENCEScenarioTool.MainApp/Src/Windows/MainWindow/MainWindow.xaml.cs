@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.IO;
 using System.Windows;
 using System.Windows.Data;
-using SIGENCEScenarioTool.Models;
+
 using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
@@ -60,9 +59,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            this.RFDevicesCollection = new ObservableCollection<RFDeviceViewModel>();
-            this.QuickCommands = new ObservableCollection<string>();
-            this.DataContext = this;
+            RFDevicesCollection = new ObservableCollection<RFDeviceViewModel>();
+            QuickCommands = new ObservableCollection<string>();
+            DataContext = this;
 
             //-----------------------------------------------------------------
 
@@ -81,14 +80,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             try
             {
                 string strFilename = string.Format("{0}\\tuebingen-regbez-latest.osm.sqlite", Tool.StartupPath);
-                this.GeoNodeCollection = GeoNodeCollection.GetCollection(strFilename);
+                GeoNodeCollection = GeoNodeCollection.GetCollection(strFilename);
             }
             catch (Exception ex)
             {
                 MB.Error(ex);
             }
 
-            lcv = CollectionViewSource.GetDefaultView(this.GeoNodeCollection) as ListCollectionView;
+            lcv = CollectionViewSource.GetDefaultView(GeoNodeCollection) as ListCollectionView;
 
             lcv.IsLiveFiltering = true;
             lcv.Filter = IsWantedGeoNode;
@@ -99,9 +98,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             CreateRandomizedRFDevices(10);
 
             //SaveFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
-            
+
             //RFDeviceList devicelist = GetDeviceList();
-            
+
             //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.sqlite"));
             //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.csv"));
             //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.json"));
@@ -117,6 +116,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             QuickCommands.Add("exit");
 
             //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+
+            //RFDevice device = new RFDevice().WithId(0).WithName("Hello").WithStartTime(5);
+            //MB.Information(device.ToXml().ToString());
 #endif
         }
 
