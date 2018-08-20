@@ -201,6 +201,7 @@
     <Compile Include="Src\Database\SQLite\SQLiteHelper.cs" />
     <Compile Include="Src\Database\SQLite\SQLiteMemoryDatabase.cs" />
     <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
+    <Compile Include="Src\Datatypes\Observable\ObservableStringCollection.cs" />
     <Compile Include="Src\Datatypes\Standard\StringList.cs" />
     <Compile Include="Src\Dialogs\ChartingDialog.xaml.cs">
       <DependentUpon>ChartingDialog.xaml</DependentUpon>
@@ -277,6 +278,7 @@
     </Compile>
     <Compile Include="Src\Models\RFDevice\RFDevice.Ext.cs" />
     <Compile Include="Src\Models\RFDevice\RFDeviceList.cs" />
+    <Compile Include="Src\Models\Validation\ValidationResult.cs" />
     <Compile Include="Src\Tools\Blink.cs" />
     <Compile Include="Src\Tools\PythonSyntaxModeFileProvider.cs" />
     <Compile Include="Src\Tools\Speech.cs" />
@@ -347,6 +349,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Src\ViewModels\ValidationResultViewModel.cs" />
     <Compile Include="Src\Windows\HelpWindow\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>

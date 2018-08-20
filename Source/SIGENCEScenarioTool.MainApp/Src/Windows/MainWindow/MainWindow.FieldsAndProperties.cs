@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -10,8 +9,10 @@ using GMap.NET.WindowsPresentation;
 
 using Microsoft.Win32;
 
+using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
+using SIGENCEScenarioTool.Models.Validation;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -95,7 +96,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The RFDevice collection.
         /// </value>
-        public ObservableCollection<RFDeviceViewModel> RFDevicesCollection { get; set; }
+        public RFDeviceViewModelList RFDevicesCollection { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -682,7 +683,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The quick commands
         /// </summary>
-        public ObservableCollection<string> QuickCommands { get; set; }
+        public ObservableStringCollection QuickCommands { get; set; }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ValidationResultViewModelList ValidationResult { get; set; }
 
     } // end public partial class MainWindow
 }

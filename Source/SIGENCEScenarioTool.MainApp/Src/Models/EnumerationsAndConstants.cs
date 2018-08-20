@@ -103,4 +103,19 @@ namespace SIGENCEScenarioTool.Models
         SimulationResult
 
     } // end public enum DeviceSource 
+
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum Servity : byte
+    {
+        Low,
+        
+        Normal,
+        
+        High
+
+    } // end public enum Servity
 }

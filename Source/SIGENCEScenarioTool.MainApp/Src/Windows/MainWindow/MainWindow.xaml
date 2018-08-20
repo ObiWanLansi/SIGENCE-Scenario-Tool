@@ -201,6 +201,7 @@
                                 <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
                             </ContextMenu>
                         </DataGrid.ContextMenu>
+
                         <DataGrid.CommandBindings>
 
                             <CommandBinding Command="{x:Static ApplicationCommands.Copy}" CanExecute="DataGrid_CommandBinding_CanExecute_Copy" Executed="DataGrid_Execute_Copy" />
@@ -481,7 +482,7 @@
                         <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
                     </ToolBar>
 
-                    <DataGrid Grid.Row=" 1" ItemsSource="{Binding GeoNodeCollection}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding GeoNodeCollection}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}">
@@ -522,6 +523,59 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Value" Binding="{Binding Value}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource SATELLITE}" />
+                        <Label Content="Validation" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ToolBar Grid.Row="0">
+                        <Button Content="{StaticResource SATELLITE}" ToolTip="Validate Scenario" Click="Button_ExecuteValidateScenario_Click" />
+                        <Separator />
+                        <Button Content="{StaticResource GARBAGE}" ToolTip="Clear Validation" Click="Button_ClearScenarioValidation_Click" />
+                    </ToolBar>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding ValidationResult}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" >
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Timestamp" Binding="{Binding Timestamp}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Servity" Binding="{Binding Servity}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Message" Binding="{Binding Message}">
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Left" />

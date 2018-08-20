@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
 
+using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
+using SIGENCEScenarioTool.Models.Validation;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -59,8 +60,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            RFDevicesCollection = new ObservableCollection<RFDeviceViewModel>();
-            QuickCommands = new ObservableCollection<string>();
+            RFDevicesCollection = new RFDeviceViewModelList();
+            QuickCommands = new ObservableStringCollection();
+            ValidationResult = new ValidationResultViewModelList();
+            
             DataContext = this;
 
             //-----------------------------------------------------------------
@@ -95,7 +98,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices(10);
+            //CreateRandomizedRFDevices(10);
 
             //SaveFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 

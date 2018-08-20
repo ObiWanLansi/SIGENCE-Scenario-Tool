@@ -29,9 +29,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_ChartingTest_Click( object sender , RoutedEventArgs e )
         {
-            ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
+            ChartingDialog cw = new ChartingDialog( new RFDeviceList( from device in RFDevicesCollection select device.RFDevice ) );
             cw.ShowDialog();
             cw = null;
 
@@ -48,16 +48,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                if (ReceivedData == true)
+                if( ReceivedData == true )
                 {
-                    Blink.SetColor(Colors.Green);
+                    Blink.SetColor( Colors.Green );
                 }
                 else
                 {
                     Blink.Off();
                 }
             }
-            catch (Exception)
+            catch( Exception )
             {
             }
         }
@@ -74,11 +74,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StartUDPServer()
         {
-            if (tUDPServer == null)
+            if( tUDPServer == null )
             {
-                tUDPServer = new Thread(UDPReceiveData)
+                tUDPServer = new Thread( UDPReceiveData )
                 {
-                    IsBackground = true,
+                    IsBackground = true ,
                     Name = "UDPServerThread"
                 };
                 tUDPServer.Start();
@@ -91,7 +91,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StopUDPServer()
         {
-            if (tUDPServer != null)
+            if( tUDPServer != null )
             {
                 tUDPServer.Abort();
 
@@ -109,36 +109,36 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                client = new UdpClient(settings.UDPPortReceiving);
+                client = new UdpClient( settings.UDPPortReceiving );
                 {
-                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPortReceiving);
+                    IPEndPoint ep = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPortReceiving );
 
                     // A neverending story ...
-                    while (true)
+                    while( true )
                     {
                         // Obwohl der Thread Aborted wird beendet er das Receiver nicht und somit auch nicht Thread :-(
                         // Erst wenn er was empfangen hat merkt er das er Aborted ist und die Expcetion tritt auf ...
-                        byte[] baReceived = client.Receive(ref ep);
+                        byte [] baReceived = client.Receive( ref ep );
 
-                        string strReceived = Encoding.Default.GetString(baReceived);
+                        string strReceived = Encoding.Default.GetString( baReceived );
 
                         DebugOutput += strReceived + "\n\n";
                         ReceivedData = true;
                     }
                 }
             }
-            catch (ThreadAbortException)
+            catch( ThreadAbortException )
             {
                 // Do nothing ...
                 //Debug.WriteLine(ex.Message);
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Warning(ex.Message);
+                MB.Warning( ex.Message );
             }
             finally
             {
-                if (client != null)
+                if( client != null )
                 {
                     try
                     {
@@ -146,7 +146,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         client.Dispose();
                         client = null;
                     }
-                    catch (Exception)
+                    catch( Exception )
                     {
 
                     }
@@ -162,33 +162,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CreateScenarioReport()
         {
-            if (string.IsNullOrEmpty(CurrentFile))
+            if( string.IsNullOrEmpty( CurrentFile ) )
             {
-                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
+                MB.Information( "The scenario has not been saved yet.\nSave it first and then try again." );
                 return;
             }
 
             Cursor = Cursors.Wait;
 
-            FileInfo fiCurrentFile = new FileInfo(CurrentFile);
+            FileInfo fiCurrentFile = new FileInfo( CurrentFile );
 
-            string strOutputFilename = string.Format("{0}{1}.html", Path.GetTempPath(), fiCurrentFile.GetFilenameWithoutExtension());
+            string strOutputFilename = string.Format( "{0}{1}.html" , Path.GetTempPath() , fiCurrentFile.GetFilenameWithoutExtension() );
 
-            StringBuilder sb = new StringBuilder(8192);
+            StringBuilder sb = new StringBuilder( 8192 );
 
-            sb.Append("<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>");
-
-            //-----------------------------------------------------------------
-
-            sb.AppendFormat("<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension());
-
-            sb.Append("<hr />");
+            sb.Append( "<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>" );
 
             //-----------------------------------------------------------------
 
-            if (string.IsNullOrEmpty(ScenarioDescription) == false)
+            sb.AppendFormat( "<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>" , fiCurrentFile.GetFilenameWithoutExtension() );
+
+            sb.Append( "<hr />" );
+
+            //-----------------------------------------------------------------
+
+            if( string.IsNullOrEmpty( ScenarioDescription ) == false )
             {
-                sb.Append(ScenarioDescription);
+                sb.Append( ScenarioDescription );
             }
 
             //-----------------------------------------------------------------
@@ -205,11 +205,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            sb.Append("</body></html> ");
+            sb.Append( "</body></html> " );
 
-            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.Default);
+            File.WriteAllText( strOutputFilename , sb.ToString() , Encoding.Default );
 
-            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
+            Tools.Windows.OpenWithDefaultApplication( strOutputFilename );
 
             Cursor = Cursors.Arrow;
         }

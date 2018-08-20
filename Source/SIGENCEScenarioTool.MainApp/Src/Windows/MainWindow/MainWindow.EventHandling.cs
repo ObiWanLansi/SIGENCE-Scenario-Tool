@@ -478,6 +478,32 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             e.Handled = true;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_ExecuteValidateScenario_Click( object sender , RoutedEventArgs e )
+        {
+            ExecuteValidateScenario();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_ClearScenarioValidation_Click( object sender , RoutedEventArgs e )
+        {
+            ClearScenarioValidation();
+
+            e.Handled = true;
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
