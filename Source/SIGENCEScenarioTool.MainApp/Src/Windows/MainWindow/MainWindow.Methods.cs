@@ -178,7 +178,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             mcMapControl.Position = new PointLatLng( settings.InitialLatitude , settings.InitialLongitude );
             mcMapControl.Zoom = settings.InitialZoom;
-            mcMapControl.MapProvider = GetProviderFromString( settings.InitialMap );
+            
+            var mapprovider = GetProviderFromString( settings.InitialMap );
+            mcMapControl.MapProvider = mapprovider;
+            cbMapProvider.SelectedItem = mapprovider;
         }
 
 
@@ -248,13 +251,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 if( selectedDevice.Id == 0 )
                 {
-                    MB.Information( "There Reference Transmitter Is Not Good For DALF!" );
+                    MB.Information( "The Reference Transmitter Is Not Good For DALF!" );
                     return false;
                 }
 
                 if( selectedDevice.DeviceSource == DeviceSource.Automatic )
                 {
-                    MB.Information( "There DeviceSource Is Automatic. That's Not Good For Copying The Device!" );
+                    MB.Information( "The DeviceSource Of The Current Device Is Automatic. That's Not Good For Copying The Device!" );
                     return false;
                 }
 
