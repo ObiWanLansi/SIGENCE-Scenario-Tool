@@ -14,50 +14,81 @@ using SIGENCEScenarioTool.Models.Validation;
 
 namespace SIGENCEScenarioTool.ViewModels
 {
+    /// <summary>
+    /// 
+    /// </summary>
     sealed public class ValidationResultViewModel
     {
+        /// <summary>
+        /// Gets the result.
+        /// </summary>
+        /// <value>
+        /// The result.
+        /// </value>
         public ValidationResult Result { get; private set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// Gets the timestamp.
+        /// </summary>
+        /// <value>
+        /// The timestamp.
+        /// </value>
         public String Timestamp
         {
-            get
-            {
-                return Result.Timestamp.Fmt_DD_MM_YYYY_HH_MM_SS();
-            }
+            get { return Result.Timestamp.Fmt_DD_MM_YYYY_HH_MM_SS(); }
         }
 
+
+        /// <summary>
+        /// Gets the servity.
+        /// </summary>
+        /// <value>
+        /// The servity.
+        /// </value>
         public Servity Servity
         {
-            get
-            {
-                return Result.Servity;
-            }
+            get { return Result.Servity; }
         }
 
+
+        /// <summary>
+        /// Gets the message.
+        /// </summary>
+        /// <value>
+        /// The message.
+        /// </value>
         public String Message
         {
-            get
-            {
-                return Result.Message;
-            }
+            get { return Result.Message; }
         }
 
+
+        /// <summary>
+        /// Gets the source.
+        /// </summary>
+        /// <value>
+        /// The source.
+        /// </value>
         public String Source
         {
-            get
-            {
-                return Result.Source != null ? Result.Source.ToString() : "Unknown Source.";
-            }
+            get { return Result.Source != null ? Result.Source.ToString() : "Unknown Source."; }
         }
 
 
+        /// <summary>
+        /// Gets the servity foreground.
+        /// </summary>
+        /// <value>
+        /// The servity foreground.
+        /// </value>
         public Brush ServityForeground
         {
             get
             {
-                switch( Servity )
+                switch (Servity)
                 {
                     case Servity.Information:
                         return Brushes.Blue;
@@ -77,50 +108,81 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// Gets the servity font weight.
+        /// </summary>
+        /// <value>
+        /// The servity font weight.
+        /// </value>
         public FontWeight ServityFontWeight
         {
-            get
-            {
-                return Servity == Servity.Fatal ? FontWeights.Bold : FontWeights.Normal;
-            }
+            get { return Servity == Servity.Fatal ? FontWeights.Bold : FontWeights.Normal; }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public ValidationResultViewModel( ValidationResult vr )
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationResultViewModel"/> class.
+        /// </summary>
+        /// <param name="vr">The vr.</param>
+        public ValidationResultViewModel(ValidationResult vr)
         {
-            this.Result = vr;
+            Result = vr;
         }
 
     } // end sealed public class ValidationResultViewModel
 
 
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{SIGENCEScenarioTool.ViewModels.ValidationResultViewModel}" />
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     sealed public class ValidationResultViewModelList : ObservableCollection<ValidationResultViewModel>, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        /// <summary>
+        /// Fires the property changed.
+        /// </summary>
+        /// <param name="strPropertyName">Name of the string property.</param>
+        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
-            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Gets the empty.
+        /// </summary>
+        /// <value>
+        /// The empty.
+        /// </value>
         static public ValidationResultViewModelList Empty
         {
-            get
-            {
-                return new ValidationResultViewModelList();
-            }
+            get { return new ValidationResultViewModelList(); }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// The i information
+        /// </summary>
         private int iInformation = 0;
+        /// <summary>
+        /// Gets or sets the information.
+        /// </summary>
+        /// <value>
+        /// The information.
+        /// </value>
         public int Information
         {
             get { return iInformation; }
@@ -131,7 +193,16 @@ namespace SIGENCEScenarioTool.ViewModels
             }
         }
 
+        /// <summary>
+        /// The i warning
+        /// </summary>
         private int iWarning = 0;
+        /// <summary>
+        /// Gets or sets the warning.
+        /// </summary>
+        /// <value>
+        /// The warning.
+        /// </value>
         public int Warning
         {
             get { return iWarning; }
@@ -143,7 +214,16 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// The i error
+        /// </summary>
         private int iError = 0;
+        /// <summary>
+        /// Gets or sets the error.
+        /// </summary>
+        /// <value>
+        /// The error.
+        /// </value>
         public int Error
         {
             get { return iError; }
@@ -155,7 +235,16 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// The i fatal
+        /// </summary>
         private int iFatal = 0;
+        /// <summary>
+        /// Gets or sets the fatal.
+        /// </summary>
+        /// <value>
+        /// The fatal.
+        /// </value>
         public int Fatal
         {
             get { return iFatal; }
@@ -167,7 +256,13 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// The i count
+        /// </summary>
         private int iCount = 0;
+        /// <summary>
+        /// Ruft die Anzahl der Elemente ab, die tatsächlich in der <see cref="T:System.Collections.ObjectModel.Collection`1" /> enthalten sind.
+        /// </summary>
         new public int Count
         {
             get { return iCount; }
@@ -179,7 +274,16 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// The string last run
+        /// </summary>
         private string strLastRun = "Never";
+        /// <summary>
+        /// Gets or sets the last run.
+        /// </summary>
+        /// <value>
+        /// The last run.
+        /// </value>
         public string LastRun
         {
             get { return strLastRun; }
@@ -193,18 +297,29 @@ namespace SIGENCEScenarioTool.ViewModels
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public void Add( ValidationResult vr )
+        /// <summary>
+        /// Adds the specified vr.
+        /// </summary>
+        /// <param name="vr">The vr.</param>
+        public void Add(ValidationResult vr)
         {
-            Add( new ValidationResultViewModel( vr ) );
+            Add(new ValidationResultViewModel(vr));
         }
 
 
-        public void Add( ValidationResultList vrl )
+        /// <summary>
+        /// Adds the specified VRL.
+        /// </summary>
+        /// <param name="vrl">The VRL.</param>
+        public void Add(ValidationResultList vrl)
         {
-            vrl.ForEach( vr => Add( vr ) );
+            vrl.ForEach(vr => Add(vr));
         }
 
 
+        /// <summary>
+        /// Entfernt alle Elemente aus der <see cref="T:System.Collections.ObjectModel.Collection`1" />.
+        /// </summary>
         new public void Clear()
         {
             base.Clear();
@@ -219,17 +334,19 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        /// <summary>
+        /// Estimates the counts.
+        /// </summary>
         public void EstimateCounts()
         {
             Count = base.Count;
-            Information = this.Count( vrvm => vrvm.Servity == Servity.Information );
-            Warning = this.Count( vrvm => vrvm.Servity == Servity.Warning );
-            Error = this.Count( vrvm => vrvm.Servity == Servity.Error );
-            Fatal = this.Count( vrvm => vrvm.Servity == Servity.Fatal );
+            Information = this.Count(vrvm => vrvm.Servity == Servity.Information);
+            Warning = this.Count(vrvm => vrvm.Servity == Servity.Warning);
+            Error = this.Count(vrvm => vrvm.Servity == Servity.Error);
+            Fatal = this.Count(vrvm => vrvm.Servity == Servity.Fatal);
 
             LastRun = DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS();
         }
 
     } // end sealed public class ValidationResultViewModelList
-
 }

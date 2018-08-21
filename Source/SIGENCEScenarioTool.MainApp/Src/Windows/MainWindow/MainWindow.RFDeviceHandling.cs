@@ -99,7 +99,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    return;
             //}
 
-            AddRFDevice( new RFDeviceViewModel(this.mcMapControl, d));
+            AddRFDevice(new RFDeviceViewModel(mcMapControl, d));
         }
 
 

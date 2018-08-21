@@ -40,8 +40,8 @@ namespace SIGENCEScenarioTool.Dialogs
         {
             InitializeComponent();
 
-            this.RFDevice = rfdefvice;
-            this.DataContext = rfdefvice;
+            RFDevice = rfdefvice;
+            DataContext = rfdefvice;
 
             CreateQRCode();
         }

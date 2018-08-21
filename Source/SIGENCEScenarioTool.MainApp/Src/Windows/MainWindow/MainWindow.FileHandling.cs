@@ -79,7 +79,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             Cursor = Cursors.Arrow;
         }
 
-
+        
         /// <summary>
         /// Opens the file.
         /// </summary>

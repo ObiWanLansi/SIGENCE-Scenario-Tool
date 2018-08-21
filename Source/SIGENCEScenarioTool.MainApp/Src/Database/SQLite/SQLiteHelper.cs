@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Reflection;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Shapes;
 
 using SIGENCEScenarioTool.Extensions;
 

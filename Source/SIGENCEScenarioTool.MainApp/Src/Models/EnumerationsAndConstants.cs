@@ -111,12 +111,24 @@ namespace SIGENCEScenarioTool.Models
     /// </summary>
     public enum Servity : byte
     {
+        /// <summary>
+        /// The information
+        /// </summary>
         Information,
 
+        /// <summary>
+        /// The warning
+        /// </summary>
         Warning,
 
+        /// <summary>
+        /// The error
+        /// </summary>
         Error,
-        
+
+        /// <summary>
+        /// The fatal
+        /// </summary>
         Fatal
 
     } // end public enum Servity

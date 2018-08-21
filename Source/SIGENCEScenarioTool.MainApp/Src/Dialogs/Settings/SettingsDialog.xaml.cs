@@ -59,6 +59,9 @@ namespace SIGENCEScenarioTool.Dialogs
 
 
 
+        /// <summary>
+        /// The uc selected panel
+        /// </summary>
         private UserControl ucSelectedPanel = new GeneralSettings();
         /// <summary>
         /// Gets or sets the selected panel.
@@ -74,7 +77,7 @@ namespace SIGENCEScenarioTool.Dialogs
             }
             set
             {
-                this.ucSelectedPanel = value;
+                ucSelectedPanel = value;
                 FirePropertyChanged();
             }
         }
@@ -91,7 +94,7 @@ namespace SIGENCEScenarioTool.Dialogs
 
             InitPanels();
 
-            this.DataContext = this;
+            DataContext = this;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -137,7 +140,7 @@ namespace SIGENCEScenarioTool.Dialogs
         {
             DialogResult = false;
             Properties.Settings.Default.Reload();
-            
+
             e.Handled = true;
         }
 

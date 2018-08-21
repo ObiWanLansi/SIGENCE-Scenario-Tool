@@ -203,10 +203,10 @@
     <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
     <Compile Include="Src\Datatypes\Observable\ObservableStringCollection.cs" />
     <Compile Include="Src\Datatypes\Standard\StringList.cs" />
-    <Compile Include="Src\Dialogs\ChartingDialog.xaml.cs">
+    <Compile Include="Src\Dialogs\Charting\ChartingDialog.xaml.cs">
       <DependentUpon>ChartingDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Src\Dialogs\QRCodeDialog.xaml.cs">
+    <Compile Include="Src\Dialogs\QRCode\QRCodeDialog.xaml.cs">
       <DependentUpon>QRCodeDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Src\Dialogs\Scripting\ScriptingDialog.xaml.cs">
@@ -285,11 +285,11 @@
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
     <Compile Include="Src\ViewModels\RFDeviceViewModel.cs" />
-    <Page Include="Src\Dialogs\ChartingDialog.xaml">
+    <Page Include="Src\Dialogs\Charting\ChartingDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Src\Dialogs\QRCodeDialog.xaml">
+    <Page Include="Src\Dialogs\QRCode\QRCodeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

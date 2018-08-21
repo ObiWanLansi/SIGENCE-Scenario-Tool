@@ -3,7 +3,9 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
+
 using GMap.NET;
+
 using SIGENCEScenarioTool.Extensions;
 
 
@@ -25,7 +27,9 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         Place,
         Power,
         Shop,
-        Vending    } // end public enum GeoTag
+        Vending
+
+    } // end public enum GeoTag
 
 
 
@@ -233,5 +237,4 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         }
 
     } // sealed public class GeoNodeCollection 
-
 }

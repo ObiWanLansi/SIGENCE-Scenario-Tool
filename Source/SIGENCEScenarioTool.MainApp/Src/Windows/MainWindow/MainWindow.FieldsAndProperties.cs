@@ -144,7 +144,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bCreatingRFDevice; }
             set
             {
-                this.bCreatingRFDevice = value;
+                bCreatingRFDevice = value;
 
                 SetMapToCreatingRFDeviceMode();
 
@@ -171,7 +171,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bReceivedData; }
             set
             {
-                this.bReceivedData = value;
+                bReceivedData = value;
 
                 SetBlink1();
 
@@ -196,7 +196,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bIsReceiveDataUDP; }
             set
             {
-                this.bIsReceiveDataUDP = value;
+                bIsReceiveDataUDP = value;
 
                 if (bIsReceiveDataUDP == true)
                 {
@@ -230,7 +230,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bScenarioDescriptionEditMode; }
             set
             {
-                this.bScenarioDescriptionEditMode = value;
+                bScenarioDescriptionEditMode = value;
 
                 SwitchScenarioEditMode();
 
@@ -399,8 +399,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return strCurrentFile; }
             set
             {
-                this.strCurrentFile = value;
+                strCurrentFile = value;
                 SetTitle();
+
                 FirePropertyChanged();
             }
         }
@@ -425,6 +426,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 bSyncMapAndGrid = value;
+
                 FirePropertyChanged();
             }
         }
@@ -444,6 +446,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 settings.UDPHost = value;
+
                 FirePropertyChanged();
             }
         }
@@ -461,6 +464,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 settings.UDPPortSending = value;
+
                 FirePropertyChanged();
             }
         }
@@ -478,6 +482,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 settings.UDPDelay = value;
+
                 FirePropertyChanged();
             }
         }
@@ -500,6 +505,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 strDebugOutput = value;
+
                 FirePropertyChanged();
             }
         }
@@ -553,7 +559,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return gtGeoTagFilter; }
             set
             {
-                this.gtGeoTagFilter = value;
+                gtGeoTagFilter = value;
 
                 lcv.Refresh();
 
@@ -579,7 +585,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bUseGeoTagFilter; }
             set
             {
-                this.bUseGeoTagFilter = value;
+                bUseGeoTagFilter = value;
 
                 lcv.Refresh();
 
@@ -605,7 +611,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return strNameFilter; }
             set
             {
-                this.strNameFilter = value;
+                strNameFilter = value;
 
                 lcv.Refresh();
 
@@ -630,7 +636,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bUseNameFilter; }
             set
             {
-                this.bUseNameFilter = value;
+                bUseNameFilter = value;
 
                 lcv.Refresh();
 
@@ -671,7 +677,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     StopDALF();
                 }
 
-                this.bStartedDALF = value;
+                bStartedDALF = value;
                 FirePropertyChanged();
             }
         }
@@ -686,8 +692,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// Gets or sets the validation result.
         /// </summary>
+        /// <value>
+        /// The validation result.
+        /// </value>
         public ValidationResultViewModelList ValidationResult { get; set; }
 
     } // end public partial class MainWindow
