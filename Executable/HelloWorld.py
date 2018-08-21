@@ -32,6 +32,20 @@ for device in devices:
         device.StartTime = iStartTime 
         iStartTime += 20
 
+
+import math
+import time
+for angle in range(0, 360,10):
+    sin = math.sin(angle)
+    print ("{0}: {1}".format(angle,sin))
+#    for device in devices:
+#        device.Latitude = device.Latitude + sin
+    time.sleep(1)
+        
+    
+devices.Clear()
+
+
 ###################################################################################################
 
 import clr 
