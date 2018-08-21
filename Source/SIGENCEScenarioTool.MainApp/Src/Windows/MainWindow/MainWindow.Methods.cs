@@ -35,6 +35,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             CurrentFile = null;
 
             RFDevicesCollection.Clear();
+            ValidationResult.Clear();
+
             mcMapControl.Markers.Clear();
             ScenarioDescription = "";
 
@@ -434,20 +436,39 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             ValidationResult.Clear();
 
+            //-----------------------------------------------------------------
+
             if( RFDevicesCollection.Count == 0 )
             {
-                ValidationResult.Add( new ValidationResult( Servity.High , "No Devices Are Configured." , RFDevicesCollection ) );
+                ValidationResult.Add( new ValidationResult( Servity.Information , "No Devices Are Configured." , "Scenario" ) );
+                ValidationResult.EstimateCounts();
+
+                // When we have no devices, we have nothing to validate ...
+                return;
             }
 
-            // Validierung über das gesamte Scenario, danach erst die einzelnen RFDevices
+            // Validation over the entire scenario, then only the individual RFDevices
             if( RFDevicesCollection.FirstOrDefault( d => d.Id == 0 ) == null )
             {
-                ValidationResult.Add( new ValidationResult( Servity.High , "No Reference Device Is Avaible." , RFDevicesCollection ) );
+                ValidationResult.Add( new ValidationResult( Servity.Warning , "No Reference Device Is Avaible." , "Scenario" ) );
             }
+
+            //TODO: Add Some Other Rules Here ...
+
+            //-----------------------------------------------------------------
 
             foreach( RFDevice device in RFDevicesCollection )
             {
-                //var result = device.IsValid();
+                ValidationResult.Add( device.Validate() );
+            }
+
+            //-----------------------------------------------------------------
+
+            ValidationResult.EstimateCounts();
+
+            if( tiValidation.IsSelected == false )
+            {
+                tiValidation.IsSelected = true;
             }
         }
 
@@ -462,6 +483,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// The randomizer.
         /// </summary>
@@ -472,11 +494,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the randomized RFDevices.
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
-        private void CreateRandomizedRFDevices( int iMaxCount )
+        private void CreateRandomizedRFDevices( int iMaxCount , bool bEnsureRefDevice = false )
         {
             Cursor = Cursors.Wait;
 
-            foreach( var device in CreateRandomizedRFDeviceList( iMaxCount , mcMapControl.Position ) )
+            foreach( var device in CreateRandomizedRFDeviceList( iMaxCount , mcMapControl.Position , bEnsureRefDevice ) )
             {
                 AddRFDevice( device );
             }
@@ -491,7 +513,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="iMaxCount">The i maximum count.</param>
         /// <param name="pllCenter">The PLL center.</param>
         /// <returns></returns>
-        static public RFDeviceList CreateRandomizedRFDeviceList( int iMaxCount , PointLatLng pllCenter )
+        static public RFDeviceList CreateRandomizedRFDeviceList( int iMaxCount , PointLatLng pllCenter , bool bEnsureRefDevice = false )
         {
             RFDeviceList list = new RFDeviceList( iMaxCount );
 
@@ -523,16 +545,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 } );
             }
 
-            RFDevice refdev = list.FirstOrDefault( d => d.Id == 0 );
-
-            if( refdev == null )
+            if( bEnsureRefDevice == true )
             {
-                refdev = list.First();
-            }
+                RFDevice refdev = list.FirstOrDefault( d => d.Id == 0 );
 
-            refdev.Id = 0;
-            refdev.Latitude = pllCenter.Lat;
-            refdev.Longitude = pllCenter.Lng;
+                if( refdev == null )
+                {
+                    refdev = list.First();
+                }
+
+                refdev.Id = 0;
+                refdev.Latitude = pllCenter.Lat;
+                refdev.Longitude = pllCenter.Lng;
+            }
 
             return list;
         }

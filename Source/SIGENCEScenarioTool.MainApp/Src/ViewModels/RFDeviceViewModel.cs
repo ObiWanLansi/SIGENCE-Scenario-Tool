@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Windows;
+using System.Windows.Media;
 
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
+using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Validation;
 
 
 
@@ -42,6 +45,13 @@ namespace SIGENCEScenarioTool.ViewModels
         private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
             PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+
+            // If A Property Changed, It Is Useful To ReValidate ...
+
+            if( strPropertyName != "ValidationBackground" && strPropertyName != "ValidationHint" )
+            {
+                ExecValidation();
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -522,6 +532,81 @@ namespace SIGENCEScenarioTool.ViewModels
 
                 return DeviceType.Unknown;
             }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        private string strValidationHint = "";
+
+        public string ValidationHint
+        {
+            get { return strValidationHint; }
+            set
+            {
+                this.strValidationHint = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        private Brush bValidationBackground = Brushes.Transparent;
+
+        public Brush ValidationBackground
+        {
+            get { return bValidationBackground; }
+            set
+            {
+                this.bValidationBackground = value;
+                FirePropertyChanged();
+            }
+        }
+
+
+        private void ExecValidation()
+        {
+            var validation = RFDevice.Validate();
+
+            //-----------------------------------------------------------------
+
+            StringBuilder sb = new StringBuilder( 512 );
+
+            foreach( var v in from val in validation orderby val.Servity descending select val )
+            {
+                sb.AppendLine( "[{0}]: {1}" , v.Servity , v.Message );
+            }
+
+            ValidationHint = sb.ToString().Trim();
+
+            //-----------------------------------------------------------------
+
+            if( validation.Exists( vr => vr.Servity == Servity.Fatal ) )
+            {
+                ValidationBackground = Brushes.DarkRed;
+                return;
+            }
+
+            if( validation.Exists( vr => vr.Servity == Servity.Error ) )
+            {
+                ValidationBackground = Brushes.Red;
+                return;
+            }
+
+            if( validation.Exists( vr => vr.Servity == Servity.Warning ) )
+            {
+                ValidationBackground = Brushes.Orange;
+                return;
+            }
+
+            if( validation.Exists( vr => vr.Servity == Servity.Information ) )
+            {
+                ValidationBackground = Brushes.Blue;
+                return;
+            }
+
+            ValidationHint = "Congratulations, Everything Is Fine.";
+            ValidationBackground = Brushes.Transparent;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

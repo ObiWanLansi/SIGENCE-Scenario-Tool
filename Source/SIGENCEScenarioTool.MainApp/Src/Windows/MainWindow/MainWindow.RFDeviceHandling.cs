@@ -91,13 +91,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void AddRFDevice(RFDevice d)
         {
-            if (d.IsValid() == false)
-            {
-                MB.Warning("Device Is Not Valid And Will Not Be Added To The Scenario!");
-                return;
-            }
+            // Adding Everything, The User Can Still Correct This Later...
 
-            AddRFDevice(new RFDeviceViewModel(this.mcMapControl, d));
+            //if (d.IsValid() == false)
+            //{
+            //    MB.Warning("Device Is Not Valid And Will Not Be Added To The Scenario!");
+            //    return;
+            //}
+
+            AddRFDevice( new RFDeviceViewModel(this.mcMapControl, d));
         }
 
 

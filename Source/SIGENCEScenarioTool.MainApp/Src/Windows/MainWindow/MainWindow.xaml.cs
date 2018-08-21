@@ -4,8 +4,8 @@ using System.Windows;
 using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Observable;
+using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
-using SIGENCEScenarioTool.Models.Validation;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -27,34 +27,34 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if (settings.IsUpgraded == false)
+            if( settings.IsUpgraded == false )
             {
                 settings.Upgrade();
                 settings.IsUpgraded = true;
                 settings.Save();
             }
 
-            if (string.IsNullOrEmpty(settings.UDPHost))
+            if( string.IsNullOrEmpty( settings.UDPHost ) )
             {
-                MB.Warning("The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application.");
+                MB.Warning( "The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application." );
                 settings.UDPHost = "127.0.0.1";
             }
 
-            if (settings.UDPPortSending < 1025 || settings.UDPPortSending > 65535)
+            if( settings.UDPPortSending < 1025 || settings.UDPPortSending > 65535 )
             {
-                MB.Warning("The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application.");
+                MB.Warning( "The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application." );
                 settings.UDPPortSending = 4242;
             }
 
-            if (settings.UDPDelay < 0 || settings.UDPDelay > 10000)
+            if( settings.UDPDelay < 0 || settings.UDPDelay > 10000 )
             {
-                MB.Warning("The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application.");
+                MB.Warning( "The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application." );
                 settings.UDPDelay = 500;
             }
 
-            if (settings.MapZoomLevel < 1 || settings.MapZoomLevel > 20)
+            if( settings.MapZoomLevel < 1 || settings.MapZoomLevel > 20 )
             {
-                MB.Warning("The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application.");
+                MB.Warning( "The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application." );
                 settings.MapZoomLevel = 18;
             }
 
@@ -63,7 +63,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             RFDevicesCollection = new RFDeviceViewModelList();
             QuickCommands = new ObservableStringCollection();
             ValidationResult = new ValidationResultViewModelList();
-            
+
             DataContext = this;
 
             //-----------------------------------------------------------------
@@ -82,15 +82,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                string strFilename = string.Format("{0}\\tuebingen-regbez-latest.osm.sqlite", Tool.StartupPath);
-                GeoNodeCollection = GeoNodeCollection.GetCollection(strFilename);
+                string strFilename = string.Format( "{0}\\tuebingen-regbez-latest.osm.sqlite" , Tool.StartupPath );
+                GeoNodeCollection = GeoNodeCollection.GetCollection( strFilename );
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Error(ex);
+                MB.Error( ex );
             }
 
-            lcv = CollectionViewSource.GetDefaultView(GeoNodeCollection) as ListCollectionView;
+            lcv = CollectionViewSource.GetDefaultView( GeoNodeCollection ) as ListCollectionView;
 
             lcv.IsLiveFiltering = true;
             lcv.Filter = IsWantedGeoNode;
@@ -98,7 +98,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            //CreateRandomizedRFDevices(10);
+            CreateRandomizedRFDevices( 100 , false );
 
             //SaveFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 
@@ -110,13 +110,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.xml"));
             //ExportRFDevices(devicelist, new FileInfo(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.xlsx"));
 
-            QuickCommands.Add("new");
-            QuickCommands.Add("rand 20");
-            QuickCommands.Add("export csv");
-            QuickCommands.Add("set rxtxtype unknown");
-            QuickCommands.Add("set name nasenbär");
-            QuickCommands.Add("save");
-            QuickCommands.Add("exit");
+            AddRFDevice( new RFDevice { PrimaryKey = Guid.Empty , Id = -1 , Latitude = 1974 , Longitude = 1974 , StartTime = -1974 } );
+
+            QuickCommands.Add( "new" );
+            QuickCommands.Add( "rand 20" );
+            QuickCommands.Add( "export csv" );
+            QuickCommands.Add( "set rxtxtype unknown" );
+            QuickCommands.Add( "set name nasenbär" );
+            QuickCommands.Add( "save" );
+            QuickCommands.Add( "exit" );
 
             //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 

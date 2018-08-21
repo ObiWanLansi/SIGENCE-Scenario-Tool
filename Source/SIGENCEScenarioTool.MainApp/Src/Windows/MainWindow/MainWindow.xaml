@@ -169,7 +169,8 @@
             <Separator />
         </ToolBar>
 
-        <TabControl Grid.Row="2">
+        <TabControl x:Name="tcTabControl" Grid.Row="2" SelectionChanged="TabControl_SelectionChanged">
+
             <TabItem x:Name="tiMap">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -218,6 +219,18 @@
                                     </Style>
                                 </DataGridCheckBoxColumn.ElementStyle>
                             </DataGridCheckBoxColumn>
+
+                            <DataGridTextColumn Header="" Width="10" IsReadOnly="True">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                        <Setter Property="Margin" Value="5" />
+                                        <Setter Property="Text" Value=" " />
+                                        <Setter Property="Background" Value="{Binding ValidationBackground}" />
+                                        <Setter Property="ToolTip" Value="{Binding ValidationHint}" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                                 <DataGridTextColumn.ElementStyle>
@@ -408,7 +421,7 @@
             </TabItem>
 
 
-            <TabItem>
+            <TabItem x:Name="tiDescription">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource TEXT_RICH_COLORED}" />
@@ -461,7 +474,7 @@
             </TabItem>
 
 
-            <TabItem>
+            <TabItem x:Name="tiGeoNodes">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource EARTH}" />
@@ -537,7 +550,7 @@
             </TabItem>
 
 
-            <TabItem>
+            <TabItem x:Name="tiValidation">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource SATELLITE}" />
@@ -548,13 +561,15 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <ToolBar Grid.Row="0">
                         <Button Content="{StaticResource SATELLITE}" ToolTip="Validate Scenario" Click="Button_ExecuteValidateScenario_Click" />
                         <Separator />
                         <Button Content="{StaticResource GARBAGE}" ToolTip="Clear Validation" Click="Button_ClearScenarioValidation_Click" />
                     </ToolBar>
-                    <DataGrid Grid.Row="1" ItemsSource="{Binding ValidationResult}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" >
+
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding ValidationResult}" IsReadOnly="True" SelectionMode="Extended" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridScenarioValidation_MouseDoubleClick">
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Timestamp" Binding="{Binding Timestamp}">
@@ -571,6 +586,8 @@
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Left" />
                                         <Setter Property="Margin" Value="5" />
+                                        <Setter Property="Foreground" Value="{Binding ServityForeground}" />
+                                        <Setter Property="FontWeight" Value="{Binding ServityFontWeight}" />
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
@@ -584,13 +601,77 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
+                            <DataGridTextColumn Header="Source" Binding="{Binding Source}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
                         </DataGrid.Columns>
                     </DataGrid>
+
+                    <StatusBar Grid.Row="3">
+
+                        <StatusBarItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Last Run:" />
+                                <Label Content="{Binding ValidationResult.LastRun}" />
+                            </StackPanel>
+                        </StatusBarItem>
+
+                        <Separator />
+
+                        <StatusBarItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Count:" />
+                                <Label Content="{Binding ValidationResult.Count}" />
+                            </StackPanel>
+                        </StatusBarItem>
+
+                        <Separator />
+
+                        <StatusBarItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Fatal:" />
+                                <Label Content="{Binding ValidationResult.Fatal}" />
+                            </StackPanel>
+                        </StatusBarItem>
+
+                        <Separator />
+                        <StatusBarItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Error:" />
+                                <Label Content="{Binding ValidationResult.Error}" />
+                            </StackPanel>
+                        </StatusBarItem>
+
+                        <Separator />
+                        <StatusBarItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Warning:" />
+                                <Label Content="{Binding ValidationResult.Warning}" />
+                            </StackPanel>
+                        </StatusBarItem>
+
+                        <Separator />
+                        <StatusBarItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Information:" />
+                                <Label Content="{Binding ValidationResult.Information}" />
+                            </StackPanel>
+                        </StatusBarItem>
+
+                        <Separator />
+                        <StatusBarItem />
+                    </StatusBar>
                 </Grid>
             </TabItem>
 
 
-            <TabItem>
+            <TabItem x:Name="tiMessages">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource NUT_AND_BOLT}" />

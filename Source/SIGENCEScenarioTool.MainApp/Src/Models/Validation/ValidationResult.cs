@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 
 
 namespace SIGENCEScenarioTool.Models.Validation
 {
-    /// <summary>
-    /// 
-    /// </summary>
     sealed public class ValidationResult
     {
-
         public Guid Id { get; private set; }
 
         public DateTime Timestamp { get; private set; }
@@ -20,6 +16,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         public String Message { get; private set; }
 
         public Object Source { get; private set; }
+
 
         public ValidationResult( Servity sServity , String strMessage , Object oSource )
         {
@@ -34,21 +31,21 @@ namespace SIGENCEScenarioTool.Models.Validation
 
 
 
-    ///// <summary>
-    ///// 
-    ///// </summary>
-    //sealed public class ValidationResultList : ObservableCollection<ValidationResult>
-    //{
-    //    /// <summary>
-    //    /// 
-    //    /// </summary>
-    //    static public ValidationResultList Empty
-    //    {
-    //        get
-    //        {
-    //            return new ValidationResultList();
-    //        }
-    //    }
+    sealed public class ValidationResultList : List<ValidationResult>
+    {
+        static public ValidationResultList Empty
+        {
+            get
+            {
+                return new ValidationResultList();
+            }
+        }
 
-    //} // end sealed public class ValidationResultList
+
+        public void Add( Servity sServity , String strMessage , Object oSource )
+        {
+            Add( new ValidationResult( sServity , strMessage , oSource ) );
+        }
+
+    } // end sealed public class ValidationResultList
 }
