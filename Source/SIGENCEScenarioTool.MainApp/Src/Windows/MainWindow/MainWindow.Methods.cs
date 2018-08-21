@@ -384,12 +384,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     /*
                      * save [fullname] ansonsten aktuelle datei
-                     * set "property" "value" --> Aber nur die markierten
-                     * export csv|xml|json
-                     * load [fullname]
-                     * sendudp
+                     * set "property" "value" --> --> Marked Rows
+                     * export csv|xml|json  --> Marked Rows
+                     * load [fullname] wenn no fullname then FileOpenDialog
+                     * remove, delete --> Marked Rows
+                     * sendudp --> Marked Rows
                      * startreceive
-                     * goto lat/lon
+                     * stopreceive
+                     * goto lat/lon 
+                     * zoom level
                      */
 
                     default:

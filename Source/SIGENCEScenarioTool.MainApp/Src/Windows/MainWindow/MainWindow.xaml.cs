@@ -117,6 +117,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             QuickCommands.Add( "export csv" );
             QuickCommands.Add( "set rxtxtype unknown" );
             QuickCommands.Add( "set name nasenbär" );
+            QuickCommands.Add( "remove" );
             QuickCommands.Add( "save" );
             QuickCommands.Add( "exit" );
 
