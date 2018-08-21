@@ -12,7 +12,6 @@ using Microsoft.Win32;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
-using SIGENCEScenarioTool.Models.Validation;
 using SIGENCEScenarioTool.ViewModels;
 
 

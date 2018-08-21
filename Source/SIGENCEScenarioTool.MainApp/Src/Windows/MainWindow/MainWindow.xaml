@@ -169,6 +169,7 @@
             <Separator />
         </ToolBar>
 
+
         <TabControl x:Name="tcTabControl" Grid.Row="2" SelectionChanged="TabControl_SelectionChanged">
 
             <TabItem x:Name="tiMap">
@@ -693,20 +694,15 @@
             </TabItem>
 
         </TabControl>
-        <!--
-        <Grid Grid.Row="3" Margin="5">
 
-            <TabControl Grid.Column="1">
-                <TabItem Header="Scenario Description">
-                </TabItem>
-            </TabControl>
-
-            <GridSplitter Grid.Column="1" Background="Blue" Width="3" ShowsPreview="True" HorizontalAlignment="Left" VerticalAlignment="Stretch" />
-        </Grid>
-                -->
-        <!--<GridSplitter Grid.Row="3" Background="Blue" Height="3" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />-->
 
         <StatusBar Grid.Row="3">
+
+            <StatusBarItem>
+                <Slider Width="120" Minimum="2" Maximum="22" Value="{Binding Zoom}" TickFrequency="1" IsSnapToTickEnabled="True" TickPlacement="Both"/>
+            </StatusBarItem>
+
+            <Separator />
 
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
