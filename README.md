@@ -12,7 +12,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 ## Quick Links
 
 - [Issues](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/)
-- [Kanban Board](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1/)
+- [Kanban Board](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1?fullscreen=true)
 - [Wiki](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki/)
 
 
