@@ -16,6 +16,11 @@ using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.Markers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="GMap.NET.WindowsPresentation.GMapRoute" />
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     public class PathMarker : GMapRoute, INotifyPropertyChanged
     {
         /// <summary>
@@ -71,9 +76,9 @@ namespace SIGENCEScenarioTool.Markers
 
 
         /// <summary>
-        /// 
+        /// The h type
         /// </summary>
-        private Highway hType;
+        private readonly Highway hType;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -116,11 +121,12 @@ namespace SIGENCEScenarioTool.Markers
 
 
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="PathMarker"/> class.
         /// </summary>
-        /// <param name="mcMapControl"></param>
-        /// <param name="points"></param>
-        /// <param name="strToolTip"></param>
+        /// <param name="mcMapControl">The mc map control.</param>
+        /// <param name="points">The points.</param>
+        /// <param name="h">The h.</param>
+        /// <param name="strToolTip">The string tool tip.</param>
         public PathMarker( GMapControl mcMapControl , IEnumerable<PointLatLng> points , Highway h , string strToolTip ) :
             base( points )
         {
@@ -165,7 +171,7 @@ namespace SIGENCEScenarioTool.Markers
 
 
         /// <summary>
-        /// 
+        /// Synchronizes the type of the highway.
         /// </summary>
         private void SyncHighwayType()
         {

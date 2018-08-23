@@ -142,10 +142,12 @@ namespace SIGENCEScenarioTool.ViewModels
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     sealed public class ValidationResultViewModelList : ObservableCollection<ValidationResultViewModel>, INotifyPropertyChanged
     {
+#pragma warning disable CS0114 // Member hides inherited member; missing override keyword
         /// <summary>
         /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS0114 // Member hides inherited member; missing override keyword
 
         /// <summary>
         /// Fires the property changed.

@@ -392,6 +392,10 @@
       <Link>tuebingen-regbez-latest.osm.sqlite</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\..\Databases\GeoDb\streets_bw.sqlite">
+      <Link>streets_bw.sqlite</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="..\..\Documentation\Generated\CheatSheet.xps">
       <Link>CheatSheet.xps</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
