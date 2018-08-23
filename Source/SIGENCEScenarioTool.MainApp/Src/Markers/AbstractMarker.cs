@@ -215,6 +215,7 @@ namespace SIGENCEScenarioTool.Markers
                 Child = label
             };
 
+            Cursor = Cursors.Hand;
             this.MouseMove += new MouseEventHandler(MarkerControl_MouseMove);
             this.MouseLeftButtonUp += new MouseButtonEventHandler(MarkerControl_MouseLeftButtonUp);
             this.MouseLeftButtonDown += new MouseButtonEventHandler(MarkerControl_MouseLeftButtonDown);

@@ -233,6 +233,7 @@
     <Compile Include="Src\Extensions\DbCommandExtension.cs" />
     <Compile Include="Src\Extensions\DictionaryExtension.cs" />
     <Compile Include="Src\Extensions\FileInfoExtension.cs" />
+    <Compile Include="Src\Extensions\IDataReaderExtension.cs" />
     <Compile Include="Src\Extensions\IDbConnectionExtension.cs" />
     <Compile Include="Src\Extensions\ListExtension.cs" />
     <Compile Include="Src\Extensions\RandomExtension.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="Src\Markers\RectangleMarker.xaml.cs">
       <DependentUpon>RectangleMarker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Tools\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\Database\GeoDb\GeoNode.cs" />
     <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.cs">
@@ -280,6 +282,7 @@
     <Compile Include="Src\Models\RFDevice\RFDeviceList.cs" />
     <Compile Include="Src\Models\Validation\ValidationResult.cs" />
     <Compile Include="Src\Tools\Blink.cs" />
+    <Compile Include="Src\Tools\GeoHelper.cs" />
     <Compile Include="Src\Tools\PythonSyntaxModeFileProvider.cs" />
     <Compile Include="Src\Tools\Speech.cs" />
     <Compile Include="Src\Tools\Tools.cs" />

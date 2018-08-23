@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.Database.GeoDb;
+using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -198,7 +199,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 bIsReceiveDataUDP = value;
 
-                if (bIsReceiveDataUDP == true)
+                if( bIsReceiveDataUDP == true )
                 {
                     StartUDPServer();
                 }
@@ -337,7 +338,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng(value, mcMapControl.Position.Lng);
+                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -355,7 +356,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng(mcMapControl.Position.Lat, value);
+                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
 
                 FirePropertyChanged();
             }
@@ -564,7 +565,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -590,7 +591,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -616,7 +617,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -641,7 +642,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -664,10 +665,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return bStartedDALF; }
             set
             {
-                if (value == true)
+                if( value == true )
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if (StartDALF() == false)
+                    if( StartDALF() == false )
                     {
                         return;
                     }

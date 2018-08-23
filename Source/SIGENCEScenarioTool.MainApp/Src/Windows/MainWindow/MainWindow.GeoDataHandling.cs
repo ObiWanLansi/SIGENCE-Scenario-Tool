@@ -18,12 +18,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Jumps to geo node.
         /// </summary>
         /// <param name="gn">The gn.</param>
-        private void JumpToGeoNode(GeoNode gn)
+        private void JumpToGeoNode( GeoNode gn )
         {
             mcMapControl.Position = gn.Position;
             mcMapControl.Zoom = settings.MapZoomLevel;
 
-            CreateGeoNodeMarker(gn);
+            CreateGeoNodeMarker( gn );
 
             tiMap.IsSelected = true;
         }
@@ -33,16 +33,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Creates the geo node marker.
         /// </summary>
         /// <param name="gn">The gn.</param>
-        private void CreateGeoNodeMarker(GeoNode gn)
+        private void CreateGeoNodeMarker( GeoNode gn )
         {
-            GMapMarker Marker = new GMapMarker(gn.Position)
+            GMapMarker Marker = new GMapMarker( gn.Position )
             {
-                Offset = new Point(-10, -10),
-                ZIndex = int.MaxValue,
-                Shape = new GeoNodeMarker(gn)
+                Offset = new Point( -10 , -10 ) ,
+                ZIndex = int.MaxValue ,
+                Shape = new GeoNodeMarker( gn ) ,
+                Tag = gn
             };
 
-            mcMapControl.Markers.Add(Marker);
+            mcMapControl.Markers.Add( Marker );
         }
 
     } // end public partial class MainWindow
