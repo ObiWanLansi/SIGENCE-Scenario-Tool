@@ -253,6 +253,7 @@
     <Compile Include="Src\Markers\GeoNodeMarker.xaml.cs">
       <DependentUpon>GeoNodeMarker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Markers\PathMarker.cs" />
     <Compile Include="Src\Markers\TriangleMarker.xaml.cs">
       <DependentUpon>TriangleMarker.xaml</DependentUpon>
     </Compile>
