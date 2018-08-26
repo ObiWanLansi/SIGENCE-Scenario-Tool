@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -314,7 +313,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Loads the streets.
         /// </summary>
-        [Conditional("DEBUG")]
+        //[Conditional("DEBUG")]
         private void LoadStreets()
         {
             RemoveStreets();
@@ -323,7 +322,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             RectLatLng bb = mcMapControl.ViewArea;
 
-            //TODO: Check if the area is not to big ... what is big ?
+            //TODO: Check if the area is not to big ... But what is big ?
 
             SQLiteConnectionStringBuilder csbDatabase = new SQLiteConnectionStringBuilder
             {
