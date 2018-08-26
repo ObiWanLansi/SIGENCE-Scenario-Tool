@@ -446,7 +446,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             if (RFDevicesCollection.Count == 0)
             {
-                ValidationResult.Add(new ValidationResult(Servity.Information, "No Devices Are Configured.", "Scenario"));
+                ValidationResult.Add(new ValidationResult(Servity.Information, "No Devices Are Configured.", "Scenario", "RFDevicesCollection", null));
                 ValidationResult.EstimateCounts();
 
                 // When we have no devices, we have nothing to validate ...
@@ -456,7 +456,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             // Validation over the entire scenario, then only the individual RFDevices
             if (RFDevicesCollection.FirstOrDefault(d => d.Id == 0) == null)
             {
-                ValidationResult.Add(new ValidationResult(Servity.Warning, "No Reference Device Is Avaible.", "Scenario"));
+                ValidationResult.Add(new ValidationResult(Servity.Warning, "No Reference Device Is Avaible.", "Scenario", "RFDevicesCollection", null));
             }
 
             //TODO: Add Some Other Rules Here ...

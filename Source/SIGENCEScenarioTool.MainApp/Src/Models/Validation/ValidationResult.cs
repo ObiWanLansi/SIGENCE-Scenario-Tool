@@ -50,20 +50,40 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// </value>
         public Object Source { get; private set; }
 
+        /// <summary>
+        /// Gets the property.
+        /// </summary>
+        /// <value>
+        /// The property.
+        /// </value>
+        public String PropertyName { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ValidationResult"/> class.
+        /// Gets the value.
         /// </summary>
-        /// <param name="sServity">The s servity.</param>
-        /// <param name="strMessage">The string message.</param>
-        /// <param name="oSource">The o source.</param>
-        public ValidationResult(Servity sServity, String strMessage, Object oSource)
+        /// <value>
+        /// The value.
+        /// </value>
+        public Object Value { get; private set; }
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationResult" /> class.
+        /// </summary>
+        /// <param name="sServity">The servity.</param>
+        /// <param name="strMessage">The message.</param>
+        /// <param name="oSource">The source.</param>
+        /// <param name="strPropertyName">Name of the property.</param>
+        /// <param name="oValue">The value.</param>
+        public ValidationResult(Servity sServity, String strMessage, Object oSource, string strPropertyName, Object oValue)
         {
             Id = Guid.NewGuid();
             Timestamp = DateTime.Now;
             Servity = sServity;
             Message = strMessage;
             Source = oSource;
+            PropertyName = strPropertyName;
+            Value = oValue;
         }
 
     } // end sealed public class ValidationResult
@@ -97,9 +117,11 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <param name="sServity">The s servity.</param>
         /// <param name="strMessage">The string message.</param>
         /// <param name="oSource">The o source.</param>
-        public void Add(Servity sServity, String strMessage, Object oSource)
+        /// <param name="strPropertyName">Name of the string property.</param>
+        /// <param name="oValue">The o value.</param>
+        public void Add(Servity sServity, String strMessage, Object oSource, string strPropertyName, Object oValue)
         {
-            Add(new ValidationResult(sServity, strMessage, oSource));
+            Add(new ValidationResult(sServity, strMessage, oSource, strPropertyName, oValue));
         }
 
     } // end sealed public class ValidationResultList

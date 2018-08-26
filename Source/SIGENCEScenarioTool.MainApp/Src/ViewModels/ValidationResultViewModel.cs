@@ -79,6 +79,27 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
+        /// Gets the property.
+        /// </summary>
+        /// <value>
+        /// The property.
+        /// </value>
+        public String PropertyName
+        {
+            get { return Result.PropertyName; }
+        }
+
+
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
+        public Object Value { get { return Result.Value; } }
+
+
+        /// <summary>
         /// Gets the servity foreground.
         /// </summary>
         /// <value>
