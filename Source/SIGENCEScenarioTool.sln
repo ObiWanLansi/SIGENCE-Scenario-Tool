@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Mocku
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.TestSuite", "SIGENCEScenarioTool.TestSuite\SIGENCE Scenario Tool.TestSuite.csproj", "{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Library", "SIGENCE Scenario Tool.Library\SIGENCE Scenario Tool.Library.csproj", "{E61FB891-442D-4285-9AB8-E7F3BFF66370}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Library", "SIGENCEScenarioTool.Library\SIGENCE Scenario Tool.Library.csproj", "{E61FB891-442D-4285-9AB8-E7F3BFF66370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,6 +11,9 @@
         <delete dir=".\SIGENCEScenarioTool.MainApp\bin" />
         <delete dir=".\SIGENCEScenarioTool.MainApp\obj" />
 
+        <delete dir=".\SIGENCEScenarioTool.Library\bin" />
+        <delete dir=".\SIGENCEScenarioTool.Library\obj" />
+
         <delete dir=".\SIGENCEScenarioTool.Mockup\bin" />
         <delete dir=".\SIGENCEScenarioTool.Mockup\obj" />
 
