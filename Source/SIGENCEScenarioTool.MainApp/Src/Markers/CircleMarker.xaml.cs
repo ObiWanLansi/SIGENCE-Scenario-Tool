@@ -15,11 +15,11 @@ namespace SIGENCEScenarioTool.Markers
     public partial class CircleMarker
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TriangleMarker" /> class.
+        /// Initializes a new instance of the <see cref="CircleMarker"/> class.
         /// </summary>
         /// <param name="mcMapControl">The mc map control.</param>
         /// <param name="mmMarker">The mm marker.</param>
-        /// <param name="strToolTip">The tooltip.</param>
+        /// <param name="strToolTip">The string tool tip.</param>
         public CircleMarker(GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip) :
             base(mcMapControl, mmMarker, strToolTip)
         {

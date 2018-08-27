@@ -39,9 +39,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_ChartingTest_Click( object sender , RoutedEventArgs e )
+        private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
         {
-            ChartingDialog cw = new ChartingDialog( new RFDeviceList( from device in RFDevicesCollection select device.RFDevice ) );
+            ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
             cw.ShowDialog();
             cw = null;
 
@@ -58,16 +58,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                if( ReceivedData == true )
+                if (ReceivedData == true)
                 {
-                    Blink.SetColor( Colors.Green );
+                    Blink.SetColor(Colors.Green);
                 }
                 else
                 {
                     Blink.Off();
                 }
             }
-            catch( Exception )
+            catch (Exception)
             {
             }
         }
@@ -84,11 +84,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StartUDPServer()
         {
-            if( tUDPServer == null )
+            if (tUDPServer == null)
             {
-                tUDPServer = new Thread( UDPReceiveData )
+                tUDPServer = new Thread(UDPReceiveData)
                 {
-                    IsBackground = true ,
+                    IsBackground = true,
                     Name = "UDPServerThread"
                 };
                 tUDPServer.Start();
@@ -101,7 +101,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StopUDPServer()
         {
-            if( tUDPServer != null )
+            if (tUDPServer != null)
             {
                 tUDPServer.Abort();
 
@@ -119,36 +119,36 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                client = new UdpClient( settings.UDPPortReceiving );
+                client = new UdpClient(settings.UDPPortReceiving);
                 {
-                    IPEndPoint ep = new IPEndPoint( IPAddress.Parse( settings.UDPHost ) , settings.UDPPortReceiving );
+                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPortReceiving);
 
                     // A neverending story ...
-                    while( true )
+                    while (true)
                     {
                         // Obwohl der Thread Aborted wird beendet er das Receiver nicht und somit auch nicht Thread :-(
                         // Erst wenn er was empfangen hat merkt er das er Aborted ist und die Expcetion tritt auf ...
-                        byte [] baReceived = client.Receive( ref ep );
+                        byte[] baReceived = client.Receive(ref ep);
 
-                        string strReceived = Encoding.Default.GetString( baReceived );
+                        string strReceived = Encoding.Default.GetString(baReceived);
 
                         DebugOutput += strReceived + "\n\n";
                         ReceivedData = true;
                     }
                 }
             }
-            catch( ThreadAbortException )
+            catch (ThreadAbortException)
             {
                 // Do nothing ...
                 //Debug.WriteLine(ex.Message);
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Warning( ex.Message );
+                MB.Warning(ex.Message);
             }
             finally
             {
-                if( client != null )
+                if (client != null)
                 {
                     try
                     {
@@ -156,7 +156,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         client.Dispose();
                         client = null;
                     }
-                    catch( Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -172,33 +172,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CreateScenarioReport()
         {
-            if( string.IsNullOrEmpty( CurrentFile ) )
+            if (string.IsNullOrEmpty(CurrentFile))
             {
-                MB.Information( "The scenario has not been saved yet.\nSave it first and then try again." );
+                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
                 return;
             }
 
             Cursor = Cursors.Wait;
 
-            FileInfo fiCurrentFile = new FileInfo( CurrentFile );
+            FileInfo fiCurrentFile = new FileInfo(CurrentFile);
 
-            string strOutputFilename = string.Format( "{0}{1}.html" , Path.GetTempPath() , fiCurrentFile.GetFilenameWithoutExtension() );
+            string strOutputFilename = string.Format("{0}{1}.html", Path.GetTempPath(), fiCurrentFile.GetFilenameWithoutExtension());
 
-            StringBuilder sb = new StringBuilder( 8192 );
+            StringBuilder sb = new StringBuilder(8192);
 
-            sb.Append( "<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>" );
-
-            //-----------------------------------------------------------------
-
-            sb.AppendFormat( "<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>" , fiCurrentFile.GetFilenameWithoutExtension() );
-
-            sb.Append( "<hr />" );
+            sb.Append("<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>");
 
             //-----------------------------------------------------------------
 
-            if( string.IsNullOrEmpty( ScenarioDescription ) == false )
+            sb.AppendFormat("<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension());
+
+            sb.Append("<hr />");
+
+            //-----------------------------------------------------------------
+
+            if (string.IsNullOrEmpty(ScenarioDescription) == false)
             {
-                sb.Append( ScenarioDescription );
+                sb.Append(ScenarioDescription);
             }
 
             //-----------------------------------------------------------------
@@ -215,11 +215,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            sb.Append( "</body></html> " );
+            sb.Append("</body></html> ");
 
-            File.WriteAllText( strOutputFilename , sb.ToString() , Encoding.Default );
+            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.Default);
 
-            Tools.Windows.OpenWithDefaultApplication( strOutputFilename );
+            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
 
             Cursor = Cursors.Arrow;
         }
@@ -295,18 +295,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             List<GMapMarker> lDelete = new List<GMapMarker>();
 
-            foreach( GMapMarker mm in mcMapControl.Markers )
+            foreach (GMapMarker mm in mcMapControl.Markers)
             {
-                if( mm.Tag != null && mm.Tag is Highway )
+                if (mm.Tag != null && mm.Tag is Highway)
                 {
-                    lDelete.Add( mm );
+                    lDelete.Add(mm);
                 }
             }
 
-            Dispatcher.Invoke( () =>
-            {
-                lDelete.ForEach( mm => mcMapControl.Markers.Remove( mm ) );
-            } );
+            Dispatcher.Invoke(() =>
+           {
+               lDelete.ForEach(mm => mcMapControl.Markers.Remove(mm));
+           });
         }
 
 
@@ -318,7 +318,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             RemoveStreets();
 
-            string strFilename = string.Format( "{0}\\streets_bw.sqlite" , Tool.StartupPath );
+            string strFilename = string.Format("{0}\\streets_bw.sqlite", Tool.StartupPath);
 
             RectLatLng bb = mcMapControl.ViewArea;
 
@@ -329,7 +329,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 DataSource = strFilename
             };
 
-            using( SQLiteConnection dbConnection = new SQLiteConnection( csbDatabase.ConnectionString ) )
+            using (SQLiteConnection dbConnection = new SQLiteConnection(csbDatabase.ConnectionString))
             {
                 dbConnection.Open();
 
@@ -342,24 +342,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStart = DateTime.Now;
 
-                    using( SQLiteCommand dbSelectCommand = new SQLiteCommand( strSelectStatement , dbConnection ) )
+                    using (SQLiteCommand dbSelectCommand = new SQLiteCommand(strSelectStatement, dbConnection))
                     {
-                        using( SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader() )
+                        using (SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader())
                         {
-                            while( dbResult.Read() )
+                            while (dbResult.Read())
                             {
-                                Highway type = ( Highway ) Enum.Parse( typeof( Highway ) , dbResult.GetString( 0 ) , true );
-                                string strRef = dbResult.GetStringOrNull( 1 );
-                                string strName = dbResult.GetStringOrNull( 2 );
-                                NTS.LineString way = ( NTS.LineString ) dbResult.GetGeometryFromWKB( 3 );
+                                Highway type = (Highway)Enum.Parse(typeof(Highway), dbResult.GetString(0), true);
+                                string strRef = dbResult.GetStringOrNull(1);
+                                string strName = dbResult.GetStringOrNull(2);
+                                NTS.LineString way = (NTS.LineString)dbResult.GetGeometryFromWKB(3);
 
-                                if( bb.Contains( GeoHelper.CoordinateToPointLatLng( way.Coordinate ) ) )
+                                if (bb.Contains(GeoHelper.CoordinateToPointLatLng(way.Coordinate)))
                                 {
-                                    List<PointLatLng> list = new List<PointLatLng>( way.Count );
+                                    List<PointLatLng> list = new List<PointLatLng>(way.Count);
 
-                                    foreach( var pos in way.Coordinates )
+                                    foreach (var pos in way.Coordinates)
                                     {
-                                        list.Add( GeoHelper.CoordinateToPointLatLng( pos ) );
+                                        list.Add(GeoHelper.CoordinateToPointLatLng(pos));
                                     }
 
                                     //GMapRoute mrWay = new GMapRoute( list )
@@ -367,57 +367,57 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                     //    Tag = type
                                     //};
 
-                                    Dispatcher.Invoke( () =>
-                                    {
-                                        PathMarker mrWay = new PathMarker( mcMapControl , list , type , string.Format( "{0}{1}" , strName.IsNotEmpty() ? strName : "Unknown" , strRef.IsNotEmpty() ? string.Format( " ({0})" , strRef ) : "" ) )
-                                        {
-                                            Tag = type
-                                        };
+                                    Dispatcher.Invoke(() =>
+                                   {
+                                       PathMarker mrWay = new PathMarker(mcMapControl, list, type, string.Format("{0}{1}", strName.IsNotEmpty() ? strName : "Unknown", strRef.IsNotEmpty() ? string.Format(" ({0})", strRef) : ""))
+                                       {
+                                           Tag = type
+                                       };
 
-                                        mcMapControl.Markers.Add( mrWay );
+                                       mcMapControl.Markers.Add(mrWay);
 
-                                        //if( mrWay.Shape is System.Windows.Shapes.Path )
-                                        //{
-                                        //    System.Windows.Shapes.Path path = mrWay.Shape as System.Windows.Shapes.Path;
+                                       //if( mrWay.Shape is System.Windows.Shapes.Path )
+                                       //{
+                                       //    System.Windows.Shapes.Path path = mrWay.Shape as System.Windows.Shapes.Path;
 
-                                        //    //path.IsHitTestVisible = true;
-                                        //    //path.ToolTip = string.Format( "{0}{1}" , strName , strRef.IsNotEmpty() ? string.Format( " ({0})" , strRef ) : "" );
-                                        //    //path.Cursor = Cursors.Cross;
-                                        //    //path.ForceCursor = true;
+                                       //    //path.IsHitTestVisible = true;
+                                       //    //path.ToolTip = string.Format( "{0}{1}" , strName , strRef.IsNotEmpty() ? string.Format( " ({0})" , strRef ) : "" );
+                                       //    //path.Cursor = Cursors.Cross;
+                                       //    //path.ForceCursor = true;
 
-                                        //    //path.Width = 10;
-                                        //    //path.Height = 10;
-                                        //    //path.Fill = new SolidColorBrush( Colors.Yellow );
+                                       //    //path.Width = 10;
+                                       //    //path.Height = 10;
+                                       //    //path.Fill = new SolidColorBrush( Colors.Yellow );
 
-                                        //    //switch( type )
-                                        //    //{
-                                        //    //    case Highway.Motorway:
-                                        //    //    case Highway.Motorway_Link:
-                                        //    //        path.Stroke = new SolidColorBrush( Colors.Red );
-                                        //    //        path.StrokeThickness = 5;
-                                        //    //        break;
+                                       //    //switch( type )
+                                       //    //{
+                                       //    //    case Highway.Motorway:
+                                       //    //    case Highway.Motorway_Link:
+                                       //    //        path.Stroke = new SolidColorBrush( Colors.Red );
+                                       //    //        path.StrokeThickness = 5;
+                                       //    //        break;
 
-                                        //    //    case Highway.Trunk:
-                                        //    //    case Highway.Trunk_Link:
-                                        //    //        path.Stroke = new SolidColorBrush( Colors.Orange );
-                                        //    //        path.StrokeThickness = 4;
-                                        //    //        break;
+                                       //    //    case Highway.Trunk:
+                                       //    //    case Highway.Trunk_Link:
+                                       //    //        path.Stroke = new SolidColorBrush( Colors.Orange );
+                                       //    //        path.StrokeThickness = 4;
+                                       //    //        break;
 
-                                        //    //    case Highway.Primary:
-                                        //    //    case Highway.Primary_Link:
-                                        //    //        path.Stroke = new SolidColorBrush( Colors.Yellow );
-                                        //    //        path.StrokeThickness = 3;
-                                        //    //        break;
+                                       //    //    case Highway.Primary:
+                                       //    //    case Highway.Primary_Link:
+                                       //    //        path.Stroke = new SolidColorBrush( Colors.Yellow );
+                                       //    //        path.StrokeThickness = 3;
+                                       //    //        break;
 
-                                        //    //    case Highway.Secondary:
-                                        //    //    case Highway.Secondary_Link:
-                                        //    //        path.Stroke = new SolidColorBrush( Colors.Black );
-                                        //    //        path.StrokeThickness = 2;
-                                        //    //        break;
+                                       //    //    case Highway.Secondary:
+                                       //    //    case Highway.Secondary_Link:
+                                       //    //        path.Stroke = new SolidColorBrush( Colors.Black );
+                                       //    //        path.StrokeThickness = 2;
+                                       //    //        break;
 
-                                        //    //}
-                                        //}
-                                    } );
+                                       //    //}
+                                       //}
+                                   });
 
                                     iCounter++;
                                 }
@@ -427,15 +427,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStop = DateTime.Now;
 
-                    MB.Information( "Load {0} Streets In {1}." , iCounter , ( dtStop - dtStart ).ToHHMMSSString() );
+                    MB.Information("Load {0} Streets In {1}.", iCounter, (dtStop - dtStart).ToHHMMSSString());
                 }
-                catch( Exception ex )
+                catch (Exception ex)
                 {
-                    MB.Error( ex );
+                    MB.Error(ex);
                 }
                 finally
                 {
-                    if( dbConnection.State == ConnectionState.Open )
+                    if (dbConnection.State == ConnectionState.Open)
                     {
                         dbConnection.Close();
                     }
@@ -445,25 +445,25 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// Handles the Click event of the MenuItem_LoadStreets control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuItem_LoadStreets_Click( object sender , RoutedEventArgs e )
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_LoadStreets_Click(object sender, RoutedEventArgs e)
         {
-            Task t = Task.Run( () => { LoadStreets(); } );
+            Task t = Task.Run(() => { LoadStreets(); });
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// 
+        /// Creates the heatmap.
         /// </summary>
-        /// <param name="pllTopLeft"></param>
-        /// <param name="pllBottomRight"></param>
-        /// <param name="bColor"></param>
-        private void CreateHeatmap( PointLatLng pllTopLeft , PointLatLng pllBottomRight , Brush bColor )
+        /// <param name="pllTopLeft">The PLL top left.</param>
+        /// <param name="pllBottomRight">The PLL bottom right.</param>
+        /// <param name="bColor">Color of the b.</param>
+        private void CreateHeatmap(PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor)
         {
             List<PointLatLng> points = new List<PointLatLng>
             {
@@ -473,8 +473,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 new PointLatLng(pllTopLeft.Lat,pllBottomRight.Lng),
             };
 
-            GMapPolygon mp = new GMapPolygon( points );
-            mp.RegenerateShape( mcMapControl );
+            GMapPolygon mp = new GMapPolygon(points);
+            mp.RegenerateShape(mcMapControl);
 
             System.Windows.Shapes.Path path = mp.Shape as System.Windows.Shapes.Path;
 
@@ -483,47 +483,93 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             path.Fill = bColor;
 
 
-            mcMapControl.Markers.Add( mp );
+            mcMapControl.Markers.Add(mp);
         }
 
 
         /// <summary>
-        /// 
+        /// Creates the heatmap.
         /// </summary>
         private void CreateHeatmap()
         {
             PointLatLng pll = mcMapControl.Position;
 
-            double dWidth = 0.0005;
-            double dHeight = 0.0003;
+            double dWidth = 0.00025;
+            double dHeight = 0.00015;
 
-            int iKachelBreite = 8;
-            int iKachelHöhe = 8;
+            int iKachelBreite = 16;
+            int iKachelHöhe = 16;
 
             Random r = new Random();
-            List<Brush> colors = new List<Brush> { Brushes.White , Brushes.LightYellow , Brushes.Yellow , Brushes.Orange , Brushes.OrangeRed , Brushes.Red };
+            List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
 
-            for( double x = pll.Lng - ( iKachelBreite * dWidth ) ; x < pll.Lng + ( iKachelBreite * dWidth ) ; x += dWidth )
+            for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
             {
-                for( double y = pll.Lat - ( iKachelHöhe * dHeight ) ; y < pll.Lat + ( iKachelHöhe * dHeight ) ; y += dHeight )
+                for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
                 {
-                    PointLatLng pllTopLeft = new PointLatLng( y , x );
-                    PointLatLng pllBottomRight = new PointLatLng( y + dHeight , x + dWidth );
+                    PointLatLng pllTopLeft = new PointLatLng(y, x);
+                    PointLatLng pllBottomRight = new PointLatLng(y + dHeight, x + dWidth);
 
-                    CreateHeatmap( pllTopLeft , pllBottomRight , r.NextObject( colors ) );
+                    CreateHeatmap(pllTopLeft, pllBottomRight, r.NextObject(colors));
                 }
             }
         }
 
 
+        ///// <summary>
+        ///// Creates the heatmap2.
+        ///// </summary>
+        ///// <param name="pllCenter">The PLL center.</param>
+        ///// <param name="bColor">Color of the b.</param>
+        //private void CreateHeatmap2(PointLatLng pllCenter, Brush bColor)
+        //{
+        //    // Die Größe der Punkte sind in Pixel, dasm uss natürlich angepasst werden an die GeoKoordinaten, siehe GMap.NET.WindowsPresentation.GMapPolygon .
+        //    GMapMarker marker = new GMapMarker(pllCenter)
+        //    {
+        //        Shape = new System.Windows.Shapes.Ellipse { Width = 10, Height = 10, Fill = bColor }
+        //    };
+
+        //    mcMapControl.Markers.Add(marker);
+        //}
+
+
+        ///// <summary>
+        ///// Creates the heatmap2.
+        ///// </summary>
+        //private void CreateHeatmap2()
+        //{
+        //    PointLatLng pll = mcMapControl.Position;
+
+        //    double dWidth = 0.0005;
+        //    double dHeight = 0.0003;
+
+        //    int iKachelBreite = 8;
+        //    int iKachelHöhe = 8;
+
+        //    Random r = new Random();
+        //    List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
+
+        //    for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
+        //    {
+        //        for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
+        //        {
+        //            PointLatLng pllPos = new PointLatLng(y, x);
+
+        //            CreateHeatmap2(pllPos, r.NextObject(colors));
+        //        }
+        //    }
+        //}
+
+
         /// <summary>
-        /// 
+        /// Handles the Click event of the MenuItem_HeatmapTest control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuItem_HeatmapTest_Click( object sender , RoutedEventArgs e )
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_HeatmapTest_Click(object sender, RoutedEventArgs e)
         {
             CreateHeatmap();
+
             e.Handled = true;
         }
 
