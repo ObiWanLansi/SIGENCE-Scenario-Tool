@@ -82,7 +82,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SIGENCE Scenario Tool.Library\SIGENCE Scenario Tool.Library.csproj">
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIGENCEScenarioTool.Library\SIGENCE Scenario Tool.Library.csproj">
       <Project>{e61fb891-442d-4285-9ab8-e7f3bff66370}</Project>
       <Name>SIGENCE Scenario Tool.Library</Name>
     </ProjectReference>
