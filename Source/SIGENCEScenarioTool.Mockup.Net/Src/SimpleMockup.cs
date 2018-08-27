@@ -15,7 +15,7 @@ namespace SIGENCEScenarioTool.Mockup
     /// The main thread is blocking as long as data are received. The received data is
     /// displayed in the console window and stored in a file in the TEMP directory to check it.
     /// </summary>
-    static class SimpleMockup
+    internal static class SimpleMockup
     {
         /// <summary>
         /// The divider

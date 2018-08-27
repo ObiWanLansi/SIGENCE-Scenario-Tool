@@ -68,6 +68,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Src\MainWindowII.xaml.cs">
       <DependentUpon>MainWindowII.xaml</DependentUpon>
     </Compile>
@@ -96,9 +101,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,6 +174,19 @@
     <Resource Include="Images\data_find.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIGENCE Scenario Tool.Library\SIGENCE Scenario Tool.Library.csproj">
+      <Project>{e61fb891-442d-4285-9ab8-e7f3bff66370}</Project>
+      <Name>SIGENCE Scenario Tool.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SIGENCEScenarioTool.MainApp\SIGENCE Scenario Tool.csproj">
       <Project>{21e6d61c-05bd-41bd-b4f3-a1a8f3d3d73e}</Project>
       <Name>SIGENCE Scenario Tool</Name>

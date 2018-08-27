@@ -1,16 +1,18 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Linq;
+
 using GMap.NET;
+
 using log4net;
 
 using NUnit.Framework;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.UnitTest.Attributes;
-using SIGENCEScenarioTool.Windows.MainWindow;
+
+
 
 namespace SIGENCEScenarioTool.UnitTests
 {
@@ -19,57 +21,12 @@ namespace SIGENCEScenarioTool.UnitTests
     /// </summary>
     [TestFixture]
     [SIGENCEScenarioToolTestAction]
-    sealed class SIGENCEScenarioToolExportImportTest
+    internal sealed class SIGENCEScenarioToolExportImportTest
     {
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
         static private readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolExportImportTest));
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        ///// <summary>
-        ///// The randomizer.
-        ///// </summary>
-        //static private readonly Random r = new Random();
-
-
-        ///// <summary>
-        ///// Creates the randomized RFDevices.
-        ///// </summary>
-        ///// <param name="iMaxCount">The i maximum count.</param>
-        //private RFDeviceList CreateRandomizedRFDevices( int iMaxCount )
-        //{
-        //    RFDeviceList lRFDevices = new RFDeviceList( iMaxCount );
-
-        //    for( int iCounter = 1 ; iCounter < iMaxCount + 1 ; iCounter++ )
-        //    {
-        //        lRFDevices.Add( new RFDevice
-        //        {
-        //            Id = r.Next( -1000 , 1000 ) ,
-        //            Name = string.Format( "RFDevice #{0}" , iCounter ) ,
-        //            Latitude = ( r.NextDouble() * 0.05 ) + 49.7454 ,
-        //            Longitude = ( r.NextDouble() * 0.05 ) + 6.6149 ,
-        //            Altitude = 0 ,
-        //            RxTxType = r.NextEnum<RxTxType>() ,
-        //            AntennaType = r.NextEnum<AntennaType>() ,
-        //            CenterFrequency_Hz = ( uint ) r.Next( 85 , 105 ) ,
-        //            Bandwith_Hz = ( uint ) r.Next( 10 , 80 ) ,
-        //            Gain_dB = 0 ,
-        //            SignalToNoiseRatio_dB = 0 ,
-        //            Roll = 0 ,
-        //            Pitch = 0 ,
-        //            Yaw = 0 ,
-        //            XPos = 0 ,
-        //            YPos = 0 ,
-        //            ZPos = 0 ,
-        //            Remark = r.NextObject( Tool.ALLPANGRAMS )
-        //        } );
-        //    }
-
-        //    return lRFDevices;
-        //}
-
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -161,7 +118,7 @@ namespace SIGENCEScenarioTool.UnitTests
 
             //-----------------------------------------------------------------
 
-            RFDeviceList dl = MainWindow.CreateRandomizedRFDeviceList(iCount, new PointLatLng(0, 0));
+            RFDeviceList dl = RFDeviceList.CreateRandomizedRFDeviceList(iCount, new PointLatLng(0, 0));
 
             string strFilename = string.Format("{0}nunit_rfdevice.{1}.{2}", Path.GetTempPath(), DateTime.Now.ToString("yyyyMMdd_HHmmssfff"), format);
 

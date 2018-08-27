@@ -11,7 +11,7 @@ namespace SIGENCEScenarioTool.Tools
     /// <summary>
     /// 
     /// </summary>
-    sealed class PythonSyntaxModeFileProvider : ISyntaxModeFileProvider
+    sealed public class PythonSyntaxModeFileProvider : ISyntaxModeFileProvider
     {
         /// <summary>
         /// The syntax modes
@@ -61,5 +61,5 @@ namespace SIGENCEScenarioTool.Tools
         {
         }
 
-    } // end sealed class PythonSyntaxModeFileProvider
+    } // end sealed public class PythonSyntaxModeFileProvider 
 }

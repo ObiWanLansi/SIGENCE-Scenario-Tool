@@ -2,24 +2,24 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 
-// Allgemeine Informationen über eine Assembly werden über die folgenden 
+// Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle( "SIGENCE Scenario Tool TestSuite" )]
-[assembly: AssemblyDescription( "" )]
+[assembly: AssemblyDescription( "A TestSuite For The SIGENCE Scenario Tool." )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "LansiTools" )]
-[assembly: AssemblyProduct( "SIGENCE Scenario Tool TestSuite" )]
+[assembly: AssemblyProduct( "SIGENCE Scenario Tool" )]
 [assembly: AssemblyCopyright( "Copyright © LansiTools 2018" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
-// Durch Festlegen von ComVisible auf "false" werden die Typen in dieser Assembly unsichtbar 
-// für COM-Komponenten.  Wenn Sie auf einen Typ in dieser Assembly von 
+// Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly
+// für COM-Komponenten unsichtbar.  Wenn Sie auf einen Typ in dieser Assembly von
 // COM aus zugreifen müssen, sollten Sie das ComVisible-Attribut für diesen Typ auf "True" festlegen.
 [assembly: ComVisible( false )]
 
-//Um mit dem Erstellen lokalisierbarer Anwendungen zu beginnen, legen Sie 
+//Um mit dem Erstellen lokalisierbarer Anwendungen zu beginnen, legen Sie
 //<UICulture>ImCodeVerwendeteKultur</UICulture> in der .csproj-Datei
 //in einer <PropertyGroup> fest.  Wenn Sie in den Quelldateien beispielsweise Deutsch
 //(Deutschland) verwenden, legen Sie <UICulture> auf \"de-DE\" fest.  Heben Sie dann die Auskommentierung
@@ -31,23 +31,24 @@ using System.Windows;
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None , //Speicherort der designspezifischen Ressourcenwörterbücher
-                                      //(wird verwendet, wenn eine Ressource auf der Seite
+                                      //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
                                       // oder in den Anwendungsressourcen-Wörterbüchern nicht gefunden werden kann.)
     ResourceDictionaryLocation.SourceAssembly //Speicherort des generischen Ressourcenwörterbuchs
-                                              //(wird verwendet, wenn eine Ressource auf der Seite, in der Anwendung oder einem 
+                                              //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
                                               // designspezifischen Ressourcenwörterbuch nicht gefunden werden kann.)
 )]
+
 
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
 //      Hauptversion
-//      Nebenversion 
+//      Nebenversion
 //      Buildnummer
 //      Revision
 //
-// Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
+// Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion( "1.2" )]
-[assembly: AssemblyFileVersion( "1.2" )]
+[assembly: AssemblyVersion("1.4")]
+[assembly: AssemblyFileVersion("1.4")]

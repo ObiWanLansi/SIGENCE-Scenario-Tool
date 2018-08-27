@@ -362,62 +362,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                         list.Add(GeoHelper.CoordinateToPointLatLng(pos));
                                     }
 
-                                    //GMapRoute mrWay = new GMapRoute( list )
-                                    //{
-                                    //    Tag = type
-                                    //};
-
                                     Dispatcher.Invoke(() =>
-                                   {
-                                       PathMarker mrWay = new PathMarker(mcMapControl, list, type, string.Format("{0}{1}", strName.IsNotEmpty() ? strName : "Unknown", strRef.IsNotEmpty() ? string.Format(" ({0})", strRef) : ""))
-                                       {
-                                           Tag = type
-                                       };
+                                    {
+                                        PathMarker mrWay = new PathMarker(mcMapControl, list, type, string.Format("{0}{1}", strName.IsNotEmpty() ? strName : "Unknown", strRef.IsNotEmpty() ? string.Format(" ({0})", strRef) : ""))
+                                        {
+                                            Tag = type
+                                        };
 
-                                       mcMapControl.Markers.Add(mrWay);
-
-                                       //if( mrWay.Shape is System.Windows.Shapes.Path )
-                                       //{
-                                       //    System.Windows.Shapes.Path path = mrWay.Shape as System.Windows.Shapes.Path;
-
-                                       //    //path.IsHitTestVisible = true;
-                                       //    //path.ToolTip = string.Format( "{0}{1}" , strName , strRef.IsNotEmpty() ? string.Format( " ({0})" , strRef ) : "" );
-                                       //    //path.Cursor = Cursors.Cross;
-                                       //    //path.ForceCursor = true;
-
-                                       //    //path.Width = 10;
-                                       //    //path.Height = 10;
-                                       //    //path.Fill = new SolidColorBrush( Colors.Yellow );
-
-                                       //    //switch( type )
-                                       //    //{
-                                       //    //    case Highway.Motorway:
-                                       //    //    case Highway.Motorway_Link:
-                                       //    //        path.Stroke = new SolidColorBrush( Colors.Red );
-                                       //    //        path.StrokeThickness = 5;
-                                       //    //        break;
-
-                                       //    //    case Highway.Trunk:
-                                       //    //    case Highway.Trunk_Link:
-                                       //    //        path.Stroke = new SolidColorBrush( Colors.Orange );
-                                       //    //        path.StrokeThickness = 4;
-                                       //    //        break;
-
-                                       //    //    case Highway.Primary:
-                                       //    //    case Highway.Primary_Link:
-                                       //    //        path.Stroke = new SolidColorBrush( Colors.Yellow );
-                                       //    //        path.StrokeThickness = 3;
-                                       //    //        break;
-
-                                       //    //    case Highway.Secondary:
-                                       //    //    case Highway.Secondary_Link:
-                                       //    //        path.Stroke = new SolidColorBrush( Colors.Black );
-                                       //    //        path.StrokeThickness = 2;
-                                       //    //        break;
-
-                                       //    //}
-                                       //}
-                                   });
+                                        mcMapControl.Markers.Add(mrWay);
+                                    });
 
                                     iCounter++;
                                 }
@@ -427,7 +380,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStop = DateTime.Now;
 
-                    MB.Information("Load {0} Streets In {1}.", iCounter, (dtStop - dtStart).ToHHMMSSString());
+                    MB.Information("Load {0} Ways In {1}.", iCounter, (dtStop - dtStart).ToHHMMSSString());
                 }
                 catch (Exception ex)
                 {

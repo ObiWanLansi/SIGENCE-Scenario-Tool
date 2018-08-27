@@ -9,13 +9,13 @@ namespace SIGENCEScenarioTool.Mockup
     /// <summary>
     /// 
     /// </summary>
-    sealed class MockUp
+    internal sealed class MockUp
     {
         /// <summary>
         /// Mains the specified arguments.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.Title = Tool.ProductTitle;
 

@@ -51,6 +51,7 @@ devices.Clear()
 import clr 
 
 clr.AddReference("SIGENCEScenarioTool")
+clr.AddReference("SIGENCEScenarioTool.Library")
 
 from SIGENCEScenarioTool.Models import *
 

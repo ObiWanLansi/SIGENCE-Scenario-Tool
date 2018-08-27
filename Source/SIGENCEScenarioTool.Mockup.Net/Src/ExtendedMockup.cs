@@ -14,7 +14,7 @@ namespace SIGENCEScenarioTool.Mockup
     /// <summary>
     /// 
     /// </summary>
-    static class ExtendedMockup
+    internal static class ExtendedMockup
     {
         /// <summary>
         /// The divider

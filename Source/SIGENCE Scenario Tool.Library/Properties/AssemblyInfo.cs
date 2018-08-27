@@ -5,8 +5,8 @@ using System.Windows;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle( "SIGENCE Scenario Tool UnitTests" )]
-[assembly: AssemblyDescription( "The UnitTests For The SIGENCE Scenario Tool." )]
+[assembly: AssemblyTitle( "SIGENCE Scenario Tool Library" )]
+[assembly: AssemblyDescription( "The MainLibrary For The SIGENCE Scenario Tool." )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "LansiTools" )]
 [assembly: AssemblyProduct( "SIGENCE Scenario Tool" )]

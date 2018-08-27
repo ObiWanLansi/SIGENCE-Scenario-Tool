@@ -151,5 +151,4 @@ namespace SIGENCEScenarioTool.Tools
 
     } // end public enum Highway
 
-
 }
