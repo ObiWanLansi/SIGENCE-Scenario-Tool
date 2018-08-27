@@ -5,8 +5,8 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 ## Documentation
 
 - [Cheat Sheet](Documentation/Generated/CheatSheet.pdf)
-- [Enumerations](Source/SIGENCEScenarioTool.MainApp/Src/Models/EnumerationsAndConstants.md)
-- [RF Device Model](Source/SIGENCEScenarioTool.MainApp/Src/Models/RFDevice/RFDevice.Properties.md)
+- [Enumerations](Source/SIGENCEScenarioTool.Library/Src/Models/EnumerationsAndConstants.md)
+- [RF Device Model](Source/SIGENCEScenarioTool.Library/Src/Models/RFDevice/RFDevice.Properties.md)
 
 
 ## Quick Links
