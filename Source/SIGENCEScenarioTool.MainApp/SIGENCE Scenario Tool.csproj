@@ -425,6 +425,7 @@
     <Resource Include="Images\media_stop.png" />
     <Resource Include="Images\media_stop_red.png" />
     <Resource Include="Images\handheld_device.png" />
+    <Resource Include="Images\server_earth.png" />
     <Content Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>

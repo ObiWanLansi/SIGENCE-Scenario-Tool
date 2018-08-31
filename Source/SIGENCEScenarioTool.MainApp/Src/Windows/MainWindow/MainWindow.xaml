@@ -30,6 +30,7 @@
         <Image x:Key="LED_WHITE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/led_white.png" />
         <Image x:Key="SERVER_FROM_CLIENT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_from_client.png" />
         <Image x:Key="SERVER_TO_CLIENT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_to_client.png" />
+        <Image x:Key="SERVER_EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_earth.png" />
 
 
         <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
