@@ -85,12 +85,12 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         {
             get
             {
-                if( pllPosition == null )
+                if (this.pllPosition == null)
                 {
-                    pllPosition = new PointLatLng( Latitude , Longitude );
+                    this.pllPosition = new PointLatLng(this.Latitude, this.Longitude);
                 }
 
-                return pllPosition.Value;
+                return this.pllPosition.Value;
             }
         }
 
@@ -146,16 +146,16 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
         /// <returns></returns>
         /// <exception cref="ArgumentException">The parameter should not be empty! - strDatabaseFilename</exception>
         /// <exception cref="FileNotFoundException">The database can't not be found!</exception>
-        static public GeoNodeCollection GetCollection( string strDatabaseFilename , GeoTag? geotag = null )
+        static public GeoNodeCollection GetCollection(string strDatabaseFilename, GeoTag? geotag = null)
         {
-            if( string.IsNullOrEmpty( strDatabaseFilename ) )
+            if (string.IsNullOrEmpty(strDatabaseFilename))
             {
-                throw new ArgumentException( "The parameter should not be empty!" , "strDatabaseFilename" );
+                throw new ArgumentException("The parameter should not be empty!", "strDatabaseFilename");
             }
 
-            if( File.Exists( strDatabaseFilename ) == false )
+            if (File.Exists(strDatabaseFilename) == false)
             {
-                throw new FileNotFoundException( "The database can't not be found!" , strDatabaseFilename );
+                throw new FileNotFoundException("The database can't not be found!", strDatabaseFilename);
             }
 
             GeoNodeCollection collection = new GeoNodeCollection();
@@ -165,7 +165,7 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
                 DataSource = strDatabaseFilename
             };
 
-            using( SQLiteConnection dbConnection = new SQLiteConnection( csbDatabase.ConnectionString ) )
+            using (SQLiteConnection dbConnection = new SQLiteConnection(csbDatabase.ConnectionString))
             {
                 dbConnection.Open();
 
@@ -174,39 +174,39 @@ namespace SIGENCEScenarioTool.Models.Database.GeoDb
                     //                                     0   1   2   3    4    5
                     string strSelectStatement = "select osmid,lat,lon,name,tag,value from osmnode";
 
-                    if( geotag != null )
+                    if (geotag != null)
                     {
-                        strSelectStatement += string.Format( " where tag='{0}'" , geotag.ToString().ToLower() );
+                        strSelectStatement += string.Format(" where tag='{0}'", geotag.ToString().ToLower());
                     }
 
-                    using( SQLiteCommand dbSelectCommand = new SQLiteCommand( strSelectStatement , dbConnection ) )
+                    using (SQLiteCommand dbSelectCommand = new SQLiteCommand(strSelectStatement, dbConnection))
                     {
-                        using( SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader() )
+                        using (SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader())
                         {
-                            while( dbResult.Read() )
+                            while (dbResult.Read())
                             {
                                 GeoNode gn = new GeoNode
                                 {
-                                    NodeId = dbResult.GetInt64( 0 ) ,
-                                    Latitude = dbResult.GetDouble( 1 ) ,
-                                    Longitude = dbResult.GetDouble( 2 ) ,
-                                    Name = dbResult.IsDBNull( 3 ) == false ? dbResult.GetString( 3 ) : "" ,
-                                    Tag = ( GeoTag ) Enum.Parse( typeof( GeoTag ) , dbResult.GetString( 4 ) , true ) ,
-                                    Value = dbResult.GetString( 5 ).CapitalizeOnlyFirstLetter()
+                                    NodeId = dbResult.GetInt64(0),
+                                    Latitude = dbResult.GetDouble(1),
+                                    Longitude = dbResult.GetDouble(2),
+                                    Name = dbResult.IsDBNull(3) == false ? dbResult.GetString(3) : "",
+                                    Tag = (GeoTag)Enum.Parse(typeof(GeoTag), dbResult.GetString(4), true),
+                                    Value = dbResult.GetString(5).CapitalizeOnlyFirstLetter()
                                 };
 
-                                collection.Add( gn );
+                                collection.Add(gn);
                             }
                         }
                     }
                 }
-                catch( Exception )
+                catch (Exception)
                 {
                     throw;
                 }
                 finally
                 {
-                    if( dbConnection.State == ConnectionState.Open )
+                    if (dbConnection.State == ConnectionState.Open)
                     {
                         dbConnection.Close();
                     }
