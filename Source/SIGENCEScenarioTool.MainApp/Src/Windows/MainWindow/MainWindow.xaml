@@ -500,11 +500,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
+                                <!--<DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />
                                     </Style>
-                                </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn.HeaderStyle>-->
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Left" />
