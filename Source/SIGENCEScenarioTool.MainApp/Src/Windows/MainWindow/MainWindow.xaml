@@ -237,10 +237,16 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
                                         <Setter Property="Margin" Value="5" />
+                                        <!--<Setter Property="FontWeight" Value="Bold" />-->
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
@@ -255,6 +261,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -264,6 +275,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -273,6 +289,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -282,6 +303,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -291,6 +317,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -300,6 +331,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Roll" Binding="{Binding Roll,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -309,6 +345,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Pitch" Binding="{Binding Pitch,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -318,6 +359,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Yaw" Binding="{Binding Yaw,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -328,6 +374,11 @@
 
 
                             <DataGridComboBoxColumn Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eRxTxType}}">
+                                <DataGridComboBoxColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridComboBoxColumn.HeaderStyle>
                                 <DataGridComboBoxColumn.ElementStyle>
                                     <Style TargetType="ComboBox">
                                         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -337,6 +388,11 @@
                             </DataGridComboBoxColumn>
 
                             <DataGridComboBoxColumn Header="AntennaType" SelectedItemBinding="{Binding AntennaType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eAntennaType}}">
+                                <DataGridComboBoxColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridComboBoxColumn.HeaderStyle>
                                 <DataGridComboBoxColumn.ElementStyle>
                                     <Style TargetType="ComboBox">
                                         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -346,6 +402,11 @@
                             </DataGridComboBoxColumn>
 
                             <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -355,6 +416,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Bandwith" Binding="{Binding Bandwith,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -364,6 +430,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -373,6 +444,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -382,6 +458,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="XPos" Binding="{Binding XPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -391,6 +472,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="YPos" Binding="{Binding YPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -400,6 +486,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="ZPos" Binding="{Binding ZPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -409,6 +500,11 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Left" />
