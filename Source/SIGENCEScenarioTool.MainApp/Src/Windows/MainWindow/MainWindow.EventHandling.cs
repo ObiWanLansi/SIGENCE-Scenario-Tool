@@ -33,14 +33,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Left = settings.LastLeft;
-            Top = settings.LastTop;
-            Width = settings.LastWidth >= MinWidth ? settings.LastWidth : MinWidth;
-            Height = settings.LastHeight >= MinHeight ? settings.LastHeight : MinHeight;
+            this.Left = this.settings.LastLeft;
+            this.Top = this.settings.LastTop;
+            this.Width = this.settings.LastWidth >= this.MinWidth ? this.settings.LastWidth : this.MinWidth;
+            this.Height = this.settings.LastHeight >= this.MinHeight ? this.settings.LastHeight : this.MinHeight;
 
             try
             {
-                WindowState = settings.LastWindowState.IsNotEmpty() ? (WindowState)Enum.Parse(typeof(WindowState), settings.LastWindowState, true) : WindowState;
+                this.WindowState = this.settings.LastWindowState.IsNotEmpty() ? (WindowState)Enum.Parse(typeof(WindowState), this.settings.LastWindowState, true) : this.WindowState;
             }
             catch (Exception)
             {
@@ -55,13 +55,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void MainWindow_Closed(object sender, EventArgs e)
         {
-            settings.LastLeft = Left;
-            settings.LastTop = Top;
-            settings.LastWidth = Width;
-            settings.LastHeight = Height;
-            settings.LastWindowState = WindowState.ToString();
+            this.settings.LastLeft = this.Left;
+            this.settings.LastTop = this.Top;
+            this.settings.LastWidth = this.Width;
+            this.settings.LastHeight = this.Height;
+            this.settings.LastWindowState = this.WindowState.ToString();
 
-            settings.Save();
+            this.settings.Save();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -74,9 +74,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.OriginalSource == tcTabControl)
+            if (e.OriginalSource == this.tcTabControl)
             {
-                if (tiValidation.IsSelected == true)
+                if (this.tiValidation.IsSelected == true)
                 {
                     ExecuteValidateScenario();
                 }
@@ -95,11 +95,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void MapControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (CreatingRFDevice == true)
+            if (this.CreatingRFDevice == true)
             {
-                Point p = e.GetPosition(mcMapControl);
+                Point p = e.GetPosition(this.mcMapControl);
 
-                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
+                PointLatLng pll = this.mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
 
                 AddRFDevice(pll, DeviceSource.User);
 
@@ -117,19 +117,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
         private void MapControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (StartedDALF == true)
+            if (this.StartedDALF == true)
             {
-                Point p = e.GetPosition(mcMapControl);
+                Point p = e.GetPosition(this.mcMapControl);
 
-                PointLatLng pll = mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
+                PointLatLng pll = this.mcMapControl.FromLocalToLatLng((int)p.X, (int)p.Y);
 
-                if (mrDALF == null)
+                if (this.mrDALF == null)
                 {
                     var list = new List<PointLatLng>(2);
 
-                    if (dvmLastSelectedDevice != null)
+                    if (this.dvmLastSelectedDevice != null)
                     {
-                        list.Add(new PointLatLng(dvmLastSelectedDevice.Latitude, dvmLastSelectedDevice.Longitude));
+                        list.Add(new PointLatLng(this.dvmLastSelectedDevice.Latitude, this.dvmLastSelectedDevice.Longitude));
                     }
                     else
                     {
@@ -138,15 +138,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     list.Add(pll);
 
-                    mrDALF = new GMapRoute(list);
+                    this.mrDALF = new GMapRoute(list);
                 }
                 else
                 {
-                    mrDALF.Points.Add(pll);
+                    this.mrDALF.Points.Add(pll);
                 }
 
-                mcMapControl.Markers.Remove(mrDALF);
-                mcMapControl.Markers.Add(mrDALF);
+                this.mcMapControl.Markers.Remove(this.mrDALF);
+                this.mcMapControl.Markers.Add(this.mrDALF);
 
                 e.Handled = true;
             }
@@ -178,7 +178,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void MapControl_OnTileLoadStart()
         {
-            IsTileLoading = true;
+            this.IsTileLoading = true;
         }
 
 
@@ -188,7 +188,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="ElapsedMilliseconds">The elapsed milliseconds.</param>
         private void MapControl_OnTileLoadComplete(long ElapsedMilliseconds)
         {
-            IsTileLoading = false;
+            this.IsTileLoading = false;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -201,7 +201,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="System.Windows.Input.KeyEventArgs" /> instance containing the event data.</param>
         private void DataGrid_KeyDown(object sender, KeyEventArgs e)
         {
-            if (bDataGridInEditMode == true)
+            if (this.bDataGridInEditMode == true)
             {
                 return;
             }
@@ -248,7 +248,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="DataGridBeginningEditEventArgs"/> instance containing the event data.</param>
         private void DataGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
         {
-            bDataGridInEditMode = true;
+            this.bDataGridInEditMode = true;
         }
 
 
@@ -259,7 +259,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="DataGridCellEditEndingEventArgs"/> instance containing the event data.</param>
         private void DataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
-            bDataGridInEditMode = false;
+            this.bDataGridInEditMode = false;
         }
 
 
@@ -272,7 +272,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             e.Handled = true;
 
-            if (bNoFlashBack == true)
+            if (this.bNoFlashBack == true)
             {
                 return;
             }
@@ -283,7 +283,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     (item as RFDeviceViewModel).IsSelected = true;
 
-                    if (SyncMapAndGrid == true)
+                    if (this.SyncMapAndGrid == true)
                     {
                         ZoomToRFDevice((item as RFDeviceViewModel).RFDevice, false);
                     }
@@ -426,7 +426,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
         private void Button_ClearDebugOutput_Click(object sender, RoutedEventArgs e)
         {
-            DebugOutput = "";
+            this.DebugOutput = "";
 
             e.Handled = true;
         }
@@ -439,7 +439,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
         private void Button_Acknowledge_Click(object sender, RoutedEventArgs e)
         {
-            ReceivedData = false;
+            this.ReceivedData = false;
 
             e.Handled = true;
         }
@@ -452,7 +452,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void ToogleButton_EditScenarioDescription_Click(object sender, RoutedEventArgs e)
         {
-            ScenarioDescriptionEditMode = (sender as ToggleButton).IsChecked ?? false;
+            this.ScenarioDescriptionEditMode = (sender as ToggleButton).IsChecked ?? false;
 
             UpdateScenarioDescription();
 
@@ -539,13 +539,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             if (bIsSelected == true)
             {
-                bNoFlashBack = true;
+                this.bNoFlashBack = true;
 
-                dgRFDevices.SelectedItems.Clear();
-                dgRFDevices.SelectedItems.Add(sender);
+                this.dgRFDevices.SelectedItems.Clear();
+                this.dgRFDevices.SelectedItems.Add(sender);
 
                 // Bei allen anderen die Selection aufheben ...
-                foreach (RFDeviceViewModel model in RFDevicesCollection)
+                foreach (RFDeviceViewModel model in this.RFDevicesCollection)
                 {
                     if (model != sender)
                     {
@@ -553,21 +553,21 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     }
                 }
 
-                if (SyncMapAndGrid == true)
+                if (this.SyncMapAndGrid == true)
                 {
-                    dgRFDevices.ScrollIntoView(sender);
-                    dgRFDevices.Focus();
+                    this.dgRFDevices.ScrollIntoView(sender);
+                    this.dgRFDevices.Focus();
                 }
 
-                bNoFlashBack = false;
+                this.bNoFlashBack = false;
             }
             else
             {
-                foreach (var item in dgRFDevices.SelectedItems)
+                foreach (var item in this.dgRFDevices.SelectedItems)
                 {
                     if (item == sender)
                     {
-                        dgRFDevices.SelectedItems.Remove(item);
+                        this.dgRFDevices.SelectedItems.Remove(item);
                         break;
                     }
                 }
@@ -609,15 +609,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 if (source != null)
                 {
-                    tiMap.IsSelected = true;
+                    this.tiMap.IsSelected = true;
 
-                    foreach (RFDeviceViewModel model in RFDevicesCollection)
+                    foreach (RFDeviceViewModel model in this.RFDevicesCollection)
                     {
                         if (model.RFDevice == source)
                         {
-                            dgRFDevices.ScrollIntoView(model);
-                            dgRFDevices.SelectedItem = model;
-                            dgRFDevices.Focus();
+                            this.dgRFDevices.ScrollIntoView(model);
+                            this.dgRFDevices.SelectedItem = model;
+                            this.dgRFDevices.Focus();
                         }
                     }
                 }

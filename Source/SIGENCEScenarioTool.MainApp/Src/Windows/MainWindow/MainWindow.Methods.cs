@@ -226,19 +226,40 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Removes the old dalf.
+        /// Resets the dalf.
         /// </summary>
-        private bool StartDALF()
+        private void ResetDALF()
         {
-            if (this.mcMapControl.Markers.Contains(this.mrDALF))
+            if (this.mrDALF != null)
             {
-                if (MessageBox.Show("Should The Existing Line Be Continued Or A New One Started?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+
+                if (this.mcMapControl.Markers.Contains(this.mrDALF))
                 {
                     this.mcMapControl.Markers.Remove(this.mrDALF);
-                    this.mrDALF = null;
-                    this.dvmLastSelectedDevice = null;
+
                 }
+                this.mrDALF = null;
             }
+
+            this.dvmLastSelectedDevice = null;
+        }
+
+
+        /// <summary>
+        /// Starts the dalf.
+        /// </summary>
+        /// <returns></returns>
+        private bool StartDALF()
+        {
+            ResetDALF();
+
+            //if (this.mcMapControl.Markers.Contains(this.mrDALF))
+            //{
+            //    if (MessageBox.Show("Should The Existing Line Be Continued Or A New One Started?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+            //    {
+            //        ResetDALF();
+            //    }
+            //}
 
             if (this.dvmLastSelectedDevice == null)
             {
@@ -265,6 +286,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.dvmLastSelectedDevice = selectedDevice;
             }
 
+            this.mcMapControl.Cursor = Cursors.Cross;
             return true;
         }
 
@@ -274,6 +296,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StopDALF()
         {
+            this.mcMapControl.Cursor = Cursors.Arrow;
+
             if (this.mrDALF != null && this.mrDALF.Points.Count > 0)
             {
                 // Erst die alten löschen ...
@@ -296,6 +320,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     iCounter++;
                 }
             }
+
+            ResetDALF();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

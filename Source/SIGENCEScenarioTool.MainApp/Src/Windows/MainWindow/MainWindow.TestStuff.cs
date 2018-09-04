@@ -41,7 +41,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
         {
-            ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in RFDevicesCollection select device.RFDevice));
+            ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in this.RFDevicesCollection select device.RFDevice));
             cw.ShowDialog();
             cw = null;
 
@@ -58,7 +58,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                if (ReceivedData == true)
+                if (this.ReceivedData == true)
                 {
                     Blink.SetColor(Colors.Green);
                 }
@@ -84,14 +84,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StartUDPServer()
         {
-            if (tUDPServer == null)
+            if (this.tUDPServer == null)
             {
-                tUDPServer = new Thread(UDPReceiveData)
+                this.tUDPServer = new Thread(UDPReceiveData)
                 {
                     IsBackground = true,
                     Name = "UDPServerThread"
                 };
-                tUDPServer.Start();
+                this.tUDPServer.Start();
             }
         }
 
@@ -101,11 +101,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StopUDPServer()
         {
-            if (tUDPServer != null)
+            if (this.tUDPServer != null)
             {
-                tUDPServer.Abort();
+                this.tUDPServer.Abort();
 
-                tUDPServer = null;
+                this.tUDPServer = null;
             }
         }
 
@@ -119,9 +119,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                client = new UdpClient(settings.UDPPortReceiving);
+                client = new UdpClient(this.settings.UDPPortReceiving);
                 {
-                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPortReceiving);
+                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(this.settings.UDPHost), this.settings.UDPPortReceiving);
 
                     // A neverending story ...
                     while (true)
@@ -132,8 +132,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                         string strReceived = Encoding.Default.GetString(baReceived);
 
-                        DebugOutput += strReceived + "\n\n";
-                        ReceivedData = true;
+                        this.DebugOutput += strReceived + "\n\n";
+                        this.ReceivedData = true;
                     }
                 }
             }
@@ -172,15 +172,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CreateScenarioReport()
         {
-            if (string.IsNullOrEmpty(CurrentFile))
+            if (string.IsNullOrEmpty(this.CurrentFile))
             {
                 MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
                 return;
             }
 
-            Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
-            FileInfo fiCurrentFile = new FileInfo(CurrentFile);
+            FileInfo fiCurrentFile = new FileInfo(this.CurrentFile);
 
             string strOutputFilename = string.Format("{0}{1}.html", Path.GetTempPath(), fiCurrentFile.GetFilenameWithoutExtension());
 
@@ -196,9 +196,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if (string.IsNullOrEmpty(ScenarioDescription) == false)
+            if (string.IsNullOrEmpty(this.ScenarioDescription) == false)
             {
-                sb.Append(ScenarioDescription);
+                sb.Append(this.ScenarioDescription);
             }
 
             //-----------------------------------------------------------------
@@ -221,7 +221,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
 
-            Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -295,7 +295,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             List<GMapMarker> lDelete = new List<GMapMarker>();
 
-            foreach (GMapMarker mm in mcMapControl.Markers)
+            foreach (GMapMarker mm in this.mcMapControl.Markers)
             {
                 if (mm.Tag != null && mm.Tag is Highway)
                 {
@@ -303,9 +303,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             }
 
-            Dispatcher.Invoke(() =>
+            this.Dispatcher.Invoke(() =>
            {
-               lDelete.ForEach(mm => mcMapControl.Markers.Remove(mm));
+               lDelete.ForEach(mm => this.mcMapControl.Markers.Remove(mm));
            });
         }
 
@@ -320,7 +320,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             string strFilename = string.Format("{0}\\streets_bw.sqlite", Tool.StartupPath);
 
-            RectLatLng bb = mcMapControl.ViewArea;
+            RectLatLng bb = this.mcMapControl.ViewArea;
 
             //TODO: Check if the area is not to big ... But what is big ?
 
@@ -362,14 +362,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                         list.Add(GeoHelper.CoordinateToPointLatLng(pos));
                                     }
 
-                                    Dispatcher.Invoke(() =>
+                                    this.Dispatcher.Invoke(() =>
                                     {
-                                        PathMarker mrWay = new PathMarker(mcMapControl, list, type, string.Format("{0}{1}", strName.IsNotEmpty() ? strName : "Unknown", strRef.IsNotEmpty() ? string.Format(" ({0})", strRef) : ""))
+                                        PathMarker mrWay = new PathMarker(this.mcMapControl, list, type, string.Format("{0}{1}", strName.IsNotEmpty() ? strName : "Unknown", strRef.IsNotEmpty() ? string.Format(" ({0})", strRef) : ""))
                                         {
                                             Tag = type
                                         };
 
-                                        mcMapControl.Markers.Add(mrWay);
+                                        this.mcMapControl.Markers.Add(mrWay);
                                     });
 
                                     iCounter++;
@@ -410,63 +410,63 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Creates the heatmap.
-        /// </summary>
-        /// <param name="pllTopLeft">The PLL top left.</param>
-        /// <param name="pllBottomRight">The PLL bottom right.</param>
-        /// <param name="bColor">Color of the b.</param>
-        private void CreateHeatmap(PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor)
-        {
-            List<PointLatLng> points = new List<PointLatLng>
-            {
-                pllTopLeft,
-                new PointLatLng(pllBottomRight.Lat,pllTopLeft.Lng),
-                pllBottomRight,
-                new PointLatLng(pllTopLeft.Lat,pllBottomRight.Lng),
-            };
+        ///// <summary>
+        ///// Creates the heatmap.
+        ///// </summary>
+        ///// <param name="pllTopLeft">The PLL top left.</param>
+        ///// <param name="pllBottomRight">The PLL bottom right.</param>
+        ///// <param name="bColor">Color of the b.</param>
+        //private void CreateHeatmap(PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor)
+        //{
+        //    List<PointLatLng> points = new List<PointLatLng>
+        //    {
+        //        pllTopLeft,
+        //        new PointLatLng(pllBottomRight.Lat,pllTopLeft.Lng),
+        //        pllBottomRight,
+        //        new PointLatLng(pllTopLeft.Lat,pllBottomRight.Lng),
+        //    };
 
-            GMapPolygon mp = new GMapPolygon(points);
-            mp.RegenerateShape(mcMapControl);
+        //    GMapPolygon mp = new GMapPolygon(points);
+        //    mp.RegenerateShape(this.mcMapControl);
 
-            System.Windows.Shapes.Path path = mp.Shape as System.Windows.Shapes.Path;
+        //    System.Windows.Shapes.Path path = mp.Shape as System.Windows.Shapes.Path;
 
-            path.Stroke = Brushes.Black;
-            path.StrokeThickness = 0.1;
-            path.Fill = bColor;
-
-
-            mcMapControl.Markers.Add(mp);
-        }
+        //    path.Stroke = Brushes.Black;
+        //    path.StrokeThickness = 0.1;
+        //    path.Fill = bColor;
 
 
-        /// <summary>
-        /// Creates the heatmap.
-        /// </summary>
-        private void CreateHeatmap()
-        {
-            PointLatLng pll = mcMapControl.Position;
+        //    this.mcMapControl.Markers.Add(mp);
+        //}
 
-            double dWidth = 0.00025;
-            double dHeight = 0.00015;
 
-            int iKachelBreite = 16;
-            int iKachelHöhe = 16;
+        ///// <summary>
+        ///// Creates the heatmap.
+        ///// </summary>
+        //private void CreateHeatmap()
+        //{
+        //    PointLatLng pll = this.mcMapControl.Position;
 
-            Random r = new Random();
-            List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
+        //    double dWidth = 0.00025;
+        //    double dHeight = 0.00015;
 
-            for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
-            {
-                for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
-                {
-                    PointLatLng pllTopLeft = new PointLatLng(y, x);
-                    PointLatLng pllBottomRight = new PointLatLng(y + dHeight, x + dWidth);
+        //    int iKachelBreite = 16;
+        //    int iKachelHöhe = 16;
 
-                    CreateHeatmap(pllTopLeft, pllBottomRight, r.NextObject(colors));
-                }
-            }
-        }
+        //    Random r = new Random();
+        //    List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
+
+        //    for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
+        //    {
+        //        for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
+        //        {
+        //            PointLatLng pllTopLeft = new PointLatLng(y, x);
+        //            PointLatLng pllBottomRight = new PointLatLng(y + dHeight, x + dWidth);
+
+        //            CreateHeatmap(pllTopLeft, pllBottomRight, r.NextObject(colors));
+        //        }
+        //    }
+        //}
 
 
         ///// <summary>
@@ -514,17 +514,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //}
 
 
-        /// <summary>
-        /// Handles the Click event of the MenuItem_HeatmapTest control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_HeatmapTest_Click(object sender, RoutedEventArgs e)
-        {
-            CreateHeatmap();
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_HeatmapTest control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_HeatmapTest_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CreateHeatmap();
 
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
     } // end public partial class MainWindow
 }

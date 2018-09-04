@@ -37,7 +37,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <returns>A RFDeviceList with all selected RFDevices from the DataGrid.</returns>
         private RFDeviceList GetDeviceList()
         {
-            return new RFDeviceList(from devicemodel in RFDevicesCollection where devicemodel.IsMarked == true select devicemodel.RFDevice);
+            return new RFDeviceList(from devicemodel in this.RFDevicesCollection where devicemodel.IsMarked == true select devicemodel.RFDevice);
         }
 
 
@@ -46,7 +46,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void SetMapToCreatingRFDeviceMode()
         {
-            mcMapControl.DragButton = bCreatingRFDevice ? MouseButton.Right : MouseButton.Left;
+            this.mcMapControl.DragButton = this.bCreatingRFDevice ? MouseButton.Right : MouseButton.Left;
         }
 
 
@@ -55,8 +55,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void BeginCreateRFDevice()
         {
-            CreatingRFDevice = true;
-            mcMapControl.Cursor = Cursors.Cross;
+            this.CreatingRFDevice = true;
+            this.mcMapControl.Cursor = Cursors.Cross;
         }
 
 
@@ -65,8 +65,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void EndCreateRFDevice()
         {
-            mcMapControl.Cursor = Cursors.Arrow;
-            CreatingRFDevice = false;
+            this.mcMapControl.Cursor = Cursors.Arrow;
+            this.CreatingRFDevice = false;
         }
 
 
@@ -99,7 +99,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    return;
             //}
 
-            AddRFDevice(new RFDeviceViewModel(mcMapControl, d));
+            AddRFDevice(new RFDeviceViewModel(this.mcMapControl, d));
         }
 
 
@@ -110,8 +110,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void AddRFDevice(RFDeviceViewModel dvm)
         {
             dvm.OnSelectionChanged += DeviceViewModel_OnSelectionChanged;
-            RFDevicesCollection.Add(dvm);
-            mcMapControl.Markers.Add(dvm.Marker);
+            this.RFDevicesCollection.Add(dvm);
+            this.mcMapControl.Markers.Add(dvm.Marker);
         }
 
 
@@ -134,8 +134,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void DeleteRFDevice(RFDeviceViewModel dvm)
         {
             dvm.OnSelectionChanged -= DeviceViewModel_OnSelectionChanged;
-            RFDevicesCollection.Remove(dvm);
-            mcMapControl.Markers.Remove(dvm.Marker);
+            this.RFDevicesCollection.Remove(dvm);
+            this.mcMapControl.Markers.Remove(dvm.Marker);
         }
 
 
@@ -144,19 +144,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void DeleteRFDevice()
         {
-            if (dgRFDevices.SelectedItem == null)
+            if (this.dgRFDevices.SelectedItem == null)
             {
                 MB.Information("No RFDevice Is Selected In The DataGrid!");
                 return;
             }
 
-            if (dgRFDevices.SelectedItems.Count > 1)
+            if (this.dgRFDevices.SelectedItems.Count > 1)
             {
                 MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
                 return;
             }
 
-            DeleteRFDevice(dgRFDevices.SelectedItem as RFDeviceViewModel);
+            DeleteRFDevice(this.dgRFDevices.SelectedItem as RFDeviceViewModel);
         }
 
 
@@ -165,7 +165,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void DeleteRFDevices()
         {
-            foreach (RFDeviceViewModel device in (from devicemodel in RFDevicesCollection where devicemodel.IsMarked == true select devicemodel).ToList())
+            foreach (RFDeviceViewModel device in (from devicemodel in this.RFDevicesCollection where devicemodel.IsMarked == true select devicemodel).ToList())
             {
                 DeleteRFDevice(device);
             }
@@ -178,7 +178,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="predicator">The predicator.</param>
         private void DeleteRFDevices(Predicate<RFDeviceViewModel> predicator)
         {
-            foreach (RFDeviceViewModel device in (from devicemodel in RFDevicesCollection where devicemodel.IsMarked == true select devicemodel).ToList())
+            foreach (RFDeviceViewModel device in (from devicemodel in this.RFDevicesCollection where devicemodel.IsMarked == true select devicemodel).ToList())
             {
                 if (predicator(device) == true)
                 {
@@ -376,7 +376,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 SheetsInNewWorkbook = 1
             };
 
-            Excel.Workbook wb = excel.Workbooks.Add(Missing);
+            Excel.Workbook wb = excel.Workbooks.Add(this.Missing);
 
             //-----------------------------------------------------------------
 
@@ -445,18 +445,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if (string.IsNullOrEmpty(ScenarioDescription) == false)
+            if (string.IsNullOrEmpty(this.ScenarioDescription) == false)
             {
                 if (wb.Sheets.Count < 2)
                 {
-                    wb.Sheets.Add(Missing, maindatasheet);
+                    wb.Sheets.Add(this.Missing, maindatasheet);
                 }
 
                 Excel.Worksheet descriptionsheet = wb.Sheets[2] as Excel.Worksheet;
                 descriptionsheet.Name = "Scenario Description";
                 Excel.Range cell = descriptionsheet.Cells[1, 1] as Excel.Range;
 
-                Clipboard.SetDataObject(ScenarioDescription);
+                Clipboard.SetDataObject(this.ScenarioDescription);
                 cell.PasteSpecial();
             }
 
@@ -464,7 +464,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             excel.Visible = true;
 
-            wb.SaveAs(strOutputFilename, Missing, Missing, Missing, Missing, Missing, Excel.XlSaveAsAccessMode.xlNoChange, Missing, Missing, Missing, Missing, Missing);
+            wb.SaveAs(strOutputFilename, this.Missing, this.Missing, this.Missing, this.Missing, this.Missing, Excel.XlSaveAsAccessMode.xlNoChange, this.Missing, this.Missing, this.Missing, this.Missing, this.Missing);
 
             GC.WaitForPendingFinalizers();
             GC.Collect();
@@ -481,7 +481,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="fiImportFile">The fi import file.</param>
         private void ImportRFDevices(FileInfo fiImportFile)
         {
-            Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
             try
             {
@@ -519,7 +519,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 MB.Error(ex);
             }
 
-            Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
         }
 
 
@@ -530,7 +530,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="fiExportFile">The fi export file.</param>
         private void ExportRFDevices(RFDeviceList devicelist, FileInfo fiExportFile)
         {
-            Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
             try
             {
@@ -567,7 +567,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 MB.Error(ex);
             }
 
-            Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
         }
 
 
@@ -584,11 +584,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            sfdExportRFDevices.FileName = CurrentFile != null ? new FileInfo(CurrentFile).GetFilenameWithoutExtension() : DateTime.Now.Fmt_YYYYMMDDHHMMSS();
+            this.sfdExportRFDevices.FileName = this.CurrentFile != null ? new FileInfo(this.CurrentFile).GetFilenameWithoutExtension() : DateTime.Now.Fmt_YYYYMMDDHHMMSS();
 
-            if (sfdExportRFDevices.ShowDialog() == true)
+            if (this.sfdExportRFDevices.ShowDialog() == true)
             {
-                ExportRFDevices(devicelist, new FileInfo(sfdExportRFDevices.FileName));
+                ExportRFDevices(devicelist, new FileInfo(this.sfdExportRFDevices.FileName));
             }
         }
 
@@ -598,9 +598,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ImportRFDevices()
         {
-            if (ofdImportRFDevices.ShowDialog() == true)
+            if (this.ofdImportRFDevices.ShowDialog() == true)
             {
-                ImportRFDevices(new FileInfo(ofdImportRFDevices.FileName));
+                ImportRFDevices(new FileInfo(this.ofdImportRFDevices.FileName));
             }
         }
 
@@ -614,11 +614,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="bSetMapZoomLevel">if set to <c>true</c> [b set map zoom level].</param>
         private void ZoomToRFDevice(RFDevice device, bool bSetMapZoomLevel = true)
         {
-            mcMapControl.Position = new PointLatLng(device.Latitude, device.Longitude);
+            this.mcMapControl.Position = new PointLatLng(device.Latitude, device.Longitude);
 
             if (bSetMapZoomLevel == true)
             {
-                mcMapControl.Zoom = settings.MapZoomLevel;
+                this.mcMapControl.Zoom = this.settings.MapZoomLevel;
             }
         }
 
@@ -628,19 +628,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ZoomToRFDevice()
         {
-            if (dgRFDevices.SelectedItem == null)
+            if (this.dgRFDevices.SelectedItem == null)
             {
                 MB.Information("No RFDevice Is Selected In The DataGrid!");
                 return;
             }
 
-            if (dgRFDevices.SelectedItems.Count > 1)
+            if (this.dgRFDevices.SelectedItems.Count > 1)
             {
                 MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
                 return;
             }
 
-            ZoomToRFDevice((dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
+            ZoomToRFDevice((this.dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -658,7 +658,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 using (Socket sender = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp))
                 {
-                    IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse(settings.UDPHost), settings.UDPPortSending);
+                    IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse(this.settings.UDPHost), this.settings.UDPPortSending);
 
                     foreach (RFDevice device in devicelist)
                     {
@@ -669,9 +669,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         sender.SendTo(baMessage, endpoint);
 
                         // Give the poor client some time to process the data when he need or bleed ...
-                        if (settings.UDPDelay > 0)
+                        if (this.settings.UDPDelay > 0)
                         {
-                            Thread.Sleep(settings.UDPDelay);
+                            Thread.Sleep(this.settings.UDPDelay);
                         }
                     }
 
@@ -710,17 +710,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CopyRFDevice()
         {
-            lCopiedRFDevices.Clear();
+            this.lCopiedRFDevices.Clear();
 
-            if (dgRFDevices.SelectedItems.Count == 0)
+            if (this.dgRFDevices.SelectedItems.Count == 0)
             {
                 MB.Information("You marked no RFDevice to copy.\nPlease select the RFDevices in the datagrid and push the button again.");
                 return;
             }
 
-            foreach (var device in dgRFDevices.SelectedItems)
+            foreach (var device in this.dgRFDevices.SelectedItems)
             {
-                lCopiedRFDevices.Add(device as RFDeviceViewModel);
+                this.lCopiedRFDevices.Add(device as RFDeviceViewModel);
             }
         }
 
@@ -730,15 +730,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void PasteRFDevice()
         {
-            if (lCopiedRFDevices.Count > 0)
+            if (this.lCopiedRFDevices.Count > 0)
             {
-                foreach (var device in lCopiedRFDevices)
+                foreach (var device in this.lCopiedRFDevices)
                 {
                     // Create a copy of the original device and change the primarykey    
                     RFDevice newdevice = device.RFDevice.Clone();
 
                     newdevice.PrimaryKey = Guid.NewGuid();
-                    newdevice.StartTime += settings.DeviceCopyTimeAddValue;
+                    newdevice.StartTime += this.settings.DeviceCopyTimeAddValue;
 
                     AddRFDevice(newdevice);
                 }
@@ -776,19 +776,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void OpenInGoogleMaps()
         {
-            if (dgRFDevices.SelectedItem == null)
+            if (this.dgRFDevices.SelectedItem == null)
             {
                 MB.Information("No RFDevice Is Selected In The DataGrid!");
                 return;
             }
 
-            if (dgRFDevices.SelectedItems.Count > 1)
+            if (this.dgRFDevices.SelectedItems.Count > 1)
             {
                 MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
                 return;
             }
 
-            OpenInGoogleMaps(dgRFDevices.SelectedItem as RFDeviceViewModel);
+            OpenInGoogleMaps(this.dgRFDevices.SelectedItem as RFDeviceViewModel);
         }
 
 
@@ -797,19 +797,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void RFDeviceQRCode()
         {
-            if (dgRFDevices.SelectedItem == null)
+            if (this.dgRFDevices.SelectedItem == null)
             {
                 MB.Information("No RFDevice Is Selected In The DataGrid!");
                 return;
             }
 
-            if (dgRFDevices.SelectedItems.Count > 1)
+            if (this.dgRFDevices.SelectedItems.Count > 1)
             {
                 MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
                 return;
             }
 
-            QRCodeDialog dlg = new QRCodeDialog(dgRFDevices.SelectedItem as RFDeviceViewModel);
+            QRCodeDialog dlg = new QRCodeDialog(this.dgRFDevices.SelectedItem as RFDeviceViewModel);
             dlg.ShowDialog();
             dlg = null;
         }
