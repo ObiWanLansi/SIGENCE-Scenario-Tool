@@ -1,4 +1,6 @@
-# Here Are Some Screenshot's From The Little SIGENCE Scenario Tool
+# Screenshots
+
+Here Are Some Screenshot's From The Little SIGENCE Scenario Tool
 
 ![Sorry, But Here Should Be A Screenshot To See](MainApp_CheatSheet.png)
 
