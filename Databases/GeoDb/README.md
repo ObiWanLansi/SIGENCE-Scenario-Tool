@@ -1,6 +1,6 @@
-# Databases
+# GeoDb
 
-## Geodata
+## GeoData
 
 The original geodata are data from [OpenStreetMap](https://www.openstreetmap.org/) and downloaded from
 [GEOFABRIK](http://download.geofabrik.de/) as BZ2 file. 
