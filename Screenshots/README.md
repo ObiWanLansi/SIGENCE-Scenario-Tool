@@ -1,6 +1,7 @@
 # Screenshots
 
-Here Are Some Screenshot's From The Little SIGENCE Scenario Tool
+Here Are Some Screenshot's From The Little SIGENCE Scenario Tool.
+<hr/>
 
 ![Sorry, But Here Should Be A Screenshot To See](MainApp_CheatSheet.png)
 
@@ -25,4 +26,3 @@ Here Are Some Screenshot's From The Little SIGENCE Scenario Tool
 ![Sorry, But Here Should Be A Screenshot To See](RFDevice_QRCode.png)
 
 *RFDevice_QRCode.png (04.08.2018, 21:26)*
-<hr/>
