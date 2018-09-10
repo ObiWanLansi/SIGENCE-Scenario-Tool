@@ -88,11 +88,11 @@
     <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamicLanguageRuntime.1.2.1\lib\net45\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
     </Reference>
-    <Reference Include="NetTopologySuite, Version=1.15.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetTopologySuite.Core.1.15.0\lib\net45\NetTopologySuite.dll</HintPath>
+    <Reference Include="NetTopologySuite, Version=1.15.1.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetTopologySuite.Core.1.15.1\lib\net45\NetTopologySuite.dll</HintPath>
     </Reference>
-    <Reference Include="NetTopologySuite.CoordinateSystems, Version=1.15.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetTopologySuite.CoordinateSystems.1.15.0\lib\net45\NetTopologySuite.CoordinateSystems.dll</HintPath>
+    <Reference Include="NetTopologySuite.CoordinateSystems, Version=1.15.1.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetTopologySuite.CoordinateSystems.1.15.1\lib\net45\NetTopologySuite.CoordinateSystems.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -159,6 +159,9 @@
     <Compile Include="Src\Database\SQLite\SQLiteHelper.cs" />
     <Compile Include="Src\Database\SQLite\SQLiteMemoryDatabase.cs" />
     <Compile Include="Src\Datatypes\Observable\ObservableStringCollection.cs" />
+    <Compile Include="Src\Datatypes\Physically\AbstractPhysicalBase.cs" />
+    <Compile Include="Src\Datatypes\Physically\PhysicalUnit.cs" />
+    <Compile Include="Src\Datatypes\Physically\PhysicalUnits.cs" />
     <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
     <Compile Include="Src\Datatypes\Standard\StringList.cs" />
     <Compile Include="Src\Extensions\ColorExtension.cs" />
@@ -176,6 +179,7 @@
     <Compile Include="Src\Extensions\TimeSpanExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
     <Compile Include="Src\Interfaces\IXmlExport.cs" />
+    <Compile Include="Src\Models\AbstractModelBase.cs" />
     <Compile Include="Src\Models\Database\GeoDb\GeoNode.cs" />
     <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.cs">

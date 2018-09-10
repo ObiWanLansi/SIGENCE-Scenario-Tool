@@ -4,8 +4,6 @@
  */
 
 using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
@@ -18,7 +16,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent A Device Based On A Radio Frequency.
     ///</summary>
-    sealed public partial class RFDevice : IEquatable<RFDevice>, INotifyPropertyChanged, ICloneable, IXmlExport
+    sealed public partial class RFDevice :AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -964,32 +962,6 @@ namespace SIGENCEScenarioTool.Models
         object ICloneable.Clone()
         {
             return this.MemberwiseClone();
-        }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        /// <summary>
-        /// Fires the property changed.
-        /// </summary>
-        /// <param name="strPropertyName">Name of the string property.</param>
-        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
-        {
-            // Wir cachen das Event lokal da es während der Abfrage in der if Anweisung und
-            // dem eigentlichen Ausführen zurückgesetzt werden könnte und somit eine Exception
-            // hervorgerufen werden könnte obwohl wir es ja überprüft haben.
-            var temp = PropertyChanged;
-
-            if (temp != null)
-            {
-                temp(this, new PropertyChangedEventArgs(strPropertyName));
-            }
         }
 
     } // end sealed public class RFDevice
