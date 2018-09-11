@@ -112,7 +112,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             CommandBindings.Add(new CommandBinding(RegisteredCommands.DeleteRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
-                    DeleteRFDevice();
+                    //DeleteRFDevice();
+                    DeleteRFDevices();
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
