@@ -76,21 +76,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="pll">The PLL.</param>
         /// <param name="ds">The ds.</param>
-        private void AddRFDevice( PointLatLng pll , DeviceSource ds )
+        /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        private void AddRFDevice( PointLatLng pll , DeviceSource ds , bool bIsSelected = false )
         {
             AddRFDevice( new RFDevice
             {
                 DeviceSource = ds ,
                 Latitude = pll.Lat ,
                 Longitude = pll.Lng
-            } );
+            } , bIsSelected );
         }
 
 
         /// <summary>
         /// Adds the RFDevice.
         /// </summary>
-        private void AddRFDevice( RFDevice d )
+        /// <param name="d">The d.</param>
+        /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        private void AddRFDevice( RFDevice d , bool bIsSelected = false )
         {
             // Adding Everything, The User Can Still Correct This Later...
 
@@ -100,19 +103,42 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    return;
             //}
 
-            AddRFDevice( new RFDeviceViewModel( this.mcMapControl , d ) );
+            AddRFDevice( new RFDeviceViewModel( this.mcMapControl , d ) , bIsSelected );
         }
 
 
         /// <summary>
         /// Adds the RFDeviceViewModel.
         /// </summary>
-        /// <param name="dvm"></param>
-        private void AddRFDevice( RFDeviceViewModel dvm )
+        /// <param name="dvm">The DVM.</param>
+        /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        private void AddRFDevice( RFDeviceViewModel dvm , bool bIsSelected = false )
         {
             dvm.OnSelectionChanged += DeviceViewModel_OnSelectionChanged;
+
             this.RFDevicesCollection.Add( dvm );
             this.mcMapControl.Markers.Add( dvm.Marker );
+
+            if( bIsSelected == true )
+            {
+                this.bNoFlashBack = true;
+
+                this.dgRFDevices.SelectedItems.Clear();
+                this.dgRFDevices.SelectedItems.Add( dvm );
+                this.dgRFDevices.ScrollIntoView( dvm );
+
+                dvm.IsSelected = bIsSelected;
+
+                foreach( RFDeviceViewModel model in this.RFDevicesCollection )
+                {
+                    if( model != dvm )
+                    {
+                        model.IsSelected = false;
+                    }
+                }
+
+                this.bNoFlashBack = false;
+            }
         }
 
 

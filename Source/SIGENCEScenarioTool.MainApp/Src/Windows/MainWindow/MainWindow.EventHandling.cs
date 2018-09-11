@@ -101,7 +101,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 PointLatLng pll = this.mcMapControl.FromLocalToLatLng( ( int ) p.X , ( int ) p.Y );
 
-                AddRFDevice( pll , DeviceSource.User );
+                AddRFDevice( pll , DeviceSource.User , true );
 
                 EndCreateRFDevice();
 
@@ -207,10 +207,21 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
+            if( e.Key == Key.Insert )
+            {
+                AddRFDevice( mcMapControl.Position , DeviceSource.User , true );
+
+                e.Handled = true;
+                return;
+
+            }
+
             if( e.Key == Key.Delete )
             {
                 DeleteRFDevices();
+
                 e.Handled = true;
+                return;
             }
         }
 
