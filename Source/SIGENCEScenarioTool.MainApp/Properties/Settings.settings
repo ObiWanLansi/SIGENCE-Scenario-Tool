@@ -17,7 +17,7 @@
     <Setting Name="UDPPortReceiving" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">7474</Value>
     </Setting>
-    <Setting Name="DeviceCopyTimeAddValue" Type="System.UInt32" Scope="User">
+    <Setting Name="DeviceCopyTimeAddValue" Type="System.Double" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="InitialLatitude" Type="System.Double" Scope="User">

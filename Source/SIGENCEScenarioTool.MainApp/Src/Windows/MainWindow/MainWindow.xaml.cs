@@ -98,7 +98,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices( 10 , false );
+            //CreateRandomizedRFDevices( 10 , false );
             
             //CreateHeatmap();
 
