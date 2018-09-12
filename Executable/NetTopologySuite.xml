@@ -4327,6 +4327,9 @@
             <summary>
             Validates that a collection of <see cref="T:NetTopologySuite.GeometriesGraph.Edge"/> is correctly noded.
             Throws an appropriate exception if an noding error is found.
+            <remarks>
+            Uses <see cref="T:NetTopologySuite.Noding.FastNodingValidator"/> to perform the validation.
+            </remarks>
             </summary>
         </member>
         <member name="M:NetTopologySuite.GeometriesGraph.EdgeNodingValidator.CheckValid(System.Collections.Generic.IEnumerable{NetTopologySuite.GeometriesGraph.Edge})">
@@ -6696,6 +6699,70 @@
             <param name="cs">the sequence to output</param>
             <returns>the string representation of the sequence</returns>
         </member>
+        <member name="M:NetTopologySuite.Geometries.CoordinateSequences.MinCoordinate(GeoAPI.Geometries.ICoordinateSequence)">
+            <summary>
+            Returns the minimum coordinate, using the usual lexicographic comparison.
+            </summary>
+            <param name="seq">The coordinate sequence to search</param>
+            <returns>The minimum coordinate in the sequence, found using <see cref="M:GeoAPI.Geometries.Coordinate.CompareTo(GeoAPI.Geometries.Coordinate)"/></returns>
+        </member>
+        <member name="M:NetTopologySuite.Geometries.CoordinateSequences.MinCoordinateIndex(GeoAPI.Geometries.ICoordinateSequence)">
+            <summary>
+            Returns the index of the minimum coordinate of the whole
+            coordinate sequence, using the usual lexicographic comparison.
+            </summary>
+            <param name="seq">The coordinate sequence to search</param>
+            <param name="from">The lower search index</param>
+            <param name="to">The upper search index</param>
+            <returns>The index of the minimum coordinate in the sequence, found using <see cref="M:GeoAPI.Geometries.Coordinate.CompareTo(GeoAPI.Geometries.Coordinate)"/></returns>
+        </member>
+        <member name="M:NetTopologySuite.Geometries.CoordinateSequences.MinCoordinateIndex(GeoAPI.Geometries.ICoordinateSequence,System.Int32,System.Int32)">
+            <summary>
+            Returns the index of the minimum coordinate of a part of
+            the coordinate sequence (defined by <paramref name="from"/>
+            and <paramref name="to"/>), using the usual lexicographic
+            comparison.
+            </summary>
+            <param name="seq">The coordinate sequence to search</param>
+            <param name="from">The lower search index</param>
+            <param name="to">The upper search index</param>
+            <returns>The index of the minimum coordinate in the sequence, found using <see cref="M:GeoAPI.Geometries.Coordinate.CompareTo(GeoAPI.Geometries.Coordinate)"/></returns>
+        </member>
+        <member name="M:NetTopologySuite.Geometries.CoordinateSequences.Scroll(GeoAPI.Geometries.ICoordinateSequence,GeoAPI.Geometries.Coordinate)">
+            <summary>
+            Shifts the positions of the coordinates until <c>firstCoordinate</c> is first.
+            </summary>
+            <param name="seq">The coordinate sequence to rearrange</param>
+            <param name="firstCoordinate">The coordinate to make first"></param>
+        </member>
+        <member name="M:NetTopologySuite.Geometries.CoordinateSequences.Scroll(GeoAPI.Geometries.ICoordinateSequence,System.Int32)">
+            <summary>
+            Shifts the positions of the coordinates until the coordinate at  <code>firstCoordinateIndex</code>
+            is first.
+            </summary>
+            <param name="seq">The coordinate sequence to rearrange</param>
+            <param name="indexOfFirstCoordinate">The index of the coordinate to make first</param>
+        </member>
+        <member name="M:NetTopologySuite.Geometries.CoordinateSequences.Scroll(GeoAPI.Geometries.ICoordinateSequence,System.Int32,System.Boolean)">
+            <summary>
+            Shifts the positions of the coordinates until the coordinate at  <code>firstCoordinateIndex</code>
+            is first.
+            </summary>
+            <param name="seq">The coordinate sequence to rearrange</param>
+            <param name="indexOfFirstCoordinate">The index of the coordinate to make first</param>
+            <param name="ensureRing">Makes sure that <paramref name="seq"/> will be a closed ring upon exit</param>
+        </member>
+        <member name="M:NetTopologySuite.Geometries.CoordinateSequences.IndexOf(GeoAPI.Geometries.Coordinate,GeoAPI.Geometries.ICoordinateSequence)">
+            <summary>
+            Returns the index of <c>coordinate</c> in a <see cref="T:GeoAPI.Geometries.ICoordinateSequence"/>
+            The first position is 0; the second, 1; etc.
+            </summary>
+            <param name="coordinate">The <c>Coordinate</c> to search for</param>
+            <param name="seq">The coordinate sequence to search</param>
+            <returns>
+            The position of <c>coordinate</c>, or -1 if it is not found
+            </returns>
+        </member>
         <member name="T:NetTopologySuite.Geometries.DefaultCoordinateSequence">
             <summary>
             The CoordinateSequence implementation that Geometries use by default. In
@@ -7967,6 +8034,7 @@
             <returns>the minimum-area convex polygon containing this <c>Geometry</c>'s points.</returns>
         </member>
         <member name="M:NetTopologySuite.Geometries.Geometry.Reverse">
+            <inheritdoc />
             <summary>
              Computes a new geometry which has all component coordinate sequences
              in reverse order (opposite orientation) to this one.
@@ -8205,12 +8273,22 @@
         </member>
         <member name="M:NetTopologySuite.Geometries.Geometry.Copy">
             <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.IGeometry"/> object
-            (including all coordinates contained by it).
-            Subclasses are responsible for implementing this method and copying
-            their internal data.
+            Creates a deep copy of this <see cref="T:GeoAPI.Geometries.IGeometry"/> object.
+            Coordinate sequences contained in it are copied.
+            All instance fields are copied (i.e. the <c>SRID</c> and <c>UserData</c>).
             </summary>
+            <remarks>
+            <b>NOTE:</b> The userData object reference (if present) is copied,
+            but the value itself is not copied.
+            If a deep copy is required this must be performed by the caller. 
+            </remarks>
             <returns>A deep copy of this geometry</returns>
+        </member>
+        <member name="M:NetTopologySuite.Geometries.Geometry.CopyInternal">
+            <summary>
+            An internal method to copy subclass-specific geometry data.
+            </summary>
+            <returns>A copy of the target geometry object.</returns>
         </member>
         <member name="M:NetTopologySuite.Geometries.Geometry.Normalize">
             <summary>
@@ -8347,8 +8425,8 @@
         </member>
         <member name="M:NetTopologySuite.Geometries.Geometry.CheckNotGeometryCollection(GeoAPI.Geometries.IGeometry)">
             <summary>
-            Throws an exception if <c>g</c>'s class is <c>GeometryCollection</c>.
-            (its subclasses do not trigger an exception).
+            Throws an exception if <c>g</c>'s type is a <c>GeometryCollection</c>.
+            (Its subclasses do not trigger an exception).
             </summary>
             <param name="g">The <c>Geometry</c> to check.</param>
             <exception cref="T:System.ArgumentException">
@@ -8619,12 +8697,8 @@
             </summary>
             <returns>A copy of this instance</returns>
         </member>
-        <member name="M:NetTopologySuite.Geometries.GeometryCollection.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.IGeometryCollection"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.GeometryCollection.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="M:NetTopologySuite.Geometries.GeometryCollection.Normalize">
              <summary>
@@ -10068,12 +10142,8 @@
             </summary>
             <returns>"LinearRing"</returns>
         </member>
-        <member name="M:NetTopologySuite.Geometries.LinearRing.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.ILinearRing"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.LinearRing.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="M:NetTopologySuite.Geometries.LinearRing.#ctor(GeoAPI.Geometries.Coordinate[])">
             <summary>
@@ -10655,12 +10725,8 @@
             </summary>
             <returns>A copy of this instance</returns>
         </member>
-        <member name="M:NetTopologySuite.Geometries.LineString.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.ILineString"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.LineString.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="M:NetTopologySuite.Geometries.LineString.Normalize">
             <summary>
@@ -10779,12 +10845,8 @@
             </summary>
             <returns>a <see cref="T:NetTopologySuite.Geometries.MultiLineString" /> in the reverse order.</returns>
         </member>
-        <member name="M:NetTopologySuite.Geometries.MultiLineString.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.IMultiLineString"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.MultiLineString.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="M:NetTopologySuite.Geometries.MultiLineString.EqualsExact(GeoAPI.Geometries.IGeometry,System.Double)">
              <summary>
@@ -10829,12 +10891,8 @@
             with <see cref="T:NetTopologySuite.Geometries.PrecisionModel" /> <c> == </c> <see cref="F:GeoAPI.Geometries.PrecisionModels.Floating"/>.
             </remarks>
         </member>
-        <member name="M:NetTopologySuite.Geometries.MultiPoint.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.IMultiPoint"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.MultiPoint.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="P:NetTopologySuite.Geometries.MultiPoint.SortIndex">
             <summary>
@@ -10926,12 +10984,8 @@
             </param>
             <param name="factory"></param>
         </member>
-        <member name="M:NetTopologySuite.Geometries.MultiPolygon.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.IMultiPolygon"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.MultiPolygon.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="P:NetTopologySuite.Geometries.MultiPolygon.SortIndex">
             <summary>
@@ -11352,12 +11406,8 @@
             </summary>
             <returns>A copy of this instance</returns>
         </member>
-        <member name="M:NetTopologySuite.Geometries.Point.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.IPoint"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.Point.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="M:NetTopologySuite.Geometries.Point.Normalize">
              <summary>
@@ -11659,12 +11709,8 @@
             </summary>
             <returns>A copy of this instance</returns>
         </member>
-        <member name="M:NetTopologySuite.Geometries.Polygon.Copy">
-            <summary>
-            Creates and returns a full copy of this <see cref="T:GeoAPI.Geometries.IPolygon"/> object.
-            (including all coordinates contained by it).
-            </summary>
-            <returns>A copy of this instance</returns>
+        <member name="M:NetTopologySuite.Geometries.Polygon.CopyInternal">
+            <inheritdoc cref="M:NetTopologySuite.Geometries.Geometry.CopyInternal"/>>
         </member>
         <member name="M:NetTopologySuite.Geometries.Polygon.ConvexHull">
              <summary>
@@ -11691,13 +11737,6 @@
              <param name="other"></param>
              <param name="comparer"></param>
              <returns></returns>
-        </member>
-        <member name="M:NetTopologySuite.Geometries.Polygon.Normalize(GeoAPI.Geometries.ILinearRing,System.Boolean)">
-             <summary>
-            
-             </summary>
-             <param name="ring"></param>
-             <param name="clockwise"></param>
         </member>
         <member name="P:NetTopologySuite.Geometries.Polygon.IsRectangle">
              <summary>
@@ -21208,22 +21247,35 @@
             </summary>
              <remarks>
              <para>
-             In the most common use case, validation stops after a single
-             non-noded intersection is detected,
-             but the class can be requested to detect all intersections
+             By default validation stops after a single
+             non-noded intersection is detected.
+             Alternatively, it can be requested to detect all intersections
              by using the <see cref="P:NetTopologySuite.Noding.FastNodingValidator.FindAllIntersections"/> property.
              <para/>
-             The validator does not check for a-b-a topology collapse situations.
+             The validator does not check for topology collapse situations
+             (e.g. where two segment strings are fully co-incident).
              <para/>
-             The validator does not check for endpoint-interior vertex intersections.
-             This should not be a problem, since the JTS noders should be
-             able to compute intersections between vertices correctly.
+             The validator checks for the following situations which indicated incorrect noding:
+             <list type="Bullen">
+             <item>Proper intersections between segments (i.e. the intersection is interior to both segments)</item>
+             <item>Intersections at an interior vertex (i.e. with an endpoint or another interior vertex)</item>
+             </list>
              </para>
              <para>
              The client may either test the <see cref="P:NetTopologySuite.Noding.FastNodingValidator.IsValid"/> condition,
              or request that a suitable <see cref="T:NetTopologySuite.Geometries.TopologyException"/> be thrown.
              </para>
              </remarks>
+             <seealso cref="T:NetTopologySuite.Noding.NodingValidator"/>
+        </member>
+        <member name="M:NetTopologySuite.Noding.FastNodingValidator.ComputeIntersections(System.Collections.Generic.IEnumerable{NetTopologySuite.Noding.ISegmentString})">
+            <summary>
+            Gets a list of all intersections found.
+            Intersections are represented as <see cref="T:GeoAPI.Geometries.Coordinate"/>s.
+            List is empty if none were found.
+            <param name="segStrings">A collection of SegmentStrings</param>
+            <returns>a list of <see cref="T:GeoAPI.Geometries.Coordinate"/></returns>
+            </summary>
         </member>
         <member name="M:NetTopologySuite.Noding.FastNodingValidator.#ctor(System.Collections.Generic.IEnumerable{NetTopologySuite.Noding.ISegmentString})">
             <summary>
@@ -21334,119 +21386,6 @@
             The <see cref="T:NetTopologySuite.Noding.ISegmentString" />s have the same context as their parent.
             </summary>
             <returns></returns>
-        </member>
-        <member name="T:NetTopologySuite.Noding.InteriorIntersectionFinder">
-            <summary>
-            </summary>
-        </member>
-        <member name="M:NetTopologySuite.Noding.InteriorIntersectionFinder.CreateAnyIntersectionFinder(NetTopologySuite.Algorithm.LineIntersector)">
-            <summary>
-             Creates an intersection finder which tests if there is at least one interior intersection.
-             Uses short-circuiting for efficient performance.
-             The intersection found is recorded.
-            </summary>
-             <param name="li">A line intersector.</param>
-             <returns>A intersection finder which tests if there is at least one interior intersection.</returns>
-        </member>
-        <member name="M:NetTopologySuite.Noding.InteriorIntersectionFinder.CreateAllIntersectionsFinder(NetTopologySuite.Algorithm.LineIntersector)">
-            <summary>
-             Creates an intersection finder which finds all interior intersections.
-             The intersections are recorded for later inspection.
-            </summary>
-             <param name="li">A line intersector.</param>
-             <returns>a intersection finder which finds all interior intersections.</returns>
-        </member>
-        <member name="M:NetTopologySuite.Noding.InteriorIntersectionFinder.CreateIntersectionCounter(NetTopologySuite.Algorithm.LineIntersector)">
-            <summary>
-             Creates an intersection finder which counts all interior intersections.
-             The intersections are note recorded to reduce memory usage.
-            </summary>
-             <param name="li">A line intersector.</param>
-             <returns>a intersection finder which counts all interior intersections.</returns>
-        </member>
-        <member name="M:NetTopologySuite.Noding.InteriorIntersectionFinder.#ctor(NetTopologySuite.Algorithm.LineIntersector)">
-            <summary>
-             Creates an intersection finder which finds an interior intersection if one exists
-            </summary>
-            <param name="li">the LineIntersector to use</param>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.FindAllIntersections">
-            <summary>
-            Gets/Sets whether all intersections should be computed.
-            <remarks>
-            When this is <c>false</c> (the default value), the value of <see cref="P:NetTopologySuite.Noding.InteriorIntersectionFinder.IsDone"/>
-            is <c>true</c> after the first intersection is found.
-            Default is <c>false</c>.
-            </remarks>
-            </summary>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.KeepIntersections">
-            <summary>
-            Gets/Sets whether intersection points are recorded.
-            <remarks>
-            If the only need is to count intersection points, this can be set to <c>false</c>.
-            Default is <c>true</c>.
-            </remarks>
-            </summary>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.CheckEndSegmentsOnly">
-            <summary>
-             Gets/Sets whether only end segments should be tested for interior intersection.
-             This is a performance optimization that may be used if
-             the segments have been previously noded by an appropriate algorithm.
-             It may be known that any potential noding failures will occur only in
-             end segments.
-            </summary>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.HasIntersection">
-            <summary>
-             Tests whether an intersection was found.
-            </summary>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.Intersections">
-            <summary>
-            Gets the intersections found.
-            </summary>
-            <returns>A list of <see cref="T:GeoAPI.Geometries.Coordinate"/>.</returns>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.Count">
-            <summary>
-            Gets the count of intersections found.
-            </summary>
-            <returns>The intersection count.</returns>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.InteriorIntersection">
-            <summary>
-             Gets the computed location of the intersection.
-             Due to round-off, the location may not be exact.
-            </summary>
-        </member>
-        <member name="P:NetTopologySuite.Noding.InteriorIntersectionFinder.IntersectionSegments">
-            <summary>
-             Gets the endpoints of the intersecting segments.
-            </summary>
-        </member>
-        <member name="M:NetTopologySuite.Noding.InteriorIntersectionFinder.ProcessIntersections(NetTopologySuite.Noding.ISegmentString,System.Int32,NetTopologySuite.Noding.ISegmentString,System.Int32)">
-            <summary>
-             This method is called by clients of the <see cref="T:NetTopologySuite.Noding.ISegmentIntersector"/> class to process
-             intersections for two segments of the <see cref="T:NetTopologySuite.Noding.ISegmentString"/>s being intersected.<br/>
-             Note that some clients (such as <c>MonotoneChain</c>s) may optimize away
-             this call for segment pairs which they have determined do not intersect
-             (e.g. by an disjoint envelope test).
-            </summary>
-            <param name="e0"></param>
-            <param name="segIndex0"></param>
-            <param name="e1"></param>
-            <param name="segIndex1"></param>
-        </member>
-        <member name="M:NetTopologySuite.Noding.InteriorIntersectionFinder.IsEndSegment(NetTopologySuite.Noding.ISegmentString,System.Int32)">
-            <summary>
-             Tests whether a segment in a <see cref="T:NetTopologySuite.Noding.ISegmentString" /> is an end segment.
-             (either the first or last).
-            </summary>
-            <param name="segStr">a segment string</param>
-            <param name="index">the index of a segment in the segment string</param>
-            <returns>true if the segment is an end segment</returns>
         </member>
         <member name="T:NetTopologySuite.Noding.InteriorIntersectionFinderAdder">
             <summary>
@@ -21889,6 +21828,151 @@
             Creates an instance of this class using the provided <see cref="T:NetTopologySuite.Noding.ISegmentIntersector"/>
             </summary>
             <param name="si">The segment intersector to use</param>
+        </member>
+        <member name="T:NetTopologySuite.Noding.NodingIntersectionFinder">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.CreateAnyIntersectionFinder(NetTopologySuite.Algorithm.LineIntersector)">
+            <summary>
+             Creates an intersection finder which tests if there is at least one interior intersection.
+             Uses short-circuiting for efficient performance.
+             The intersection found is recorded.
+            </summary>
+             <param name="li">A line intersector.</param>
+             <returns>A intersection finder which tests if there is at least one interior intersection.</returns>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.CreateAllIntersectionsFinder(NetTopologySuite.Algorithm.LineIntersector)">
+            <summary>
+             Creates an intersection finder which finds all interior intersections.
+             The intersections are recorded for later inspection.
+            </summary>
+             <param name="li">A line intersector.</param>
+             <returns>a intersection finder which finds all interior intersections.</returns>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.CreateIntersectionCounter(NetTopologySuite.Algorithm.LineIntersector)">
+            <summary>
+             Creates an intersection finder which counts all interior intersections.
+             The intersections are note recorded to reduce memory usage.
+            </summary>
+             <param name="li">A line intersector.</param>
+             <returns>a intersection finder which counts all interior intersections.</returns>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.#ctor(NetTopologySuite.Algorithm.LineIntersector)">
+            <summary>
+             Creates an intersection finder which finds an interior intersection if one exists
+            </summary>
+            <param name="li">the LineIntersector to use</param>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.FindAllIntersections">
+            <summary>
+            Gets/Sets whether all intersections should be computed.
+            <remarks>
+            When this is <c>false</c> (the default value), the value of <see cref="P:NetTopologySuite.Noding.NodingIntersectionFinder.IsDone"/>
+            is <c>true</c> after the first intersection is found.
+            Default is <c>false</c>.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.KeepIntersections">
+            <summary>
+            Gets/Sets whether intersection points are recorded.
+            <remarks>
+            If the only need is to count intersection points, this can be set to <c>false</c>.
+            Default is <c>true</c>.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.CheckEndSegmentsOnly">
+            <summary>
+             Gets/Sets whether only end segments should be tested for interior intersection.
+             This is a performance optimization that may be used if
+             the segments have been previously noded by an appropriate algorithm.
+             It may be known that any potential noding failures will occur only in
+             end segments.
+            </summary>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.HasIntersection">
+            <summary>
+             Tests whether an intersection was found.
+            </summary>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.Intersections">
+            <summary>
+            Gets the intersections found.
+            </summary>
+            <returns>A list of <see cref="T:GeoAPI.Geometries.Coordinate"/>.</returns>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.Count">
+            <summary>
+            Gets the count of intersections found.
+            </summary>
+            <returns>The intersection count.</returns>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.InteriorIntersection">
+            <summary>
+             Gets the computed location of the intersection.
+             Due to round-off, the location may not be exact.
+            </summary>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.IntersectionSegments">
+            <summary>
+             Gets the endpoints of the intersecting segments.
+            </summary>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.ProcessIntersections(NetTopologySuite.Noding.ISegmentString,System.Int32,NetTopologySuite.Noding.ISegmentString,System.Int32)">
+            <summary>
+             This method is called by clients of the <see cref="T:NetTopologySuite.Noding.ISegmentIntersector"/> class to process
+             intersections for two segments of the <see cref="T:NetTopologySuite.Noding.ISegmentString"/>s being intersected.<br/>
+             Note that some clients (such as <c>MonotoneChain</c>s) may optimize away
+             this call for segment pairs which they have determined do not intersect
+             (e.g. by an disjoint envelope test).
+            </summary>
+            <param name="e0"></param>
+            <param name="segIndex0"></param>
+            <param name="e1"></param>
+            <param name="segIndex1"></param>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.IsInteriorVertexIntersection(GeoAPI.Geometries.Coordinate,GeoAPI.Geometries.Coordinate,GeoAPI.Geometries.Coordinate,GeoAPI.Geometries.Coordinate,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Tests if an intersection occurs between a segmentString interior vertex and another vertex.
+            Note that intersections between two endpoint vertices are valid noding,
+            and are not flagged.
+            </summary>
+            <param name="p00">A segment vertex</param>
+            <param name="p01">A segment vertex</param>
+            <param name="p10">A segment vertex</param>
+            <param name="p11">A segment vertex</param>
+            <param name="isEnd00">true if vertex is a segmentString endpoint</param>
+            <param name="isEnd01">true if vertex is a segmentString endpoint</param>
+            <param name="isEnd10">true if vertex is a segmentString endpoint</param>
+            <param name="isEnd11">true if vertex is a segmentString endpoint</param>
+            <returns><c>true</c> if an intersection is found/</returns>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.IsInteriorVertexIntersection(GeoAPI.Geometries.Coordinate,GeoAPI.Geometries.Coordinate,System.Boolean,System.Boolean)">
+            <summary>
+            Tests if two vertices with at least one in a segmentString interior
+            are equal.
+            </summary>
+            <param name="p0">A segment vertex</param>
+            <param name="p1">A segment vertex</param>
+            <param name="isEnd0"><c>true</c> if vertex is a segmentString endpoint</param>
+            <param name="isEnd1"><c>true</c> if vertex is a segmentString endpoint</param>
+            <returns><c>true</c> if an intersection is found</returns>
+        </member>
+        <member name="M:NetTopologySuite.Noding.NodingIntersectionFinder.IsEndSegment(NetTopologySuite.Noding.ISegmentString,System.Int32)">
+            <summary>
+             Tests whether a segment in a <see cref="T:NetTopologySuite.Noding.ISegmentString" /> is an end segment.
+             (either the first or last).
+            </summary>
+            <param name="segStr">a segment string</param>
+            <param name="index">the index of a segment in the segment string</param>
+            <returns>true if the segment is an end segment</returns>
+        </member>
+        <member name="P:NetTopologySuite.Noding.NodingIntersectionFinder.IsDone">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:NetTopologySuite.Noding.NodingValidator">
             <summary>
@@ -26454,14 +26538,6 @@
              </summary>
              <param name="shellList"></param>
              <returns></returns>
-        </member>
-        <member name="M:NetTopologySuite.Operation.Overlay.PolygonBuilder.ContainsPoint(GeoAPI.Geometries.Coordinate)">
-            <summary>
-            Checks the current set of shells (with their associated holes) to
-            see if any of them contain the point.
-            </summary>
-            <param name="p"></param>
-            <returns></returns>
         </member>
         <member name="T:NetTopologySuite.Operation.Overlay.Snap.GeometrySnapper">
             <summary>
@@ -33192,6 +33268,14 @@
             <returns>A circular polygon.</returns>
         </member>
         <member name="M:NetTopologySuite.Utilities.GeometricShapeFactory.CeateEllipse">
+            <summary>
+            Creates an elliptical <c>Polygon</c>.
+            If the supplied envelope is square the
+            result will be a circle.
+            </summary>
+            <returns>An an ellipse or circle.</returns>
+        </member>
+        <member name="M:NetTopologySuite.Utilities.GeometricShapeFactory.CreateEllipse">
             <summary>
             Creates an elliptical <c>Polygon</c>.
             If the supplied envelope is square the

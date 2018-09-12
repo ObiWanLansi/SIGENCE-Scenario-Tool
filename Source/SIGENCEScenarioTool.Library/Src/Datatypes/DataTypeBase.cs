@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 
 
@@ -8,6 +9,7 @@ namespace SIGENCEScenarioTool.Datatypes
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    //abstract public class DataTypeBase<T> : IFromStringConverter<T> where T : IComparable<T>, IEquatable<T>
     abstract public class DataTypeBase<T> where T : IComparable<T>, IEquatable<T>
     {
         ///// <summary>
@@ -24,16 +26,22 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <value>
         /// The value in it's default SI Einheit.
         /// </value>
-        public T Value { get; set; } = default( T );
+        public T Value { get; set; } = default(T);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        public DataTypeBase( T value )
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataTypeBase{T}"/> class.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        public DataTypeBase(T value)
         {
-            Value = value;
+            this.Value = value;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Liefert den Wert als den generischen Typ zurück.
@@ -42,7 +50,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator T( DataTypeBase<T> apb )
+        static public implicit operator T(DataTypeBase<T> apb)
         {
             return apb.Value;
         }
@@ -64,6 +72,12 @@ namespace SIGENCEScenarioTool.Datatypes
 
 
         /// <summary>
+        /// The ci
+        /// </summary>
+        static private readonly CultureInfo ci = new CultureInfo("en-US");
+
+
+        /// <summary>
         /// Returns a <see cref="System.String" /> that represents this instance.
         /// </summary>
         /// <returns>
@@ -71,8 +85,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// </returns>
         public override string ToString()
         {
-            //return string.Format( "{0}" , Value );
-            return Value.ToString();
+            return string.Format(ci, "{0}", this.Value);
         }
 
 
@@ -83,6 +96,14 @@ namespace SIGENCEScenarioTool.Datatypes
         ///   <c>true</c> if this instance is valid; otherwise, <c>false</c>.
         /// </returns>
         abstract public bool? IsValid();
+
+
+        ///// <summary>
+        ///// Froms the string.
+        ///// </summary>
+        ///// <param name="strValue">The string value.</param>
+        ///// <returns></returns>
+        //abstract public T FromString(string strValue);
 
     } // end abstract public class DataTypeBase<T>
 }

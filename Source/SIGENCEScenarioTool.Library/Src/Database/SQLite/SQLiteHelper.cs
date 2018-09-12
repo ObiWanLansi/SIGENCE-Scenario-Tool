@@ -21,48 +21,52 @@ namespace SIGENCEScenarioTool.Database.SQLite
         static public readonly Dictionary<Type, Tuple<string, DbType, bool>> TypeMapping = new Dictionary<Type, Tuple<string, DbType, bool>>
         {
             {typeof(long),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
-            {typeof(UInt64),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
+            {typeof(ulong),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
 
             {typeof(int),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
-            {typeof(UInt32),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
+            {typeof(uint),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
 
-            {typeof(Int16),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
-            {typeof(UInt16),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
+            {typeof(short),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
+            {typeof(ushort),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
 
-            {typeof(Byte),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
-            {typeof(SByte),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
+            {typeof(byte),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
+            {typeof(sbyte),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
 
-            {typeof(Double),new Tuple<string,DbType,bool>("REAL",DbType.Double,false)} ,
-            {typeof(Single),new Tuple<string,DbType,bool>("REAL",DbType.Single,false)} ,
+            {typeof(double),new Tuple<string,DbType,bool>("REAL",DbType.Double,false)} ,
+            {typeof(float),new Tuple<string,DbType,bool>("REAL",DbType.Single,false)} ,
 
             {typeof(Guid),new Tuple<string,DbType,bool>("TEXT",DbType.String,false)} ,
-            {typeof(Boolean),new Tuple<string,DbType,bool>("BOOLEAN",DbType.Boolean,false)} ,
+            {typeof(bool),new Tuple<string,DbType,bool>("BOOLEAN",DbType.Boolean,false)} ,
             {typeof(DateTime),new Tuple<string,DbType,bool>("DATETIME",DbType.DateTime,false)} ,
 
             //-----------------------------------------------------------------
 
-            {typeof(Byte?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
-            {typeof(SByte?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
+            {typeof(byte?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
+            {typeof(sbyte?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
 
-            {typeof(Int16?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
-            {typeof(UInt16?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
+            {typeof(short?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
+            {typeof(ushort?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
 
             {typeof(int?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
-            {typeof(UInt32?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
+            {typeof(uint?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
 
             {typeof(long?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
-            {typeof(UInt64?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
+            {typeof(ulong?),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,true)} ,
 
-            {typeof(Single?),new Tuple<string,DbType,bool>("REAL",DbType.Single,true)} ,
-            {typeof(Double?),new Tuple<string,DbType,bool>("REAL",DbType.Double,true)} ,
+            {typeof(float?),new Tuple<string,DbType,bool>("REAL",DbType.Single,true)} ,
+            {typeof(double?),new Tuple<string,DbType,bool>("REAL",DbType.Double,true)} ,
 
             {typeof(Guid?),new Tuple<string,DbType,bool>("TEXT",DbType.String,true)} ,
-            {typeof(Boolean?),new Tuple<string,DbType,bool>("BOOLEAN",DbType.Boolean,true)} ,
+            {typeof(bool?),new Tuple<string,DbType,bool>("BOOLEAN",DbType.Boolean,true)} ,
             {typeof(DateTime?),new Tuple<string,DbType,bool>("DATETIME",DbType.DateTime,true)} ,
 
             //-----------------------------------------------------------------
 
-            {typeof(Byte []),new Tuple<string,DbType,bool>("BLOB",DbType.Object,true)}
+            {typeof(byte []),new Tuple<string,DbType,bool>("BLOB",DbType.Object,true)}
+
+            //{typeof(Latitude),new Tuple<string,DbType,bool>("REAL",DbType.Double,false)} ,
+            //{typeof(Longitude),new Tuple<string,DbType,bool>("REAL",DbType.Double,false)} ,
+            //{typeof(Altitude),new Tuple<string,DbType,bool>("INTEGER",DbType.Int32,false)} ,
 
             //{typeof(String),new Trio<String,DbType,bool>("TEXT",DbType.String,false)} 
         };
@@ -204,6 +208,18 @@ namespace SIGENCEScenarioTool.Database.SQLite
             //{
             //    return "REAL";
             //}
+
+
+            //if (t == typeof(Latitude) || t == typeof(Longitude) )
+            //{
+            //    return "TEXT";
+            //}
+
+            //if (t == typeof(Color?) || t == typeof(Rectangle) || t == typeof(Size?) || t == typeof(Point?))
+            //{
+            //    return "TEXT";
+            //}
+
 
             #endregion
 

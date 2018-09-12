@@ -3,16 +3,29 @@
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="SIGENCEScenarioTool.Datatypes.Physically.DataTypeBase{System.UInt64}" />
+    /// <seealso cref="SIGENCEScenarioTool.Datatypes.Physically.DataTypeBase{ulong}" />
     sealed public class Frequency : DataTypeBase<ulong>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Frequency"/> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Frequency( ulong value ) : base( value )
+        public Frequency(ulong value) : base(value)
         {
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        ///// <summary>
+        ///// Froms the string.
+        ///// </summary>
+        ///// <param name="strValue">The string value.</param>
+        ///// <returns></returns>
+        //public override ulong FromString(string strValue)
+        //{
+        //    return ulong.Parse(strValue);
+        //}
 
 
         /// <summary>

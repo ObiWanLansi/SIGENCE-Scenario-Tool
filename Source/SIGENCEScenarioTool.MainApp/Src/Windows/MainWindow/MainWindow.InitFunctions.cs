@@ -36,7 +36,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             CommandBindings.Add(new CommandBinding(ApplicationCommands.Open,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
-                    OpenFile();
+                    LoadFile();
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>

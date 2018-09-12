@@ -30,11 +30,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Opens the file.
         /// </summary>
         /// <param name="strInputFilename">The string input filename.</param>
-        public void OpenFile(string strInputFilename)
+        public void LoadFile(string strInputFilename)
         {
-            Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
-            CurrentFile = strInputFilename;
+            this.CurrentFile = strInputFilename;
 
             try
             {
@@ -43,11 +43,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 //---------------------------------------------------------
 
                 XElement eGeneralSettings = xdoc.Root.Element("GeneralSettings");
-                Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? Zoom;
+                this.Zoom = eGeneralSettings.GetDoubleFromNode("Zoom") ?? this.Zoom;
                 //ShowCenter = eGeneralSettings.GetBoolFromNode("ShowCenter") ?? ShowCenter;
-                ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
+                this.ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
 
-                string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? MapProvider.Name;
+                string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? this.MapProvider.Name;
                 //foreach (var mp in GMapProviders.List)
                 //{
                 //    if (mp.Name == strMapProvider)
@@ -56,11 +56,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 //        break;
                 //    }
                 //}
-                MapProvider = GetProviderFromString(strMapProvider);
+                this.MapProvider = GetProviderFromString(strMapProvider);
 
                 XElement eCenterPosition = eGeneralSettings.Element("CenterPosition");
-                Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? Latitude;
-                Longitude = eCenterPosition.GetDoubleFromNodePoint("Longitude") ?? Longitude;
+                this.Latitude = eCenterPosition.GetDoubleFromNodePoint("Latitude") ?? this.Latitude;
+                this.Longitude = eCenterPosition.GetDoubleFromNodePoint("Longitude") ?? this.Longitude;
 
                 //---------------------------------------------------------
 
@@ -76,20 +76,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 MB.Error(ex);
             }
 
-            Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
         }
 
-        
+
         /// <summary>
         /// Opens the file.
         /// </summary>
-        public void OpenFile()
+        public void LoadFile()
         {
-            if (ofdLoadSIGENCEScenario.ShowDialog() == true)
+            if (this.ofdLoadSIGENCEScenario.ShowDialog() == true)
             {
                 Reset();
 
-                OpenFile(ofdLoadSIGENCEScenario.FileName);
+                LoadFile(this.ofdLoadSIGENCEScenario.FileName);
             }
         }
 
@@ -100,7 +100,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="strOutputFilename">The string output filename.</param>
         public void SaveFile(string strOutputFilename)
         {
-            Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
             try
             {
@@ -110,14 +110,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 XElement eGeneralSettings = new XElement("GeneralSettings");
 
-                eGeneralSettings.Add(new XElement("ScenarioDescription", new XCData(ScenarioDescription ?? "")));
-                eGeneralSettings.Add(new XElement("Zoom", Zoom));
+                eGeneralSettings.Add(new XElement("ScenarioDescription", new XCData(this.ScenarioDescription ?? "")));
+                eGeneralSettings.Add(new XElement("Zoom", this.Zoom));
                 //eGeneralSettings.Add(new XElement("ShowCenter", mcMapControl.ShowCenter));
                 eGeneralSettings.Add(new XElement("CenterPosition",
-                    new XElement("Latitude", Latitude),
-                    new XElement("Longitude", Longitude))
+                    new XElement("Latitude", this.Latitude),
+                    new XElement("Longitude", this.Longitude))
                 );
-                eGeneralSettings.Add(new XElement("MapProvider", MapProvider));
+                eGeneralSettings.Add(new XElement("MapProvider", this.MapProvider));
 
                 eSIGENCEScenarioTool.Add(eGeneralSettings);
 
@@ -125,7 +125,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 XElement eRFDeviceCollection = new XElement("RFDeviceCollection");
 
-                foreach (RFDevice t in from rfdevice in RFDevicesCollection select rfdevice.RFDevice)
+                foreach (RFDevice t in from rfdevice in this.RFDevicesCollection select rfdevice.RFDevice)
                 {
                     eRFDeviceCollection.Add(t.ToXml());
                 }
@@ -141,7 +141,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 MB.Error(ex);
             }
 
-            Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
         }
 
 
@@ -150,11 +150,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         public void SaveFile()
         {
-            if (CurrentFile == null)
+            if (this.CurrentFile == null)
             {
-                if (sfdSaveSIGENCEScenario.ShowDialog() == true)
+                if (this.sfdSaveSIGENCEScenario.ShowDialog() == true)
                 {
-                    CurrentFile = sfdSaveSIGENCEScenario.FileName;
+                    this.CurrentFile = this.sfdSaveSIGENCEScenario.FileName;
                 }
                 else
                 {
@@ -162,7 +162,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             }
 
-            SaveFile(CurrentFile);
+            SaveFile(this.CurrentFile);
         }
 
 
@@ -171,7 +171,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         public void SaveAsFile()
         {
-            CurrentFile = null;
+            this.CurrentFile = null;
 
             SaveFile();
         }

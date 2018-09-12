@@ -3,16 +3,29 @@
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="SIGENCEScenarioTool.Datatypes.Physically.DataTypeBase{System.UInt32}" />
+    /// <seealso cref="SIGENCEScenarioTool.Datatypes.Physically.DataTypeBase{uint}" />
     sealed public class SignalToNoiseRatio : DataTypeBase<uint>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SignalToNoiseRatio" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public SignalToNoiseRatio( uint value ) : base( value )
+        public SignalToNoiseRatio(uint value) : base(value)
         {
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        ///// <summary>
+        ///// Froms the string.
+        ///// </summary>
+        ///// <param name="strValue">The string value.</param>
+        ///// <returns></returns>
+        //public override uint FromString(string strValue)
+        //{
+        //    return uint.Parse(strValue);
+        //}
 
 
         /// <summary>

@@ -10,9 +10,9 @@ Id|int|0|Every Scenario Element (I.E. Transmitter, Receiver) Must Be Assigned An
 DeviceSource|DeviceSource|DeviceSource.Unknown|The Source Of This RF Device.
 StartTime|double|0|This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
 Name|string|"RFDevice"|A Short Describing Display Name For The RF Device.
-Latitude|Latitude|double.NaN|The Latitude Of The RF Device (WGS84).
-Longitude|Longitude|double.NaN|The Longitude Of The RF Device (WGS84).
-Altitude|Altitude|0|The Elevation Of The RF Device Above The Sea Level (Meter).
+Latitude|double|double.NaN|The Latitude Of The RF Device (WGS84).
+Longitude|double|double.NaN|The Longitude Of The RF Device (WGS84).
+Altitude|int|0|The Elevation Of The RF Device Above The Sea Level (Meter).
 Roll|double|0|These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
 Pitch|double|0|These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
 Yaw|double|0|These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.

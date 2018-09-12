@@ -1,14 +1,20 @@
 ﻿namespace SIGENCEScenarioTool.Datatypes.Geo
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="SIGENCEScenarioTool.Datatypes.DataTypeBase{double}" />
     sealed public class Latitude : DataTypeBase<double>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Latitude" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Latitude( double value ) : base( value )
+        public Latitude(double value) : base(value)
         {
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -18,10 +24,23 @@
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Latitude( double value )
+        static public implicit operator Latitude(double value)
         {
-            return new Latitude( value );
+            return new Latitude(value);
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        ///// <summary>
+        ///// Froms the string.
+        ///// </summary>
+        ///// <param name="strValue">The string value.</param>
+        ///// <returns></returns>
+        //public override double FromString(string strValue)
+        //{
+        //    return double.Parse(strValue);
+        //}
 
 
         /// <summary>

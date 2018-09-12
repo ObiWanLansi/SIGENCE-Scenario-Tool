@@ -57,21 +57,21 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        static public RFDevice WithLatitude(this RFDevice instance,Latitude value)
+        static public RFDevice WithLatitude(this RFDevice instance,double value)
         {
             instance.Latitude = value;
             return instance;
         }
 
 
-        static public RFDevice WithLongitude(this RFDevice instance,Longitude value)
+        static public RFDevice WithLongitude(this RFDevice instance,double value)
         {
             instance.Longitude = value;
             return instance;
         }
 
 
-        static public RFDevice WithAltitude(this RFDevice instance,Altitude value)
+        static public RFDevice WithAltitude(this RFDevice instance,int value)
         {
             instance.Altitude = value;
             return instance;

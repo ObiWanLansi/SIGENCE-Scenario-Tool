@@ -3,16 +3,18 @@
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="SIGENCEScenarioTool.Datatypes.DataTypeBase{System.Int32}" />
-    sealed public class Altitude : DataTypeBase<int>
+    /// <seealso cref="SIGENCEScenarioTool.Datatypes.DataTypeBase{int}" />
+    public sealed class Altitude : DataTypeBase<int>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Altitude"/> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Altitude( int value ) : base( value )
+        public Altitude(int value) : base(value)
         {
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -22,10 +24,23 @@
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Altitude( int value )
+        static public implicit operator Altitude(int value)
         {
-            return new Altitude( value );
+            return new Altitude(value);
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        ///// <summary>
+        ///// Froms the string.
+        ///// </summary>
+        ///// <param name="strValue">The string value.</param>
+        ///// <returns></returns>
+        //public override int FromString(string strValue)
+        //{
+        //    return int.Parse(strValue);
+        //}
 
 
         /// <summary>

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
 
 using Newtonsoft.Json;
+
 using SIGENCEScenarioTool.Database.SQLite;
 using SIGENCEScenarioTool.Interfaces;
 
@@ -420,16 +421,6 @@ namespace SIGENCEScenarioTool.Extensions
 
                 iColumnCounter++;
             }
-            
-            //for (int iCounter = 0; iCounter < iColumnCounter; iCounter++)
-            //{
-            //    if (iCounter > 0)
-            //    {
-            //        sbInsertStatement.Append(',');
-            //    }
-
-            //    sbInsertStatement.Append('?');
-            //}
 
             sbInsertStatement.Append(')');
 

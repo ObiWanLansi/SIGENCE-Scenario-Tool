@@ -39,7 +39,7 @@ namespace SIGENCEScenarioTool
                 if( File.Exists( strFilename ) )
                 {
                     var window = new MainWindow();
-                    window.OpenFile( strFilename );
+                    window.LoadFile( strFilename );
                     window.Show();
                 }
             }

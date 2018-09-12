@@ -357,5 +357,4 @@ namespace SIGENCEScenarioTool.Tools
         }
 
     } // end static public class MB
-
 }

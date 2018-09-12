@@ -40,7 +40,7 @@ namespace SIGENCEScenarioTool.TestSuite
         {
             var dlg = new Windows.MainWindow.MainWindow();
 
-            dlg.OpenFile(@"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+            dlg.LoadFile(@"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
             dlg.ShowDialog();
         }
 
