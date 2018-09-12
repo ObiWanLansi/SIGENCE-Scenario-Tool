@@ -5,6 +5,13 @@
 
 using System;
 
+using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Interfaces;
+using SIGENCEScenarioTool.Datatypes;
+using SIGENCEScenarioTool.Datatypes.Geo;
+using SIGENCEScenarioTool.Datatypes.Physically;
+
+
 
 
 namespace SIGENCEScenarioTool.Models
@@ -50,21 +57,21 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        static public RFDevice WithLatitude(this RFDevice instance,double value)
+        static public RFDevice WithLatitude(this RFDevice instance,Latitude value)
         {
             instance.Latitude = value;
             return instance;
         }
 
 
-        static public RFDevice WithLongitude(this RFDevice instance,double value)
+        static public RFDevice WithLongitude(this RFDevice instance,Longitude value)
         {
             instance.Longitude = value;
             return instance;
         }
 
 
-        static public RFDevice WithAltitude(this RFDevice instance,uint value)
+        static public RFDevice WithAltitude(this RFDevice instance,Altitude value)
         {
             instance.Altitude = value;
             return instance;

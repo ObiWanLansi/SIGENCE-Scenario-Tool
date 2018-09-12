@@ -8,10 +8,9 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
 
 using Microsoft.Win32;
-
+using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -519,7 +518,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The geo node collection.
         /// </value>
-        public GeoNodeCollection GeoNodeCollection { get; set; }
+        public GeoNodeCollection GeoNodes { get; set; }
 
         /// <summary>
         /// The LCV

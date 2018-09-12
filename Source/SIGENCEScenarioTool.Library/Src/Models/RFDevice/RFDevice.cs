@@ -8,6 +8,9 @@ using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Interfaces;
+using SIGENCEScenarioTool.Datatypes;
+using SIGENCEScenarioTool.Datatypes.Geo;
+using SIGENCEScenarioTool.Datatypes.Physically;
 
 
 
@@ -201,17 +204,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Latitude.
         ///</summary>
-        static public readonly double DEFAULT_LATITUDE = double.NaN;
+        static public readonly Latitude DEFAULT_LATITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Latitude.
         ///</summary>
-        private double _Latitude = double.NaN;
+        private Latitude _Latitude = double.NaN;
 
         ///<summary>
         /// The Latitude Of The RF Device (WGS84).
         ///</summary>
-        public double Latitude 
+        public Latitude Latitude 
         {
             get { return _Latitude; }
             set
@@ -235,17 +238,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Longitude.
         ///</summary>
-        static public readonly double DEFAULT_LONGITUDE = double.NaN;
+        static public readonly Longitude DEFAULT_LONGITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Longitude.
         ///</summary>
-        private double _Longitude = double.NaN;
+        private Longitude _Longitude = double.NaN;
 
         ///<summary>
         /// The Longitude Of The RF Device (WGS84).
         ///</summary>
-        public double Longitude 
+        public Longitude Longitude 
         {
             get { return _Longitude; }
             set
@@ -269,17 +272,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Altitude.
         ///</summary>
-        static public readonly uint DEFAULT_ALTITUDE = 0;
+        static public readonly Altitude DEFAULT_ALTITUDE = 0;
         
         ///<summary>
         /// The Internal Field For Altitude.
         ///</summary>
-        private uint _Altitude = 0;
+        private Altitude _Altitude = 0;
 
         ///<summary>
         /// The Elevation Of The RF Device Above The Sea Level (Meter).
         ///</summary>
-        public uint Altitude 
+        public Altitude Altitude 
         {
             get { return _Altitude; }
             set
@@ -796,9 +799,9 @@ namespace SIGENCEScenarioTool.Models
                 DeviceSource = eChild.GetProperty<DeviceSource>("DeviceSource",DeviceSource.Unknown),
                 StartTime = eChild.GetProperty<double>("StartTime",0),
                 Name = eChild.GetProperty<string>("Name","RFDevice"),
-                Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
-                Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
-                Altitude = eChild.GetProperty<uint>("Altitude",0),
+                Latitude = eChild.GetProperty<Latitude>("Latitude",double.NaN),
+                Longitude = eChild.GetProperty<Longitude>("Longitude",double.NaN),
+                Altitude = eChild.GetProperty<Altitude>("Altitude",0),
                 Roll = eChild.GetProperty<double>("Roll",0),
                 Pitch = eChild.GetProperty<double>("Pitch",0),
                 Yaw = eChild.GetProperty<double>("Yaw",0),

@@ -13,6 +13,10 @@ using GMap.NET.WindowsPresentation;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Interfaces;
+using SIGENCEScenarioTool.Datatypes;
+using SIGENCEScenarioTool.Datatypes.Geo;
+using SIGENCEScenarioTool.Datatypes.Physically;
 
 
 
@@ -144,6 +148,9 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The latitude.
         /// </value>
+        /// <remarks>
+        /// Das bleibt mal noch ein double da sonst das Binding in XAML zum editieren nicht mehr funktioniert.
+        /// </remarks>
         public double Latitude
         {
             get { return RFDevice.Latitude; }
@@ -165,6 +172,9 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The longitude.
         /// </value>
+        /// <remarks>
+        /// Das bleibt mal noch ein double da sonst das Binding in XAML zum editieren nicht mehr funktioniert.
+        /// </remarks>
         public double Longitude
         {
             get { return RFDevice.Longitude; }
@@ -186,7 +196,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The altitude.
         /// </value>
-        public uint Altitude
+        public int Altitude
         {
             get { return RFDevice.Altitude; }
             set

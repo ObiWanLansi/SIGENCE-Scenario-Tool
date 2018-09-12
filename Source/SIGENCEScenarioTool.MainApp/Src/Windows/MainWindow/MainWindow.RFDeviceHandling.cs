@@ -314,7 +314,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                 break;
 
                             case 5:
-                                device.Altitude = Convert.ToUInt32( value );
+                                device.Altitude = Convert.ToInt32( value );
                                 break;
 
                             case 6:

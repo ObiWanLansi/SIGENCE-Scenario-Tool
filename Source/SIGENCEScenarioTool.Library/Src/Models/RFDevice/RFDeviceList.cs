@@ -73,7 +73,7 @@ namespace SIGENCEScenarioTool.Models
                     Longitude = pllCenter.Lng + (r.NextBool() ? (r.NextDouble() * 0.05) : (r.NextDouble() * 0.05) * -1),
                     //Latitude = (r.NextDouble() * 0.05) + pllCenter.Lat,
                     //Longitude = (r.NextDouble() * 0.05) + pllCenter.Lng,
-                    Altitude = (uint)r.Next(12345),
+                    Altitude = r.Next(12345),
                     RxTxType = r.NextEnum<RxTxType>(),
                     AntennaType = r.NextEnum<AntennaType>(),
                     CenterFrequency_Hz = (uint)r.Next(85, 105) * 100000,

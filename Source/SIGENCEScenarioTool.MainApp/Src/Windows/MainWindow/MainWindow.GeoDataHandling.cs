@@ -2,8 +2,8 @@
 
 using GMap.NET.WindowsPresentation;
 
+using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Markers;
-using SIGENCEScenarioTool.Models.Database.GeoDb;
 
 
 

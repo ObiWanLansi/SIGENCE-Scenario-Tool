@@ -113,7 +113,7 @@
             </MenuItem>
             <MenuItem Header="_Test">
                 <MenuItem Header="_Load Streets" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
-                <!--<MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />-->
+                <MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
                 <MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
                 <Separator />
@@ -289,7 +289,7 @@
                             </DataGridTextColumn>
 
                             <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />
                                     </Style>
@@ -595,7 +595,7 @@
                         <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
                     </ToolBar>
 
-                    <DataGrid Grid.Row="1" ItemsSource="{Binding GeoNodeCollection}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding GeoNodes}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}">

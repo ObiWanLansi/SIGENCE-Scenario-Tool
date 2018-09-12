@@ -3,9 +3,8 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
-
+using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Extensions;
-using SIGENCEScenarioTool.Models.Database.GeoDb;
 
 
 

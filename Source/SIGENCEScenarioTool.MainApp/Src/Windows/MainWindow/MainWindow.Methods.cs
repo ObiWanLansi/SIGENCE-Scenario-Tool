@@ -8,12 +8,11 @@ using System.Windows.Media;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
-
+using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Dialogs.Scripting;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 

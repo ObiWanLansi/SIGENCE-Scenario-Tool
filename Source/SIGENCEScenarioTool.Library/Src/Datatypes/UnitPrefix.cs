@@ -1,9 +1,9 @@
-﻿namespace SIGENCEScenarioTool.Datatypes.Physically
+﻿namespace SIGENCEScenarioTool.Datatypes
 {
     /// <summary>
     /// 
     /// </summary>
-    sealed public class PhysicalUnit
+    sealed public class UnitPrefix
     {
         /// <summary>
         /// Gets or sets the name.
@@ -31,17 +31,17 @@
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PhysicalUnit" /> class.
+        /// Initializes a new instance of the <see cref="UnitPrefix" /> class.
         /// </summary>
         /// <param name="strName">Name of the string.</param>
         /// <param name="strSymbol">The string symblo.</param>
         /// <param name="dFactor">The d factor.</param>
-        public PhysicalUnit(string strName, string strSymbol, double dFactor)
+        public UnitPrefix(string strName, string strSymbol, double dFactor)
         {
             this.Name = strName;
             this.Symbol = strSymbol;
             this.Factor = dFactor;
         }
 
-    } // end sealed public class PhysicalUnit
+    } // end sealed public class UnitPrefix
 }

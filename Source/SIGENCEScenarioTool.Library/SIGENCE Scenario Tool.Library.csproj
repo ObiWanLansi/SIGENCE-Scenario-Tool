@@ -158,10 +158,18 @@
     </Compile>
     <Compile Include="Src\Database\SQLite\SQLiteHelper.cs" />
     <Compile Include="Src\Database\SQLite\SQLiteMemoryDatabase.cs" />
+    <Compile Include="Src\Datatypes\Geo\Altitude.cs" />
+    <Compile Include="Src\Datatypes\Geo\GeoNode.cs" />
+    <Compile Include="Src\Datatypes\Geo\Latitude.cs" />
+    <Compile Include="Src\Datatypes\Geo\Longitude.cs" />
     <Compile Include="Src\Datatypes\Observable\ObservableStringCollection.cs" />
-    <Compile Include="Src\Datatypes\Physically\AbstractPhysicalBase.cs" />
-    <Compile Include="Src\Datatypes\Physically\PhysicalUnit.cs" />
-    <Compile Include="Src\Datatypes\Physically\PhysicalUnits.cs" />
+    <Compile Include="Src\Datatypes\DataTypeBase.cs" />
+    <Compile Include="Src\Datatypes\Physically\Bandwith.cs" />
+    <Compile Include="Src\Datatypes\Physically\Frequency.cs" />
+    <Compile Include="Src\Datatypes\Physically\Gain.cs" />
+    <Compile Include="Src\Datatypes\Physically\SignalToNoiseRatio.cs" />
+    <Compile Include="Src\Datatypes\UnitPrefix.cs" />
+    <Compile Include="Src\Datatypes\UnitPrefixs.cs" />
     <Compile Include="Src\Datatypes\Standard\IntegerList.cs" />
     <Compile Include="Src\Datatypes\Standard\StringList.cs" />
     <Compile Include="Src\Extensions\ColorExtension.cs" />
@@ -180,7 +188,6 @@
     <Compile Include="Src\Extensions\XElementExtension.cs" />
     <Compile Include="Src\Interfaces\IXmlExport.cs" />
     <Compile Include="Src\Models\AbstractModelBase.cs" />
-    <Compile Include="Src\Models\Database\GeoDb\GeoNode.cs" />
     <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.cs">
       <DependentUpon>GeoLocalizationResult.tt</DependentUpon>
@@ -272,6 +279,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
     </Content>
+    <None Include="Src\Models\RFDevice\RFDevice.xml.org">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Src\Models\RFDevice\RFDevice.Extensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RFDevice.Extensions.cs</LastGenOutput>

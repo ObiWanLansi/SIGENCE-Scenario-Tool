@@ -410,121 +410,121 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// Creates the heatmap.
-        ///// </summary>
-        ///// <param name="pllTopLeft">The PLL top left.</param>
-        ///// <param name="pllBottomRight">The PLL bottom right.</param>
-        ///// <param name="bColor">Color of the b.</param>
-        //private void CreateHeatmap(PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor)
-        //{
-        //    List<PointLatLng> points = new List<PointLatLng>
-        //    {
-        //        pllTopLeft,
-        //        new PointLatLng(pllBottomRight.Lat,pllTopLeft.Lng),
-        //        pllBottomRight,
-        //        new PointLatLng(pllTopLeft.Lat,pllBottomRight.Lng),
-        //    };
+        /// <summary>
+        /// Creates the heatmap.
+        /// </summary>
+        /// <param name="pllTopLeft">The PLL top left.</param>
+        /// <param name="pllBottomRight">The PLL bottom right.</param>
+        /// <param name="bColor">Color of the b.</param>
+        private void CreateHeatmap( PointLatLng pllTopLeft , PointLatLng pllBottomRight , Brush bColor )
+        {
+            List<PointLatLng> points = new List<PointLatLng>
+            {
+                pllTopLeft,
+                new PointLatLng(pllBottomRight.Lat,pllTopLeft.Lng),
+                pllBottomRight,
+                new PointLatLng(pllTopLeft.Lat,pllBottomRight.Lng),
+            };
 
-        //    GMapPolygon mp = new GMapPolygon(points);
-        //    mp.RegenerateShape(this.mcMapControl);
+            GMapPolygon mp = new GMapPolygon( points );
+            mp.RegenerateShape( this.mcMapControl );
 
-        //    System.Windows.Shapes.Path path = mp.Shape as System.Windows.Shapes.Path;
+            System.Windows.Shapes.Path path = mp.Shape as System.Windows.Shapes.Path;
 
-        //    path.Stroke = Brushes.Black;
-        //    path.StrokeThickness = 0.1;
-        //    path.Fill = bColor;
-
-
-        //    this.mcMapControl.Markers.Add(mp);
-        //}
+            path.Stroke = Brushes.Black;
+            path.StrokeThickness = 0.1;
+            path.Fill = bColor;
 
 
-        ///// <summary>
-        ///// Creates the heatmap.
-        ///// </summary>
-        //private void CreateHeatmap()
-        //{
-        //    PointLatLng pll = this.mcMapControl.Position;
-
-        //    double dWidth = 0.00025;
-        //    double dHeight = 0.00015;
-
-        //    int iKachelBreite = 16;
-        //    int iKachelHöhe = 16;
-
-        //    Random r = new Random();
-        //    List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
-
-        //    for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
-        //    {
-        //        for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
-        //        {
-        //            PointLatLng pllTopLeft = new PointLatLng(y, x);
-        //            PointLatLng pllBottomRight = new PointLatLng(y + dHeight, x + dWidth);
-
-        //            CreateHeatmap(pllTopLeft, pllBottomRight, r.NextObject(colors));
-        //        }
-        //    }
-        //}
+            this.mcMapControl.Markers.Add( mp );
+        }
 
 
-        ///// <summary>
-        ///// Creates the heatmap2.
-        ///// </summary>
-        ///// <param name="pllCenter">The PLL center.</param>
-        ///// <param name="bColor">Color of the b.</param>
-        //private void CreateHeatmap2(PointLatLng pllCenter, Brush bColor)
-        //{
-        //    // Die Größe der Punkte sind in Pixel, dasm uss natürlich angepasst werden an die GeoKoordinaten, siehe GMap.NET.WindowsPresentation.GMapPolygon .
-        //    GMapMarker marker = new GMapMarker(pllCenter)
-        //    {
-        //        Shape = new System.Windows.Shapes.Ellipse { Width = 10, Height = 10, Fill = bColor }
-        //    };
+        /// <summary>
+        /// Creates the heatmap.
+        /// </summary>
+        private void CreateHeatmap()
+        {
+            PointLatLng pll = this.mcMapControl.Position;
 
-        //    mcMapControl.Markers.Add(marker);
-        //}
+            double dWidth = 0.00025;
+            double dHeight = 0.00015;
 
+            int iKachelBreite = 16;
+            int iKachelHöhe = 16;
 
-        ///// <summary>
-        ///// Creates the heatmap2.
-        ///// </summary>
-        //private void CreateHeatmap2()
-        //{
-        //    PointLatLng pll = mcMapControl.Position;
+            Random r = new Random();
+            List<Brush> colors = new List<Brush> { Brushes.White , Brushes.LightYellow , Brushes.Yellow , Brushes.Orange , Brushes.OrangeRed , Brushes.Red };
 
-        //    double dWidth = 0.0005;
-        //    double dHeight = 0.0003;
+            for( double x = pll.Lng - ( iKachelBreite * dWidth ) ; x < pll.Lng + ( iKachelBreite * dWidth ) ; x += dWidth )
+            {
+                for( double y = pll.Lat - ( iKachelHöhe * dHeight ) ; y < pll.Lat + ( iKachelHöhe * dHeight ) ; y += dHeight )
+                {
+                    PointLatLng pllTopLeft = new PointLatLng( y , x );
+                    PointLatLng pllBottomRight = new PointLatLng( y + dHeight , x + dWidth );
 
-        //    int iKachelBreite = 8;
-        //    int iKachelHöhe = 8;
-
-        //    Random r = new Random();
-        //    List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
-
-        //    for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
-        //    {
-        //        for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
-        //        {
-        //            PointLatLng pllPos = new PointLatLng(y, x);
-
-        //            CreateHeatmap2(pllPos, r.NextObject(colors));
-        //        }
-        //    }
-        //}
+                    CreateHeatmap( pllTopLeft , pllBottomRight , r.NextObject( colors ) );
+                }
+            }
+        }
 
 
-        ///// <summary>
-        ///// Handles the Click event of the MenuItem_HeatmapTest control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        //private void MenuItem_HeatmapTest_Click(object sender, RoutedEventArgs e)
-        //{
-        //    CreateHeatmap();
+        /// <summary>
+        /// Creates the heatmap2.
+        /// </summary>
+        /// <param name="pllCenter">The PLL center.</param>
+        /// <param name="bColor">Color of the b.</param>
+        private void CreateHeatmap2( PointLatLng pllCenter , Brush bColor )
+        {
+            // Die Größe der Punkte sind in Pixel, dasm uss natürlich angepasst werden an die GeoKoordinaten, siehe GMap.NET.WindowsPresentation.GMapPolygon .
+            GMapMarker marker = new GMapMarker( pllCenter )
+            {
+                Shape = new System.Windows.Shapes.Ellipse { Width = 10 , Height = 10 , Fill = bColor }
+            };
 
-        //    e.Handled = true;
-        //}
+            mcMapControl.Markers.Add( marker );
+        }
+
+
+        /// <summary>
+        /// Creates the heatmap2.
+        /// </summary>
+        private void CreateHeatmap2()
+        {
+            PointLatLng pll = mcMapControl.Position;
+
+            double dWidth = 0.0005;
+            double dHeight = 0.0003;
+
+            int iKachelBreite = 8;
+            int iKachelHöhe = 8;
+
+            Random r = new Random();
+            List<Brush> colors = new List<Brush> { Brushes.White , Brushes.LightYellow , Brushes.Yellow , Brushes.Orange , Brushes.OrangeRed , Brushes.Red };
+
+            for( double x = pll.Lng - ( iKachelBreite * dWidth ) ; x < pll.Lng + ( iKachelBreite * dWidth ) ; x += dWidth )
+            {
+                for( double y = pll.Lat - ( iKachelHöhe * dHeight ) ; y < pll.Lat + ( iKachelHöhe * dHeight ) ; y += dHeight )
+                {
+                    PointLatLng pllPos = new PointLatLng( y , x );
+
+                    CreateHeatmap2( pllPos , r.NextObject( colors ) );
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_HeatmapTest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_HeatmapTest_Click( object sender , RoutedEventArgs e )
+        {
+            CreateHeatmap();
+
+            e.Handled = true;
+        }
 
     } // end public partial class MainWindow
 }

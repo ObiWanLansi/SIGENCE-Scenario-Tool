@@ -2,10 +2,9 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
-
+using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Database.GeoDb;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -83,14 +82,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             try
             {
                 string strFilename = string.Format( "{0}\\tuebingen-regbez-latest.osm.sqlite" , Tool.StartupPath );
-                GeoNodeCollection = GeoNodeCollection.GetCollection( strFilename );
+                GeoNodes = GeoNodeCollection.GetCollection( strFilename );
             }
             catch( Exception ex )
             {
                 MB.Error( ex );
             }
 
-            lcv = CollectionViewSource.GetDefaultView( GeoNodeCollection ) as ListCollectionView;
+            lcv = CollectionViewSource.GetDefaultView( GeoNodes ) as ListCollectionView;
 
             lcv.IsLiveFiltering = true;
             lcv.Filter = IsWantedGeoNode;
@@ -98,8 +97,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            //CreateRandomizedRFDevices( 10 , false );
-            
+            CreateRandomizedRFDevices( 100 , true );
+
             //CreateHeatmap();
 
             //SaveFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
