@@ -468,18 +468,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     AddCell( maindatasheet , 1 , iRowCounter , device.StartTime );
                     AddCell( maindatasheet , 2 , iRowCounter , device.Id );
-                    AddCell( maindatasheet , 3 , iRowCounter , device.Latitude );
-                    AddCell( maindatasheet , 4 , iRowCounter , device.Longitude );
-                    AddCell( maindatasheet , 5 , iRowCounter , device.Altitude );
+                    AddCell( maindatasheet , 3 , iRowCounter , ( double ) device.Latitude );
+                    AddCell( maindatasheet , 4 , iRowCounter , ( double ) device.Longitude );
+                    AddCell( maindatasheet , 5 , iRowCounter , ( int ) device.Altitude );
                     AddCell( maindatasheet , 6 , iRowCounter , device.Roll );
                     AddCell( maindatasheet , 7 , iRowCounter , device.Pitch );
                     AddCell( maindatasheet , 8 , iRowCounter , device.Yaw );
                     AddCell( maindatasheet , 9 , iRowCounter , device.RxTxType );
                     AddCell( maindatasheet , 10 , iRowCounter , device.AntennaType );
-                    AddCell( maindatasheet , 11 , iRowCounter , device.Gain_dB );
-                    AddCell( maindatasheet , 12 , iRowCounter , device.CenterFrequency_Hz );
-                    AddCell( maindatasheet , 13 , iRowCounter , device.Bandwith_Hz );
-                    AddCell( maindatasheet , 14 , iRowCounter , device.SignalToNoiseRatio_dB );
+                    AddCell( maindatasheet , 11 , iRowCounter , ( double ) device.Gain_dB );
+                    AddCell( maindatasheet , 12 , iRowCounter , ( double ) device.CenterFrequency_Hz );
+                    AddCell( maindatasheet , 13 , iRowCounter , ( double ) device.Bandwith_Hz );
+                    AddCell( maindatasheet , 14 , iRowCounter , ( double ) device.SignalToNoiseRatio_dB );
                     AddCell( maindatasheet , 15 , iRowCounter , device.XPos );
                     AddCell( maindatasheet , 16 , iRowCounter , device.YPos );
                     AddCell( maindatasheet , 17 , iRowCounter , device.ZPos );
@@ -589,25 +589,28 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         MB.Information( "File {0} successful created." , fiExportFile.Name );
                         break;
 
-                    case ".json":
-                        devicelist.SaveAsJson( fiExportFile.FullName );
-                        MB.Information( "File {0} successful created." , fiExportFile.Name );
-                        break;
+                    //case ".json":
+                    //    devicelist.SaveAsJson( fiExportFile.FullName );
+                    //    MB.Information( "File {0} successful created." , fiExportFile.Name );
+                    //    break;
 
                     case ".xml":
                         devicelist.SaveAsXml( fiExportFile.FullName );
                         MB.Information( "File {0} successful created." , fiExportFile.Name );
                         break;
 
-                    case ".sqlite":
-                        devicelist.SaveAsSQLite( fiExportFile.FullName );
-                        MB.Information( "File {0} successful created." , fiExportFile.Name );
-                        break;
+                    //case ".sqlite":
+                    //    devicelist.SaveAsSQLite( fiExportFile.FullName );
+                    //    MB.Information( "File {0} successful created." , fiExportFile.Name );
+                    //    break;
 
                     case ".xlsx":
                         SaveAsExcel( devicelist , fiExportFile.FullName );
                         break;
 
+                    default:
+                        MB.Warning( "The FileType '{0}' Is Currently Not Supported For Export!" , fiExportFile.Extension.ToLower() );
+                        break;
                 }
             }
             catch( Exception ex )

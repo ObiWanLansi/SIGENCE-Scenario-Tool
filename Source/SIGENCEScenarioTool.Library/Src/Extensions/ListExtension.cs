@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
 
-using Newtonsoft.Json;
-
-using SIGENCEScenarioTool.Database.SQLite;
 using SIGENCEScenarioTool.Interfaces;
 
 
@@ -188,35 +183,35 @@ namespace SIGENCEScenarioTool.Extensions
         }
 
 
-        /// <summary>
-        /// Saves the list as JSON.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="lValues">The l values.</param>
-        /// <param name="strOutputFilename">The string output filename.</param>
-        /// <exception cref="ArgumentException">
-        /// Die Liste darf nicht leer sein! - lValues
-        /// or
-        /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename
-        /// </exception>
-        static public void SaveAsJson<T>(this List<T> lValues, string strOutputFilename)
-        {
-            if (lValues == null || lValues.Count == 0)
-            {
-                throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
-            }
+        ///// <summary>
+        ///// Saves the list as JSON.
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="lValues">The l values.</param>
+        ///// <param name="strOutputFilename">The string output filename.</param>
+        ///// <exception cref="ArgumentException">
+        ///// Die Liste darf nicht leer sein! - lValues
+        ///// or
+        ///// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename
+        ///// </exception>
+        //static public void SaveAsJson<T>(this List<T> lValues, string strOutputFilename)
+        //{
+        //    if (lValues == null || lValues.Count == 0)
+        //    {
+        //        throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
+        //    }
 
-            if (strOutputFilename.IsEmpty())
-            {
-                throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
-            }
+        //    if (strOutputFilename.IsEmpty())
+        //    {
+        //        throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
+        //    }
 
-            //---------------------------------------------
+        //    //---------------------------------------------
 
-            string strJson = JsonConvert.SerializeObject(lValues, Formatting.Indented);
+        //    string strJson = JsonConvert.SerializeObject(lValues, Formatting.Indented);
 
-            File.WriteAllText(strOutputFilename, strJson, Encoding.GetEncoding("ISO-8859-1"));
-        }
+        //    File.WriteAllText(strOutputFilename, strJson, Encoding.GetEncoding("ISO-8859-1"));
+        //}
 
 
         /// <summary>
@@ -334,160 +329,160 @@ namespace SIGENCEScenarioTool.Extensions
         }
 
 
-        /// <summary>
-        /// Saves as sq lite.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="lValues">The l values.</param>
-        /// <param name="strOutputFilename">The string output filename.</param>
-        static public void SaveAsSQLite<T>(this List<T> lValues, string strOutputFilename)
-        {
-            if (lValues == null || lValues.Count == 0)
-            {
-                throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
-            }
+        ///// <summary>
+        ///// Saves as sq lite.
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="lValues">The l values.</param>
+        ///// <param name="strOutputFilename">The string output filename.</param>
+        //static public void SaveAsSQLite<T>(this List<T> lValues, string strOutputFilename)
+        //{
+        //    if (lValues == null || lValues.Count == 0)
+        //    {
+        //        throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
+        //    }
 
-            if (strOutputFilename.IsEmpty())
-            {
-                throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
-            }
+        //    if (strOutputFilename.IsEmpty())
+        //    {
+        //        throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
+        //    }
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            if (File.Exists(strOutputFilename) == true)
-            {
-                File.Delete(strOutputFilename);
-            }
+        //    if (File.Exists(strOutputFilename) == true)
+        //    {
+        //        File.Delete(strOutputFilename);
+        //    }
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            Type tType = typeof(T);
+        //    Type tType = typeof(T);
 
-            List<PropertyInfo> lProperties = new List<PropertyInfo>();
+        //    List<PropertyInfo> lProperties = new List<PropertyInfo>();
 
-            foreach (PropertyInfo pi in from property in tType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty) select property)
-            {
-                if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
-                {
-                    continue;
-                }
+        //    foreach (PropertyInfo pi in from property in tType.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty) select property)
+        //    {
+        //        if (hsIgnoreTypes.Contains(pi.PropertyType.Name) == true)
+        //        {
+        //            continue;
+        //        }
 
-                lProperties.Add(pi);
-            }
+        //        lProperties.Add(pi);
+        //    }
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            SortedDictionary<string, SQLiteParameter> sdInsertParameters = new SortedDictionary<string, SQLiteParameter>();
+        //    SortedDictionary<string, SQLiteParameter> sdInsertParameters = new SortedDictionary<string, SQLiteParameter>();
 
-            StringBuilder sbCreateTable = new StringBuilder(1024);
-            StringBuilder sbInsertStatement = new StringBuilder(1024);
+        //    StringBuilder sbCreateTable = new StringBuilder(1024);
+        //    StringBuilder sbInsertStatement = new StringBuilder(1024);
 
-            sbCreateTable.AppendFormat("CREATE TABLE {0} (", tType.Name);
-            sbInsertStatement.AppendFormat("INSERT INTO {0} (", tType.Name);
+        //    sbCreateTable.AppendFormat("CREATE TABLE {0} (", tType.Name);
+        //    sbInsertStatement.AppendFormat("INSERT INTO {0} (", tType.Name);
 
-            int iColumnCounter = 0;
+        //    int iColumnCounter = 0;
 
-            foreach (PropertyInfo pi in lProperties)
-            {
-                SQLiteParameter param = SQLiteHelper.GetSQLiteParameter(pi);
+        //    foreach (PropertyInfo pi in lProperties)
+        //    {
+        //        SQLiteParameter param = SQLiteHelper.GetSQLiteParameter(pi);
 
-                sdInsertParameters.Add(pi.Name, param);
+        //        sdInsertParameters.Add(pi.Name, param);
 
-                if (iColumnCounter > 0)
-                {
-                    sbCreateTable.Append(',');
-                    sbInsertStatement.Append(',');
-                }
+        //        if (iColumnCounter > 0)
+        //        {
+        //            sbCreateTable.Append(',');
+        //            sbInsertStatement.Append(',');
+        //        }
 
-                sbCreateTable.AppendFormat("\n    \"{0}\" {1}", pi.Name, SQLiteHelper.GetSQLiteColumn(pi.PropertyType));
-                sbInsertStatement.AppendFormat("\"{0}\"", pi.Name);
+        //        sbCreateTable.AppendFormat("\n    \"{0}\" {1}", pi.Name, SQLiteHelper.GetSQLiteColumn(pi.PropertyType));
+        //        sbInsertStatement.AppendFormat("\"{0}\"", pi.Name);
 
-                iColumnCounter++;
-            }
+        //        iColumnCounter++;
+        //    }
 
-            sbCreateTable.Append("\n)");
-            sbInsertStatement.Append(") VALUES (");
+        //    sbCreateTable.Append("\n)");
+        //    sbInsertStatement.Append(") VALUES (");
 
-            iColumnCounter = 0;
+        //    iColumnCounter = 0;
 
-            foreach (PropertyInfo pi in lProperties)
-            {
-                if (iColumnCounter > 0)
-                {
-                    sbInsertStatement.Append(',');
-                }
+        //    foreach (PropertyInfo pi in lProperties)
+        //    {
+        //        if (iColumnCounter > 0)
+        //        {
+        //            sbInsertStatement.Append(',');
+        //        }
 
-                sbInsertStatement.AppendFormat("@{0}", pi.Name);
+        //        sbInsertStatement.AppendFormat("@{0}", pi.Name);
 
-                iColumnCounter++;
-            }
+        //        iColumnCounter++;
+        //    }
 
-            sbInsertStatement.Append(')');
+        //    sbInsertStatement.Append(')');
 
-            //-----------------------------------------------------------------
+        //    //-----------------------------------------------------------------
 
-            SQLiteConnectionStringBuilder csbSQLiteDatabase = new SQLiteConnectionStringBuilder
-            {
-                DataSource = strOutputFilename
-            };
+        //    SQLiteConnectionStringBuilder csbSQLiteDatabase = new SQLiteConnectionStringBuilder
+        //    {
+        //        DataSource = strOutputFilename
+        //    };
 
-            using (SQLiteConnection dbSQLiteConnection = new SQLiteConnection(csbSQLiteDatabase.ConnectionString))
-            {
-                dbSQLiteConnection.Open();
+        //    using (SQLiteConnection dbSQLiteConnection = new SQLiteConnection(csbSQLiteDatabase.ConnectionString))
+        //    {
+        //        dbSQLiteConnection.Open();
 
-                // First Step Without Transaction ...
-                // SQLiteTransaction dbTransaction = dbSQLiteConnection.BeginTransaction();
+        //        // First Step Without Transaction ...
+        //        // SQLiteTransaction dbTransaction = dbSQLiteConnection.BeginTransaction();
 
-                try
-                {
-                    using (SQLiteCommand dbCreateTable = new SQLiteCommand(sbCreateTable.ToString(), dbSQLiteConnection))
-                    {
-                        dbCreateTable.ExecuteNonQuery();
-                    }
+        //        try
+        //        {
+        //            using (SQLiteCommand dbCreateTable = new SQLiteCommand(sbCreateTable.ToString(), dbSQLiteConnection))
+        //            {
+        //                dbCreateTable.ExecuteNonQuery();
+        //            }
 
-                    using (SQLiteCommand dbInsertData = new SQLiteCommand(sbInsertStatement.ToString(), dbSQLiteConnection))
-                    {
-                        foreach (SQLiteParameter p in sdInsertParameters.Values)
-                        {
-                            dbInsertData.Parameters.Add(p);
-                        }
+        //            using (SQLiteCommand dbInsertData = new SQLiteCommand(sbInsertStatement.ToString(), dbSQLiteConnection))
+        //            {
+        //                foreach (SQLiteParameter p in sdInsertParameters.Values)
+        //                {
+        //                    dbInsertData.Parameters.Add(p);
+        //                }
 
-                        dbInsertData.Prepare();
+        //                dbInsertData.Prepare();
 
-                        foreach (T row in lValues)
-                        {
-                            dbInsertData.ResetParameters();
+        //                foreach (T row in lValues)
+        //                {
+        //                    dbInsertData.ResetParameters();
 
-                            foreach (PropertyInfo pi in lProperties)
-                            {
-                                object oValue = pi.GetValue(row);
+        //                    foreach (PropertyInfo pi in lProperties)
+        //                    {
+        //                        object oValue = pi.GetValue(row);
 
-                                SQLiteParameter param = sdInsertParameters[pi.Name];
+        //                        SQLiteParameter param = sdInsertParameters[pi.Name];
 
-                                param.Value = oValue != null ? oValue : DBNull.Value;
-                                //sdInsertParameters[pi.Name].Value = oValue != null ? oValue : DBNull.Value;
-                            }
+        //                        param.Value = oValue != null ? oValue : DBNull.Value;
+        //                        //sdInsertParameters[pi.Name].Value = oValue != null ? oValue : DBNull.Value;
+        //                    }
 
-                            dbInsertData.ExecuteNonQuery();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    dbSQLiteConnection.Vacuum();
-                    dbSQLiteConnection.Analyze();
-                    dbSQLiteConnection.Reindex();
+        //                    dbInsertData.ExecuteNonQuery();
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //        finally
+        //        {
+        //            dbSQLiteConnection.Vacuum();
+        //            dbSQLiteConnection.Analyze();
+        //            dbSQLiteConnection.Reindex();
 
-                    dbSQLiteConnection.Close();
-                }
-            }
+        //            dbSQLiteConnection.Close();
+        //        }
+        //    }
 
-            //-----------------------------------------------------------------
-        }
+        //    //-----------------------------------------------------------------
+        //}
 
     } // end static public class ListExtension
 }

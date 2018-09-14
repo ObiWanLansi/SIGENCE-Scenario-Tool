@@ -162,10 +162,9 @@
     <Compile Include="Src\Datatypes\Geo\GeoNode.cs" />
     <Compile Include="Src\Datatypes\Geo\Latitude.cs" />
     <Compile Include="Src\Datatypes\Geo\Longitude.cs" />
-    <Compile Include="Src\Datatypes\IFromStringConverter.cs" />
     <Compile Include="Src\Datatypes\Observable\ObservableStringCollection.cs" />
     <Compile Include="Src\Datatypes\DataTypeBase.cs" />
-    <Compile Include="Src\Datatypes\Physically\Bandwith.cs" />
+    <Compile Include="Src\Datatypes\Physically\Bandwidth.cs" />
     <Compile Include="Src\Datatypes\Physically\Frequency.cs" />
     <Compile Include="Src\Datatypes\Physically\Gain.cs" />
     <Compile Include="Src\Datatypes\Physically\SignalToNoiseRatio.cs" />
@@ -281,9 +280,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
     </Content>
-    <Content Include="Src\Models\RFDevice\RFDevice.xml">
+    <None Include="Src\Models\RFDevice\RFDevice.xml.old">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
     <Content Include="Src\Models\RFDevice\RFDevice.Extensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RFDevice.Extensions.cs</LastGenOutput>
@@ -296,9 +295,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RFDevice.cs</LastGenOutput>
     </Content>
-    <None Include="Src\Models\RFDevice\RFDevice.xml.ndt">
+    <Content Include="Src\Models\RFDevice\RFDevice.xml">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
     <Resource Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.xml" />
   </ItemGroup>
   <ItemGroup>

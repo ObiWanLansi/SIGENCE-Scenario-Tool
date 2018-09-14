@@ -57,21 +57,21 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        static public RFDevice WithLatitude(this RFDevice instance,double value)
+        static public RFDevice WithLatitude(this RFDevice instance,Latitude value)
         {
             instance.Latitude = value;
             return instance;
         }
 
 
-        static public RFDevice WithLongitude(this RFDevice instance,double value)
+        static public RFDevice WithLongitude(this RFDevice instance,Longitude value)
         {
             instance.Longitude = value;
             return instance;
         }
 
 
-        static public RFDevice WithAltitude(this RFDevice instance,int value)
+        static public RFDevice WithAltitude(this RFDevice instance,Altitude value)
         {
             instance.Altitude = value;
             return instance;
@@ -113,28 +113,28 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        static public RFDevice WithCenterFrequency_Hz(this RFDevice instance,ulong value)
+        static public RFDevice WithCenterFrequency_Hz(this RFDevice instance,Frequency value)
         {
             instance.CenterFrequency_Hz = value;
             return instance;
         }
 
 
-        static public RFDevice WithBandwith_Hz(this RFDevice instance,uint value)
+        static public RFDevice WithBandwith_Hz(this RFDevice instance,Bandwidth value)
         {
             instance.Bandwith_Hz = value;
             return instance;
         }
 
 
-        static public RFDevice WithGain_dB(this RFDevice instance,int value)
+        static public RFDevice WithGain_dB(this RFDevice instance,Gain value)
         {
             instance.Gain_dB = value;
             return instance;
         }
 
 
-        static public RFDevice WithSignalToNoiseRatio_dB(this RFDevice instance,uint value)
+        static public RFDevice WithSignalToNoiseRatio_dB(this RFDevice instance,SignalToNoiseRatio value)
         {
             instance.SignalToNoiseRatio_dB = value;
             return instance;

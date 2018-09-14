@@ -48,14 +48,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.ScenarioDescription = eGeneralSettings.GetStringFromCData("ScenarioDescription");
 
                 string strMapProvider = eGeneralSettings.GetStringFromNode("MapProvider") ?? this.MapProvider.Name;
-                //foreach (var mp in GMapProviders.List)
-                //{
-                //    if (mp.Name == strMapProvider)
-                //    {
-                //        MapProvider = mp;
-                //        break;
-                //    }
-                //}
                 this.MapProvider = GetProviderFromString(strMapProvider);
 
                 XElement eCenterPosition = eGeneralSettings.Element("CenterPosition");

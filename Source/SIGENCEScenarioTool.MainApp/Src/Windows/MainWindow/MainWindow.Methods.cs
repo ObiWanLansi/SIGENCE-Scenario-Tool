@@ -8,6 +8,7 @@ using System.Windows.Media;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
+
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Dialogs.Scripting;

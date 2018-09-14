@@ -204,17 +204,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Latitude.
         ///</summary>
-        static public readonly double DEFAULT_LATITUDE = double.NaN;
+        static public readonly Latitude DEFAULT_LATITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Latitude.
         ///</summary>
-        private double _Latitude = double.NaN;
+        private Latitude _Latitude = double.NaN;
 
         ///<summary>
         /// The Latitude Of The RF Device (WGS84).
         ///</summary>
-        public double Latitude 
+        public Latitude Latitude 
         {
             get { return _Latitude; }
             set
@@ -238,17 +238,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Longitude.
         ///</summary>
-        static public readonly double DEFAULT_LONGITUDE = double.NaN;
+        static public readonly Longitude DEFAULT_LONGITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Longitude.
         ///</summary>
-        private double _Longitude = double.NaN;
+        private Longitude _Longitude = double.NaN;
 
         ///<summary>
         /// The Longitude Of The RF Device (WGS84).
         ///</summary>
-        public double Longitude 
+        public Longitude Longitude 
         {
             get { return _Longitude; }
             set
@@ -272,17 +272,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Altitude.
         ///</summary>
-        static public readonly int DEFAULT_ALTITUDE = 0;
+        static public readonly Altitude DEFAULT_ALTITUDE = 0;
         
         ///<summary>
         /// The Internal Field For Altitude.
         ///</summary>
-        private int _Altitude = 0;
+        private Altitude _Altitude = 0;
 
         ///<summary>
         /// The Elevation Of The RF Device Above The Sea Level (Meter).
         ///</summary>
-        public int Altitude 
+        public Altitude Altitude 
         {
             get { return _Altitude; }
             set
@@ -476,17 +476,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For CenterFrequency_Hz.
         ///</summary>
-        static public readonly ulong DEFAULT_CENTERFREQUENCY_HZ = 0;
+        static public readonly Frequency DEFAULT_CENTERFREQUENCY_HZ = 0;
         
         ///<summary>
         /// The Internal Field For CenterFrequency_Hz.
         ///</summary>
-        private ulong _CenterFrequency_Hz = 0;
+        private Frequency _CenterFrequency_Hz = 0;
 
         ///<summary>
         /// For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
         ///</summary>
-        public ulong CenterFrequency_Hz 
+        public Frequency CenterFrequency_Hz 
         {
             get { return _CenterFrequency_Hz; }
             set
@@ -510,17 +510,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Bandwith_Hz.
         ///</summary>
-        static public readonly uint DEFAULT_BANDWITH_HZ = 0;
+        static public readonly Bandwidth DEFAULT_BANDWITH_HZ = 0;
         
         ///<summary>
         /// The Internal Field For Bandwith_Hz.
         ///</summary>
-        private uint _Bandwith_Hz = 0;
+        private Bandwidth _Bandwith_Hz = 0;
 
         ///<summary>
         /// The Bandwith Of The Transmitter.
         ///</summary>
-        public uint Bandwith_Hz 
+        public Bandwidth Bandwith_Hz 
         {
             get { return _Bandwith_Hz; }
             set
@@ -544,17 +544,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Gain_dB.
         ///</summary>
-        static public readonly int DEFAULT_GAIN_DB = 0;
+        static public readonly Gain DEFAULT_GAIN_DB = 0;
         
         ///<summary>
         /// The Internal Field For Gain_dB.
         ///</summary>
-        private int _Gain_dB = 0;
+        private Gain _Gain_dB = 0;
 
         ///<summary>
         /// For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
         ///</summary>
-        public int Gain_dB 
+        public Gain Gain_dB 
         {
             get { return _Gain_dB; }
             set
@@ -578,17 +578,17 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For SignalToNoiseRatio_dB.
         ///</summary>
-        static public readonly uint DEFAULT_SIGNALTONOISERATIO_DB = 0;
+        static public readonly SignalToNoiseRatio DEFAULT_SIGNALTONOISERATIO_DB = 0;
         
         ///<summary>
         /// The Internal Field For SignalToNoiseRatio_dB.
         ///</summary>
-        private uint _SignalToNoiseRatio_dB = 0;
+        private SignalToNoiseRatio _SignalToNoiseRatio_dB = 0;
 
         ///<summary>
         /// For Receivers (I.E. Id’s < 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s >= 0) This Parameter Is Unused.
         ///</summary>
-        public uint SignalToNoiseRatio_dB 
+        public SignalToNoiseRatio SignalToNoiseRatio_dB 
         {
             get { return _SignalToNoiseRatio_dB; }
             set
@@ -799,18 +799,18 @@ namespace SIGENCEScenarioTool.Models
                 DeviceSource = eChild.GetProperty<DeviceSource>("DeviceSource",DeviceSource.Unknown),
                 StartTime = eChild.GetProperty<double>("StartTime",0),
                 Name = eChild.GetProperty<string>("Name","RFDevice"),
-                Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
-                Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
-                Altitude = eChild.GetProperty<int>("Altitude",0),
+                Latitude = eChild.GetProperty<Latitude>("Latitude",double.NaN),
+                Longitude = eChild.GetProperty<Longitude>("Longitude",double.NaN),
+                Altitude = eChild.GetProperty<Altitude>("Altitude",0),
                 Roll = eChild.GetProperty<double>("Roll",0),
                 Pitch = eChild.GetProperty<double>("Pitch",0),
                 Yaw = eChild.GetProperty<double>("Yaw",0),
                 RxTxType = eChild.GetProperty<RxTxType>("RxTxType",RxTxType.Unknown),
                 AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
-                CenterFrequency_Hz = eChild.GetProperty<ulong>("CenterFrequency_Hz",0),
-                Bandwith_Hz = eChild.GetProperty<uint>("Bandwith_Hz",0),
-                Gain_dB = eChild.GetProperty<int>("Gain_dB",0),
-                SignalToNoiseRatio_dB = eChild.GetProperty<uint>("SignalToNoiseRatio_dB",0),
+                CenterFrequency_Hz = eChild.GetProperty<Frequency>("CenterFrequency_Hz",0),
+                Bandwith_Hz = eChild.GetProperty<Bandwidth>("Bandwith_Hz",0),
+                Gain_dB = eChild.GetProperty<Gain>("Gain_dB",0),
+                SignalToNoiseRatio_dB = eChild.GetProperty<SignalToNoiseRatio>("SignalToNoiseRatio_dB",0),
                 XPos = eChild.GetProperty<int>("XPos",0),
                 YPos = eChild.GetProperty<int>("YPos",0),
                 ZPos = eChild.GetProperty<int>("ZPos",0),

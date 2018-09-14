@@ -1,4 +1,6 @@
-﻿namespace SIGENCEScenarioTool.Datatypes.Geo
+﻿using System;
+
+namespace SIGENCEScenarioTool.Datatypes.Geo
 {
     /// <summary>
     /// 
@@ -10,7 +12,7 @@
         /// Initializes a new instance of the <see cref="Altitude"/> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Altitude(int value) : base(value)
+        public Altitude( int value ) : base( value )
         {
         }
 
@@ -24,22 +26,23 @@
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Altitude(int value)
+        static public implicit operator Altitude( int value )
         {
-            return new Altitude(value);
+            return new Altitude( value );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         ///// <summary>
-        ///// Froms the string.
+        ///// Returns a <see cref="System.String" /> that represents this instance.
         ///// </summary>
-        ///// <param name="strValue">The string value.</param>
-        ///// <returns></returns>
-        //public override int FromString(string strValue)
+        ///// <returns>
+        ///// A <see cref="System.String" /> that represents this instance.
+        ///// </returns>
+        //public override string ToString()
         //{
-        //    return int.Parse(strValue);
+        //    return string.Format( CULTUREINFO , "{0}" , this.Value );
         //}
 
 
@@ -51,7 +54,7 @@
         /// </returns>
         public override bool? IsValid()
         {
-            return null;
+            throw new NotImplementedException( "public override bool? IsValid()" );
         }
 
     } // end sealed public class Altitude 

@@ -1,31 +1,48 @@
-﻿namespace SIGENCEScenarioTool.Datatypes.Physically
+﻿using System;
+
+namespace SIGENCEScenarioTool.Datatypes.Physically
 {
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="SIGENCEScenarioTool.Datatypes.Physically.DataTypeBase{ulong}" />
-    sealed public class Frequency : DataTypeBase<ulong>
+    /// <seealso cref="SIGENCEScenarioTool.Datatypes.DataTypeBase{System.Double}" />
+    sealed public class Frequency : DataTypeBase<double>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Frequency"/> class.
+        /// Initializes a new instance of the <see cref="Frequency" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Frequency(ulong value) : base(value)
+        public Frequency( double value ) : base( value )
         {
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="System.Double"/> to <see cref="Frequency"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        static public implicit operator Frequency( double value )
+        {
+            return new Frequency( value );
+        }
 
-        ///// <summary>
-        ///// Froms the string.
-        ///// </summary>
-        ///// <param name="strValue">The string value.</param>
-        ///// <returns></returns>
-        //public override ulong FromString(string strValue)
-        //{
-        //    return ulong.Parse(strValue);
-        //}
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format( CULTUREINFO , "{0}" , this.Value );
+        }
 
 
         /// <summary>
@@ -36,7 +53,7 @@
         /// </returns>
         public override bool? IsValid()
         {
-            return null;
+            throw new NotImplementedException( "public override bool? IsValid()" );
         }
 
     } // end sealed public class Frequency

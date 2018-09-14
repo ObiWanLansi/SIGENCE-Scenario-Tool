@@ -13,10 +13,6 @@ using GMap.NET.WindowsPresentation;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Interfaces;
-using SIGENCEScenarioTool.Datatypes;
-using SIGENCEScenarioTool.Datatypes.Geo;
-using SIGENCEScenarioTool.Datatypes.Physically;
 
 
 
@@ -305,7 +301,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The gain.
         /// </value>
-        public int Gain
+        public double Gain
         {
             get { return RFDevice.Gain_dB; }
             set
@@ -323,7 +319,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The center frequency.
         /// </value>
-        public ulong CenterFrequency
+        public double CenterFrequency
         {
             get { return RFDevice.CenterFrequency_Hz; }
             set
@@ -341,7 +337,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The bandwith.
         /// </value>
-        public uint Bandwith
+        public double Bandwith
         {
             get { return RFDevice.Bandwith_Hz; }
             set
@@ -359,7 +355,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The signal to noise ratio.
         /// </value>
-        public uint SignalToNoiseRatio
+        public double SignalToNoiseRatio
         {
             get { return RFDevice.SignalToNoiseRatio_dB; }
             set

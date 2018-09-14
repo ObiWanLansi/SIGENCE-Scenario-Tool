@@ -12,6 +12,13 @@ namespace SIGENCEScenarioTool.Datatypes
     //abstract public class DataTypeBase<T> : IFromStringConverter<T> where T : IComparable<T>, IEquatable<T>
     abstract public class DataTypeBase<T> where T : IComparable<T>, IEquatable<T>
     {
+        /// <summary>
+        /// The ci
+        /// </summary>
+        static protected readonly CultureInfo CULTUREINFO = new CultureInfo( "en-US" );
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         ///// <summary>
         ///// The unit
         ///// </summary>
@@ -26,7 +33,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <value>
         /// The value in it's default SI Einheit.
         /// </value>
-        public T Value { get; set; } = default(T);
+        public T Value { get; set; } = default( T );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -35,7 +42,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// Initializes a new instance of the <see cref="DataTypeBase{T}"/> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public DataTypeBase(T value)
+        public DataTypeBase( T value )
         {
             this.Value = value;
         }
@@ -50,7 +57,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator T(DataTypeBase<T> apb)
+        static public implicit operator T( DataTypeBase<T> apb )
         {
             return apb.Value;
         }
@@ -71,10 +78,6 @@ namespace SIGENCEScenarioTool.Datatypes
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// The ci
-        /// </summary>
-        static private readonly CultureInfo ci = new CultureInfo("en-US");
 
 
         /// <summary>
@@ -85,16 +88,18 @@ namespace SIGENCEScenarioTool.Datatypes
         /// </returns>
         public override string ToString()
         {
-            return string.Format(ci, "{0}", this.Value);
+            //return string.Format( ci , "{0}" , this.Value );
+            return Value.ToString();
         }
 
 
         /// <summary>
-        /// Returns true if the value is valid.
+        /// Returns true if the value is valid, false when he is invalid and null when it is not neccery to check it or not implemented.
         /// </summary>
         /// <returns>
         ///   <c>true</c> if this instance is valid; otherwise, <c>false</c>.
         /// </returns>
+        /// <remarks>This Funktion Is For The Future And Get Currently Not Evaluated Anywhere, So Devired Class Should Throw A NotImplementedException</remarks>
         abstract public bool? IsValid();
 
 

@@ -401,7 +401,7 @@
                                 </DataGridComboBoxColumn.ElementStyle>
                             </DataGridComboBoxColumn>
 
-                            <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                 <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />
@@ -415,7 +415,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Bandwith" Binding="{Binding Bandwith,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn Header="Bandwith" Binding="{Binding Bandwith,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                 <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />
@@ -429,7 +429,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                 <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />
@@ -443,7 +443,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                 <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />

@@ -1,4 +1,6 @@
-﻿namespace SIGENCEScenarioTool.Datatypes.Geo
+﻿using System;
+
+namespace SIGENCEScenarioTool.Datatypes.Geo
 {
     /// <summary>
     /// 
@@ -10,7 +12,7 @@
         /// Initializes a new instance of the <see cref="Latitude" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Latitude(double value) : base(value)
+        public Latitude( double value ) : base( value )
         {
         }
 
@@ -24,23 +26,24 @@
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Latitude(double value)
+        static public implicit operator Latitude( double value )
         {
-            return new Latitude(value);
+            return new Latitude( value );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// Froms the string.
-        ///// </summary>
-        ///// <param name="strValue">The string value.</param>
-        ///// <returns></returns>
-        //public override double FromString(string strValue)
-        //{
-        //    return double.Parse(strValue);
-        //}
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format( CULTUREINFO , "{0}" , this.Value );
+        }
 
 
         /// <summary>
@@ -51,7 +54,7 @@
         /// </returns>
         public override bool? IsValid()
         {
-            return null;
+            throw new NotImplementedException( "public override bool? IsValid()" );
         }
 
     } // end sealed public class Latitude 
