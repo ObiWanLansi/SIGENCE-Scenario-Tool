@@ -2,7 +2,7 @@
 <project name="SIGENCEScenarioTool" basedir="." default="compile">
 
     <property name="DeployTarget" value="..\Executable" />
-    <property name="ApiDoc" value="..\Documentation\Generated\ApiDoc" />
+    <property name="ApiDoc" value="..\Documentation" />
 
     <target name="clean">
         
@@ -33,6 +33,20 @@
 
 
     
+    <!-- Die bauen wir nur gelegentlich, ausserdem muessen wir noch von Hand ein Inhaltsverzeichnis einfuegen ...-->
+    <target name="apidoc" depends="compile">
+
+        <!--<delete dir="${ApiDoc}" />-->
+
+        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" workingdir=".">
+
+            <arg value="/p:Configuration=Release" />
+            <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.shfbproj" />
+        </exec>
+    </target>
+
+
+
     <target name="doc">
 
         <exec program="powershell.exe" workingdir="..\Documentation">
@@ -54,19 +68,9 @@
     </target>
     
 
-    <target name="apidoc" depends="compile">
-
-        <delete dir="${ApiDoc}" />
-
-        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" workingdir=".">
-
-            <arg value="/p:Configuration=Release" />
-            <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.shfbproj" />
-        </exec>
-    </target>
 
     
-    <target name="deploy" depends="doc,apidoc">
+    <target name="deploy" depends="doc">
     
         <delete dir="${DeployTarget}" />
         <mkdir dir="${DeployTarget}" />

@@ -14,15 +14,15 @@
     <Name>Documentation</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Framework 4.6.1</FrameworkVersion>
-    <OutputPath>..\..\Documentation\Generated\ApiDoc\</OutputPath>
+    <OutputPath>..\..\Documentation\</OutputPath>
     <HtmlHelpName>SIGENCEScenarioTool.Library</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
       <DocumentationSource sourceFile="SIGENCE Scenario Tool.Library.csproj" xmlns="" />
     </DocumentationSources>
-    <HelpFileFormat>Markdown</HelpFileFormat>
-    <SyntaxFilters>Standard</SyntaxFilters>
-    <PresentationStyle>Markdown</PresentationStyle>
+    <HelpFileFormat>OpenXml</HelpFileFormat>
+    <SyntaxFilters>C#</SyntaxFilters>
+    <PresentationStyle>OpenXML</PresentationStyle>
     <CleanIntermediates>True</CleanIntermediates>
     <KeepLogFile>False</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
@@ -30,7 +30,7 @@
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpTitle>SIGENCE Scenario Tool Library</HelpTitle>
     <HelpFileVersion>1.5</HelpFileVersion>
-    <NamingMethod>Guid</NamingMethod>
+    <NamingMethod>MemberName</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <RootNamespaceContainer>False</RootNamespaceContainer>
     <NamespaceGrouping>False</NamespaceGrouping>
