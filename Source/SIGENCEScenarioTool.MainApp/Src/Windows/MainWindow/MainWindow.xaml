@@ -888,7 +888,7 @@
                     <Label Content="GeoNodes:" />
                     <Label Content="{Binding CurrentNodes}" />
                     <Label Content="/" />
-                    <Label Content="{Binding GeoNodeCollection.Count}" />
+                    <Label Content="{Binding GeoNodes.Count}" />
                 </StackPanel>
             </StatusBarItem>
 

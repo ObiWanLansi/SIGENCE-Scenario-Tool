@@ -8,6 +8,7 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
 
 using Microsoft.Win32;
+
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
@@ -103,7 +104,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The string scenario description
         /// </summary>
-        private String strScenarioDescription = "";
+        private string strScenarioDescription = "";
 
         /// <summary>
         /// Gets or sets the scenario description.
@@ -111,12 +112,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The scenario description.
         /// </value>
-        public String ScenarioDescription
+        public string ScenarioDescription
         {
-            get { return strScenarioDescription; }
+            get { return this.strScenarioDescription; }
             set
             {
-                strScenarioDescription = value;
+                this.strScenarioDescription = value;
 
                 UpdateScenarioDescription();
 
@@ -141,10 +142,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool CreatingRFDevice
         {
-            get { return bCreatingRFDevice; }
+            get { return this.bCreatingRFDevice; }
             set
             {
-                bCreatingRFDevice = value;
+                this.bCreatingRFDevice = value;
 
                 SetMapToCreatingRFDeviceMode();
 
@@ -168,10 +169,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ReceivedData
         {
-            get { return bReceivedData; }
+            get { return this.bReceivedData; }
             set
             {
-                bReceivedData = value;
+                this.bReceivedData = value;
 
                 SetBlink1();
 
@@ -193,12 +194,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool IsReceiveDataUDP
         {
-            get { return bIsReceiveDataUDP; }
+            get { return this.bIsReceiveDataUDP; }
             set
             {
-                bIsReceiveDataUDP = value;
+                this.bIsReceiveDataUDP = value;
 
-                if( bIsReceiveDataUDP == true )
+                if (this.bIsReceiveDataUDP == true)
                 {
                     StartUDPServer();
                 }
@@ -227,10 +228,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ScenarioDescriptionEditMode
         {
-            get { return bScenarioDescriptionEditMode; }
+            get { return this.bScenarioDescriptionEditMode; }
             set
             {
-                bScenarioDescriptionEditMode = value;
+                this.bScenarioDescriptionEditMode = value;
 
                 SwitchScenarioEditMode();
 
@@ -253,10 +254,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool IsTileLoading
         {
-            get { return bIsTileLoading; }
+            get { return this.bIsTileLoading; }
             set
             {
-                bIsTileLoading = value;
+                this.bIsTileLoading = value;
 
                 FirePropertyChanged();
             }
@@ -275,12 +276,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool IsDeviceMovingMode
         {
-            get { return bIsDeviceMovingMode; }
+            get { return this.bIsDeviceMovingMode; }
             set
             {
-                bIsDeviceMovingMode = value;
+                this.bIsDeviceMovingMode = value;
 
-                mcMapControl.DragButton = bIsDeviceMovingMode ? MouseButton.Right : MouseButton.Left;
+                this.mcMapControl.DragButton = this.bIsDeviceMovingMode ? MouseButton.Right : MouseButton.Left;
 
                 FirePropertyChanged();
             }
@@ -297,11 +298,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public GMapProvider MapProvider
         {
-            get { return mcMapControl.MapProvider; }
+            get { return this.mcMapControl.MapProvider; }
             set
             {
-                mcMapControl.MapProvider = value;
-                mcMapControl.Manager.Mode = value != GMapProviders.EmptyProvider ? AccessMode.ServerAndCache : AccessMode.CacheOnly;
+                this.mcMapControl.MapProvider = value;
+                this.mcMapControl.Manager.Mode = value != GMapProviders.EmptyProvider ? AccessMode.ServerAndCache : AccessMode.CacheOnly;
 
                 FirePropertyChanged();
             }
@@ -316,10 +317,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public double Zoom
         {
-            get { return mcMapControl.Zoom; }
+            get { return this.mcMapControl.Zoom; }
             set
             {
-                mcMapControl.Zoom = value;
+                this.mcMapControl.Zoom = value;
 
                 FirePropertyChanged();
             }
@@ -334,10 +335,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public double Latitude
         {
-            get { return mcMapControl.Position.Lat; }
+            get { return this.mcMapControl.Position.Lat; }
             set
             {
-                mcMapControl.Position = new PointLatLng( value , mcMapControl.Position.Lng );
+                this.mcMapControl.Position = new PointLatLng(value, this.mcMapControl.Position.Lng);
 
                 FirePropertyChanged();
             }
@@ -352,10 +353,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public double Longitude
         {
-            get { return mcMapControl.Position.Lng; }
+            get { return this.mcMapControl.Position.Lng; }
             set
             {
-                mcMapControl.Position = new PointLatLng( mcMapControl.Position.Lat , value );
+                this.mcMapControl.Position = new PointLatLng(this.mcMapControl.Position.Lat, value);
 
                 FirePropertyChanged();
             }
@@ -370,11 +371,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ShowCenter
         {
-            get { return mcMapControl.ShowCenter; }
+            get { return this.mcMapControl.ShowCenter; }
             set
             {
-                mcMapControl.ShowCenter = value;
-                mcMapControl.ReloadMap();
+                this.mcMapControl.ShowCenter = value;
+                this.mcMapControl.ReloadMap();
 
                 FirePropertyChanged();
             }
@@ -396,10 +397,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public string CurrentFile
         {
-            get { return strCurrentFile; }
+            get { return this.strCurrentFile; }
             set
             {
-                strCurrentFile = value;
+                this.strCurrentFile = value;
                 SetTitle();
 
                 FirePropertyChanged();
@@ -422,10 +423,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool SyncMapAndGrid
         {
-            get { return bSyncMapAndGrid; }
+            get { return this.bSyncMapAndGrid; }
             set
             {
-                bSyncMapAndGrid = value;
+                this.bSyncMapAndGrid = value;
 
                 FirePropertyChanged();
             }
@@ -442,10 +443,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public string UDPHost
         {
-            get { return settings.UDPHost; }
+            get { return this.settings.UDPHost; }
             set
             {
-                settings.UDPHost = value;
+                this.settings.UDPHost = value;
 
                 FirePropertyChanged();
             }
@@ -460,10 +461,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public int UDPPort
         {
-            get { return settings.UDPPortSending; }
+            get { return this.settings.UDPPortSending; }
             set
             {
-                settings.UDPPortSending = value;
+                this.settings.UDPPortSending = value;
 
                 FirePropertyChanged();
             }
@@ -478,10 +479,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public int UDPDelay
         {
-            get { return settings.UDPDelay; }
+            get { return this.settings.UDPDelay; }
             set
             {
-                settings.UDPDelay = value;
+                this.settings.UDPDelay = value;
 
                 FirePropertyChanged();
             }
@@ -491,7 +492,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The string debug output
         /// </summary>
-        private String strDebugOutput = null;
+        private string strDebugOutput = null;
 
         /// <summary>
         /// Gets or sets the debug output.
@@ -499,12 +500,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The debug output.
         /// </value>
-        public String DebugOutput
+        public string DebugOutput
         {
-            get { return strDebugOutput; }
+            get { return this.strDebugOutput; }
             set
             {
-                strDebugOutput = value;
+                this.strDebugOutput = value;
 
                 FirePropertyChanged();
             }
@@ -534,10 +535,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public int CurrentNodes
         {
-            get
-            {
-                return lcv != null ? lcv.Count : 0;
-            }
+            get { return this.lcv != null ? this.lcv.Count : 0; }
         }
 
         //-----------------------------
@@ -556,15 +554,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public GeoTag GeoTagFilter
         {
-            get { return gtGeoTagFilter; }
+            get { return this.gtGeoTagFilter; }
             set
             {
-                gtGeoTagFilter = value;
+                this.gtGeoTagFilter = value;
 
-                lcv.Refresh();
+                this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -582,15 +580,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool UseGeoTagFilter
         {
-            get { return bUseGeoTagFilter; }
+            get { return this.bUseGeoTagFilter; }
             set
             {
-                bUseGeoTagFilter = value;
+                this.bUseGeoTagFilter = value;
 
-                lcv.Refresh();
+                this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -608,15 +606,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public string NameFilter
         {
-            get { return strNameFilter; }
+            get { return this.strNameFilter; }
             set
             {
-                strNameFilter = value;
+                this.strNameFilter = value;
 
-                lcv.Refresh();
+                this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -633,15 +631,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool UseNameFilter
         {
-            get { return bUseNameFilter; }
+            get { return this.bUseNameFilter; }
             set
             {
-                bUseNameFilter = value;
+                this.bUseNameFilter = value;
 
-                lcv.Refresh();
+                this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -661,13 +659,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool StartedDALF
         {
-            get { return bStartedDALF; }
+            get { return this.bStartedDALF; }
             set
             {
-                if( value == true )
+                if (value == true)
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if( StartDALF() == false )
+                    if (StartDALF() == false)
                     {
                         return;
                     }
@@ -677,7 +675,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     StopDALF();
                 }
 
-                bStartedDALF = value;
+                this.bStartedDALF = value;
                 FirePropertyChanged();
             }
         }
