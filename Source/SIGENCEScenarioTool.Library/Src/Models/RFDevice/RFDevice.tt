@@ -57,7 +57,7 @@ namespace SIGENCEScenarioTool.Models
         string strDefaultValue = xInitValue != null ? string.Format(" = {0}",xInitValue.Value) : "";
 
         XAttribute xComment = eProperty.Attribute("Comment");
-        string strCommment = xComment != null ? xComment.Value : "";
+        string strCommment = xComment != null ? xComment.Value.Replace("<","&lt;").Replace(">","&gt;").Trim() : "";
 
         strCommment = !string.IsNullOrEmpty(strCommment) ? strCommment : string.Format("{0} as {1}.",strPropertyName,strPropertyType);
 

@@ -416,7 +416,7 @@ namespace SIGENCEScenarioTool.Models
         private RxTxType _RxTxType = RxTxType.Unknown;
 
         ///<summary>
-        /// For All Receivers (i.e. ID’s < 0) This Parameter Defines The Radio Being Used.
+        /// For All Receivers (i.e. ID’s &lt; 0) This Parameter Defines The Radio Being Used.
         ///</summary>
         public RxTxType RxTxType 
         {
@@ -484,7 +484,7 @@ namespace SIGENCEScenarioTool.Models
         private Frequency _CenterFrequency_Hz = 0;
 
         ///<summary>
-        /// For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
+        /// For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.
         ///</summary>
         public Frequency CenterFrequency_Hz 
         {
@@ -552,7 +552,7 @@ namespace SIGENCEScenarioTool.Models
         private Gain _Gain_dB = 0;
 
         ///<summary>
-        /// For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
+        /// For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.
         ///</summary>
         public Gain Gain_dB 
         {
@@ -586,7 +586,7 @@ namespace SIGENCEScenarioTool.Models
         private SignalToNoiseRatio _SignalToNoiseRatio_dB = 0;
 
         ///<summary>
-        /// For Receivers (I.E. Id’s < 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s >= 0) This Parameter Is Unused.
+        /// For Receivers (I.E. Id’s &lt; 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s &gt;= 0) This Parameter Is Unused.
         ///</summary>
         public SignalToNoiseRatio SignalToNoiseRatio_dB 
         {

@@ -2,6 +2,7 @@
 <project name="SIGENCEScenarioTool" basedir="." default="compile">
 
     <property name="DeployTarget" value="..\Executable" />
+    <property name="ApiDoc" value="..\Documentation\Generated\ApiDoc" />
 
     <target name="clean">
         
@@ -53,8 +54,19 @@
     </target>
     
 
+    <target name="apidoc" depends="compile">
+
+        <delete dir="${ApiDoc}" />
+
+        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" workingdir=".">
+
+            <arg value="/p:Configuration=Release" />
+            <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.shfbproj" />
+        </exec>
+    </target>
+
     
-    <target name="deploy" depends="doc,compile">
+    <target name="deploy" depends="doc,apidoc">
     
         <delete dir="${DeployTarget}" />
         <mkdir dir="${DeployTarget}" />

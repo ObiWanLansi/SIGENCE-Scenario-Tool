@@ -1,0 +1,38 @@
+# GeoLocalizationResult.PRIMARYKEY Field<a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool">SIGENCE Scenario Tool Library Home</a> _**\[This is preliminary documentation and is subject to change.\]**_
+
+The PropertyName As ReadOnly String For PrimaryKey.
+
+**Namespace:**&nbsp;<a href="f93b21e6-e11a-5c2f-6a3f-e615945fd019.md">SIGENCEScenarioTool.Models</a><br />**Assembly:**&nbsp;SIGENCEScenarioTool.Library (in SIGENCEScenarioTool.Library.dll) Version: 1.5.0.0 (1.5)
+
+## Syntax
+
+**C#**<br />
+``` C#
+public const string PRIMARYKEY = "PrimaryKey"
+```
+
+**VB**<br />
+``` VB
+Public Const PRIMARYKEY As String = "PrimaryKey"
+```
+
+**C++**<br />
+``` C++
+public:
+literal String^ PRIMARYKEY = "PrimaryKey"
+```
+
+**F#**<br />
+``` F#
+static val mutable PRIMARYKEY: string
+```
+
+
+#### Field Value
+Type: <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a>
+
+## See Also
+
+
+#### Reference
+<a href="293bf539-304f-e29d-16b6-063d8b161675.md">GeoLocalizationResult Class</a><br /><a href="f93b21e6-e11a-5c2f-6a3f-e615945fd019.md">SIGENCEScenarioTool.Models Namespace</a><br />

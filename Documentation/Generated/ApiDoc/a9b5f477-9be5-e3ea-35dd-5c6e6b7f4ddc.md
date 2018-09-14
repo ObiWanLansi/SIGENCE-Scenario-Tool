@@ -1,0 +1,44 @@
+# RFDevice.Remark Property <a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool">SIGENCE Scenario Tool Library Home</a> _**\[This is preliminary documentation and is subject to change.\]**_
+
+A Comment Or Remark For The RF Device.
+
+**Namespace:**&nbsp;<a href="f93b21e6-e11a-5c2f-6a3f-e615945fd019.md">SIGENCEScenarioTool.Models</a><br />**Assembly:**&nbsp;SIGENCEScenarioTool.Library (in SIGENCEScenarioTool.Library.dll) Version: 1.5.0.0 (1.5)
+
+## Syntax
+
+**C#**<br />
+``` C#
+public string Remark { get; set; }
+```
+
+**VB**<br />
+``` VB
+Public Property Remark As String
+	Get
+	Set
+```
+
+**C++**<br />
+``` C++
+public:
+property String^ Remark {
+	String^ get ();
+	void set (String^ value);
+}
+```
+
+**F#**<br />
+``` F#
+member Remark : string with get, set
+
+```
+
+
+#### Property Value
+Type: <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a>
+
+## See Also
+
+
+#### Reference
+<a href="a824a6f0-dedb-4d3f-8139-8c48872258ae.md">RFDevice Class</a><br /><a href="f93b21e6-e11a-5c2f-6a3f-e615945fd019.md">SIGENCEScenarioTool.Models Namespace</a><br />

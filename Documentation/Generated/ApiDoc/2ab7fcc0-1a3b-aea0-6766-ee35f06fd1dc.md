@@ -1,0 +1,38 @@
+# UnitPrefixs.Piko Field<a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool">SIGENCE Scenario Tool Library Home</a> _**\[This is preliminary documentation and is subject to change.\]**_
+
+The piko
+
+**Namespace:**&nbsp;<a href="bee2a80e-9e49-8b3b-50de-7fe8e8e97ba8.md">SIGENCEScenarioTool.Datatypes</a><br />**Assembly:**&nbsp;SIGENCEScenarioTool.Library (in SIGENCEScenarioTool.Library.dll) Version: 1.5.0.0 (1.5)
+
+## Syntax
+
+**C#**<br />
+``` C#
+public static readonly UnitPrefix Piko
+```
+
+**VB**<br />
+``` VB
+Public Shared ReadOnly Piko As UnitPrefix
+```
+
+**C++**<br />
+``` C++
+public:
+static initonly UnitPrefix^ Piko
+```
+
+**F#**<br />
+``` F#
+static val Piko: UnitPrefix
+```
+
+
+#### Field Value
+Type: <a href="57857224-c842-1fc5-5e87-5270dfef4990.md">UnitPrefix</a>
+
+## See Also
+
+
+#### Reference
+<a href="a24366dd-29db-eb7c-57b4-0ecafb78c57c.md">UnitPrefixs Class</a><br /><a href="bee2a80e-9e49-8b3b-50de-7fe8e8e97ba8.md">SIGENCEScenarioTool.Datatypes Namespace</a><br />

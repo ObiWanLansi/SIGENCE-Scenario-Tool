@@ -1,0 +1,24 @@
+# Gain Methods<a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool">SIGENCE Scenario Tool Library Home</a> _**\[This is preliminary documentation and is subject to change.\]**_
+
+The <a href="5ac2d4b1-a79d-9d62-4b32-b365134b882a.md">Gain</a> type exposes the following members.
+
+
+## Methods
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="http://msdn2.microsoft.com/en-us/library/bsc2ak47" target="_blank">Equals</a></td><td>
+Determines whether the specified object is equal to the current object.
+ (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode</a></td><td>
+Serves as the default hash function.
+ (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="http://msdn2.microsoft.com/en-us/library/dfwy45w9" target="_blank">GetType</a></td><td>
+Gets the <a href="http://msdn2.microsoft.com/en-us/library/42892f65" target="_blank">Type</a> of the current instance.
+ (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="b25c6190-bce0-2820-8264-ddfe62f64f1b.md">IsValid</a></td><td>
+Returns true if ... is valid.
+ (Overrides <a href="ff1efcf2-6c88-7146-6e2f-1ec8e5987240.md">DataTypeBase(T).IsValid()</a>.)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="e2ba2db4-e51c-ed2d-aee1-0da752e3479d.md">ToString</a></td><td>
+Returns a <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a> that represents this instance.
+ (Overrides <a href="2b668059-e714-2f8a-8b2a-6506308a64c6.md">DataTypeBase(T).ToString()</a>.)</td></tr></table>&nbsp;
+<a href="#gain-methods">Back to Top</a>
+
+## See Also
+
+
+#### Reference
+<a href="5ac2d4b1-a79d-9d62-4b32-b365134b882a.md">Gain Class</a><br /><a href="97d55e68-558f-5fa9-138b-dc16023ce748.md">SIGENCEScenarioTool.Datatypes.Physically Namespace</a><br />
