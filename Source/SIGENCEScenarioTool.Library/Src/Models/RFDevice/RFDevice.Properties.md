@@ -19,7 +19,7 @@ Yaw|double|0|These Parameters Set The Orientation Of Transmitter / Receiver Ante
 RxTxType|RxTxType|RxTxType.Unknown|For All Receivers (i.e. ID’s < 0) This Parameter Defines The Radio Being Used.
 AntennaType|AntennaType|AntennaType.Unknown|AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.
 CenterFrequency_Hz|Frequency|0|For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
-Bandwith_Hz|Bandwidth|0|The Bandwith Of The Transmitter.
+Bandwidth_Hz|Bandwidth|0|The Bandwith Of The Transmitter.
 Gain_dB|Gain|0|For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
 SignalToNoiseRatio_dB|SignalToNoiseRatio|0|For Receivers (I.E. Id’s < 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s >= 0) This Parameter Is Unused.
 XPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.

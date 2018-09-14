@@ -415,7 +415,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Bandwith" Binding="{Binding Bandwith,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                            <DataGridTextColumn Header="Bandwidth" Binding="{Binding Bandwidth,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                 <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />

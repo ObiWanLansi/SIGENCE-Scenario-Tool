@@ -120,9 +120,9 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        static public RFDevice WithBandwith_Hz(this RFDevice instance,Bandwidth value)
+        static public RFDevice WithBandwidth_Hz(this RFDevice instance,Bandwidth value)
         {
-            instance.Bandwith_Hz = value;
+            instance.Bandwidth_Hz = value;
             return instance;
         }
 

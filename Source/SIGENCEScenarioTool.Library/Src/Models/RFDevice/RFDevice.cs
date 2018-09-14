@@ -500,32 +500,32 @@ namespace SIGENCEScenarioTool.Models
 
         //---------------------------------------------------------------------
 
-        #region Bandwith_Hz
+        #region Bandwidth_Hz
 
         ///<summary>
-        /// The PropertyName As ReadOnly String For Bandwith_Hz.
+        /// The PropertyName As ReadOnly String For Bandwidth_Hz.
         ///</summary>
-        public const String BANDWITH_HZ = "Bandwith_Hz";
+        public const String BANDWIDTH_HZ = "Bandwidth_Hz";
 
         ///<summary>
-        /// The DefaultValue For Bandwith_Hz.
+        /// The DefaultValue For Bandwidth_Hz.
         ///</summary>
-        static public readonly Bandwidth DEFAULT_BANDWITH_HZ = 0;
+        static public readonly Bandwidth DEFAULT_BANDWIDTH_HZ = 0;
         
         ///<summary>
-        /// The Internal Field For Bandwith_Hz.
+        /// The Internal Field For Bandwidth_Hz.
         ///</summary>
-        private Bandwidth _Bandwith_Hz = 0;
+        private Bandwidth _Bandwidth_Hz = 0;
 
         ///<summary>
         /// The Bandwith Of The Transmitter.
         ///</summary>
-        public Bandwidth Bandwith_Hz 
+        public Bandwidth Bandwidth_Hz 
         {
-            get { return _Bandwith_Hz; }
+            get { return _Bandwidth_Hz; }
             set
             {
-                _Bandwith_Hz = value;
+                _Bandwidth_Hz = value;
                 FirePropertyChanged();
             }
         }
@@ -763,7 +763,7 @@ namespace SIGENCEScenarioTool.Models
                 XElementExtension.GetXElement("RxTxType", RxTxType),
                 XElementExtension.GetXElement("AntennaType", AntennaType),
                 XElementExtension.GetXElement("CenterFrequency_Hz", CenterFrequency_Hz),
-                XElementExtension.GetXElement("Bandwith_Hz", Bandwith_Hz),
+                XElementExtension.GetXElement("Bandwidth_Hz", Bandwidth_Hz),
                 XElementExtension.GetXElement("Gain_dB", Gain_dB),
                 XElementExtension.GetXElement("SignalToNoiseRatio_dB", SignalToNoiseRatio_dB),
                 XElementExtension.GetXElement("XPos", XPos),
@@ -808,7 +808,7 @@ namespace SIGENCEScenarioTool.Models
                 RxTxType = eChild.GetProperty<RxTxType>("RxTxType",RxTxType.Unknown),
                 AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
                 CenterFrequency_Hz = eChild.GetProperty<Frequency>("CenterFrequency_Hz",0),
-                Bandwith_Hz = eChild.GetProperty<Bandwidth>("Bandwith_Hz",0),
+                Bandwidth_Hz = eChild.GetProperty<Bandwidth>("Bandwidth_Hz",0),
                 Gain_dB = eChild.GetProperty<Gain>("Gain_dB",0),
                 SignalToNoiseRatio_dB = eChild.GetProperty<SignalToNoiseRatio>("SignalToNoiseRatio_dB",0),
                 XPos = eChild.GetProperty<int>("XPos",0),
@@ -905,7 +905,7 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (Bandwith_Hz != other.Bandwith_Hz )
+            if (Bandwidth_Hz != other.Bandwidth_Hz )
             {
                 return false;
             }

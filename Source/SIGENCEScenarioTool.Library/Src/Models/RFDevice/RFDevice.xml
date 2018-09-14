@@ -21,7 +21,7 @@
     <Property Name="AntennaType" Type="AntennaType" Init="AntennaType.Unknown" Comment="AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported." />
 
     <Property Name="CenterFrequency_Hz" Type="Frequency" Init="0" Comment="For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused." />
-    <Property Name="Bandwith_Hz" Type="Bandwidth" Init="0" Comment="The Bandwith Of The Transmitter." />
+    <Property Name="Bandwidth_Hz" Type="Bandwidth" Init="0" Comment="The Bandwith Of The Transmitter." />
     <Property Name="Gain_dB" Type="Gain" Init="0" Comment="For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused." />
     <Property Name="SignalToNoiseRatio_dB" Type="SignalToNoiseRatio" Init="0" Comment="For Receivers (I.E. Id’s &lt; 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s >= 0) This Parameter Is Unused." />
 
