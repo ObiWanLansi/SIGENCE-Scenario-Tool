@@ -7,6 +7,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Xml" #>
 <#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Text" #>
 <#@ output extension=".cs" #>
 <#
     EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
@@ -92,6 +93,8 @@ namespace SIGENCEScenarioTool.Models
                 FirePropertyChanged();
             }
         }
+
+        //static public readonly string TOOLTIP_<#=strPropertyName.ToUpper()#> = "<#=strCommment#>";
 
         #endregion        
 
@@ -259,4 +262,84 @@ namespace SIGENCEScenarioTool.Models
         }
 
     } // end sealed public class <#=eRoot.Name#>
+
+
+
+    /// <summary>
+    /// The tooltips for our properties to display in the HMI.
+    /// </summary>
+    sealed public class RFDeviceTooltips
+    {
+        /// <summary>
+        /// Prevents a default instance of the <see cref="RFDeviceTooltips"/> class from being created.
+        /// </summary>
+        //private RFDeviceTooltips()
+        //{
+        //}
+
+        /// <summary>
+        /// The instance
+        /// </summary>
+        //static private RFDeviceTooltips _instance = new RFDeviceTooltips();
+
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <returns></returns>
+        //static public RFDeviceTooltips GetInstance()
+        //{
+        //    return _instance;
+        //}
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<#    
+    foreach(XElement eProperty in eRoot.Elements())
+    {
+        string strPropertyName = eProperty.Attribute("Name").Value;
+
+        XAttribute xComment = eProperty.Attribute("Comment");
+        string strCommment = xComment != null ? xComment.Value.Trim() : "";
+
+        strCommment = !string.IsNullOrEmpty(strCommment) ? strCommment : "";
+
+        // strCommment = strCommment.Replace(". ",".\\n");
+        int iCurrentLength = 0;
+
+        StringBuilder sb = new StringBuilder(256);
+
+        for(int iCounter=0;iCounter<strCommment.Length;iCounter++)
+        {
+            if(iCurrentLength > 40)
+            {
+                if(strCommment[iCounter] == 0x20)
+                {
+                    sb.Append("\\n");
+                    iCurrentLength = 0;
+                }
+                else
+                {
+                    sb.Append(strCommment[iCounter]);
+                }
+            }
+            else
+            {
+                sb.Append(strCommment[iCounter]);
+            }
+        
+            iCurrentLength++;
+        }
+
+        strCommment = sb.ToString();
+#>
+
+        /// <summary>
+        /// The tooltip for the <#=strPropertyName#>.
+        /// </summary>
+        public string TOOLTIP_<#=strPropertyName.ToUpper()#> { get { return "<#=strCommment#>"; } }
+<#
+    }
+#>
+
+    } // end sealed public class RFDeviceTooltips
 }

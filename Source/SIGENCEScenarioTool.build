@@ -70,7 +70,7 @@
 
 
     
-    <target name="deploy" depends="doc">
+    <target name="deploy" depends="doc,compile">
     
         <delete dir="${DeployTarget}" />
         <mkdir dir="${DeployTarget}" />

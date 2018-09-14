@@ -22,6 +22,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     /// <summary>
     /// 
     /// </summary>
+    /// <seealso cref="System.Windows.Window" />
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class MainWindow
     {
         /// <summary>

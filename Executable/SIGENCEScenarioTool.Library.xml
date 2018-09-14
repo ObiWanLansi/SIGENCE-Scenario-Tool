@@ -2480,6 +2480,116 @@
             A <see cref="T:System.String" /> that represents this instance.
             </returns>
         </member>
+        <member name="T:SIGENCEScenarioTool.Models.RFDeviceTooltips">
+            <summary>
+            The tooltips for our properties to display in the HMI.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_PRIMARYKEY">
+            <summary>
+            The tooltip for the PrimaryKey.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_ID">
+            <summary>
+            The tooltip for the Id.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_DEVICESOURCE">
+            <summary>
+            The tooltip for the DeviceSource.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_STARTTIME">
+            <summary>
+            The tooltip for the StartTime.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_NAME">
+            <summary>
+            The tooltip for the Name.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_LATITUDE">
+            <summary>
+            The tooltip for the Latitude.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_LONGITUDE">
+            <summary>
+            The tooltip for the Longitude.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_ALTITUDE">
+            <summary>
+            The tooltip for the Altitude.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_ROLL">
+            <summary>
+            The tooltip for the Roll.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_PITCH">
+            <summary>
+            The tooltip for the Pitch.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_YAW">
+            <summary>
+            The tooltip for the Yaw.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_RXTXTYPE">
+            <summary>
+            The tooltip for the RxTxType.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_ANTENNATYPE">
+            <summary>
+            The tooltip for the AntennaType.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_CENTERFREQUENCY_HZ">
+            <summary>
+            The tooltip for the CenterFrequency_Hz.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_BANDWIDTH_HZ">
+            <summary>
+            The tooltip for the Bandwidth_Hz.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_GAIN_DB">
+            <summary>
+            The tooltip for the Gain_dB.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_SIGNALTONOISERATIO_DB">
+            <summary>
+            The tooltip for the SignalToNoiseRatio_dB.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_XPOS">
+            <summary>
+            The tooltip for the XPos.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_YPOS">
+            <summary>
+            The tooltip for the YPos.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_ZPOS">
+            <summary>
+            The tooltip for the ZPos.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_REMARK">
+            <summary>
+            The tooltip for the Remark.
+            </summary>
+        </member>
         <member name="T:SIGENCEScenarioTool.Models.RFDeviceExtensions">
             <summary>
              Represent A Device Based On A Radio Frequency.

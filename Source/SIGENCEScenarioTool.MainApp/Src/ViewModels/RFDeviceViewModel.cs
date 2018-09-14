@@ -869,14 +869,5 @@ namespace SIGENCEScenarioTool.ViewModels
     /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{SIGENCEScenarioTool.ViewModels.RFDeviceViewModel}" />
     sealed public class RFDeviceViewModelList : ObservableCollection<RFDeviceViewModel>
     {
-        ///// <summary>
-        ///// Validates this instance.
-        ///// </summary>
-        ///// <returns></returns>
-        //public ValidationResultViewModelList Validate()
-        //{
-        //    return ValidationResultViewModelList.Empty;
-        //}
-
     } // end sealed public class RFDeviceViewModelList
 }
