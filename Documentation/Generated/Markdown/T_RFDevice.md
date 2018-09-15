@@ -1,6 +1,6 @@
 # RFDevice
 ## Base Class
-- AbstractModelBase
+- [AbstractModelBase](./T_AbstractModelBase.md)
 ## Fields
 Flags|Type|Name
 -|-|-
