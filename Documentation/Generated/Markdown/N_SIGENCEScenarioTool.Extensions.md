@@ -15,5 +15,5 @@
 - [TypeExtension](./T_TypeExtension.md) (Class)
 - [XElementExtension](./T_XElementExtension.md) (Class)
 
-<hr />
+<br /><hr />
 SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

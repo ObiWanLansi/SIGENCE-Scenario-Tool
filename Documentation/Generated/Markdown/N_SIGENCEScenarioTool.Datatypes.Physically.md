@@ -4,5 +4,5 @@
 - [Gain](./T_Gain.md) (Class)
 - [SignalToNoiseRatio](./T_SignalToNoiseRatio.md) (Class)
 
-<hr />
+<br /><hr />
 SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

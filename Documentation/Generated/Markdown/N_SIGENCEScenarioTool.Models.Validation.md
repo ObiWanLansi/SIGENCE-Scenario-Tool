@@ -2,5 +2,5 @@
 - [ValidationResult](./T_ValidationResult.md) (Class)
 - [ValidationResultList](./T_ValidationResultList.md) (Class)
 
-<hr />
+<br /><hr />
 SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null
