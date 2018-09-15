@@ -1,4 +1,4 @@
-# SQLiteExtension
+# Class SQLiteExtension
 ## Base Class
 - Object
 ## Methods

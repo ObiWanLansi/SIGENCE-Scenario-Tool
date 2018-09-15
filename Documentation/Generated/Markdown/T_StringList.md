@@ -1,4 +1,4 @@
-# StringList
+# Class StringList
 ## Base Class
 - List&lt;T&gt;
 ## Constructors

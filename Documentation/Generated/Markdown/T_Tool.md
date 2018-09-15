@@ -1,4 +1,4 @@
-# Tool
+# Class Tool
 ## Base Class
 - Object
 ## Fields

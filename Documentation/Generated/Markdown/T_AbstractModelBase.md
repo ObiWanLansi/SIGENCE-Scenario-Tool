@@ -1,3 +1,3 @@
-# AbstractModelBase
+# Class AbstractModelBase
 ## Base Class
 - Object

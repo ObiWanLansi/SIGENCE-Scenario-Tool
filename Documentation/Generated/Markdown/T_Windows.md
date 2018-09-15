@@ -1,4 +1,4 @@
-# Windows
+# Class Windows
 ## Base Class
 - Object
 ## Methods

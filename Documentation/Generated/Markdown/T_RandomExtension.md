@@ -1,4 +1,4 @@
-# RandomExtension
+# Class RandomExtension
 ## Base Class
 - Object
 ## Methods

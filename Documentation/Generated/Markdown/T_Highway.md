@@ -1,4 +1,4 @@
-# Highway
+# Enum Highway
 ## Base Class
 - Enum
 ## Fields

@@ -1,4 +1,4 @@
-# ObservableStringCollection
+# Class ObservableStringCollection
 ## Base Class
 - ObservableCollection&lt;T&gt;
 ## Constructors

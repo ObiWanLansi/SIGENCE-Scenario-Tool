@@ -1,4 +1,4 @@
-# ValidationResult
+# Class ValidationResult
 ## Base Class
 - Object
 ## Properties

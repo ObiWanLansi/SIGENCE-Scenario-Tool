@@ -1,4 +1,4 @@
-# GeoTag
+# Enum GeoTag
 ## Base Class
 - Enum
 ## Fields

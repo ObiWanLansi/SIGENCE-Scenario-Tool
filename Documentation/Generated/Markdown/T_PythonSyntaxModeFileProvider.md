@@ -1,4 +1,4 @@
-# PythonSyntaxModeFileProvider
+# Class PythonSyntaxModeFileProvider
 ## Base Class
 - Object
 ## Properties

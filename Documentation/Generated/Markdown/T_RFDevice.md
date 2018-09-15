@@ -1,4 +1,4 @@
-# RFDevice
+# Class RFDevice
 ## Base Class
 - [AbstractModelBase](./T_AbstractModelBase.md)
 ## Fields

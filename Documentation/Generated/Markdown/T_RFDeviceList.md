@@ -1,4 +1,4 @@
-# RFDeviceList
+# Class RFDeviceList
 ## Base Class
 - List&lt;T&gt;
 ## Constructors

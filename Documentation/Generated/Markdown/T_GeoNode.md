@@ -1,4 +1,4 @@
-# GeoNode
+# Class GeoNode
 ## Base Class
 - Object
 ## Properties

@@ -1,4 +1,4 @@
-# TimeSpanExtension
+# Class TimeSpanExtension
 ## Base Class
 - Object
 ## Methods

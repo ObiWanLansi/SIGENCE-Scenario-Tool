@@ -1,4 +1,4 @@
-# Speech
+# Class Speech
 ## Base Class
 - Object
 ## Properties

@@ -1,4 +1,4 @@
-# IDataReaderExtension
+# Class IDataReaderExtension
 ## Base Class
 - Object
 ## Methods

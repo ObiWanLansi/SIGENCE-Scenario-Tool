@@ -1,4 +1,4 @@
-# TypeExtension
+# Class TypeExtension
 ## Base Class
 - Object
 ## Methods

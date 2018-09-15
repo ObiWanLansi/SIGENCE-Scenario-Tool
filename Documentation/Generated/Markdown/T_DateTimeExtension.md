@@ -1,4 +1,4 @@
-# DateTimeExtension
+# Class DateTimeExtension
 ## Base Class
 - Object
 ## Methods

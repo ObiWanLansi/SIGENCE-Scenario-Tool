@@ -1,4 +1,4 @@
-# SQLiteHelper
+# Class SQLiteHelper
 ## Base Class
 - Object
 ## Fields

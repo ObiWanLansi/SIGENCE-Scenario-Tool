@@ -1,4 +1,4 @@
-# DeviceType
+# Enum DeviceType
 ## Base Class
 - Enum
 ## Fields

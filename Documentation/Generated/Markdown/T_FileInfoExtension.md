@@ -1,4 +1,4 @@
-# FileInfoExtension
+# Class FileInfoExtension
 ## Base Class
 - Object
 ## Methods

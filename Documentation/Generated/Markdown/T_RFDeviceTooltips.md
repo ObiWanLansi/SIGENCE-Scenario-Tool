@@ -1,4 +1,4 @@
-# RFDeviceTooltips
+# Class RFDeviceTooltips
 ## Base Class
 - Object
 ## Properties

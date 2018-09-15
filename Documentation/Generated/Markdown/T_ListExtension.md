@@ -1,4 +1,4 @@
-# ListExtension
+# Class ListExtension
 ## Base Class
 - Object
 ## Methods

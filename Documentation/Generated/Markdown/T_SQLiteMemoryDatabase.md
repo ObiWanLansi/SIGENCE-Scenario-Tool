@@ -1,4 +1,4 @@
-# SQLiteMemoryDatabase
+# Class SQLiteMemoryDatabase
 ## Base Class
 - Object
 ## Properties

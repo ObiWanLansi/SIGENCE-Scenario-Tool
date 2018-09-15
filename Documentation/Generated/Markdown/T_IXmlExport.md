@@ -1,4 +1,4 @@
-# IXmlExport
+# Interface IXmlExport
 ## Base Class
 - No Base Class ?
 ## Methods

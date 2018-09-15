@@ -1,4 +1,4 @@
-# RxTxType
+# Enum RxTxType
 ## Base Class
 - Enum
 ## Fields

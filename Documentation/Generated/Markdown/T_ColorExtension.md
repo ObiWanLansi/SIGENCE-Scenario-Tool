@@ -1,4 +1,4 @@
-# ColorExtension
+# Class ColorExtension
 ## Base Class
 - Object
 ## Methods

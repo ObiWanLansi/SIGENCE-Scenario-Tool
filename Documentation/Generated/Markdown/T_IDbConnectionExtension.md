@@ -1,4 +1,4 @@
-# IDbConnectionExtension
+# Class IDbConnectionExtension
 ## Base Class
 - Object
 ## Methods

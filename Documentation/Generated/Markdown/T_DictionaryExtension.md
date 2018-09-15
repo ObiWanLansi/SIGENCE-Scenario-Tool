@@ -1,4 +1,4 @@
-# DictionaryExtension
+# Class DictionaryExtension
 ## Base Class
 - Object
 ## Methods

@@ -1,4 +1,4 @@
-# Servity
+# Enum Servity
 ## Base Class
 - Enum
 ## Fields

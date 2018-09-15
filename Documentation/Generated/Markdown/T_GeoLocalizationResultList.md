@@ -1,4 +1,4 @@
-# GeoLocalizationResultList
+# Class GeoLocalizationResultList
 ## Base Class
 - List&lt;T&gt;
 ## Constructors

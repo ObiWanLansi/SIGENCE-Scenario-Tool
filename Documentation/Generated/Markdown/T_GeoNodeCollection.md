@@ -1,4 +1,4 @@
-# GeoNodeCollection
+# Class GeoNodeCollection
 ## Base Class
 - ObservableCollection&lt;T&gt;
 ## Methods

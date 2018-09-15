@@ -1,4 +1,4 @@
-# DeviceSource
+# Enum DeviceSource
 ## Base Class
 - Enum
 ## Fields

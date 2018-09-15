@@ -1,4 +1,4 @@
-# DbCommandExtension
+# Class DbCommandExtension
 ## Base Class
 - Object
 ## Methods

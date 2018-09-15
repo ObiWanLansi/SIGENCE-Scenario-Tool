@@ -1,4 +1,4 @@
-# Blink
+# Class Blink
 ## Base Class
 - Object
 ## Methods

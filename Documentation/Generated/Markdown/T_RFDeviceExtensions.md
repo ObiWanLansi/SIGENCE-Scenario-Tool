@@ -1,4 +1,4 @@
-# RFDeviceExtensions
+# Class RFDeviceExtensions
 ## Base Class
 - Object
 ## Methods

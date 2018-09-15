@@ -1,4 +1,4 @@
-# GeoHelper
+# Class GeoHelper
 ## Base Class
 - Object
 ## Fields

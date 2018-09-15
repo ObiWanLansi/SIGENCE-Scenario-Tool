@@ -1,4 +1,4 @@
-# ValidationResultList
+# Class ValidationResultList
 ## Base Class
 - List&lt;T&gt;
 ## Properties

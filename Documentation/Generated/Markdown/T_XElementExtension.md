@@ -1,4 +1,4 @@
-# XElementExtension
+# Class XElementExtension
 ## Base Class
 - Object
 ## Methods

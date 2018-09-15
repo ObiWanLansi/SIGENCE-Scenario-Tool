@@ -1,4 +1,4 @@
-# DataTypeBase&lt;T&gt;
+# Class DataTypeBase&lt;T&gt;
 ## Base Class
 - Object
 ## Properties

@@ -1,4 +1,4 @@
-# IntegerList
+# Class IntegerList
 ## Base Class
 - List&lt;T&gt;
 ## Constructors

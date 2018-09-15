@@ -1,4 +1,4 @@
-# StringExtension
+# Class StringExtension
 ## Base Class
 - Object
 ## Methods

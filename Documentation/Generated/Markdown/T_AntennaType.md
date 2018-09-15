@@ -1,4 +1,4 @@
-# AntennaType
+# Enum AntennaType
 ## Base Class
 - Enum
 ## Fields

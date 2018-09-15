@@ -1,4 +1,4 @@
-# GeoLocalizationResult
+# Class GeoLocalizationResult
 ## Base Class
 - [AbstractModelBase](./T_AbstractModelBase.md)
 ## Fields

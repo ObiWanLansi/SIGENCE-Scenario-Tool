@@ -1,4 +1,4 @@
-# UnitPrefix
+# Class UnitPrefix
 ## Base Class
 - Object
 ## Properties

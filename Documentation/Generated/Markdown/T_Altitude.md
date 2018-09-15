@@ -1,4 +1,4 @@
-# Altitude
+# Class Altitude
 ## Base Class
 - [DataTypeBase&lt;T&gt;](./T_DataTypeBase`1.md)
 ## Constructors

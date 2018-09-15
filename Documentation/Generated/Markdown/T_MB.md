@@ -1,4 +1,4 @@
-# MB
+# Class MB
 ## Base Class
 - Object
 ## Methods
