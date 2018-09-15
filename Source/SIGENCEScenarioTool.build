@@ -41,7 +41,13 @@
         <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" workingdir=".">
 
             <arg value="/p:Configuration=Release" />
-            <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.shfbproj" />
+            <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.html.shfbproj" />
+        </exec>
+
+        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" workingdir=".">
+
+            <arg value="/p:Configuration=Release" />
+            <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.word.shfbproj" />
         </exec>
     </target>
 
