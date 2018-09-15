@@ -1,35 +1,31 @@
 # RFDeviceTooltips
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
 ## Properties
-- TOOLTIP_PRIMARYKEY
-- TOOLTIP_ID
-- TOOLTIP_DEVICESOURCE
-- TOOLTIP_STARTTIME
-- TOOLTIP_NAME
-- TOOLTIP_LATITUDE
-- TOOLTIP_LONGITUDE
-- TOOLTIP_ALTITUDE
-- TOOLTIP_ROLL
-- TOOLTIP_PITCH
-- TOOLTIP_YAW
-- TOOLTIP_RXTXTYPE
-- TOOLTIP_ANTENNATYPE
-- TOOLTIP_CENTERFREQUENCY_HZ
-- TOOLTIP_BANDWIDTH_HZ
-- TOOLTIP_GAIN_DB
-- TOOLTIP_SIGNALTONOISERATIO_DB
-- TOOLTIP_XPOS
-- TOOLTIP_YPOS
-- TOOLTIP_ZPOS
-- TOOLTIP_REMARK
+Flags|Type|Name
+-|-|-
+*r* &nbsp;|String|TOOLTIP_PRIMARYKEY
+*r* &nbsp;|String|TOOLTIP_ID
+*r* &nbsp;|String|TOOLTIP_DEVICESOURCE
+*r* &nbsp;|String|TOOLTIP_STARTTIME
+*r* &nbsp;|String|TOOLTIP_NAME
+*r* &nbsp;|String|TOOLTIP_LATITUDE
+*r* &nbsp;|String|TOOLTIP_LONGITUDE
+*r* &nbsp;|String|TOOLTIP_ALTITUDE
+*r* &nbsp;|String|TOOLTIP_ROLL
+*r* &nbsp;|String|TOOLTIP_PITCH
+*r* &nbsp;|String|TOOLTIP_YAW
+*r* &nbsp;|String|TOOLTIP_RXTXTYPE
+*r* &nbsp;|String|TOOLTIP_ANTENNATYPE
+*r* &nbsp;|String|TOOLTIP_CENTERFREQUENCY_HZ
+*r* &nbsp;|String|TOOLTIP_BANDWIDTH_HZ
+*r* &nbsp;|String|TOOLTIP_GAIN_DB
+*r* &nbsp;|String|TOOLTIP_SIGNALTONOISERATIO_DB
+*r* &nbsp;|String|TOOLTIP_XPOS
+*r* &nbsp;|String|TOOLTIP_YPOS
+*r* &nbsp;|String|TOOLTIP_ZPOS
+*r* &nbsp;|String|TOOLTIP_REMARK
 ## Constructors
-- Void .ctor()
-## Methods
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Name|Parameters
+-|-|-
+&nbsp;|RFDeviceTooltips|( )

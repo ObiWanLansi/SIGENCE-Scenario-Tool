@@ -1,36 +1,7 @@
 # GeoNodeCollection
 ## Base Class
-- ObservableCollection`1
-## Implemented Interfaces
-- IList`1
-- ICollection`1
-- IEnumerable`1
-- IEnumerable
-- IList
-- ICollection
-- IReadOnlyList`1
-- IReadOnlyCollection`1
-- INotifyCollectionChanged
-- INotifyPropertyChanged
-## Derived Classes
-## Fields
-## Properties
-- Count
-- Item
-## Constructors
+- ObservableCollection&lt;T&gt;
 ## Methods
-- GetCollection
-- Move
-- Add
-- Clear
-- CopyTo
-- Contains
-- GetEnumerator
-- IndexOf
-- Insert
-- Remove
-- RemoveAt
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|GeoNodeCollection|GetCollection|( String strDatabaseFilename , GeoTag? geotag )

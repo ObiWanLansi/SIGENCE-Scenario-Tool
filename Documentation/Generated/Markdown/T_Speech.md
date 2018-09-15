@@ -1,19 +1,17 @@
 # Speech
 ## Base Class
 - Object
-## Implemented Interfaces
-- IDisposable
-## Derived Classes
-## Fields
 ## Properties
-- State
+Flags|Type|Name
+-|-|-
+*r* &nbsp;|SynthesizerState|State
 ## Constructors
-- Void .ctor()
+Flags|Name|Parameters
+-|-|-
+&nbsp;|Speech|( )
 ## Methods
-- Speak
-- Say
-- Dispose
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|Void|Speak|( String strContent )
+*static*|Void|Say|( String strContent )
+&nbsp;|Void|Dispose|( )

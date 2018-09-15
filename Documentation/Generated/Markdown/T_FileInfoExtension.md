@@ -1,18 +1,11 @@
 # FileInfoExtension
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-## Constructors
 ## Methods
-- GetFileSize
-- GetFilenameWithoutExtension
-- MoveTo
-- CopyTo
-- CopyTo
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|String|GetFileSize|( FileInfo fi )
+*static*|String|GetFilenameWithoutExtension|( FileInfo fi )
+*static*|Void|MoveTo|( FileInfo fi , DirectoryInfo diDirectory )
+*static*|FileInfo|CopyTo|( FileInfo fi , DirectoryInfo di )
+*static*|FileInfo|CopyTo|( FileInfo fi , DirectoryInfo di , Boolean bOverwrite )

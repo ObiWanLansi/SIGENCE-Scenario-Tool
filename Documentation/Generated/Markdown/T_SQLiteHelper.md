@@ -1,18 +1,14 @@
 # SQLiteHelper
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
 ## Fields
-- TypeMapping
-## Properties
-## Constructors
+Flags|Type|Name
+-|-|-
+*static*|Dictionary&lt;T1,T2&gt;|TypeMapping
 ## Methods
-- GetSQLiteParameter
-- GetSQLiteColumn
-- GetDbType
-- GetNativeType
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|SQLiteParameter|GetSQLiteParameter|( PropertyInfo pi )
+*static*|String|GetSQLiteColumn|( Type t )
+*static*|DbType|GetDbType|( String strSqlType )
+*static*|Type|GetNativeType|( String strSqlType )

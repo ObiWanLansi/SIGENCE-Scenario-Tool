@@ -1,21 +1,19 @@
 # SQLiteMemoryDatabase
 ## Base Class
 - Object
-## Implemented Interfaces
-- IDisposable
-## Derived Classes
-## Fields
 ## Properties
-- Connection
+Flags|Type|Name
+-|-|-
+*r* *w*|SQLiteConnection|Connection
 ## Constructors
-- Void .ctor()
+Flags|Name|Parameters
+-|-|-
+&nbsp;|SQLiteMemoryDatabase|( )
 ## Methods
-- Load
-- Load
-- Save
-- Save
-- Dispose
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|Boolean|Load|( FileInfo fi )
+&nbsp;|Boolean|Load|( String strFilename )
+&nbsp;|Boolean|Save|( FileInfo fi , Boolean bOverWrite , Boolean bCleanWrite )
+&nbsp;|Boolean|Save|( String strFilename , Boolean bOverWrite , Boolean bCleanWrite )
+&nbsp;|Void|Dispose|( )

@@ -1,28 +1,27 @@
 # Tool
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
 ## Fields
-- FRANZ
-- FOX
-- WILFRIED
-- XYLOPHONMUSIK
-- ALLCHARS
-- ALLPANGRAMS
+Flags|Type|Name
+-|-|-
+*static*|String|FRANZ
+*static*|String|FOX
+*static*|String|WILFRIED
+*static*|String|XYLOPHONMUSIK
+*static*|String|ALLCHARS
+*static*|List&lt;T&gt;|ALLPANGRAMS
 ## Properties
-- ProductName
-- ProductTitle
-- StartupPath
-- Version
-## Constructors
+Flags|Type|Name
+-|-|-
+*r* *w*|String|ProductName
+*r* *w*|String|ProductTitle
+*r* *w*|String|StartupPath
+*r* *w*|String|Version
 ## Methods
-- GetHumanSize
-- GetHumanDistance
-- ReadResourceAsString
-- GetGrad
-- GetGradMinutesSeconds
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|String|GetHumanSize|( Int64 lSizeInBytes )
+*static*|String|GetHumanDistance|( Int64 lLengthInMeter )
+*static*|String|ReadResourceAsString|( String strResourceName )
+*static*|Double|GetGrad|( Double grad , Double minutes , Double seconds )
+*static*|String|GetGradMinutesSeconds|( Double grad )

@@ -1,16 +1,16 @@
-# DataTypeBase`1
+# DataTypeBase&lt;T&gt;
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
 ## Properties
-- Value
+Flags|Type|Name
+-|-|-
+*r* *w*|T|Value
 ## Constructors
-- Void .ctor(T)
+Flags|Name|Parameters
+-|-|-
+&nbsp;|DataTypeBase&lt;T&gt;|( T value )
 ## Methods
-- ToString
-- IsValid
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|String|ToString|( )
+&nbsp;|Boolean?|IsValid|( )

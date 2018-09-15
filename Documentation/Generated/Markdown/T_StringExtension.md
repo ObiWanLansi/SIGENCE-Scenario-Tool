@@ -1,21 +1,14 @@
 # StringExtension
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-## Constructors
 ## Methods
-- RemoveQuotation
-- IsEmpty
-- IsNotEmpty
-- CapitalizeOnlyFirstLetter
-- Capitalize
-- ToColor
-- EqualsIgnoreCase
-- ReplaceHtml
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|String|RemoveQuotation|( String strContent )
+*static*|Boolean|IsEmpty|( String strContent )
+*static*|Boolean|IsNotEmpty|( String strContent )
+*static*|String|CapitalizeOnlyFirstLetter|( String strContent )
+*static*|String|Capitalize|( String strContent )
+*static*|Color|ToColor|( String strColor , Color cDefault )
+*static*|Boolean|EqualsIgnoreCase|( String strContent , String strOtherString )
+*static*|String|ReplaceHtml|( String strContent )

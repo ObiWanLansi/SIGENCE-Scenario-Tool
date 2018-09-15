@@ -1,73 +1,15 @@
 # ValidationResultList
 ## Base Class
-- List`1
-## Implemented Interfaces
-- IList`1
-- ICollection`1
-- IEnumerable`1
-- IEnumerable
-- IList
-- ICollection
-- IReadOnlyList`1
-- IReadOnlyCollection`1
-## Derived Classes
-## Fields
+- List&lt;T&gt;
 ## Properties
-- Empty
-- Capacity
-- Count
-- Item
+Flags|Type|Name
+-|-|-
+*r* &nbsp;|ValidationResultList|Empty
 ## Constructors
-- Void .ctor()
+Flags|Name|Parameters
+-|-|-
+&nbsp;|ValidationResultList|( )
 ## Methods
-- Add
-- Add
-- AddRange
-- AsReadOnly
-- BinarySearch
-- BinarySearch
-- BinarySearch
-- Clear
-- Contains
-- ConvertAll
-- CopyTo
-- CopyTo
-- CopyTo
-- Exists
-- Find
-- FindAll
-- FindIndex
-- FindIndex
-- FindIndex
-- FindLast
-- FindLastIndex
-- FindLastIndex
-- FindLastIndex
-- ForEach
-- GetEnumerator
-- GetRange
-- IndexOf
-- IndexOf
-- IndexOf
-- Insert
-- InsertRange
-- LastIndexOf
-- LastIndexOf
-- LastIndexOf
-- Remove
-- RemoveAll
-- RemoveAt
-- RemoveRange
-- Reverse
-- Reverse
-- Sort
-- Sort
-- Sort
-- Sort
-- ToArray
-- TrimExcess
-- TrueForAll
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|Void|Add|( Servity sServity , String strMessage , Object oSource , String strPropertyName , Object oValue )

@@ -1,10 +1,7 @@
 # IXmlExport
 ## Base Class
-- No Base Class
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-## Constructors
+- No Base Class ?
 ## Methods
-- ToXml
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|XElement|ToXml|( )

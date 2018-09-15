@@ -1,18 +1,16 @@
 # PythonSyntaxModeFileProvider
 ## Base Class
 - Object
-## Implemented Interfaces
-- ISyntaxModeFileProvider
-## Derived Classes
-## Fields
 ## Properties
-- SyntaxModes
+Flags|Type|Name
+-|-|-
+*r* &nbsp;|ICollection&lt;T&gt;|SyntaxModes
 ## Constructors
-- Void .ctor()
+Flags|Name|Parameters
+-|-|-
+&nbsp;|PythonSyntaxModeFileProvider|( )
 ## Methods
-- GetSyntaxModeFile
-- UpdateSyntaxModeList
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|XmlTextReader|GetSyntaxModeFile|( SyntaxMode syntaxMode )
+&nbsp;|Void|UpdateSyntaxModeList|( )

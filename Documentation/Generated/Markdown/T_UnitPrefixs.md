@@ -1,27 +1,23 @@
 # UnitPrefixs
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
 ## Fields
-- Exa
-- Peta
-- Tera
-- Giga
-- Mega
-- Kilo
-- Default
-- Milli
-- Mikro
-- Nano
-- Piko
-- Femto
-- Atto
-## Properties
+Flags|Type|Name
+-|-|-
+*static*|UnitPrefix|Exa
+*static*|UnitPrefix|Peta
+*static*|UnitPrefix|Tera
+*static*|UnitPrefix|Giga
+*static*|UnitPrefix|Mega
+*static*|UnitPrefix|Kilo
+*static*|UnitPrefix|Default
+*static*|UnitPrefix|Milli
+*static*|UnitPrefix|Mikro
+*static*|UnitPrefix|Nano
+*static*|UnitPrefix|Piko
+*static*|UnitPrefix|Femto
+*static*|UnitPrefix|Atto
 ## Constructors
-- Void .ctor()
-## Methods
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Name|Parameters
+-|-|-
+&nbsp;|UnitPrefixs|( )

@@ -1,18 +1,14 @@
 # GeoHelper
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
 ## Fields
-- GERMANY_CENTERPOINT
-## Properties
-## Constructors
+Flags|Type|Name
+-|-|-
+*static*|Point|GERMANY_CENTERPOINT
 ## Methods
-- StringToGeometry
-- GeometryToString
-- CreatePolygon
-- CoordinateToPointLatLng
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|IGeometry|StringToGeometry|( String strWKBAsString )
+*static*|String|GeometryToString|( IGeometry geo )
+*static*|Polygon|CreatePolygon|( Point[] points )
+*static*|PointLatLng|CoordinateToPointLatLng|( Coordinate c )

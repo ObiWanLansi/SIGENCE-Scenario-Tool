@@ -1,21 +1,17 @@
 # GeoNode
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
 ## Properties
-- NodeId
-- Latitude
-- Longitude
-- Name
-- Tag
-- Value
-- Position
+Flags|Type|Name
+-|-|-
+*r* *w*|Int64|NodeId
+*r* *w*|Latitude|Latitude
+*r* *w*|Longitude|Longitude
+*r* *w*|String|Name
+*r* *w*|GeoTag|Tag
+*r* *w*|String|Value
+*r* &nbsp;|PointLatLng|Position
 ## Constructors
-- Void .ctor()
-## Methods
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Name|Parameters
+-|-|-
+&nbsp;|GeoNode|( )

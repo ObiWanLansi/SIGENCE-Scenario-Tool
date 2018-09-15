@@ -1,16 +1,12 @@
 # SignalToNoiseRatio
 ## Base Class
-- DataTypeBase`1
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-- Value
+- DataTypeBase&lt;T&gt;
 ## Constructors
-- Void .ctor(Double)
+Flags|Name|Parameters
+-|-|-
+&nbsp;|SignalToNoiseRatio|( Double value )
 ## Methods
-- ToString
-- IsValid
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|String|ToString|( )
+&nbsp;|Boolean?|IsValid|( )

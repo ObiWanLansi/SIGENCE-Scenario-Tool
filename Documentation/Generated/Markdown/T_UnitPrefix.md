@@ -1,17 +1,13 @@
 # UnitPrefix
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
 ## Properties
-- Name
-- Symbol
-- Factor
+Flags|Type|Name
+-|-|-
+*r* *w*|String|Name
+*r* *w*|String|Symbol
+*r* *w*|Double|Factor
 ## Constructors
-- Void .ctor(System.String, System.String, Double)
-## Methods
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Name|Parameters
+-|-|-
+&nbsp;|UnitPrefix|( String strName , String strSymbol , Double dFactor )

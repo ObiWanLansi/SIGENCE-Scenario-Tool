@@ -1,20 +1,13 @@
 # MB
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-## Constructors
 ## Methods
-- NotYetImplemented
-- Error
-- Warning
-- Warning
-- Information
-- Information
-- HereIAm
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|Void|NotYetImplemented|( String strCallerName )
+*static*|Void|Error|( Exception ex , String strCallerName )
+*static*|Void|Warning|( String strInformationText )
+*static*|Void|Warning|( String strFormat , Object[] param )
+*static*|Void|Information|( String strInformationText )
+*static*|Void|Information|( String strFormat , Object[] param )
+*static*|Void|HereIAm|( String strCallerName )

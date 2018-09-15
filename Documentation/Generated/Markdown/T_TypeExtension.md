@@ -1,15 +1,8 @@
 # TypeExtension
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-## Constructors
 ## Methods
-- DerivedFromType
-- ImplementsInterface
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|Boolean|DerivedFromType|( Type tClass , Type tBase )
+*static*|Boolean|ImplementsInterface|( Type tClass , Type tInterface )

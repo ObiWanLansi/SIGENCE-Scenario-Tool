@@ -1,20 +1,13 @@
 # Blink
 ## Base Class
 - Object
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-## Constructors
 ## Methods
-- On
-- Off
-- Show
-- Test
-- FadeWhiteToBlack
-- SetColor
-- SetColor
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+*static*|Void|On|( )
+*static*|Void|Off|( )
+*static*|Void|Show|( UInt16 numberOfTime , UInt16 numberOfMillisecondOn , UInt16 numberOfMillisecondOff , Color c )
+*static*|Void|Test|( )
+*static*|Void|FadeWhiteToBlack|( )
+*static*|Void|SetColor|( Int32 iR , Int32 iG , Int32 iB )
+*static*|Void|SetColor|( Color c )

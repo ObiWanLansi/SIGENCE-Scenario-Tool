@@ -1,16 +1,11 @@
 # Altitude
 ## Base Class
-- DataTypeBase`1
-## Implemented Interfaces
-## Derived Classes
-## Fields
-## Properties
-- Value
+- DataTypeBase&lt;T&gt;
 ## Constructors
-- Void .ctor(Int32)
+Flags|Name|Parameters
+-|-|-
+&nbsp;|Altitude|( Int32 value )
 ## Methods
-- IsValid
-- ToString
-- Equals
-- GetHashCode
-- GetType
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|Boolean?|IsValid|( )
