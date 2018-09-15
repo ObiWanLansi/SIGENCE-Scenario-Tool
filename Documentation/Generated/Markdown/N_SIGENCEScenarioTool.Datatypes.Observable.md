@@ -1,2 +1,2 @@
 # SIGENCEScenarioTool.Datatypes.Observable
-## [ObservableStringCollection](./T_ObservableStringCollection.md)
+## [ObservableStringCollection](./T_ObservableStringCollection.md) (Class)

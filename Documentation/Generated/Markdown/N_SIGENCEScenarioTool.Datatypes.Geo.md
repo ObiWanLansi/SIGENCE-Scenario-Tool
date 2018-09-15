@@ -1,6 +1,6 @@
 # SIGENCEScenarioTool.Datatypes.Geo
-## [Altitude](./T_Altitude.md)
-## [GeoNode](./T_GeoNode.md)
-## [GeoNodeCollection](./T_GeoNodeCollection.md)
-## [Latitude](./T_Latitude.md)
-## [Longitude](./T_Longitude.md)
+## [Altitude](./T_Altitude.md) (Class)
+## [GeoNode](./T_GeoNode.md) (Class)
+## [GeoNodeCollection](./T_GeoNodeCollection.md) (Class)
+## [Latitude](./T_Latitude.md) (Class)
+## [Longitude](./T_Longitude.md) (Class)

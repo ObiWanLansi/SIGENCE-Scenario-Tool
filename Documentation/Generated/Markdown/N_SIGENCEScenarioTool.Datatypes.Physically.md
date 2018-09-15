@@ -1,5 +1,5 @@
 # SIGENCEScenarioTool.Datatypes.Physically
-## [Bandwidth](./T_Bandwidth.md)
-## [Frequency](./T_Frequency.md)
-## [Gain](./T_Gain.md)
-## [SignalToNoiseRatio](./T_SignalToNoiseRatio.md)
+## [Bandwidth](./T_Bandwidth.md) (Class)
+## [Frequency](./T_Frequency.md) (Class)
+## [Gain](./T_Gain.md) (Class)
+## [SignalToNoiseRatio](./T_SignalToNoiseRatio.md) (Class)

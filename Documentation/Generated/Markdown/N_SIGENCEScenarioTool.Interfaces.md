@@ -1,2 +1,2 @@
 # SIGENCEScenarioTool.Interfaces
-## [IXmlExport](./T_IXmlExport.md)
+## [IXmlExport](./T_IXmlExport.md) (Interface)

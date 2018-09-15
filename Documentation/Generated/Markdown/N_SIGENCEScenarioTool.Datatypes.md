@@ -1,4 +1,4 @@
 # SIGENCEScenarioTool.Datatypes
-## [DataTypeBase&lt;T&gt;](./T_DataTypeBase`1.md)
-## [UnitPrefix](./T_UnitPrefix.md)
-## [UnitPrefixs](./T_UnitPrefixs.md)
+## [DataTypeBase&lt;T&gt;](./T_DataTypeBase`1.md) (Class)
+## [UnitPrefix](./T_UnitPrefix.md) (Class)
+## [UnitPrefixs](./T_UnitPrefixs.md) (Class)
