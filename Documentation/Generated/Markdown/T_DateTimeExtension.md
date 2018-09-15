@@ -13,3 +13,6 @@ Flags|Result|Name|Parameters
 *static*|String|Fmt_DD_MM_YYYY|( DateTime dt )
 *static*|String|Fmt_HH_MM_SS|( DateTime dt )
 *static*|Int32|DaysInMonth|( DateTime dt )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

@@ -17,3 +17,6 @@ Flags|Result|Name|Parameters
 &nbsp;|Boolean|Save|( FileInfo fi , Boolean bOverWrite , Boolean bCleanWrite )
 &nbsp;|Boolean|Save|( String strFilename , Boolean bOverWrite , Boolean bCleanWrite )
 &nbsp;|Void|Dispose|( )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

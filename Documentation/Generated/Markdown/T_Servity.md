@@ -8,3 +8,6 @@ Flags|Type|Name
 *static*|Servity|Warning
 *static*|Servity|Error
 *static*|Servity|Fatal
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

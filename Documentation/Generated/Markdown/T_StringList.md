@@ -8,3 +8,6 @@ Flags|Name|Parameters
 &nbsp;|StringList|( Int32 iSize )
 &nbsp;|StringList|( String[] strArray )
 &nbsp;|StringList|( IEnumerable&lt;T&gt; collection )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

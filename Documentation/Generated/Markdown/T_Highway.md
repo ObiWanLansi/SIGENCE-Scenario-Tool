@@ -17,3 +17,6 @@ Flags|Type|Name
 *static*|Highway|Primary_Link
 *static*|Highway|Secondary_Link
 *static*|Highway|Tertiary_Link
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

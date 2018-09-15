@@ -25,3 +25,6 @@ Flags|Result|Name|Parameters
 *static*|RFDevice|WithYPos|( RFDevice instance , Int32 value )
 *static*|RFDevice|WithZPos|( RFDevice instance , Int32 value )
 *static*|RFDevice|WithRemark|( RFDevice instance , String value )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

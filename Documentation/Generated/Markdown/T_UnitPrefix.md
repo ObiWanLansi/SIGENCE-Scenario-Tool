@@ -11,3 +11,6 @@ Flags|Type|Name
 Flags|Name|Parameters
 -|-|-
 &nbsp;|UnitPrefix|( String strName , String strSymbol , Double dFactor )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

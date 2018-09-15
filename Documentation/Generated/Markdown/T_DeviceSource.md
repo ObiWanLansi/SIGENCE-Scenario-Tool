@@ -9,3 +9,6 @@ Flags|Type|Name
 *static*|DeviceSource|Automatic
 *static*|DeviceSource|DataImport
 *static*|DeviceSource|SimulationResult
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

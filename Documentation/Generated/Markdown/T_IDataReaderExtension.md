@@ -13,3 +13,6 @@ Flags|Result|Name|Parameters
 *static*|Polygon|GetPolygonFromWKB|( IDataReader dbResult , Int32 iColumnIndex )
 *static*|LineString|GetLineStringFromWKB|( IDataReader dbResult , Int32 iColumnIndex )
 *static*|Point|GetPointFromWKB|( IDataReader dbResult , Int32 iColumnIndex )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

@@ -14,3 +14,6 @@ Flags|Result|Name|Parameters
 *static*|Void|Truncate|( SQLiteConnection dbConnection , String strTablename )
 *static*|Int64|GetLastPrimarykey|( SQLiteConnection dbConnection )
 *static*|SQLiteCommand|PrepareInsertStatement|( SQLiteConnection dbConnection , String strTablename , Boolean bIgnorePrimaryKey )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

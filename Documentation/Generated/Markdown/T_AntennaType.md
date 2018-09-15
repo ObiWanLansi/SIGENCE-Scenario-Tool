@@ -9,3 +9,6 @@ Flags|Type|Name
 *static*|AntennaType|HyperLOG60200
 *static*|AntennaType|SimradArgusRadar
 *static*|AntennaType|Unknown
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

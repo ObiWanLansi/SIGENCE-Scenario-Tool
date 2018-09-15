@@ -12,3 +12,6 @@ Flags|Result|Name|Parameters
 *static*|String|GeometryToString|( IGeometry geo )
 *static*|Polygon|CreatePolygon|( Point[] points )
 *static*|PointLatLng|CoordinateToPointLatLng|( Coordinate c )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

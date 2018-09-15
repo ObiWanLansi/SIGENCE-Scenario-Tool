@@ -36,3 +36,6 @@ Flags|Result|Name|Parameters
 *static*|T|GetProperty|( XElement eParent , String strElementName , T tDefault )
 *static*|Void|SaveDefault|( XElement element , String strOutputFilename )
 *static*|String|ToDefaultString|( XElement element )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

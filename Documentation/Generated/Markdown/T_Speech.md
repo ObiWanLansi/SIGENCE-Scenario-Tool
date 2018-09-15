@@ -15,3 +15,6 @@ Flags|Result|Name|Parameters
 &nbsp;|Void|Speak|( String strContent )
 *static*|Void|Say|( String strContent )
 &nbsp;|Void|Dispose|( )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

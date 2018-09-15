@@ -36,3 +36,6 @@ Flags|Result|Name|Parameters
 *static*|GeoLocalizationResult|FromXml|( XElement eRoot )
 &nbsp;|Boolean|Equals|( GeoLocalizationResult other )
 &nbsp;|GeoLocalizationResult|Clone|( )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

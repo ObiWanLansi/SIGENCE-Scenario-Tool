@@ -25,3 +25,6 @@ Flags|Result|Name|Parameters
 *static*|String|ReadResourceAsString|( String strResourceName )
 *static*|Double|GetGrad|( Double grad , Double minutes , Double seconds )
 *static*|String|GetGradMinutesSeconds|( Double grad )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

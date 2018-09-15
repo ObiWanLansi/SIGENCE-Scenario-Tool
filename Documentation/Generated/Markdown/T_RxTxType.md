@@ -12,3 +12,6 @@ Flags|Type|Name
 *static*|RxTxType|SIN
 *static*|RxTxType|FMRadio
 *static*|RxTxType|Unknown
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

@@ -15,3 +15,6 @@ Flags|Type|Name
 *static*|GeoTag|Power
 *static*|GeoTag|Shop
 *static*|GeoTag|Vending
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

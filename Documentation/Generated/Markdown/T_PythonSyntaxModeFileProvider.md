@@ -14,3 +14,6 @@ Flags|Result|Name|Parameters
 -|-|-|-
 &nbsp;|XmlTextReader|GetSyntaxModeFile|( SyntaxMode syntaxMode )
 &nbsp;|Void|UpdateSyntaxModeList|( )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

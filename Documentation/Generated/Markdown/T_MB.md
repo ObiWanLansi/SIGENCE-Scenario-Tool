@@ -11,3 +11,6 @@ Flags|Result|Name|Parameters
 *static*|Void|Information|( String strInformationText )
 *static*|Void|Information|( String strFormat , Object[] param )
 *static*|Void|HereIAm|( String strCallerName )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

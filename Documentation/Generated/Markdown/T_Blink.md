@@ -11,3 +11,6 @@ Flags|Result|Name|Parameters
 *static*|Void|FadeWhiteToBlack|( )
 *static*|Void|SetColor|( Int32 iR , Int32 iG , Int32 iB )
 *static*|Void|SetColor|( Color c )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

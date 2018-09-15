@@ -15,3 +15,6 @@ Flags|Result|Name|Parameters
 *static*|Boolean|CloseIfOpen|( IDbConnection dbConnection , Boolean bIgnoreCloseException )
 *static*|Void|SaveAsCSV|( IDbConnection dbConnection , String strSelectStatement , FileInfo fiExportFile , Char cDivider )
 *static*|DataTable|SelectAsDataTable|( IDbConnection dbConnection , String strResultTableName , String strFormat , Object[] args )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

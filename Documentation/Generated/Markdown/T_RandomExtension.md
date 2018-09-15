@@ -19,3 +19,6 @@ Flags|Result|Name|Parameters
 *static*|String|NextSalt|( Random r , Int32 iSaltLength )
 *static*|Color|NextColor|( Random r )
 *static*|String|NextAutoKennzeichen|( Random r )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

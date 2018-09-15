@@ -12,3 +12,6 @@ Flags|Result|Name|Parameters
 *static*|Color|ToColor|( String strColor , Color cDefault )
 *static*|Boolean|EqualsIgnoreCase|( String strContent , String strOtherString )
 *static*|String|ReplaceHtml|( String strContent )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

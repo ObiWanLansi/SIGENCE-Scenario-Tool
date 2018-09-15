@@ -9,3 +9,6 @@ Flags|Result|Name|Parameters
 *static*|Void|MoveTo|( FileInfo fi , DirectoryInfo diDirectory )
 *static*|FileInfo|CopyTo|( FileInfo fi , DirectoryInfo di )
 *static*|FileInfo|CopyTo|( FileInfo fi , DirectoryInfo di , Boolean bOverwrite )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

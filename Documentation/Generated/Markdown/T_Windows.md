@@ -9,3 +9,6 @@ Flags|Result|Name|Parameters
 *static*|Process|OpenWebAdress|( String strURL )
 *static*|BitmapSource|GetWPFScreenshot|( Control control , Int32? iWidth , Int32? iHeight )
 *static*|Void|SaveWPFScreenshot|( BitmapSource screenshot , String strOutputFilename )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null

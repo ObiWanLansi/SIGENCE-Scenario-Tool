@@ -12,3 +12,6 @@ Flags|Result|Name|Parameters
 *static*|String|GetSQLiteColumn|( Type t )
 *static*|DbType|GetDbType|( String strSqlType )
 *static*|Type|GetNativeType|( String strSqlType )
+
+<br /><hr />
+SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null
