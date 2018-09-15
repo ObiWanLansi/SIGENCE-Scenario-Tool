@@ -1,0 +1,45 @@
+# XElementExtension
+## Base Class
+- Object
+## Implemented Interfaces
+## Derived Classes
+## Fields
+## Properties
+## Constructors
+## Methods
+- GetDateTimeFromNodeUTC
+- GetLongFromNode
+- GetInt32FromNode
+- GetUInt32FromNode
+- GetSingleFromNode
+- GetSingleFromNodeComma
+- GetSingleFromNodePoint
+- GetDoubleFromNode
+- GetDoubleFromNodeComma
+- GetDoubleFromNodePoint
+- GetStringFromNode
+- GetStringFromNode
+- GetStringFromCData
+- GetBoolFromNode
+- GetGuidFromNode
+- GetBitmapSourceFromNode
+- GetEnumFromNode
+- GetColorFromNode
+- GetFileInfoFromNode
+- GetDirectoryInfoFromNode
+- GetDateTimeAttribute
+- GetStringAttribute
+- GetBoolAttribute
+- GetUInt32Attribute
+- GetInt32Attribute
+- GetInt64Attribute
+- GetDoubleAttribute
+- GetSingleAttribute
+- GetXElement
+- GetProperty
+- SaveDefault
+- ToDefaultString
+- ToString
+- Equals
+- GetHashCode
+- GetType

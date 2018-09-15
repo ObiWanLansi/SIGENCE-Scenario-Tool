@@ -1,0 +1,12 @@
+# Namespaces 
+## SIGENCEScenarioTool.Database.SQLite
+## SIGENCEScenarioTool.Datatypes
+## SIGENCEScenarioTool.Datatypes.Geo
+## SIGENCEScenarioTool.Datatypes.Observable
+## SIGENCEScenarioTool.Datatypes.Physically
+## SIGENCEScenarioTool.Datatypes.Standard
+## SIGENCEScenarioTool.Extensions
+## SIGENCEScenarioTool.Interfaces
+## SIGENCEScenarioTool.Models
+## SIGENCEScenarioTool.Models.Validation
+## SIGENCEScenarioTool.Tools
