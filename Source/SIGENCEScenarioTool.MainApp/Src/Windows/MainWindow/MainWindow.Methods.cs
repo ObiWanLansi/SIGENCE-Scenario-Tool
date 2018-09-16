@@ -53,7 +53,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void SetTitle()
         {
-            this.Title = string.Format("{0} ({1}){2}", Tool.ProductTitle, Tool.Version, this.CurrentFile != null ? string.Format(" [{0}]", new FileInfo(this.CurrentFile).Name) : "");
+            this.Title = string.Format("{0} (Version {1}){2}", Tool.ProductTitle, Tool.Version, this.CurrentFile != null ? string.Format(" [{0}]", new FileInfo(this.CurrentFile).Name) : "");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
