@@ -21,7 +21,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 
 ## Useful Links
 
-# Tutorials
+### Tutorials
 - [SIGINT](https://en.wikipedia.org/wiki/Signals_intelligence)
 - [Git Tutorial](https://www.tutorialspoint.com/git/index.htm)
 - [C# Tutorial](https://www.tutorialspoint.com/csharp/index.htm)
@@ -30,7 +30,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [Python Tutorial](https://www.tutorialspoint.com/python/index.htm)
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
-# Tools
+### Tools
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
 - [NAnt](http://nant.sourceforge.net/)
 - [Sandcastle Help File Builder](https://github.com/EWSoftware/SHFB)
