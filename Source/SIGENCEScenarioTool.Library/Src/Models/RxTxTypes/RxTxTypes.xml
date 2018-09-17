@@ -3,7 +3,7 @@
 
     <!-- Receiver -->
     <RxTxType Value="0" Name="IdealSDR" Description="Ideal Sdr Receiver (Passes Signal Through)"/>
-    <RxTxType Value="1" Name="Reserved" Description="Reserved For Later Use"/>
+    <RxTxType Value="1" Name="Reserved" Description="Reserved For RF Simulation Playback Functionality"/>
     <RxTxType Value="2" Name="HackRF" Description="HackRF One"/>
     <RxTxType Value="3" Name="B200mini" Description="Ettus B200mini"/>
     <RxTxType Value="4" Name="TwinRx" Description="Ettus X310 / TwinRx"/>

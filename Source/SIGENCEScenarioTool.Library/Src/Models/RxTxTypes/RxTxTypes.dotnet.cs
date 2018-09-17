@@ -16,9 +16,9 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         static public RxTxType IdealSDR { get; private set; } = new RxTxType(0,"IdealSDR","Ideal Sdr Receiver (Passes Signal Through)");
 
         /// <summary>
-        /// Reserved For Later Use.
+        /// Reserved For RF Simulation Playback Functionality.
         /// </summary>
-        static public RxTxType Reserved { get; private set; } = new RxTxType(1,"Reserved","Reserved For Later Use");
+        static public RxTxType Reserved { get; private set; } = new RxTxType(1,"Reserved","Reserved For RF Simulation Playback Functionality");
 
         /// <summary>
         /// HackRF One.

@@ -1,3 +1,4 @@
+
 % A class with all known RxTxTypes as Property.
 classdef RxTxTypes
    properties
@@ -6,7 +7,7 @@ classdef RxTxTypes
         % Ideal Sdr Receiver (Passes Signal Through).
         IdealSDR = 0
 
-        % Reserved For Later Use.
+        % Reserved For RF Simulation Playback Functionality.
         Reserved = 1
 
         % HackRF One.
