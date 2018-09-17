@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RxTxTypes>
+
+    <!-- Receiver -->
+    <RxTxType Value="0" Name="IdealSDR" Description="Ideal Sdr Receiver (Passes Signal Through)"/>
+    <RxTxType Value="1" Name="Reserved" Description="Reserved For Later Use"/>
+    <RxTxType Value="2" Name="HackRF" Description="HackRF One"/>
+    <RxTxType Value="3" Name="B200mini" Description="Ettus B200mini"/>
+    <RxTxType Value="4" Name="TwinRx" Description="Ettus X310 / TwinRx"/>
+
+
+    <!-- Transmitter -->
+    <RxTxType Value="1" Name="QPSK" Description="QPSK Signal With 2kHz Bandwidth"/>
+    <RxTxType Value="2" Name="SIN" Description="This Is A Sine Generator A 500Hz Frequency"/>
+    <RxTxType Value="3" Name="FMBroadcast" Description="This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"/>
+    <RxTxType Value="4" Name="GPSJammer" Description="10MHz L1 GPS Jammer"/>
+    <RxTxType Value="5" Name="Iridium" Description="Iridium Satcom Transmitter"/>
+    <RxTxType Value="6" Name="LTE" Description="LTE Signal"/>
+    <RxTxType Value="7" Name="AIS" Description="AIS Signal"/>
+    <RxTxType Value="8" Name="NFMRadio" Description="Narrow Fm Band (Voice With 5Khz Bandwidth)"/>
+
+</RxTxTypes>

@@ -1,0 +1,53 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ output extension=".cs" #>
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+    string strFileName = this.Host.ResolvePath("RxTxTypes.xml");
+ 
+    string strVersion = File.ReadAllText(this.Host.ResolvePath("..\\..\\..\\..\\VERSION"));
+    strVersion = strVersion.Trim();
+#>
+
+<#
+    XDocument xd = XDocument.Load(strFileName );
+
+    XElement eRoot = xd.Root;
+
+#>
+
+namespace SIGENCEScenarioTool.Models.RxTxTypes
+{
+
+    /// <summary>
+    /// A class with all known RxTxTypes as static Property.
+    /// </summary>
+    static public class RxTxTypes
+    {
+
+<#
+    foreach(XElement eProperty in eRoot.Elements())
+    {
+        string strPropertyValue = eProperty.Attribute("Value").Value;
+        string strPropertyName = eProperty.Attribute("Name").Value;
+        string strPropertyDescription = eProperty.Attribute("Description").Value;
+#>
+
+        /// <summary>
+        /// <#=strPropertyDescription#>.
+        /// </summary>
+        static public RxTxType <#=strPropertyName#> { get; private set; } = new RxTxType(<#=strPropertyValue#>,"<#=strPropertyName#>","<#=strPropertyDescription#>");
+<#
+    }
+#>
+
+    } // end static public class RxTxTypes
+
+}

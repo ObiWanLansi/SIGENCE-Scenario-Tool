@@ -1,0 +1,45 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ output extension=".m" #>
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+    string strFileName = this.Host.ResolvePath("RxTxTypes.xml");
+ 
+    string strVersion = File.ReadAllText(this.Host.ResolvePath("..\\..\\..\\..\\VERSION"));
+    strVersion = strVersion.Trim();
+#>
+
+<#
+    XDocument xd = XDocument.Load(strFileName );
+
+    XElement eRoot = xd.Root;
+
+#>
+
+% A class with all known RxTxTypes as Property.
+classdef RxTxTypes
+   properties
+
+<#
+    foreach(XElement eProperty in eRoot.Elements())
+    {
+        string strPropertyValue = eProperty.Attribute("Value").Value;
+        string strPropertyName = eProperty.Attribute("Name").Value;
+        string strPropertyDescription = eProperty.Attribute("Description").Value;
+#>
+
+        % <#=strPropertyDescription#>.
+        <#=strPropertyName#> = <#=strPropertyValue#>
+<#
+    }
+#>
+
+   end
+end

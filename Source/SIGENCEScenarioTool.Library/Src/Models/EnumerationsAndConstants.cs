@@ -36,7 +36,6 @@ namespace SIGENCEScenarioTool.Models
         HyperLOG60200 = 2,
         SimradArgusRadar = 3,
 
-
         Unknown = 255
 
     } // end public enum AntennaType
