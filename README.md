@@ -21,8 +21,11 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 
 ## Useful Links
 
-### Tutorials
+### Technologie
 - [SIGINT](https://en.wikipedia.org/wiki/Signals_intelligence)
+- [Antenna](https://en.wikipedia.org/wiki/Antenna_(radio))
+
+### Tutorials
 - [Git Tutorial](https://www.tutorialspoint.com/git/index.htm)
 - [C# Tutorial](https://www.tutorialspoint.com/csharp/index.htm)
 - [WPF Tutorial](https://www.tutorialspoint.com/wpf/index.htm)
