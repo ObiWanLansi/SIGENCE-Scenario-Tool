@@ -5,12 +5,9 @@
 
 using System;
 
-using SIGENCEScenarioTool.Extensions;
-using SIGENCEScenarioTool.Interfaces;
-using SIGENCEScenarioTool.Datatypes;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Physically;
-
+using SIGENCEScenarioTool.Models.RxTxTypes;
 
 
 

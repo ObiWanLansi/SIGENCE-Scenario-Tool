@@ -16,7 +16,7 @@ Altitude|Altitude|0|The Elevation Of The RF Device Above The Sea Level (Meter).
 Roll|double|0|These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
 Pitch|double|0|These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
 Yaw|double|0|These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
-RxTxType|RxTxType|RxTxType.Unknown|For All Receivers (i.e. ID’s < 0) This Parameter Defines The Radio Being Used.
+RxTxType|RxTxType|RxTxTypes.RxTxTypes.Unknown|For All Receivers (i.e. ID’s < 0) This Parameter Defines The Radio Being Used.
 AntennaType|AntennaType|AntennaType.Unknown|AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.
 CenterFrequency_Hz|Frequency|0|For Transmitters (I.E. Id’s >= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s < 0) This Parameter Is Currently Unused.
 Bandwidth_Hz|Bandwidth|0|The Bandwith Of The Transmitter.

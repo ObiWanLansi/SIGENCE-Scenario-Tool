@@ -1,4 +1,7 @@
-﻿namespace SIGENCEScenarioTool.Models.RxTxTypes
+﻿
+
+
+namespace SIGENCEScenarioTool.Models.RxTxTypes
 {
     /// <summary>
     /// A class to encapsule an RxTxType.
@@ -29,7 +32,6 @@
         /// </value>
         public string Remark { get; private set; }
 
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -44,6 +46,20 @@
             Value = iValue;
             Name = strName;
             Remark = strRemark;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return Name;
         }
 
     } // end sealed public class RxTxType

@@ -6,11 +6,11 @@
 using System;
 using System.Xml.Linq;
 
-using SIGENCEScenarioTool.Extensions;
-using SIGENCEScenarioTool.Interfaces;
-using SIGENCEScenarioTool.Datatypes;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Physically;
+using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Interfaces;
+using SIGENCEScenarioTool.Models.RxTxTypes;
 
 
 
@@ -19,7 +19,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent A Device Based On A Radio Frequency.
     ///</summary>
-    sealed public partial class RFDevice :AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
+    sealed public partial class RFDevice : AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -35,7 +35,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For PrimaryKey.
         ///</summary>
         static public readonly Guid DEFAULT_PRIMARYKEY = Guid.NewGuid();
-        
+
         ///<summary>
         /// The Internal Field For PrimaryKey.
         ///</summary>
@@ -44,7 +44,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Unique PrimarKey For This RF Device.
         ///</summary>
-        public Guid PrimaryKey 
+        public Guid PrimaryKey
         {
             get { return _PrimaryKey; }
             set
@@ -71,7 +71,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Id.
         ///</summary>
         static public readonly int DEFAULT_ID = 0;
-        
+
         ///<summary>
         /// The Internal Field For Id.
         ///</summary>
@@ -80,7 +80,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// Every Scenario Element (I.E. Transmitter, Receiver) Must Be Assigned An Unique Id. Negative Id’S Are Reserved For Receivers While All Other Id’S Are Transmitters By Default. Some Applications (I.E. Tdoa Emitter Localization) Require A Reference Transmitter. For These Applications Id=0 Is The Reference Transmitter. Receivers Must Be Assigned First In The Table, Followed Be Transmitters (With Id=0 Being The First). After The Static Scenario, Update Of Id’S Requires No Specific Order. Note That Definition Of New Transmitters/Receivers After The Static Scenario Is Prohibited.
         ///</summary>
-        public int Id 
+        public int Id
         {
             get { return _Id; }
             set
@@ -107,7 +107,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For DeviceSource.
         ///</summary>
         static public readonly DeviceSource DEFAULT_DEVICESOURCE = DeviceSource.Unknown;
-        
+
         ///<summary>
         /// The Internal Field For DeviceSource.
         ///</summary>
@@ -116,7 +116,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Source Of This RF Device.
         ///</summary>
-        public DeviceSource DeviceSource 
+        public DeviceSource DeviceSource
         {
             get { return _DeviceSource; }
             set
@@ -143,7 +143,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For StartTime.
         ///</summary>
         static public readonly double DEFAULT_STARTTIME = 0;
-        
+
         ///<summary>
         /// The Internal Field For StartTime.
         ///</summary>
@@ -152,7 +152,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
         ///</summary>
-        public double StartTime 
+        public double StartTime
         {
             get { return _StartTime; }
             set
@@ -179,7 +179,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Name.
         ///</summary>
         static public readonly string DEFAULT_NAME = "RFDevice";
-        
+
         ///<summary>
         /// The Internal Field For Name.
         ///</summary>
@@ -188,7 +188,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// A Short Describing Display Name For The RF Device.
         ///</summary>
-        public string Name 
+        public string Name
         {
             get { return _Name; }
             set
@@ -215,7 +215,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Latitude.
         ///</summary>
         static public readonly Latitude DEFAULT_LATITUDE = double.NaN;
-        
+
         ///<summary>
         /// The Internal Field For Latitude.
         ///</summary>
@@ -224,7 +224,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Latitude Of The RF Device (WGS84).
         ///</summary>
-        public Latitude Latitude 
+        public Latitude Latitude
         {
             get { return _Latitude; }
             set
@@ -251,7 +251,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Longitude.
         ///</summary>
         static public readonly Longitude DEFAULT_LONGITUDE = double.NaN;
-        
+
         ///<summary>
         /// The Internal Field For Longitude.
         ///</summary>
@@ -260,7 +260,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Longitude Of The RF Device (WGS84).
         ///</summary>
-        public Longitude Longitude 
+        public Longitude Longitude
         {
             get { return _Longitude; }
             set
@@ -287,7 +287,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Altitude.
         ///</summary>
         static public readonly Altitude DEFAULT_ALTITUDE = 0;
-        
+
         ///<summary>
         /// The Internal Field For Altitude.
         ///</summary>
@@ -296,7 +296,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Elevation Of The RF Device Above The Sea Level (Meter).
         ///</summary>
-        public Altitude Altitude 
+        public Altitude Altitude
         {
             get { return _Altitude; }
             set
@@ -323,7 +323,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Roll.
         ///</summary>
         static public readonly double DEFAULT_ROLL = 0;
-        
+
         ///<summary>
         /// The Internal Field For Roll.
         ///</summary>
@@ -332,7 +332,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
         ///</summary>
-        public double Roll 
+        public double Roll
         {
             get { return _Roll; }
             set
@@ -359,7 +359,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Pitch.
         ///</summary>
         static public readonly double DEFAULT_PITCH = 0;
-        
+
         ///<summary>
         /// The Internal Field For Pitch.
         ///</summary>
@@ -368,7 +368,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
         ///</summary>
-        public double Pitch 
+        public double Pitch
         {
             get { return _Pitch; }
             set
@@ -395,7 +395,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Yaw.
         ///</summary>
         static public readonly double DEFAULT_YAW = 0;
-        
+
         ///<summary>
         /// The Internal Field For Yaw.
         ///</summary>
@@ -404,7 +404,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
         ///</summary>
-        public double Yaw 
+        public double Yaw
         {
             get { return _Yaw; }
             set
@@ -430,21 +430,25 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For RxTxType.
         ///</summary>
-        static public readonly RxTxType DEFAULT_RXTXTYPE = RxTxType.Unknown;
-        
+        static public readonly RxTxType DEFAULT_RXTXTYPE = RxTxTypes.RxTxTypes.Unknown;
+
         ///<summary>
         /// The Internal Field For RxTxType.
         ///</summary>
-        private RxTxType _RxTxType = RxTxType.Unknown;
+        private RxTxType _RxTxType = RxTxTypes.RxTxTypes.Unknown;
 
         ///<summary>
         /// For All Receivers (i.e. ID’s &lt; 0) This Parameter Defines The Radio Being Used.
         ///</summary>
-        public RxTxType RxTxType 
+        public RxTxType RxTxType
         {
             get { return _RxTxType; }
             set
             {
+                if( value == null )
+                {
+                    throw new ArgumentException();
+                }
                 _RxTxType = value;
                 FirePropertyChanged();
             }
@@ -467,7 +471,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For AntennaType.
         ///</summary>
         static public readonly AntennaType DEFAULT_ANTENNATYPE = AntennaType.Unknown;
-        
+
         ///<summary>
         /// The Internal Field For AntennaType.
         ///</summary>
@@ -476,7 +480,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.
         ///</summary>
-        public AntennaType AntennaType 
+        public AntennaType AntennaType
         {
             get { return _AntennaType; }
             set
@@ -503,7 +507,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For CenterFrequency_Hz.
         ///</summary>
         static public readonly Frequency DEFAULT_CENTERFREQUENCY_HZ = 0;
-        
+
         ///<summary>
         /// The Internal Field For CenterFrequency_Hz.
         ///</summary>
@@ -512,7 +516,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.
         ///</summary>
-        public Frequency CenterFrequency_Hz 
+        public Frequency CenterFrequency_Hz
         {
             get { return _CenterFrequency_Hz; }
             set
@@ -539,7 +543,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Bandwidth_Hz.
         ///</summary>
         static public readonly Bandwidth DEFAULT_BANDWIDTH_HZ = 0;
-        
+
         ///<summary>
         /// The Internal Field For Bandwidth_Hz.
         ///</summary>
@@ -548,7 +552,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Bandwith Of The Transmitter.
         ///</summary>
-        public Bandwidth Bandwidth_Hz 
+        public Bandwidth Bandwidth_Hz
         {
             get { return _Bandwidth_Hz; }
             set
@@ -575,7 +579,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Gain_dB.
         ///</summary>
         static public readonly Gain DEFAULT_GAIN_DB = 0;
-        
+
         ///<summary>
         /// The Internal Field For Gain_dB.
         ///</summary>
@@ -584,7 +588,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.
         ///</summary>
-        public Gain Gain_dB 
+        public Gain Gain_dB
         {
             get { return _Gain_dB; }
             set
@@ -611,7 +615,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For SignalToNoiseRatio_dB.
         ///</summary>
         static public readonly SignalToNoiseRatio DEFAULT_SIGNALTONOISERATIO_DB = 0;
-        
+
         ///<summary>
         /// The Internal Field For SignalToNoiseRatio_dB.
         ///</summary>
@@ -620,7 +624,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// For Receivers (I.E. Id’s &lt; 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s &gt;= 0) This Parameter Is Unused.
         ///</summary>
-        public SignalToNoiseRatio SignalToNoiseRatio_dB 
+        public SignalToNoiseRatio SignalToNoiseRatio_dB
         {
             get { return _SignalToNoiseRatio_dB; }
             set
@@ -647,7 +651,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For XPos.
         ///</summary>
         static public readonly int DEFAULT_XPOS = 0;
-        
+
         ///<summary>
         /// The Internal Field For XPos.
         ///</summary>
@@ -656,7 +660,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
         ///</summary>
-        public int XPos 
+        public int XPos
         {
             get { return _XPos; }
             set
@@ -683,7 +687,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For YPos.
         ///</summary>
         static public readonly int DEFAULT_YPOS = 0;
-        
+
         ///<summary>
         /// The Internal Field For YPos.
         ///</summary>
@@ -692,7 +696,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
         ///</summary>
-        public int YPos 
+        public int YPos
         {
             get { return _YPos; }
             set
@@ -719,7 +723,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For ZPos.
         ///</summary>
         static public readonly int DEFAULT_ZPOS = 0;
-        
+
         ///<summary>
         /// The Internal Field For ZPos.
         ///</summary>
@@ -728,7 +732,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
         ///</summary>
-        public int ZPos 
+        public int ZPos
         {
             get { return _ZPos; }
             set
@@ -755,7 +759,7 @@ namespace SIGENCEScenarioTool.Models
         /// The DefaultValue For Remark.
         ///</summary>
         static public readonly string DEFAULT_REMARK = "";
-        
+
         ///<summary>
         /// The Internal Field For Remark.
         ///</summary>
@@ -764,7 +768,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// A Comment Or Remark For The RF Device.
         ///</summary>
-        public string Remark 
+        public string Remark
         {
             get { return _Remark; }
             set
@@ -789,29 +793,29 @@ namespace SIGENCEScenarioTool.Models
         /// <returns></returns>
         public XElement ToXml()
         {
-            return new XElement("RFDevice",
+            return new XElement( "RFDevice" ,
 
-                XElementExtension.GetXElement("PrimaryKey", PrimaryKey),
-                XElementExtension.GetXElement("Id", Id),
-                XElementExtension.GetXElement("DeviceSource", DeviceSource),
-                XElementExtension.GetXElement("StartTime", StartTime),
-                XElementExtension.GetXElement("Name", Name),
-                XElementExtension.GetXElement("Latitude", Latitude),
-                XElementExtension.GetXElement("Longitude", Longitude),
-                XElementExtension.GetXElement("Altitude", Altitude),
-                XElementExtension.GetXElement("Roll", Roll),
-                XElementExtension.GetXElement("Pitch", Pitch),
-                XElementExtension.GetXElement("Yaw", Yaw),
-                XElementExtension.GetXElement("RxTxType", RxTxType),
-                XElementExtension.GetXElement("AntennaType", AntennaType),
-                XElementExtension.GetXElement("CenterFrequency_Hz", CenterFrequency_Hz),
-                XElementExtension.GetXElement("Bandwidth_Hz", Bandwidth_Hz),
-                XElementExtension.GetXElement("Gain_dB", Gain_dB),
-                XElementExtension.GetXElement("SignalToNoiseRatio_dB", SignalToNoiseRatio_dB),
-                XElementExtension.GetXElement("XPos", XPos),
-                XElementExtension.GetXElement("YPos", YPos),
-                XElementExtension.GetXElement("ZPos", ZPos),
-                XElementExtension.GetXElement("Remark", Remark)  
+                XElementExtension.GetXElement( "PrimaryKey" , PrimaryKey ) ,
+                XElementExtension.GetXElement( "Id" , Id ) ,
+                XElementExtension.GetXElement( "DeviceSource" , DeviceSource ) ,
+                XElementExtension.GetXElement( "StartTime" , StartTime ) ,
+                XElementExtension.GetXElement( "Name" , Name ) ,
+                XElementExtension.GetXElement( "Latitude" , Latitude ) ,
+                XElementExtension.GetXElement( "Longitude" , Longitude ) ,
+                XElementExtension.GetXElement( "Altitude" , Altitude ) ,
+                XElementExtension.GetXElement( "Roll" , Roll ) ,
+                XElementExtension.GetXElement( "Pitch" , Pitch ) ,
+                XElementExtension.GetXElement( "Yaw" , Yaw ) ,
+                XElementExtension.GetXElement( "RxTxType" , RxTxType ) ,
+                XElementExtension.GetXElement( "AntennaType" , AntennaType ) ,
+                XElementExtension.GetXElement( "CenterFrequency_Hz" , CenterFrequency_Hz ) ,
+                XElementExtension.GetXElement( "Bandwidth_Hz" , Bandwidth_Hz ) ,
+                XElementExtension.GetXElement( "Gain_dB" , Gain_dB ) ,
+                XElementExtension.GetXElement( "SignalToNoiseRatio_dB" , SignalToNoiseRatio_dB ) ,
+                XElementExtension.GetXElement( "XPos" , XPos ) ,
+                XElementExtension.GetXElement( "YPos" , YPos ) ,
+                XElementExtension.GetXElement( "ZPos" , ZPos ) ,
+                XElementExtension.GetXElement( "Remark" , Remark )
             );
         }
 
@@ -821,42 +825,42 @@ namespace SIGENCEScenarioTool.Models
         /// </summary>
         /// <param name="eRoot">The e root.</param>
         /// <returns></returns>
-        static public RFDevice FromXml(XElement eRoot)
+        static public RFDevice FromXml( XElement eRoot )
         {
             XElement eChild = null;
 
-            if (eRoot.Name.LocalName.Equals("RFDevice"))
+            if( eRoot.Name.LocalName.Equals( "RFDevice" ) )
             {
                 eChild = eRoot;
             }
             else
             {
-                eChild = eRoot.Element("RFDevice");
+                eChild = eRoot.Element( "RFDevice" );
             }
 
             return new RFDevice
             {
-                PrimaryKey = eChild.GetProperty<Guid>("PrimaryKey",Guid.NewGuid()),
-                Id = eChild.GetProperty<int>("Id",0),
-                DeviceSource = eChild.GetProperty<DeviceSource>("DeviceSource",DeviceSource.Unknown),
-                StartTime = eChild.GetProperty<double>("StartTime",0),
-                Name = eChild.GetProperty<string>("Name","RFDevice"),
-                Latitude = eChild.GetProperty<Latitude>("Latitude",double.NaN),
-                Longitude = eChild.GetProperty<Longitude>("Longitude",double.NaN),
-                Altitude = eChild.GetProperty<Altitude>("Altitude",0),
-                Roll = eChild.GetProperty<double>("Roll",0),
-                Pitch = eChild.GetProperty<double>("Pitch",0),
-                Yaw = eChild.GetProperty<double>("Yaw",0),
-                RxTxType = eChild.GetProperty<RxTxType>("RxTxType",RxTxType.Unknown),
-                AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
-                CenterFrequency_Hz = eChild.GetProperty<Frequency>("CenterFrequency_Hz",0),
-                Bandwidth_Hz = eChild.GetProperty<Bandwidth>("Bandwidth_Hz",0),
-                Gain_dB = eChild.GetProperty<Gain>("Gain_dB",0),
-                SignalToNoiseRatio_dB = eChild.GetProperty<SignalToNoiseRatio>("SignalToNoiseRatio_dB",0),
-                XPos = eChild.GetProperty<int>("XPos",0),
-                YPos = eChild.GetProperty<int>("YPos",0),
-                ZPos = eChild.GetProperty<int>("ZPos",0),
-                Remark = eChild.GetProperty<string>("Remark","")            
+                PrimaryKey = eChild.GetProperty<Guid>( "PrimaryKey" , Guid.NewGuid() ) ,
+                Id = eChild.GetProperty<int>( "Id" , 0 ) ,
+                DeviceSource = eChild.GetProperty<DeviceSource>( "DeviceSource" , DeviceSource.Unknown ) ,
+                StartTime = eChild.GetProperty<double>( "StartTime" , 0 ) ,
+                Name = eChild.GetProperty<string>( "Name" , "RFDevice" ) ,
+                Latitude = eChild.GetProperty<Latitude>( "Latitude" , double.NaN ) ,
+                Longitude = eChild.GetProperty<Longitude>( "Longitude" , double.NaN ) ,
+                Altitude = eChild.GetProperty<Altitude>( "Altitude" , 0 ) ,
+                Roll = eChild.GetProperty<double>( "Roll" , 0 ) ,
+                Pitch = eChild.GetProperty<double>( "Pitch" , 0 ) ,
+                Yaw = eChild.GetProperty<double>( "Yaw" , 0 ) ,
+                RxTxType = eChild.GetProperty<RxTxType>( "RxTxType" , RxTxTypes.RxTxTypes.Unknown ) ,
+                AntennaType = eChild.GetProperty<AntennaType>( "AntennaType" , AntennaType.Unknown ) ,
+                CenterFrequency_Hz = eChild.GetProperty<Frequency>( "CenterFrequency_Hz" , 0 ) ,
+                Bandwidth_Hz = eChild.GetProperty<Bandwidth>( "Bandwidth_Hz" , 0 ) ,
+                Gain_dB = eChild.GetProperty<Gain>( "Gain_dB" , 0 ) ,
+                SignalToNoiseRatio_dB = eChild.GetProperty<SignalToNoiseRatio>( "SignalToNoiseRatio_dB" , 0 ) ,
+                XPos = eChild.GetProperty<int>( "XPos" , 0 ) ,
+                YPos = eChild.GetProperty<int>( "YPos" , 0 ) ,
+                ZPos = eChild.GetProperty<int>( "ZPos" , 0 ) ,
+                Remark = eChild.GetProperty<string>( "Remark" , "" )
             };
         }
 
@@ -870,114 +874,114 @@ namespace SIGENCEScenarioTool.Models
         /// <returns>
         /// true, wenn das aktuelle Objekt gleich dem <paramref name="other" />-Parameter ist, andernfalls false.
         /// </returns>
-        public bool Equals(RFDevice other)
+        public bool Equals( RFDevice other )
         {
-            if (other == null)
+            if( other == null )
             {
                 return false;
             }
 
-            if (PrimaryKey != other.PrimaryKey )
+            if( PrimaryKey != other.PrimaryKey )
             {
                 return false;
             }
 
-            if (Id != other.Id )
+            if( Id != other.Id )
             {
                 return false;
             }
 
-            if (DeviceSource != other.DeviceSource )
+            if( DeviceSource != other.DeviceSource )
             {
                 return false;
             }
 
-            if (StartTime != other.StartTime )
+            if( StartTime != other.StartTime )
             {
                 return false;
             }
 
-            if (Name != other.Name )
+            if( Name != other.Name )
             {
                 return false;
             }
 
-            if (Latitude != other.Latitude )
+            if( Latitude != other.Latitude )
             {
                 return false;
             }
 
-            if (Longitude != other.Longitude )
+            if( Longitude != other.Longitude )
             {
                 return false;
             }
 
-            if (Altitude != other.Altitude )
+            if( Altitude != other.Altitude )
             {
                 return false;
             }
 
-            if (Roll != other.Roll )
+            if( Roll != other.Roll )
             {
                 return false;
             }
 
-            if (Pitch != other.Pitch )
+            if( Pitch != other.Pitch )
             {
                 return false;
             }
 
-            if (Yaw != other.Yaw )
+            if( Yaw != other.Yaw )
             {
                 return false;
             }
 
-            if (RxTxType != other.RxTxType )
+            if( RxTxType != other.RxTxType )
             {
                 return false;
             }
 
-            if (AntennaType != other.AntennaType )
+            if( AntennaType != other.AntennaType )
             {
                 return false;
             }
 
-            if (CenterFrequency_Hz != other.CenterFrequency_Hz )
+            if( CenterFrequency_Hz != other.CenterFrequency_Hz )
             {
                 return false;
             }
 
-            if (Bandwidth_Hz != other.Bandwidth_Hz )
+            if( Bandwidth_Hz != other.Bandwidth_Hz )
             {
                 return false;
             }
 
-            if (Gain_dB != other.Gain_dB )
+            if( Gain_dB != other.Gain_dB )
             {
                 return false;
             }
 
-            if (SignalToNoiseRatio_dB != other.SignalToNoiseRatio_dB )
+            if( SignalToNoiseRatio_dB != other.SignalToNoiseRatio_dB )
             {
                 return false;
             }
 
-            if (XPos != other.XPos )
+            if( XPos != other.XPos )
             {
                 return false;
             }
 
-            if (YPos != other.YPos )
+            if( YPos != other.YPos )
             {
                 return false;
             }
 
-            if (ZPos != other.ZPos )
+            if( ZPos != other.ZPos )
             {
                 return false;
             }
 
-            if (Remark != other.Remark )
+            if( Remark != other.Remark )
             {
                 return false;
             }
@@ -994,7 +998,7 @@ namespace SIGENCEScenarioTool.Models
         /// <returns></returns>
         public RFDevice Clone()
         {
-            return (RFDevice)this.MemberwiseClone();
+            return ( RFDevice ) this.MemberwiseClone();
         }
 
 

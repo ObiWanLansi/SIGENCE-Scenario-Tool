@@ -210,10 +210,10 @@
     </Compile>
     <Compile Include="Src\Models\RFDevice\RFDeviceList.cs" />
     <Compile Include="Src\Models\RxTxTypes\RxTxType.cs" />
-    <Compile Include="Src\Models\RxTxTypes\RxTxTypes.dotnet.cs">
+    <Compile Include="Src\Models\RxTxTypes\RxTxTypes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RxTxTypes.dotnet.tt</DependentUpon>
+      <DependentUpon>RxTxTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Src\Models\Validation\ValidationResult.cs" />
     <Compile Include="Src\Tools\Blink.cs" />
@@ -287,18 +287,18 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
     </Content>
-    <Content Include="Src\Models\RxTxTypes\RxTxTypes.m">
+    <Content Include="Src\Models\RxTxTypes\RxTxTypes.tt.m">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RxTxTypes.tt</DependentUpon>
+      <DependentUpon>RxTxTypes.tt.xxx</DependentUpon>
     </Content>
+    <None Include="Src\Models\RxTxTypes\RxTxTypes.tt.xxx">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RxTxTypes.tt.m</LastGenOutput>
+    </None>
     <Content Include="Src\Models\RxTxTypes\RxTxTypes.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RxTxTypes.m</LastGenOutput>
-    </Content>
-    <Content Include="Src\Models\RxTxTypes\RxTxTypes.dotnet.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RxTxTypes.dotnet.cs</LastGenOutput>
+      <LastGenOutput>RxTxTypes.cs</LastGenOutput>
     </Content>
     <Resource Include="Src\Models\RxTxTypes\RxTxTypes.xml" />
     <None Include="Src\Models\RFDevice\RFDevice.xml.old">

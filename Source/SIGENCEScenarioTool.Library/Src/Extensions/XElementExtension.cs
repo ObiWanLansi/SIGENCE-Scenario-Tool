@@ -9,6 +9,9 @@ using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Physically;
+using SIGENCEScenarioTool.Models.RxTxTypes;
+
+
 
 namespace SIGENCEScenarioTool.Extensions
 {
@@ -871,6 +874,13 @@ namespace SIGENCEScenarioTool.Extensions
             }
 
             //-----------------------------------------------------------------
+
+            if( t == typeof( RxTxType ) )
+            {
+                RxTxType xDefault = ( RxTxType ) ( ( object ) tDefault );
+                return ( T ) ( ( object ) RxTxTypes.FromString( GetStringFromNode( eParent , strElementName ) ) );
+            }
+
 
             if( t == typeof( Bandwidth ) )
             {

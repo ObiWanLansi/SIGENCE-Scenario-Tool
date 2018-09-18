@@ -1,8 +1,12 @@
+﻿
 
 % A class with all known RxTxTypes as Property.
 classdef RxTxTypes
    properties
 
+
+        % Unknown RxTxType.
+        Unknown = -1
 
         % Ideal Sdr Receiver (Passes Signal Through).
         IdealSDR = 0

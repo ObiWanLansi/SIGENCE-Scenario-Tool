@@ -5,6 +5,7 @@ using System.Linq;
 using GMap.NET;
 
 using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Tools;
 
 
@@ -28,7 +29,7 @@ namespace SIGENCEScenarioTool.Models
         /// Initializes a new instance of the <see cref="RFDeviceList"/> class.
         /// </summary>
         /// <param name="iInitialSize">Initial size of the i.</param>
-        public RFDeviceList(int iInitialSize) : base(iInitialSize)
+        public RFDeviceList( int iInitialSize ) : base( iInitialSize )
         {
         }
 
@@ -37,8 +38,8 @@ namespace SIGENCEScenarioTool.Models
         /// Initializes a new instance of the <see cref="RFDeviceList"/> class.
         /// </summary>
         /// <param name="collection">Die Auflistung, deren Elemente in die neue Liste kopiert werden.</param>
-        public RFDeviceList(IEnumerable<RFDevice> collection)
-            : base(collection)
+        public RFDeviceList( IEnumerable<RFDevice> collection )
+            : base( collection )
         {
         }
 
@@ -58,47 +59,52 @@ namespace SIGENCEScenarioTool.Models
         /// <param name="pllCenter">The PLL center.</param>
         /// <param name="bEnsureRefDevice">if set to <c>true</c> [b ensure reference device].</param>
         /// <returns></returns>
-        static public RFDeviceList CreateRandomizedRFDeviceList(int iMaxCount, PointLatLng pllCenter, bool bEnsureRefDevice = false)
+        static public RFDeviceList CreateRandomizedRFDeviceList( int iMaxCount , PointLatLng pllCenter , bool bEnsureRefDevice = false )
         {
-            RFDeviceList list = new RFDeviceList(iMaxCount);
+            RFDeviceList list = new RFDeviceList( iMaxCount );
 
-            for (int i = 0; i < iMaxCount; i++)
+            List<RxTxType> RxTxTypels = new List<RxTxType>( RxTxTypes.RxTxTypes.Values );
+
+            for( int i = 1 ; i < iMaxCount + 1 ; i++ )
             {
-                list.Add(new RFDevice
+                list.Add( new RFDevice
                 {
-                    Id = r.Next(-1000, 1000),
-                    DeviceSource = DeviceSource.Automatic,
-                    Name = string.Format("RFDevice #{0}", i),
+                    Id = r.Next( -1000 , 1000 ) ,
+                    DeviceSource = DeviceSource.Automatic ,
+                    Name = string.Format( "RFDevice #{0}" , i ) ,
 
-                    Latitude = pllCenter.Lat + (r.NextBool() ? (r.NextDouble() * 0.05) : (r.NextDouble() * 0.05) * -1),
-                    Longitude = pllCenter.Lng + (r.NextBool() ? (r.NextDouble() * 0.05) : (r.NextDouble() * 0.05) * -1),
-                    Altitude = r.Next(12345),
+                    StartTime = i + ( ( double ) 1 / i ) ,
 
-                    RxTxType = r.NextEnum<RxTxType>(),
-                    AntennaType = r.NextEnum<AntennaType>(),
+                    Latitude = pllCenter.Lat + ( r.NextBool() ? ( r.NextDouble() * 0.05 ) : ( r.NextDouble() * 0.05 ) * -1 ) ,
+                    Longitude = pllCenter.Lng + ( r.NextBool() ? ( r.NextDouble() * 0.05 ) : ( r.NextDouble() * 0.05 ) * -1 ) ,
+                    Altitude = r.Next( 12345 ) ,
 
-                    CenterFrequency_Hz = r.Next(85, 105) * 100000 + r.NextDouble(),
-                    Bandwidth_Hz = r.Next(10, 20) * 1000 + r.NextDouble(),
-                    Gain_dB = r.Next(140) + r.NextDouble(),
-                    SignalToNoiseRatio_dB = r.Next(140) + r.NextDouble(),
+                    //RxTxType = r.NextEnum<RxTxType>(),
+                    RxTxType = r.NextObject( RxTxTypels ) ,
+                    AntennaType = r.NextEnum<AntennaType>() ,
 
-                    Roll = r.Next(-90, 90),
-                    Pitch = r.Next(-90, 90),
-                    Yaw = r.Next(-90, 90),
+                    CenterFrequency_Hz = r.Next( 85 , 105 ) * 100000 + r.NextDouble() ,
+                    Bandwidth_Hz = r.Next( 10 , 20 ) * 1000 + r.NextDouble() ,
+                    Gain_dB = r.Next( 140 ) + r.NextDouble() ,
+                    SignalToNoiseRatio_dB = r.Next( 140 ) + r.NextDouble() ,
 
-                    XPos = r.Next(-74, 74),
-                    YPos = r.Next(-74, 74),
-                    ZPos = r.Next(-74, 74),
+                    Roll = r.Next( -90 , 90 ) ,
+                    Pitch = r.Next( -90 , 90 ) ,
+                    Yaw = r.Next( -90 , 90 ) ,
 
-                    Remark = r.NextObject(Tool.ALLPANGRAMS)
-                });
+                    XPos = r.Next( -74 , 74 ) ,
+                    YPos = r.Next( -74 , 74 ) ,
+                    ZPos = r.Next( -74 , 74 ) ,
+
+                    Remark = r.NextObject( Tool.ALLPANGRAMS )
+                } );
             }
 
-            if (bEnsureRefDevice == true)
+            if( bEnsureRefDevice == true )
             {
-                RFDevice refdev = list.FirstOrDefault(d => d.Id == 0);
+                RFDevice refdev = list.FirstOrDefault( d => d.Id == 0 );
 
-                if (refdev == null)
+                if( refdev == null )
                 {
                     refdev = list.First();
                 }

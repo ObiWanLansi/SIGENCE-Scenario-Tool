@@ -7,7 +7,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Xml" #>
 <#@ import namespace="System.Xml.Linq" #>
-<#@ output extension=".cs" #>
+<#@ output extension=".m" #>
 <#
     EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
     string strFileName = this.Host.ResolvePath("RxTxTypes.xml");
@@ -23,14 +23,9 @@
 
 #>
 
-namespace SIGENCEScenarioTool.Models.RxTxTypes
-{
-
-    /// <summary>
-    /// A class with all known RxTxTypes as static Property.
-    /// </summary>
-    static public class RxTxTypes
-    {
+% A class with all known RxTxTypes as Property.
+classdef RxTxTypes
+   properties
 
 <#
     foreach(XElement eProperty in eRoot.Elements())
@@ -40,14 +35,11 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         string strPropertyDescription = eProperty.Attribute("Description").Value;
 #>
 
-        /// <summary>
-        /// <#=strPropertyDescription#>.
-        /// </summary>
-        static public RxTxType <#=strPropertyName#> { get; private set; } = new RxTxType(<#=strPropertyValue#>,"<#=strPropertyName#>","<#=strPropertyDescription#>");
+        % <#=strPropertyDescription#>.
+        <#=strPropertyName#> = <#=strPropertyValue#>
 <#
     }
 #>
 
-    } // end static public class RxTxTypes
-
-}
+   end
+end

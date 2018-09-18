@@ -6,6 +6,10 @@ But it is planned to have this created by a script that is always up-to-date.
 
 <hr/>
 
+<span style="color: #FF0000;">
+
+<center><h1>OBSOLETE</h1></center>
+
 ## RxTxType
 
 *For all receivers (i.e. ID’s < 0) this parameter defines the radio being used:*
@@ -30,6 +34,8 @@ FMRadio|3
 Name|Value|
 -|-|
 Unknown|4242
+
+</span>
 
 <hr/>
 

@@ -1,14 +1,21 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+
+
 
 namespace SIGENCEScenarioTool.Models.RxTxTypes
 {
-
     /// <summary>
     /// A class with all known RxTxTypes as static Property.
     /// </summary>
     static public class RxTxTypes
     {
 
+        /// <summary>
+        /// Unknown RxTxType.
+        /// </summary>
+        static public RxTxType Unknown { get; private set; } = new RxTxType(-1,"Unknown","Unknown RxTxType");
 
         /// <summary>
         /// Ideal Sdr Receiver (Passes Signal Through).
@@ -75,6 +82,66 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// </summary>
         static public RxTxType NFMRadio { get; private set; } = new RxTxType(8,"NFMRadio","Narrow Fm Band (Voice With 5Khz Bandwidth)");
 
-    } // end static public class RxTxTypes
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// The internal list with all RxTxType's.
+        /// </summary>
+        static private readonly List<RxTxType> lRxTxTypes = null;
+
+
+        /// <summary>
+        /// Initializes the <see cref="RxTxTypes" /> class.
+        /// </summary>
+        static RxTxTypes()
+        {
+            Type tRxTxType = typeof( RxTxType );
+
+            lRxTxTypes = new List<RxTxType>();
+
+            foreach( PropertyInfo pi in typeof( RxTxTypes ).GetProperties( BindingFlags.Public | BindingFlags.Static ) )
+            {
+                if( pi.PropertyType == tRxTxType )
+                {
+                    lRxTxTypes.Add( pi.GetValue( null ) as RxTxType );
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Gets the list with all RxTxType's.
+        /// </summary>
+        /// <value>
+        /// The values.
+        /// </value>
+        static public IReadOnlyCollection<RxTxType> Values
+        {
+            get { return lRxTxTypes.AsReadOnly(); }
+        }
+        
+
+        /// <summary>
+        /// Froms the string.
+        /// </summary>
+        /// <param name="strName">Name of the string.</param>
+        /// <returns></returns>
+        static public RxTxType FromString( string strName )
+        {
+            if( string.IsNullOrEmpty( strName ) == false )
+            {
+                foreach( RxTxType rtt in lRxTxTypes )
+                {
+                    if( rtt.Name.Equals( strName , StringComparison.CurrentCultureIgnoreCase ) )
+                    {
+                        return rtt;
+                    }
+                }
+            }
+
+            return RxTxTypes.Unknown;
+        }
+
+    } // end static public class RxTxTypes
 }

@@ -10,6 +10,7 @@ using NUnit.Framework;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.UnitTest.Attributes;
 
 
@@ -44,7 +45,7 @@ namespace SIGENCEScenarioTool.UnitTests
             RFDevice source = new RFDevice
             {
                 Id = -42,
-                RxTxType = RxTxType.IdealSDR,
+                RxTxType = RxTxTypes.IdealSDR,
                 AntennaType = AntennaType.Unknown,
                 StartTime = 42,
                 Latitude = 15,

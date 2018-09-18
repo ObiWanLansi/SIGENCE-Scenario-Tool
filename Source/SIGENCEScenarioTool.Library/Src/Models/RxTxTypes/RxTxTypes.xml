@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <RxTxTypes>
 
-    <!-- Receiver -->
+    <RxTxType Value="-1" Name="Unknown" Description="Unknown RxTxType"/>
+
+
+    <!-- For Receivers ( Id < 0 ) -->
     <RxTxType Value="0" Name="IdealSDR" Description="Ideal Sdr Receiver (Passes Signal Through)"/>
     <RxTxType Value="1" Name="Reserved" Description="Reserved For RF Simulation Playback Functionality"/>
     <RxTxType Value="2" Name="HackRF" Description="HackRF One"/>
@@ -9,7 +12,7 @@
     <RxTxType Value="4" Name="TwinRx" Description="Ettus X310 / TwinRx"/>
 
 
-    <!-- Transmitter -->
+    <!-- For Transmitters ( Id >= 0 ) -->
     <RxTxType Value="1" Name="QPSK" Description="QPSK Signal With 2kHz Bandwidth"/>
     <RxTxType Value="2" Name="SIN" Description="This Is A Sine Generator A 500Hz Frequency"/>
     <RxTxType Value="3" Name="FMBroadcast" Description="This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"/>

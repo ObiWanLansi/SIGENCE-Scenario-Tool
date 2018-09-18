@@ -79,7 +79,12 @@ namespace SIGENCEScenarioTool.Models
 
             //-----------------------------------------------------------------
 
-            if (RxTxType == RxTxType.Unknown)
+            if( RxTxType == null)
+            {
+                vrl.Add( Servity.Error, "The RxTxType Is Unknown!" , this , "RxTxType" , RxTxType );
+            }
+
+            if( RxTxType == RxTxTypes.RxTxTypes.Unknown)
             {
                 vrl.Add(Servity.Warning, "The RxTxType Is Unknown!", this, "RxTxType", RxTxType);
             }
