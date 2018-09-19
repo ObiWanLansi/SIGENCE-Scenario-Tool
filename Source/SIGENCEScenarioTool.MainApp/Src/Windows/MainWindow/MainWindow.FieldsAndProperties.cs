@@ -158,6 +158,28 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// The b received data
+        /// </summary>
+        private bool bSimulationMode = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [received data].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [received data]; otherwise, <c>false</c>.
+        /// </value>
+        public bool SimulationMode
+        {
+            get { return this.bSimulationMode; }
+            set
+            {
+                this.bSimulationMode = value;
+
+                FirePropertyChanged();
+            }
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// The b received data

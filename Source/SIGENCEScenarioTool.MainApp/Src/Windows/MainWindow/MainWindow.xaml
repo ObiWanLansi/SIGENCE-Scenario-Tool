@@ -173,7 +173,7 @@
 
             <Separator />
 
-            <CheckBox Content="Simulation" IsChecked="True" ToolTip="A Switch To Change The Mode From Simulation To Physical." />
+            <CheckBox Content="Simulation" IsChecked="{Binding SimulationMode,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ToolTip="A Switch To Change The Mode From Simulation To Physical." />
 
             <Separator />
         </ToolBar>
@@ -290,7 +290,7 @@
                             <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                                 <DataGridTextColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
+                                        <!--<Setter Property="FontWeight" Value="Bold" />-->
                                         <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_NAME}" />
                                     </Style>
                                 </DataGridTextColumn.HeaderStyle>
@@ -394,7 +394,7 @@
 
 
                             <!--<DataGridComboBoxColumn Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eRxTxType}}">-->
-                            <DataGridComboBoxColumn x:Name="dgcbcRxTxType" Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+                            <DataGridComboBoxColumn x:Name="dgcbcRxTxType" Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                                 <DataGridComboBoxColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="FontWeight" Value="Bold" />

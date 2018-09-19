@@ -1093,6 +1093,11 @@
             The hs ignore types
             </summary>
         </member>
+        <member name="F:SIGENCEScenarioTool.Extensions.ListExtension.CULTUREINFO">
+            <summary>
+            The cultureinfo
+            </summary>
+        </member>
         <member name="M:SIGENCEScenarioTool.Extensions.ListExtension.SaveAsXml``1(System.Collections.Generic.List{``0},System.String)">
             <summary>
             Saves the list as XML.
@@ -1754,11 +1759,6 @@
             Fires the property changed.
             </summary>
             <param name="strPropertyName">Name of the string property.</param>
-        </member>
-        <member name="T:SIGENCEScenarioTool.Models.RxTxType">
-            <summary>
-            
-            </summary>
         </member>
         <member name="T:SIGENCEScenarioTool.Models.AntennaType">
             <summary>
@@ -2629,6 +2629,166 @@
             <param name="iMaxCount">The i maximum count.</param>
             <param name="pllCenter">The PLL center.</param>
             <param name="bEnsureRefDevice">if set to <c>true</c> [b ensure reference device].</param>
+            <returns></returns>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType">
+            <summary>
+            A class to encapsule an RxTxType.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.Remark">
+            <summary>
+            Gets the remark.
+            </summary>
+            <value>
+            The remark.
+            </value>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType"/> class.
+            </summary>
+            <param name="iValue">The i value.</param>
+            <param name="strName">Name of the string.</param>
+            <param name="strRemark">The string remark.</param>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.op_Implicit(SIGENCEScenarioTool.Models.RxTxTypes.RxTxType)~System.Int32">
+            <summary>
+            Performs an implicit conversion from <see cref="T:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType" /> to <see cref="T:System.Int32" />.
+            </summary>
+            <param name="rtt">The RTT.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes">
+            <summary>
+            A class with all known RxTxTypes as static Property.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.Unknown">
+            <summary>
+            Unknown RxTxType.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.IdealSDR">
+            <summary>
+            Ideal Sdr Receiver (Passes Signal Through).
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.HackRF">
+            <summary>
+            HackRF One.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.B200mini">
+            <summary>
+            Ettus B200mini.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.TwinRx">
+            <summary>
+            Ettus X310 / TwinRx.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.QPSK">
+            <summary>
+            QPSK Signal With 2kHz Bandwidth.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.SIN">
+            <summary>
+            This Is A Sine Generator A 500Hz Frequency.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.FMBroadcast">
+            <summary>
+            This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.GPSJammer">
+            <summary>
+            10MHz L1 GPS Jammer.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.Iridium">
+            <summary>
+            Iridium Satcom Transmitter.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.LTE">
+            <summary>
+            LTE Signal.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.AIS">
+            <summary>
+            AIS Signal.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.NFMRadio">
+            <summary>
+            Narrow Fm Band (Voice With 5Khz Bandwidth).
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.lRxTxTypes">
+            <summary>
+            The internal list with all RxTxType's.
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.#cctor">
+            <summary>
+            Initializes the <see cref="T:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes" /> class.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.Values">
+            <summary>
+            Gets the list with all RxTxType's.
+            </summary>
+            <value>
+            The values.
+            </value>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.FromString(System.String)">
+            <summary>
+            Froms the string.
+            </summary>
+            <param name="strName">Name of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.FromInt(System.Int32,System.Int32)">
+            <summary>
+            Returns the RxTxType from a int value.
+            </summary>
+            <remarks>
+            Because the RxTxType as integer is not unique, it is important to have the rfdeviceid to choose the right RxTxType.
+            </remarks>
+            <param name="iRFDeviceId">The rf device identifier.</param>
+            <param name="iValue">The value.</param>
             <returns></returns>
         </member>
         <member name="T:SIGENCEScenarioTool.Models.Validation.ValidationResult">

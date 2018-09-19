@@ -11,6 +11,7 @@
   <HelpKINode Title="AbstractModelBase.PropertyChanged event" Url="html/E_SIGENCEScenarioTool_Models_AbstractModelBase_PropertyChanged.htm" />
   <HelpKINode Title="Add method" Url="html/Overload_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Add.htm" />
   <HelpKINode Title="Aeroway enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
+  <HelpKINode Title="AIS property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_AIS.htm" />
   <HelpKINode Title="ALLCHARS field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLCHARS.htm" />
   <HelpKINode Title="ALLPANGRAMS field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLPANGRAMS.htm" />
   <HelpKINode Title="Altitude class">
@@ -38,7 +39,7 @@
   <HelpKINode Title="AppendLine method" Url="html/M_SIGENCEScenarioTool_Extensions_StringBuilderExtension_AppendLine.htm" />
   <HelpKINode Title="Atto field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Atto.htm" />
   <HelpKINode Title="Automatic enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
-  <HelpKINode Title="B200Mini enumeration member" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="B200mini property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_B200mini.htm" />
   <HelpKINode Title="Bandwidth class">
     <HelpKINode Title="Bandwidth Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth__ctor.htm" />
@@ -218,7 +219,7 @@
   <HelpKINode Title="FileInfoExtension.MoveTo method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_MoveTo.htm" />
   <HelpKINode Title="Finalize method" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Finalize.htm" />
   <HelpKINode Title="FirePropertyChanged method" Url="html/M_SIGENCEScenarioTool_Models_AbstractModelBase_FirePropertyChanged.htm" />
-  <HelpKINode Title="FMRadio enumeration member" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="FMBroadcast property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FMBroadcast.htm" />
   <HelpKINode Title="Fmt_DD_MM_YYYY method" Url="html/M_SIGENCEScenarioTool_Extensions_DateTimeExtension_Fmt_DD_MM_YYYY.htm" />
   <HelpKINode Title="Fmt_DD_MM_YYYY_HH_MM method" Url="html/M_SIGENCEScenarioTool_Extensions_DateTimeExtension_Fmt_DD_MM_YYYY_HH_MM.htm" />
   <HelpKINode Title="Fmt_DD_MM_YYYY_HH_MM_SS method" Url="html/M_SIGENCEScenarioTool_Extensions_DateTimeExtension_Fmt_DD_MM_YYYY_HH_MM_SS.htm" />
@@ -240,6 +241,8 @@
   <HelpKINode Title="Frequency.Frequency constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency__ctor.htm" />
   <HelpKINode Title="Frequency.IsValid method" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_IsValid.htm" />
   <HelpKINode Title="Frequency.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_ToString.htm" />
+  <HelpKINode Title="FromInt method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromInt.htm" />
+  <HelpKINode Title="FromString method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromString.htm" />
   <HelpKINode Title="FromXml method">
     <HelpKINode Title="GeoLocalizationResult.FromXml Method " Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResult_FromXml.htm" />
     <HelpKINode Title="RFDevice.FromXml Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_FromXml.htm" />
@@ -389,7 +392,8 @@
   <HelpKINode Title="GetWPFScreenshot method" Url="html/M_SIGENCEScenarioTool_Tools_Windows_GetWPFScreenshot.htm" />
   <HelpKINode Title="GetXElement method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetXElement.htm" />
   <HelpKINode Title="Giga field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Giga.htm" />
-  <HelpKINode Title="HackRF enumeration member" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="GPSJammer property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GPSJammer.htm" />
+  <HelpKINode Title="HackRF property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_HackRF.htm" />
   <HelpKINode Title="HereIAm method" Url="html/M_SIGENCEScenarioTool_Tools_MB_HereIAm.htm" />
   <HelpKINode Title="Highway enumeration" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="HyperLOG60200 enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
@@ -429,7 +433,7 @@
   <HelpKINode Title="IDbConnectionExtension.SaveAsCSV method" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SaveAsCSV.htm" />
   <HelpKINode Title="IDbConnectionExtension.Select method" Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_Select.htm" />
   <HelpKINode Title="IDbConnectionExtension.SelectAsDataTable method" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SelectAsDataTable.htm" />
-  <HelpKINode Title="IdealSDR enumeration member" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="IdealSDR property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_IdealSDR.htm" />
   <HelpKINode Title="ImplementsInterface method" Url="html/M_SIGENCEScenarioTool_Extensions_TypeExtension_ImplementsInterface.htm" />
   <HelpKINode Title="Information enumeration member" Url="html/T_SIGENCEScenarioTool_Models_Servity.htm" />
   <HelpKINode Title="Information method" Url="html/Overload_SIGENCEScenarioTool_Tools_MB_Information.htm" />
@@ -443,6 +447,7 @@
   </HelpKINode>
   <HelpKINode Title="IntegerList.IntegerList constructor" Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_IntegerList__ctor.htm" />
   <HelpKINode Title="IntegerList.Multiply operator" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_IntegerList_op_Multiply.htm" />
+  <HelpKINode Title="Iridium property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Iridium.htm" />
   <HelpKINode Title="IsEmpty method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_IsEmpty.htm" />
   <HelpKINode Title="IsNotEmpty method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_IsNotEmpty.htm" />
   <HelpKINode Title="IsValid method">
@@ -511,6 +516,7 @@
   <HelpKINode Title="Longitude.IsValid method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_IsValid.htm" />
   <HelpKINode Title="Longitude.Longitude constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude__ctor.htm" />
   <HelpKINode Title="Longitude.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_ToString.htm" />
+  <HelpKINode Title="LTE property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_LTE.htm" />
   <HelpKINode Title="Man_Made enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="MB class">
     <HelpKINode Title="MB Class" Url="html/T_SIGENCEScenarioTool_Tools_MB.htm" />
@@ -534,6 +540,7 @@
   <HelpKINode Title="Name property">
     <HelpKINode Title="GeoNode.Name Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Name.htm" />
     <HelpKINode Title="RFDevice.Name Property " Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Name.htm" />
+    <HelpKINode Title="RxTxType.Name Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Name.htm" />
     <HelpKINode Title="UnitPrefix.Name Property " Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Name.htm" />
   </HelpKINode>
   <HelpKINode Title="Nano field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Nano.htm" />
@@ -549,6 +556,7 @@
   <HelpKINode Title="NextString method" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextString.htm" />
   <HelpKINode Title="NextUInt method" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextUInt.htm" />
   <HelpKINode Title="NextULong method" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextULong.htm" />
+  <HelpKINode Title="NFMRadio property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_NFMRadio.htm" />
   <HelpKINode Title="NodeId property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_NodeId.htm" />
   <HelpKINode Title="NotYetImplemented method" Url="html/M_SIGENCEScenarioTool_Tools_MB_NotYetImplemented.htm" />
   <HelpKINode Title="ObservableStringCollection class">
@@ -597,7 +605,7 @@
   <HelpKINode Title="PythonSyntaxModeFileProvider.PythonSyntaxModeFileProvider constructor" Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider__ctor.htm" />
   <HelpKINode Title="PythonSyntaxModeFileProvider.SyntaxModes property" Url="html/P_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_SyntaxModes.htm" />
   <HelpKINode Title="PythonSyntaxModeFileProvider.UpdateSyntaxModeList method" Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
-  <HelpKINode Title="QPSK enumeration member" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="QPSK property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_QPSK.htm" />
   <HelpKINode Title="RandomExtension class">
     <HelpKINode Title="RandomExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_RandomExtension.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_RandomExtension.htm" />
@@ -619,7 +627,10 @@
   <HelpKINode Title="Reference enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
   <HelpKINode Title="Reindex method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Reindex.htm" />
   <HelpKINode Title="REMARK field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_REMARK.htm" />
-  <HelpKINode Title="Remark property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Remark.htm" />
+  <HelpKINode Title="Remark property">
+    <HelpKINode Title="RFDevice.Remark Property " Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Remark.htm" />
+    <HelpKINode Title="RxTxType.Remark Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Remark.htm" />
+  </HelpKINode>
   <HelpKINode Title="RemoveQuotation method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_RemoveQuotation.htm" />
   <HelpKINode Title="ReplaceHtml method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_ReplaceHtml.htm" />
   <HelpKINode Title="ResetParameters method" Url="html/M_SIGENCEScenarioTool_Extensions_DbCommandExtension_ResetParameters.htm" />
@@ -765,9 +776,40 @@
   <HelpKINode Title="RFDeviceTooltips.TOOLTIP_ZPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_ZPOS.htm" />
   <HelpKINode Title="ROLL field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ROLL.htm" />
   <HelpKINode Title="Roll property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Roll.htm" />
-  <HelpKINode Title="RxTxType enumeration" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="RxTxType class">
+    <HelpKINode Title="RxTxType Class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm" />
+  </HelpKINode>
   <HelpKINode Title="RXTXTYPE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_RXTXTYPE.htm" />
   <HelpKINode Title="RxTxType property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_RxTxType.htm" />
+  <HelpKINode Title="RxTxType to Int32 conversion" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_op_Implicit.htm" />
+  <HelpKINode Title="RxTxType.Name property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Name.htm" />
+  <HelpKINode Title="RxTxType.Remark property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Remark.htm" />
+  <HelpKINode Title="RxTxType.ToString method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_ToString.htm" />
+  <HelpKINode Title="RxTxType.Value property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Value.htm" />
+  <HelpKINode Title="RxTxTypes class">
+    <HelpKINode Title="RxTxTypes Class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RxTxTypes.AIS property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_AIS.htm" />
+  <HelpKINode Title="RxTxTypes.B200mini property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_B200mini.htm" />
+  <HelpKINode Title="RxTxTypes.FMBroadcast property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FMBroadcast.htm" />
+  <HelpKINode Title="RxTxTypes.FromInt method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromInt.htm" />
+  <HelpKINode Title="RxTxTypes.FromString method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromString.htm" />
+  <HelpKINode Title="RxTxTypes.GPSJammer property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GPSJammer.htm" />
+  <HelpKINode Title="RxTxTypes.HackRF property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_HackRF.htm" />
+  <HelpKINode Title="RxTxTypes.IdealSDR property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_IdealSDR.htm" />
+  <HelpKINode Title="RxTxTypes.Iridium property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Iridium.htm" />
+  <HelpKINode Title="RxTxTypes.LTE property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_LTE.htm" />
+  <HelpKINode Title="RxTxTypes.NFMRadio property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_NFMRadio.htm" />
+  <HelpKINode Title="RxTxTypes.QPSK property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_QPSK.htm" />
+  <HelpKINode Title="RxTxTypes.SIN property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SIN.htm" />
+  <HelpKINode Title="RxTxTypes.TwinRx property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_TwinRx.htm" />
+  <HelpKINode Title="RxTxTypes.Unknown property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Unknown.htm" />
+  <HelpKINode Title="RxTxTypes.Values property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Values.htm" />
   <HelpKINode Title="Save method" Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Save.htm" />
   <HelpKINode Title="SaveAsCSV method" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SaveAsCSV.htm" />
   <HelpKINode Title="SaveAsCsv(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsCsv__1.htm" />
@@ -841,7 +883,9 @@
   <HelpKINode Title="SIGENCEScenarioTool.Models.RFDeviceExtensions class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceExtensions.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.RFDeviceList class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceList.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.RFDeviceTooltips class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceTooltips.htm" />
-  <HelpKINode Title="SIGENCEScenarioTool.Models.RxTxType enumeration" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.RxTxTypes namespace" Url="html/N_SIGENCEScenarioTool_Models_RxTxTypes.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.RxTxTypes.RxTxType class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.Servity enumeration" Url="html/T_SIGENCEScenarioTool_Models_Servity.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.Validation namespace" Url="html/N_SIGENCEScenarioTool_Models_Validation.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.Validation.ValidationResult class" Url="html/T_SIGENCEScenarioTool_Models_Validation_ValidationResult.htm" />
@@ -870,7 +914,7 @@
   <HelpKINode Title="SignalToNoiseRatio_dB property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_SignalToNoiseRatio_dB.htm" />
   <HelpKINode Title="SimradArgusRadar enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
   <HelpKINode Title="SimulationResult enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
-  <HelpKINode Title="SIN enumeration member" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="SIN property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SIN.htm" />
   <HelpKINode Title="Source property" Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Source.htm" />
   <HelpKINode Title="Speak method" Url="html/M_SIGENCEScenarioTool_Tools_Speech_Speak.htm" />
   <HelpKINode Title="Speech class">
@@ -1023,6 +1067,7 @@
     <HelpKINode Title="Latitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_ToString.htm" />
     <HelpKINode Title="Longitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_ToString.htm" />
     <HelpKINode Title="RFDevice.ToString Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_ToString.htm" />
+    <HelpKINode Title="RxTxType.ToString Method " Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_ToString.htm" />
     <HelpKINode Title="SignalToNoiseRatio.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_ToString.htm" />
   </HelpKINode>
   <HelpKINode Title="ToString(Of TKey, TValue) method" Url="html/M_SIGENCEScenarioTool_Extensions_DictionaryExtension_ToString__2.htm" />
@@ -1036,7 +1081,7 @@
   <HelpKINode Title="Truncate method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Truncate.htm" />
   <HelpKINode Title="Trunk enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Trunk_Link enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
-  <HelpKINode Title="TwinRx enumeration member" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
+  <HelpKINode Title="TwinRx property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_TwinRx.htm" />
   <HelpKINode Title="TypeExtension class">
     <HelpKINode Title="TypeExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_TypeExtension.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_TypeExtension.htm" />
@@ -1079,8 +1124,8 @@
     <HelpKINode Title="AntennaType Enumeration" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
     <HelpKINode Title="DeviceSource Enumeration" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
     <HelpKINode Title="DeviceType Enumeration" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
-    <HelpKINode Title="RxTxType Enumeration" Url="html/T_SIGENCEScenarioTool_Models_RxTxType.htm" />
   </HelpKINode>
+  <HelpKINode Title="Unknown property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Unknown.htm" />
   <HelpKINode Title="UpdateSyntaxModeList method" Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
   <HelpKINode Title="User enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
   <HelpKINode Title="Vacuum method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Vacuum.htm" />
@@ -1111,8 +1156,10 @@
   <HelpKINode Title="Value property">
     <HelpKINode Title="DataTypeBase(T).Value Property " Url="html/P_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_Value.htm" />
     <HelpKINode Title="GeoNode.Value Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Value.htm" />
+    <HelpKINode Title="RxTxType.Value Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Value.htm" />
     <HelpKINode Title="ValidationResult.Value Property " Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Value.htm" />
   </HelpKINode>
+  <HelpKINode Title="Values property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Values.htm" />
   <HelpKINode Title="Vending enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="Version property" Url="html/P_SIGENCEScenarioTool_Tools_Tool_Version.htm" />
   <HelpKINode Title="Warning enumeration member" Url="html/T_SIGENCEScenarioTool_Models_Servity.htm" />

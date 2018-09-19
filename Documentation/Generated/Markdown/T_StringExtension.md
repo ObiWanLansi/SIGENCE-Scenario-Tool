@@ -14,4 +14,4 @@ Flags|Result|Name|Parameters
 *static*|String|ReplaceHtml|( String strContent )
 
 <br /><hr />
-SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null
+SIGENCEScenarioTool.Library, Version=15.0.0.0, Culture=neutral, PublicKeyToken=null

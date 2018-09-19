@@ -1,17 +1,16 @@
-# Enum RxTxType
+# Class RxTxType
 ## Base Class
-- Enum
-## Fields
+- Object
+## Properties
 Flags|Type|Name
 -|-|-
-*static*|RxTxType|HackRF
-*static*|RxTxType|TwinRx
-*static*|RxTxType|B200Mini
-*static*|RxTxType|IdealSDR
-*static*|RxTxType|QPSK
-*static*|RxTxType|SIN
-*static*|RxTxType|FMRadio
-*static*|RxTxType|Unknown
+*r* *w*|Int32|Value
+*r* *w*|String|Name
+*r* *w*|String|Remark
+## Methods
+Flags|Result|Name|Parameters
+-|-|-|-
+&nbsp;|String|ToString|( )
 
 <br /><hr />
-SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null
+SIGENCEScenarioTool.Library, Version=15.0.0.0, Culture=neutral, PublicKeyToken=null

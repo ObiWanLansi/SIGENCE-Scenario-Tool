@@ -41,11 +41,26 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <param name="iValue">The i value.</param>
         /// <param name="strName">Name of the string.</param>
         /// <param name="strRemark">The string remark.</param>
-        internal RxTxType( int iValue , string strName , string strRemark )
+        internal RxTxType(int iValue, string strName, string strRemark)
         {
-            Value = iValue;
-            Name = strName;
-            Remark = strRemark;
+            this.Value = iValue;
+            this.Name = strName;
+            this.Remark = strRemark;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="RxTxType" /> to <see cref="System.Int32" />.
+        /// </summary>
+        /// <param name="rtt">The RTT.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        static public implicit operator int(RxTxType rtt)
+        {
+            return rtt.Value;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -59,7 +74,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// </returns>
         public override string ToString()
         {
-            return Name;
+            return this.Name;
         }
 
     } // end sealed public class RxTxType

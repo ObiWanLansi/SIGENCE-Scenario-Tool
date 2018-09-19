@@ -21,7 +21,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitCommands()
         {
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.New,
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.New,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     NewFile();
@@ -33,7 +33,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.Open,
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.Open,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     LoadFile();
@@ -45,7 +45,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.Save,
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.Save,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     SaveFile();
@@ -57,7 +57,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.SaveAs,
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.SaveAs,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     SaveAsFile();
@@ -69,7 +69,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.Close,
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.Close,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     Close();
@@ -83,7 +83,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //---------------------------------------------------------------------
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenCheatSheet,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenCheatSheet,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     OpenCheatSheet();
@@ -97,7 +97,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //---------------------------------------------------------------------
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     BeginCreateRFDevice();
@@ -109,7 +109,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.DeleteRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.DeleteRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     //DeleteRFDevice();
@@ -122,10 +122,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.MoveRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.MoveRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
-                    IsDeviceMovingMode = !IsDeviceMovingMode;
+                    this.IsDeviceMovingMode = !this.IsDeviceMovingMode;
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
@@ -134,7 +134,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.CopyRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.CopyRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     CopyRFDevice();
@@ -146,7 +146,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.PasteRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.PasteRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     PasteRFDevice();
@@ -158,7 +158,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     ExportRFDevices();
@@ -170,7 +170,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.ImportRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ImportRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     ImportRFDevices();
@@ -182,7 +182,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.ZoomToRFDevice,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ZoomToRFDevice,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     ZoomToRFDevice();
@@ -194,7 +194,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.RFDeviceQRCode,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.RFDeviceQRCode,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     RFDeviceQRCode();
@@ -206,10 +206,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.ToggleDALF,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ToggleDALF,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
-                    StartedDALF = !StartedDALF;
+                    this.StartedDALF = !this.StartedDALF;
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
@@ -220,7 +220,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //---------------------------------------------------------------------
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateScreenshot,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateScreenshot,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     CreateScreenshot();
@@ -234,7 +234,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //---------------------------------------------------------------------
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.SendDataUDP,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.SendDataUDP,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     SendDataUDP();
@@ -246,10 +246,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.ReceiveDataUDP,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ReceiveDataUDP,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
-                    IsReceiveDataUDP = !IsReceiveDataUDP;
+                    this.IsReceiveDataUDP = !this.IsReceiveDataUDP;
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
@@ -260,7 +260,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //---------------------------------------------------------------------
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenSettings,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenSettings,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     OpenSettings();
@@ -272,10 +272,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.SyncMapAndGrid,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.SyncMapAndGrid,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
-                    SyncMapAndGrid = !SyncMapAndGrid;
+                    this.SyncMapAndGrid = !this.SyncMapAndGrid;
                     e.Handled = true;
                 },
                 (object sender, CanExecuteRoutedEventArgs e) =>
@@ -284,7 +284,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenScriptEditor,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenScriptEditor,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     OpenScriptEditor();
@@ -296,7 +296,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             ));
 
-            CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenInGoogleMaps,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenInGoogleMaps,
                 (object sender, ExecutedRoutedEventArgs e) =>
                 {
                     OpenInGoogleMaps();
@@ -318,17 +318,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             GMapProvider.WebProxy = WebRequest.DefaultWebProxy;
             GMapProvider.WebProxy.Credentials = CredentialCache.DefaultCredentials;
 
-            mcMapControl.DragButton = MouseButton.Left;
-            mcMapControl.Manager.Mode = AccessMode.ServerAndCache;
-            mcMapControl.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
-            mcMapControl.ShowCenter = false;
-            mcMapControl.MinZoom = 2;
-            mcMapControl.MaxZoom = 22;
+            this.mcMapControl.DragButton = MouseButton.Left;
+            this.mcMapControl.Manager.Mode = AccessMode.ServerAndCache;
+            this.mcMapControl.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
+            this.mcMapControl.ShowCenter = false;
+            this.mcMapControl.MinZoom = 2;
+            this.mcMapControl.MaxZoom = 22;
 
             RestoreInitialMapValues();
 
-            mcMapControl.OnTileLoadStart += MapControl_OnTileLoadStart;
-            mcMapControl.OnTileLoadComplete += MapControl_OnTileLoadComplete;
+            this.mcMapControl.OnTileLoadStart += MapControl_OnTileLoadStart;
+            this.mcMapControl.OnTileLoadComplete += MapControl_OnTileLoadComplete;
         }
 
 
@@ -339,18 +339,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void InitMapProvider()
         {
             // Wir fügen nur die für unsere Region sinnvollen hinzu ...
-            cbMapProvider.Items.Add(GMapProviders.GoogleMap);
-            cbMapProvider.Items.Add(GMapProviders.GoogleSatelliteMap);
-            cbMapProvider.Items.Add(GMapProviders.GoogleTerrainMap);
-            cbMapProvider.Items.Add(GMapProviders.GoogleHybridMap);
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleMap);
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleSatelliteMap);
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleTerrainMap);
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleHybridMap);
 
-            cbMapProvider.Items.Add(GMapProviders.OpenStreetMap);
+            this.cbMapProvider.Items.Add(GMapProviders.OpenStreetMap);
 
-            cbMapProvider.Items.Add(GMapProviders.BingHybridMap);
-            cbMapProvider.Items.Add(GMapProviders.BingMap);
-            cbMapProvider.Items.Add(GMapProviders.BingSatelliteMap);
+            this.cbMapProvider.Items.Add(GMapProviders.BingHybridMap);
+            this.cbMapProvider.Items.Add(GMapProviders.BingMap);
+            this.cbMapProvider.Items.Add(GMapProviders.BingSatelliteMap);
 
-            cbMapProvider.Items.Add(GMapProviders.EmptyProvider);
+            this.cbMapProvider.Items.Add(GMapProviders.EmptyProvider);
         }
 
 
@@ -359,43 +359,43 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitFileOpenSaveDialogs()
         {
-            sfdSaveSIGENCEScenario.Title = "Save SIGENCE Scenario Tool File";
-            sfdSaveSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario Tool File (*.stf)|*.stf";
-            sfdSaveSIGENCEScenario.AddExtension = true;
-            sfdSaveSIGENCEScenario.CheckPathExists = true;
+            this.sfdSaveSIGENCEScenario.Title = "Save SIGENCE Scenario Tool File";
+            this.sfdSaveSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario Tool File (*.stf)|*.stf";
+            this.sfdSaveSIGENCEScenario.AddExtension = true;
+            this.sfdSaveSIGENCEScenario.CheckPathExists = true;
 
             //-----------------------------------------------------------------
 
-            ofdLoadSIGENCEScenario.Title = "Load SIGENCE Scenario Tool File";
-            ofdLoadSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario ToolFile (*.stf)|*.stf";
-            ofdLoadSIGENCEScenario.AddExtension = true;
-            ofdLoadSIGENCEScenario.CheckPathExists = true;
-            ofdLoadSIGENCEScenario.CheckFileExists = true;
-            ofdLoadSIGENCEScenario.Multiselect = false;
+            this.ofdLoadSIGENCEScenario.Title = "Load SIGENCE Scenario Tool File";
+            this.ofdLoadSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario ToolFile (*.stf)|*.stf";
+            this.ofdLoadSIGENCEScenario.AddExtension = true;
+            this.ofdLoadSIGENCEScenario.CheckPathExists = true;
+            this.ofdLoadSIGENCEScenario.CheckFileExists = true;
+            this.ofdLoadSIGENCEScenario.Multiselect = false;
 
             //-----------------------------------------------------------------
 
-            sfdExportRFDevices.Title = "Export RF Devices";
+            this.sfdExportRFDevices.Title = "Export RF Devices";
             //sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json|Office Open XML File Format (*.xlsx)|*.xlsx|SQLite Database (*.sqlite)|*.sqlite";
-            sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|Office Open XML File Format (*.xlsx)|*.xlsx";
-            sfdExportRFDevices.AddExtension = true;
-            sfdExportRFDevices.CheckPathExists = true;
+            this.sfdExportRFDevices.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx|Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml";
+            this.sfdExportRFDevices.AddExtension = true;
+            this.sfdExportRFDevices.CheckPathExists = true;
 
             //-----------------------------------------------------------------
 
-            ofdImportRFDevices.Title = "Import RF Devices";
-            ofdImportRFDevices.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx";
-            ofdImportRFDevices.AddExtension = true;
-            ofdImportRFDevices.CheckPathExists = true;
-            ofdImportRFDevices.CheckFileExists = true;
-            ofdImportRFDevices.Multiselect = false;
+            this.ofdImportRFDevices.Title = "Import RF Devices";
+            this.ofdImportRFDevices.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx";
+            this.ofdImportRFDevices.AddExtension = true;
+            this.ofdImportRFDevices.CheckPathExists = true;
+            this.ofdImportRFDevices.CheckFileExists = true;
+            this.ofdImportRFDevices.Multiselect = false;
 
             //-----------------------------------------------------------------
 
-            sfdSaveScreenshot.Title = "Save Screenshot";
-            sfdSaveScreenshot.Filter = "Portable Network Graphics (*.png)|*.png";
-            sfdSaveScreenshot.AddExtension = true;
-            sfdSaveScreenshot.CheckPathExists = true;
+            this.sfdSaveScreenshot.Title = "Save Screenshot";
+            this.sfdSaveScreenshot.Filter = "Portable Network Graphics (*.png)|*.png";
+            this.sfdSaveScreenshot.AddExtension = true;
+            this.sfdSaveScreenshot.CheckPathExists = true;
         }
 
     } // end public partial class MainWindow 

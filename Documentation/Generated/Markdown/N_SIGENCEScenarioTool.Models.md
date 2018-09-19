@@ -9,8 +9,7 @@
 - [RFDeviceExtensions](./T_RFDeviceExtensions.md) (Class)
 - [RFDeviceList](./T_RFDeviceList.md) (Class)
 - [RFDeviceTooltips](./T_RFDeviceTooltips.md) (Class)
-- [RxTxType](./T_RxTxType.md) (Enum)
 - [Servity](./T_Servity.md) (Enum)
 
 <br /><hr />
-SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null
+SIGENCEScenarioTool.Library, Version=15.0.0.0, Culture=neutral, PublicKeyToken=null

@@ -51,8 +51,10 @@
 - [RFDeviceExtensions](./T_RFDeviceExtensions.md) (Class)
 - [RFDeviceList](./T_RFDeviceList.md) (Class)
 - [RFDeviceTooltips](./T_RFDeviceTooltips.md) (Class)
-- [RxTxType](./T_RxTxType.md) (Enum)
 - [Servity](./T_Servity.md) (Enum)
+## [SIGENCEScenarioTool.Models.RxTxTypes](./N_SIGENCEScenarioTool.Models.RxTxTypes.md)
+- [RxTxType](./T_RxTxType.md) (Class)
+- [RxTxTypes](./T_RxTxTypes.md) (Class)
 ## [SIGENCEScenarioTool.Models.Validation](./N_SIGENCEScenarioTool.Models.Validation.md)
 - [ValidationResult](./T_ValidationResult.md) (Class)
 - [ValidationResultList](./T_ValidationResultList.md) (Class)
@@ -68,4 +70,4 @@
 - [Windows](./T_Windows.md) (Class)
 
 <br /><hr />
-SIGENCEScenarioTool.Library, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null
+SIGENCEScenarioTool.Library, Version=15.0.0.0, Culture=neutral, PublicKeyToken=null
