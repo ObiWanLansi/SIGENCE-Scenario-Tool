@@ -1,4 +1,8 @@
-﻿using System;
+﻿/**
+ * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -15,17 +19,12 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <summary>
         /// Unknown RxTxType.
         /// </summary>
-        static public RxTxType Unknown { get; private set; } = new RxTxType(-1,"Unknown","Unknown RxTxType");
+        static public RxTxType Unknown { get; private set; } = new RxTxType(4242,"Unknown","Unknown RxTxType");
 
         /// <summary>
         /// Ideal Sdr Receiver (Passes Signal Through).
         /// </summary>
-        static public RxTxType IdealSDR { get; private set; } = new RxTxType(0,"IdealSDR","Ideal Sdr Receiver (Passes Signal Through)");
-
-        /// <summary>
-        /// Reserved For RF Simulation Playback Functionality.
-        /// </summary>
-        static public RxTxType Reserved { get; private set; } = new RxTxType(1,"Reserved","Reserved For RF Simulation Playback Functionality");
+        static public RxTxType IdealSDR { get; private set; } = new RxTxType(1,"IdealSDR","Ideal Sdr Receiver (Passes Signal Through)");
 
         /// <summary>
         /// HackRF One.
@@ -137,6 +136,81 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
                     {
                         return rtt;
                     }
+                }
+            }
+
+            return RxTxTypes.Unknown;
+        }
+
+        
+        /// <summary>
+        /// Returns the RxTxType from a int value.
+        /// </summary>
+        /// <remarks>
+        /// Because the RxTxType as integer is not unique, it is important to have the rfdeviceid to choose the right RxTxType.
+        /// </remarks>
+        /// <param name="iRFDeviceId">The rf device identifier.</param>
+        /// <param name="iValue">The value.</param>
+        /// <returns></returns>
+        static public RxTxType FromInt( int iRFDeviceId , int iValue )
+        {
+            if( iValue < 0 )
+            {
+                iValue *= -1;
+            }
+
+            if( iRFDeviceId >= 0 )
+            {
+                switch( iValue )
+                {
+                    case 1:
+                        return RxTxTypes.QPSK;
+
+                    case 2:
+                        return RxTxTypes.SIN;
+
+                    case 3:
+                        return RxTxTypes.FMBroadcast;
+
+                    case 4:
+                        return RxTxTypes.GPSJammer;
+
+                    case 5:
+                        return RxTxTypes.Iridium;
+
+                    case 6:
+                        return RxTxTypes.LTE;
+
+                    case 7:
+                        return RxTxTypes.AIS;
+
+                    case 8:
+                        return RxTxTypes.NFMRadio;
+
+                    default:
+                        return RxTxTypes.Unknown;
+
+                }
+            }
+
+            if( iRFDeviceId < 0 )
+            {
+                switch( iValue )
+                {
+                    case 1:
+                        return RxTxTypes.IdealSDR;
+
+                    case 2:
+                        return RxTxTypes.HackRF;
+
+                    case 3:
+                        return RxTxTypes.B200mini;
+
+                    case 4:
+                        return RxTxTypes.TwinRx;
+
+                    default:
+                        return RxTxTypes.Unknown;
                 }
             }
 

@@ -138,6 +138,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //ExportRFDevices( devicelist , new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.csv" ) );
             //ExportRFDevices( devicelist , new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.xml" ) );
             //ExportRFDevices( devicelist , new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.xlsx" ) );
+            //ImportRFDevices( new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.xlsx" ) );
 
             //-----------------------------------------------------------------
 

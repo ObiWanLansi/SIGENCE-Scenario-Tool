@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <RxTxTypes>
 
-    <RxTxType Value="-1" Name="Unknown" Description="Unknown RxTxType"/>
+    <!-- 
+        Attention: 
+        When add, change or delete entries you must edit the mapping in RxTxTypes.tt also !!! 
+        - - > static public RxTxType FromInt( int iRFDeviceId , int iValue )
+        Maybe in the future we can create an auto generated mapping function, but currently not yet.
+    -->
+
+    <RxTxType Value="4242" Name="Unknown" Description="Unknown RxTxType"/>
 
 
     <!-- For Receivers ( Id < 0 ) -->
-    <RxTxType Value="0" Name="IdealSDR" Description="Ideal Sdr Receiver (Passes Signal Through)"/>
-    <RxTxType Value="1" Name="Reserved" Description="Reserved For RF Simulation Playback Functionality"/>
+    <!--<RxTxType Value="0" Name="Reserved" Description="Reserved For RF Simulation Playback Functionality"/>-->
+    <RxTxType Value="1" Name="IdealSDR" Description="Ideal Sdr Receiver (Passes Signal Through)"/>
     <RxTxType Value="2" Name="HackRF" Description="HackRF One"/>
     <RxTxType Value="3" Name="B200mini" Description="Ettus B200mini"/>
     <RxTxType Value="4" Name="TwinRx" Description="Ettus X310 / TwinRx"/>

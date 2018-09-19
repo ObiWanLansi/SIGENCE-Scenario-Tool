@@ -63,7 +63,7 @@ namespace SIGENCEScenarioTool.Models
         {
             RFDeviceList list = new RFDeviceList( iMaxCount );
 
-            List<RxTxType> RxTxTypels = new List<RxTxType>( RxTxTypes.RxTxTypes.Values );
+            List<RxTxType> RxTxTypes = new List<RxTxType>( Models.RxTxTypes.RxTxTypes.Values );
 
             for( int i = 1 ; i < iMaxCount + 1 ; i++ )
             {
@@ -80,7 +80,7 @@ namespace SIGENCEScenarioTool.Models
                     Altitude = r.Next( 12345 ) ,
 
                     //RxTxType = r.NextEnum<RxTxType>(),
-                    RxTxType = r.NextObject( RxTxTypels ) ,
+                    RxTxType = r.NextObject( RxTxTypes ) ,
                     AntennaType = r.NextEnum<AntennaType>() ,
 
                     CenterFrequency_Hz = r.Next( 85 , 105 ) * 100000 + r.NextDouble() ,

@@ -172,6 +172,10 @@
             <Button Content="{StaticResource SERVER_TO_CLIENT}" ToolTip="Send Data Via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
 
             <Separator />
+
+            <CheckBox Content="Simulation" IsChecked="True" ToolTip="A Switch To Change The Mode From Simulation To Physical." />
+
+            <Separator />
         </ToolBar>
 
 

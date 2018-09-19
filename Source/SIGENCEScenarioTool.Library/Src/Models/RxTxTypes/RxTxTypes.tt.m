@@ -6,13 +6,10 @@ classdef RxTxTypes
 
 
         % Unknown RxTxType.
-        Unknown = -1
+        Unknown = 4242
 
         % Ideal Sdr Receiver (Passes Signal Through).
-        IdealSDR = 0
-
-        % Reserved For RF Simulation Playback Functionality.
-        Reserved = 1
+        IdealSDR = 1
 
         % HackRF One.
         HackRF = 2

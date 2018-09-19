@@ -286,7 +286,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         DeviceSource = DeviceSource.DataImport ,
                     };
 
-                    for( int iColumn = 1 ; iColumn < 17 + 1 ; iColumn++ )
+                    for( int iColumn = 1 ; iColumn < 18 + 1 ; iColumn++ )
                     {
                         object value = ( range.Cells [iRow , iColumn] as Excel.Range ).Value2;
 
@@ -331,7 +331,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                 break;
 
                             case 9:
-                                device.RxTxType = RxTxTypes.FromString( Convert.ToString( value ) );
+                                device.RxTxType = RxTxTypes.FromInt( device.Id , Convert.ToInt32( value ) );
                                 break;
 
                             case 10:
@@ -339,19 +339,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                 break;
 
                             case 11:
-                                device.Gain_dB = Convert.ToInt32( value );
+                                device.Gain_dB = Convert.ToDouble( value );
                                 break;
 
                             case 12:
-                                device.CenterFrequency_Hz = Convert.ToUInt32( value );
+                                device.CenterFrequency_Hz = Convert.ToDouble( value );
                                 break;
 
                             case 13:
-                                device.Bandwidth_Hz = Convert.ToUInt32( value );
+                                device.Bandwidth_Hz = Convert.ToDouble( value );
                                 break;
 
                             case 14:
-                                device.SignalToNoiseRatio_dB = Convert.ToUInt32( value );
+                                device.SignalToNoiseRatio_dB = Convert.ToDouble( value );
                                 break;
 
                             case 15:
@@ -364,6 +364,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                             case 17:
                                 device.ZPos = Convert.ToInt32( value );
+                                break;
+
+                            case 18:
+                                device.Remark = Convert.ToString( value );
                                 break;
                         }
                     }
