@@ -39,9 +39,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_ChartingTest_Click( object sender , RoutedEventArgs e )
         {
-            ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in this.RFDevicesCollection select device.RFDevice));
+            ChartingDialog cw = new ChartingDialog( new RFDeviceList( from device in this.RFDevicesCollection select device.RFDevice ) );
             cw.ShowDialog();
             cw = null;
 
@@ -58,16 +58,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                if (this.ReceivedData == true)
+                if( this.ReceivedData == true )
                 {
-                    Blink.SetColor(Colors.Green);
+                    Blink.SetColor( Colors.Green );
                 }
                 else
                 {
                     Blink.Off();
                 }
             }
-            catch (Exception)
+            catch( Exception )
             {
             }
         }
@@ -84,11 +84,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StartUDPServer()
         {
-            if (this.tUDPServer == null)
+            if( this.tUDPServer == null )
             {
-                this.tUDPServer = new Thread(UDPReceiveData)
+                this.tUDPServer = new Thread( UDPReceiveData )
                 {
-                    IsBackground = true,
+                    IsBackground = true ,
                     Name = "UDPServerThread"
                 };
                 this.tUDPServer.Start();
@@ -101,7 +101,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void StopUDPServer()
         {
-            if (this.tUDPServer != null)
+            if( this.tUDPServer != null )
             {
                 this.tUDPServer.Abort();
 
@@ -119,36 +119,36 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                client = new UdpClient(this.settings.UDPPortReceiving);
+                client = new UdpClient( this.settings.UDPPortReceiving );
                 {
-                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(this.settings.UDPHost), this.settings.UDPPortReceiving);
+                    IPEndPoint ep = new IPEndPoint( IPAddress.Parse( this.settings.UDPHost ) , this.settings.UDPPortReceiving );
 
                     // A neverending story ...
-                    while (true)
+                    while( true )
                     {
                         // Obwohl der Thread Aborted wird beendet er das Receiver nicht und somit auch nicht Thread :-(
                         // Erst wenn er was empfangen hat merkt er das er Aborted ist und die Expcetion tritt auf ...
-                        byte[] baReceived = client.Receive(ref ep);
+                        byte [] baReceived = client.Receive( ref ep );
 
-                        string strReceived = Encoding.Default.GetString(baReceived);
+                        string strReceived = Encoding.Default.GetString( baReceived );
 
                         this.DebugOutput += strReceived + "\n\n";
                         this.ReceivedData = true;
                     }
                 }
             }
-            catch (ThreadAbortException)
+            catch( ThreadAbortException )
             {
                 // Do nothing ...
                 //Debug.WriteLine(ex.Message);
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
-                MB.Warning(ex.Message);
+                MB.Warning( ex.Message );
             }
             finally
             {
-                if (client != null)
+                if( client != null )
                 {
                     try
                     {
@@ -156,7 +156,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         client.Dispose();
                         client = null;
                     }
-                    catch (Exception)
+                    catch( Exception )
                     {
 
                     }
@@ -172,33 +172,33 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CreateScenarioReport()
         {
-            if (string.IsNullOrEmpty(this.CurrentFile))
+            if( string.IsNullOrEmpty( this.CurrentFile ) )
             {
-                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
+                MB.Information( "The scenario has not been saved yet.\nSave it first and then try again." );
                 return;
             }
 
             this.Cursor = Cursors.Wait;
 
-            FileInfo fiCurrentFile = new FileInfo(this.CurrentFile);
+            FileInfo fiCurrentFile = new FileInfo( this.CurrentFile );
 
-            string strOutputFilename = string.Format("{0}{1}.html", Path.GetTempPath(), fiCurrentFile.GetFilenameWithoutExtension());
+            string strOutputFilename = $"{Path.GetTempPath()}{fiCurrentFile.GetFilenameWithoutExtension()}.html";
 
-            StringBuilder sb = new StringBuilder(8192);
+            StringBuilder sb = new StringBuilder( 8192 );
 
-            sb.Append("<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>");
-
-            //-----------------------------------------------------------------
-
-            sb.AppendFormat("<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension());
-
-            sb.Append("<hr />");
+            sb.Append( "<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>" );
 
             //-----------------------------------------------------------------
 
-            if (string.IsNullOrEmpty(this.ScenarioDescription) == false)
+            sb.AppendFormat( "<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>" , fiCurrentFile.GetFilenameWithoutExtension() );
+
+            sb.Append( "<hr />" );
+
+            //-----------------------------------------------------------------
+
+            if( string.IsNullOrEmpty( this.ScenarioDescription ) == false )
             {
-                sb.Append(this.ScenarioDescription);
+                sb.Append( this.ScenarioDescription );
             }
 
             //-----------------------------------------------------------------
@@ -215,11 +215,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            sb.Append("</body></html> ");
+            sb.Append( "</body></html> " );
 
-            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.Default);
+            File.WriteAllText( strOutputFilename , sb.ToString() , Encoding.Default );
 
-            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
+            Tools.Windows.OpenWithDefaultApplication( strOutputFilename );
 
             this.Cursor = Cursors.Arrow;
         }
@@ -295,18 +295,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             List<GMapMarker> lDelete = new List<GMapMarker>();
 
-            foreach (GMapMarker mm in this.mcMapControl.Markers)
+            foreach( GMapMarker mm in this.mcMapControl.Markers )
             {
-                if (mm.Tag != null && mm.Tag is Highway)
+                if( mm.Tag is Highway )
                 {
-                    lDelete.Add(mm);
+                    lDelete.Add( mm );
                 }
             }
 
-            this.Dispatcher.Invoke(() =>
-           {
-               lDelete.ForEach(mm => this.mcMapControl.Markers.Remove(mm));
-           });
+            this.Dispatcher.Invoke( () =>
+            {
+                lDelete.ForEach( mm => this.mcMapControl.Markers.Remove( mm ) );
+            } );
         }
 
 
@@ -318,7 +318,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             RemoveStreets();
 
-            string strFilename = string.Format("{0}\\streets_bw.sqlite", Tool.StartupPath);
+            string strFilename = $"{Tool.StartupPath}\\streets_bw.sqlite";
 
             RectLatLng bb = this.mcMapControl.ViewArea;
 
@@ -329,48 +329,48 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 DataSource = strFilename
             };
 
-            using (SQLiteConnection dbConnection = new SQLiteConnection(csbDatabase.ConnectionString))
+            using( SQLiteConnection dbConnection = new SQLiteConnection( csbDatabase.ConnectionString ) )
             {
                 dbConnection.Open();
 
                 try
                 {
-                    //                                     0     1   2   3 
-                    string strSelectStatement = "select highway,ref,name,way from streets_bw where highway in ('motorway','trunk','primary','secondary')";
+                    //                                     0     1   2   3
+                    const string strSelectStatement = "select highway,ref,name,way from streets_bw where highway in ('motorway','trunk','primary','secondary')";
 
                     uint iCounter = 0;
 
                     DateTime dtStart = DateTime.Now;
 
-                    using (SQLiteCommand dbSelectCommand = new SQLiteCommand(strSelectStatement, dbConnection))
+                    using( SQLiteCommand dbSelectCommand = new SQLiteCommand( strSelectStatement , dbConnection ) )
                     {
-                        using (SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader())
+                        using( SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader() )
                         {
-                            while (dbResult.Read())
+                            while( dbResult.Read() )
                             {
-                                Highway type = (Highway)Enum.Parse(typeof(Highway), dbResult.GetString(0), true);
-                                string strRef = dbResult.GetStringOrNull(1);
-                                string strName = dbResult.GetStringOrNull(2);
-                                NTS.LineString way = (NTS.LineString)dbResult.GetGeometryFromWKB(3);
+                                Highway type = ( Highway ) Enum.Parse( typeof( Highway ) , dbResult.GetString( 0 ) , true );
+                                string strRef = dbResult.GetStringOrNull( 1 );
+                                string strName = dbResult.GetStringOrNull( 2 );
+                                NTS.LineString way = ( NTS.LineString ) dbResult.GetGeometryFromWKB( 3 );
 
-                                if (bb.Contains(GeoHelper.CoordinateToPointLatLng(way.Coordinate)))
+                                if( bb.Contains( GeoHelper.CoordinateToPointLatLng( way.Coordinate ) ) )
                                 {
-                                    List<PointLatLng> list = new List<PointLatLng>(way.Count);
+                                    List<PointLatLng> list = new List<PointLatLng>( way.Count );
 
-                                    foreach (var pos in way.Coordinates)
+                                    foreach( var pos in way.Coordinates )
                                     {
-                                        list.Add(GeoHelper.CoordinateToPointLatLng(pos));
+                                        list.Add( GeoHelper.CoordinateToPointLatLng( pos ) );
                                     }
 
-                                    this.Dispatcher.Invoke(() =>
-                                    {
-                                        PathMarker mrWay = new PathMarker(this.mcMapControl, list, type, string.Format("{0}{1}", strName.IsNotEmpty() ? strName : "Unknown", strRef.IsNotEmpty() ? string.Format(" ({0})", strRef) : ""))
-                                        {
-                                            Tag = type
-                                        };
+                                    this.Dispatcher.Invoke( () =>
+                                     {
+                                         PathMarker mrWay = new PathMarker( this.mcMapControl , list , type , string.Format( "{0}{1}" , strName.IsNotEmpty() ? strName : "Unknown" , strRef.IsNotEmpty() ? string.Format( " ({0})" , strRef ) : "" ) )
+                                         {
+                                             Tag = type
+                                         };
 
-                                        this.mcMapControl.Markers.Add(mrWay);
-                                    });
+                                         this.mcMapControl.Markers.Add( mrWay );
+                                     } );
 
                                     iCounter++;
                                 }
@@ -380,15 +380,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStop = DateTime.Now;
 
-                    MB.Information("Load {0} Ways In {1}.", iCounter, (dtStop - dtStart).ToHHMMSSString());
+                    MB.Information( "Load {0} Ways In {1}." , iCounter , ( dtStop - dtStart ).ToHHMMSSString() );
                 }
-                catch (Exception ex)
+                catch( Exception ex )
                 {
-                    MB.Error(ex);
+                    MB.Error( ex );
                 }
                 finally
                 {
-                    if (dbConnection.State == ConnectionState.Open)
+                    if( dbConnection.State == ConnectionState.Open )
                     {
                         dbConnection.Close();
                     }
@@ -402,9 +402,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_LoadStreets_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_LoadStreets_Click( object sender , RoutedEventArgs e )
         {
-            Task t = Task.Run(() => { LoadStreets(); });
+            Task t = Task.Run( () => { LoadStreets(); } );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -427,14 +427,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             };
 
             GMapPolygon mp = new GMapPolygon( points );
+
             mp.RegenerateShape( this.mcMapControl );
 
-            System.Windows.Shapes.Path path = mp.Shape as System.Windows.Shapes.Path;
-
-            path.Stroke = Brushes.Black;
-            path.StrokeThickness = 0.1;
-            path.Fill = bColor;
-
+            if( mp.Shape is System.Windows.Shapes.Path path )
+            {
+                path.Stroke = Brushes.Black;
+                path.StrokeThickness = 0.1;
+                path.Fill = bColor;
+            }
 
             this.mcMapControl.Markers.Add( mp );
         }
@@ -493,11 +494,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             PointLatLng pll = mcMapControl.Position;
 
-            double dWidth = 0.0005;
-            double dHeight = 0.0003;
+            const double dWidth = 0.0005;
+            const double dHeight = 0.0003;
 
-            int iKachelBreite = 8;
-            int iKachelHöhe = 8;
+            const int iKachelBreite = 8;
+            const int iKachelHöhe = 8;
 
             Random r = new Random();
             List<Brush> colors = new List<Brush> { Brushes.White , Brushes.LightYellow , Brushes.Yellow , Brushes.Orange , Brushes.OrangeRed , Brushes.Red };

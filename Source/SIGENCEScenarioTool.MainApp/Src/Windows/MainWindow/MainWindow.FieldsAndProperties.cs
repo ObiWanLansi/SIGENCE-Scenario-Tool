@@ -14,6 +14,8 @@ using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable ExplicitCallerInfoArgument
 
 
 
@@ -224,7 +226,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.bIsReceiveDataUDP = value;
 
-                if (this.bIsReceiveDataUDP == true)
+                if( this.bIsReceiveDataUDP == true )
                 {
                     StartUDPServer();
                 }
@@ -327,7 +329,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 this.mcMapControl.MapProvider = value;
+                // ReSharper disable PossibleUnintendedReferenceComparison
                 this.mcMapControl.Manager.Mode = value != GMapProviders.EmptyProvider ? AccessMode.ServerAndCache : AccessMode.CacheOnly;
+                // ReSharper restore PossibleUnintendedReferenceComparison
 
                 FirePropertyChanged();
             }
@@ -363,7 +367,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lat; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng(value, this.mcMapControl.Position.Lng);
+                this.mcMapControl.Position = new PointLatLng( value , this.mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -381,7 +385,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lng; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng(this.mcMapControl.Position.Lat, value);
+                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat , value );
 
                 FirePropertyChanged();
             }
@@ -587,7 +591,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -613,7 +617,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -639,7 +643,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -664,7 +668,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcv.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -687,10 +691,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.bStartedDALF; }
             set
             {
-                if (value == true)
+                if( value == true )
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if (StartDALF() == false)
+                    if( StartDALF() == false )
                     {
                         return;
                     }
@@ -711,7 +715,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The quick commands
         /// </summary>
+        // ReSharper disable CollectionNeverQueried.Global
         public ObservableStringCollection QuickCommands { get; set; }
+        // ReSharper restore CollectionNeverQueried.Global
 
 
         /// <summary>

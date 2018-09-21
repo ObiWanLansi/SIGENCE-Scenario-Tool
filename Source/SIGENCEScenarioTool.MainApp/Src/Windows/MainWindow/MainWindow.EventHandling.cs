@@ -9,11 +9,13 @@ using System.Windows.Input;
 
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
+
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
+// ReSharper disable ExplicitCallerInfoArgument
 
 
 
@@ -615,11 +617,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="System.Windows.Input.KeyEventArgs" /> instance containing the event data.</param>
         private void ComboBox_KeyDown( object sender , KeyEventArgs e )
         {
-            if( e.Key == Key.Enter )
-            {
-                QuickCommandAction();
-                e.Handled = true;
-            }
+            if( e.Key != Key.Enter )
+                return;
+
+            QuickCommandAction();
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -634,11 +636,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             object item = ( sender as DataGrid ).SelectedItem;
 
-            if( item != null && item is ValidationResultViewModel )
+            if( item is ValidationResultViewModel )
             {
-                RFDevice source = ( item as ValidationResultViewModel ).Result.Source as RFDevice;
-
-                if( source != null )
+                if( ( item as ValidationResultViewModel ).Result.Source is RFDevice source )
                 {
                     this.tiMap.IsSelected = true;
 
@@ -670,7 +670,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
             PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
         }

@@ -11,14 +11,14 @@ namespace SIGENCEScenarioTool.Tools
     /// <summary>
     /// 
     /// </summary>
-    static public class Windows
+    public static class Windows
     {
         /// <summary>
         /// Opens the with default application.
         /// </summary>
         /// <param name="fiFile">The fi file.</param>
         /// <returns></returns>
-        static public Process OpenWithDefaultApplication(FileInfo fiFile)
+        public static Process OpenWithDefaultApplication(FileInfo fiFile)
         {
             Process p = new Process
             {
@@ -36,7 +36,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strFile">The STR file.</param>
         /// <returns></returns>
-        static public Process OpenWithDefaultApplication(string strFile)
+        public static Process OpenWithDefaultApplication(string strFile)
         {
             return OpenWithDefaultApplication(new FileInfo(strFile));
         }
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strURL">The STR URL.</param>
         /// <returns></returns>
-        static public Process OpenWebAdress(string strURL)
+        public static Process OpenWebAdress(string strURL)
         {
             Process p = new Process
             {
@@ -76,7 +76,7 @@ namespace SIGENCEScenarioTool.Tools
         /// <param name="iWidth">Width of the i.</param>
         /// <param name="iHeight">Height of the i.</param>
         /// <returns></returns>
-        static public BitmapSource GetWPFScreenshot(Control control, int? iWidth = null, int? iHeight = null)
+        public static BitmapSource GetWPFScreenshot(Control control, int? iWidth = null, int? iHeight = null)
         {
             if (control == null)
             {
@@ -101,7 +101,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="screenshot">The screenshot.</param>
         /// <param name="strOutputFilename">The string output filename.</param>
-        static public void SaveWPFScreenshot(BitmapSource screenshot, string strOutputFilename)
+        public static void SaveWPFScreenshot(BitmapSource screenshot, string strOutputFilename)
         {
             PngBitmapEncoder encoder = new PngBitmapEncoder();
 

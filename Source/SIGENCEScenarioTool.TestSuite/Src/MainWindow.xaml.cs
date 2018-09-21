@@ -38,10 +38,11 @@ namespace SIGENCEScenarioTool.TestSuite
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_LoadScenario_Click(object sender, RoutedEventArgs e)
         {
-            var dlg = new Windows.MainWindow.MainWindow();
+            //var dlg = new Windows.MainWindow.MainWindow();
 
-            dlg.LoadFile(@"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
-            dlg.ShowDialog();
+            //dlg.LoadFile(@"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+            //dlg.ShowDialog();
+            MB.NotYetImplemented();
         }
 
 

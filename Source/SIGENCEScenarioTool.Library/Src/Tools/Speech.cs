@@ -8,7 +8,7 @@ namespace SIGENCEScenarioTool.Tools
     /// <summary>
     /// Klasse zum Ausgeben von Text in Sprache mittels Microsoft SAM.
     /// </summary>
-    sealed public class Speech : IDisposable
+    public sealed class Speech : IDisposable
     {
         /// <summary>
         /// The speech sythesizer
@@ -66,7 +66,7 @@ namespace SIGENCEScenarioTool.Tools
         /// Says the specified string content.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
-        static public void Say(string strContent)
+        public static void Say(string strContent)
         {
             using (Speech speech = new Speech())
             {

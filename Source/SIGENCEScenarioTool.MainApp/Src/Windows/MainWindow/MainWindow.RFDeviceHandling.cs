@@ -128,7 +128,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.dgRFDevices.SelectedItems.Add(dvm);
                 this.dgRFDevices.ScrollIntoView(dvm);
 
-                dvm.IsSelected = bIsSelected;
+                dvm.IsSelected = true;
 
                 foreach (RFDeviceViewModel model in this.RFDevicesCollection)
                 {
@@ -206,7 +206,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 list.Add(item as RFDeviceViewModel);
             }
 
-            list.ForEach(item => DeleteRFDevice(item));
+            list.ForEach(DeleteRFDevice);
 
             //var lDelete =new List<RFDeviceViewModel>( dgRFDevices.SelectedItems);
             //            foreach( RFDeviceViewModel device in .ToList() )

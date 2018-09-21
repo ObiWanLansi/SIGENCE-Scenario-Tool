@@ -33,11 +33,11 @@
         <Image x:Key="SERVER_EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_earth.png" />
 
 
-        <ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <!--<ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="models:RxTxType" />
             </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
+        </ObjectDataProvider>-->
 
 
         <ObjectDataProvider x:Key="eAntennaType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">

@@ -6,7 +6,7 @@
         <Image x:Key="NEW" Width="128" Height="128" x:Shared="False" Source="/SIGENCEScenarioTool.TestSuite;component/Images/package_new.png" />
         <Image x:Key="FIND" Width="128" Height="128" x:Shared="False" Source="/SIGENCEScenarioTool.TestSuite;component/Images/package_find.png" />
         <Image x:Key="VIEW" Width="128" Height="128" x:Shared="False" Source="/SIGENCEScenarioTool.TestSuite;component/Images/package_view.png" />
-        <Image x:Key="EDIT" Width=" 128" Height=" 128" x:Shared=" False" Source="/SIGENCEScenarioTool.TestSuite;component/Images/package_edit.png" />
+        <Image x:Key="EDIT" Width=" 128" Height=" 128" x:Shared="False" Source="/SIGENCEScenarioTool.TestSuite;component/Images/package_edit.png" />
         <Image x:Key="DELETE" Width="128" Height="128" x:Shared="False" Source="/SIGENCEScenarioTool.TestSuite;component/Images/package_delete.png" />
         <Image x:Key="ERROR" Width="128" Height="128" x:Shared="False" Source="/SIGENCEScenarioTool.TestSuite;component/Images/package_error.png" />
 

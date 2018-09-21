@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Windows.Media;
 
 using ThingM.Blink1;
@@ -11,21 +10,21 @@ namespace SIGENCEScenarioTool.Tools
     /// <summary>
     /// 
     /// </summary>
-    static public partial class Blink
+    public static class Blink
     {
 
         /// <summary>
         /// Ons the LED.
         /// </summary>
-        static public void On() => SetColor(Colors.White);
+        public static void On() => SetColor( Colors.White );
 
 
         /// <summary>
         /// Offs the LED.
         /// </summary>
-        static public void Off()
+        public static void Off()
         {
-            using (Blink1 blink = new Blink1())
+            using( Blink1 blink = new Blink1() )
             {
                 blink.Open();
 
@@ -43,13 +42,13 @@ namespace SIGENCEScenarioTool.Tools
         /// <param name="numberOfMillisecondOn">The number of millisecond on.</param>
         /// <param name="numberOfMillisecondOff">The number of millisecond off.</param>
         /// <param name="c">The c.</param>
-        static public void Show(ushort numberOfTime, ushort numberOfMillisecondOn, ushort numberOfMillisecondOff, Color c)
+        public static void Show( ushort numberOfTime , ushort numberOfMillisecondOn , ushort numberOfMillisecondOff , Color c )
         {
-            using (Blink1 blink = new Blink1())
+            using( Blink1 blink = new Blink1() )
             {
                 blink.Open();
 
-                blink.Blink(numberOfTime, numberOfMillisecondOn, numberOfMillisecondOff, c.R, c.G, c.B);
+                blink.Blink( numberOfTime , numberOfMillisecondOn , numberOfMillisecondOff , c.R , c.G , c.B );
 
                 blink.Close();
             }
@@ -61,26 +60,25 @@ namespace SIGENCEScenarioTool.Tools
         /// <summary>
         /// Tests this instance.
         /// </summary>
-        static public void Test()
+        public static void Test()
         {
-            using (Blink1 blink = new Blink1())
+            using( Blink1 blink = new Blink1() )
             {
                 blink.Open();
 
-                Action<Color> SetColor = c =>
+                void SetColor( Color c )
                 {
-                    blink.SetColor(c.R, c.G, c.B);
-                    Thread.Sleep(1000);
-                };
+                    blink.SetColor( c.R , c.G , c.B );
+                    Thread.Sleep( 1000 );
+                }
 
-                SetColor(Colors.Red);
-                SetColor(Colors.Green);
-                SetColor(Colors.Blue);
+                SetColor( Colors.Red );
+                SetColor( Colors.Green );
+                SetColor( Colors.Blue );
 
                 blink.Close();
             }
         }
-
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -90,19 +88,19 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         static public void FadeWhiteToBlack()
         {
-            using (Blink1 blink = new Blink1())
+            using( Blink1 blink = new Blink1() )
             {
                 blink.Open();
 
-                Action<int, int, int> SetColor = (r, g, b) =>
+                void SetColor( int r , int g , int b )
                 {
-                    blink.SetColor((ushort)r, (ushort)g, (ushort)b);
-                    Thread.Sleep(20);
-                };
+                    blink.SetColor( ( ushort ) r , ( ushort ) g , ( ushort ) b );
+                    Thread.Sleep( 20 );
+                }
 
-                for (int iCounter = 255; iCounter > 0; iCounter--)
+                for( int iCounter = 255 ; iCounter > 0 ; iCounter-- )
                 {
-                    SetColor(iCounter, iCounter, iCounter);
+                    SetColor( iCounter , iCounter , iCounter );
                 }
 
                 blink.Close();
@@ -118,12 +116,12 @@ namespace SIGENCEScenarioTool.Tools
         /// <param name="iR">The i r.</param>
         /// <param name="iG">The i g.</param>
         /// <param name="iB">The i b.</param>
-        static public void SetColor(int iR, int iG, int iB)
+        private static void SetColor( int iR , int iG , int iB )
         {
-            using (Blink1 blink = new Blink1())
+            using( Blink1 blink = new Blink1() )
             {
                 blink.Open();
-                blink.SetColor((ushort)iR, (ushort)iG, (ushort)iB);
+                blink.SetColor( ( ushort ) iR , ( ushort ) iG , ( ushort ) iB );
             }
         }
 
@@ -132,9 +130,9 @@ namespace SIGENCEScenarioTool.Tools
         /// Sets the color.
         /// </summary>
         /// <param name="c">The c.</param>
-        static public void SetColor(Color c)
+        public static void SetColor( Color c )
         {
-            SetColor(c.R, c.G, c.B);
+            SetColor( c.R , c.G , c.B );
         }
 
     } // end static public class Blink

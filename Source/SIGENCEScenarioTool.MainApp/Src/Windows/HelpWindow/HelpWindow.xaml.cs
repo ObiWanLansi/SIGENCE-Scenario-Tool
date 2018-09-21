@@ -19,7 +19,7 @@ namespace SIGENCEScenarioTool.Windows.HelpWindow
         {
             InitializeComponent();
 
-            XpsDocument xps = new XpsDocument("CheatSheet.xps", FileAccess.Read);
+            XpsDocument xps = new XpsDocument( "CheatSheet.xps" , FileAccess.Read );
             documentViewer.Document = xps.GetFixedDocumentSequence();
         }
 
