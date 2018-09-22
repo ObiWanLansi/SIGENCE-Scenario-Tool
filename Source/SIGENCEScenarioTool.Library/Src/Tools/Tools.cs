@@ -12,6 +12,27 @@ using System.Windows;
 
 namespace SIGENCEScenarioTool.Tools
 {
+    internal struct SSTPoint
+    {
+        private readonly int x;
+        private readonly int y;
+
+        public new string ToString => string.Format($"{ this.x }/{ this.y }");
+    }
+
+    public struct SSTTniop
+    {
+        public int x;
+        public int y;
+
+        public SSTTniop(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+
     /// <summary>
     /// Klasse mit statischen Standalonefunktionen.
     /// </summary>
