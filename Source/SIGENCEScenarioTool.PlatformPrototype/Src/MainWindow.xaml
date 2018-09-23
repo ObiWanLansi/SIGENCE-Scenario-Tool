@@ -1,7 +1,17 @@
 ﻿<Window x:Class="SIGENCEScenarioTool.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="http://schemas.syncfusion.com/wpf" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:icsharpcode="clr-namespace:ICSharpCode.TextEditor;assembly=ICSharpCode.TextEditor" xmlns:local="clr-namespace:SIGENCEScenarioTool" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="600" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Window.Resources>
+
+        <!--<Image x:Key="SATELLITE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool.PlatformPrototype;component/Images/satellite.png" />
+        <Image x:Key="TEXT_RICH_COLORED" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool.PlatformPrototype;component/Images/text_rich_colored.png" />
+        <Image x:Key="NUT_AND_BOLT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool.PlatformPrototype;component/Images/nut_and_bolt.png" />
+        <Image x:Key="EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool.PlatformPrototype;component/Images/earth.png" />-->
+
+    </Window.Resources>
+
     <Window.DataContext>
         <local:ViewModel />
     </Window.DataContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -31,6 +41,9 @@
         <syncfusion:DockingManager Grid.Row="1" UseDocumentContainer="True">
 
             <ContentControl syncfusion:DockingManager.Header="Scripting" syncfusion:DockingManager.State="Document" syncfusion:DocumentContainer.MDIBounds="60,60,300,300" syncfusion:DockingManager.CanFloat="False">
+                <syncfusion:DockingManager.Icon>
+                    <ImageBrush ImageSource="..\Images\text_rich_colored.png" />
+                </syncfusion:DockingManager.Icon>
                 <ContentControl.Content>
                     <WindowsFormsHost>
                         <icsharpcode:TextEditorControl x:Name="tecTextEditorControl" />
@@ -39,6 +52,9 @@
             </ContentControl>
 
             <ContentControl syncfusion:DockingManager.Header="Timeline" syncfusion:DockingManager.State="Document" syncfusion:DocumentContainer.MDIBounds="60,60,300,300" syncfusion:DockingManager.CanFloat="False">
+                <syncfusion:DockingManager.Icon>
+                    <ImageBrush ImageSource="..\Images\nut_and_bolt.png" />
+                </syncfusion:DockingManager.Icon>
                 <ContentControl.Content>
                     <syncfusion:GanttControl x:Name="Gantt" ItemsSource="{Binding TaskCollection}" ResourceCollection="{Binding ResourceCollection}" VisualStyle="Metro">
                         <syncfusion:GanttControl.TaskAttributeMapping>
@@ -49,16 +65,35 @@
             </ContentControl>
 
             <ContentControl syncfusion:DockingManager.Header="Platforms &amp; Devices" syncfusion:DockingManager.State="Document" syncfusion:DocumentContainer.MDIBounds="60,60,300,300" syncfusion:DockingManager.CanFloat="False">
+                <syncfusion:DockingManager.Icon>
+                    <ImageBrush ImageSource="..\Images\satellite.png" />
+                </syncfusion:DockingManager.Icon>
                 <ContentControl.Content>
-                    <Label Content="" />
+                    <Label />
                 </ContentControl.Content>
             </ContentControl>
 
             <ContentControl syncfusion:DockingManager.Header="Map" syncfusion:DockingManager.State="Document" syncfusion:DocumentContainer.MDIBounds="60,60,300,300" syncfusion:DockingManager.CanFloat="False">
+                <syncfusion:DockingManager.Icon>
+                    <ImageBrush ImageSource="..\Images\earth.png" />
+                </syncfusion:DockingManager.Icon>
                 <ContentControl.Content>
                     <gmap:GMapControl x:Name="mcMapControl" />
                 </ContentControl.Content>
             </ContentControl>
+
+            <ContentControl Name="Properties" syncfusion:DockingManager.Header="Properties" syncfusion:DockingManager.SideInDockedMode="Right" syncfusion:DockingManager.DesiredWidthInDockedMode="300">
+                <syncfusion:DockingManager.Icon>
+                    <ImageBrush ImageSource="..\Images\nut_and_bolt.png" />
+                </syncfusion:DockingManager.Icon>
+            </ContentControl>
+
+            <ContentControl Name="Toolbox" syncfusion:DockingManager.Header="Toolbox" syncfusion:DockingManager.State="AutoHidden" syncfusion:DockingManager.DesiredWidthInDockedMode="300">
+                <syncfusion:DockingManager.Icon>
+                    <ImageBrush ImageSource="..\Images\nut_and_bolt.png" />
+                </syncfusion:DockingManager.Icon>
+            </ContentControl>
+
 
         </syncfusion:DockingManager>
 

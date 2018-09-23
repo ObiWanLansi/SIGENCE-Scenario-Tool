@@ -18,6 +18,9 @@
         <delete dir=".\SIGENCEScenarioTool.Mockup\bin" />
         <delete dir=".\SIGENCEScenarioTool.Mockup\obj" />
 
+        <delete dir=".\SIGENCEScenarioTool.PlatformPrototype\bin" />
+        <delete dir=".\SIGENCEScenarioTool.PlatformPrototype\obj" />
+
         <delete dir=".\SIGENCEScenarioTool.Mockup.Java\bin" />
         <mkdir dir=".\SIGENCEScenarioTool.Mockup.Java\bin" />
 

@@ -10,8 +10,6 @@ using ICSharpCode.TextEditor.Document;
 
 using SIGENCEScenarioTool.Tools;
 
-
-
 namespace SIGENCEScenarioTool
 {
     /// <summary>
