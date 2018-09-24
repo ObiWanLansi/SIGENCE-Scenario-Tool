@@ -1,1 +1,0 @@
-"C:\Program Files\Java\jdk1.8.0_172\bin\xjc.exe" -d src -p sigence.scenario.tool.mockup.generated D:\BigData\GitHub\SIGENCE-Scenario-Tool\SchemaFiles\GeoLocalizationResult.xsd

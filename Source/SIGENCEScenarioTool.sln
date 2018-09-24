@@ -7,13 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool", "SI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.UnitTests", "SIGENCEScenarioTool.UnitTests\SIGENCE Scenario Tool.UnitTests.csproj", "{4A837532-76D1-4A78-99CB-E53BE9525C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Mockup", "SIGENCEScenarioTool.Mockup.Net\SIGENCE Scenario Tool.Mockup.csproj", "{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.TestSuite", "SIGENCEScenarioTool.TestSuite\SIGENCE Scenario Tool.TestSuite.csproj", "{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Library", "SIGENCEScenarioTool.Library\SIGENCE Scenario Tool.Library.csproj", "{E61FB891-442D-4285-9AB8-E7F3BFF66370}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.PlatformPrototype", "SIGENCEScenarioTool.PlatformPrototype\SIGENCE Scenario Tool.PlatformPrototype.csproj", "{6EE1D5FA-BB9F-43DE-8E70-A5964642DC08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +25,6 @@ Global
 		{4A837532-76D1-4A78-99CB-E53BE9525C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A837532-76D1-4A78-99CB-E53BE9525C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A837532-76D1-4A78-99CB-E53BE9525C80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7C05F5E-0BB3-4024-B06D-0DFFA3F88F91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,10 +33,6 @@ Global
 		{E61FB891-442D-4285-9AB8-E7F3BFF66370}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E61FB891-442D-4285-9AB8-E7F3BFF66370}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E61FB891-442D-4285-9AB8-E7F3BFF66370}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EE1D5FA-BB9F-43DE-8E70-A5964642DC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EE1D5FA-BB9F-43DE-8E70-A5964642DC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EE1D5FA-BB9F-43DE-8E70-A5964642DC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EE1D5FA-BB9F-43DE-8E70-A5964642DC08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

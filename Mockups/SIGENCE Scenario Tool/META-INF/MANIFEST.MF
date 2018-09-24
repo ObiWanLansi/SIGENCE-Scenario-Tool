@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SIGENCE_Scenario_Tool
+Bundle-SymbolicName: SIGENCE_Scenario_Tool;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: sigence_scenario_tool.Activator
+Bundle-Vendor: LansiTools
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime,
+  org.eclipse.equinox.ds,
+  org.eclipse.equinox.util,
+  org.eclipse.equinox.event
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: SIGENCE_Scenario_Tool
+Bundle-ActivationPolicy: lazy
