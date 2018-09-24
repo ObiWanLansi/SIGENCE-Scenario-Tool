@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Net;
+﻿using System.Net;
 using System.Windows;
 using System.Windows.Input;
 
@@ -62,8 +61,8 @@ namespace SIGENCEScenarioTool
             HighlightingManager.Manager.AddSyntaxModeFileProvider(new PythonSyntaxModeFileProvider());
             this.tecTextEditorControl.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
 
-            string strFilename = string.Format("{0}\\HelloWorld.py", Tool.StartupPath);
-            this.tecTextEditorControl.Text = File.ReadAllText(strFilename);
+            //string strFilename = string.Format("{0}\\HelloWorld.py", Tool.StartupPath);
+            //this.tecTextEditorControl.Text = File.ReadAllText(strFilename);
         }
 
     } //end public partial class MainWindow
