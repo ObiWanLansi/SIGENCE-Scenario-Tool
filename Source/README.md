@@ -11,15 +11,6 @@ The main application with the HMI for creating, updating and deleteing a SIGENCE
 ## SIGENCEScenarioTool.UnitTests
 Some simple unit tests for the library.
 
-
-## SIGENCEScenarioTool.Mockup.Net
-A small mockup in .NET for receiving data over the UDP interface and send back a result to the SIGENCE Scenario Tool.
-
-
-## SIGENCEScenarioTool.Mockup.Java
-A small example andin Java how to send a GeoLocalizationResult over UDP to the SIGENCE Scenario Tool.
-
-
 ## SIGENCEScenarioTool.TestSuite
-Another mockup to create a complete TestSuite for SIGENCE Scenario's.
+A complete TestSuite for SIGENCE Scenario's with a underlying database for searching scenarios and storing results.
 
