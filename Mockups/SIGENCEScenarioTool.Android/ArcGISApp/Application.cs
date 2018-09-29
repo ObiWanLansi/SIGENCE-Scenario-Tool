@@ -53,5 +53,5 @@ namespace ArcGISApp
             // Initialize the ArcGIS Runtime before any components are created.
             ArcGISRuntimeEnvironment.Initialize();
         }
-    }
+    } // end internal class Application
 }

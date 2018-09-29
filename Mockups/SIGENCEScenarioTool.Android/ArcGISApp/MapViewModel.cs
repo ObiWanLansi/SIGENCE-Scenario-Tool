@@ -55,5 +55,6 @@ namespace ArcGISApp
         /// To be added.
         /// </remarks>
         public event PropertyChangedEventHandler PropertyChanged;
-    }
+
+    } // end public class MapViewModel
 }
