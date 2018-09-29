@@ -4,15 +4,17 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 
 ## Documentation
 
+### Basic
 - [Cheat Sheet](Documentation/Generated/CheatSheet.pdf)
-- [Enumerations](Source/SIGENCEScenarioTool.Library/Src/Models/EnumerationsAndConstants.md)
-- [RF Device Model](Source/SIGENCEScenarioTool.Library/Src/Models/RFDevice/RFDevice.Properties.md)
 - [ApiDoc Of The Library (PDF Version)](Documentation/Generated/SIGENCEScenarioTool.Library.pdf)
 
+### Advanced
+- [RF Device Model](Source/SIGENCEScenarioTool.Library/Src/Models/RFDevice/RFDevice.Properties.md)
+- [Known RxTxTypes](Source/SIGENCEScenarioTool.Library/Src/Models/RxTxTypes/RxTxTypes.Known.md )
+- [Other Enumerations](Source/SIGENCEScenarioTool.Library/Src/Models/EnumerationsAndConstants.md)
 
 
 ## Quick Links
-
 - [Issues](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/)
 - [Kanban Board](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1?fullscreen=true)
 
@@ -22,6 +24,8 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 ### Technologie
 - [SIGINT](https://en.wikipedia.org/wiki/Signals_intelligence)
 - [Antenna](https://en.wikipedia.org/wiki/Antenna_(radio))
+- [Radio Spectrum](https://en.wikipedia.org/wiki/Radio_spectrum)
+- [Interesting Book](https://www.amazon.de/dp/389574865X/ref=cm_sw_em_r_mt_dp_U_hT9RBb6GCRYQY)
 
 ### Tutorials
 - [Git Tutorial](https://www.tutorialspoint.com/git/index.htm)
@@ -41,7 +45,6 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [SQLite Administration](http://www.sqliteexpert.com/)
 
 
-
 ## Screenshot
 
 ![Sorry, but here should be a Screenshot :-(](Screenshots/MainApplication.jpg  "Screenshot from the MainWindow.")
@@ -50,7 +53,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 ## Dependencies &amp; Third Party Libraries
 
 - [GMap.NET.Presentation](https://www.nuget.org/packages/GMap.NET.Presentation/)
-- ~~[Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)~~
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
 - [NUnit](https://www.nuget.org/packages/NUnit/)
 - [Log4Net](https://www.nuget.org/packages/log4net/)
 - [Blink1](https://www.nuget.org/packages/Blink1.ObiWanLansi/)
