@@ -13,20 +13,20 @@
 
     <!-- For Receivers ( Id < 0 ) -->
     <!--<RxTxType Value="0" Name="Reserved" Description="Reserved For RF Simulation Playback Functionality"/>-->
-    <RxTxType Value="1" Name="IdealSDR" Description="Ideal Sdr Receiver (Passes Signal Through)"/>
-    <RxTxType Value="2" Name="HackRF" Description="HackRF One"/>
-    <RxTxType Value="3" Name="B200mini" Description="Ettus B200mini"/>
-    <RxTxType Value="4" Name="TwinRx" Description="Ettus X310 / TwinRx"/>
+    <RxTxType ValidFor="Receiver" Value="1" Name="IdealSDR" Description="Ideal Sdr Receiver (Passes Signal Through)"/>
+    <RxTxType ValidFor="Receiver" Value="2" Name="HackRF" Description="HackRF One"/>
+    <RxTxType ValidFor="Receiver" Value="3" Name="B200mini" Description="Ettus B200mini"/>
+    <RxTxType ValidFor="Receiver" Value="4" Name="TwinRx" Description="Ettus X310 / TwinRx"/>
 
 
     <!-- For Transmitters ( Id >= 0 ) -->
-    <RxTxType Value="1" Name="QPSK" Description="QPSK Signal With 2kHz Bandwidth"/>
-    <RxTxType Value="2" Name="SIN" Description="This Is A Sine Generator A 500Hz Frequency"/>
-    <RxTxType Value="3" Name="FMBroadcast" Description="This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"/>
-    <RxTxType Value="4" Name="GPSJammer" Description="10MHz L1 GPS Jammer"/>
-    <RxTxType Value="5" Name="Iridium" Description="Iridium Satcom Transmitter"/>
-    <RxTxType Value="6" Name="LTE" Description="LTE Signal"/>
-    <RxTxType Value="7" Name="AIS" Description="AIS Signal"/>
-    <RxTxType Value="8" Name="NFMRadio" Description="Narrow Fm Band (Voice With 5Khz Bandwidth)"/>
+    <RxTxType ValidFor="Transmitter" Value="1" Name="QPSK" Description="QPSK Signal With 2kHz Bandwidth"/>
+    <RxTxType ValidFor="Transmitter" Value="2" Name="SIN" Description="This Is A Sine Generator A 500Hz Frequency"/>
+    <RxTxType ValidFor="Transmitter" Value="3" Name="FMBroadcast" Description="This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"/>
+    <RxTxType ValidFor="Transmitter" Value="4" Name="GPSJammer" Description="10MHz L1 GPS Jammer"/>
+    <RxTxType ValidFor="Transmitter" Value="5" Name="Iridium" Description="Iridium Satcom Transmitter"/>
+    <RxTxType ValidFor="Transmitter" Value="6" Name="LTE" Description="LTE Signal"/>
+    <RxTxType ValidFor="Transmitter" Value="7" Name="AIS" Description="AIS Signal"/>
+    <RxTxType ValidFor="Transmitter" Value="8" Name="NFMRadio" Description="Narrow Fm Band (Voice With 5Khz Bandwidth)"/>
 
 </RxTxTypes>

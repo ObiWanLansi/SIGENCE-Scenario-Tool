@@ -287,11 +287,20 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
     </Content>
+    <Content Include="Src\Models\RxTxTypes\RxTxTypes.Known.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RxTxTypes.Known.md</LastGenOutput>
+    </Content>
     <Content Include="Src\Models\RxTxTypes\RxTxTypes.tt.m">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RxTxTypes.tt.xxx</DependentUpon>
     </Content>
+    <None Include="Src\Models\RxTxTypes\RxTxTypes.Known.md">
+      <DependentUpon>RxTxTypes.Known.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </None>
     <None Include="Src\Models\RxTxTypes\RxTxTypes.tt.xxx">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RxTxTypes.tt.m</LastGenOutput>
