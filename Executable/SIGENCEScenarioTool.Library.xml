@@ -2011,7 +2011,8 @@
             <summary>
             
             </summary>
-            <seealso cref="!:System.IEquatable&lt;SIGENCEScenarioTool.Models.RFDevice&gt;" />
+            <seealso cref="T:System.IEquatable`1" />
+            <seealso cref="T:SIGENCEScenarioTool.Models.AbstractModelBase" />
             <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
             <seealso cref="T:System.ICloneable" />
             <seealso cref="T:SIGENCEScenarioTool.Interfaces.IXmlExport" />
@@ -2472,6 +2473,12 @@
             Ein neues Objekt, das eine Kopie dieser Instanz ist.
             </returns>
         </member>
+        <member name="M:SIGENCEScenarioTool.Models.RFDevice.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:SIGENCEScenarioTool.Models.RFDevice.ToString">
             <summary>
             Returns a <see cref="T:System.String" /> that represents this instance.
@@ -2772,6 +2779,16 @@
             <value>
             The values.
             </value>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.IsValidForId(System.Int32,SIGENCEScenarioTool.Models.RxTxTypes.RxTxType)">
+            <summary>
+            Determines whether [is valid for identifier] [the specified i rf device identifier].
+            </summary>
+            <param name="iRFDeviceId">The i rf device identifier.</param>
+            <param name="rttValue">The RTT value.</param>
+            <returns>
+              <c>true</c> if [is valid for identifier] [the specified i rf device identifier]; otherwise, <c>false</c>.
+            </returns>
         </member>
         <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes.FromString(System.String)">
             <summary>
