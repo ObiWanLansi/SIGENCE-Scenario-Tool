@@ -13,73 +13,73 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
     /// <summary>
     /// A class with all known RxTxTypes as static Property.
     /// </summary>
-    static public class RxTxTypes
+    public static class RxTxTypes
     {
 
         /// <summary>
         /// Unknown RxTxType.
         /// </summary>
-        static public RxTxType Unknown { get; private set; } = new RxTxType(4242,"Unknown","Unknown RxTxType");
+        public static RxTxType Unknown { get; } = new RxTxType(4242,"Unknown","Unknown RxTxType");
 
         /// <summary>
         /// Ideal Sdr Receiver (Passes Signal Through).
         /// </summary>
-        static public RxTxType IdealSDR { get; private set; } = new RxTxType(1,"IdealSDR","Ideal Sdr Receiver (Passes Signal Through)");
+        public static RxTxType IdealSDR { get; } = new RxTxType(1,"IdealSDR","Ideal Sdr Receiver (Passes Signal Through)");
 
         /// <summary>
         /// HackRF One.
         /// </summary>
-        static public RxTxType HackRF { get; private set; } = new RxTxType(2,"HackRF","HackRF One");
+        public static RxTxType HackRF { get; } = new RxTxType(2,"HackRF","HackRF One");
 
         /// <summary>
         /// Ettus B200mini.
         /// </summary>
-        static public RxTxType B200mini { get; private set; } = new RxTxType(3,"B200mini","Ettus B200mini");
+        public static RxTxType B200mini { get; } = new RxTxType(3,"B200mini","Ettus B200mini");
 
         /// <summary>
         /// Ettus X310 / TwinRx.
         /// </summary>
-        static public RxTxType TwinRx { get; private set; } = new RxTxType(4,"TwinRx","Ettus X310 / TwinRx");
+        public static RxTxType TwinRx { get; } = new RxTxType(4,"TwinRx","Ettus X310 / TwinRx");
 
         /// <summary>
         /// QPSK Signal With 2kHz Bandwidth.
         /// </summary>
-        static public RxTxType QPSK { get; private set; } = new RxTxType(1,"QPSK","QPSK Signal With 2kHz Bandwidth");
+        public static RxTxType QPSK { get; } = new RxTxType(1,"QPSK","QPSK Signal With 2kHz Bandwidth");
 
         /// <summary>
         /// This Is A Sine Generator A 500Hz Frequency.
         /// </summary>
-        static public RxTxType SIN { get; private set; } = new RxTxType(2,"SIN","This Is A Sine Generator A 500Hz Frequency");
+        public static RxTxType SIN { get; } = new RxTxType(2,"SIN","This Is A Sine Generator A 500Hz Frequency");
 
         /// <summary>
         /// This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth.
         /// </summary>
-        static public RxTxType FMBroadcast { get; private set; } = new RxTxType(3,"FMBroadcast","This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth");
+        public static RxTxType FMBroadcast { get; } = new RxTxType(3,"FMBroadcast","This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth");
 
         /// <summary>
         /// 10MHz L1 GPS Jammer.
         /// </summary>
-        static public RxTxType GPSJammer { get; private set; } = new RxTxType(4,"GPSJammer","10MHz L1 GPS Jammer");
+        public static RxTxType GPSJammer { get; } = new RxTxType(4,"GPSJammer","10MHz L1 GPS Jammer");
 
         /// <summary>
         /// Iridium Satcom Transmitter.
         /// </summary>
-        static public RxTxType Iridium { get; private set; } = new RxTxType(5,"Iridium","Iridium Satcom Transmitter");
+        public static RxTxType Iridium { get; } = new RxTxType(5,"Iridium","Iridium Satcom Transmitter");
 
         /// <summary>
         /// LTE Signal.
         /// </summary>
-        static public RxTxType LTE { get; private set; } = new RxTxType(6,"LTE","LTE Signal");
+        public static RxTxType LTE { get; } = new RxTxType(6,"LTE","LTE Signal");
 
         /// <summary>
         /// AIS Signal.
         /// </summary>
-        static public RxTxType AIS { get; private set; } = new RxTxType(7,"AIS","AIS Signal");
+        public static RxTxType AIS { get; } = new RxTxType(7,"AIS","AIS Signal");
 
         /// <summary>
         /// Narrow Fm Band (Voice With 5Khz Bandwidth).
         /// </summary>
-        static public RxTxType NFMRadio { get; private set; } = new RxTxType(8,"NFMRadio","Narrow Fm Band (Voice With 5Khz Bandwidth)");
+        public static RxTxType NFMRadio { get; } = new RxTxType(8,"NFMRadio","Narrow Fm Band (Voice With 5Khz Bandwidth)");
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -87,7 +87,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <summary>
         /// The internal list with all RxTxType's.
         /// </summary>
-        static private readonly List<RxTxType> lRxTxTypes = null;
+        private static readonly List<RxTxType> lRxTxTypes = null;
 
 
         /// <summary>
@@ -115,31 +115,81 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <value>
         /// The values.
         /// </value>
-        static public IReadOnlyCollection<RxTxType> Values
+        public static IReadOnlyCollection<RxTxType> Values
         {
             get { return lRxTxTypes.AsReadOnly(); }
         }
         
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        /// <summary>
+        /// Determines whether [is valid for identifier] [the specified i rf device identifier].
+        /// </summary>
+        /// <param name="iRFDeviceId">The i rf device identifier.</param>
+        /// <param name="rttValue">The RTT value.</param>
+        /// <returns>
+        ///   <c>true</c> if [is valid for identifier] [the specified i rf device identifier]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsValidForId( int iRFDeviceId , RxTxType rttValue )
+        {
+            // Transmitters ( Id >= 0 )
+            if( iRFDeviceId >= 0 )
+            {
+                switch( rttValue.Name )
+                {
+                    case "QPSK":
+                    case "SIN":
+                    case "FMBroadcast":
+                    case "GPSJammer":
+                    case "Iridium":
+                    case "LTE":
+                    case "AIS":
+                    case "NFMRadio":
+                        return true;
+                }
+
+                return false;
+            }
+
+            // Receivers ( Id < 0 )
+            switch( rttValue.Name )
+            {
+                case "IdealSDR":
+                case "HackRF":
+                case "B200mini":
+                case "TwinRx":
+                    return true;
+            }
+
+            return false;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Froms the string.
         /// </summary>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public RxTxType FromString( string strName )
+        public static RxTxType FromString( string strName )
         {
-            if( string.IsNullOrEmpty( strName ) == false )
+            if( string.IsNullOrEmpty( strName ) )
             {
-                foreach( RxTxType rtt in lRxTxTypes )
+                return Unknown;
+            }
+
+            foreach( RxTxType rtt in lRxTxTypes )
+            {
+                if( rtt.Name.Equals( strName , StringComparison.CurrentCultureIgnoreCase ) )
                 {
-                    if( rtt.Name.Equals( strName , StringComparison.CurrentCultureIgnoreCase ) )
-                    {
-                        return rtt;
-                    }
+                    return rtt;
                 }
             }
 
-            return RxTxTypes.Unknown;
+            return Unknown;
         }
 
         
@@ -152,7 +202,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <param name="iRFDeviceId">The rf device identifier.</param>
         /// <param name="iValue">The value.</param>
         /// <returns></returns>
-        static public RxTxType FromInt( int iRFDeviceId , int iValue )
+        public static RxTxType FromInt( int iRFDeviceId , int iValue )
         {
             if( iValue < 0 )
             {
@@ -164,31 +214,31 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
                 switch( iValue )
                 {
                     case 1:
-                        return RxTxTypes.QPSK;
+                        return QPSK;
 
                     case 2:
-                        return RxTxTypes.SIN;
+                        return SIN;
 
                     case 3:
-                        return RxTxTypes.FMBroadcast;
+                        return FMBroadcast;
 
                     case 4:
-                        return RxTxTypes.GPSJammer;
+                        return GPSJammer;
 
                     case 5:
-                        return RxTxTypes.Iridium;
+                        return Iridium;
 
                     case 6:
-                        return RxTxTypes.LTE;
+                        return LTE;
 
                     case 7:
-                        return RxTxTypes.AIS;
+                        return AIS;
 
                     case 8:
-                        return RxTxTypes.NFMRadio;
+                        return NFMRadio;
 
                     default:
-                        return RxTxTypes.Unknown;
+                        return Unknown;
 
                 }
             }
@@ -198,24 +248,24 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
                 switch( iValue )
                 {
                     case 1:
-                        return RxTxTypes.IdealSDR;
+                        return IdealSDR;
 
                     case 2:
-                        return RxTxTypes.HackRF;
+                        return HackRF;
 
                     case 3:
-                        return RxTxTypes.B200mini;
+                        return B200mini;
 
                     case 4:
-                        return RxTxTypes.TwinRx;
+                        return TwinRx;
 
                     default:
-                        return RxTxTypes.Unknown;
+                        return Unknown;
                 }
             }
 
-            return RxTxTypes.Unknown;
+            return Unknown;
         }
 
-    } // end static public class RxTxTypes
+    } // end public static class RxTxTypes
 }

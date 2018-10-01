@@ -19,7 +19,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent A Device Based On A Radio Frequency.
     ///</summary>
-    sealed public partial class RFDevice :AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
+    public sealed partial class RFDevice :AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -29,17 +29,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For PrimaryKey.
         ///</summary>
-        public const String PRIMARYKEY = "PrimaryKey";
+        public const string PRIMARYKEY = "PrimaryKey";
 
         ///<summary>
         /// The DefaultValue For PrimaryKey.
         ///</summary>
-        static public readonly Guid DEFAULT_PRIMARYKEY = Guid.NewGuid();
+        public static readonly Guid DEFAULT_PRIMARYKEY = Guid.NewGuid();
         
         ///<summary>
         /// The Internal Field For PrimaryKey.
         ///</summary>
-        private Guid _PrimaryKey = Guid.NewGuid();
+        //private Guid _PrimaryKey = Guid.NewGuid();
+        private Guid _PrimaryKey = DEFAULT_PRIMARYKEY;
 
         ///<summary>
         /// The Unique PrimarKey For This RF Device.
@@ -65,17 +66,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Id.
         ///</summary>
-        public const String ID = "Id";
+        public const string ID = "Id";
 
         ///<summary>
         /// The DefaultValue For Id.
         ///</summary>
-        static public readonly int DEFAULT_ID = 0;
+        public static readonly int DEFAULT_ID = 0;
         
         ///<summary>
         /// The Internal Field For Id.
         ///</summary>
-        private int _Id = 0;
+        //private int _Id = 0;
+        private int _Id = DEFAULT_ID;
 
         ///<summary>
         /// Every Scenario Element (I.E. Transmitter, Receiver) Must Be Assigned An Unique Id. Negative Id’S Are Reserved For Receivers While All Other Id’S Are Transmitters By Default. Some Applications (I.E. Tdoa Emitter Localization) Require A Reference Transmitter. For These Applications Id=0 Is The Reference Transmitter. Receivers Must Be Assigned First In The Table, Followed Be Transmitters (With Id=0 Being The First). After The Static Scenario, Update Of Id’S Requires No Specific Order. Note That Definition Of New Transmitters/Receivers After The Static Scenario Is Prohibited.
@@ -101,17 +103,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For DeviceSource.
         ///</summary>
-        public const String DEVICESOURCE = "DeviceSource";
+        public const string DEVICESOURCE = "DeviceSource";
 
         ///<summary>
         /// The DefaultValue For DeviceSource.
         ///</summary>
-        static public readonly DeviceSource DEFAULT_DEVICESOURCE = DeviceSource.Unknown;
+        public static readonly DeviceSource DEFAULT_DEVICESOURCE = DeviceSource.Unknown;
         
         ///<summary>
         /// The Internal Field For DeviceSource.
         ///</summary>
-        private DeviceSource _DeviceSource = DeviceSource.Unknown;
+        //private DeviceSource _DeviceSource = DeviceSource.Unknown;
+        private DeviceSource _DeviceSource = DEFAULT_DEVICESOURCE;
 
         ///<summary>
         /// The Source Of This RF Device.
@@ -137,17 +140,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For StartTime.
         ///</summary>
-        public const String STARTTIME = "StartTime";
+        public const string STARTTIME = "StartTime";
 
         ///<summary>
         /// The DefaultValue For StartTime.
         ///</summary>
-        static public readonly double DEFAULT_STARTTIME = 0;
+        public static readonly double DEFAULT_STARTTIME = 0;
         
         ///<summary>
         /// The Internal Field For StartTime.
         ///</summary>
-        private double _StartTime = 0;
+        //private double _StartTime = 0;
+        private double _StartTime = DEFAULT_STARTTIME;
 
         ///<summary>
         /// This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.
@@ -173,17 +177,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Name.
         ///</summary>
-        public const String NAME = "Name";
+        public const string NAME = "Name";
 
         ///<summary>
         /// The DefaultValue For Name.
         ///</summary>
-        static public readonly string DEFAULT_NAME = "RFDevice";
+        public static readonly string DEFAULT_NAME = "RFDevice";
         
         ///<summary>
         /// The Internal Field For Name.
         ///</summary>
-        private string _Name = "RFDevice";
+        //private string _Name = "RFDevice";
+        private string _Name = DEFAULT_NAME;
 
         ///<summary>
         /// A Short Describing Display Name For The RF Device.
@@ -209,17 +214,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Latitude.
         ///</summary>
-        public const String LATITUDE = "Latitude";
+        public const string LATITUDE = "Latitude";
 
         ///<summary>
         /// The DefaultValue For Latitude.
         ///</summary>
-        static public readonly Latitude DEFAULT_LATITUDE = double.NaN;
+        public static readonly Latitude DEFAULT_LATITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Latitude.
         ///</summary>
-        private Latitude _Latitude = double.NaN;
+        //private Latitude _Latitude = double.NaN;
+        private Latitude _Latitude = DEFAULT_LATITUDE;
 
         ///<summary>
         /// The Latitude Of The RF Device (WGS84).
@@ -245,17 +251,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Longitude.
         ///</summary>
-        public const String LONGITUDE = "Longitude";
+        public const string LONGITUDE = "Longitude";
 
         ///<summary>
         /// The DefaultValue For Longitude.
         ///</summary>
-        static public readonly Longitude DEFAULT_LONGITUDE = double.NaN;
+        public static readonly Longitude DEFAULT_LONGITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Longitude.
         ///</summary>
-        private Longitude _Longitude = double.NaN;
+        //private Longitude _Longitude = double.NaN;
+        private Longitude _Longitude = DEFAULT_LONGITUDE;
 
         ///<summary>
         /// The Longitude Of The RF Device (WGS84).
@@ -281,17 +288,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Altitude.
         ///</summary>
-        public const String ALTITUDE = "Altitude";
+        public const string ALTITUDE = "Altitude";
 
         ///<summary>
         /// The DefaultValue For Altitude.
         ///</summary>
-        static public readonly Altitude DEFAULT_ALTITUDE = 0;
+        public static readonly Altitude DEFAULT_ALTITUDE = 0;
         
         ///<summary>
         /// The Internal Field For Altitude.
         ///</summary>
-        private Altitude _Altitude = 0;
+        //private Altitude _Altitude = 0;
+        private Altitude _Altitude = DEFAULT_ALTITUDE;
 
         ///<summary>
         /// The Elevation Of The RF Device Above The Sea Level (Meter).
@@ -317,17 +325,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Roll.
         ///</summary>
-        public const String ROLL = "Roll";
+        public const string ROLL = "Roll";
 
         ///<summary>
         /// The DefaultValue For Roll.
         ///</summary>
-        static public readonly double DEFAULT_ROLL = 0;
+        public static readonly double DEFAULT_ROLL = 0;
         
         ///<summary>
         /// The Internal Field For Roll.
         ///</summary>
-        private double _Roll = 0;
+        //private double _Roll = 0;
+        private double _Roll = DEFAULT_ROLL;
 
         ///<summary>
         /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
@@ -353,17 +362,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Pitch.
         ///</summary>
-        public const String PITCH = "Pitch";
+        public const string PITCH = "Pitch";
 
         ///<summary>
         /// The DefaultValue For Pitch.
         ///</summary>
-        static public readonly double DEFAULT_PITCH = 0;
+        public static readonly double DEFAULT_PITCH = 0;
         
         ///<summary>
         /// The Internal Field For Pitch.
         ///</summary>
-        private double _Pitch = 0;
+        //private double _Pitch = 0;
+        private double _Pitch = DEFAULT_PITCH;
 
         ///<summary>
         /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
@@ -389,17 +399,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Yaw.
         ///</summary>
-        public const String YAW = "Yaw";
+        public const string YAW = "Yaw";
 
         ///<summary>
         /// The DefaultValue For Yaw.
         ///</summary>
-        static public readonly double DEFAULT_YAW = 0;
+        public static readonly double DEFAULT_YAW = 0;
         
         ///<summary>
         /// The Internal Field For Yaw.
         ///</summary>
-        private double _Yaw = 0;
+        //private double _Yaw = 0;
+        private double _Yaw = DEFAULT_YAW;
 
         ///<summary>
         /// These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.
@@ -425,17 +436,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For RxTxType.
         ///</summary>
-        public const String RXTXTYPE = "RxTxType";
+        public const string RXTXTYPE = "RxTxType";
 
         ///<summary>
         /// The DefaultValue For RxTxType.
         ///</summary>
-        static public readonly RxTxType DEFAULT_RXTXTYPE = RxTxTypes.RxTxTypes.Unknown;
+        public static readonly RxTxType DEFAULT_RXTXTYPE = RxTxTypes.RxTxTypes.Unknown;
         
         ///<summary>
         /// The Internal Field For RxTxType.
         ///</summary>
-        private RxTxType _RxTxType = RxTxTypes.RxTxTypes.Unknown;
+        //private RxTxType _RxTxType = RxTxTypes.RxTxTypes.Unknown;
+        private RxTxType _RxTxType = DEFAULT_RXTXTYPE;
 
         ///<summary>
         /// For All Receivers (i.e. ID’s &lt; 0) This Parameter Defines The Radio Being Used.
@@ -461,17 +473,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For AntennaType.
         ///</summary>
-        public const String ANTENNATYPE = "AntennaType";
+        public const string ANTENNATYPE = "AntennaType";
 
         ///<summary>
         /// The DefaultValue For AntennaType.
         ///</summary>
-        static public readonly AntennaType DEFAULT_ANTENNATYPE = AntennaType.Unknown;
+        public static readonly AntennaType DEFAULT_ANTENNATYPE = AntennaType.Unknown;
         
         ///<summary>
         /// The Internal Field For AntennaType.
         ///</summary>
-        private AntennaType _AntennaType = AntennaType.Unknown;
+        //private AntennaType _AntennaType = AntennaType.Unknown;
+        private AntennaType _AntennaType = DEFAULT_ANTENNATYPE;
 
         ///<summary>
         /// AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.
@@ -497,17 +510,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For CenterFrequency_Hz.
         ///</summary>
-        public const String CENTERFREQUENCY_HZ = "CenterFrequency_Hz";
+        public const string CENTERFREQUENCY_HZ = "CenterFrequency_Hz";
 
         ///<summary>
         /// The DefaultValue For CenterFrequency_Hz.
         ///</summary>
-        static public readonly Frequency DEFAULT_CENTERFREQUENCY_HZ = 0;
+        public static readonly Frequency DEFAULT_CENTERFREQUENCY_HZ = 0;
         
         ///<summary>
         /// The Internal Field For CenterFrequency_Hz.
         ///</summary>
-        private Frequency _CenterFrequency_Hz = 0;
+        //private Frequency _CenterFrequency_Hz = 0;
+        private Frequency _CenterFrequency_Hz = DEFAULT_CENTERFREQUENCY_HZ;
 
         ///<summary>
         /// For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.
@@ -533,17 +547,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Bandwidth_Hz.
         ///</summary>
-        public const String BANDWIDTH_HZ = "Bandwidth_Hz";
+        public const string BANDWIDTH_HZ = "Bandwidth_Hz";
 
         ///<summary>
         /// The DefaultValue For Bandwidth_Hz.
         ///</summary>
-        static public readonly Bandwidth DEFAULT_BANDWIDTH_HZ = 0;
+        public static readonly Bandwidth DEFAULT_BANDWIDTH_HZ = 0;
         
         ///<summary>
         /// The Internal Field For Bandwidth_Hz.
         ///</summary>
-        private Bandwidth _Bandwidth_Hz = 0;
+        //private Bandwidth _Bandwidth_Hz = 0;
+        private Bandwidth _Bandwidth_Hz = DEFAULT_BANDWIDTH_HZ;
 
         ///<summary>
         /// The Bandwith Of The Transmitter.
@@ -569,17 +584,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Gain_dB.
         ///</summary>
-        public const String GAIN_DB = "Gain_dB";
+        public const string GAIN_DB = "Gain_dB";
 
         ///<summary>
         /// The DefaultValue For Gain_dB.
         ///</summary>
-        static public readonly Gain DEFAULT_GAIN_DB = 0;
+        public static readonly Gain DEFAULT_GAIN_DB = 0;
         
         ///<summary>
         /// The Internal Field For Gain_dB.
         ///</summary>
-        private Gain _Gain_dB = 0;
+        //private Gain _Gain_dB = 0;
+        private Gain _Gain_dB = DEFAULT_GAIN_DB;
 
         ///<summary>
         /// For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.
@@ -605,17 +621,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For SignalToNoiseRatio_dB.
         ///</summary>
-        public const String SIGNALTONOISERATIO_DB = "SignalToNoiseRatio_dB";
+        public const string SIGNALTONOISERATIO_DB = "SignalToNoiseRatio_dB";
 
         ///<summary>
         /// The DefaultValue For SignalToNoiseRatio_dB.
         ///</summary>
-        static public readonly SignalToNoiseRatio DEFAULT_SIGNALTONOISERATIO_DB = 0;
+        public static readonly SignalToNoiseRatio DEFAULT_SIGNALTONOISERATIO_DB = 0;
         
         ///<summary>
         /// The Internal Field For SignalToNoiseRatio_dB.
         ///</summary>
-        private SignalToNoiseRatio _SignalToNoiseRatio_dB = 0;
+        //private SignalToNoiseRatio _SignalToNoiseRatio_dB = 0;
+        private SignalToNoiseRatio _SignalToNoiseRatio_dB = DEFAULT_SIGNALTONOISERATIO_DB;
 
         ///<summary>
         /// For Receivers (I.E. Id’s &lt; 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s &gt;= 0) This Parameter Is Unused.
@@ -641,17 +658,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For XPos.
         ///</summary>
-        public const String XPOS = "XPos";
+        public const string XPOS = "XPos";
 
         ///<summary>
         /// The DefaultValue For XPos.
         ///</summary>
-        static public readonly int DEFAULT_XPOS = 0;
+        public static readonly int DEFAULT_XPOS = 0;
         
         ///<summary>
         /// The Internal Field For XPos.
         ///</summary>
-        private int _XPos = 0;
+        //private int _XPos = 0;
+        private int _XPos = DEFAULT_XPOS;
 
         ///<summary>
         /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
@@ -677,17 +695,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For YPos.
         ///</summary>
-        public const String YPOS = "YPos";
+        public const string YPOS = "YPos";
 
         ///<summary>
         /// The DefaultValue For YPos.
         ///</summary>
-        static public readonly int DEFAULT_YPOS = 0;
+        public static readonly int DEFAULT_YPOS = 0;
         
         ///<summary>
         /// The Internal Field For YPos.
         ///</summary>
-        private int _YPos = 0;
+        //private int _YPos = 0;
+        private int _YPos = DEFAULT_YPOS;
 
         ///<summary>
         /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
@@ -713,17 +732,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For ZPos.
         ///</summary>
-        public const String ZPOS = "ZPos";
+        public const string ZPOS = "ZPos";
 
         ///<summary>
         /// The DefaultValue For ZPos.
         ///</summary>
-        static public readonly int DEFAULT_ZPOS = 0;
+        public static readonly int DEFAULT_ZPOS = 0;
         
         ///<summary>
         /// The Internal Field For ZPos.
         ///</summary>
-        private int _ZPos = 0;
+        //private int _ZPos = 0;
+        private int _ZPos = DEFAULT_ZPOS;
 
         ///<summary>
         /// XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
@@ -749,17 +769,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For Remark.
         ///</summary>
-        public const String REMARK = "Remark";
+        public const string REMARK = "Remark";
 
         ///<summary>
         /// The DefaultValue For Remark.
         ///</summary>
-        static public readonly string DEFAULT_REMARK = "";
+        public static readonly string DEFAULT_REMARK = "";
         
         ///<summary>
         /// The Internal Field For Remark.
         ///</summary>
-        private string _Remark = "";
+        //private string _Remark = "";
+        private string _Remark = DEFAULT_REMARK;
 
         ///<summary>
         /// A Comment Or Remark For The RF Device.
@@ -1016,31 +1037,8 @@ namespace SIGENCEScenarioTool.Models
     /// <summary>
     /// The tooltips for our properties to display in the HMI.
     /// </summary>
-    sealed public class RFDeviceTooltips
+    public sealed class RFDeviceTooltips
     {
-        /// <summary>
-        /// Prevents a default instance of the <see cref="RFDeviceTooltips"/> class from being created.
-        /// </summary>
-        //private RFDeviceTooltips()
-        //{
-        //}
-
-        /// <summary>
-        /// The instance
-        /// </summary>
-        //static private RFDeviceTooltips _instance = new RFDeviceTooltips();
-
-        /// <summary>
-        /// Gets the instance.
-        /// </summary>
-        /// <returns></returns>
-        //static public RFDeviceTooltips GetInstance()
-        //{
-        //    return _instance;
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
         /// <summary>
         /// The tooltip for the PrimaryKey.
@@ -1147,5 +1145,5 @@ namespace SIGENCEScenarioTool.Models
         /// </summary>
         public string TOOLTIP_REMARK { get { return "A Comment Or Remark For The RF Device."; } }
 
-    } // end sealed public class RFDeviceTooltips
+    } // end public sealed class RFDeviceTooltips
 }

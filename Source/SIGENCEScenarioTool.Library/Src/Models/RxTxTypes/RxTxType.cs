@@ -6,7 +6,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
     /// <summary>
     /// A class to encapsule an RxTxType.
     /// </summary>
-    sealed public class RxTxType
+    public sealed class RxTxType
     {
         /// <summary>
         /// Gets the value.
@@ -14,7 +14,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <value>
         /// The value.
         /// </value>
-        public int Value { get; private set; }
+        public int Value { get; }
 
         /// <summary>
         /// Gets the name.
@@ -22,7 +22,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <value>
         /// The name.
         /// </value>
-        public string Name { get; private set; }
+        public string Name { get; }
 
         /// <summary>
         /// Gets the remark.
@@ -30,7 +30,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <value>
         /// The remark.
         /// </value>
-        public string Remark { get; private set; }
+        public string Remark { get; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <param name="iValue">The i value.</param>
         /// <param name="strName">Name of the string.</param>
         /// <param name="strRemark">The string remark.</param>
-        internal RxTxType(int iValue, string strName, string strRemark)
+        internal RxTxType( int iValue , string strName , string strRemark )
         {
             this.Value = iValue;
             this.Name = strName;
@@ -58,7 +58,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator int(RxTxType rtt)
+        public static implicit operator int( RxTxType rtt )
         {
             return rtt.Value;
         }
@@ -77,5 +77,5 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
             return this.Name;
         }
 
-    } // end sealed public class RxTxType
+    } // end public sealed class RxTxType
 }

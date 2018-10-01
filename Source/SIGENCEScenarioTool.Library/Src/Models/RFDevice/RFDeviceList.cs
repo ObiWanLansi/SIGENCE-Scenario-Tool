@@ -15,7 +15,7 @@ namespace SIGENCEScenarioTool.Models
     /// <summary>
     /// 
     /// </summary>
-    sealed public class RFDeviceList : List<RFDevice>
+    public sealed class RFDeviceList : List<RFDevice>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RFDeviceList"/> class.
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Models
         /// <summary>
         /// The randomizer.
         /// </summary>
-        static private readonly Random r = new Random();
+        private static readonly Random r = new Random();
 
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace SIGENCEScenarioTool.Models
         /// <param name="pllCenter">The PLL center.</param>
         /// <param name="bEnsureRefDevice">if set to <c>true</c> [b ensure reference device].</param>
         /// <returns></returns>
-        static public RFDeviceList CreateRandomizedRFDeviceList( int iMaxCount , PointLatLng pllCenter , bool bEnsureRefDevice = false )
+        public static RFDeviceList CreateRandomizedRFDeviceList( int iMaxCount , PointLatLng pllCenter , bool bEnsureRefDevice = false )
         {
             RFDeviceList list = new RFDeviceList( iMaxCount );
 
@@ -71,7 +71,7 @@ namespace SIGENCEScenarioTool.Models
                 {
                     Id = r.Next( -1000 , 1000 ) ,
                     DeviceSource = DeviceSource.Automatic ,
-                    Name = string.Format( "RFDevice #{0}" , i ) ,
+                    Name = $"RFDevice #{i}",
 
                     StartTime = i + ( ( double ) 1 / i ) ,
 
@@ -102,12 +102,7 @@ namespace SIGENCEScenarioTool.Models
 
             if( bEnsureRefDevice == true )
             {
-                RFDevice refdev = list.FirstOrDefault( d => d.Id == 0 );
-
-                if( refdev == null )
-                {
-                    refdev = list.First();
-                }
+                RFDevice refdev = list.FirstOrDefault( d => d.Id == 0 ) ?? list.First();
 
                 refdev.Id = 0;
                 refdev.Latitude = pllCenter.Lat;
@@ -117,5 +112,5 @@ namespace SIGENCEScenarioTool.Models
             return list;
         }
 
-    } // end sealed public class RFDeviceList
+    } // end public sealed class RFDeviceList
 }

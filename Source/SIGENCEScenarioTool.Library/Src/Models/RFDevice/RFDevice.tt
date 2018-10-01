@@ -44,7 +44,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// <#=strClassCommment#>
     ///</summary>
-    sealed public partial class <#=eRoot.Name#> :AbstractModelBase, IEquatable<<#=eRoot.Name#>>, ICloneable, IXmlExport
+    public sealed partial class <#=eRoot.Name#> :AbstractModelBase, IEquatable<<#=eRoot.Name#>>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -69,17 +69,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The PropertyName As ReadOnly String For <#=strPropertyName#>.
         ///</summary>
-        public const String <#=strPropertyName.ToUpper()#> = "<#=strPropertyName#>";
+        public const string <#=strPropertyName.ToUpper()#> = "<#=strPropertyName#>";
 
         ///<summary>
         /// The DefaultValue For <#=strPropertyName#>.
         ///</summary>
-        static public readonly <#=strPropertyType#> DEFAULT_<#=strPropertyName.ToUpper()#><#=strDefaultValue#>;
+        public static readonly <#=strPropertyType#> DEFAULT_<#=strPropertyName.ToUpper()#><#=strDefaultValue#>;
         
         ///<summary>
         /// The Internal Field For <#=strPropertyName#>.
         ///</summary>
-        private <#=strPropertyType#> _<#=strPropertyName#><#=strDefaultValue#>;
+        //private <#=strPropertyType#> _<#=strPropertyName#><#=strDefaultValue#>;
+        private <#=strPropertyType#> _<#=strPropertyName#> = DEFAULT_<#=strPropertyName.ToUpper()#>;
 
         ///<summary>
         /// <#=strCommment#>
@@ -268,31 +269,8 @@ namespace SIGENCEScenarioTool.Models
     /// <summary>
     /// The tooltips for our properties to display in the HMI.
     /// </summary>
-    sealed public class RFDeviceTooltips
+    public sealed class RFDeviceTooltips
     {
-        /// <summary>
-        /// Prevents a default instance of the <see cref="RFDeviceTooltips"/> class from being created.
-        /// </summary>
-        //private RFDeviceTooltips()
-        //{
-        //}
-
-        /// <summary>
-        /// The instance
-        /// </summary>
-        //static private RFDeviceTooltips _instance = new RFDeviceTooltips();
-
-        /// <summary>
-        /// Gets the instance.
-        /// </summary>
-        /// <returns></returns>
-        //static public RFDeviceTooltips GetInstance()
-        //{
-        //    return _instance;
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 <#    
     foreach(XElement eProperty in eRoot.Elements())
     {
@@ -341,5 +319,5 @@ namespace SIGENCEScenarioTool.Models
     }
 #>
 
-    } // end sealed public class RFDeviceTooltips
+    } // end public sealed class RFDeviceTooltips
 }
