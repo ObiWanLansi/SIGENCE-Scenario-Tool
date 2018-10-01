@@ -31,7 +31,8 @@
         <Image x:Key="SERVER_FROM_CLIENT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_from_client.png" />
         <Image x:Key="SERVER_TO_CLIENT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_to_client.png" />
         <Image x:Key="SERVER_EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_earth.png" />
-
+        <Image x:Key="TABLE_INFORMATION" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/table_information.png" />
+        <Image x:Key="BUG_GREEN" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/bug_green.png" />
 
         <!--<ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -131,6 +132,8 @@
             <MenuItem Header="_Help">
                 <!--<MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />-->
                 <MenuItem Header="_Cheat Sheet" Icon="{StaticResource HELP}" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
+                <MenuItem Header="_Open Issues" Icon="{StaticResource BUG_GREEN}" Click="MenuItem_OpenIssues_Click" />
+                <MenuItem Header="_Open Kanban Board" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_KanbanBoard_Click" />
                 <MenuItem Header="_Open Wiki" Icon="{StaticResource HELP}" Click="MenuItem_OpenWiki_Click" />
                 <!--<MenuItem Header="_About" IsEnabled="False" />-->
             </MenuItem>
@@ -783,7 +786,7 @@
 
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
-                                <Rectangle Width="20" Height="10" Fill="DarkRed"/>
+                                <Rectangle Width="20" Height="10" Fill="DarkRed" />
                                 <Label Content="Fatal:" />
                                 <Label Content="{Binding ValidationResult.Fatal}" />
                             </StackPanel>
@@ -792,7 +795,7 @@
                         <Separator />
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
-                                <Rectangle Width="20" Height="10" Fill="Red"/>
+                                <Rectangle Width="20" Height="10" Fill="Red" />
                                 <Label Content="Error:" />
                                 <Label Content="{Binding ValidationResult.Error}" />
                             </StackPanel>
@@ -801,7 +804,7 @@
                         <Separator />
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
-                                <Rectangle Width="20" Height="10" Fill="Orange"/>
+                                <Rectangle Width="20" Height="10" Fill="Orange" />
                                 <Label Content="Warning:" />
                                 <Label Content="{Binding ValidationResult.Warning}" />
                             </StackPanel>
@@ -810,7 +813,7 @@
                         <Separator />
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
-                                <Rectangle Width="20" Height="10" Fill="Blue"/>
+                                <Rectangle Width="20" Height="10" Fill="Blue" />
                                 <Label Content="Information:" />
                                 <Label Content="{Binding ValidationResult.Information}" />
                             </StackPanel>
