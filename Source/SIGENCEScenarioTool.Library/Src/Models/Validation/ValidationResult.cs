@@ -8,7 +8,7 @@ namespace SIGENCEScenarioTool.Models.Validation
     /// <summary>
     /// 
     /// </summary>
-    sealed public class ValidationResult
+    public sealed class ValidationResult
     {
         /// <summary>
         /// Gets the identifier.
@@ -16,7 +16,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The identifier.
         /// </value>
-        public Guid Id { get; private set; }
+        public Guid Id { get; }
 
         /// <summary>
         /// Gets the timestamp.
@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The timestamp.
         /// </value>
-        public DateTime Timestamp { get; private set; }
+        public DateTime Timestamp { get; }
 
         /// <summary>
         /// Gets the servity.
@@ -32,7 +32,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The servity.
         /// </value>
-        public Servity Servity { get; private set; }
+        public Servity Servity { get; }
 
         /// <summary>
         /// Gets the message.
@@ -40,7 +40,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The message.
         /// </value>
-        public String Message { get; private set; }
+        public string Message { get; }
 
         /// <summary>
         /// Gets the source.
@@ -48,7 +48,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The source.
         /// </value>
-        public Object Source { get; private set; }
+        public object Source { get; }
 
         /// <summary>
         /// Gets the property.
@@ -56,7 +56,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The property.
         /// </value>
-        public String PropertyName { get; private set; }
+        public string PropertyName { get; }
 
         /// <summary>
         /// Gets the value.
@@ -64,7 +64,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The value.
         /// </value>
-        public Object Value { get; private set; }
+        public object Value { get; }
 
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <param name="oSource">The source.</param>
         /// <param name="strPropertyName">Name of the property.</param>
         /// <param name="oValue">The value.</param>
-        public ValidationResult(Servity sServity, String strMessage, Object oSource, string strPropertyName, Object oValue)
+        public ValidationResult( Servity sServity , string strMessage , object oSource , string strPropertyName , object oValue )
         {
             Id = Guid.NewGuid();
             Timestamp = DateTime.Now;
@@ -86,7 +86,7 @@ namespace SIGENCEScenarioTool.Models.Validation
             Value = oValue;
         }
 
-    } // end sealed public class ValidationResult
+    } // end public sealed class ValidationResult
 
 
 
@@ -94,7 +94,7 @@ namespace SIGENCEScenarioTool.Models.Validation
     /// 
     /// </summary>
     /// <seealso cref="System.Collections.Generic.List{SIGENCEScenarioTool.Models.Validation.ValidationResult}" />
-    sealed public class ValidationResultList : List<ValidationResult>
+    public sealed class ValidationResultList : List<ValidationResult>
     {
         /// <summary>
         /// Gets the empty.
@@ -102,12 +102,9 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The empty.
         /// </value>
-        static public ValidationResultList Empty
+        public static ValidationResultList Empty
         {
-            get
-            {
-                return new ValidationResultList();
-            }
+            get { return new ValidationResultList(); }
         }
 
 
@@ -119,10 +116,10 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <param name="oSource">The o source.</param>
         /// <param name="strPropertyName">Name of the string property.</param>
         /// <param name="oValue">The o value.</param>
-        public void Add(Servity sServity, String strMessage, Object oSource, string strPropertyName, Object oValue)
+        public void Add( Servity sServity , string strMessage , object oSource , string strPropertyName , object oValue )
         {
-            Add(new ValidationResult(sServity, strMessage, oSource, strPropertyName, oValue));
+            Add( new ValidationResult( sServity , strMessage , oSource , strPropertyName , oValue ) );
         }
 
-    } // end sealed public class ValidationResultList
+    } // end public sealed class ValidationResultList
 }

@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
     /// <summary>
     /// Interaktionslogik für ExportSettings.xaml
     /// </summary>
-    public partial class ExportSettings : UserControl, ISettingsControl
+    public partial class ExportSettings : ISettingsControl
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExportSettings"/> class.
@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
         /// <returns></returns>
         public Image GetImage()
         {
-            return (Image)Resources["EXPORT"];
+            return ( Image ) Resources ["EXPORT"];
         }
 
 

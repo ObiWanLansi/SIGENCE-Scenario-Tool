@@ -553,7 +553,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The LCV
         /// </summary>
-        private ListCollectionView lcv = null;
+        private readonly ListCollectionView lcv = null;
 
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public int CurrentNodes
         {
-            get { return this.lcv != null ? this.lcv.Count : 0; }
+            get { return lcv?.Count ?? 0; }
         }
 
         //-----------------------------

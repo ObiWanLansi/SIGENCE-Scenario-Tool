@@ -17,18 +17,19 @@ using SIGENCEScenarioTool.Windows.MainWindow;
 
 
 
+// ReSharper disable ExplicitCallerInfoArgument
 namespace SIGENCEScenarioTool.Dialogs.Scripting
 {
     /// <summary>
     /// Interaktionslogik für ScriptingDialog.xaml
     /// </summary>
-    public partial class ScriptingDialog : Window, INotifyPropertyChanged
+    public partial class ScriptingDialog : INotifyPropertyChanged
     {
 
         /// <summary>
         /// The mw
         /// </summary>
-        private MainWindow mw = null;
+        private readonly MainWindow mw = null;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -152,13 +153,13 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             //this.tecTextEditorControl.Document.FoldingManager.FoldingStrategy = sfs;
             //this.tecTextEditorControl.Document.FoldingManager.UpdateFoldings(null, null);
 
-            string strFilename = string.Format("{0}\\HelloWorld.py", Tool.StartupPath);
+            string strFilename = $"{Tool.StartupPath}\\HelloWorld.py";
             tecTextEditorControl.Text = File.ReadAllText(strFilename);
 
             tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.PositionChanged += Caret_PositionChanged;
             //this.tecTextEditorControl.ActiveTextAreaControl.Document.DocumentChanged += Document_DocumentChanged;
 
-            Title += string.Format(" [{0}]", strFilename);
+            Title += $" [{strFilename}]";
         }
 
 

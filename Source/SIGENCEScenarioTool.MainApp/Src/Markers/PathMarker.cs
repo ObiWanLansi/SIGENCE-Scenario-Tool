@@ -6,13 +6,10 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
-
+using System.Windows.Shapes;
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
-
 using SIGENCEScenarioTool.Tools;
-
-
 
 namespace SIGENCEScenarioTool.Markers
 {
@@ -21,17 +18,12 @@ namespace SIGENCEScenarioTool.Markers
     /// </summary>
     /// <seealso cref="GMap.NET.WindowsPresentation.GMapRoute" />
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
-    public class PathMarker : GMapRoute, INotifyPropertyChanged
+    public sealed class PathMarker : GMapRoute
     {
         /// <summary>
         /// The popup
         /// </summary>
         private readonly Popup popup = null;
-
-        /// <summary>
-        /// The label
-        /// </summary>
-        private readonly Label label = null;
 
         /// <summary>
         /// The mc map control
@@ -42,16 +34,10 @@ namespace SIGENCEScenarioTool.Markers
 
 
         /// <summary>
-        /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
-        /// </summary>
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-
-        /// <summary>
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
             //PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
             OnPropertyChanged( new PropertyChangedEventArgs( strPropertyName ) );
@@ -101,12 +87,13 @@ namespace SIGENCEScenarioTool.Markers
             {
                 bIsSelected = value;
 
-                if( bIsSelected == true )
+                if( bIsSelected )
                 {
-                    System.Windows.Shapes.Path path = this.Shape as System.Windows.Shapes.Path;
-
-                    path.Stroke = new SolidColorBrush( Colors.Blue );
-                    path.StrokeThickness = 7;
+                    if( this.Shape is Path path )
+                    {
+                        path.Stroke = new SolidColorBrush( Colors.Blue );
+                        path.StrokeThickness = 7;
+                    }
                 }
                 else
                 {
@@ -133,7 +120,7 @@ namespace SIGENCEScenarioTool.Markers
             this.mcMapControl = mcMapControl;
             this.hType = h;
 
-            label = new Label
+            Label label = new Label
             {
                 Background = Brushes.Yellow ,
                 Foreground = Brushes.Black ,
@@ -153,19 +140,20 @@ namespace SIGENCEScenarioTool.Markers
 
             this.RegenerateShape( mcMapControl );
 
-            System.Windows.Shapes.Path path = this.Shape as System.Windows.Shapes.Path;
-            path.IsHitTestVisible = true;
-            path.Cursor = Cursors.Cross;
+            if( this.Shape is Path path )
+            {
+                path.IsHitTestVisible = true;
+                path.Cursor = Cursors.Cross;
+            }
 
             SyncHighwayType();
 
-            this.Shape.MouseLeftButtonUp += new MouseButtonEventHandler( MarkerControl_MouseLeftButtonUp );
-            this.Shape.MouseLeftButtonDown += new MouseButtonEventHandler( MarkerControl_MouseLeftButtonDown );
+            this.Shape.MouseLeftButtonUp += MarkerControl_MouseLeftButtonUp;
+            this.Shape.MouseLeftButtonDown += MarkerControl_MouseLeftButtonDown;
 
-            this.Shape.MouseEnter += new MouseEventHandler( MarkerControl_MouseEnter );
-            this.Shape.MouseLeave += new MouseEventHandler( MarkerControl_MouseLeave );
+            this.Shape.MouseEnter += MarkerControl_MouseEnter;
+            this.Shape.MouseLeave += MarkerControl_MouseLeave;
         }
-
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -175,7 +163,10 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         private void SyncHighwayType()
         {
-            System.Windows.Shapes.Path path = this.Shape as System.Windows.Shapes.Path;
+            if( !( this.Shape is Path path ) )
+            {
+                return;
+            }
 
             switch( hType )
             {
@@ -279,5 +270,5 @@ namespace SIGENCEScenarioTool.Markers
             e.Handled = true;
         }
 
-    } // end public class PathMarker
+    } // end public sealed class PathMarker
 }

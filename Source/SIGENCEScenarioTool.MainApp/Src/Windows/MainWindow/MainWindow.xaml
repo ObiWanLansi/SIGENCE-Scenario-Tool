@@ -1,4 +1,4 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:provider="clr-namespace:GMap.NET.MapProviders;assembly=GMap.NET.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" xmlns:tools="clr-namespace:SIGENCEScenarioTool.Tools;assembly=SIGENCEScenarioTool.Library" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="MainWindow_Loaded" Closed="MainWindow_Closed">
+﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" xmlns:tools="clr-namespace:SIGENCEScenarioTool.Tools;assembly=SIGENCEScenarioTool.Library" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="MainWindow_Loaded" Closed="MainWindow_Closed">
     <Window.Resources>
 
         <Image x:Key="ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/add.png" />
@@ -761,7 +761,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <StatusBar Grid.Row="3">
+                    <StatusBar Grid.Row="2">
 
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
@@ -783,6 +783,7 @@
 
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
+                                <Rectangle Width="20" Height="10" Fill="DarkRed"/>
                                 <Label Content="Fatal:" />
                                 <Label Content="{Binding ValidationResult.Fatal}" />
                             </StackPanel>
@@ -791,6 +792,7 @@
                         <Separator />
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
+                                <Rectangle Width="20" Height="10" Fill="Red"/>
                                 <Label Content="Error:" />
                                 <Label Content="{Binding ValidationResult.Error}" />
                             </StackPanel>
@@ -799,6 +801,7 @@
                         <Separator />
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
+                                <Rectangle Width="20" Height="10" Fill="Orange"/>
                                 <Label Content="Warning:" />
                                 <Label Content="{Binding ValidationResult.Warning}" />
                             </StackPanel>
@@ -807,6 +810,7 @@
                         <Separator />
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
+                                <Rectangle Width="20" Height="10" Fill="Blue"/>
                                 <Label Content="Information:" />
                                 <Label Content="{Binding ValidationResult.Information}" />
                             </StackPanel>

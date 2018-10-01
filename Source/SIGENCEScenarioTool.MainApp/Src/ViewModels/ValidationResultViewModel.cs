@@ -17,7 +17,7 @@ namespace SIGENCEScenarioTool.ViewModels
     /// <summary>
     /// 
     /// </summary>
-    sealed public class ValidationResultViewModel
+    public sealed class ValidationResultViewModel
     {
         /// <summary>
         /// Gets the result.
@@ -36,7 +36,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The timestamp.
         /// </value>
-        public String Timestamp
+        public string Timestamp
         {
             get { return Result.Timestamp.Fmt_DD_MM_YYYY_HH_MM_SS(); }
         }
@@ -60,7 +60,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The message.
         /// </value>
-        public String Message
+        public string Message
         {
             get { return Result.Message; }
         }
@@ -72,7 +72,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The source.
         /// </value>
-        public String Source
+        public string Source
         {
             get { return Result.Source != null ? Result.Source.ToString() : "Unknown Source."; }
         }
@@ -84,7 +84,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The property.
         /// </value>
-        public String PropertyName
+        public string PropertyName
         {
             get { return Result.PropertyName; }
         }
@@ -96,7 +96,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The value.
         /// </value>
-        public Object Value { get { return Result.Value; } }
+        public object Value { get { return Result.Value; } }
 
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace SIGENCEScenarioTool.ViewModels
     /// </summary>
     /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{SIGENCEScenarioTool.ViewModels.ValidationResultViewModel}" />
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
-    sealed public class ValidationResultViewModelList : ObservableCollection<ValidationResultViewModel>, INotifyPropertyChanged
+    public sealed class ValidationResultViewModelList : ObservableCollection<ValidationResultViewModel>, INotifyPropertyChanged
     {
 #pragma warning disable CS0114 // Member hides inherited member; missing override keyword
         /// <summary>
@@ -188,7 +188,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The empty.
         /// </value>
-        static public ValidationResultViewModelList Empty
+        public static ValidationResultViewModelList Empty
         {
             get { return new ValidationResultViewModelList(); }
         }
@@ -286,7 +286,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <summary>
         /// Ruft die Anzahl der Elemente ab, die tatsächlich in der <see cref="T:System.Collections.ObjectModel.Collection`1" /> enthalten sind.
         /// </summary>
-        new public int Count
+        public new int Count
         {
             get { return iCount; }
             set
@@ -336,14 +336,14 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <param name="vrl">The VRL.</param>
         public void Add(ValidationResultList vrl)
         {
-            vrl.ForEach(vr => Add(vr));
+            vrl.ForEach(Add);
         }
 
 
         /// <summary>
         /// Entfernt alle Elemente aus der <see cref="T:System.Collections.ObjectModel.Collection`1" />.
         /// </summary>
-        new public void Clear()
+        public new void Clear()
         {
             base.Clear();
 

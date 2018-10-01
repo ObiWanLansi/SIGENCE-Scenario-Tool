@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
     /// <summary>
     /// Interaktionslogik für NetworkSettings.xaml
     /// </summary>
-    public partial class NetworkSettings : UserControl, ISettingsControl
+    public partial class NetworkSettings : ISettingsControl
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NetworkSettings"/> class.
@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
         /// <returns></returns>
         public Image GetImage()
         {
-            return (Image)Resources["NETWORK"];
+            return ( Image ) Resources ["NETWORK"];
         }
 
 

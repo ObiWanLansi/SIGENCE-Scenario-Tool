@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
     /// <summary>
     /// Interaktionslogik für ImportSettings.xaml
     /// </summary>
-    public partial class ImportSettings : UserControl, ISettingsControl
+    public partial class ImportSettings : ISettingsControl
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportSettings"/> class.
@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
         /// <returns></returns>
         public Image GetImage()
         {
-            return (Image)Resources["IMPORT"];
+            return ( Image ) Resources ["IMPORT"];
         }
 
 

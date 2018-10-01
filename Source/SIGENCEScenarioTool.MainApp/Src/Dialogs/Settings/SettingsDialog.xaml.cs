@@ -8,12 +8,12 @@ using SIGENCEScenarioTool.Dialogs.Settings.Panels;
 
 
 
-namespace SIGENCEScenarioTool.Dialogs
+namespace SIGENCEScenarioTool.Dialogs.Settings
 {
     /// <summary>
     /// 
     /// </summary>
-    sealed public class SettingsPanelViewModel
+    public sealed class SettingsPanelViewModel
     {
         /// <summary>
         /// Gets or sets the name.
@@ -36,20 +36,20 @@ namespace SIGENCEScenarioTool.Dialogs
         /// Initializes a new instance of the <see cref="SettingsPanelViewModel"/> class.
         /// </summary>
         /// <param name="sc">The sc.</param>
-        public SettingsPanelViewModel(ISettingsControl sc)
+        public SettingsPanelViewModel( ISettingsControl sc )
         {
             Name = sc.GetName();
             Image = sc.GetImage();
         }
 
-    } // end public sealed class SettingsPanel
+    } // end public sealed class SettingsPanelViewModel
 
 
 
     /// <summary>
     /// Interaktionslogik für SettingsDialog.xaml
     /// </summary>
-    public partial class SettingsDialog : Window, INotifyPropertyChanged
+    public partial class SettingsDialog : INotifyPropertyChanged
     {
 
         /// <summary>
@@ -71,10 +71,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </value>
         public UserControl SelectedPanel
         {
-            get
-            {
-                return ucSelectedPanel;
-            }
+            get { return ucSelectedPanel; }
             set
             {
                 ucSelectedPanel = value;
@@ -122,7 +119,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_Accept_Click(object sender, RoutedEventArgs e)
+        private void Button_Accept_Click( object sender , RoutedEventArgs e )
         {
             DialogResult = true;
             Properties.Settings.Default.Save();
@@ -136,7 +133,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_Cancel_Click(object sender, RoutedEventArgs e)
+        private void Button_Cancel_Click( object sender , RoutedEventArgs e )
         {
             DialogResult = false;
             Properties.Settings.Default.Reload();
@@ -150,7 +147,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs" /> instance containing the event data.</param>
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListBox_SelectionChanged( object sender , SelectionChangedEventArgs e )
         {
             // TODO: Switch Panel
         }
@@ -168,9 +165,9 @@ namespace SIGENCEScenarioTool.Dialogs
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
         }
 
     } // end public partial class SettingsDialog 

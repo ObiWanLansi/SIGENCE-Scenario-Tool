@@ -22,7 +22,7 @@ namespace SIGENCEScenarioTool.ViewModels
     /// <summary>
     /// A ViewModel for a RFDevice.
     /// </summary>
-    sealed public class RFDeviceViewModel : INotifyPropertyChanged
+    public sealed class RFDeviceViewModel : INotifyPropertyChanged
     {
 
         /// <summary>
@@ -823,6 +823,7 @@ namespace SIGENCEScenarioTool.ViewModels
 
             UpdateMarkerTooltip();
 
+            // ReSharper disable ExplicitCallerInfoArgument
             FirePropertyChanged( "Latitude" );
             FirePropertyChanged( "Longitude" );
         }
@@ -855,20 +856,20 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator RFDevice( RFDeviceViewModel model )
+        public static implicit operator RFDevice( RFDeviceViewModel model )
         {
             return model.RFDevice;
         }
 
-    } // end sealed public class RFDeviceViewModel
+    } // end public sealed class RFDeviceViewModel
 
 
 
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{SIGENCEScenarioTool.ViewModels.RFDeviceViewModel}" />
-    sealed public class RFDeviceViewModelList : ObservableCollection<RFDeviceViewModel>
+    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{RFDeviceViewModel}" />
+    public sealed class RFDeviceViewModelList : ObservableCollection<RFDeviceViewModel>
     {
-    } // end sealed public class RFDeviceViewModelList
+    } // end public sealed class RFDeviceViewModelList
 }

@@ -12,6 +12,7 @@ using GMap.NET.MapProviders;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Dialogs.Scripting;
+using SIGENCEScenarioTool.Dialogs.Settings;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;

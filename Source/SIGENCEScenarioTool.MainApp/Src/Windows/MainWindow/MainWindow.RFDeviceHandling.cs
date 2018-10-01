@@ -15,7 +15,7 @@ using System.Xml.Linq;
 using GMap.NET;
 
 using SIGENCEScenarioTool.Datatypes.Standard;
-using SIGENCEScenarioTool.Dialogs;
+using SIGENCEScenarioTool.Dialogs.QRCode;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;

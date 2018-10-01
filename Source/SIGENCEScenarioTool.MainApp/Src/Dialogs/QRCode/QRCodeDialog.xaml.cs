@@ -1,7 +1,6 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Windows;
 using System.Windows.Media.Imaging;
 
 using QRCoder;
@@ -10,17 +9,17 @@ using SIGENCEScenarioTool.ViewModels;
 
 
 
-namespace SIGENCEScenarioTool.Dialogs
+namespace SIGENCEScenarioTool.Dialogs.QRCode
 {
     /// <summary>
     /// Interaktionslogik für QRCodeDialog.xaml
     /// </summary>
-    public partial class QRCodeDialog : Window
+    public partial class QRCodeDialog
     {
         /// <summary>
         /// The qr generator
         /// </summary>
-        static private readonly QRCodeGenerator qrGenerator = new QRCodeGenerator();
+        private static readonly QRCodeGenerator qrGenerator = new QRCodeGenerator();
 
 
         /// <summary>
@@ -29,14 +28,16 @@ namespace SIGENCEScenarioTool.Dialogs
         /// <value>
         /// The rf device.
         /// </value>
-        private RFDeviceViewModel RFDevice { get; set; }
+        private RFDeviceViewModel RFDevice { get; }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QRCodeDialog" /> class.
         /// </summary>
         /// <param name="rfdefvice">The rfdefvice.</param>
-        public QRCodeDialog(RFDeviceViewModel rfdefvice)
+        public QRCodeDialog( RFDeviceViewModel rfdefvice )
         {
             InitializeComponent();
 
@@ -46,19 +47,21 @@ namespace SIGENCEScenarioTool.Dialogs
             CreateQRCode();
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Creates the qr code.
         /// </summary>
         private void CreateQRCode()
         {
-            string strQRCodeData = new PayloadGenerator.Geolocation(RFDevice.Latitude.ToString(), RFDevice.Longitude.ToString()).ToString();
+            string strQRCodeData = new PayloadGenerator.Geolocation( RFDevice.Latitude.ToString() , RFDevice.Longitude.ToString() ).ToString();
 
-            QRCode qrCode = new QRCode(qrGenerator.CreateQrCode(strQRCodeData, QRCodeGenerator.ECCLevel.Q));
-            Bitmap bmp = qrCode.GetGraphic(5, Color.Black, Color.White, false);
+            QRCoder.QRCode qrCode = new QRCoder.QRCode( qrGenerator.CreateQrCode( strQRCodeData , QRCodeGenerator.ECCLevel.Q ) );
+            Bitmap bmp = qrCode.GetGraphic( 5 , Color.Black , Color.White , false );
 
             MemoryStream ms = new MemoryStream();
-            bmp.Save(ms, ImageFormat.Png);
+            bmp.Save( ms , ImageFormat.Png );
 
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();

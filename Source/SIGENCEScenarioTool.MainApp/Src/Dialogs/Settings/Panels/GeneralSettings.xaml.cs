@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
     /// <summary>
     /// Interaktionslogik für GeneralSettings.xaml
     /// </summary>
-    public partial class GeneralSettings : UserControl, ISettingsControl
+    public partial class GeneralSettings : ISettingsControl
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GeneralSettings"/> class.
@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
         /// <returns></returns>
         public Image GetImage()
         {
-            return (Image)Resources["NUT_AND_BOLT"];
+            return ( Image ) Resources ["NUT_AND_BOLT"];
         }
 
 

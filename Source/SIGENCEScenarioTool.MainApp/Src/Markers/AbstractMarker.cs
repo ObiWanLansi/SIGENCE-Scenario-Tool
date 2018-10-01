@@ -123,8 +123,6 @@ namespace SIGENCEScenarioTool.Markers
                 Stroke = bIsSelected ? Brushes.Blue : Brushes.Black;
                 StrokeThickness = bIsSelected ? 4 : 1;
 
-                //OnSelectionChanged?.Invoke(this, bIsSelected);
-
                 FirePropertyChanged();
             }
         }
@@ -179,19 +177,10 @@ namespace SIGENCEScenarioTool.Markers
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractMarker" /> class.
         /// </summary>
-        public AbstractMarker()
-        {
-        }
-
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AbstractMarker" /> class.
-        /// </summary>
         /// <param name="mcMapControl">The mc map control.</param>
         /// <param name="mmMarker">The mm marker.</param>
         /// <param name="strToolTip">The string tool tip.</param>
-        /// <param name="fDirectionAngle">The f direction angle.</param>
-        public AbstractMarker(GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip)
+        protected AbstractMarker(GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip)
         {
             this.DataContext = this;
             this.mcMapControl = mcMapControl;
@@ -217,12 +206,12 @@ namespace SIGENCEScenarioTool.Markers
 
             Cursor = Cursors.Hand;
 
-            this.MouseMove += new MouseEventHandler(MarkerControl_MouseMove);
-            this.MouseLeftButtonUp += new MouseButtonEventHandler(MarkerControl_MouseLeftButtonUp);
-            this.MouseLeftButtonDown += new MouseButtonEventHandler(MarkerControl_MouseLeftButtonDown);
+            this.MouseMove += MarkerControl_MouseMove;
+            this.MouseLeftButtonUp += MarkerControl_MouseLeftButtonUp;
+            this.MouseLeftButtonDown += MarkerControl_MouseLeftButtonDown;
 
-            this.MouseEnter += new MouseEventHandler(MarkerControl_MouseEnter);
-            this.MouseLeave += new MouseEventHandler(MarkerControl_MouseLeave);
+            this.MouseEnter += MarkerControl_MouseEnter;
+            this.MouseLeave += MarkerControl_MouseLeave;
         }
 
 
