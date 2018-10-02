@@ -238,7 +238,7 @@
             <summary>
             
             </summary>
-            <seealso cref="!:System.Collections.ObjectModel.ObservableCollection&lt;SIGENCEScenarioTool.Models.Database.GeoDb.GeoNode&gt;" />
+            <seealso cref="T:System.Collections.ObjectModel.ObservableCollection`1" />
         </member>
         <member name="M:SIGENCEScenarioTool.Datatypes.Geo.GeoNodeCollection.#ctor">
             <summary>
@@ -385,6 +385,24 @@
               <c>true</c> if this instance is valid; otherwise, <c>false</c>.
             </returns>
             <remarks>This Funktion Is For The Future And Get Currently Not Evaluated Anywhere, So Devired Class Should Throw A NotImplementedException</remarks>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Datatypes.DataTypeBase`1.CompareTo(`0)">
+            <summary>
+            Vergleicht die aktuelle Instanz mit einem anderen Objekt vom selben Typ und gibt eine ganze Zahl zurück, die angibt, ob die aktuelle Instanz in der Sortierreihenfolge vor oder nach dem anderen Objekt oder an derselben Position auftritt.
+            </summary>
+            <param name="other">Ein Objekt, das mit dieser Instanz verglichen werden soll.</param>
+            <returns>
+            Ein Wert, der die relative Reihenfolge der verglichenen Objekte angibt.Der Rückgabewert hat folgende Bedeutung:Wert Bedeutung Kleiner als 0 (null) Diese Instanz befindet sich in der Sortierreihenfolge vor <paramref name="other" />.  Zero Diese Instanz tritt in der Sortierreihenfolge an der gleichen Position wie <paramref name="other" /> auf. Größer als 0 (null) Diese Instanz folgt in der Sortierreihenfolge auf <paramref name="other" />.
+            </returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Datatypes.DataTypeBase`1.Equals(`0)">
+            <summary>
+            Gibt an, ob das aktuelle Objekt gleich einem anderen Objekt des gleichen Typs ist.
+            </summary>
+            <param name="other">Ein Objekt, das mit diesem Objekt verglichen werden soll.</param>
+            <returns>
+            true, wenn das aktuelle Objekt gleich dem <paramref name="other" />-Parameter ist, andernfalls false.
+            </returns>
         </member>
         <member name="T:SIGENCEScenarioTool.Datatypes.Physically.Bandwidth">
             <summary>
@@ -2667,6 +2685,16 @@
             The remark.
             </value>
         </member>
+        <member name="F:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.EmptyId">
+            <summary>
+            The empty identifier
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.Empty">
+            <summary>
+            The empty
+            </summary>
+        </member>
         <member name="M:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType.#ctor(System.Int32,System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:SIGENCEScenarioTool.Models.RxTxTypes.RxTxType"/> class.
@@ -3014,6 +3042,11 @@
         <member name="T:SIGENCEScenarioTool.Tools.Highway">
             <summary>
             
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.Highway.Unknown">
+            <summary>
+            Unbekannter Straßentyp
             </summary>
         </member>
         <member name="F:SIGENCEScenarioTool.Tools.Highway.Motorway">
@@ -3418,6 +3451,43 @@
             </summary>
             <param name="screenshot">The screenshot.</param>
             <param name="strOutputFilename">The string output filename.</param>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Ui.DisplayableEnumeration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Ui.DisplayableEnumeration.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Ui.DisplayableEnumeration.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Ui.DisplayableEnumeration.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Ui.DisplayableEnumeration.GetCollection``1(System.Boolean)">
+            <summary>
+            Gets the collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="bAllSelector">if set to <c>true</c> [b all selector].</param>
+            <returns></returns>
         </member>
     </members>
 </doc>
