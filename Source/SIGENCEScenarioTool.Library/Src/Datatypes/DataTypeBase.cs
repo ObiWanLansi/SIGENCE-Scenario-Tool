@@ -9,22 +9,14 @@ namespace SIGENCEScenarioTool.Datatypes
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    //abstract public class DataTypeBase<T> : IFromStringConverter<T> where T : IComparable<T>, IEquatable<T>
-    abstract public class DataTypeBase<T> where T : IComparable<T>, IEquatable<T>
+    public abstract class DataTypeBase<T> : IComparable<T>, IEquatable<T> where T : IComparable<T>, IEquatable<T>
     {
         /// <summary>
         /// The ci
         /// </summary>
-        static protected readonly CultureInfo CULTUREINFO = new CultureInfo( "en-US" );
+        static protected readonly CultureInfo CULTUREINFO = new CultureInfo("en-US");
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        ///// <summary>
-        ///// The unit
-        ///// </summary>
-        //public PhysicalUnit Unit { get; set; } = PhysicalUnits.Default;
-
-        //public UnitPrefix Prefix { get; set; } = UnitPrefixs.Default;
 
 
         /// <summary>
@@ -33,7 +25,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <value>
         /// The value in it's default SI Einheit.
         /// </value>
-        public T Value { get; set; } = default( T );
+        public T Value { get; set; } = default(T);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -42,7 +34,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// Initializes a new instance of the <see cref="DataTypeBase{T}"/> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public DataTypeBase( T value )
+        public DataTypeBase(T value)
         {
             this.Value = value;
         }
@@ -57,27 +49,12 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator T( DataTypeBase<T> apb )
+        static public implicit operator T(DataTypeBase<T> apb)
         {
             return apb.Value;
         }
 
-
-        ///// <summary>
-        ///// Performs an implicit conversion from <see cref="T"/> to <see cref="DataTypeBase{T}"/>.
-        ///// </summary>
-        ///// <param name="value">The value.</param>
-        ///// <returns>
-        ///// The result of the conversion.
-        ///// </returns>
-        //static public implicit operator DataTypeBase<T>( T value )
-        //{
-        //    return new DataTypeBase<T>( value );
-        //}
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 
         /// <summary>
@@ -89,7 +66,7 @@ namespace SIGENCEScenarioTool.Datatypes
         public override string ToString()
         {
             //return string.Format( ci , "{0}" , this.Value );
-            return Value.ToString();
+            return this.Value.ToString();
         }
 
 
@@ -103,12 +80,30 @@ namespace SIGENCEScenarioTool.Datatypes
         abstract public bool? IsValid();
 
 
-        ///// <summary>
-        ///// Froms the string.
-        ///// </summary>
-        ///// <param name="strValue">The string value.</param>
-        ///// <returns></returns>
-        //abstract public T FromString(string strValue);
+        /// <summary>
+        /// Vergleicht die aktuelle Instanz mit einem anderen Objekt vom selben Typ und gibt eine ganze Zahl zurück, die angibt, ob die aktuelle Instanz in der Sortierreihenfolge vor oder nach dem anderen Objekt oder an derselben Position auftritt.
+        /// </summary>
+        /// <param name="other">Ein Objekt, das mit dieser Instanz verglichen werden soll.</param>
+        /// <returns>
+        /// Ein Wert, der die relative Reihenfolge der verglichenen Objekte angibt.Der Rückgabewert hat folgende Bedeutung:Wert Bedeutung Kleiner als 0 (null) Diese Instanz befindet sich in der Sortierreihenfolge vor <paramref name="other" />.  Zero Diese Instanz tritt in der Sortierreihenfolge an der gleichen Position wie <paramref name="other" /> auf. Größer als 0 (null) Diese Instanz folgt in der Sortierreihenfolge auf <paramref name="other" />.
+        /// </returns>
+        public int CompareTo(T other)
+        {
+            return ((IComparable<T>)this.Value).CompareTo(other);
+        }
 
-    } // end abstract public class DataTypeBase<T>
+
+        /// <summary>
+        /// Gibt an, ob das aktuelle Objekt gleich einem anderen Objekt des gleichen Typs ist.
+        /// </summary>
+        /// <param name="other">Ein Objekt, das mit diesem Objekt verglichen werden soll.</param>
+        /// <returns>
+        /// true, wenn das aktuelle Objekt gleich dem <paramref name="other" />-Parameter ist, andernfalls false.
+        /// </returns>
+        public bool Equals(T other)
+        {
+            return ((IEquatable<T>)this.Value).Equals(other);
+        }
+
+    } // end public abstract class DataTypeBase<T>
 }

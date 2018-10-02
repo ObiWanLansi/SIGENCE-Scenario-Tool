@@ -5,6 +5,7 @@
 <#@ assembly name="EnvDTE" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Xml" #>
 <#@ import namespace="System.Xml.Linq" #>
 <#@ import namespace="System.Text" #>
@@ -195,12 +196,20 @@ namespace SIGENCEScenarioTool.Models
             }
 <#
 
+        List<string> slPrimitiveTypes=new List<string>
+        {
+            "double",
+            "int",
+            "DeviceSource",
+            "AntennaType"
+        };
+
         foreach(XElement e in eRoot.Elements())
         {
             string strPropertyType=e.Attribute("Type").Value;
             string strPropertyName=e.Attribute("Name").Value;
 
-            if(strPropertyType=="MapPoint")
+            if(slPrimitiveTypes.Contains(strPropertyType)==false)
         {
 #>
 
@@ -214,14 +223,14 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (other.<#=strPropertyName#> != null && <#=strPropertyName#> != null && other.<#=strPropertyName#>.IsEqual(<#=strPropertyName#>) == false)
+            if (other.<#=strPropertyName#> != null && <#=strPropertyName#> != null && other.<#=strPropertyName#>.Equals(<#=strPropertyName#>) == false)
             {
                 return false;
             }
 <#
         }
-        else
-        {
+       else
+      {
 #>
 
             if (<#=strPropertyName#> != other.<#=strPropertyName#> )
@@ -231,7 +240,7 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 <#
-        }
+     }
     }
  #>
 

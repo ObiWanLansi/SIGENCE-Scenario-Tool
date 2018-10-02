@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+
 namespace SIGENCEScenarioTool.Datatypes.Geo
 {
     /// <summary>
@@ -12,7 +14,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// Initializes a new instance of the <see cref="Longitude"/> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Longitude( double value ) : base( value )
+        public Longitude(double value) : base(value)
         {
         }
 
@@ -26,9 +28,9 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Longitude( double value )
+        static public implicit operator Longitude(double value)
         {
-            return new Longitude( value );
+            return new Longitude(value);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -42,7 +44,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// </returns>
         public override string ToString()
         {
-            return string.Format( CULTUREINFO , "{0}" , this.Value );
+            return string.Format(CULTUREINFO, "{0}", this.Value);
         }
 
 
@@ -54,7 +56,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// </returns>
         public override bool? IsValid()
         {
-            throw new NotImplementedException( "public override bool? IsValid()" );
+            throw new NotImplementedException("public override bool? IsValid()");
         }
 
     } // end sealed public class Longitude 

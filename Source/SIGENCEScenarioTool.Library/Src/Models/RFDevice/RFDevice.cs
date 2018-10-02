@@ -898,7 +898,17 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (PrimaryKey != other.PrimaryKey )
+            if (other.PrimaryKey == null && PrimaryKey != null)
+            {
+                return false;
+            }
+
+            if (other.PrimaryKey != null && PrimaryKey == null)
+            {
+                return false;
+            }
+
+            if (other.PrimaryKey != null && PrimaryKey != null && other.PrimaryKey.Equals(PrimaryKey) == false)
             {
                 return false;
             }
@@ -918,22 +928,62 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (Name != other.Name )
+            if (other.Name == null && Name != null)
             {
                 return false;
             }
 
-            if (Latitude != other.Latitude )
+            if (other.Name != null && Name == null)
             {
                 return false;
             }
 
-            if (Longitude != other.Longitude )
+            if (other.Name != null && Name != null && other.Name.Equals(Name) == false)
             {
                 return false;
             }
 
-            if (Altitude != other.Altitude )
+            if (other.Latitude == null && Latitude != null)
+            {
+                return false;
+            }
+
+            if (other.Latitude != null && Latitude == null)
+            {
+                return false;
+            }
+
+            if (other.Latitude != null && Latitude != null && other.Latitude.Equals(Latitude) == false)
+            {
+                return false;
+            }
+
+            if (other.Longitude == null && Longitude != null)
+            {
+                return false;
+            }
+
+            if (other.Longitude != null && Longitude == null)
+            {
+                return false;
+            }
+
+            if (other.Longitude != null && Longitude != null && other.Longitude.Equals(Longitude) == false)
+            {
+                return false;
+            }
+
+            if (other.Altitude == null && Altitude != null)
+            {
+                return false;
+            }
+
+            if (other.Altitude != null && Altitude == null)
+            {
+                return false;
+            }
+
+            if (other.Altitude != null && Altitude != null && other.Altitude.Equals(Altitude) == false)
             {
                 return false;
             }
@@ -953,7 +1003,17 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (RxTxType != other.RxTxType )
+            if (other.RxTxType == null && RxTxType != null)
+            {
+                return false;
+            }
+
+            if (other.RxTxType != null && RxTxType == null)
+            {
+                return false;
+            }
+
+            if (other.RxTxType != null && RxTxType != null && other.RxTxType.Equals(RxTxType) == false)
             {
                 return false;
             }
@@ -963,22 +1023,62 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (CenterFrequency_Hz != other.CenterFrequency_Hz )
+            if (other.CenterFrequency_Hz == null && CenterFrequency_Hz != null)
             {
                 return false;
             }
 
-            if (Bandwidth_Hz != other.Bandwidth_Hz )
+            if (other.CenterFrequency_Hz != null && CenterFrequency_Hz == null)
             {
                 return false;
             }
 
-            if (Gain_dB != other.Gain_dB )
+            if (other.CenterFrequency_Hz != null && CenterFrequency_Hz != null && other.CenterFrequency_Hz.Equals(CenterFrequency_Hz) == false)
             {
                 return false;
             }
 
-            if (SignalToNoiseRatio_dB != other.SignalToNoiseRatio_dB )
+            if (other.Bandwidth_Hz == null && Bandwidth_Hz != null)
+            {
+                return false;
+            }
+
+            if (other.Bandwidth_Hz != null && Bandwidth_Hz == null)
+            {
+                return false;
+            }
+
+            if (other.Bandwidth_Hz != null && Bandwidth_Hz != null && other.Bandwidth_Hz.Equals(Bandwidth_Hz) == false)
+            {
+                return false;
+            }
+
+            if (other.Gain_dB == null && Gain_dB != null)
+            {
+                return false;
+            }
+
+            if (other.Gain_dB != null && Gain_dB == null)
+            {
+                return false;
+            }
+
+            if (other.Gain_dB != null && Gain_dB != null && other.Gain_dB.Equals(Gain_dB) == false)
+            {
+                return false;
+            }
+
+            if (other.SignalToNoiseRatio_dB == null && SignalToNoiseRatio_dB != null)
+            {
+                return false;
+            }
+
+            if (other.SignalToNoiseRatio_dB != null && SignalToNoiseRatio_dB == null)
+            {
+                return false;
+            }
+
+            if (other.SignalToNoiseRatio_dB != null && SignalToNoiseRatio_dB != null && other.SignalToNoiseRatio_dB.Equals(SignalToNoiseRatio_dB) == false)
             {
                 return false;
             }
@@ -998,7 +1098,17 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (Remark != other.Remark )
+            if (other.Remark == null && Remark != null)
+            {
+                return false;
+            }
+
+            if (other.Remark != null && Remark == null)
+            {
+                return false;
+            }
+
+            if (other.Remark != null && Remark != null && other.Remark.Equals(Remark) == false)
             {
                 return false;
             }
