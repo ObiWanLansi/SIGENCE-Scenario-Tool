@@ -25,7 +25,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [SIGINT](https://en.wikipedia.org/wiki/Signals_intelligence)
 - [Antenna](https://en.wikipedia.org/wiki/Antenna_(radio))
 - [Radio Spectrum](https://en.wikipedia.org/wiki/Radio_spectrum)
-- [Interesting Book](https://www.amazon.de/dp/389574865X/ref=cm_sw_em_r_mt_dp_U_hT9RBb6GCRYQY)
+- [Interesting Book](https://www.amazon.de/dp/389574865X/ref=cm_sw_em_r_mt_dp_U_hT9RBb6GCRYQY) (German)
 
 ### Tutorials
 - [Git Tutorial](https://www.tutorialspoint.com/git/index.htm)
