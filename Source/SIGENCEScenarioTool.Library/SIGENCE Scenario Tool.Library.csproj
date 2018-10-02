@@ -223,6 +223,7 @@
     <Compile Include="Src\Tools\Speech.cs" />
     <Compile Include="Src\Tools\Tools.cs" />
     <Compile Include="Src\Tools\Windows.cs" />
+    <Compile Include="Src\Ui\DisplayableEnumeration.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

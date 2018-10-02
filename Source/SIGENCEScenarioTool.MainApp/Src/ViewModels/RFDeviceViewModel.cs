@@ -663,24 +663,8 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <exception cref="ArgumentNullException">device</exception>
         public RFDeviceViewModel( GMapControl mcMapControl , RFDevice device )
         {
-            if( mcMapControl == null )
-            {
-                throw new ArgumentNullException( "mcMapControl" );
-            }
-
-            //this.mcMapControl = mcMapControl ?? throw new ArgumentNullException("mcMapControl");
-
-            if( device == null )
-            {
-                throw new ArgumentNullException( "device" );
-            }
-
-            //this.RFDevice = device ?? throw new ArgumentNullException( "device" );
-
-            //-----------------------------------------------------------------
-
-            this.mcMapControl = mcMapControl;
-            this.RFDevice = device;
+            this.mcMapControl = mcMapControl ?? throw new ArgumentNullException( nameof(mcMapControl) );
+            this.RFDevice = device ?? throw new ArgumentNullException( nameof(device) );
 
             //-----------------------------------------------------------------
 
@@ -698,12 +682,29 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
+        /// The sb tooltip
+        /// </summary>
+        private static readonly StringBuilder sbTooltip = new StringBuilder( 512 );
+
+
+        /// <summary>
         /// Gets the tool tip.
         /// </summary>
         /// <returns></returns>
         private string GetToolTip()
         {
-            return string.Format( "- {0} -\n{1} ({2})\n{3,1:00.########}\n{4,1:00.########}" , this.DeviceType , this.RFDevice.Name , this.RFDevice.Id , this.RFDevice.Latitude , this.RFDevice.Longitude );
+            sbTooltip.Clear();
+
+            sbTooltip.AppendLine( "{0} ({1})" , this.DeviceType , this.DeviceSource );
+            sbTooltip.AppendLine( "{0} ({1})" , this.RFDevice.Name , this.RFDevice.Id );
+            sbTooltip.AppendLine( "{0} / {1}" , this.RFDevice.RxTxType, this.RFDevice.AntennaType);
+            sbTooltip.AppendLine( "{0,1:00.########}" , ( double ) this.RFDevice.Latitude );
+            sbTooltip.AppendLine( "{0,1:00.########}" , ( double ) this.RFDevice.Longitude );
+
+            //return string.Format( "- {0} -\n{1} ({2})\n{3,1:00.########}\n{4,1:00.########}" , this.DeviceType , this.RFDevice.Name , this.RFDevice.Id , this.RFDevice.Latitude , this.RFDevice.Longitude );
+            //return $"- {this.DeviceType} -\n{this.RFDevice.Name} ({this.RFDevice.Id})\n{( double ) this.RFDevice.Latitude,1:00.########}\n{( double ) this.RFDevice.Longitude,1:00.########}";
+
+            return sbTooltip.ToString();
         }
 
 
@@ -712,7 +713,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateMarkerTooltip()
         {
-            ( this.Marker.Shape as AbstractMarker ).MarkerToolTip = GetToolTip();
+            ( ( AbstractMarker ) this.Marker.Shape ).MarkerToolTip = GetToolTip();
         }
 
 
@@ -723,8 +724,8 @@ namespace SIGENCEScenarioTool.ViewModels
         {
             if( this.Marker.Shape != null )
             {
-                ( this.Marker.Shape as AbstractMarker ).OnPositionChanged -= Marker_OnPositionChanged;
-                ( this.Marker.Shape as AbstractMarker ).OnSelectionChanged -= Marker_OnSelectionChanged;
+                ( ( AbstractMarker ) this.Marker.Shape ).OnPositionChanged -= Marker_OnPositionChanged;
+                ( ( AbstractMarker ) this.Marker.Shape ).OnSelectionChanged -= Marker_OnSelectionChanged;
 
                 this.Marker.Shape = null;
             }
@@ -779,7 +780,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateSelectionChanged()
         {
-            ( this.Marker.Shape as AbstractMarker ).IsSelected = this.IsSelected;
+            ( ( AbstractMarker ) this.Marker.Shape ).IsSelected = this.IsSelected;
         }
 
 
@@ -797,15 +798,24 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateDirectionAngle()
         {
-            if( this.Marker.Shape is RectangleMarker )
+            if( this.Marker.Shape is RectangleMarker rm )
             {
-                ( this.Marker.Shape as RectangleMarker ).DirectionAngle = this.Yaw;
+                rm.DirectionAngle = this.Yaw;
             }
 
-            if( this.Marker.Shape is TriangleMarker )
+            if( this.Marker.Shape is TriangleMarker tm )
             {
-                ( this.Marker.Shape as TriangleMarker ).DirectionAngle = this.Yaw;
+                tm.DirectionAngle = this.Yaw;
             }
+        }
+
+        /// <summary>
+        /// Determines whether the specified b is filtered is filtered.
+        /// </summary>
+        /// <param name="bIsVisible">if set to <c>true</c> [b is visible].</param>
+        public void SetVisible( bool bIsVisible )
+        {
+            ( ( AbstractMarker ) this.Marker.Shape ).Visibility = bIsVisible ? Visibility.Visible : Visibility.Hidden;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -834,6 +844,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
+        // ReSharper disable once ParameterHidesMember
         private void Marker_OnSelectionChanged( object sender , bool bIsSelected )
         {
             // Hier dürfen wir natürlich nicht über das Property gehen da sonst wieder 

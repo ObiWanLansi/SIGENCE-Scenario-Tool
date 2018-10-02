@@ -36,6 +36,34 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
 
 
         /// <summary>
+        /// The empty identifier
+        /// </summary>
+        public const int EmptyId = -4242;
+
+        ///// <summary>
+        ///// Gets the empty.
+        ///// </summary>
+        ///// <value>
+        ///// The empty.
+        ///// </value>
+        //public static RxTxType Empty
+        //{
+        //    get
+        //    {
+        //        // Return every time a new instance so that if sombody change the values the next one have a right empty isntance.
+        //        return new RxTxType( EmptyId , null , null );
+        //    }
+        //}
+
+
+        /// <summary>
+        /// The empty
+        /// </summary>
+        public static readonly RxTxType Empty = new RxTxType( EmptyId , null , null );
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="RxTxType"/> class.
         /// </summary>
         /// <param name="iValue">The i value.</param>

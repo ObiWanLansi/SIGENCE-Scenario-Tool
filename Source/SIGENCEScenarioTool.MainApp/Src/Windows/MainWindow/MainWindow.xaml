@@ -200,354 +200,402 @@
 
                     <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
-                    <DataGrid x:Name="dgRFDevices" Grid.Row="1" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown" BeginningEdit="DataGrid_BeginningEdit" CellEditEnding="DataGrid_CellEditEnding" SelectionChanged="DataGrid_SelectionChanged" PreviewKeyDown="DataGrid_PreviewKeyDown">
+                    <Grid Grid.Row="1" >
 
-                        <DataGrid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="_Move RFDevice" Icon="{StaticResource MOVE}" IsCheckable="True" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                                <MenuItem Header="_Delete RFDevice" Icon="{StaticResource DELETE}" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
-                                <Separator />
-                                <MenuItem Header="_Copy RFDevice" Icon="{StaticResource COPY}" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
-                                <MenuItem Header="_Paste RFDevice" Icon="{StaticResource PASTE}" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
-                                <Separator />
-                                <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
-                                <MenuItem Header="_QRCode From RFDevice" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.RFDeviceQRCode}" />
-                                <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
-                            </ContextMenu>
-                        </DataGrid.ContextMenu>
+                        <Grid.RowDefinitions>
 
-                        <DataGrid.CommandBindings>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <!--<RowDefinition Height="Auto" />-->
+                        </Grid.RowDefinitions>
 
-                            <CommandBinding Command="{x:Static ApplicationCommands.Copy}" CanExecute="DataGrid_CommandBinding_CanExecute_Copy" Executed="DataGrid_Execute_Copy" />
-                            <CommandBinding Command="{x:Static ApplicationCommands.Paste}" CanExecute="DataGrid_CommandBinding_CanExecute_Paste" Executed="DataGrid_Execute_Paste" />
-                        </DataGrid.CommandBindings>
+                        <ToolBar Grid.Row="0" Margin="5">
 
-                        <DataGrid.Columns>
+                            <Label Content="Filter" FontWeight="Bold"/>
 
-                            <DataGridCheckBoxColumn Header="" Binding="{Binding IsMarked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridCheckBoxColumn.ElementStyle>
-                                    <Style TargetType="CheckBox">
-                                        <Setter Property="HorizontalAlignment" Value="Center" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridCheckBoxColumn.ElementStyle>
-                            </DataGridCheckBoxColumn>
+                            <Separator/>
 
-                            <DataGridTextColumn Header="" Width="10" IsReadOnly="True">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Center" />
-                                        <Setter Property="Margin" Value="5" />
-                                        <Setter Property="Text" Value=" " />
-                                        <Setter Property="Background" Value="{Binding ValidationBackground}" />
-                                        <Setter Property="ToolTip" Value="{Binding ValidationHint}" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                            <CheckBox Content="Receiver" Width="80" IsChecked="{Binding ShowReceiver,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0"/>
+                            <CheckBox Content="Transmitter" Width="80" IsChecked="{Binding ShowTransmitter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black"  Margin="5,0,0,0"/>
 
-                            <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ID}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                        <!--<Setter Property="FontWeight" Value="Bold" />-->
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                            <Label Content="Id" Margin="5,0,0,0"/>
+                            <TextBox Text="{Binding IdFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="80" TextAlignment="Right" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="Black" />
 
-                            <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_STARTTIME}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                            <Label Content="RxTxType" Margin="5,0,0,0" />
+                            <ComboBox x:Name="cbRxTxType"  SelectedItem="{Binding RxTxTypeFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" />
 
-                            <DataGridTextColumn Header="Source" Binding="{Binding DeviceSource}" IsReadOnly="True">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_DEVICESOURCE}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                            <Label Content="AntennaType" Margin="5,0,0,0" ToolTip="This Filter Is Currently Not Yet Implemented!"/>
+                            <ComboBox x:Name="cbAntennaType" Width="120" IsEnabled="False" ToolTip="This Filter Is Currently Not Yet Implemented!"/>
 
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <!--<Setter Property="FontWeight" Value="Bold" />-->
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_NAME}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_LATITUDE}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_LONGITUDE}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ALTITUDE}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Roll" Binding="{Binding Roll,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ROLL}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Pitch" Binding="{Binding Pitch,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_PITCH}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Yaw" Binding="{Binding Yaw,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_YAW}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                            <Separator/>
+                            <Button Content="Reset All Filter" BorderThickness="1" BorderBrush="Black"  Margin="5,0,0,0" Click="Button_ResetAllDeviceFilter_Click"/>
+                        </ToolBar>
 
 
-                            <!--<DataGridComboBoxColumn Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eRxTxType}}">-->
-                            <DataGridComboBoxColumn x:Name="dgcbcRxTxType" Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridComboBoxColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_RXTXTYPE}" />
-                                    </Style>
-                                </DataGridComboBoxColumn.HeaderStyle>
-                                <DataGridComboBoxColumn.ElementStyle>
-                                    <Style TargetType="ComboBox">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridComboBoxColumn.ElementStyle>
-                            </DataGridComboBoxColumn>
+                        <DataGrid x:Name="dgRFDevices" Grid.Row="1" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown" BeginningEdit="DataGrid_BeginningEdit" CellEditEnding="DataGrid_CellEditEnding" SelectionChanged="DataGrid_SelectionChanged" PreviewKeyDown="DataGrid_PreviewKeyDown">
 
-                            <DataGridComboBoxColumn Header="AntennaType" SelectedItemBinding="{Binding AntennaType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eAntennaType}}">
-                                <DataGridComboBoxColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ANTENNATYPE}" />
-                                    </Style>
-                                </DataGridComboBoxColumn.HeaderStyle>
-                                <DataGridComboBoxColumn.ElementStyle>
-                                    <Style TargetType="ComboBox">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridComboBoxColumn.ElementStyle>
-                            </DataGridComboBoxColumn>
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="_Move RFDevice" Icon="{StaticResource MOVE}" IsCheckable="True" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <MenuItem Header="_Delete RFDevice" Icon="{StaticResource DELETE}" Command="{x:Static cmd:RegisteredCommands.DeleteRFDevice}" />
+                                    <Separator />
+                                    <MenuItem Header="_Copy RFDevice" Icon="{StaticResource COPY}" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
+                                    <MenuItem Header="_Paste RFDevice" Icon="{StaticResource PASTE}" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
+                                    <Separator />
+                                    <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
+                                    <MenuItem Header="_QRCode From RFDevice" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.RFDeviceQRCode}" />
+                                    <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
 
-                            <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_CENTERFREQUENCY_HZ}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                            <DataGrid.CommandBindings>
 
-                            <DataGridTextColumn Header="Bandwidth" Binding="{Binding Bandwidth,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_BANDWIDTH_HZ}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                                <CommandBinding Command="{x:Static ApplicationCommands.Copy}" CanExecute="DataGrid_CommandBinding_CanExecute_Copy" Executed="DataGrid_Execute_Copy" />
+                                <CommandBinding Command="{x:Static ApplicationCommands.Paste}" CanExecute="DataGrid_CommandBinding_CanExecute_Paste" Executed="DataGrid_Execute_Paste" />
+                            </DataGrid.CommandBindings>
 
-                            <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_GAIN_DB}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                            <DataGrid.Columns>
 
-                            <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_SIGNALTONOISERATIO_DB}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                                <DataGridCheckBoxColumn Header="" Binding="{Binding IsMarked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridCheckBoxColumn.ElementStyle>
+                                        <Style TargetType="CheckBox">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridCheckBoxColumn.ElementStyle>
+                                </DataGridCheckBoxColumn>
 
-                            <DataGridTextColumn Header="XPos" Binding="{Binding XPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_XPOS}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                                <DataGridTextColumn Header="" Width="10" IsReadOnly="True">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                            <Setter Property="Margin" Value="5" />
+                                            <Setter Property="Text" Value=" " />
+                                            <Setter Property="Background" Value="{Binding ValidationBackground}" />
+                                            <Setter Property="ToolTip" Value="{Binding ValidationHint}" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="YPos" Binding="{Binding YPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_YPOS}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                                <DataGridTextColumn Header="Type" Binding="{Binding DeviceType}">
+                                    <!--<DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>-->
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <!--<Setter Property="HorizontalAlignment" Value="Center" />-->
+                                            <Setter Property="Margin" Value="5" />
+                                            <!--<Setter Property="FontWeight" Value="Bold" />-->
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="ZPos" Binding="{Binding ZPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="FontWeight" Value="Bold" />
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ZPOS}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ID}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                            <!--<Setter Property="FontWeight" Value="Bold" />-->
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
 
-                            <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_REMARK}" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
+                                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_STARTTIME}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
 
-                        </DataGrid.Columns>
-                    </DataGrid>
+                                <DataGridTextColumn Header="Source" Binding="{Binding DeviceSource}" IsReadOnly="True">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_DEVICESOURCE}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <!--<Setter Property="FontWeight" Value="Bold" />-->
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_NAME}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_LATITUDE}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_LONGITUDE}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ALTITUDE}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Roll" Binding="{Binding Roll,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ROLL}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Pitch" Binding="{Binding Pitch,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_PITCH}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Yaw" Binding="{Binding Yaw,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_YAW}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+
+                                <!--<DataGridComboBoxColumn Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eRxTxType}}">-->
+                                <DataGridComboBoxColumn x:Name="dgcbcRxTxType" Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridComboBoxColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_RXTXTYPE}" />
+                                        </Style>
+                                    </DataGridComboBoxColumn.HeaderStyle>
+                                    <DataGridComboBoxColumn.ElementStyle>
+                                        <Style TargetType="ComboBox">
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridComboBoxColumn.ElementStyle>
+                                </DataGridComboBoxColumn>
+
+                                <DataGridComboBoxColumn x:Name="dgcbcAntennaType" Header="AntennaType" SelectedItemBinding="{Binding AntennaType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eAntennaType}}">
+                                    <DataGridComboBoxColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ANTENNATYPE}" />
+                                        </Style>
+                                    </DataGridComboBoxColumn.HeaderStyle>
+                                    <DataGridComboBoxColumn.ElementStyle>
+                                        <Style TargetType="ComboBox">
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridComboBoxColumn.ElementStyle>
+                                </DataGridComboBoxColumn>
+
+                                <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_CENTERFREQUENCY_HZ}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Bandwidth" Binding="{Binding Bandwidth,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_BANDWIDTH_HZ}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_GAIN_DB}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_SIGNALTONOISERATIO_DB}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="XPos" Binding="{Binding XPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_XPOS}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="YPos" Binding="{Binding YPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_YPOS}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="ZPos" Binding="{Binding ZPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_ZPOS}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_REMARK}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
 
                     <GridSplitter Grid.Row="1" Background="Blue" Height="2" ShowsPreview="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
                 </Grid>
@@ -939,7 +987,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="QuickCommander:" />
                     <!--<TextBox Width="240" VerticalContentAlignment="Center" />-->
-                    <ComboBox x:Name="cbQuickCommand" ItemsSource="{Binding QuickCommands}" Width="180" IsEditable="True" VerticalContentAlignment="Center" KeyDown="ComboBox_KeyDown" />
+                    <ComboBox x:Name="cbQuickCommand" ItemsSource="{Binding QuickCommands}" Width="180" IsEditable="True" VerticalContentAlignment="Center" KeyDown="ComboBox_QuickCommand_KeyDown" />
                 </StackPanel>
             </StatusBarItem>
         </StatusBar>

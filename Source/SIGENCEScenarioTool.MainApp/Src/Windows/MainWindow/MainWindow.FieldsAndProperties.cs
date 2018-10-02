@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 // ReSharper disable MemberCanBePrivate.Global
@@ -553,8 +554,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The LCV
         /// </summary>
-        private readonly ListCollectionView lcv = null;
-
+        private readonly ListCollectionView lcvGeoNodes = null;
 
         /// <summary>
         /// Gets the current nodes.
@@ -564,11 +564,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public int CurrentNodes
         {
-            get { return lcv?.Count ?? 0; }
+            get { return lcvGeoNodes?.Count ?? 0; }
         }
 
-        //-----------------------------
+        //---------------------------------------------------------------------
 
+        #region GeoNodeFilter
 
         /// <summary>
         /// The gt filter
@@ -588,7 +589,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.gtGeoTagFilter = value;
 
-                this.lcv.Refresh();
+                this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
                 FirePropertyChanged( "CurrentNodes" );
@@ -614,7 +615,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.bUseGeoTagFilter = value;
 
-                this.lcv.Refresh();
+                this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
                 FirePropertyChanged( "CurrentNodes" );
@@ -640,7 +641,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.strNameFilter = value;
 
-                this.lcv.Refresh();
+                this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
                 FirePropertyChanged( "CurrentNodes" );
@@ -665,12 +666,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.bUseNameFilter = value;
 
-                this.lcv.Refresh();
+                this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
                 FirePropertyChanged( "CurrentNodes" );
             }
         }
+
+        #endregion
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -711,6 +714,131 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        #region RFDevice Filter
+
+        /// <summary>
+        /// The LCV
+        /// </summary>
+        private readonly ListCollectionView lcvRFDevices = null;
+
+        /// <summary>
+        /// The i identifier filter
+        /// </summary>
+        private int? iIdFilter = null;
+
+        /// <summary>
+        /// Gets or sets the identifier filter.
+        /// </summary>
+        /// <value>
+        /// The identifier filter.
+        /// </value>
+        /// <remarks>We use a string so that we can provide a empty a string as integer NULL ...</remarks>
+        public string IdFilter
+        {
+            get { return iIdFilter != null ? iIdFilter.ToString() : ""; }
+            set
+            {
+                if( string.IsNullOrEmpty( value ) )
+                {
+                    iIdFilter = null;
+                }
+                else
+                {
+                    try
+                    {
+
+                        iIdFilter = int.Parse( value );
+                    }
+                    catch( Exception )
+                    {
+                        iIdFilter = null;
+                    }
+                }
+
+                this.lcvRFDevices.Refresh();
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// The b show receiver
+        /// </summary>
+        private bool bShowReceiver = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [show receiver].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [show receiver]; otherwise, <c>false</c>.
+        /// </value>
+        public bool ShowReceiver
+        {
+            get { return bShowReceiver; }
+            set
+            {
+                bShowReceiver = value;
+
+                this.lcvRFDevices.Refresh();
+
+                FirePropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// The b show transmitter
+        /// </summary>
+        private bool bShowTransmitter = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [show transmitter].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [show transmitter]; otherwise, <c>false</c>.
+        /// </value>
+        public bool ShowTransmitter
+        {
+            get { return bShowTransmitter; }
+            set
+            {
+                bShowTransmitter = value;
+
+                this.lcvRFDevices.Refresh();
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// The RTT rx tx type filter
+        /// </summary>
+        private RxTxType rttRxTxTypeFilter = RxTxType.Empty;
+
+        /// <summary>
+        /// Gets or sets the rx tx type filter.
+        /// </summary>
+        /// <value>
+        /// The rx tx type filter.
+        /// </value>
+        public RxTxType RxTxTypeFilter
+        {
+            get { return rttRxTxTypeFilter; }
+            set
+            {
+                rttRxTxTypeFilter = value;
+
+                this.lcvRFDevices.Refresh();
+
+                FirePropertyChanged();
+            }
+        }
+        #endregion
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// The quick commands

@@ -10,11 +10,11 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
-using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Dialogs.Scripting;
 using SIGENCEScenarioTool.Dialogs.Settings;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -329,6 +329,83 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Resets all device filter.
+        /// </summary>
+        private void ResetAllDeviceFilter()
+        {
+            // Hier werden die Felder gesetzt damit die Liste nicht jedesmal aktualisiert wird was wei den Properties passieren würde ...
+
+            iIdFilter = null;
+            bShowTransmitter = true;
+            bShowReceiver = true;
+            rttRxTxTypeFilter = RxTxType.Empty;
+
+            // Jetzt nur einmal die Liste aktualisieren ...
+            this.lcvRFDevices.Refresh();
+
+            // Damit sich die UI jetzt natürlich den geänderten Werten wieder anpasst müssen wir allerdings die Events noch feuern ...
+
+            // ReSharper disable ExplicitCallerInfoArgument
+            FirePropertyChanged( "IdFilter" );
+            FirePropertyChanged( "ShowReceiver" );
+            FirePropertyChanged( "ShowTransmitter" );
+            FirePropertyChanged( "RxTxTypeFilter" );
+            // ReSharper restore ExplicitCallerInfoArgument
+        }
+
+
+        /// <summary>
+        /// Determines whether [is wanted rf device] [the specified object].
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>
+        ///   <c>true</c> if [is wanted rf device] [the specified object]; otherwise, <c>false</c>.
+        /// </returns>
+        private bool IsWantedRFDevice( object obj )
+        {
+            if( obj == null || obj is RFDeviceViewModel == false )
+            {
+                return false;
+            }
+
+            RFDeviceViewModel device = ( RFDeviceViewModel ) obj;
+
+            device.SetVisible( false );
+
+            if( iIdFilter != null )
+            {
+                if( device.Id != iIdFilter )
+                {
+                    return false;
+                }
+            }
+
+            if( ShowReceiver == false && device.DeviceType == DeviceType.Receiver )
+            {
+                return false;
+            }
+
+            if( ShowTransmitter == false && device.DeviceType == DeviceType.Transmitter )
+            {
+                return false;
+            }
+
+            if( rttRxTxTypeFilter != null && rttRxTxTypeFilter.Value != RxTxType.EmptyId )
+            {
+                // Wir müssen auf den Namen vergleichen da die ID mehrfach vorkommen kann (je nachdem ob Transmitter oder Receiver).
+                if( rttRxTxTypeFilter.Name != device.RxTxType.Name )
+                {
+                    return false;
+                }
+            }
+
+            device.SetVisible( true );
+
+            return true;
+        }
+
+
+        /// <summary>
         /// Determines whether [is wanted geo node] [the specified object].
         /// </summary>
         /// <param name="obj">The object.</param>
@@ -342,7 +419,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return false;
             }
 
-            GeoNode gn = obj as GeoNode;
+            GeoNode gn = ( GeoNode ) obj;
 
             if( this.UseGeoTagFilter == true )
             {

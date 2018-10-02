@@ -16,7 +16,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    sealed public class GeoNode
+    public sealed class GeoNode
     {
 
         /// <summary>
@@ -101,8 +101,8 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{SIGENCEScenarioTool.Models.Database.GeoDb.GeoNode}" />
-    sealed public class GeoNodeCollection : ObservableCollection<GeoNode>
+    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{GeoNode}" />
+    public sealed class GeoNodeCollection : ObservableCollection<GeoNode>
     {
         #region If We Want To Have The Instance As Singelton Object
 
@@ -150,11 +150,11 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// <returns></returns>
         /// <exception cref="ArgumentException">The parameter should not be empty! - strDatabaseFilename</exception>
         /// <exception cref="FileNotFoundException">The database can't not be found!</exception>
-        static public GeoNodeCollection GetCollection( string strDatabaseFilename , GeoTag? geotag = null )
+        public static GeoNodeCollection GetCollection( string strDatabaseFilename , GeoTag? geotag = null )
         {
             if( string.IsNullOrEmpty( strDatabaseFilename ) )
             {
-                throw new ArgumentException( "The parameter should not be empty!" , "strDatabaseFilename" );
+                throw new ArgumentException( "The parameter should not be empty!" , nameof(strDatabaseFilename) );
             }
 
             if( File.Exists( strDatabaseFilename ) == false )
@@ -180,7 +180,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
                     if( geotag != null )
                     {
-                        strSelectStatement += string.Format( " where tag='{0}'" , geotag.ToString().ToLower() );
+                        strSelectStatement += $" where tag='{geotag.ToString().ToLower()}'";
                     }
 
                     using( SQLiteCommand dbSelectCommand = new SQLiteCommand( strSelectStatement , dbConnection ) )
@@ -203,10 +203,6 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
                             }
                         }
                     }
-                }
-                catch( Exception )
-                {
-                    throw;
                 }
                 finally
                 {

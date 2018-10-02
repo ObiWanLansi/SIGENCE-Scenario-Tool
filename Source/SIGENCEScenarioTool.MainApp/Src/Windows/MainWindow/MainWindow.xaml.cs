@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Windows;
 using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
+using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Tools;
+using SIGENCEScenarioTool.Ui;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -16,7 +18,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : INotifyPropertyChanged
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
@@ -80,6 +82,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
+            this.lcvRFDevices= CollectionViewSource.GetDefaultView( this.RFDevicesCollection) as ListCollectionView;
+
+            if( this.lcvRFDevices != null )
+            {
+                this.lcvRFDevices.IsLiveFiltering = true;
+                this.lcvRFDevices.Filter = IsWantedRFDevice;
+            }
+
+            //-----------------------------------------------------------------
+
             try
             {
                 string strFilename = $"{Tool.StartupPath}\\tuebingen-regbez-latest.osm.sqlite";
@@ -90,17 +102,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 MB.Error( ex );
             }
 
-            this.lcv = CollectionViewSource.GetDefaultView( this.GeoNodes ) as ListCollectionView;
+            this.lcvGeoNodes = CollectionViewSource.GetDefaultView( this.GeoNodes ) as ListCollectionView;
 
-            if( this.lcv != null )
+            if( this.lcvGeoNodes != null )
             {
-                this.lcv.IsLiveFiltering = true;
-                this.lcv.Filter = IsWantedGeoNode;
+                this.lcvGeoNodes.IsLiveFiltering = true;
+                this.lcvGeoNodes.Filter = IsWantedGeoNode;
             }
 
             //-----------------------------------------------------------------
 
             this.dgcbcRxTxType.ItemsSource = RxTxTypes.Values;
+
+            List<RxTxType> lRxTxTypes = new List<RxTxType> { RxTxType.Empty };
+            lRxTxTypes.AddRange( RxTxTypes.Values );
+            this.cbRxTxType.ItemsSource = lRxTxTypes;
+
+            this.cbAntennaType.ItemsSource = DisplayableEnumeration.GetCollection<AntennaType>();
 
             //-----------------------------------------------------------------
 
