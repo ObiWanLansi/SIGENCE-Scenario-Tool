@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
@@ -18,7 +19,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : INotifyPropertyChanged
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
@@ -29,34 +30,34 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if( this.settings.IsUpgraded == false )
+            if (this.settings.IsUpgraded == false)
             {
                 this.settings.Upgrade();
                 this.settings.IsUpgraded = true;
                 this.settings.Save();
             }
 
-            if( string.IsNullOrEmpty( this.settings.UDPHost ) )
+            if (string.IsNullOrEmpty(this.settings.UDPHost))
             {
-                MB.Warning( "The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application.");
                 this.settings.UDPHost = "127.0.0.1";
             }
 
-            if( this.settings.UDPPortSending < 1025 || this.settings.UDPPortSending > 65535 )
+            if (this.settings.UDPPortSending < 1025 || this.settings.UDPPortSending > 65535)
             {
-                MB.Warning( "The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application.");
                 this.settings.UDPPortSending = 4242;
             }
 
-            if( this.settings.UDPDelay < 0 || this.settings.UDPDelay > 10000 )
+            if (this.settings.UDPDelay < 0 || this.settings.UDPDelay > 10000)
             {
-                MB.Warning( "The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application.");
                 this.settings.UDPDelay = 500;
             }
 
-            if( this.settings.MapZoomLevel < 1 || this.settings.MapZoomLevel > 20 )
+            if (this.settings.MapZoomLevel < 1 || this.settings.MapZoomLevel > 20)
             {
-                MB.Warning( "The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application.");
                 this.settings.MapZoomLevel = 18;
             }
 
@@ -82,9 +83,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            this.lcvRFDevices= CollectionViewSource.GetDefaultView( this.RFDevicesCollection) as ListCollectionView;
+            this.lcvRFDevices = CollectionViewSource.GetDefaultView(this.RFDevicesCollection) as ListCollectionView;
 
-            if( this.lcvRFDevices != null )
+            if (this.lcvRFDevices != null)
             {
                 this.lcvRFDevices.IsLiveFiltering = true;
                 this.lcvRFDevices.Filter = IsWantedRFDevice;
@@ -95,16 +96,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             try
             {
                 string strFilename = $"{Tool.StartupPath}\\tuebingen-regbez-latest.osm.sqlite";
-                this.GeoNodes = GeoNodeCollection.GetCollection( strFilename );
+                this.GeoNodes = GeoNodeCollection.GetCollection(strFilename);
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
 
-            this.lcvGeoNodes = CollectionViewSource.GetDefaultView( this.GeoNodes ) as ListCollectionView;
+            this.lcvGeoNodes = CollectionViewSource.GetDefaultView(this.GeoNodes) as ListCollectionView;
 
-            if( this.lcvGeoNodes != null )
+            if (this.lcvGeoNodes != null)
             {
                 this.lcvGeoNodes.IsLiveFiltering = true;
                 this.lcvGeoNodes.Filter = IsWantedGeoNode;
@@ -115,7 +116,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.dgcbcRxTxType.ItemsSource = RxTxTypes.Values;
 
             List<RxTxType> lRxTxTypes = new List<RxTxType> { RxTxType.Empty };
-            lRxTxTypes.AddRange( RxTxTypes.Values );
+            lRxTxTypes.AddRange(RxTxTypes.Values);
             this.cbRxTxType.ItemsSource = lRxTxTypes;
 
             this.cbAntennaType.ItemsSource = DisplayableEnumeration.GetCollection<AntennaType>();
@@ -123,7 +124,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
-            CreateRandomizedRFDevices( 100 , true );
+            CreateRandomizedRFDevices(100, true);
 
             //AddRFDevice(new RFDevice { PrimaryKey = Guid.Empty, Id = -1, Latitude = 1974, Longitude = 1974, StartTime = -1974 });
 
@@ -161,14 +162,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            this.QuickCommands.Add( "new" );
-            this.QuickCommands.Add( "rand 20" );
-            this.QuickCommands.Add( "export csv" );
-            this.QuickCommands.Add( "set rxtxtype unknown" );
-            this.QuickCommands.Add( "set name nasenbär" );
-            this.QuickCommands.Add( "remove" );
-            this.QuickCommands.Add( "save" );
-            this.QuickCommands.Add( "exit" );
+            this.QuickCommands.Add("new");
+            this.QuickCommands.Add("rand 20");
+            this.QuickCommands.Add("export csv");
+            this.QuickCommands.Add("set rxtxtype unknown");
+            this.QuickCommands.Add("set name nasenbär");
+            this.QuickCommands.Add("remove");
+            this.QuickCommands.Add("save");
+            this.QuickCommands.Add("exit");
 
             //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 

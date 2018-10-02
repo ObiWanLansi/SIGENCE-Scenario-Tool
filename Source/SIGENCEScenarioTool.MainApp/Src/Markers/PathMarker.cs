@@ -7,8 +7,10 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
+
 using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.Markers
@@ -37,10 +39,10 @@ namespace SIGENCEScenarioTool.Markers
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
             //PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
-            OnPropertyChanged( new PropertyChangedEventArgs( strPropertyName ) );
+            OnPropertyChanged(new PropertyChangedEventArgs(strPropertyName));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -51,7 +53,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
-        public delegate void SelectionChangedHandler( object sender , bool bIsSelected );
+        public delegate void SelectionChangedHandler(object sender, bool bIsSelected);
 
         /// <summary>
         /// Occurs when [on selection changed].
@@ -82,16 +84,16 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public bool IsSelected
         {
-            get { return bIsSelected; }
+            get { return this.bIsSelected; }
             set
             {
-                bIsSelected = value;
+                this.bIsSelected = value;
 
-                if( bIsSelected )
+                if (this.bIsSelected)
                 {
-                    if( this.Shape is Path path )
+                    if (this.Shape is Path path)
                     {
-                        path.Stroke = new SolidColorBrush( Colors.Blue );
+                        path.Stroke = new SolidColorBrush(Colors.Blue);
                         path.StrokeThickness = 7;
                     }
                 }
@@ -114,33 +116,33 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="points">The points.</param>
         /// <param name="h">The h.</param>
         /// <param name="strToolTip">The string tool tip.</param>
-        public PathMarker( GMapControl mcMapControl , IEnumerable<PointLatLng> points , Highway h , string strToolTip ) :
-            base( points )
+        public PathMarker(GMapControl mcMapControl, IEnumerable<PointLatLng> points, Highway h, string strToolTip) :
+            base(points)
         {
             this.mcMapControl = mcMapControl;
             this.hType = h;
 
             Label label = new Label
             {
-                Background = Brushes.Yellow ,
-                Foreground = Brushes.Black ,
-                BorderBrush = Brushes.Black ,
-                BorderThickness = new Thickness( 2 ) ,
-                Padding = new Thickness( 3 ) ,
-                FontSize = 14 ,
-                FontFamily = new FontFamily( "Courier New" ) ,
+                Background = Brushes.Yellow,
+                Foreground = Brushes.Black,
+                BorderBrush = Brushes.Black,
+                BorderThickness = new Thickness(2),
+                Padding = new Thickness(3),
+                FontSize = 14,
+                FontFamily = new FontFamily("Courier New"),
                 Content = strToolTip
             };
 
-            popup = new Popup
+            this.popup = new Popup
             {
-                Placement = PlacementMode.Mouse ,
+                Placement = PlacementMode.Mouse,
                 Child = label
             };
 
-            this.RegenerateShape( mcMapControl );
+            RegenerateShape(mcMapControl);
 
-            if( this.Shape is Path path )
+            if (this.Shape is Path path)
             {
                 path.IsHitTestVisible = true;
                 path.Cursor = Cursors.Cross;
@@ -163,37 +165,46 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         private void SyncHighwayType()
         {
-            if( !( this.Shape is Path path ) )
+            if (!(this.Shape is Path path))
             {
                 return;
             }
 
-            switch( hType )
+            switch (this.hType)
             {
                 case Highway.Motorway:
                 case Highway.Motorway_Link:
-                    path.Stroke = new SolidColorBrush( Colors.Red );
+                    path.Stroke = new SolidColorBrush(Colors.Red);
                     path.StrokeThickness = 5;
                     break;
 
                 case Highway.Trunk:
                 case Highway.Trunk_Link:
-                    path.Stroke = new SolidColorBrush( Colors.Orange );
+                    path.Stroke = new SolidColorBrush(Colors.Orange);
                     path.StrokeThickness = 4;
                     break;
 
                 case Highway.Primary:
                 case Highway.Primary_Link:
-                    path.Stroke = new SolidColorBrush( Colors.Yellow );
+                    path.Stroke = new SolidColorBrush(Colors.Yellow);
                     path.StrokeThickness = 3;
                     break;
 
                 case Highway.Secondary:
                 case Highway.Secondary_Link:
-                    path.Stroke = new SolidColorBrush( Colors.Black );
+                    path.Stroke = new SolidColorBrush(Colors.Black);
                     path.StrokeThickness = 2;
                     break;
 
+                //case Highway.Residential:
+                //    path.Stroke = new SolidColorBrush(Colors.Black);
+                //    path.StrokeThickness = 1;
+                //    break;
+
+                default:
+                    path.Stroke = new SolidColorBrush(Colors.DarkGray);
+                    path.StrokeThickness = 1;
+                    break;
             }
         }
 
@@ -205,21 +216,21 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseLeftButtonDown( object sender , MouseButtonEventArgs e )
+        private void MarkerControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if( mcMapControl.DragButton == MouseButton.Left )
+            if (this.mcMapControl.DragButton == MouseButton.Left)
             {
-                IsSelected = !IsSelected;
+                this.IsSelected = !this.IsSelected;
 
-                OnSelectionChanged?.Invoke( this , bIsSelected );
+                OnSelectionChanged?.Invoke(this, this.bIsSelected);
 
                 e.Handled = true;
                 return;
             }
 
-            if( !this.Shape.IsMouseCaptured )
+            if (!this.Shape.IsMouseCaptured)
             {
-                Mouse.Capture( this.Shape );
+                Mouse.Capture(this.Shape);
                 e.Handled = true;
             }
         }
@@ -230,11 +241,11 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseLeftButtonUp( object sender , MouseButtonEventArgs e )
+        private void MarkerControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if( this.Shape.IsMouseCaptured )
+            if (this.Shape.IsMouseCaptured)
             {
-                Mouse.Capture( null );
+                Mouse.Capture(null);
 
                 e.Handled = true;
             }
@@ -248,10 +259,10 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseLeave( object sender , MouseEventArgs e )
+        private void MarkerControl_MouseLeave(object sender, MouseEventArgs e)
         {
-            ZIndex -= 10000;
-            popup.IsOpen = false;
+            this.ZIndex -= 10000;
+            this.popup.IsOpen = false;
 
             e.Handled = true;
         }
@@ -262,10 +273,10 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseEnter( object sender , MouseEventArgs e )
+        private void MarkerControl_MouseEnter(object sender, MouseEventArgs e)
         {
-            ZIndex += 10000;
-            popup.IsOpen = true;
+            this.ZIndex += 10000;
+            this.popup.IsOpen = true;
 
             e.Handled = true;
         }

@@ -72,6 +72,10 @@ namespace SIGENCEScenarioTool.Tools
     /// </summary>
     public enum Highway : byte
     {
+        /// <summary>
+        /// Unbekannter Straßentyp
+        /// </summary>
+        Unknown,
 
         /// <summary>
         /// Autobahn

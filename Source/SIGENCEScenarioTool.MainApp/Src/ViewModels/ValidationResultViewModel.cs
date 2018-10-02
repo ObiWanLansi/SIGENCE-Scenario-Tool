@@ -38,7 +38,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string Timestamp
         {
-            get { return Result.Timestamp.Fmt_DD_MM_YYYY_HH_MM_SS(); }
+            get { return this.Result.Timestamp.Fmt_DD_MM_YYYY_HH_MM_SS(); }
         }
 
 
@@ -50,7 +50,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public Servity Servity
         {
-            get { return Result.Servity; }
+            get { return this.Result.Servity; }
         }
 
 
@@ -62,7 +62,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string Message
         {
-            get { return Result.Message; }
+            get { return this.Result.Message; }
         }
 
 
@@ -74,7 +74,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string Source
         {
-            get { return Result.Source != null ? Result.Source.ToString() : "Unknown Source."; }
+            get { return this.Result.Source != null ? this.Result.Source.ToString() : "Unknown Source."; }
         }
 
 
@@ -86,7 +86,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string PropertyName
         {
-            get { return Result.PropertyName; }
+            get { return this.Result.PropertyName; }
         }
 
 
@@ -96,7 +96,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <value>
         /// The value.
         /// </value>
-        public object Value { get { return Result.Value; } }
+        public object Value { get { return this.Result.Value; } }
 
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace SIGENCEScenarioTool.ViewModels
         {
             get
             {
-                switch (Servity)
+                switch (this.Servity)
                 {
                     case Servity.Information:
                         return Brushes.Blue;
@@ -137,7 +137,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public FontWeight ServityFontWeight
         {
-            get { return Servity == Servity.Fatal ? FontWeights.Bold : FontWeights.Normal; }
+            get { return this.Servity == Servity.Fatal ? FontWeights.Bold : FontWeights.Normal; }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -149,7 +149,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <param name="vr">The vr.</param>
         public ValidationResultViewModel(ValidationResult vr)
         {
-            Result = vr;
+            this.Result = vr;
         }
 
     } // end sealed public class ValidationResultViewModel
@@ -208,10 +208,10 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Information
         {
-            get { return iInformation; }
+            get { return this.iInformation; }
             set
             {
-                iInformation = value;
+                this.iInformation = value;
                 FirePropertyChanged();
             }
         }
@@ -228,10 +228,10 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Warning
         {
-            get { return iWarning; }
+            get { return this.iWarning; }
             set
             {
-                iWarning = value;
+                this.iWarning = value;
                 FirePropertyChanged();
             }
         }
@@ -249,10 +249,10 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Error
         {
-            get { return iError; }
+            get { return this.iError; }
             set
             {
-                iError = value;
+                this.iError = value;
                 FirePropertyChanged();
             }
         }
@@ -270,10 +270,10 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Fatal
         {
-            get { return iFatal; }
+            get { return this.iFatal; }
             set
             {
-                iFatal = value;
+                this.iFatal = value;
                 FirePropertyChanged();
             }
         }
@@ -288,10 +288,10 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         public new int Count
         {
-            get { return iCount; }
+            get { return this.iCount; }
             set
             {
-                iCount = value;
+                this.iCount = value;
                 FirePropertyChanged();
             }
         }
@@ -309,10 +309,10 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string LastRun
         {
-            get { return strLastRun; }
+            get { return this.strLastRun; }
             set
             {
-                strLastRun = value;
+                this.strLastRun = value;
                 FirePropertyChanged();
             }
         }
@@ -347,13 +347,13 @@ namespace SIGENCEScenarioTool.ViewModels
         {
             base.Clear();
 
-            Count = 0;
-            Information = 0;
-            Warning = 0;
-            Error = 0;
-            Fatal = 0;
+            this.Count = 0;
+            this.Information = 0;
+            this.Warning = 0;
+            this.Error = 0;
+            this.Fatal = 0;
 
-            LastRun = "-";
+            this.LastRun = "-";
         }
 
 
@@ -362,13 +362,13 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         public void EstimateCounts()
         {
-            Count = base.Count;
-            Information = this.Count(vrvm => vrvm.Servity == Servity.Information);
-            Warning = this.Count(vrvm => vrvm.Servity == Servity.Warning);
-            Error = this.Count(vrvm => vrvm.Servity == Servity.Error);
-            Fatal = this.Count(vrvm => vrvm.Servity == Servity.Fatal);
+            this.Count = base.Count;
+            this.Information = this.Count(vrvm => vrvm.Servity == Servity.Information);
+            this.Warning = this.Count(vrvm => vrvm.Servity == Servity.Warning);
+            this.Error = this.Count(vrvm => vrvm.Servity == Servity.Error);
+            this.Fatal = this.Count(vrvm => vrvm.Servity == Servity.Fatal);
 
-            LastRun = DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS();
+            this.LastRun = DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS();
         }
 
     } // end sealed public class ValidationResultViewModelList

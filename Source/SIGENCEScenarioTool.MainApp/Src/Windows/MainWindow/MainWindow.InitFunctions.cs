@@ -21,292 +21,292 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitCommands()
         {
-            this.CommandBindings.Add( new CommandBinding( ApplicationCommands.New ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.New,
+                (sender, e) =>
                 {
                     NewFile();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( ApplicationCommands.Open ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.Open,
+                (sender, e) =>
                 {
                     LoadFile();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( ApplicationCommands.Save ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.Save,
+                (sender, e) =>
                 {
                     SaveFile();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( ApplicationCommands.SaveAs ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.SaveAs,
+                (sender, e) =>
                 {
                     SaveAsFile();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( ApplicationCommands.Close ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.Close,
+                (sender, e) =>
                 {
                     Close();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
             //---------------------------------------------------------------------
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.OpenCheatSheet ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenCheatSheet,
+                (sender, e) =>
                 {
                     OpenCheatSheet();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
             //---------------------------------------------------------------------
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.CreateRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateRFDevice,
+                (sender, e) =>
                 {
                     BeginCreateRFDevice();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.DeleteRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.DeleteRFDevice,
+                (sender, e) =>
                 {
                     //DeleteRFDevice();
                     DeleteRFDevices();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.MoveRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.MoveRFDevice,
+                (sender, e) =>
                 {
                     this.IsDeviceMovingMode = !this.IsDeviceMovingMode;
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.CopyRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.CopyRFDevice,
+                (sender, e) =>
                 {
                     CopyRFDevice();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.PasteRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.PasteRFDevice,
+                (sender, e) =>
                 {
                     PasteRFDevice();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ExportRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ExportRFDevice,
+                (sender, e) =>
                 {
                     ExportRFDevices();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ImportRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ImportRFDevice,
+                (sender, e) =>
                 {
                     ImportRFDevices();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ZoomToRFDevice ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ZoomToRFDevice,
+                (sender, e) =>
                 {
                     ZoomToRFDevice();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.RFDeviceQRCode ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.RFDeviceQRCode,
+                (sender, e) =>
                 {
                     RFDeviceQRCode();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ToggleDALF ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ToggleDALF,
+                (sender, e) =>
                 {
                     this.StartedDALF = !this.StartedDALF;
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
             //---------------------------------------------------------------------
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.CreateScreenshot ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.CreateScreenshot,
+                (sender, e) =>
                 {
                     CreateScreenshot();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
             //---------------------------------------------------------------------
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.SendDataUDP ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.SendDataUDP,
+                (sender, e) =>
                 {
                     SendDataUDP();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ReceiveDataUDP ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ReceiveDataUDP,
+                (sender, e) =>
                 {
                     this.IsReceiveDataUDP = !this.IsReceiveDataUDP;
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
             //---------------------------------------------------------------------
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.OpenSettings ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenSettings,
+                (sender, e) =>
                 {
                     OpenSettings();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.SyncMapAndGrid ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.SyncMapAndGrid,
+                (sender, e) =>
                 {
                     this.SyncMapAndGrid = !this.SyncMapAndGrid;
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.OpenScriptEditor ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenScriptEditor,
+                (sender, e) =>
                 {
                     OpenScriptEditor();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
 
-            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.OpenInGoogleMaps ,
-                ( sender , e ) =>
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenInGoogleMaps,
+                (sender, e) =>
                 {
                     OpenInGoogleMaps();
                     e.Handled = true;
-                } ,
-                ( sender , e ) =>
+                },
+                (sender, e) =>
                 {
                     e.CanExecute = true;
                 }
-            ) );
+            ));
         }
 
 
@@ -338,18 +338,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void InitMapProvider()
         {
             // Wir fügen nur die für unsere Region sinnvollen hinzu ...
-            this.cbMapProvider.Items.Add( GMapProviders.GoogleMap );
-            this.cbMapProvider.Items.Add( GMapProviders.GoogleSatelliteMap );
-            this.cbMapProvider.Items.Add( GMapProviders.GoogleTerrainMap );
-            this.cbMapProvider.Items.Add( GMapProviders.GoogleHybridMap );
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleMap);
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleSatelliteMap);
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleTerrainMap);
+            this.cbMapProvider.Items.Add(GMapProviders.GoogleHybridMap);
 
-            this.cbMapProvider.Items.Add( GMapProviders.OpenStreetMap );
+            this.cbMapProvider.Items.Add(GMapProviders.OpenStreetMap);
 
-            this.cbMapProvider.Items.Add( GMapProviders.BingHybridMap );
-            this.cbMapProvider.Items.Add( GMapProviders.BingMap );
-            this.cbMapProvider.Items.Add( GMapProviders.BingSatelliteMap );
+            this.cbMapProvider.Items.Add(GMapProviders.BingHybridMap);
+            this.cbMapProvider.Items.Add(GMapProviders.BingMap);
+            this.cbMapProvider.Items.Add(GMapProviders.BingSatelliteMap);
 
-            this.cbMapProvider.Items.Add( GMapProviders.EmptyProvider );
+            this.cbMapProvider.Items.Add(GMapProviders.EmptyProvider);
         }
 
 

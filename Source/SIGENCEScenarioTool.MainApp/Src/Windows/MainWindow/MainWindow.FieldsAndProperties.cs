@@ -227,7 +227,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.bIsReceiveDataUDP = value;
 
-                if( this.bIsReceiveDataUDP == true )
+                if (this.bIsReceiveDataUDP == true)
                 {
                     StartUDPServer();
                 }
@@ -368,7 +368,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lat; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( value , this.mcMapControl.Position.Lng );
+                this.mcMapControl.Position = new PointLatLng(value, this.mcMapControl.Position.Lng);
 
                 FirePropertyChanged();
             }
@@ -386,7 +386,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lng; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat , value );
+                this.mcMapControl.Position = new PointLatLng(this.mcMapControl.Position.Lat, value);
 
                 FirePropertyChanged();
             }
@@ -564,7 +564,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public int CurrentNodes
         {
-            get { return lcvGeoNodes?.Count ?? 0; }
+            get { return this.lcvGeoNodes?.Count ?? 0; }
         }
 
         //---------------------------------------------------------------------
@@ -592,7 +592,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -618,7 +618,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -644,7 +644,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -669,7 +669,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -694,10 +694,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.bStartedDALF; }
             set
             {
-                if( value == true )
+                if (value == true)
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if( StartDALF() == false )
+                    if (StartDALF() == false)
                     {
                         return;
                     }
@@ -736,23 +736,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <remarks>We use a string so that we can provide a empty a string as integer NULL ...</remarks>
         public string IdFilter
         {
-            get { return iIdFilter != null ? iIdFilter.ToString() : ""; }
+            get { return this.iIdFilter != null ? this.iIdFilter.ToString() : ""; }
             set
             {
-                if( string.IsNullOrEmpty( value ) )
+                if (string.IsNullOrEmpty(value))
                 {
-                    iIdFilter = null;
+                    this.iIdFilter = null;
                 }
                 else
                 {
                     try
                     {
 
-                        iIdFilter = int.Parse( value );
+                        this.iIdFilter = int.Parse(value);
                     }
-                    catch( Exception )
+                    catch (Exception)
                     {
-                        iIdFilter = null;
+                        this.iIdFilter = null;
                     }
                 }
 
@@ -776,10 +776,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ShowReceiver
         {
-            get { return bShowReceiver; }
+            get { return this.bShowReceiver; }
             set
             {
-                bShowReceiver = value;
+                this.bShowReceiver = value;
 
                 this.lcvRFDevices.Refresh();
 
@@ -800,10 +800,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ShowTransmitter
         {
-            get { return bShowTransmitter; }
+            get { return this.bShowTransmitter; }
             set
             {
-                bShowTransmitter = value;
+                this.bShowTransmitter = value;
 
                 this.lcvRFDevices.Refresh();
 
@@ -825,10 +825,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public RxTxType RxTxTypeFilter
         {
-            get { return rttRxTxTypeFilter; }
+            get { return this.rttRxTxTypeFilter; }
             set
             {
-                rttRxTxTypeFilter = value;
+                this.rttRxTxTypeFilter = value;
 
                 this.lcvRFDevices.Refresh();
 

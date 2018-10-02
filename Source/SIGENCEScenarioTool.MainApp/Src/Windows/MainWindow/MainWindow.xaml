@@ -200,7 +200,7 @@
 
                     <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
-                    <Grid Grid.Row="1" >
+                    <Grid Grid.Row="1">
 
                         <Grid.RowDefinitions>
 
@@ -211,24 +211,24 @@
 
                         <ToolBar Grid.Row="0" Margin="5">
 
-                            <Label Content="Filter" FontWeight="Bold"/>
+                            <Label Content="Filter" FontWeight="Bold" />
 
-                            <Separator/>
+                            <Separator />
 
-                            <CheckBox Content="Receiver" Width="80" IsChecked="{Binding ShowReceiver,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0"/>
-                            <CheckBox Content="Transmitter" Width="80" IsChecked="{Binding ShowTransmitter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black"  Margin="5,0,0,0"/>
+                            <CheckBox Content="Receiver" Width="80" IsChecked="{Binding ShowReceiver,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0" />
+                            <CheckBox Content="Transmitter" Width="80" IsChecked="{Binding ShowTransmitter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0" />
 
-                            <Label Content="Id" Margin="5,0,0,0"/>
+                            <Label Content="Id" Margin="5,0,0,0" />
                             <TextBox Text="{Binding IdFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="80" TextAlignment="Right" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="Black" />
 
                             <Label Content="RxTxType" Margin="5,0,0,0" />
-                            <ComboBox x:Name="cbRxTxType"  SelectedItem="{Binding RxTxTypeFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" />
+                            <ComboBox x:Name="cbRxTxType" SelectedItem="{Binding RxTxTypeFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" />
 
-                            <Label Content="AntennaType" Margin="5,0,0,0" ToolTip="This Filter Is Currently Not Yet Implemented!"/>
-                            <ComboBox x:Name="cbAntennaType" Width="120" IsEnabled="False" ToolTip="This Filter Is Currently Not Yet Implemented!"/>
+                            <Label Content="AntennaType" Margin="5,0,0,0" ToolTip="This Filter Is Currently Not Yet Implemented!" />
+                            <ComboBox x:Name="cbAntennaType" Width="120" IsEnabled="False" ToolTip="This Filter Is Currently Not Yet Implemented!" />
 
-                            <Separator/>
-                            <Button Content="Reset All Filter" BorderThickness="1" BorderBrush="Black"  Margin="5,0,0,0" Click="Button_ResetAllDeviceFilter_Click"/>
+                            <Separator />
+                            <Button Content="Reset All Filter" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0" Click="Button_ResetAllDeviceFilter_Click" />
                         </ToolBar>
 
 
