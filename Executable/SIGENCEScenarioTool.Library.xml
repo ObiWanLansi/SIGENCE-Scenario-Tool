@@ -1414,10 +1414,15 @@
         </member>
         <member name="F:SIGENCEScenarioTool.Extensions.StringExtension.sdHtmlEntinities">
             <summary>
-            The sd HTML entinities
+            The HTML entinities
             </summary>
         </member>
-        <member name="M:SIGENCEScenarioTool.Extensions.StringExtension.ReplaceHtml(System.String)">
+        <member name="F:SIGENCEScenarioTool.Extensions.StringExtension.sdGermanUmlauts">
+            <summary>
+            The german umlauts
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.StringExtension.ReplaceHtml(System.String,System.Boolean)">
             <summary>
             Replaces the HTML.
             </summary>
