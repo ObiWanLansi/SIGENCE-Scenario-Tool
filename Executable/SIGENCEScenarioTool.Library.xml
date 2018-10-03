@@ -2455,6 +2455,26 @@
              A Comment Or Remark For The RF Device.
             </summary>
         </member>
+        <member name="F:SIGENCEScenarioTool.Models.RFDevice.TECHNICALPARAMETERS">
+            <summary>
+             The PropertyName As ReadOnly String For TechnicalParameters.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.RFDevice.DEFAULT_TECHNICALPARAMETERS">
+            <summary>
+             The DefaultValue For TechnicalParameters.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.RFDevice._TechnicalParameters">
+            <summary>
+             The Internal Field For TechnicalParameters.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDevice.TechnicalParameters">
+            <summary>
+             Additional (Optional) Technical Parameters For The Simulation.
+            </summary>
+        </member>
         <member name="M:SIGENCEScenarioTool.Models.RFDevice.ToXml">
             <summary>
             To the XML.
@@ -2613,6 +2633,11 @@
         <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_REMARK">
             <summary>
             The tooltip for the Remark.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.RFDeviceTooltips.TOOLTIP_TECHNICALPARAMETERS">
+            <summary>
+            The tooltip for the TechnicalParameters.
             </summary>
         </member>
         <member name="T:SIGENCEScenarioTool.Models.RFDeviceExtensions">

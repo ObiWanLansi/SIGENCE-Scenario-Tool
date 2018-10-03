@@ -171,6 +171,7 @@
   <HelpKINode Title="DEFAULT_RXTXTYPE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_RXTXTYPE.htm" />
   <HelpKINode Title="DEFAULT_SIGNALTONOISERATIO_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_SIGNALTONOISERATIO_DB.htm" />
   <HelpKINode Title="DEFAULT_STARTTIME field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_STARTTIME.htm" />
+  <HelpKINode Title="DEFAULT_TECHNICALPARAMETERS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_TECHNICALPARAMETERS.htm" />
   <HelpKINode Title="DEFAULT_XPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_XPOS.htm" />
   <HelpKINode Title="DEFAULT_YAW field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YAW.htm" />
   <HelpKINode Title="DEFAULT_YPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YPOS.htm" />
@@ -693,6 +694,7 @@
   <HelpKINode Title="RFDevice.DEFAULT_RXTXTYPE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_RXTXTYPE.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_SIGNALTONOISERATIO_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_SIGNALTONOISERATIO_DB.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_STARTTIME field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_STARTTIME.htm" />
+  <HelpKINode Title="RFDevice.DEFAULT_TECHNICALPARAMETERS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_TECHNICALPARAMETERS.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_XPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_XPOS.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_YAW field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YAW.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_YPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YPOS.htm" />
@@ -726,6 +728,8 @@
   <HelpKINode Title="RFDevice.SignalToNoiseRatio_dB property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_SignalToNoiseRatio_dB.htm" />
   <HelpKINode Title="RFDevice.STARTTIME field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_STARTTIME.htm" />
   <HelpKINode Title="RFDevice.StartTime property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_StartTime.htm" />
+  <HelpKINode Title="RFDevice.TECHNICALPARAMETERS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_TECHNICALPARAMETERS.htm" />
+  <HelpKINode Title="RFDevice.TechnicalParameters property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_TechnicalParameters.htm" />
   <HelpKINode Title="RFDevice.ToString method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_ToString.htm" />
   <HelpKINode Title="RFDevice.ToXml method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_ToXml.htm" />
   <HelpKINode Title="RFDevice.Validate method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_Validate.htm" />
@@ -758,6 +762,7 @@
   <HelpKINode Title="RFDeviceExtensions.WithRxTxType method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithRxTxType.htm" />
   <HelpKINode Title="RFDeviceExtensions.WithSignalToNoiseRatio_dB method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithSignalToNoiseRatio_dB.htm" />
   <HelpKINode Title="RFDeviceExtensions.WithStartTime method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithStartTime.htm" />
+  <HelpKINode Title="RFDeviceExtensions.WithTechnicalParameters method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithTechnicalParameters.htm" />
   <HelpKINode Title="RFDeviceExtensions.WithXPos method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithXPos.htm" />
   <HelpKINode Title="RFDeviceExtensions.WithYaw method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithYaw.htm" />
   <HelpKINode Title="RFDeviceExtensions.WithYPos method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithYPos.htm" />
@@ -794,6 +799,7 @@
   <HelpKINode Title="RFDeviceTooltips.TOOLTIP_RXTXTYPE property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_RXTXTYPE.htm" />
   <HelpKINode Title="RFDeviceTooltips.TOOLTIP_SIGNALTONOISERATIO_DB property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_SIGNALTONOISERATIO_DB.htm" />
   <HelpKINode Title="RFDeviceTooltips.TOOLTIP_STARTTIME property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_STARTTIME.htm" />
+  <HelpKINode Title="RFDeviceTooltips.TOOLTIP_TECHNICALPARAMETERS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_TECHNICALPARAMETERS.htm" />
   <HelpKINode Title="RFDeviceTooltips.TOOLTIP_XPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_XPOS.htm" />
   <HelpKINode Title="RFDeviceTooltips.TOOLTIP_YAW property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_YAW.htm" />
   <HelpKINode Title="RFDeviceTooltips.TOOLTIP_YPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_YPOS.htm" />
@@ -1042,6 +1048,8 @@
   <HelpKINode Title="SyntaxModes property" Url="html/P_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_SyntaxModes.htm" />
   <HelpKINode Title="TableExists method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_TableExists.htm" />
   <HelpKINode Title="Tag property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Tag.htm" />
+  <HelpKINode Title="TECHNICALPARAMETERS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_TECHNICALPARAMETERS.htm" />
+  <HelpKINode Title="TechnicalParameters property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_TechnicalParameters.htm" />
   <HelpKINode Title="Tera field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Tera.htm" />
   <HelpKINode Title="Tertiary enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Tertiary_Link enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
@@ -1094,6 +1102,7 @@
   <HelpKINode Title="TOOLTIP_RXTXTYPE property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_RXTXTYPE.htm" />
   <HelpKINode Title="TOOLTIP_SIGNALTONOISERATIO_DB property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_SIGNALTONOISERATIO_DB.htm" />
   <HelpKINode Title="TOOLTIP_STARTTIME property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_STARTTIME.htm" />
+  <HelpKINode Title="TOOLTIP_TECHNICALPARAMETERS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_TECHNICALPARAMETERS.htm" />
   <HelpKINode Title="TOOLTIP_XPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_XPOS.htm" />
   <HelpKINode Title="TOOLTIP_YAW property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_YAW.htm" />
   <HelpKINode Title="TOOLTIP_YPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_YPOS.htm" />
@@ -1234,6 +1243,7 @@
   <HelpKINode Title="WithRxTxType method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithRxTxType.htm" />
   <HelpKINode Title="WithSignalToNoiseRatio_dB method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithSignalToNoiseRatio_dB.htm" />
   <HelpKINode Title="WithStartTime method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithStartTime.htm" />
+  <HelpKINode Title="WithTechnicalParameters method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithTechnicalParameters.htm" />
   <HelpKINode Title="WithXPos method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithXPos.htm" />
   <HelpKINode Title="WithYaw method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithYaw.htm" />
   <HelpKINode Title="WithYPos method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithYPos.htm" />
