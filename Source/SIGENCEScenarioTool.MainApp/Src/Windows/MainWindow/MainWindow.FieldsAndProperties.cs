@@ -184,61 +184,61 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// The b received data
-        /// </summary>
-        private bool bReceivedData = false;
+        ///// <summary>
+        ///// The b received data
+        ///// </summary>
+        //private bool bReceivedData = false;
 
-        /// <summary>
-        /// Gets or sets a value indicating whether [received data].
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if [received data]; otherwise, <c>false</c>.
-        /// </value>
-        public bool ReceivedData
-        {
-            get { return this.bReceivedData; }
-            set
-            {
-                this.bReceivedData = value;
+        ///// <summary>
+        ///// Gets or sets a value indicating whether [received data].
+        ///// </summary>
+        ///// <value>
+        /////   <c>true</c> if [received data]; otherwise, <c>false</c>.
+        ///// </value>
+        //public bool ReceivedData
+        //{
+        //    get { return this.bReceivedData; }
+        //    set
+        //    {
+        //        this.bReceivedData = value;
 
-                SetBlink1();
+        //        SetBlink1();
 
-                FirePropertyChanged();
-            }
-        }
+        //        FirePropertyChanged();
+        //    }
+        //}
 
 
-        /// <summary>
-        /// The b is receive data UDP
-        /// </summary>
-        private bool bIsReceiveDataUDP = false;
+        ///// <summary>
+        ///// The b is receive data UDP
+        ///// </summary>
+        //private bool bIsReceiveDataUDP = false;
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is receive data UDP.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is receive data UDP; otherwise, <c>false</c>.
-        /// </value>
-        public bool IsReceiveDataUDP
-        {
-            get { return this.bIsReceiveDataUDP; }
-            set
-            {
-                this.bIsReceiveDataUDP = value;
+        ///// <summary>
+        ///// Gets or sets a value indicating whether this instance is receive data UDP.
+        ///// </summary>
+        ///// <value>
+        /////   <c>true</c> if this instance is receive data UDP; otherwise, <c>false</c>.
+        ///// </value>
+        //public bool IsReceiveDataUDP
+        //{
+        //    get { return this.bIsReceiveDataUDP; }
+        //    set
+        //    {
+        //        this.bIsReceiveDataUDP = value;
 
-                if (this.bIsReceiveDataUDP == true)
-                {
-                    StartUDPServer();
-                }
-                else
-                {
-                    StopUDPServer();
-                }
+        //        if (this.bIsReceiveDataUDP == true)
+        //        {
+        //            StartUDPServer();
+        //        }
+        //        else
+        //        {
+        //            StopUDPServer();
+        //        }
 
-                FirePropertyChanged();
-            }
-        }
+        //        FirePropertyChanged();
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

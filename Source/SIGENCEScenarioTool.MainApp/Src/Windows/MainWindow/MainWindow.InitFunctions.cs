@@ -234,29 +234,29 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //---------------------------------------------------------------------
 
-            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.SendDataUDP,
-                (sender, e) =>
-                {
-                    SendDataUDP();
-                    e.Handled = true;
-                },
-                (sender, e) =>
-                {
-                    e.CanExecute = true;
-                }
-            ));
+            //this.CommandBindings.Add(new CommandBinding(RegisteredCommands.SendDataUDP,
+            //    (sender, e) =>
+            //    {
+            //        SendDataUDP();
+            //        e.Handled = true;
+            //    },
+            //    (sender, e) =>
+            //    {
+            //        e.CanExecute = true;
+            //    }
+            //));
 
-            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ReceiveDataUDP,
-                (sender, e) =>
-                {
-                    this.IsReceiveDataUDP = !this.IsReceiveDataUDP;
-                    e.Handled = true;
-                },
-                (sender, e) =>
-                {
-                    e.CanExecute = true;
-                }
-            ));
+            //this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ReceiveDataUDP,
+            //    (sender, e) =>
+            //    {
+            //        this.IsReceiveDataUDP = !this.IsReceiveDataUDP;
+            //        e.Handled = true;
+            //    },
+            //    (sender, e) =>
+            //    {
+            //        e.CanExecute = true;
+            //    }
+            //));
 
             //---------------------------------------------------------------------
 

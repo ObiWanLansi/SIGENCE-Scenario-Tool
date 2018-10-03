@@ -73,7 +73,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0">
+        <Menu x:Name="mMainMenu" Grid.Row="0">
             <MenuItem Header="_SIGENCE Scenario Tool">
                 <MenuItem Header="_New File" Icon="{StaticResource NEW}" Command="{x:Static ApplicationCommands.New}" />
                 <Separator />
@@ -114,7 +114,7 @@
                 <Separator />
                 <MenuItem Header="_Edit Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
             </MenuItem>
-            <MenuItem Header="_Test">
+            <MenuItem x:Name="miTest" Header="_Test">
                 <MenuItem Header="_Load Streets" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
                 <MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
@@ -169,10 +169,10 @@
             <ToggleButton Content="{StaticResource NUT_AND_BOLT}" ToolTip="Sync Map And Grid Selection" IsChecked="{Binding SyncMapAndGrid,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
             <Button Content="{StaticResource CAMERA}" ToolTip="Create Screenshot" Command="{x:Static cmd:RegisteredCommands.CreateScreenshot}" />
 
-            <Separator />
+            <!--<Separator />
 
             <ToggleButton Content="{StaticResource SERVER_FROM_CLIENT}" ToolTip="Receive Data Via UDP" IsChecked="{Binding IsReceiveDataUDP,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-            <Button Content="{StaticResource SERVER_TO_CLIENT}" ToolTip="Send Data Via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />
+            <Button Content="{StaticResource SERVER_TO_CLIENT}" ToolTip="Send Data Via UDP" Command="{x:Static cmd:RegisteredCommands.SendDataUDP}" />-->
 
             <Separator />
 
@@ -655,82 +655,6 @@
             </TabItem>
 
 
-            <TabItem x:Name="tiGeoNodes">
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="{StaticResource EARTH}" />
-                        <Label Content="GeoNodes" />
-                    </StackPanel>
-                </TabItem.Header>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <ToolBar Grid.Row="0">
-                        <CheckBox Content="Name:" IsChecked="{Binding UseNameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBox Text="{Binding NameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" />
-                        <Separator />
-                        <CheckBox Content="GeoTag:" IsChecked="{Binding UseGeoTagFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-                        <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
-                    </ToolBar>
-
-                    <DataGrid Grid.Row="1" ItemsSource="{Binding GeoNodes}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
-                        <DataGrid.Columns>
-
-                            <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Right" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-
-                            <DataGridTextColumn Header="Tag" Binding="{Binding Tag}">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                            <DataGridTextColumn Header="Value" Binding="{Binding Value}">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="Margin" Value="5" />
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-
-
             <TabItem x:Name="tiValidation">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -874,7 +798,83 @@
             </TabItem>
 
 
-            <TabItem x:Name="tiMessages">
+            <TabItem x:Name="tiGeoNodes">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{StaticResource EARTH}" />
+                        <Label Content="GeoNodes" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <ToolBar Grid.Row="0">
+                        <CheckBox Content="Name:" IsChecked="{Binding UseNameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Text="{Binding NameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" />
+                        <Separator />
+                        <CheckBox Content="GeoTag:" IsChecked="{Binding UseGeoTagFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
+                    </ToolBar>
+
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding GeoNodes}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+
+                            <DataGridTextColumn Header="Tag" Binding="{Binding Tag}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn Header="Value" Binding="{Binding Value}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="Margin" Value="5" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+
+            <!--<TabItem x:Name="tiMessages">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource NUT_AND_BOLT}" />
@@ -893,7 +893,7 @@
                     </ToolBar>
                     <TextBox Grid.Row="1" Text="{Binding DebugOutput}" AcceptsReturn="True" IsReadOnly="True" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" />
                 </Grid>
-            </TabItem>
+            </TabItem>-->
 
         </TabControl>
 
@@ -959,16 +959,16 @@
 
             <Separator />-->
 
-            <StatusBarItem>
+            <!--<StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="UDPDelay:" />
                     <TextBox Text="{Binding UDPDelay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Right" VerticalContentAlignment="Center" />
                 </StackPanel>
             </StatusBarItem>
 
-            <Separator />
+            <Separator />-->
 
-            <StatusBarItem>
+            <!--<StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="GeoNodes:" />
                     <Label Content="{Binding CurrentNodes}" />
@@ -977,7 +977,7 @@
                 </StackPanel>
             </StatusBarItem>
 
-            <Separator />
+            <Separator />-->
 
             <StatusBarItem />
 

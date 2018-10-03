@@ -5,10 +5,7 @@ using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Sockets;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -35,6 +32,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     public partial class MainWindow
     {
 
+
         /// <summary>
         /// Handles the Click event of the MenuItem_ChartingTest control.
         /// </summary>
@@ -52,118 +50,119 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Sets the blink1.
-        /// </summary>
-        private void SetBlink1()
-        {
-            try
-            {
-                if (this.ReceivedData == true)
-                {
-                    Blink.SetColor(Colors.Green);
-                }
-                else
-                {
-                    Blink.Off();
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
+        ///// <summary>
+        ///// Sets the blink1.
+        ///// </summary>
+        //[Conditional("DEBUG")]
+        //private void SetBlink1()
+        //{
+        //    try
+        //    {
+        //        if (this.ReceivedData == true)
+        //        {
+        //            Blink.SetColor(Colors.Green);
+        //        }
+        //        else
+        //        {
+        //            Blink.Off();
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// The t UDP server
-        /// </summary>
-        private Thread tUDPServer = null;
+        ///// <summary>
+        ///// The t UDP server
+        ///// </summary>
+        //private Thread tUDPServer = null;
 
-        /// <summary>
-        /// Initializes the UDP server.
-        /// </summary>
-        private void StartUDPServer()
-        {
-            if (this.tUDPServer == null)
-            {
-                this.tUDPServer = new Thread(UDPReceiveData)
-                {
-                    IsBackground = true,
-                    Name = "UDPServerThread"
-                };
-                this.tUDPServer.Start();
-            }
-        }
-
-
-        /// <summary>
-        /// Stops the UDP server.
-        /// </summary>
-        private void StopUDPServer()
-        {
-            if (this.tUDPServer != null)
-            {
-                this.tUDPServer.Abort();
-
-                this.tUDPServer = null;
-            }
-        }
+        ///// <summary>
+        ///// Initializes the UDP server.
+        ///// </summary>
+        //private void StartUDPServer()
+        //{
+        //    if (this.tUDPServer == null)
+        //    {
+        //        this.tUDPServer = new Thread(UDPReceiveData)
+        //        {
+        //            IsBackground = true,
+        //            Name = "UDPServerThread"
+        //        };
+        //        this.tUDPServer.Start();
+        //    }
+        //}
 
 
-        /// <summary>
-        /// UDPs the receive data.
-        /// </summary>
-        private void UDPReceiveData()
-        {
-            UdpClient client = null;
+        ///// <summary>
+        ///// Stops the UDP server.
+        ///// </summary>
+        //private void StopUDPServer()
+        //{
+        //    if (this.tUDPServer != null)
+        //    {
+        //        this.tUDPServer.Abort();
 
-            try
-            {
-                client = new UdpClient(this.settings.UDPPortReceiving);
-                {
-                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(this.settings.UDPHost), this.settings.UDPPortReceiving);
+        //        this.tUDPServer = null;
+        //    }
+        //}
 
-                    // A neverending story ...
-                    while (true)
-                    {
-                        // Obwohl der Thread Aborted wird beendet er das Receiver nicht und somit auch nicht Thread :-(
-                        // Erst wenn er was empfangen hat merkt er das er Aborted ist und die Expcetion tritt auf ...
-                        byte[] baReceived = client.Receive(ref ep);
 
-                        string strReceived = Encoding.Default.GetString(baReceived);
+        ///// <summary>
+        ///// UDPs the receive data.
+        ///// </summary>
+        //private void UDPReceiveData()
+        //{
+        //    UdpClient client = null;
 
-                        this.DebugOutput += strReceived + "\n\n";
-                        this.ReceivedData = true;
-                    }
-                }
-            }
-            catch (ThreadAbortException)
-            {
-                // Do nothing ...
-                //Debug.WriteLine(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MB.Warning(ex.Message);
-            }
-            finally
-            {
-                if (client != null)
-                {
-                    try
-                    {
-                        client.Close();
-                        client.Dispose();
-                        client = null;
-                    }
-                    catch (Exception)
-                    {
+        //    try
+        //    {
+        //        client = new UdpClient(this.settings.UDPPortReceiving);
+        //        {
+        //            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(this.settings.UDPHost), this.settings.UDPPortReceiving);
 
-                    }
-                }
-            }
-        }
+        //            // A neverending story ...
+        //            while (true)
+        //            {
+        //                // Obwohl der Thread Aborted wird beendet er das Receiver nicht und somit auch nicht Thread :-(
+        //                // Erst wenn er was empfangen hat merkt er das er Aborted ist und die Expcetion tritt auf ...
+        //                byte[] baReceived = client.Receive(ref ep);
+
+        //                string strReceived = Encoding.Default.GetString(baReceived);
+
+        //                this.DebugOutput += strReceived + "\n\n";
+        //                this.ReceivedData = true;
+        //            }
+        //        }
+        //    }
+        //    catch (ThreadAbortException)
+        //    {
+        //        // Do nothing ...
+        //        //Debug.WriteLine(ex.Message);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MB.Warning(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (client != null)
+        //        {
+        //            try
+        //            {
+        //                client.Close();
+        //                client.Dispose();
+        //                client = null;
+        //            }
+        //            catch (Exception)
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -171,6 +170,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Creates the scenario report.
         /// </summary>
+        [Conditional("DEBUG")]
         private void CreateScenarioReport()
         {
             if (string.IsNullOrEmpty(this.CurrentFile))
@@ -292,6 +292,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Removes the streets.
         /// </summary>
+        [Conditional("DEBUG")]
         private void RemoveStreets()
         {
             List<GMapMarker> lDelete = new List<GMapMarker>();
@@ -314,7 +315,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Loads the streets.
         /// </summary>
-        //[Conditional("DEBUG")]
+        [Conditional("DEBUG")]
         private void LoadStreets()
         {
             RemoveStreets();
@@ -428,6 +429,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="pllTopLeft">The PLL top left.</param>
         /// <param name="pllBottomRight">The PLL bottom right.</param>
         /// <param name="bColor">Color of the b.</param>
+        [Conditional("DEBUG")]
         private void CreateHeatmap(PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor)
         {
             List<PointLatLng> points = new List<PointLatLng>
@@ -456,6 +458,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Creates the heatmap.
         /// </summary>
+        [Conditional("DEBUG")]
         private void CreateHeatmap()
         {
             PointLatLng pll = this.mcMapControl.Position;
@@ -487,6 +490,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="pllCenter">The PLL center.</param>
         /// <param name="bColor">Color of the b.</param>
+        [Conditional("DEBUG")]
         private void CreateHeatmap2(PointLatLng pllCenter, Brush bColor)
         {
             // Die Größe der Punkte sind in Pixel, dasm uss natürlich angepasst werden an die GeoKoordinaten, siehe GMap.NET.WindowsPresentation.GMapPolygon .
@@ -502,6 +506,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Creates the heatmap2.
         /// </summary>
+        [Conditional("DEBUG")]
         private void CreateHeatmap2()
         {
             PointLatLng pll = this.mcMapControl.Position;

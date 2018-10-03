@@ -123,6 +123,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
+
 #if DEBUG
             CreateRandomizedRFDevices(100, true);
 
@@ -175,6 +176,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //RFDevice device = new RFDevice().WithId(0).WithName("Hello").WithStartTime(5);
             //MB.Information(device.ToXml().ToString());
+#else
+            this.mMainMenu.Items.Remove(this.miTest);
+            this.tcTabControl.Items.Remove(this.tiGeoNodes);
 #endif
         }
 
