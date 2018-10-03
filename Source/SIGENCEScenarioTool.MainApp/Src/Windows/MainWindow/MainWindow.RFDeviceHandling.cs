@@ -287,7 +287,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         DeviceSource = DeviceSource.DataImport,
                     };
 
-                    for (int iColumn = 1; iColumn < 18 + 1; iColumn++)
+                    for (int iColumn = 1; iColumn < 19 + 1; iColumn++)
                     {
                         object value = (range.Cells[iRow, iColumn] as Excel.Range).Value2;
 
@@ -369,6 +369,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                             case 18:
                                 device.Remark = Convert.ToString(value);
+                                break;
+
+                            case 19:
+                                device.TechnicalParameters = Convert.ToString(value);
                                 break;
                         }
                     }
@@ -452,7 +456,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 "RxTxType","AntType",
                 "Gain","CenterFreq","BandWidth","SNR",
                 "x","y","z",
-                "Remark"
+                "Remark","TechnicalParameters"
             };
 
             // Create Header Columns
@@ -510,6 +514,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     AddCell(maindatasheet, 16, iRowCounter, device.YPos, c);
                     AddCell(maindatasheet, 17, iRowCounter, device.ZPos, c);
                     AddCell(maindatasheet, 18, iRowCounter, device.Remark, c);
+                    AddCell(maindatasheet, 19, iRowCounter, device.TechnicalParameters, c);
 
                     iRowCounter++;
                 }
@@ -562,21 +567,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 switch (fiImportFile.Extension.ToLower())
                 {
                     //case ".csv":
-                    //    devicelist.SaveAsCsv(fiExportFile.FullName);
-                    //    MB.Information("File {0} successful created.", fiExportFile.Name);
+                    //    MB.Information("File {0} successful imported.", fiImportFile.Name);
                     //    break;
 
                     //case ".json":
-                    //    devicelist.SaveAsJson(fiExportFile.FullName);
-                    //    MB.Information("File {0} successful created.", fiExportFile.Name);
+                    //    MB.Information("File {0} successful imported.", fiImportFile.Name);
                     //    break;
 
                     //case ".xml":
-                    //    devicelist.SaveAsXml(fiExportFile.FullName);
-                    //    MB.Information("File {0} successful created.", fiExportFile.Name);
-                    //    break;
-
-                    //case ".sqlite":
+                    //    MB.Information("File {0} successful imported.", fiImportFile.Name);
                     //    break;
 
                     case ".xlsx":

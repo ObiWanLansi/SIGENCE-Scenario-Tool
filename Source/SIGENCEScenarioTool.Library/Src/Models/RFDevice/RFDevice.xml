@@ -30,5 +30,6 @@
     <Property Name="ZPos" Type="int" Init="0" Comment="XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position." />
 
     <Property Name="Remark" Type="string" Init="&quot;&quot;" Comment="A Comment Or Remark For The RF Device." />
+    <Property Name="TechnicalParameters" Type="string" Init="&quot;&quot;" Comment="Additional (Optional) Technical Parameters For The Simulation." />
 
 </RFDevice>

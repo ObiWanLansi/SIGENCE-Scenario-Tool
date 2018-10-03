@@ -311,9 +311,6 @@
       <LastGenOutput>RxTxTypes.cs</LastGenOutput>
     </Content>
     <Resource Include="Src\Models\RxTxTypes\RxTxTypes.xml" />
-    <None Include="Src\Models\RFDevice\RFDevice.xml.old">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Src\Models\RFDevice\RFDevice.Extensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RFDevice.Extensions.cs</LastGenOutput>

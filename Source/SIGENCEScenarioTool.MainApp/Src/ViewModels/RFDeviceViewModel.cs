@@ -434,6 +434,25 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 this.RFDevice.Remark = value;
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the technical parameters.
+        /// </summary>
+        /// <value>
+        /// The technical parameters.
+        /// </value>
+        public string TechnicalParameters
+        {
+            get { return this.RFDevice.TechnicalParameters; }
+            set
+            {
+                this.RFDevice.TechnicalParameters = value;
+
                 FirePropertyChanged();
             }
         }

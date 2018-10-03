@@ -579,6 +579,20 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
+                                <DataGridTextColumn Header="TechnicalParameters" Binding="{Binding TechnicalParameters,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_TECHNICALPARAMETERS}" />
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                            <Setter Property="Margin" Value="5" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
                                 <DataGridTextColumn Header="Remark" Binding="{Binding Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">

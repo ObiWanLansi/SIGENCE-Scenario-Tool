@@ -26,3 +26,4 @@ XPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local
 YPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
 ZPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
 Remark|string|""|A Comment Or Remark For The RF Device.
+TechnicalParameters|string|""|Additional (Optional) Technical Parameters For The Simulation.

@@ -799,6 +799,43 @@ namespace SIGENCEScenarioTool.Models
 
         #endregion        
 
+        //---------------------------------------------------------------------
+
+        #region TechnicalParameters
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For TechnicalParameters.
+        ///</summary>
+        public const string TECHNICALPARAMETERS = "TechnicalParameters";
+
+        ///<summary>
+        /// The DefaultValue For TechnicalParameters.
+        ///</summary>
+        public static readonly string DEFAULT_TECHNICALPARAMETERS = "";
+        
+        ///<summary>
+        /// The Internal Field For TechnicalParameters.
+        ///</summary>
+        //private string _TechnicalParameters = "";
+        private string _TechnicalParameters = DEFAULT_TECHNICALPARAMETERS;
+
+        ///<summary>
+        /// Additional (Optional) Technical Parameters For The Simulation.
+        ///</summary>
+        public string TechnicalParameters 
+        {
+            get { return _TechnicalParameters; }
+            set
+            {
+                _TechnicalParameters = value;
+                FirePropertyChanged();
+            }
+        }
+
+        //static public readonly string TOOLTIP_TECHNICALPARAMETERS = "Additional (Optional) Technical Parameters For The Simulation.";
+
+        #endregion        
+
         #endregion
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -832,7 +869,8 @@ namespace SIGENCEScenarioTool.Models
                 XElementExtension.GetXElement("XPos", XPos),
                 XElementExtension.GetXElement("YPos", YPos),
                 XElementExtension.GetXElement("ZPos", ZPos),
-                XElementExtension.GetXElement("Remark", Remark)  
+                XElementExtension.GetXElement("Remark", Remark),
+                XElementExtension.GetXElement("TechnicalParameters", TechnicalParameters)  
             );
         }
 
@@ -877,7 +915,8 @@ namespace SIGENCEScenarioTool.Models
                 XPos = eChild.GetProperty<int>("XPos",0),
                 YPos = eChild.GetProperty<int>("YPos",0),
                 ZPos = eChild.GetProperty<int>("ZPos",0),
-                Remark = eChild.GetProperty<string>("Remark","")            
+                Remark = eChild.GetProperty<string>("Remark",""),
+                TechnicalParameters = eChild.GetProperty<string>("TechnicalParameters","")            
             };
         }
 
@@ -1113,6 +1152,21 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
+            if (other.TechnicalParameters == null && TechnicalParameters != null)
+            {
+                return false;
+            }
+
+            if (other.TechnicalParameters != null && TechnicalParameters == null)
+            {
+                return false;
+            }
+
+            if (other.TechnicalParameters != null && TechnicalParameters != null && other.TechnicalParameters.Equals(TechnicalParameters) == false)
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -1254,6 +1308,11 @@ namespace SIGENCEScenarioTool.Models
         /// The tooltip for the Remark.
         /// </summary>
         public string TOOLTIP_REMARK { get { return "A Comment Or Remark For The RF Device."; } }
+
+        /// <summary>
+        /// The tooltip for the TechnicalParameters.
+        /// </summary>
+        public string TOOLTIP_TECHNICALPARAMETERS { get { return "Additional (Optional) Technical Parameters\nFor The Simulation."; } }
 
     } // end public sealed class RFDeviceTooltips
 }
