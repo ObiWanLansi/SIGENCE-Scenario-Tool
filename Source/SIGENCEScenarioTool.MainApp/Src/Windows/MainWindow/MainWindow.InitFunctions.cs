@@ -4,6 +4,8 @@ using System.Windows.Input;
 using GMap.NET;
 using GMap.NET.MapProviders;
 
+using ICSharpCode.TextEditor.Document;
+
 using SIGENCEScenarioTool.Commands;
 
 
@@ -395,6 +397,28 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.sfdSaveScreenshot.Filter = "Portable Network Graphics (*.png)|*.png";
             this.sfdSaveScreenshot.AddExtension = true;
             this.sfdSaveScreenshot.CheckPathExists = true;
+        }
+
+
+        /// <summary>
+        /// Initializes the scenario description editor.
+        /// </summary>
+        private void InitScenarioDescriptionEditor()
+        {
+            this.tecScenarioDescription.HideMouseCursor = true;
+            this.tecScenarioDescription.LineViewerStyle = LineViewerStyle.FullRow;
+            this.tecScenarioDescription.ConvertTabsToSpaces = true;
+
+            this.tecScenarioDescription.ShowSpaces = false;
+            this.tecScenarioDescription.ShowTabs = false;
+            this.tecScenarioDescription.ShowEOLMarkers = false;
+            this.tecScenarioDescription.ShowLineNumbers = true;
+
+            this.tecScenarioDescription.IsIconBarVisible = true;
+            this.tecScenarioDescription.AllowCaretBeyondEOL = true;
+            this.tecScenarioDescription.AllowDrop = false;
+            this.tecScenarioDescription.VRulerRow = 120;
+            this.tecScenarioDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("HTML");
         }
 
     } // end public partial class MainWindow 

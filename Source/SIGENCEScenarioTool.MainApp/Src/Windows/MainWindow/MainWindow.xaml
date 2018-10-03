@@ -1,4 +1,4 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" xmlns:tools="clr-namespace:SIGENCEScenarioTool.Tools;assembly=SIGENCEScenarioTool.Library" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="MainWindow_Loaded" Closed="MainWindow_Closed">
+﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" xmlns:tools="clr-namespace:SIGENCEScenarioTool.Tools;assembly=SIGENCEScenarioTool.Library" xmlns:icsharpcode="clr-namespace:ICSharpCode.TextEditor;assembly=ICSharpCode.TextEditor" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Height="900" Width="900" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="MainWindow_Loaded" Closed="MainWindow_Closed">
     <Window.Resources>
 
         <Image x:Key="ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/add.png" />
@@ -631,40 +631,56 @@
                     </Grid.RowDefinitions>
                     <ToolBar Grid.Row="0">
                         <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description" Click="ToogleButton_EditScenarioDescription_Click" />
-                        <Button Content="{StaticResource MAGIC_WAND}" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The German Umlauts To HTML" Click="Button_HtmlConvertGermanUmlauts_Click" />
+                        <Button Content="{StaticResource MAGIC_WAND}" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Insert A Small Template For A Scenario Description" Click="Button_InsertScenarioDescriptionTemplate_Click" />
                         <Separator />
-                        <Button Content="{StaticResource HELP}" ToolTip="Open The W3 School Page For HTML" Click="Button_HtmlHelp_Click" />
-                        <!--<Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
-                                <MenuItem Header="Font">
-                                    <MenuItem Header="Bold" Tag="b" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Cursiv" Tag="i" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Underline" Tag="u" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Preformatted" Tag="pre" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                </MenuItem>
-                                <MenuItem Header="Table">
-                                    <MenuItem Header="Table" Tag="table" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Row" Tag="tr" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Header" Tag="th" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Column" Tag="td" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                </MenuItem>
-                                <MenuItem Header="Header">
-                                    <MenuItem Header="H1" Tag="h1" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="H2" Tag="h2" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="H3" Tag="h3" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="H4" Tag="h4" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="H5" Tag="h5" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="H6" Tag="h6" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                </MenuItem>
-                                <MenuItem Header="Misc">
-                                    <MenuItem Header="Line Break" Tag="br" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Horizontal Line" Tag="hr" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Image" Tag="image" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                    <MenuItem Header="Link" Tag="link" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                </MenuItem>
-                            </Menu>-->
+                        <Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
+                            <MenuItem Header="ÄÖÜ" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The German Umlauts To HTML" Click="MenuItem_HtmlConvertGermanUmlauts_Click" />
+                            <MenuItem Header="Upper" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The Selected Text To Upper Case" Click="MenuItem_HtmlConvertToUpperText_Click" />
+                            <MenuItem Header="Lower" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The Selected Text To Lower Case" Click="MenuItem_HtmlConvertToLowerText_Click" />
+                            <MenuItem Header="Capitalize" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The Selected Text To Upper Case" Click="MenuItem_HtmlConvertToCapitalize_Click" />
+                        </Menu>
+                        <Separator />
+                        <Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
+                            <MenuItem Header="Font">
+                                <MenuItem Header="Bold" Tag="b" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Cursiv" Tag="i" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Underline" Tag="u" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Preformatted" Tag="pre" Click="MenuItem_InsertHtmlSnippet_Click" />
+                            </MenuItem>
+                            <MenuItem Header="Table">
+                                <MenuItem Header="Table" Tag="table" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Row" Tag="tr" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Header" Tag="th" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Column" Tag="td" Click="MenuItem_InsertHtmlSnippet_Click" />
+                            </MenuItem>
+                            <MenuItem Header="Header">
+                                <MenuItem Header="H1" Tag="h1" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="H2" Tag="h2" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="H3" Tag="h3" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="H4" Tag="h4" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="H5" Tag="h5" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="H6" Tag="h6" Click="MenuItem_InsertHtmlSnippet_Click" />
+                            </MenuItem>
+                            <MenuItem Header="Misc">
+                                <MenuItem Header="Line Break" Tag="br" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Horizontal Line" Tag="hr" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Image" Tag="image" Click="MenuItem_InsertHtmlSnippet_Click" />
+                                <MenuItem Header="Link" Tag="link" Click="MenuItem_InsertHtmlSnippet_Click" />
+                            </MenuItem>
+                        </Menu>
+                        <Separator />
+
+                        <Button Content="{StaticResource HELP}" ToolTip="Open Help For Writing A Document" Click="Button_DocumentationHelp_Click" />
                     </ToolBar>
+
                     <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
-                    <TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />
+                    
+                    <!--<TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription,Mode=TwoWay,UpdateSourceTrigger=LostFocus}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />-->
+                    <!--<TextBox x:Name="tbScenarioDescription" Grid.Row="1" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />-->
+                    
+                    <WindowsFormsHost x:Name="wfhHtmlEdit" Grid.Row="1" Visibility="Hidden">
+                        <icsharpcode:TextEditorControl x:Name="tecScenarioDescription" />
+                    </WindowsFormsHost>
                 </Grid>
             </TabItem>
 

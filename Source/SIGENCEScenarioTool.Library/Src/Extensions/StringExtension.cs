@@ -65,7 +65,7 @@ namespace SIGENCEScenarioTool.Extensions
         {
             char[] aData = strContent.ToLower().ToCharArray();
 
-            if (Char.IsLower(aData[0]))
+            if (char.IsLower(aData[0]))
             {
                 aData[0] -= (char)0x20;
             }
@@ -87,16 +87,16 @@ namespace SIGENCEScenarioTool.Extensions
             {
                 if (iCounter == 0)
                 {
-                    if (Char.IsLetter(aData[iCounter]))
+                    if (char.IsLetter(aData[iCounter]))
                     {
                         aData[iCounter] -= (char)0x20;
                     }
                 }
                 else
                 {
-                    if (Char.IsLetter(aData[iCounter - 1]) == false && aData[iCounter - 1] != '\'')
+                    if (char.IsLetter(aData[iCounter - 1]) == false && aData[iCounter - 1] != '\'')
                     {
-                        if (Char.IsLetter(aData[iCounter]))
+                        if (char.IsLetter(aData[iCounter]))
                         {
                             aData[iCounter] -= (char)0x20;
                         }
@@ -154,7 +154,7 @@ namespace SIGENCEScenarioTool.Extensions
 
 
         /// <summary>
-        /// The sd HTML entinities
+        /// The HTML entinities
         /// </summary>
         private static readonly SortedDictionary<string, string> sdHtmlEntinities = new SortedDictionary<string, string>
         {
@@ -166,18 +166,39 @@ namespace SIGENCEScenarioTool.Extensions
 
 
         /// <summary>
+        /// The german umlauts
+        /// </summary>
+        private static readonly SortedDictionary<string, string> sdGermanUmlauts = new SortedDictionary<string, string>
+        {
+            { "ä" , "&auml;" } , { "ö" , "&ouml;" } , { "ü" , "&uuml;" } ,
+            { "Ä" , "&Auml;" } , { "Ö" , "&Ouml;" } , { "Ü" , "&Uuml;" } ,
+            { "ß" , "&szlig;" }
+        };
+
+
+        /// <summary>
         /// Replaces the HTML.
         /// </summary>
         /// <param name="strContent">Content of the STR.</param>
         /// <returns></returns>
-        static public string ReplaceHtml(this string strContent)
+        static public string ReplaceHtml(this string strContent, bool bOnlyGermanUmlauts = false)
         {
             if (strContent.IsNotEmpty() == true)
             {
-                sdHtmlEntinities.ForEach((k, v) =>
+                if (bOnlyGermanUmlauts)
                 {
-                    strContent = strContent.Replace(k, v);
-                });
+                    sdGermanUmlauts.ForEach((k, v) =>
+                    {
+                        strContent = strContent.Replace(k, v);
+                    });
+                }
+                else
+                {
+                    sdHtmlEntinities.ForEach((k, v) =>
+                    {
+                        strContent = strContent.Replace(k, v);
+                    });
+                }
             }
 
             return strContent;

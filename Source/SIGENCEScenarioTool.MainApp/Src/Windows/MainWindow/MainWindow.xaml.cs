@@ -75,6 +75,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             InitMapProvider();
             InitCommands();
             InitFileOpenSaveDialogs();
+            InitScenarioDescriptionEditor();
 
             //-----------------------------------------------------------------
 
@@ -93,6 +94,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
+            this.dgcbcRxTxType.ItemsSource = RxTxTypes.Values;
+
+            List<RxTxType> lRxTxTypes = new List<RxTxType> { RxTxType.Empty };
+            lRxTxTypes.AddRange(RxTxTypes.Values);
+            this.cbRxTxType.ItemsSource = lRxTxTypes;
+
+            this.cbAntennaType.ItemsSource = DisplayableEnumeration.GetCollection<AntennaType>();
+
+            //-----------------------------------------------------------------
+
+#if DEBUG
             try
             {
                 string strFilename = $"{Tool.StartupPath}\\tuebingen-regbez-latest.osm.sqlite";
@@ -113,18 +125,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            this.dgcbcRxTxType.ItemsSource = RxTxTypes.Values;
-
-            List<RxTxType> lRxTxTypes = new List<RxTxType> { RxTxType.Empty };
-            lRxTxTypes.AddRange(RxTxTypes.Values);
-            this.cbRxTxType.ItemsSource = lRxTxTypes;
-
-            this.cbAntennaType.ItemsSource = DisplayableEnumeration.GetCollection<AntennaType>();
-
-            //-----------------------------------------------------------------
-
-
-#if DEBUG
             CreateRandomizedRFDevices(100, true);
 
             //AddRFDevice(new RFDevice { PrimaryKey = Guid.Empty, Id = -1, Latitude = 1974, Longitude = 1974, StartTime = -1974 });

@@ -488,81 +488,81 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Gets the UDP host.
-        /// </summary>
-        /// <value>
-        /// The UDP host.
-        /// </value>
-        public string UDPHost
-        {
-            get { return this.settings.UDPHost; }
-            set
-            {
-                this.settings.UDPHost = value;
+        ///// <summary>
+        ///// Gets the UDP host.
+        ///// </summary>
+        ///// <value>
+        ///// The UDP host.
+        ///// </value>
+        //public string UDPHost
+        //{
+        //    get { return this.settings.UDPHost; }
+        //    set
+        //    {
+        //        this.settings.UDPHost = value;
 
-                FirePropertyChanged();
-            }
-        }
-
-
-        /// <summary>
-        /// Gets the UDP port.
-        /// </summary>
-        /// <value>
-        /// The UDP port.
-        /// </value>
-        public int UDPPort
-        {
-            get { return this.settings.UDPPortSending; }
-            set
-            {
-                this.settings.UDPPortSending = value;
-
-                FirePropertyChanged();
-            }
-        }
+        //        FirePropertyChanged();
+        //    }
+        //}
 
 
-        /// <summary>
-        /// Gets the UDP delay.
-        /// </summary>
-        /// <value>
-        /// The UDP delay.
-        /// </value>
-        public int UDPDelay
-        {
-            get { return this.settings.UDPDelay; }
-            set
-            {
-                this.settings.UDPDelay = value;
+        ///// <summary>
+        ///// Gets the UDP port.
+        ///// </summary>
+        ///// <value>
+        ///// The UDP port.
+        ///// </value>
+        //public int UDPPort
+        //{
+        //    get { return this.settings.UDPPortSending; }
+        //    set
+        //    {
+        //        this.settings.UDPPortSending = value;
 
-                FirePropertyChanged();
-            }
-        }
+        //        FirePropertyChanged();
+        //    }
+        //}
 
 
-        /// <summary>
-        /// The string debug output
-        /// </summary>
-        private string strDebugOutput = null;
+        ///// <summary>
+        ///// Gets the UDP delay.
+        ///// </summary>
+        ///// <value>
+        ///// The UDP delay.
+        ///// </value>
+        //public int UDPDelay
+        //{
+        //    get { return this.settings.UDPDelay; }
+        //    set
+        //    {
+        //        this.settings.UDPDelay = value;
 
-        /// <summary>
-        /// Gets or sets the debug output.
-        /// </summary>
-        /// <value>
-        /// The debug output.
-        /// </value>
-        public string DebugOutput
-        {
-            get { return this.strDebugOutput; }
-            set
-            {
-                this.strDebugOutput = value;
+        //        FirePropertyChanged();
+        //    }
+        //}
 
-                FirePropertyChanged();
-            }
-        }
+
+        ///// <summary>
+        ///// The string debug output
+        ///// </summary>
+        //private string strDebugOutput = null;
+
+        ///// <summary>
+        ///// Gets or sets the debug output.
+        ///// </summary>
+        ///// <value>
+        ///// The debug output.
+        ///// </value>
+        //public string DebugOutput
+        //{
+        //    get { return this.strDebugOutput; }
+        //    set
+        //    {
+        //        this.strDebugOutput = value;
+
+        //        FirePropertyChanged();
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

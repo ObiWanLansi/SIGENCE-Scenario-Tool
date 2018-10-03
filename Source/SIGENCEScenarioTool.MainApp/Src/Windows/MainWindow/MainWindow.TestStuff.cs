@@ -228,67 +228,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// Handles the Click event of the MenuItem_InsertHtmlSnippet control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        //private void MenuItem_InsertHtmlSnippet_Click(object sender, RoutedEventArgs e)
-        //{
-        //    InsertHtmlSnippet((sender as Control).Tag as string);
-
-        //    e.Handled = true;
-        //}
-
-
-        ///// <summary>
-        ///// Inserts the HTML snippet.
-        ///// </summary>
-        ///// <param name="strSnippetId">The string snippet identifier.</param>
-        //private void InsertHtmlSnippet(string strSnippetId)
-        //{
-        //    string strSnippet = null;
-
-        //    Func<string, string> GetDefaultTag = ((tag) => { return string.Format("<{0}></{0}>", tag); });
-
-        //    strSnippetId = strSnippetId.ToLower();
-
-        //    switch (strSnippetId)
-        //    {
-
-        //        case "table":
-        //            strSnippet = "<table border=\"1\">\n</table>";
-        //            break;
-
-        //        case "br":
-        //            strSnippet = "<br />";
-        //            break;
-
-        //        case "hr":
-        //            strSnippet = "<hr />";
-        //            break;
-
-        //        case "image":
-        //            strSnippet = "<image src=\"url\" />";
-        //            break;
-
-        //        case "link":
-        //            strSnippet = "<a href=\"url\">Link Text</a>";
-        //            break;
-
-        //        default:
-        //            strSnippet = GetDefaultTag(strSnippetId);
-        //            break;
-        //    }
-
-        //    int iOldCaretIndex = tbScenarioDescription.CaretIndex;
-        //    ScenarioDescription = ScenarioDescription.Insert(iOldCaretIndex, strSnippet);
-        //    tbScenarioDescription.CaretIndex = iOldCaretIndex;
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         /// <summary>
         /// Removes the streets.
         /// </summary>
