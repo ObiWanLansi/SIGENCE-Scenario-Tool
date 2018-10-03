@@ -482,11 +482,34 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         break;
 
 
+                    case "load":
+                        if (strSplitted.Length > 1)
+                        {
+                            LoadFile(strSplitted[1]);
+                        }
+                        else
+                        {
+                            LoadFile();
+                        }
+                        break;
+
+                    case "save":
+                        if (strSplitted.Length > 1)
+                        {
+                            SaveFile(strSplitted[1]);
+                        }
+                        else
+                        {
+                            SaveFile();
+                        }
+                        break;
+
+                    case "export":
+                        ExportRFDevices();
+                        break;
+
                     case "git":
                         OpenWebbrowser("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool");
-                        break;
-                    case "web":
-                        OpenWebbrowser();
                         break;
                     case "wiki":
                         OpenWebbrowser("https://de.wikipedia.org/wiki/Wikipedia:Hauptseite");
@@ -610,11 +633,39 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
         /// <summary>
         /// Opens the webbrowser.
         /// </summary>
         /// <param name="strUrl">The string URL.</param>
-        private void OpenWebbrowser(string strUrl = null)
+        private void OpenWebbrowser(string strUrl)
+        {
+            if (this.UseBrowserInternal)
+            {
+                OpenWebbrowserInternal(strUrl);
+            }
+            else
+            {
+                OpenWebbrowserExternal(strUrl);
+            }
+        }
+
+
+        /// <summary>
+        /// Opens the webbrowser external.
+        /// </summary>
+        /// <param name="strUrl">The string URL.</param>
+        private void OpenWebbrowserExternal(string strUrl)
+        {
+            Tools.Windows.OpenWebAdress(strUrl);
+        }
+
+
+        /// <summary>
+        /// Opens the webbrowser internal.
+        /// </summary>
+        /// <param name="strUrl">The string URL.</param>
+        private void OpenWebbrowserInternal(string strUrl)
         {
             StackPanel header = new StackPanel
             {

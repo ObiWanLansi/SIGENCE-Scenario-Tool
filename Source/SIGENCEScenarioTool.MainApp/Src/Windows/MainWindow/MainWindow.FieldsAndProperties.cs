@@ -462,6 +462,29 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
         }
 
+
+        /// <summary>
+        /// The b use browser internal
+        /// </summary>
+        private bool bUseBrowserInternal = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [use browser internal].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [use browser internal]; otherwise, <c>false</c>.
+        /// </value>
+        public bool UseBrowserInternal
+        {
+            get { return this.bUseBrowserInternal; }
+            set
+            {
+                this.bUseBrowserInternal = value;
+
+                FirePropertyChanged();
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
