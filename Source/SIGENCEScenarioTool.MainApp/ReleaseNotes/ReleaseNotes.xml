@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReleaseNotes>
+
+
+    <!--
+    <Version Version="XX" Title="XXXXXXXX 2018 Release">
+        <Features>
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+        </Features>
+        <Bugs>
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+        </Bugs>
+    </Version>
+-->
+
+
+    <Version Version="15" Title="October 2018 Release">
+        <Features>
+            <Issue Id="151" Description="Sort The Devices For The Excel Export" />
+            <Issue Id="158" Description="Create Release Notes" />
+            <Issue Id="146" Description="Switch The RxTxType To A Integer With Predefined Valus As Static Properties In A Static Class" />
+            <Issue Id="149" Description="Button In The Toobar For Switching From Simulation To Physical" />
+            <Issue Id="141" Description="Tooltips For The Headers Of The DataGrid" />
+            <Issue Id="125" Description="Implement First Physical Datatypes For Datatype Safety" />
+            <Issue Id="137" Description="Change DeviceCopyTimeAddValue To Float" />
+            <Issue Id="138" Description="Use The Insert Key In The DataGrid To Create A New RFDevice" />
+            <Issue Id="154" Description="Check The RxTxType At Validation" />
+            <Issue Id="44" Description="Create A Panel With Filters For The DataGrid" />
+            <Issue Id="156" Description="Remove All TestCode And MenuItems From The Release Version" />
+            <Issue Id="155" Description="Add A Additional Parameter For Every Devices For Technical Parameters" />
+            <Issue Id="148" Description="Switch The Simple TextBox To ICSharpCode.TextEditor To Edit The Scenario Description" />
+        </Features>
+        <Bugs>
+            <Issue Id="152" Description="Update The Documentation Overview Of The RxTxType" />
+        </Bugs>
+    </Version>
+
+
+
+    <Version Version="1.4" Title="September 2018 Release">
+        <Features>
+            <Issue Id="131" Description="Change The Mouse Cursor When DALF Is Active" />
+            <Issue Id="133" Description="Indicator In The Grid Columns Which Properties Are SST Internal Only" />
+            <Issue Id="62" Description="Split The SIGENCEScenarioTool.MainApp Into The MainApp And A Library" />
+            <Issue Id="114" Description="Create A Validator For RFDevice Model" />
+            <Issue Id="88" Description="Create A ScriptEditor And Run Internal A Example Script With Data From SST" />
+            <Issue Id="112" Description="QuickCommander For Fast Commands In The UI" />
+        </Features>
+        <Bugs>
+            <Issue Id="128" Description="Edit TextBoxes With Float- Or Double Values Works Not Correctly" />
+        </Bugs>
+    </Version>
+
+
+
+    <Version Version="1.3" Title="August 2018 Release">
+        <Features>
+            <Issue Id="34" Description="Create A ContextMenu For The DataGrid" />
+            <Issue Id="23" Description="Create And Update Some Unit Tests To Improve CodeQuality" />
+            <Issue Id="106" Description="Add A Logical Label For The Source Of A RFDevice" />
+            <Issue Id="78" Description="RFDevices Along A Line Feature (DALF)" />
+            <Issue Id="105" Description="Store Last Size And Position From MainWindow" />
+            <Issue Id="101" Description="Button Or MenuItem For Switching Back To The Map Default Settings" />
+            <Issue Id="102" Description="Create A Sync Mode Between Map And DataGrid" />
+            <Issue Id="70" Description="Show Sensor Direction In The Icon On The Map" />
+            <Issue Id="55" Description="Implement Device Selection" />
+            <Issue Id="95" Description="Store The Last MapType In Settings" />
+            <Issue Id="86" Description="Configuration For Initial Location" />
+            <Issue Id="71" Description="Hotkey Or MenuItem To Convert German Umlauts In The ScenarioDescription TextEditor" />
+        </Features>
+        <Bugs>
+            <Issue Id="93" Description="Export Into Excel: Correct Column Names" />
+        </Bugs>
+    </Version>
+
+
+
+    <Version Version="1.2" Title="Juli 2018 Release">
+        <Features>
+            <Issue Id="79" Description="Create A QRCode From A GeoLocation" />
+            <Issue Id="72" Description="Create A Little Installer" />
+            <Issue Id="67" Description="The Properties XPos, YPos and ZPos Are Not Visible And Not Editable" />
+            <Issue Id="6" Description="Move RFDevice With Drag&amp;Drop To A New Location On The Map" />
+            <Issue Id="50" Description="Make The Geoposition In The DataGrid Editable" />
+            <Issue Id="49" Description="Copy And Paste An RFDevice In The DataGrid" />
+            <Issue Id="47" Description="Add A Description To A Scenario" />
+            <Issue Id="48" Description="Put The Property StartTime To The DataGrid And Make It Editable" />
+        </Features>
+        <Bugs>
+            <Issue Id="75" Description="Change Gain To Int32 Because We Have Also Negative Values (Damping)" />
+        </Bugs>
+    </Version>
+
+
+
+    <Version Version="1.1" Title="Juni 2018 Release">
+        <Features>
+            <Issue Id="12" Description="Tootltip in the map for Transmitter" />
+            <Issue Id="14" Description="Extend RFDevice Model" />
+            <Issue Id="22" Description="Export The TransmitterList To Excel" />
+            <Issue Id="24" Description="Different Colors For The Markers On The Map For Different RFDevice Types" />
+            <Issue Id="31" Description="Create A CheatSheet With The Most Needed Information, Shortcut's Or Settings" />
+        </Features>
+    </Version>
+
+
+
+    <Version Version="1.0" Title="Initial Release">
+        <Features>
+            <Issue Id="0" Description="This is the first release of the SIGENCE Scenario Tool" />
+        </Features>
+    </Version>
+
+</ReleaseNotes>
