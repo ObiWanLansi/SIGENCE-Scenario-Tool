@@ -1,0 +1,66 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ output extension=".md" #>
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+    string strFileName = this.Host.ResolvePath("ReleaseNotes.xml");
+ 
+    string GITHUB_ISSUE = "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/";
+    //string strVersion = File.ReadAllText(this.Host.ResolvePath("..\\..\\..\\..\\VERSION"));
+    //strVersion = strVersion.Trim();
+#>
+# Release Notes Of The SIGENCE Scenario Tool
+<#
+    XDocument xd = XDocument.Load(strFileName );
+
+    XElement eRoot = xd.Root;
+
+    foreach(XElement eVersion in eRoot.Elements())
+    {
+        string strVersionNumber = eVersion.Attribute("Version").Value;
+        string strVersionTitle = eVersion.Attribute("Title").Value;
+        
+#>
+
+<br/><br/>
+
+## Version <#=strVersionNumber#> - <#=strVersionTitle#>
+<#
+        Action<string> ReadIssue = ((type)=>
+        {
+
+            XElement eType = eVersion.Element(type);
+            
+            if(eType==null)     
+            {
+                return;
+            }
+#>
+
+### <#=type#>
+
+Issue|Description
+-:|-
+<#
+            foreach(XElement xIssue in eType.Elements())
+            {
+                string strId = xIssue.Attribute("Id").Value;
+                string strDescription = xIssue.Attribute("Description").Value;
+#>
+[<#=strId#>](<#=GITHUB_ISSUE#><#=strId#>)|<#=strDescription#>
+<#
+            }
+        });
+
+        ReadIssue("Features");
+        ReadIssue("Bugs");
+    }
+#>
+

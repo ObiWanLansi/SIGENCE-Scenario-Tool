@@ -6,6 +6,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 
 ### Basic
 - [Cheat Sheet](Documentation/Generated/CheatSheet.pdf)
+- [Release Notes](Source/SIGENCEScenarioTool.MainApp/ReleaseNotes/ReleaseNotes.md)
 
 
 ### Advanced

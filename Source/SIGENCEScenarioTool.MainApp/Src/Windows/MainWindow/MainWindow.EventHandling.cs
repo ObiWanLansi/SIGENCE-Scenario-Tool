@@ -441,6 +441,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_About control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        private void MenuItem_About_Click( object sender , RoutedEventArgs e )
+        {
+            Tools.Windows.OpenWebAdress( "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/" );
+
+            e.Handled = true;
+        }
+
         /// <summary>
         /// Handles the Click event of the MenuItem_OpenIssues control.
         /// </summary>
