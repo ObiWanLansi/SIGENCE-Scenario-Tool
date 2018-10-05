@@ -373,10 +373,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <EmbeddedResource Include="Python.xshd" />
-    <None Include="ReleaseNotes\ReleaseNotes.md">
+    <None Include="ReleaseNotes\ReleaseNotes.Markdown.md">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReleaseNotes.tt</DependentUpon>
+      <DependentUpon>ReleaseNotes.Markdown.tt</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -395,9 +395,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ReleaseNotes\ReleaseNotes.tt">
+    <Content Include="ReleaseNotes\ReleaseNotes.Hypertext.html">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReleaseNotes.Hypertext.tt</DependentUpon>
+    </Content>
+    <Content Include="ReleaseNotes\ReleaseNotes.Hypertext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ReleaseNotes.md</LastGenOutput>
+      <LastGenOutput>ReleaseNotes.Hypertext.html</LastGenOutput>
+    </Content>
+    <Content Include="ReleaseNotes\ReleaseNotes.Markdown.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ReleaseNotes.Markdown.md</LastGenOutput>
     </Content>
     <Resource Include="ReleaseNotes\ReleaseNotes.xml" />
     <Resource Include="mobilephone.ico" />

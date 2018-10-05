@@ -1,0 +1,154 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ output extension=".html" #>
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+    string strFileName = this.Host.ResolvePath("ReleaseNotes.xml");
+ 
+    string GITHUB_ISSUE = "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/";
+
+    //string strVersion = File.ReadAllText(this.Host.ResolvePath("..\\..\\..\\..\\VERSION"));
+    //strVersion = strVersion.Trim();
+#>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Release Notes Of The SIGENCE Scenario Tool</title>
+        <style>
+            th {
+                background-color: #F0F0F0;
+                text-align: left;
+            }
+
+            th, td {
+                padding: 5px;
+            }
+
+            table {
+                border: 1px solid black;
+                width: 50%;
+                padding: 5px;
+            }
+
+            a:link {
+                color: dodgerblue;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: dodgerblue;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: dodgerblue;
+                text-decoration: none;
+                font-weight: bolder;
+            }
+
+            a:active {
+                color: dodgerblue;
+                text-decoration: none;
+            }
+
+            h1 {
+                width: 75%;
+                border-bottom: 4px solid black;
+            }
+
+            h2 {
+                background-color: aliceblue;
+                width: 62%;
+                border: 2px solid black;
+                padding: 5px;
+            }
+
+            h3 {
+                border-left: 2px dotted black;
+                padding: 5px;
+            }
+        </style>
+    </head>
+<body>
+  
+    <h1>Release Notes Of The SIGENCE Scenario Tool</h1>
+    <!--
+    <table>
+        <tr>
+            <td><a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool"><svg height="32" width="32" viewBox="0 0 16 16" ><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></td>
+            <td><a href="">Issues</a></td>
+            <td><a href="">Kanbanboard</a></td>
+            <td><a href="">DeviceModel</a></td>
+            <td><a href="">Cheat Sheet</a></td>
+        </tr>
+    </table>
+    -->
+<#
+    XDocument xd = XDocument.Load(strFileName );
+
+    XElement eRoot = xd.Root;
+
+    foreach(XElement eVersion in eRoot.Elements())
+    {
+        string strVersionNumber = eVersion.Attribute("Version").Value;
+        string strVersionTitle = eVersion.Attribute("Title").Value;
+        
+#>
+    <br/><br/>
+    <h2>Version <#=strVersionNumber#> - <#=strVersionTitle#></h2>
+<#
+        Action<string> ReadIssue = ((type)=>
+        {
+
+            XElement eType = eVersion.Element(type);
+            
+            if(eType==null)     
+            {
+                return;
+            }
+            List<Tuple<int,string>> lItems = new List<Tuple<int,string>>();
+
+            foreach(XElement xIssue in eType.Elements())
+            {
+                string strId = xIssue.Attribute("Id").Value;
+                string strDescription = xIssue.Attribute("Description").Value;
+
+                lItems.Add(new Tuple<int,string>(int.Parse(strId),strDescription));
+            }
+
+            lItems.Sort();
+#>
+    <div style="margin-left:80px;">
+        <h3><#=type#> (<#=lItems.Count#>)</h3>
+        <table>
+            <tr><th>Issue</th><th>Description</th></tr>
+<#
+            foreach(var item in lItems)
+            {
+                int iId = item.Item1;
+                string strDescription = item.Item2;
+#>
+                <tr><td style="text-align: right; width: 40px;"><a href="<#=GITHUB_ISSUE#><#=iId#>"><#=iId#></a></td><td><#=strDescription#></td></tr>
+<#
+            }
+#>
+        </table>
+    </div>
+<#
+        });
+
+        ReadIssue("Features");
+        ReadIssue("Bugs");
+    }
+#>
+
+    </body>
+</html>
