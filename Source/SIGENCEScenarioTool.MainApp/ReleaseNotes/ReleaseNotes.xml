@@ -15,7 +15,21 @@
             <Issue Id="" Description="" />
         </Bugs>
     </Version>
+    -->
+
+
+    <Version Version="16" Title="November 2018 Release">
+        <Features>
+            <Issue Id="58" Description="Delete RFDevices In The DataGrid" />
+            <Issue Id="144" Description="Template For Scenario Description" />
+        </Features>
+<!--
+        <Bugs>
+            <Issue Id="152" Description="Update The Documentation Overview Of The RxTxType" />
+        </Bugs>
 -->
+    </Version>
+
 
 
     <Version Version="15" Title="October 2018 Release">
