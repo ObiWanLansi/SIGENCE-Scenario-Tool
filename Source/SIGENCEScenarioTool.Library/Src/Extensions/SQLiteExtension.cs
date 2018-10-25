@@ -12,13 +12,13 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class SQLiteExtension
+    public static class SQLiteExtension
     {
         /// <summary>
         /// Analyzes the specified database connection.
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
-        static public void Analyze(this SQLiteConnection dbConnection)
+        public static void Analyze(this SQLiteConnection dbConnection)
         {
             using (SQLiteCommand dbCommand = new SQLiteCommand("ANALYZE", dbConnection))
             {
@@ -31,7 +31,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// Reindexes the specified database connection.
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
-        static public void Reindex(this SQLiteConnection dbConnection)
+        public static void Reindex(this SQLiteConnection dbConnection)
         {
             using (SQLiteCommand dbCommand = new SQLiteCommand("REINDEX", dbConnection))
             {
@@ -44,7 +44,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// Vacuums the specified database connection.
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
-        static public void Vacuum(this SQLiteConnection dbConnection)
+        public static void Vacuum(this SQLiteConnection dbConnection)
         {
             using (SQLiteCommand dbCommand = new SQLiteCommand("VACUUM", dbConnection))
             {
@@ -60,7 +60,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
-        static public void DropTable(this SQLiteConnection dbConnection, string strTablename)
+        public static void DropTable(this SQLiteConnection dbConnection, string strTablename)
         {
             dbConnection.ExecuteNonQuery("DROP TABLE {0}", strTablename);
         }
@@ -72,7 +72,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbConnection">The db connection.</param>
         /// <param name="strTablename">The STR tablename.</param>
         /// <returns></returns>
-        static public bool TableExists(this SQLiteConnection dbConnection, string strTablename)
+        public static bool TableExists(this SQLiteConnection dbConnection, string strTablename)
         {
             return 1 == (long)dbConnection.ExecuteScalar("SELECT COUNT(1) FROM SQLITE_MASTER WHERE TYPE = 'table' AND LOWER(NAME) = '{0}'", strTablename.ToLower());
         }
@@ -83,7 +83,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <returns></returns>
-        static public List<string> GetTableNames(this SQLiteConnection dbConnection)
+        public static List<string> GetTableNames(this SQLiteConnection dbConnection)
         {
             return dbConnection.Select("SELECT NAME FROM SQLITE_MASTER WHERE TYPE='table' AND NAME NOT LIKE 'sqlite_%'").Select(dbResult => dbResult.GetString(0)).ToList();
         }
@@ -94,7 +94,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <returns></returns>
-        static public List<string> GetViewNames(this SQLiteConnection dbConnection)
+        public static List<string> GetViewNames(this SQLiteConnection dbConnection)
         {
             return dbConnection.Select("SELECT NAME FROM SQLITE_MASTER WHERE TYPE='view' AND NAME NOT LIKE 'sqlite_%'").Select(dbResult => dbResult.GetString(0)).ToList();
         }
@@ -107,7 +107,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strTablename">The string tablename.</param>
-        static public void Truncate(this SQLiteConnection dbConnection, string strTablename)
+        public static void Truncate(this SQLiteConnection dbConnection, string strTablename)
         {
             using (SQLiteTransaction transaction = dbConnection.BeginTransaction())
             {
@@ -129,7 +129,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dbConnection">The database connection.</param>
         /// <returns></returns>
-        static public long GetLastPrimarykey(this SQLiteConnection dbConnection)
+        public static long GetLastPrimarykey(this SQLiteConnection dbConnection)
         {
             using (SQLiteCommand dbCommand = new SQLiteCommand("SELECT LAST_INSERT_ROWID()", dbConnection))
             {
@@ -143,7 +143,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// The sb insert statement
         /// </summary>
-        static private readonly StringBuilder sbInsertStatement = new StringBuilder(512);
+        private static readonly StringBuilder sbInsertStatement = new StringBuilder(512);
 
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strTablename">The string tablename.</param>
         /// <param name="bIgnorePrimaryKey">if set to <c>true</c> [b ignore primary key].</param>
         /// <returns></returns>
-        static public SQLiteCommand PrepareInsertStatement(this SQLiteConnection dbConnection, string strTablename, bool bIgnorePrimaryKey = true)
+        public static SQLiteCommand PrepareInsertStatement(this SQLiteConnection dbConnection, string strTablename, bool bIgnorePrimaryKey = true)
         {
             sbInsertStatement.Clear();
 

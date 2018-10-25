@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Models
     /// <summary>
     /// 
     /// </summary>
-    sealed public class GeoLocalizationResultList : List<GeoLocalizationResult>
+    public sealed class GeoLocalizationResultList : List<GeoLocalizationResult>
     {
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace SIGENCEScenarioTool.Models
         /// Initializes a new instance of the <see cref="GeoLocalizationResultList"/> class.
         /// </summary>
         /// <param name="iInitialSize">Initial size of the i.</param>
-        public GeoLocalizationResultList(int iInitialSize) : base(iInitialSize)
+        public GeoLocalizationResultList( int iInitialSize ) : base( iInitialSize )
         {
         }
 
@@ -31,8 +31,8 @@ namespace SIGENCEScenarioTool.Models
         /// Initializes a new instance of the <see cref="GeoLocalizationResultList"/> class.
         /// </summary>
         /// <param name="collection">Die Auflistung, deren Elemente in die neue Liste kopiert werden.</param>
-        public GeoLocalizationResultList(IEnumerable<GeoLocalizationResult> collection)
-            : base(collection)
+        public GeoLocalizationResultList( IEnumerable<GeoLocalizationResult> collection )
+            : base( collection )
         {
         }
 

@@ -86,7 +86,7 @@ namespace SIGENCEScenarioTool.Tools
         /// <summary>
         /// Fades the white to black.
         /// </summary>
-        static public void FadeWhiteToBlack()
+        public static void FadeWhiteToBlack()
         {
             using( Blink1 blink = new Blink1() )
             {

@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class ColorExtension
+    public static class ColorExtension
     {
         /// <summary>
         /// Returns The Color With Changed Alpha Value.
@@ -15,7 +15,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="color"></param>
         /// <param name="bAlpha"></param>
         /// <returns></returns>
-        static public Color WithAlpha(this Color color, byte bAlpha)
+        public static Color WithAlpha(this Color color, byte bAlpha)
         {
             return new Color { R = color.R, G = color.G, B = color.B, A = bAlpha };
         }

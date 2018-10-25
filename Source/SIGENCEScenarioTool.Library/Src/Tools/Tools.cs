@@ -12,25 +12,25 @@ using System.Windows;
 
 namespace SIGENCEScenarioTool.Tools
 {
-    internal struct SSTPoint
-    {
-        private readonly int x;
-        private readonly int y;
+    //internal struct SSTPoint
+    //{
+    //    private readonly int x;
+    //    private readonly int y;
 
-        public new string ToString => string.Format($"{ this.x }/{ this.y }");
-    }
+    //    public new string ToString => string.Format($"{ this.x }/{ this.y }");
+    //}
 
-    public struct SSTTniop
-    {
-        public int x;
-        public int y;
+    //public struct SSTTniop
+    //{
+    //    public int x;
+    //    public int y;
 
-        public SSTTniop(int x, int y)
-        {
-            this.x = x;
-            this.y = y;
-        }
-    }
+    //    public SSTTniop(int x, int y)
+    //    {
+    //        this.x = x;
+    //        this.y = y;
+    //    }
+    //}
 
 
     /// <summary>
@@ -110,8 +110,8 @@ namespace SIGENCEScenarioTool.Tools
         /// <param name="buffer">The buffer.</param>
         /// <param name="length">The length.</param>
         /// <returns></returns>
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-        private static extern int GetModuleFileName(HandleRef hModule, StringBuilder buffer, int length);
+        [DllImport( "kernel32.dll", CharSet = CharSet.Auto )]
+        private static extern int GetModuleFileName( HandleRef hModule, StringBuilder buffer, int length );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -121,36 +121,36 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         static Tool()
         {
-            StringBuilder buffer = new StringBuilder(256);
-            GetModuleFileName(new HandleRef(null, IntPtr.Zero), buffer, buffer.Capacity);
-            StartupPath = Path.GetDirectoryName(buffer.ToString());
+            StringBuilder buffer = new StringBuilder( 256 );
+            GetModuleFileName( new HandleRef( null, IntPtr.Zero ), buffer, buffer.Capacity );
+            StartupPath = Path.GetDirectoryName( buffer.ToString() );
 
             try
             {
                 Assembly aEntryAssembly = Assembly.GetEntryAssembly();
 
-                if (aEntryAssembly != null)
+                if(aEntryAssembly != null)
                 {
                     {
-                        object[] oAttributes = aEntryAssembly.GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                        object[] oAttributes = aEntryAssembly.GetCustomAttributes( typeof( AssemblyProductAttribute ), false );
 
-                        if (oAttributes.Length == 1)
+                        if(oAttributes.Length == 1)
                         {
                             ProductName = (oAttributes[0] as AssemblyProductAttribute).Product;
                         }
                     }
                     {
-                        object[] oAttributes = aEntryAssembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                        object[] oAttributes = aEntryAssembly.GetCustomAttributes( typeof( AssemblyTitleAttribute ), false );
 
-                        if (oAttributes.Length == 1)
+                        if(oAttributes.Length == 1)
                         {
                             ProductTitle = (oAttributes[0] as AssemblyTitleAttribute).Title;
                         }
                     }
                     {
-                        object[] oAttributes = aEntryAssembly.GetCustomAttributes(typeof(AssemblyFileVersionAttribute), false);
+                        object[] oAttributes = aEntryAssembly.GetCustomAttributes( typeof( AssemblyFileVersionAttribute ), false );
 
-                        if (oAttributes.Length == 1)
+                        if(oAttributes.Length == 1)
                         {
                             Version = (oAttributes[0] as AssemblyFileVersionAttribute).Version;
                         }
@@ -163,7 +163,7 @@ namespace SIGENCEScenarioTool.Tools
                     Version = "0.0";
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 ProductName = ex.Message;
             }
@@ -177,29 +177,29 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="lSizeInBytes">The l size in bytes.</param>
         /// <returns></returns>
-        public static string GetHumanSize(long lSizeInBytes)
+        public static string GetHumanSize( long lSizeInBytes )
         {
-            if (lSizeInBytes >= 1099511627776)
+            if(lSizeInBytes >= 1099511627776)
             {
-                return string.Format("{0:F} Tb", (float)lSizeInBytes / 1099511627776);
+                return string.Format( "{0:F} Tb", (float)lSizeInBytes / 1099511627776 );
             }
 
-            if (lSizeInBytes >= 1073741824)
+            if(lSizeInBytes >= 1073741824)
             {
-                return string.Format("{0:F} Gb", (float)lSizeInBytes / 1073741824);
+                return string.Format( "{0:F} Gb", (float)lSizeInBytes / 1073741824 );
             }
 
-            if (lSizeInBytes >= 1048576)
+            if(lSizeInBytes >= 1048576)
             {
-                return string.Format("{0:F} Mb", (float)lSizeInBytes / 1048576);
+                return string.Format( "{0:F} Mb", (float)lSizeInBytes / 1048576 );
             }
 
-            if (lSizeInBytes >= 1024)
+            if(lSizeInBytes >= 1024)
             {
-                return string.Format("{0:F} Kb", (float)lSizeInBytes / 1024);
+                return string.Format( "{0:F} Kb", (float)lSizeInBytes / 1024 );
             }
 
-            return string.Format("{0} Bytes", lSizeInBytes);
+            return string.Format( "{0} Bytes", lSizeInBytes );
         }
 
 
@@ -208,14 +208,14 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="lLengthInMeter">The l length in meter.</param>
         /// <returns></returns>
-        public static string GetHumanDistance(long lLengthInMeter)
+        public static string GetHumanDistance( long lLengthInMeter )
         {
-            if (lLengthInMeter < 1000)
+            if(lLengthInMeter < 1000)
             {
-                return string.Format("{0} m", lLengthInMeter);
+                return string.Format( "{0} m", lLengthInMeter );
             }
 
-            return string.Format("{0:F} km", (float)lLengthInMeter / 1000);
+            return string.Format( "{0:F} km", (float)lLengthInMeter / 1000 );
         }
 
 
@@ -224,28 +224,28 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strResourceName">Name of the string resource.</param>
         /// <returns></returns>
-        public static string ReadResourceAsString(string strResourceName)
+        public static string ReadResourceAsString( string strResourceName )
         {
-            using (Stream s = Assembly.GetEntryAssembly().GetManifestResourceStream(strResourceName))
+            using(Stream s = Assembly.GetEntryAssembly().GetManifestResourceStream( strResourceName ))
             {
 
-                if (s == null)
+                if(s == null)
                 {
                     return null;
                 }
 
                 byte[] bBuffer = new byte[s.Length];
 
-                if (s.Read(bBuffer, 0, bBuffer.Length) != bBuffer.Length)
+                if(s.Read( bBuffer, 0, bBuffer.Length ) != bBuffer.Length)
                 {
                     return null;
                 }
 
-                StringBuilder sb = new StringBuilder(bBuffer.Length);
+                StringBuilder sb = new StringBuilder( bBuffer.Length );
 
-                foreach (byte t in bBuffer)
+                foreach(byte t in bBuffer)
                 {
-                    sb.Append((char)t);
+                    sb.Append( (char)t );
                 }
 
                 return sb.ToString();
@@ -262,7 +262,7 @@ namespace SIGENCEScenarioTool.Tools
         /// <param name="minutes">The minutes.</param>
         /// <param name="seconds">The seconds.</param>
         /// <returns></returns>
-        public static double GetGrad(double grad, double minutes, double seconds)
+        public static double GetGrad( double grad, double minutes, double seconds )
         {
             return grad + (minutes / 60) + (seconds / 3600);
         }
@@ -273,14 +273,14 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="grad">The grad.</param>
         /// <returns></returns>
-        public static string GetGradMinutesSeconds(double grad)
+        public static string GetGradMinutesSeconds( double grad )
         {
-            double dGrad = Math.Floor(grad);
+            double dGrad = Math.Floor( grad );
             double dMin = (grad - dGrad) * 60;
-            double dMinGrad = Math.Floor(dMin);
+            double dMinGrad = Math.Floor( dMin );
             double dSec = (dMin - dMinGrad) * 60;
 
-            return string.Format("{0}°{1}'{2:F}''", dGrad, dMinGrad, dSec);
+            return string.Format( "{0}°{1}'{2:F}''", dGrad, dMinGrad, dSec );
         }
 
     } // end static public class Tools
@@ -297,9 +297,9 @@ namespace SIGENCEScenarioTool.Tools
         /// Nots the yet implemented.
         /// </summary>
         /// <param name="strCallerName">Name of the string caller.</param>
-        public static void NotYetImplemented([CallerMemberName]string strCallerName = null)
+        public static void NotYetImplemented( [CallerMemberName]string strCallerName = null )
         {
-            MessageBox.Show(string.Format("{0} reported :\nNotYetImplemented ...", strCallerName), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            MessageBox.Show( string.Format( "{0} reported :\nNotYetImplemented ...", strCallerName ), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation );
         }
 
 
@@ -318,10 +318,10 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="ex">The ex.</param>
         /// <param name="strCallerName">Name of the string caller.</param>
-        public static void Error(Exception ex, [CallerMemberName]string strCallerName = null)
+        public static void Error( Exception ex, [CallerMemberName]string strCallerName = null )
         {
-            string strMessage = string.Format("{0} reported:\n{1}", strCallerName, ex.InnerException != null ? ex.InnerException.Message : ex.Message);
-            MessageBox.Show(strMessage, Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+            string strMessage = string.Format( "{0} reported:\n{1}", strCallerName, ex.InnerException != null ? ex.InnerException.Message : ex.Message );
+            MessageBox.Show( strMessage, Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Error );
         }
 
 
@@ -329,9 +329,9 @@ namespace SIGENCEScenarioTool.Tools
         /// Warnings the specified string information text.
         /// </summary>
         /// <param name="strInformationText">The string information text.</param>
-        public static void Warning(string strInformationText)
+        public static void Warning( string strInformationText )
         {
-            MessageBox.Show(strInformationText, Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            MessageBox.Show( strInformationText, Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation );
         }
 
 
@@ -340,9 +340,9 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strFormat">The string format.</param>
         /// <param name="param">The parameter.</param>
-        public static void Warning(string strFormat, params object[] param)
+        public static void Warning( string strFormat, params object[] param )
         {
-            MessageBox.Show(string.Format(strFormat, param), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            MessageBox.Show( string.Format( strFormat, param ), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation );
         }
 
 
@@ -350,9 +350,9 @@ namespace SIGENCEScenarioTool.Tools
         /// Informations the specified string information text.
         /// </summary>
         /// <param name="strInformationText">The string information text.</param>
-        public static void Information(string strInformationText)
+        public static void Information( string strInformationText )
         {
-            MessageBox.Show(strInformationText, Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show( strInformationText, Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information );
         }
 
 
@@ -361,9 +361,9 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strFormat">The string format.</param>
         /// <param name="param">The parameter.</param>
-        public static void Information(string strFormat, params object[] param)
+        public static void Information( string strFormat, params object[] param )
         {
-            MessageBox.Show(string.Format(strFormat, param), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show( string.Format( strFormat, param ), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information );
         }
 
 
@@ -371,10 +371,10 @@ namespace SIGENCEScenarioTool.Tools
         /// Heres the i am.
         /// </summary>
         /// <param name="strCallerName">Name of the string caller.</param>
-        [Conditional("DEBUG")]
-        public static void HereIAm([CallerMemberName]string strCallerName = null)
+        [Conditional( "DEBUG" )]
+        public static void HereIAm( [CallerMemberName]string strCallerName = null )
         {
-            MessageBox.Show(string.Format("Here I'am:\n{0}", strCallerName), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show( string.Format( "Here I'am:\n{0}", strCallerName ), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information );
         }
 
     } // end static public class MB

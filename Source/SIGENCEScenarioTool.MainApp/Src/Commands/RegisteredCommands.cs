@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Commands
     /// <summary>
     /// 
     /// </summary>
-    static public class RegisteredCommands
+    public static class RegisteredCommands
     {
         /// <summary>
         /// Gets the open cheat sheet.
@@ -15,7 +15,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The open cheat sheet.
         /// </value>
-        static public RoutedUICommand OpenCheatSheet { get; private set; }
+        public static RoutedUICommand OpenCheatSheet { get; private set; }
 
         //---------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The create RFDevice.
         /// </value>
-        static public RoutedUICommand CreateRFDevice { get; private set; }
+        public static RoutedUICommand CreateRFDevice { get; private set; }
 
         /// <summary>
         /// Gets the delete RFDevice.
@@ -33,7 +33,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The delete RFDevice.
         /// </value>
-        static public RoutedUICommand DeleteRFDevice { get; private set; }
+        public static RoutedUICommand DeleteRFDevice { get; private set; }
 
         /// <summary>
         /// Gets the move rf device.
@@ -41,7 +41,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The move rf device.
         /// </value>
-        static public RoutedUICommand MoveRFDevice { get; private set; }
+        public static RoutedUICommand MoveRFDevice { get; private set; }
 
         /// <summary>
         /// Gets the copy rf device.
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The copy rf device.
         /// </value>
-        static public RoutedUICommand CopyRFDevice { get; private set; }
+        public static RoutedUICommand CopyRFDevice { get; private set; }
 
         /// <summary>
         /// Gets the paste rf device.
@@ -57,7 +57,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The paste rf device.
         /// </value>
-        static public RoutedUICommand PasteRFDevice { get; private set; }
+        public static RoutedUICommand PasteRFDevice { get; private set; }
 
         /// <summary>
         /// Gets the export RFDevice.
@@ -65,7 +65,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The export RFDevice.
         /// </value>
-        static public RoutedUICommand ExportRFDevice { get; private set; }
+        public static RoutedUICommand ExportRFDevice { get; private set; }
 
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The import RFDevice.
         /// </value>
-        static public RoutedUICommand ImportRFDevice { get; private set; }
+        public static RoutedUICommand ImportRFDevice { get; private set; }
 
         //---------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The create screenshot.
         /// </value>
-        static public RoutedUICommand CreateScreenshot { get; private set; }
+        public static RoutedUICommand CreateScreenshot { get; private set; }
 
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The send data UDP.
         /// </value>
-        static public RoutedUICommand SendDataUDP { get; private set; }
+        public static RoutedUICommand SendDataUDP { get; private set; }
 
         /// <summary>
         /// Gets the receive data UDP.
@@ -102,7 +102,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The receive data UDP.
         /// </value>
-        static public RoutedUICommand ReceiveDataUDP { get; private set; }
+        public static RoutedUICommand ReceiveDataUDP { get; private set; }
 
         /// <summary>
         /// Gets the zoom to rf device.
@@ -110,7 +110,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The zoom to rf device.
         /// </value>
-        static public RoutedUICommand ZoomToRFDevice { get; private set; }
+        public static RoutedUICommand ZoomToRFDevice { get; private set; }
 
         /// <summary>
         /// Gets the rf device qr code.
@@ -118,7 +118,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The rf device qr code.
         /// </value>
-        static public RoutedUICommand RFDeviceQRCode { get; private set; }
+        public static RoutedUICommand RFDeviceQRCode { get; private set; }
 
         /// <summary>
         /// Gets the open settings.
@@ -126,7 +126,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The open settings.
         /// </value>
-        static public RoutedUICommand OpenSettings { get; private set; }
+        public static RoutedUICommand OpenSettings { get; private set; }
 
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The synchronize map and grid.
         /// </value>
-        static public RoutedUICommand SyncMapAndGrid { get; private set; }
+        public static RoutedUICommand SyncMapAndGrid { get; private set; }
 
         /// <summary>
         /// Gets the toggle dalf.
@@ -143,7 +143,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The toggle dalf.
         /// </value>
-        static public RoutedUICommand ToggleDALF { get; private set; }
+        public static RoutedUICommand ToggleDALF { get; private set; }
 
         /// <summary>
         /// Gets the open script editor.
@@ -151,7 +151,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The open script editor.
         /// </value>
-        static public RoutedUICommand OpenScriptEditor { get; private set; }
+        public static RoutedUICommand OpenScriptEditor { get; private set; }
 
         /// <summary>
         /// Gets the open in google maps.
@@ -159,7 +159,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The open in google maps.
         /// </value>
-        static public RoutedUICommand OpenInGoogleMaps { get; private set; }
+        public static RoutedUICommand OpenInGoogleMaps { get; private set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

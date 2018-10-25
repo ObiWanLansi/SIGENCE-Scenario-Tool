@@ -75,15 +75,15 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <param name="oSource">The source.</param>
         /// <param name="strPropertyName">Name of the property.</param>
         /// <param name="oValue">The value.</param>
-        public ValidationResult( Servity sServity , string strMessage , object oSource , string strPropertyName , object oValue )
+        public ValidationResult( Servity sServity, string strMessage, object oSource, string strPropertyName, object oValue )
         {
-            Id = Guid.NewGuid();
-            Timestamp = DateTime.Now;
-            Servity = sServity;
-            Message = strMessage;
-            Source = oSource;
-            PropertyName = strPropertyName;
-            Value = oValue;
+            this.Id = Guid.NewGuid();
+            this.Timestamp = DateTime.Now;
+            this.Servity = sServity;
+            this.Message = strMessage;
+            this.Source = oSource;
+            this.PropertyName = strPropertyName;
+            this.Value = oValue;
         }
 
     } // end public sealed class ValidationResult
@@ -93,7 +93,7 @@ namespace SIGENCEScenarioTool.Models.Validation
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.Generic.List{SIGENCEScenarioTool.Models.Validation.ValidationResult}" />
+    /// <seealso cref="System.Collections.Generic.List{ValidationResult}" />
     public sealed class ValidationResultList : List<ValidationResult>
     {
         /// <summary>
@@ -116,9 +116,9 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <param name="oSource">The o source.</param>
         /// <param name="strPropertyName">Name of the string property.</param>
         /// <param name="oValue">The o value.</param>
-        public void Add( Servity sServity , string strMessage , object oSource , string strPropertyName , object oValue )
+        public void Add( Servity sServity, string strMessage, object oSource, string strPropertyName, object oValue )
         {
-            Add( new ValidationResult( sServity , strMessage , oSource , strPropertyName , oValue ) );
+            Add( new ValidationResult( sServity, strMessage, oSource, strPropertyName, oValue ) );
         }
 
     } // end public sealed class ValidationResultList

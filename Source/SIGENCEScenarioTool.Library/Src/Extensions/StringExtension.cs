@@ -9,7 +9,7 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// Eine Erweiterungsklasse für unseren lieblichen String.
     /// </summary>
-    static public class StringExtension
+    public static class StringExtension
     {
 
         /// <summary>
@@ -17,7 +17,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent">Content of the STR.</param>
         /// <returns></returns>
-        static public string RemoveQuotation(this string strContent)
+        public static string RemoveQuotation(this string strContent)
         {
             string strTemp = strContent.Trim();
 
@@ -37,7 +37,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent"></param>
         /// <returns></returns>
-        static public bool IsEmpty(this string strContent)
+        public static bool IsEmpty(this string strContent)
         {
             return string.IsNullOrEmpty(strContent);
         }
@@ -48,7 +48,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent"></param>
         /// <returns></returns>
-        static public bool IsNotEmpty(this string strContent)
+        public static bool IsNotEmpty(this string strContent)
         {
             return !string.IsNullOrEmpty(strContent);
         }
@@ -61,7 +61,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
-        static public string CapitalizeOnlyFirstLetter(this string strContent)
+        public static string CapitalizeOnlyFirstLetter(this string strContent)
         {
             char[] aData = strContent.ToLower().ToCharArray();
 
@@ -79,7 +79,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
         /// <returns></returns>
-        static public string Capitalize(this string strContent)
+        public static string Capitalize(this string strContent)
         {
             char[] aData = strContent.ToLower().ToCharArray();
 
@@ -117,7 +117,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="cDefault"></param>
         /// <returns></returns>
         /// <remarks>Es könnten auch die .NET symbolischen Farbnamen wie "SlateBlue" übergeben werden.</remarks>
-        static public Color ToColor(this string strColor, Color cDefault)
+        public static Color ToColor(this string strColor, Color cDefault)
         {
             if (!string.IsNullOrEmpty(strColor))
             {
@@ -145,7 +145,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strContent">Content of the string.</param>
         /// <param name="strOtherString">The string other string.</param>
         /// <returns></returns>
-        static public bool EqualsIgnoreCase(this string strContent, string strOtherString)
+        public static bool EqualsIgnoreCase(this string strContent, string strOtherString)
         {
             return strContent.Equals(strOtherString, StringComparison.CurrentCultureIgnoreCase);
         }
@@ -181,7 +181,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="strContent">Content of the STR.</param>
         /// <returns></returns>
-        static public string ReplaceHtml(this string strContent, bool bOnlyGermanUmlauts = false)
+        public static string ReplaceHtml(this string strContent, bool bOnlyGermanUmlauts = false)
         {
             if (strContent.IsNotEmpty() == true)
             {

@@ -16,7 +16,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent The Geo Localization Result Of A RFDevice.
     ///</summary>
-    sealed public class GeoLocalizationResult : AbstractModelBase, IEquatable<GeoLocalizationResult>, ICloneable, IXmlExport
+    public sealed class GeoLocalizationResult : AbstractModelBase, IEquatable<GeoLocalizationResult>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -31,7 +31,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For PrimaryKey.
         ///</summary>
-        static public readonly Guid DEFAULT_PRIMARYKEY = Guid.NewGuid();
+        public static readonly Guid DEFAULT_PRIMARYKEY = Guid.NewGuid();
         
         ///<summary>
         /// The Internal Field For PrimaryKey.
@@ -65,7 +65,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Id.
         ///</summary>
-        static public readonly int DEFAULT_ID = 0;
+        public static readonly int DEFAULT_ID = 0;
         
         ///<summary>
         /// The Internal Field For Id.
@@ -99,7 +99,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Latitude.
         ///</summary>
-        static public readonly double DEFAULT_LATITUDE = double.NaN;
+        public static readonly double DEFAULT_LATITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Latitude.
@@ -133,7 +133,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Longitude.
         ///</summary>
-        static public readonly double DEFAULT_LONGITUDE = double.NaN;
+        public static readonly double DEFAULT_LONGITUDE = double.NaN;
         
         ///<summary>
         /// The Internal Field For Longitude.
@@ -167,7 +167,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Altitude.
         ///</summary>
-        static public readonly uint DEFAULT_ALTITUDE = 0;
+        public static readonly uint DEFAULT_ALTITUDE = 0;
         
         ///<summary>
         /// The Internal Field For Altitude.
@@ -201,7 +201,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For LocalizationTime.
         ///</summary>
-        static public readonly double DEFAULT_LOCALIZATIONTIME = 0;
+        public static readonly double DEFAULT_LOCALIZATIONTIME = 0;
         
         ///<summary>
         /// The Internal Field For LocalizationTime.
@@ -242,7 +242,7 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        static public GeoLocalizationResult FromXml(XElement eRoot)
+        public static GeoLocalizationResult FromXml(XElement eRoot)
         {
             XElement eChild = null;
 
@@ -257,10 +257,10 @@ namespace SIGENCEScenarioTool.Models
 
             return new GeoLocalizationResult
             {
-                PrimaryKey = eChild.GetProperty<Guid>("PrimaryKey",Guid.NewGuid()),
-                Id = eChild.GetProperty<int>("Id",0),
-                Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
-                Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
+                PrimaryKey = eChild.GetProperty( "PrimaryKey",Guid.NewGuid()),
+                Id = eChild.GetProperty( "Id",0),
+                Latitude = eChild.GetProperty( "Latitude",double.NaN),
+                Longitude = eChild.GetProperty( "Longitude",double.NaN),
                 Altitude = eChild.GetProperty<uint>("Altitude",0),
                 LocalizationTime = eChild.GetProperty<double>("LocalizationTime",0)            
             };

@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class StringBuilderExtension
+    public static class StringBuilderExtension
     {
 
         /// <summary>
@@ -16,7 +16,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="sb">The sb.</param>
         /// <param name="strFormat">The string format.</param>
         /// <param name="param">The parameter.</param>
-        static public void AppendLine(this StringBuilder sb, string strFormat, params object[] param)
+        public static void AppendLine(this StringBuilder sb, string strFormat, params object[] param)
         {
             sb.AppendFormat(strFormat, param);
             sb.AppendLine();

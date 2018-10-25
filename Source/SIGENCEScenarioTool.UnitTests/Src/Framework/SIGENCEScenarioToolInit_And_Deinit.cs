@@ -22,7 +22,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
-        static private readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolInit_And_Deinit));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolInit_And_Deinit));
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// Adds the console appender.
         /// </summary>
-        static private bool AddConsoleAppender()
+        private static bool AddConsoleAppender()
         {
             ConsoleAppender ca = new ConsoleAppender
             {
@@ -53,7 +53,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// Adds the file appender.
         /// </summary>
-        static private void AddFileAppender()
+        private static void AddFileAppender()
         {
             FileAppender rfa = new FileAppender
             {

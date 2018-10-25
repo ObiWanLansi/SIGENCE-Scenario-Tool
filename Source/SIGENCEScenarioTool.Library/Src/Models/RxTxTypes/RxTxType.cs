@@ -80,7 +80,7 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="RxTxType" /> to <see cref="System.Int32" />.
+        /// Performs an implicit conversion from <see cref="RxTxType" /> to <see cref="int" />.
         /// </summary>
         /// <param name="rtt">The RTT.</param>
         /// <returns>
@@ -95,10 +95,10 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString()
         {

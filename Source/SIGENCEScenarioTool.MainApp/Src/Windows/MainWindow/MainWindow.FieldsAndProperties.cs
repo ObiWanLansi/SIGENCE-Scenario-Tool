@@ -13,6 +13,7 @@ using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
+using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 // ReSharper disable MemberCanBePrivate.Global
@@ -102,7 +103,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The RFDevice collection.
         /// </value>
-        public RFDeviceViewModelList RFDevicesCollection { get; set; }
+        public RFDeviceViewModelCollection RFDeviceViewModelCollection { get; set; } = new RFDeviceViewModelCollection();
+
+        /// <summary>
+        /// Gets or sets the rf device template collection.
+        /// </summary>
+        /// <value>
+        /// The rf device template collection.
+        /// </value>
+        public RFDeviceTemplateCollection RFDeviceTemplateCollection { get; set; } = new RFDeviceTemplateCollection();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -368,7 +377,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lat; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng(value, this.mcMapControl.Position.Lng);
+                this.mcMapControl.Position = new PointLatLng( value, this.mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -386,7 +395,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lng; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng(this.mcMapControl.Position.Lat, value);
+                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat, value );
 
                 FirePropertyChanged();
             }
@@ -572,7 +581,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The geo node collection.
         /// </value>
-        public GeoNodeCollection GeoNodes { get; set; }
+        public GeoNodeCollection GeoNodeCollection { get; set; }
 
         /// <summary>
         /// The LCV
@@ -615,7 +624,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -641,7 +650,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -667,7 +676,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -692,7 +701,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged("CurrentNodes");
+                FirePropertyChanged( "CurrentNodes" );
             }
         }
 
@@ -717,10 +726,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.bStartedDALF; }
             set
             {
-                if (value == true)
+                if(value == true)
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if (StartDALF() == false)
+                    if(StartDALF() == false)
                     {
                         return;
                     }
@@ -762,7 +771,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.iIdFilter != null ? this.iIdFilter.ToString() : ""; }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if(string.IsNullOrEmpty( value ))
                 {
                     this.iIdFilter = null;
                 }
@@ -771,9 +780,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     try
                     {
 
-                        this.iIdFilter = int.Parse(value);
+                        this.iIdFilter = int.Parse( value );
                     }
-                    catch (Exception)
+                    catch(Exception)
                     {
                         this.iIdFilter = null;
                     }
@@ -867,7 +876,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The quick commands
         /// </summary>
         // ReSharper disable CollectionNeverQueried.Global
-        public ObservableStringCollection QuickCommands { get; set; }
+        public ObservableStringCollection QuickCommands { get; set; } = new ObservableStringCollection();
         // ReSharper restore CollectionNeverQueried.Global
 
 
@@ -877,7 +886,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <value>
         /// The validation result.
         /// </value>
-        public ValidationResultViewModelList ValidationResult { get; set; }
+        public ValidationResultViewModelList ValidationResult { get; set; } = new ValidationResultViewModelList();
 
     } // end public partial class MainWindow
 }

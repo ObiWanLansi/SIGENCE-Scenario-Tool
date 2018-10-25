@@ -7,8 +7,8 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="SIGENCEScenarioTool.Datatypes.DataTypeBase{double}" />
-    sealed public class Latitude : DataTypeBase<double>
+    /// <seealso cref="Datatypes.DataTypeBase{double}" />
+    public sealed class Latitude : DataTypeBase<double>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Latitude" /> class.
@@ -22,13 +22,13 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.Double"/> to <see cref="Latitude"/>.
+        /// Performs an implicit conversion from <see cref="double"/> to <see cref="Latitude"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Latitude(double value)
+        public static implicit operator Latitude(double value)
         {
             return new Latitude(value);
         }
@@ -37,10 +37,10 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString()
         {

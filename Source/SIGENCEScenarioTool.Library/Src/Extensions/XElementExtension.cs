@@ -15,13 +15,13 @@ using SIGENCEScenarioTool.Models.RxTxTypes;
 
 namespace SIGENCEScenarioTool.Extensions
 {
-    static public class XElementExtension
+    public static class XElementExtension
     {
 
         /// <summary>
         /// 
         /// </summary>
-        static private readonly string [] formats = new [] {
+        private static readonly string [] formats = new [] {
             "dd.MM.yyyy, HH:mm:ss" , "dd.MM.yyyy HH:mm:ss" ,
             "ddMMyyyy_HHmmss" , "yyyyMMdd_HHmmss" ,
             "yyyy-MM-dd" , "dd.MM.yyyy" , "dd-MM-yyyy" ,
@@ -31,7 +31,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// Damit double Zahlen die mit . wegeschrieben sind geparst werden können.
         /// </summary>
-        static private readonly CultureInfo ci = new CultureInfo( "en-US" );
+        private static readonly CultureInfo ci = new CultureInfo( "en-US" );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public DateTime? GetDateTimeFromNodeUTC( this XElement xCurrentElement , string strElementName )
+        public static DateTime? GetDateTimeFromNodeUTC( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -85,7 +85,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The be current element.</param>
         /// <param name="strElementName">Name of the STR element.</param>
         /// <returns></returns>
-        static public long? GetLongFromNode( this XElement xCurrentElement , string strElementName )
+        public static long? GetLongFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -104,7 +104,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public int? GetInt32FromNode( this XElement xCurrentElement , string strElementName )
+        public static int? GetInt32FromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -123,7 +123,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public uint? GetUInt32FromNode( this XElement xCurrentElement , string strElementName )
+        public static uint? GetUInt32FromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -142,7 +142,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public float? GetSingleFromNode( this XElement xCurrentElement , string strElementName )
+        public static float? GetSingleFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -161,7 +161,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public float? GetSingleFromNodeComma( this XElement xCurrentElement , string strElementName )
+        public static float? GetSingleFromNodeComma( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -180,7 +180,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public float? GetSingleFromNodePoint( this XElement xCurrentElement , string strElementName )
+        public static float? GetSingleFromNodePoint( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -199,7 +199,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public double? GetDoubleFromNode( this XElement xCurrentElement , string strElementName )
+        public static double? GetDoubleFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -218,7 +218,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public double? GetDoubleFromNodeComma( this XElement xCurrentElement , string strElementName )
+        public static double? GetDoubleFromNodeComma( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -237,7 +237,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public double? GetDoubleFromNodePoint( this XElement xCurrentElement , string strElementName )
+        public static double? GetDoubleFromNodePoint( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -256,7 +256,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The be current element.</param>
         /// <param name="strElementName">Name of the STR element.</param>
         /// <returns></returns>
-        static public string GetStringFromNode( this XElement xCurrentElement , string strElementName )
+        public static string GetStringFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -272,7 +272,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strNamespace">The STR namespace.</param>
         /// <param name="strElementName">Name of the STR element.</param>
         /// <returns></returns>
-        static public string GetStringFromNode( this XElement xCurrentElement , string strNamespace , string strElementName )
+        public static string GetStringFromNode( this XElement xCurrentElement , string strNamespace , string strElementName )
         {
             string strName = string.Format( "{{{0}}}{1}" , strNamespace , strElementName );
 
@@ -288,7 +288,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement"></param>
         /// <param name="strElementName"></param>
         /// <returns></returns>
-        static public string GetStringFromCData( this XElement xCurrentElement , string strElementName )
+        public static string GetStringFromCData( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -302,7 +302,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public bool? GetBoolFromNode( this XElement xCurrentElement , string strElementName )
+        public static bool? GetBoolFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -321,7 +321,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public Guid? GetGuidFromNode( this XElement xCurrentElement , string strElementName )
+        public static Guid? GetGuidFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -397,7 +397,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="xCurrentElement">The x current element.</param>
         /// <param name="strElementName">Name of the string element.</param>
         /// <returns></returns>
-        static public BitmapSource GetBitmapSourceFromNode( this XElement xCurrentElement , string strElementName )
+        public static BitmapSource GetBitmapSourceFromNode( this XElement xCurrentElement , string strElementName )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -425,7 +425,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="tDefault">The t default.</param>
         /// <returns></returns>
-        static public T GetEnumFromNode<T>( this XElement xCurrentElement , string strElementName , T tDefault )
+        public static T GetEnumFromNode<T>( this XElement xCurrentElement , string strElementName , T tDefault )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -445,7 +445,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="cDefault">The c default.</param>
         /// <returns></returns>
-        static public Color GetColorFromNode( this XElement xCurrentElement , string strElementName , Color cDefault )
+        public static Color GetColorFromNode( this XElement xCurrentElement , string strElementName , Color cDefault )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -465,7 +465,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="fiDefault">The fi default.</param>
         /// <returns></returns>
-        static public FileInfo GetFileInfoFromNode( this XElement xCurrentElement , string strElementName , FileInfo fiDefault )
+        public static FileInfo GetFileInfoFromNode( this XElement xCurrentElement , string strElementName , FileInfo fiDefault )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -485,7 +485,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="diDefault">The di default.</param>
         /// <returns></returns>
-        static public DirectoryInfo GetDirectoryInfoFromNode( this XElement xCurrentElement , string strElementName , DirectoryInfo diDefault )
+        public static DirectoryInfo GetDirectoryInfoFromNode( this XElement xCurrentElement , string strElementName , DirectoryInfo diDefault )
         {
             XElement x = xCurrentElement.Element( strElementName );
 
@@ -511,7 +511,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strName">Name of the string.</param>
         /// <param name="bIsUTC">if set to <c>true</c> [b is UTC].</param>
         /// <returns></returns>
-        static public DateTime? GetDateTimeAttribute( this XElement eParent , string strName , bool bIsUTC = false )
+        public static DateTime? GetDateTimeAttribute( this XElement eParent , string strName , bool bIsUTC = false )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -532,7 +532,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public string GetStringAttribute( this XElement eParent , string strName )
+        public static string GetStringAttribute( this XElement eParent , string strName )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -551,7 +551,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public bool? GetBoolAttribute( this XElement eParent , string strName )
+        public static bool? GetBoolAttribute( this XElement eParent , string strName )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -570,7 +570,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public uint? GetUInt32Attribute( this XElement eParent , string strName )
+        public static uint? GetUInt32Attribute( this XElement eParent , string strName )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -589,7 +589,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public int? GetInt32Attribute( this XElement eParent , string strName )
+        public static int? GetInt32Attribute( this XElement eParent , string strName )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -608,7 +608,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public long? GetInt64Attribute( this XElement eParent , string strName )
+        public static long? GetInt64Attribute( this XElement eParent , string strName )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -627,7 +627,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public double? GetDoubleAttribute( this XElement eParent , string strName )
+        public static double? GetDoubleAttribute( this XElement eParent , string strName )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -651,7 +651,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="eParent">The e parent.</param>
         /// <param name="strName">Name of the string.</param>
         /// <returns></returns>
-        static public float? GetSingleAttribute( this XElement eParent , string strName )
+        public static float? GetSingleAttribute( this XElement eParent , string strName )
         {
             XAttribute a = eParent.Attribute( strName );
 
@@ -679,7 +679,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strPropertyName">Name of the string property.</param>
         /// <param name="o">The o.</param>
         /// <returns></returns>
-        static public XElement GetXElement( string strPropertyName , object o )
+        public static XElement GetXElement( string strPropertyName , object o )
         {
             //if( o is MapPoint )
             //{
@@ -742,13 +742,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="tDefault">The t default.</param>
         /// <returns></returns>
         /// <exception cref="NotSupportedException"></exception>
-        static public T GetProperty<T>( this XElement eParent , string strElementName , T tDefault )
+        public static T GetProperty<T>( this XElement eParent , string strElementName , T tDefault )
         {
             Type t = typeof( T );
 
             if( t.IsEnum )
             {
-                return GetEnumFromNode<T>( eParent , strElementName , tDefault );
+                return GetEnumFromNode( eParent , strElementName , tDefault );
             }
 
             //-----------------------------------------------------------------
@@ -917,7 +917,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// The XML writer settings
         /// </summary>
-        static private readonly XmlWriterSettings XML_WRITER_SETTINGS = new XmlWriterSettings
+        private static readonly XmlWriterSettings XML_WRITER_SETTINGS = new XmlWriterSettings
         {
             Indent = true ,
             IndentChars = "    " ,
@@ -928,7 +928,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// The XML declaration
         /// </summary>
-        static private readonly XDeclaration XML_DECLARATION = new XDeclaration( "1.0" , "ISO-8859-1" , "yes" );
+        private static readonly XDeclaration XML_DECLARATION = new XDeclaration( "1.0" , "ISO-8859-1" , "yes" );
 
 
         /// <summary>
@@ -936,7 +936,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="element"></param>
         /// <param name="strOutputFilename"></param>
-        static public void SaveDefault( this XElement element , string strOutputFilename )
+        public static void SaveDefault( this XElement element , string strOutputFilename )
         {
             using( BufferedStream bs = new BufferedStream( new FileStream( strOutputFilename , FileMode.Create , FileAccess.Write ) ) )
             {
@@ -953,7 +953,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="element">The element.</param>
         /// <returns></returns>
-        static public string ToDefaultString( this XElement element )
+        public static string ToDefaultString( this XElement element )
         {
             StringBuilder sb = new StringBuilder( 8192 );
 

@@ -12,7 +12,7 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class IDbConnectionExtension
+    public static class IDbConnectionExtension
     {
         /// <summary>
         /// Selects the specified db connection.
@@ -21,7 +21,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strFormat">The STR format.</param>
         /// <param name="args">The args.</param>
         /// <returns></returns>
-        static public IEnumerable<IDataReader> Select(this IDbConnection dbConnection, string strFormat, params object[] args)
+        public static IEnumerable<IDataReader> Select(this IDbConnection dbConnection, string strFormat, params object[] args)
         {
             string strSQLStatement = args != null && args.Length > 0 ? string.Format(strFormat, args) : strFormat;
 
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbConnection">Die aktuelle Datenbankverbindung.</param>
         /// <param name="strSelectStatement">The STR select statement.</param>
         /// <returns></returns>
-        static public IEnumerable<IDataReader> Select(this IDbConnection dbConnection, string strSelectStatement)
+        public static IEnumerable<IDataReader> Select(this IDbConnection dbConnection, string strSelectStatement)
         {
             using (IDbCommand dbCommand = dbConnection.CreateCommand())
             {
@@ -78,7 +78,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strFormat">The STR format.</param>
         /// <param name="args">The args.</param>
         /// <returns></returns>
-        static public int ExecuteNonQuery(this IDbConnection dbConnection, string strFormat, params object[] args)
+        public static int ExecuteNonQuery(this IDbConnection dbConnection, string strFormat, params object[] args)
         {
             string strSQLStatement = args != null && args.Length > 0 ? string.Format(strFormat, args) : strFormat;
 
@@ -100,7 +100,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strFormat">The string format.</param>
         /// <param name="args">The arguments.</param>
         /// <returns></returns>
-        static public int ExecuteNonQuery(this IDbConnection dbConnection, int iTimeout, bool bTransaction, string strFormat, params object[] args)
+        public static int ExecuteNonQuery(this IDbConnection dbConnection, int iTimeout, bool bTransaction, string strFormat, params object[] args)
         {
             string strSQLStatement = args != null && args.Length > 0 ? string.Format(strFormat, args) : strFormat;
 
@@ -148,7 +148,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strFormat">The string format.</param>
         /// <param name="args">The arguments.</param>
         /// <returns></returns>
-        static public object ExecuteScalar(this IDbConnection dbConnection, string strFormat, params object[] args) => ExecuteScalar(dbConnection, 0, strFormat, args);
+        public static object ExecuteScalar(this IDbConnection dbConnection, string strFormat, params object[] args) => ExecuteScalar(dbConnection, 0, strFormat, args);
 
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strFormat">The STR format.</param>
         /// <param name="args">The args.</param>
         /// <returns></returns>
-        static public object ExecuteScalar(this IDbConnection dbConnection, int iTimeOut, string strFormat, params object[] args)
+        public static object ExecuteScalar(this IDbConnection dbConnection, int iTimeOut, string strFormat, params object[] args)
         {
             string strSQLStatement = args != null && args.Length > 0 ? string.Format(strFormat, args) : strFormat;
 
@@ -183,7 +183,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strSelectStatement">The string select statement.</param>
         /// <returns></returns>
-        static public SortedDictionary<T1, T2> GetSortedDictionary<T1, T2>(this IDbConnection dbConnection, string strSelectStatement)
+        public static SortedDictionary<T1, T2> GetSortedDictionary<T1, T2>(this IDbConnection dbConnection, string strSelectStatement)
         {
             using (IDbCommand dbCommand = dbConnection.CreateCommand())
             {
@@ -214,7 +214,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbConnection">The database connection.</param>
         /// <param name="strSelectStatement">The string select statement.</param>
         /// <returns></returns>
-        static public Dictionary<T1, T2> GetDictionary<T1, T2>(this IDbConnection dbConnection, string strSelectStatement)
+        public static Dictionary<T1, T2> GetDictionary<T1, T2>(this IDbConnection dbConnection, string strSelectStatement)
         {
             using (IDbCommand dbCommand = dbConnection.CreateCommand())
             {
@@ -245,7 +245,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbConnection">The db connection.</param>
         /// <param name="bIgnoreCloseException">if set to <c>true</c> [b ignore close exception].</param>
         /// <returns></returns>
-        static public bool CloseIfOpen(this IDbConnection dbConnection, bool bIgnoreCloseException = true)
+        public static bool CloseIfOpen(this IDbConnection dbConnection, bool bIgnoreCloseException = true)
         {
             bool bResult = false;
 
@@ -279,7 +279,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strSelectStatement">The STR select statement.</param>
         /// <param name="fiExportFile">The fi export file.</param>
         /// <param name="cDivider">The c divider.</param>
-        static public void SaveAsCSV(this IDbConnection dbConnection, string strSelectStatement, FileInfo fiExportFile, char cDivider)
+        public static void SaveAsCSV(this IDbConnection dbConnection, string strSelectStatement, FileInfo fiExportFile, char cDivider)
         {
             using (IDbCommand dbCommand = dbConnection.CreateCommand())
             {
@@ -331,7 +331,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strFormat">The string format.</param>
         /// <param name="args">The arguments.</param>
         /// <returns></returns>
-        static public DataTable SelectAsDataTable(this IDbConnection dbConnection, string strResultTableName, string strFormat, params object[] args)
+        public static DataTable SelectAsDataTable(this IDbConnection dbConnection, string strResultTableName, string strFormat, params object[] args)
         {
             string strSQLStatement = args != null && args.Length > 0 ? string.Format(strFormat, args) : strFormat;
 

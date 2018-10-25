@@ -8,7 +8,7 @@ namespace SIGENCEScenarioTool.Models
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
+    /// <seealso cref="INotifyPropertyChanged" />
     public abstract class AbstractModelBase : INotifyPropertyChanged
     {
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

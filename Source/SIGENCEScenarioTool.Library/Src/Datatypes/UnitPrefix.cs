@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    sealed public class UnitPrefix
+    public sealed class UnitPrefix
     {
         /// <summary>
         /// Gets or sets the name.

@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="SIGENCEScenarioTool.Datatypes.DataTypeBase{int}" />
+    /// <seealso cref="Datatypes.DataTypeBase{int}" />
     public sealed class Altitude : DataTypeBase<int>
     {
         /// <summary>
@@ -22,13 +22,13 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.Int32"/> to <see cref="Altitude"/>.
+        /// Performs an implicit conversion from <see cref="int"/> to <see cref="Altitude"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Altitude(int value)
+        public static implicit operator Altitude(int value)
         {
             return new Altitude(value);
         }

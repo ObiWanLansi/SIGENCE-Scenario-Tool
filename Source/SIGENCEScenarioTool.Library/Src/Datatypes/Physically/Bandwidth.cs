@@ -5,8 +5,8 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="SIGENCEScenarioTool.Datatypes.DataTypeBase{System.Double}" />
-    sealed public class Bandwidth : DataTypeBase<double>
+    /// <seealso cref="Datatypes.DataTypeBase{System.Double}" />
+    public sealed class Bandwidth : DataTypeBase<double>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Bandwidth" /> class.
@@ -19,13 +19,13 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="System.Double"/> to <see cref="Bandwidth"/>.
+        /// Performs an implicit conversion from <see cref="double"/> to <see cref="Bandwidth"/>.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator Bandwidth( double value )
+        public static implicit operator Bandwidth( double value )
         {
             return new Bandwidth( value );
         }
@@ -34,10 +34,10 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString()
         {

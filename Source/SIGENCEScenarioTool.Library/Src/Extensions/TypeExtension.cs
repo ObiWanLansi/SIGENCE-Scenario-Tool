@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class TypeExtension
+    public static class TypeExtension
     {
         /// <summary>
         /// Check if the class is derived from a other class.
@@ -15,7 +15,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="tClass">The t class.</param>
         /// <param name="tBase">The t base.</param>
         /// <returns></returns>
-        static public bool DerivedFromType(this Type tClass, Type tBase)
+        public static bool DerivedFromType(this Type tClass, Type tBase)
         {
             if (tClass.BaseType == null || tClass.BaseType.FullName == null)
             {
@@ -32,7 +32,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="tClass">The t class.</param>
         /// <param name="tInterface">The t interface.</param>
         /// <returns></returns>
-        static public bool ImplementsInterface(this Type tClass, Type tInterface)
+        public static bool ImplementsInterface(this Type tClass, Type tInterface)
         {
             foreach (Type t in tClass.GetInterfaces())
             {

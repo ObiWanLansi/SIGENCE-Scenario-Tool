@@ -18,12 +18,12 @@ namespace SIGENCEScenarioTool.UnitTests
     /// <summary>
     /// 
     /// </summary>
-    static public class SIGENCEScenarioToolTestCaseHelper
+    public static class SIGENCEScenarioToolTestCaseHelper
     {
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
-        static private readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolTestCaseHelper));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolTestCaseHelper));
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// </summary>
         /// <param name="desc">The desc.</param>
         /// <returns></returns>
-        static private string GetDescription(DescriptionAttribute desc)
+        private static string GetDescription(DescriptionAttribute desc)
         {
             if (desc != null && desc.Properties != null && desc.Properties.ContainsKey(PropertyNames.Description))
             {
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// Validates the test case information.
         /// </summary>
-        static public void ValidateTestCaseInformation()
+        public static void ValidateTestCaseInformation()
         {
             HashSet<string> hsTestCaseId = new HashSet<string>();
 
@@ -97,7 +97,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// Shows the test case information.
         /// </summary>
-        static public void ShowTestCaseInformation()
+        public static void ShowTestCaseInformation()
         {
             StackFrame sf = new StackFrame(1, true);
 

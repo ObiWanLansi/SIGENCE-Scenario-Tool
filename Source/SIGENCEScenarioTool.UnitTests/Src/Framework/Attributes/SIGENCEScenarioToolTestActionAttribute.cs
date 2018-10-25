@@ -12,12 +12,12 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
     /// <summary>
     /// 
     /// </summary>
-    sealed public class SIGENCEScenarioToolTestActionAttribute : Attribute, ITestAction
+    public sealed class SIGENCEScenarioToolTestActionAttribute : Attribute, ITestAction
     {
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
-        static private readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolTestActionAttribute));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolTestActionAttribute));
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -12,8 +12,8 @@ namespace SIGENCEScenarioTool.Database.SQLite
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.IDisposable" />
-    sealed public class SQLiteMemoryDatabase : IDisposable
+    /// <seealso cref="IDisposable" />
+    public sealed class SQLiteMemoryDatabase : IDisposable
     {
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator SQLiteConnection(SQLiteMemoryDatabase memdb) => memdb.Connection;
+        public static implicit operator SQLiteConnection(SQLiteMemoryDatabase memdb) => memdb.Connection;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

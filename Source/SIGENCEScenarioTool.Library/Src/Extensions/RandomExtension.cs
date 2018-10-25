@@ -10,14 +10,14 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// Eine Erweiterungsklasse für System.Random .
     /// </summary>
-    static public class RandomExtension
+    public static class RandomExtension
     {
         /// <summary>
         /// Der Vollständigkeit wegen.
         /// </summary>
         /// <param name="r">The r.</param>
         /// <returns></returns>
-        static public int NextInt(this Random r)
+        public static int NextInt(this Random r)
         {
             return r.Next();
         }
@@ -28,7 +28,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="r">The r.</param>
         /// <returns></returns>
-        static public uint NextUInt(this Random r)
+        public static uint NextUInt(this Random r)
         {
             return (uint)r.Next();
         }
@@ -39,7 +39,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="r">The current random object</param>
         /// <returns></returns>
-        static public bool NextBool(this Random r)
+        public static bool NextBool(this Random r)
         {
             return (r.Next() % 2) != 0;
         }
@@ -51,7 +51,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="r">The r.</param>
         /// <param name="tEnum">The t enum.</param>
         /// <returns></returns>
-        static public int NextEnum(this Random r, Type tEnum)
+        public static int NextEnum(this Random r, Type tEnum)
         {
             if (tEnum.IsEnum == false)
             {
@@ -82,7 +82,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="r">The current random object</param>
         /// <returns></returns>
-        static public T NextEnum<T>(this Random r)
+        public static T NextEnum<T>(this Random r)
         {
             Type tEnum = typeof(T);
 
@@ -114,7 +114,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="r">The r.</param>
         /// <returns></returns>
-        static public long NextLong(this Random r)
+        public static long NextLong(this Random r)
         {
             return (((long)r.NextInt()) << 32) + r.NextInt();
         }
@@ -125,7 +125,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="r">The r.</param>
         /// <returns></returns>
-        static public ulong NextULong(this Random r)
+        public static ulong NextULong(this Random r)
         {
             return ((ulong)r.NextInt() << 32) + (ulong)r.NextInt();
         }
@@ -139,7 +139,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dtMax">The dt maximum.</param>
         /// <param name="dtk">The DTK.</param>
         /// <returns></returns>
-        static public DateTime NextDateTime(this Random r, DateTime dtMin, DateTime dtMax, DateTimeKind dtk = DateTimeKind.Local)
+        public static DateTime NextDateTime(this Random r, DateTime dtMin, DateTime dtMax, DateTimeKind dtk = DateTimeKind.Local)
         {
             return new DateTime((r.NextLong() % (dtMax.Ticks - dtMin.Ticks)) + dtMin.Ticks, dtk);
         }
@@ -151,7 +151,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="r">The r.</param>
         /// <param name="dtk">The DTK.</param>
         /// <returns></returns>
-        static public DateTime NextDateTime(this Random r, DateTimeKind dtk = DateTimeKind.Local)
+        public static DateTime NextDateTime(this Random r, DateTimeKind dtk = DateTimeKind.Local)
         {
             return NextDateTime(r, DateTime.MinValue, DateTime.MaxValue, dtk);
         }
@@ -164,7 +164,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="r">The r.</param>
         /// <param name="lValues">The l values.</param>
         /// <returns></returns>
-        static public T NextObject<T>(this Random r, IList<T> lValues)
+        public static T NextObject<T>(this Random r, IList<T> lValues)
         {
             return lValues[r.Next(lValues.Count)];
         }
@@ -177,7 +177,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="r">The r.</param>
         /// <param name="cValues">The c values.</param>
         /// <returns></returns>
-        static public T NextObject<T>(this Random r, ICollection<T> cValues)
+        public static T NextObject<T>(this Random r, ICollection<T> cValues)
         {
             int iSelectedValue = r.Next(cValues.Count);
             int iCounter = 0;
@@ -203,7 +203,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="iMinLength">Length of the i min.</param>
         /// <param name="iMaxLength">Length of the i max.</param>
         /// <returns></returns>
-        static public string NextString(this Random r, int iMinLength, int iMaxLength)
+        public static string NextString(this Random r, int iMinLength, int iMaxLength)
         {
             int iLength = r.Next(iMinLength, iMaxLength + 1);
 
@@ -225,7 +225,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="r">The r.</param>
         /// <param name="iSaltLength">Length of the i salt.</param>
         /// <returns></returns>
-        static public string NextSalt(this Random r, int iSaltLength = 5)
+        public static string NextSalt(this Random r, int iSaltLength = 5)
         {
             StringBuilder sb = new StringBuilder(iSaltLength);
 
@@ -243,7 +243,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="r">The r.</param>
         /// <returns></returns>
-        static public Color NextColor(this Random r)
+        public static Color NextColor(this Random r)
         {
             return Color.FromRgb((byte)r.Next(256), (byte)r.Next(256), (byte)r.Next(256));
         }
@@ -254,7 +254,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="r">The r.</param>
         /// <returns></returns>
-        static public string NextAutoKennzeichen(this Random r)
+        public static string NextAutoKennzeichen(this Random r)
         {
             string strPart1 = r.NextString(2, 3);
             string strPart2 = r.NextString(2, 2);

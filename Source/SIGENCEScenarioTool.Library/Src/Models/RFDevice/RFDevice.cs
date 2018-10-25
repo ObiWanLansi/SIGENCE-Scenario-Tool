@@ -19,7 +19,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent A Device Based On A Radio Frequency.
     ///</summary>
-    public sealed partial class RFDevice :AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
+    public partial class RFDevice :AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -880,7 +880,7 @@ namespace SIGENCEScenarioTool.Models
         /// </summary>
         /// <param name="eRoot">The e root.</param>
         /// <returns></returns>
-        static public RFDevice FromXml(XElement eRoot)
+        public static RFDevice FromXml(XElement eRoot)
         {
             XElement eChild = null;
 
@@ -895,28 +895,28 @@ namespace SIGENCEScenarioTool.Models
 
             return new RFDevice
             {
-                PrimaryKey = eChild.GetProperty<Guid>("PrimaryKey",Guid.NewGuid()),
-                Id = eChild.GetProperty<int>("Id",0),
-                DeviceSource = eChild.GetProperty<DeviceSource>("DeviceSource",DeviceSource.Unknown),
+                PrimaryKey = eChild.GetProperty( "PrimaryKey",Guid.NewGuid()),
+                Id = eChild.GetProperty( "Id",0),
+                DeviceSource = eChild.GetProperty( "DeviceSource",DeviceSource.Unknown),
                 StartTime = eChild.GetProperty<double>("StartTime",0),
-                Name = eChild.GetProperty<string>("Name","RFDevice"),
+                Name = eChild.GetProperty( "Name","RFDevice"),
                 Latitude = eChild.GetProperty<Latitude>("Latitude",double.NaN),
                 Longitude = eChild.GetProperty<Longitude>("Longitude",double.NaN),
                 Altitude = eChild.GetProperty<Altitude>("Altitude",0),
                 Roll = eChild.GetProperty<double>("Roll",0),
                 Pitch = eChild.GetProperty<double>("Pitch",0),
                 Yaw = eChild.GetProperty<double>("Yaw",0),
-                RxTxType = eChild.GetProperty<RxTxType>("RxTxType",RxTxTypes.RxTxTypes.Unknown),
-                AntennaType = eChild.GetProperty<AntennaType>("AntennaType",AntennaType.Unknown),
+                RxTxType = eChild.GetProperty( "RxTxType",RxTxTypes.RxTxTypes.Unknown),
+                AntennaType = eChild.GetProperty( "AntennaType",AntennaType.Unknown),
                 CenterFrequency_Hz = eChild.GetProperty<Frequency>("CenterFrequency_Hz",0),
                 Bandwidth_Hz = eChild.GetProperty<Bandwidth>("Bandwidth_Hz",0),
                 Gain_dB = eChild.GetProperty<Gain>("Gain_dB",0),
                 SignalToNoiseRatio_dB = eChild.GetProperty<SignalToNoiseRatio>("SignalToNoiseRatio_dB",0),
-                XPos = eChild.GetProperty<int>("XPos",0),
-                YPos = eChild.GetProperty<int>("YPos",0),
-                ZPos = eChild.GetProperty<int>("ZPos",0),
-                Remark = eChild.GetProperty<string>("Remark",""),
-                TechnicalParameters = eChild.GetProperty<string>("TechnicalParameters","")            
+                XPos = eChild.GetProperty( "XPos",0),
+                YPos = eChild.GetProperty( "YPos",0),
+                ZPos = eChild.GetProperty( "ZPos",0),
+                Remark = eChild.GetProperty( "Remark",""),
+                TechnicalParameters = eChild.GetProperty( "TechnicalParameters","")            
             };
         }
 
@@ -1314,5 +1314,5 @@ namespace SIGENCEScenarioTool.Models
         /// </summary>
         public string TOOLTIP_TECHNICALPARAMETERS { get { return "Additional (Optional) Technical Parameters\nFor The Simulation."; } }
 
-    } // end public sealed class RFDeviceTooltips
+    } // end public class RFDeviceTooltips
 }

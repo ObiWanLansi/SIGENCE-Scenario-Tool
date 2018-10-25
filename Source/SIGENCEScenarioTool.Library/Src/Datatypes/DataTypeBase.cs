@@ -14,7 +14,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <summary>
         /// The ci
         /// </summary>
-        static protected readonly CultureInfo CULTUREINFO = new CultureInfo("en-US");
+        protected static readonly CultureInfo CULTUREINFO = new CultureInfo("en-US");
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator T(DataTypeBase<T> apb)
+        public static implicit operator T(DataTypeBase<T> apb)
         {
             return apb.Value;
         }
@@ -58,10 +58,10 @@ namespace SIGENCEScenarioTool.Datatypes
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString()
         {
@@ -77,7 +77,7 @@ namespace SIGENCEScenarioTool.Datatypes
         ///   <c>true</c> if this instance is valid; otherwise, <c>false</c>.
         /// </returns>
         /// <remarks>This Funktion Is For The Future And Get Currently Not Evaluated Anywhere, So Devired Class Should Throw A NotImplementedException</remarks>
-        abstract public bool? IsValid();
+        public abstract bool? IsValid();
 
 
         /// <summary>

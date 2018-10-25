@@ -15,17 +15,17 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class ListExtension
+    public static class ListExtension
     {
         /// <summary>
         /// The hs ignore types
         /// </summary>
-        static private readonly HashSet<string> hsIgnoreTypes = new HashSet<string> { "List`1" , "HashSet`1" , "SortedDictionary`2" , "IntPtr" , "StreamWriter" , "StreamReader" };
+        private static readonly HashSet<string> hsIgnoreTypes = new HashSet<string> { "List`1" , "HashSet`1" , "SortedDictionary`2" , "IntPtr" , "StreamWriter" , "StreamReader" };
 
         /// <summary>
         /// The cultureinfo
         /// </summary>
-        static private readonly CultureInfo CULTUREINFO = new CultureInfo( "en-US" );
+        private static readonly CultureInfo CULTUREINFO = new CultureInfo( "en-US" );
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -176,7 +176,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="lValues">The l values.</param>
         /// <param name="strOutputFilename">The string output filename.</param>
-        static public void SaveAsXml<T>( this List<T> lValues , string strOutputFilename ) where T : IXmlExport
+        public static void SaveAsXml<T>( this List<T> lValues , string strOutputFilename ) where T : IXmlExport
         {
             XElement element = new XElement( typeof( T ).Name + "List" );
 
@@ -230,10 +230,10 @@ namespace SIGENCEScenarioTool.Extensions
         /// <exception cref="ArgumentException">Die Liste darf nicht leer sein! - lValues
         /// or
         /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
-        /// <exception cref="System.ArgumentException">Die Liste darf nicht leer sein! - lValues
+        /// <exception cref="ArgumentException">Die Liste darf nicht leer sein! - lValues
         /// or
         /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
-        static public void SaveAsCsv<T>( this List<T> lValues , string strOutputFilename , bool bUseQuotationMark = false )
+        public static void SaveAsCsv<T>( this List<T> lValues , string strOutputFilename , bool bUseQuotationMark = false )
         {
             if( lValues == null || lValues.Count == 0 )
             {

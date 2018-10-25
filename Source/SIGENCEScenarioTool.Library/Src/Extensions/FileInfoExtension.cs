@@ -7,14 +7,14 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// Eine Erweiterungsklasse für System.IO.FileInfo .
     /// </summary>
-    static public class FileInfoExtension
+    public static class FileInfoExtension
     {
         /// <summary>
         /// Gets the size of the file.
         /// </summary>
         /// <param name="fi">The fi.</param>
         /// <returns></returns>
-        static public string GetFileSize(this FileInfo fi)
+        public static string GetFileSize(this FileInfo fi)
         {
             if (fi.Length >= 1073741824)
             {
@@ -40,7 +40,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="fi">The fi.</param>
         /// <returns></returns>
-        static public string GetFilenameWithoutExtension(this FileInfo fi)
+        public static string GetFilenameWithoutExtension(this FileInfo fi)
         {
             return fi.Extension.Length == 0 ? fi.Name : fi.Name.Remove(fi.Name.Length - fi.Extension.Length);
         }
@@ -53,7 +53,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="fi">The fi.</param>
         /// <param name="diDirectory">The di directory.</param>
-        static public void MoveTo(this FileInfo fi, DirectoryInfo diDirectory)
+        public static void MoveTo(this FileInfo fi, DirectoryInfo diDirectory)
         {
             fi.MoveTo(string.Format("{0}\\{1}", diDirectory.FullName, fi.Name));
         }
@@ -67,7 +67,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="fi">The fi.</param>
         /// <param name="di">The di.</param>
         /// <returns></returns>
-        static public FileInfo CopyTo(this FileInfo fi, DirectoryInfo di)
+        public static FileInfo CopyTo(this FileInfo fi, DirectoryInfo di)
         {
             return fi.CopyTo(string.Format("{0}\\{1}", di.FullName, fi.Name));
         }
@@ -80,7 +80,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="di">The di.</param>
         /// <param name="bOverwrite">if set to <c>true</c> [b overwrite].</param>
         /// <returns></returns>
-        static public FileInfo CopyTo(this FileInfo fi, DirectoryInfo di, bool bOverwrite)
+        public static FileInfo CopyTo(this FileInfo fi, DirectoryInfo di, bool bOverwrite)
         {
             return fi.CopyTo(string.Format("{0}\\{1}", di.FullName, fi.Name), bOverwrite);
         }

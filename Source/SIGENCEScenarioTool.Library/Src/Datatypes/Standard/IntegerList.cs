@@ -9,7 +9,7 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
     /// 
     /// </summary>
     /// <seealso cref="System.Collections.Generic.List{System.Int32}" />
-    sealed public class IntegerList : List<int>
+    public sealed class IntegerList : List<int>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IntegerList"/> class.
@@ -47,7 +47,7 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        static public IntegerList operator *(IntegerList ilSource, int iMultiplier)
+        public static IntegerList operator *(IntegerList ilSource, int iMultiplier)
         {
             IntegerList ilDestination = new IntegerList(ilSource);
 

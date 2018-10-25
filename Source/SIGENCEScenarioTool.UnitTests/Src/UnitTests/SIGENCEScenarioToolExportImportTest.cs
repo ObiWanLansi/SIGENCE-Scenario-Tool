@@ -27,7 +27,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// Logger zum Ausgeben der Protokollierung.
         /// </summary>
-        static private readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolExportImportTest));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(SIGENCEScenarioToolExportImportTest));
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -104,7 +104,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// <summary>
         /// All known formats
         /// </summary>
-        static private readonly Array aFormats = Enum.GetValues(typeof(FileFormat));
+        private static readonly Array aFormats = Enum.GetValues(typeof(FileFormat));
 
 
         /// <summary>

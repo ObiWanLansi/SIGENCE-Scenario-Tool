@@ -177,6 +177,11 @@
 
             <Separator />
 
+            <Label Content="RFDevice Template" />
+            <ComboBox x:Name="cbTemplate" Width="120" ItemsSource="{Binding RFDeviceTemplateCollection}" ToolTip="Here You Can Select The Template For New RFDevices." Margin="3" />
+
+            <Separator />
+
             <CheckBox Content="Simulation" IsChecked="{Binding SimulationMode,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ToolTip="A Switch To Change The Mode From Simulation To Physical." />
 
             <Separator />
@@ -196,7 +201,6 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
                         <RowDefinition Height="1*" />
-                        <!--<RowDefinition Height="Auto" />-->
                     </Grid.RowDefinitions>
 
                     <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
@@ -207,7 +211,6 @@
 
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
-                            <!--<RowDefinition Height="Auto" />-->
                         </Grid.RowDefinitions>
 
                         <ToolBar Grid.Row="0" Margin="5">
@@ -233,7 +236,7 @@
                         </ToolBar>
 
 
-                        <DataGrid x:Name="dgRFDevices" Grid.Row="1" ItemsSource="{Binding RFDevicesCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown" BeginningEdit="DataGrid_BeginningEdit" CellEditEnding="DataGrid_CellEditEnding" SelectionChanged="DataGrid_SelectionChanged" PreviewKeyDown="DataGrid_PreviewKeyDown">
+                        <DataGrid x:Name="dgRFDevices" Grid.Row="1" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="False" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" KeyDown="DataGrid_KeyDown" BeginningEdit="DataGrid_BeginningEdit" CellEditEnding="DataGrid_CellEditEnding" SelectionChanged="DataGrid_SelectionChanged" PreviewKeyDown="DataGrid_PreviewKeyDown">
 
                             <DataGrid.ContextMenu>
                                 <ContextMenu>
@@ -850,7 +853,7 @@
                         <ComboBox ItemsSource="{Binding Source={StaticResource eGeoTag}}" SelectedItem="{Binding GeoTagFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="80" IsEnabled="{Binding UseGeoTagFilter}" />
                     </ToolBar>
 
-                    <DataGrid Grid.Row="1" ItemsSource="{Binding GeoNodes}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding GeoNodeCollection}" IsReadOnly="True" SelectionMode="Single" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="DataGridGeoData_MouseDoubleClick">
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}">
@@ -966,7 +969,7 @@
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="RFDevices:" />
-                    <Label Content="{Binding RFDevicesCollection.Count}" />
+                    <Label Content="{Binding RFDeviceViewModelCollection.Count}" />
                 </StackPanel>
             </StatusBarItem>
 

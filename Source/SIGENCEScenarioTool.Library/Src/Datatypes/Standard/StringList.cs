@@ -8,7 +8,7 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
     /// 
     /// </summary>
     /// <seealso cref="System.Collections.Generic.List{System.String}" />
-    sealed public class StringList : List<string>
+    public sealed class StringList : List<string>
     {
 
         /// <summary>
@@ -52,13 +52,13 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
 
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="StringList"/> to <see cref="System.String[]"/>.
+        /// Performs an implicit conversion from <see cref="StringList"/> to <see cref="string[]"/>.
         /// </summary>
         /// <param name="sl">The sl.</param>
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        static public implicit operator string[] (StringList sl)
+        public static implicit operator string[] (StringList sl)
         {
             return sl.ToArray();
         }

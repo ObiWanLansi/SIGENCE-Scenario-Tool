@@ -7,14 +7,14 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class DateTimeExtension
+    public static class DateTimeExtension
     {
         /// <summary>
         /// yyyyMMdd
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        static public string Fmt_YYYYMMDD(this DateTime dt)
+        public static string Fmt_YYYYMMDD(this DateTime dt)
         {
             return dt.ToString("yyyyMMdd");
         }
@@ -25,7 +25,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        static public string Fmt_YYYYMMDD_HHMMSS(this DateTime dt)
+        public static string Fmt_YYYYMMDD_HHMMSS(this DateTime dt)
         {
             return dt.ToString("yyyyMMdd_HHmmss");
         }
@@ -36,7 +36,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        static public string Fmt_YYYYMMDDHHMMSS(this DateTime dt)
+        public static string Fmt_YYYYMMDDHHMMSS(this DateTime dt)
         {
             return dt.ToString("yyyyMMddHHmmss");
         }
@@ -47,7 +47,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
-        static public string Fmt_YYYYMMDD_HHMMSSFFF(this DateTime dt)
+        public static string Fmt_YYYYMMDD_HHMMSSFFF(this DateTime dt)
         {
             return dt.ToString("yyyyMMdd_HHmmssfff");
         }
@@ -58,7 +58,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        static public string Fmt_DD_MM_YYYY_HH_MM_SS(this DateTime dt)
+        public static string Fmt_DD_MM_YYYY_HH_MM_SS(this DateTime dt)
         {
             return dt.ToString("dd.MM.yyyy, HH:mm:ss");
         }
@@ -69,7 +69,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
-        static public string Fmt_DD_MM_YYYY_HH_MM(this DateTime dt)
+        public static string Fmt_DD_MM_YYYY_HH_MM(this DateTime dt)
         {
             return dt.ToString("dd.MM.yyyy, HH:mm");
         }
@@ -80,7 +80,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        static public string Fmt_DD_MM_YYYY(this DateTime dt)
+        public static string Fmt_DD_MM_YYYY(this DateTime dt)
         {
             return dt.ToString("dd.MM.yyyy");
         }
@@ -91,7 +91,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
-        static public string Fmt_HH_MM_SS(this DateTime dt)
+        public static string Fmt_HH_MM_SS(this DateTime dt)
         {
             return dt.ToString("HH:mm:ss");
         }
@@ -102,7 +102,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// </summary>
         /// <param name="dt">The dt.</param>
         /// <returns></returns>
-        static public int DaysInMonth(this DateTime dt)
+        public static int DaysInMonth(this DateTime dt)
         {
             return DateTime.DaysInMonth(dt.Year, dt.Month);
         }

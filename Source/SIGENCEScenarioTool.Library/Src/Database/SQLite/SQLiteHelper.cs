@@ -13,12 +13,12 @@ namespace SIGENCEScenarioTool.Database.SQLite
     /// <summary>
     /// 
     /// </summary>
-    static public class SQLiteHelper
+    public static class SQLiteHelper
     {
         /// <summary>
         /// The type mapping
         /// </summary>
-        static public readonly Dictionary<Type, Tuple<string, DbType, bool>> TypeMapping = new Dictionary<Type, Tuple<string, DbType, bool>>
+        public static readonly Dictionary<Type, Tuple<string, DbType, bool>> TypeMapping = new Dictionary<Type, Tuple<string, DbType, bool>>
         {
             {typeof(long),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
             {typeof(ulong),new Tuple<string,DbType,bool>("INTEGER",DbType.Int64,false)} ,
@@ -79,7 +79,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
         /// </summary>
         /// <param name="pi">The pi.</param>
         /// <returns></returns>
-        static public SQLiteParameter GetSQLiteParameter(PropertyInfo pi)
+        public static SQLiteParameter GetSQLiteParameter(PropertyInfo pi)
         {
             Type t = pi.PropertyType;
 
@@ -152,7 +152,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
         /// </summary>
         /// <param name="t">The t.</param>
         /// <returns></returns>
-        static public string GetSQLiteColumn(Type t)
+        public static string GetSQLiteColumn(Type t)
         {
             if (TypeMapping.ContainsKey(t))
             {
@@ -237,7 +237,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
         /// </summary>
         /// <param name="strSqlType">Type of the string SQL.</param>
         /// <returns></returns>
-        static public DbType GetDbType(string strSqlType)
+        public static DbType GetDbType(string strSqlType)
         {
             if (strSqlType == "INTEGER")
             {
@@ -280,7 +280,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
         /// </summary>
         /// <param name="strSqlType">Type of the string SQL.</param>
         /// <returns></returns>
-        static public Type GetNativeType(string strSqlType)
+        public static Type GetNativeType(string strSqlType)
         {
             if (strSqlType.EqualsIgnoreCase("TEXT"))
             {

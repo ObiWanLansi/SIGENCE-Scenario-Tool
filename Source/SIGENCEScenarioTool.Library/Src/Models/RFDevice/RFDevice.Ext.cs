@@ -8,14 +8,14 @@ using SIGENCEScenarioTool.Models.Validation;
 namespace SIGENCEScenarioTool.Models
 {
     /// <summary>
-    /// 
+    /// Addition Functions For An RFDevice.
     /// </summary>
     /// <seealso cref="System.IEquatable{RFDevice}" />
     /// <seealso cref="AbstractModelBase" />
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     /// <seealso cref="ICloneable" />
     /// <seealso cref="Interfaces.IXmlExport" />
-    public sealed partial class RFDevice
+    public partial class RFDevice
     {
         /// <summary>
         /// Validates this instance.
@@ -27,82 +27,82 @@ namespace SIGENCEScenarioTool.Models
 
             //-----------------------------------------------------------------
 
-            if( PrimaryKey == Guid.Empty )
+            if(this.PrimaryKey == Guid.Empty)
             {
-                vrl.Add( Servity.Fatal , "The PrimaryKey Is Empty!" , this , "PrimaryKey" , PrimaryKey );
+                vrl.Add( Servity.Fatal, "The PrimaryKey Is Empty!", this, "PrimaryKey", this.PrimaryKey );
             }
 
-            if( Name.IsEmpty() == true )
+            if(this.Name.IsEmpty() == true)
             {
-                vrl.Add( Servity.Warning , "The Name Is Empty!" , this , "Name" , Name );
+                vrl.Add( Servity.Warning, "The Name Is Empty!", this, "Name", this.Name );
             }
 
-            if( DeviceSource == DeviceSource.Unknown )
+            if(this.DeviceSource == DeviceSource.Unknown)
             {
-                vrl.Add( Servity.Warning , "The DeviceSource Is Unknown!" , this , "DeviceSource" , DeviceSource );
+                vrl.Add( Servity.Warning, "The DeviceSource Is Unknown!", this, "DeviceSource", this.DeviceSource );
             }
 
-            if( StartTime < 0 )
+            if(this.StartTime < 0)
             {
-                vrl.Add( Servity.Error , "The StartTime Is Less Than Zero!" , this , "StartTime" , StartTime );
+                vrl.Add( Servity.Error, "The StartTime Is Less Than Zero!", this, "StartTime", this.StartTime );
             }
 
             //-----------------------------------------------------------------
 
-            if( Latitude < -90 || Latitude > 90 )
+            if(this.Latitude < -90 || this.Latitude > 90)
             {
-                vrl.Add( Servity.Error , "The Latitude Is Not In The Normal Range (-90/90)!" , this , "Latitude" , Latitude );
+                vrl.Add( Servity.Error, "The Latitude Is Not In The Normal Range (-90/90)!", this, "Latitude", this.Latitude );
             }
 
-            if( Longitude < -180 || Longitude > 180 )
+            if(this.Longitude < -180 || this.Longitude > 180)
             {
-                vrl.Add( Servity.Error , "The Longitude Is Not In The Normal Range (-180/180)!" , this , "Longitude" , Longitude );
+                vrl.Add( Servity.Error, "The Longitude Is Not In The Normal Range (-180/180)!", this, "Longitude", this.Longitude );
             }
 
-            if( Altitude > 20000 )
+            if(this.Altitude > 20000)
             {
-                vrl.Add( Servity.Warning , "The Altitude Is Over 20000m!" , this , "Altitude" , Altitude );
+                vrl.Add( Servity.Warning, "The Altitude Is Over 20000m!", this, "Altitude", this.Altitude );
             }
 
             //-----------------------------------------------------------------
 
             //TODO: Question the right values here
-            if( Roll < -360 || Roll > 360 )
+            if(this.Roll < -360 || this.Roll > 360)
             {
-                vrl.Add( Servity.Warning , "The Roll Is Not In The Normal Range (-360/360)!" , this , "Roll" , Roll );
+                vrl.Add( Servity.Warning, "The Roll Is Not In The Normal Range (-360/360)!", this, "Roll", this.Roll );
             }
 
-            if( Pitch < -360 || Pitch > 360 )
+            if(this.Pitch < -360 || this.Pitch > 360)
             {
-                vrl.Add( Servity.Warning , "The Pitch Is Not In The Normal Range (-360/360)!" , this , "Pitch" , Pitch );
+                vrl.Add( Servity.Warning, "The Pitch Is Not In The Normal Range (-360/360)!", this, "Pitch", this.Pitch );
             }
 
-            if( Yaw < -360 || Yaw > 360 )
+            if(this.Yaw < -360 || this.Yaw > 360)
             {
-                vrl.Add( Servity.Warning , "The Yaw Is Not In The Normal Range (-360/360)!" , this , "Yaw" , Yaw );
+                vrl.Add( Servity.Warning, "The Yaw Is Not In The Normal Range (-360/360)!", this, "Yaw", this.Yaw );
             }
 
             //-----------------------------------------------------------------
 
-            if( RxTxType == null )
+            if(this.RxTxType == null)
             {
-                vrl.Add( Servity.Error , "The RxTxType Is Unknown!" , this , "RxTxType" , RxTxType );
+                vrl.Add( Servity.Error, "The RxTxType Is Unknown!", this, "RxTxType", this.RxTxType );
             }
 
-            if( RxTxType == RxTxTypes.RxTxTypes.Unknown )
+            if(this.RxTxType == RxTxTypes.RxTxTypes.Unknown)
             {
-                vrl.Add( Servity.Warning , "The RxTxType Is Unknown!" , this , "RxTxType" , RxTxType );
+                vrl.Add( Servity.Warning, "The RxTxType Is Unknown!", this, "RxTxType", this.RxTxType );
             }
 
             // Check The RxTxType At Validation (https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/154)
-            if( RxTxTypes.RxTxTypes.IsValidForId( Id , RxTxType ) == false )
+            if(RxTxTypes.RxTxTypes.IsValidForId( this.Id, this.RxTxType ) == false)
             {
-                vrl.Add( Servity.Warning , "The RxTxType Is Not Valid For This Device!" , this , "RxTxType" , RxTxType );
+                vrl.Add( Servity.Warning, "The RxTxType Is Not Valid For This Device!", this, "RxTxType", this.RxTxType );
             }
 
-            if( AntennaType == AntennaType.Unknown )
+            if(this.AntennaType == AntennaType.Unknown)
             {
-                vrl.Add( Servity.Warning , "The AntennaType Is Unknown!" , this , "AntennaType" , AntennaType );
+                vrl.Add( Servity.Warning, "The AntennaType Is Unknown!", this, "AntennaType", this.AntennaType );
             }
 
             //-----------------------------------------------------------------
@@ -115,9 +115,9 @@ namespace SIGENCEScenarioTool.Models
 
             //-----------------------------------------------------------------
 
-            if( Remark.IsEmpty() == true )
+            if(this.Remark.IsEmpty() == true)
             {
-                vrl.Add( Servity.Information , "The Remark Is Empty!" , this , "Remark" , Remark );
+                vrl.Add( Servity.Information, "The Remark Is Empty!", this, "Remark", this.Remark );
             }
 
             //-----------------------------------------------------------------
@@ -129,17 +129,17 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString()
         {
-            return $"{( string.IsNullOrEmpty( Name ) ? "Unknown" : Name )} ({Id})";
+            return $"{(string.IsNullOrEmpty( this.Name ) ? "Unknown" : this.Name)} ({this.Id})";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    } // end public sealed partial 
+    } // end public partial class RFDevice
 }
