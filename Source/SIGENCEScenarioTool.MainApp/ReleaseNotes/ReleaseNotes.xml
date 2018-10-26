@@ -24,6 +24,7 @@
             <Issue Id="144" Description="Template For Scenario Description" />
             <Issue Id="162" Description="Validate The PrimaryKey" />
             <Issue Id="139" Description="Default Values For Easier Creating RFDevices" />
+            <Issue Id="127" Description="Create A Concealable Window (Overlay) For The Map With Additional Info" />
         </Features>
         <Bugs>
             <Issue Id="164" Description="Fix CSV Export Of RFDevices" />
