@@ -22,12 +22,12 @@
         <Features>
             <Issue Id="58" Description="Delete RFDevices In The DataGrid" />
             <Issue Id="144" Description="Template For Scenario Description" />
+            <Issue Id="162" Description="Validate The PrimaryKey" />
+            <Issue Id="139" Description="Default Values For Easier Creating RFDevices" />
         </Features>
-<!--
         <Bugs>
-            <Issue Id="152" Description="Update The Documentation Overview Of The RxTxType" />
+            <Issue Id="164" Description="Fix CSV Export Of RFDevices" />
         </Bugs>
--->
     </Version>
 
 

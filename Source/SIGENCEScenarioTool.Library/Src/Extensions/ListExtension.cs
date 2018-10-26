@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
 
+using Newtonsoft.Json;
+
+using SIGENCEScenarioTool.Datatypes;
 using SIGENCEScenarioTool.Interfaces;
 
 
@@ -20,7 +23,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <summary>
         /// The hs ignore types
         /// </summary>
-        private static readonly HashSet<string> hsIgnoreTypes = new HashSet<string> { "List`1" , "HashSet`1" , "SortedDictionary`2" , "IntPtr" , "StreamWriter" , "StreamReader" };
+        private static readonly HashSet<string> hsIgnoreTypes = new HashSet<string> { "List`1", "HashSet`1", "SortedDictionary`2", "IntPtr", "StreamWriter", "StreamReader" };
 
         /// <summary>
         /// The cultureinfo
@@ -176,11 +179,11 @@ namespace SIGENCEScenarioTool.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="lValues">The l values.</param>
         /// <param name="strOutputFilename">The string output filename.</param>
-        public static void SaveAsXml<T>( this List<T> lValues , string strOutputFilename ) where T : IXmlExport
+        public static void SaveAsXml<T>( this List<T> lValues, string strOutputFilename ) where T : IXmlExport
         {
             XElement element = new XElement( typeof( T ).Name + "List" );
 
-            foreach( T t in lValues )
+            foreach(T t in lValues)
             {
                 element.Add( t.ToXml() );
             }
@@ -189,35 +192,35 @@ namespace SIGENCEScenarioTool.Extensions
         }
 
 
-        ///// <summary>
-        ///// Saves the list as JSON.
-        ///// </summary>
-        ///// <typeparam name="T"></typeparam>
-        ///// <param name="lValues">The l values.</param>
-        ///// <param name="strOutputFilename">The string output filename.</param>
-        ///// <exception cref="ArgumentException">
-        ///// Die Liste darf nicht leer sein! - lValues
-        ///// or
-        ///// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename
-        ///// </exception>
-        //static public void SaveAsJson<T>(this List<T> lValues, string strOutputFilename)
-        //{
-        //    if (lValues == null || lValues.Count == 0)
-        //    {
-        //        throw new ArgumentException("Die Liste darf nicht leer sein!", "lValues");
-        //    }
+        /// <summary>
+        /// Saves the list as JSON.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="lValues">The l values.</param>
+        /// <param name="strOutputFilename">The string output filename.</param>
+        /// <exception cref="ArgumentException">
+        /// Die Liste darf nicht leer sein! - lValues
+        /// or
+        /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename
+        /// </exception>
+        static public void SaveAsJson<T>( this List<T> lValues, string strOutputFilename )
+        {
+            if(lValues == null || lValues.Count == 0)
+            {
+                throw new ArgumentException( "Die Liste darf nicht leer sein!", "lValues" );
+            }
 
-        //    if (strOutputFilename.IsEmpty())
-        //    {
-        //        throw new ArgumentException("Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename");
-        //    }
+            if(strOutputFilename.IsEmpty())
+            {
+                throw new ArgumentException( "Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename" );
+            }
 
-        //    //---------------------------------------------
+            //---------------------------------------------
 
-        //    string strJson = JsonConvert.SerializeObject(lValues, Formatting.Indented);
+            string strJson = JsonConvert.SerializeObject( lValues, Formatting.Indented );
 
-        //    File.WriteAllText(strOutputFilename, strJson, Encoding.GetEncoding("ISO-8859-1"));
-        //}
+            File.WriteAllText( strOutputFilename, strJson, Encoding.GetEncoding( "ISO-8859-1" ) );
+        }
 
 
         /// <summary>
@@ -233,16 +236,16 @@ namespace SIGENCEScenarioTool.Extensions
         /// <exception cref="ArgumentException">Die Liste darf nicht leer sein! - lValues
         /// or
         /// Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
-        public static void SaveAsCsv<T>( this List<T> lValues , string strOutputFilename , bool bUseQuotationMark = false )
+        public static void SaveAsCsv<T>( this List<T> lValues, string strOutputFilename, bool bUseQuotationMark = false )
         {
-            if( lValues == null || lValues.Count == 0 )
+            if(lValues == null || lValues.Count == 0)
             {
-                throw new ArgumentException( "Die Liste darf nicht leer sein!" , "lValues" );
+                throw new ArgumentException( "Die Liste darf nicht leer sein!", "lValues" );
             }
 
-            if( strOutputFilename.IsEmpty() )
+            if(strOutputFilename.IsEmpty())
             {
-                throw new ArgumentException( "Der Ausgabedateiname darf nicht leer sein!" , "strOutputFilename" );
+                throw new ArgumentException( "Der Ausgabedateiname darf nicht leer sein!", "strOutputFilename" );
             }
 
             //---------------------------------------------
@@ -255,14 +258,14 @@ namespace SIGENCEScenarioTool.Extensions
 
             int iColumnCounter = 0;
 
-            foreach( PropertyInfo pi in tType.GetProperties() )
+            foreach(PropertyInfo pi in tType.GetProperties())
             {
-                if( hsIgnoreTypes.Contains( pi.PropertyType.Name ) == true )
+                if(hsIgnoreTypes.Contains( pi.PropertyType.Name ) == true)
                 {
                     continue;
                 }
 
-                if( iColumnCounter > 0 )
+                if(iColumnCounter > 0)
                 {
                     sb.Append( ';' );
                 }
@@ -276,55 +279,68 @@ namespace SIGENCEScenarioTool.Extensions
 
             //---------------------------------------------
 
-            foreach( object o in lValues )
+            foreach(object o in lValues)
             {
                 iColumnCounter = 0;
 
-                foreach( PropertyInfo pi in tType.GetProperties() )
+                foreach(PropertyInfo pi in tType.GetProperties())
                 {
-                    if( hsIgnoreTypes.Contains( pi.PropertyType.Name ) == true )
+                    if(hsIgnoreTypes.Contains( pi.PropertyType.Name ) == true)
                     {
                         continue;
                     }
 
-                    if( iColumnCounter > 0 )
+                    if(iColumnCounter > 0)
                     {
                         sb.Append( ';' );
                     }
 
-                    object value = pi.GetValue( o , null );
+                    object value = pi.GetValue( o, null );
 
-                    if( value == DBNull.Value || value == null )
+                    if(value == DBNull.Value || value == null)
                     {
-                        sb.Append( "-" );
+                        //sb.Append( "-" );
+                        sb.Append( "" );
                     }
                     else
                     {
                         // Es kann vorkommen das wir einen String haben der nicht NULL aber "" ist ...
-                        if( value is string )
+                        if(value is string)
                         {
-                            if( ( ( string ) value ).Length == 0 )
-                            {
-                                value = "-";
-                            }
+                            //if(((string)value).Length == 0)
+                            //{
+                            //    //value = "-";
+                            //    value = "";
+                            //}
 
-                            if( bUseQuotationMark == true )
+                            if(bUseQuotationMark == true)
                             {
-                                sb.AppendFormat( "\"{0}\"" , value );
+                                sb.AppendFormat( "\"{0}\"", value );
                             }
                             else
                             {
                                 sb.Append( value );
                             }
                         }
-
-                        if( value is double || value is float )
-                        {
-                            sb.AppendFormat( CULTUREINFO , "{0}" , value );
-                        }
                         else
                         {
-                            sb.Append( value );
+                            // Also so richtig gefällt mir das hier noch nicht, sollten da mehr UserDefinedDatatypes hinzukommen haben wir einen zugroßen IfElseIfElse Baum ...
+                            if(value is double || value is float)
+                            {
+                                sb.Append( (double)value );
+                                //sb.AppendFormat( CULTUREINFO, "{0}", value );
+                            }
+                            else
+                            {
+                                if(value is DataTypeBase<double>)
+                                {
+                                    sb.Append( (double)(value as DataTypeBase<double>) );
+                                }
+                                else
+                                {
+                                    sb.Append( value );
+                                }
+                            }
                         }
                     }
 
@@ -336,7 +352,7 @@ namespace SIGENCEScenarioTool.Extensions
 
             //---------------------------------------------
 
-            File.WriteAllText( strOutputFilename , sb.ToString() , Encoding.GetEncoding( "ISO-8859-1" ) );
+            File.WriteAllText( strOutputFilename, sb.ToString(), Encoding.GetEncoding( "ISO-8859-1" ) );
         }
 
 

@@ -99,19 +99,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate() { PrimaryKey = Guid.Empty, Name = "Default Device" } );
+            this.RFDeviceTemplateCollection.Add( EMPTY_TEMPLATE );
 
             //-----------------------------------------------------------------
 #if DEBUG
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate { PrimaryKey = Guid.Empty, Name = "GPS Jammer", Id = 1 } );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate { PrimaryKey = Guid.Empty, Name = "FMBroadcast", Id = 2 } );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate { PrimaryKey = Guid.Empty, Name = "NFMRadio", Id = 3 } );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate { PrimaryKey = Guid.Empty, Name = "AIS Sender", Id = 4 } );
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "GPS Jammer", Id = 1 } ) );
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "FMBroadcast", Id = 2 } ) );
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "NFMRadio", Id = 3 } ) );
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "AIS Sender", Id = 4 } ) );
 
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate { PrimaryKey = Guid.Empty, Name = "B200 Mini", Id = -2 } );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate { PrimaryKey = Guid.Empty, Name = "HackRF", Id = -3 } );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate { PrimaryKey = Guid.Empty, Name = "TwinRx", Id = -4 } );
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "B200 Mini", Id = -2 } ) );
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "HackRF", Id = -3 } ) );
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "TwinRx", Id = -4 } ) );
 
+            //-----------------------------------------------------------------
 
             try
             {

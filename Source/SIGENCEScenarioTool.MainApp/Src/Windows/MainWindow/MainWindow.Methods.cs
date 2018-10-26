@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -660,11 +661,27 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            // Validation over the entire scenario, then only the individual RFDevices
+            // Validation over the entire scenario, then only the individual RFDevices ...
             if(this.RFDeviceViewModelCollection.FirstOrDefault( d => d.Id == 0 ) == null)
             {
                 this.ValidationResult.Add( new Models.Validation.ValidationResult( Servity.Warning, "No Reference Device Is Avaible.", "Scenario", "RFDevicesCollection", null ) );
             }
+
+            // Check if all the PrimaryKeys of the RFDevices are Unique ...
+            HashSet<Guid> hsGuids = new HashSet<Guid>();
+            foreach(RFDevice device in this.RFDeviceViewModelCollection)
+            {
+                if(hsGuids.Contains( device.PrimaryKey ))
+                {
+                    this.ValidationResult.Add( new Models.Validation.ValidationResult( Servity.Error, "The PrimaryKey Is Not Unique!", device, "PrimaryKey", device.PrimaryKey ) );
+                }
+                else
+                {
+                    hsGuids.Add( device.PrimaryKey );
+                }
+            }
+
+            //-----------------------------------------------------------------
 
             //TODO: Add Some Other Rules Here ...
 

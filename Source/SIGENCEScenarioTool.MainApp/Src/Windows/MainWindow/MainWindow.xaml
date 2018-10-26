@@ -33,6 +33,8 @@
         <Image x:Key="SERVER_EARTH" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_earth.png" />
         <Image x:Key="TABLE_INFORMATION" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/table_information.png" />
         <Image x:Key="BUG_GREEN" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/bug_green.png" />
+        <Image x:Key="STAR_ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/star_yellow_add.png" />
+        <Image x:Key="STAR_DEL" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/star_yellow_delete.png" />
 
         <!--<ObjectDataProvider x:Key="eRxTxType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -133,7 +135,7 @@
                 <!--<MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />-->
                 <MenuItem Header="_Cheat Sheet" Icon="{StaticResource HELP}" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
                 <MenuItem Header="_About" Icon="{StaticResource HELP}" Click="MenuItem_About_Click" />
-                <Separator/>
+                <Separator />
                 <MenuItem Header="_Open Issues" Icon="{StaticResource BUG_GREEN}" Click="MenuItem_OpenIssues_Click" />
                 <MenuItem Header="_Open Kanban Board" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_KanbanBoard_Click" />
                 <!--<MenuItem Header="_About" IsEnabled="False" />-->
@@ -178,7 +180,9 @@
             <Separator />
 
             <Label Content="RFDevice Template" />
-            <ComboBox x:Name="cbTemplate" Width="120" ItemsSource="{Binding RFDeviceTemplateCollection}" ToolTip="Here You Can Select The Template For New RFDevices." Margin="3" />
+            <ComboBox x:Name="cbTemplate" Width="120" ItemsSource="{Binding RFDeviceTemplateCollection}" SelectedItem="{Binding CurrentSelectedTemplate}" ToolTip="Here You Can Select The Template For New RFDevices." Margin="3" />
+            <Button Content="{StaticResource STAR_ADD}" ToolTip="Add To Favorites" Click="MenuItem_AddToFavorites_Click" />
+            <Button Content="{StaticResource STAR_DEL}" ToolTip="Del From Favorites" Click="MenuItem_DelFromFavorites_Click" />
 
             <Separator />
 
@@ -249,6 +253,8 @@
                                     <MenuItem Header="_Zoom To RFDevice" Icon="{StaticResource ZOOMTO}" Command="{x:Static cmd:RegisteredCommands.ZoomToRFDevice}" />
                                     <MenuItem Header="_QRCode From RFDevice" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.RFDeviceQRCode}" />
                                     <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
+                                    <Separator />
+                                    <MenuItem Header="_Add To Favorites" Icon="{StaticResource STAR_ADD}" Click="MenuItem_AddToFavorites_Click" />
                                 </ContextMenu>
                             </DataGrid.ContextMenu>
 
@@ -678,10 +684,10 @@
                     </ToolBar>
 
                     <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
-                    
+
                     <!--<TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription,Mode=TwoWay,UpdateSourceTrigger=LostFocus}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />-->
                     <!--<TextBox x:Name="tbScenarioDescription" Grid.Row="1" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />-->
-                    
+
                     <WindowsFormsHost x:Name="wfhHtmlEdit" Grid.Row="1" Visibility="Hidden">
                         <icsharpcode:TextEditorControl x:Name="tecScenarioDescription" />
                     </WindowsFormsHost>

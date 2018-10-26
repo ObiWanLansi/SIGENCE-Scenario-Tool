@@ -104,7 +104,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 PointLatLng pll = this.mcMapControl.FromLocalToLatLng( (int)p.X, (int)p.Y );
 
-                AddRFDevice( pll, DeviceSource.User, true );
+                //AddRFDevice( pll, DeviceSource.User, true );
+                AddRFDevice( pll );
 
                 EndCreateRFDevice();
 
@@ -400,6 +401,32 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_AddToFavorites control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_AddToFavorites_Click( object sender, RoutedEventArgs e )
+        {
+            AddToFavorites();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_DelFromFavorites control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_DelFromFavorites_Click( object sender, RoutedEventArgs e )
+        {
+            DeleteFromFavorites();
+
+            e.Handled = true;
+        }
 
 
         /// <summary>

@@ -19,6 +19,7 @@ using SIGENCEScenarioTool.Dialogs.QRCode;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
+using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -52,6 +53,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.mcMapControl.DragButton = this.bCreatingRFDevice ? MouseButton.Right : MouseButton.Left;
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Begins the create RFDevice.
@@ -72,6 +75,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.CreatingRFDevice = false;
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Creates the RFDevice.
@@ -79,14 +84,26 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="pll">The PLL.</param>
         /// <param name="ds">The ds.</param>
         /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
-        private void AddRFDevice( PointLatLng pll, DeviceSource ds, bool bIsSelected = false )
+        private void AddRFDevice( PointLatLng pll, DeviceSource ds = DeviceSource.User, bool bIsSelected = false )
         {
-            AddRFDevice( new RFDevice
-            {
-                DeviceSource = ds,
-                Latitude = pll.Lat,
-                Longitude = pll.Lng
-            }, bIsSelected );
+            RFDevice newdevice = this.CurrentSelectedTemplate;
+
+            // Die müssen wir ja neu vergeben ...
+            newdevice.PrimaryKey = Guid.NewGuid();
+
+            // Und die müssen wir zuweisen, der Rest wird aus dem Template übernommen ...
+            newdevice.DeviceSource = ds;
+            newdevice.Latitude = pll.Lat;
+            newdevice.Longitude = pll.Lng;
+
+            AddRFDevice( newdevice, bIsSelected );
+
+            //AddRFDevice( new RFDevice
+            //{
+            //    DeviceSource = ds,
+            //    Latitude = pll.Lat,
+            //    Longitude = pll.Lng
+            //}, bIsSelected );
         }
 
 
@@ -614,10 +631,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         MB.Information( "File {0} successful created.", fiExportFile.Name );
                         break;
 
-                    //case ".json":
-                    //    devicelist.SaveAsJson( fiExportFile.FullName );
-                    //    MB.Information( "File {0} successful created." , fiExportFile.Name );
-                    //    break;
+                    case ".json":
+                        devicelist.SaveAsJson( fiExportFile.FullName );
+                        MB.Information( "File {0} successful created.", fiExportFile.Name );
+                        break;
 
                     case ".xml":
                         devicelist.SaveAsXml( fiExportFile.FullName );
@@ -717,6 +734,67 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             ZoomToRFDevice( (this.dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice );
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Adds to favorites.
+        /// </summary>
+        /// <param name="device">The device.</param>
+        private void AddToFavorites( RFDevice device )
+        {
+            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( device ) );
+        }
+
+
+        /// <summary>
+        /// Adds to favorites.
+        /// </summary>
+        /// <param name="dvm">The DVM.</param>
+        private void AddToFavorites( RFDeviceViewModel dvm )
+        {
+            AddToFavorites( dvm.RFDevice );
+        }
+
+
+        /// <summary>
+        /// Adds to favorites.
+        /// </summary>
+        private void AddToFavorites()
+        {
+            if(this.dgRFDevices.SelectedItem == null)
+            {
+                MB.Information( "No RFDevice Is Selected In The DataGrid!" );
+                return;
+            }
+
+            if(this.dgRFDevices.SelectedItems.Count > 1)
+            {
+                MB.Information( "There Are More Than One RFDevice Selected In The DataGrid!" );
+                return;
+            }
+
+            AddToFavorites( this.dgRFDevices.SelectedItem as RFDeviceViewModel );
+        }
+
+
+        /// <summary>
+        /// Deletes from favorites.
+        /// </summary>
+        /// <param name="dvm">The DVM.</param>
+        private void DeleteFromFavorites( RFDeviceViewModel dvm = null )
+        {
+            if(this.CurrentSelectedTemplate == EMPTY_TEMPLATE)
+            {
+                MB.Warning( "You Can't Not Delete The Default Template!" );
+                return;
+            }
+
+            this.RFDeviceTemplateCollection.Remove( this.CurrentSelectedTemplate );
+
+            this.CurrentSelectedTemplate = EMPTY_TEMPLATE;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

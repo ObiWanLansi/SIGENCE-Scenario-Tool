@@ -17,6 +17,18 @@ namespace SIGENCEScenarioTool.Models
     /// <seealso cref="Interfaces.IXmlExport" />
     public partial class RFDevice
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RFDevice"/> class.
+        /// </summary>
+        public RFDevice()
+        {
+            this.PrimaryKey = Guid.NewGuid();
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Validates this instance.
         /// </summary>
@@ -127,6 +139,8 @@ namespace SIGENCEScenarioTool.Models
             return vrl;
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Returns a <see cref="string" /> that represents this instance.
@@ -138,8 +152,6 @@ namespace SIGENCEScenarioTool.Models
         {
             return $"{(string.IsNullOrEmpty( this.Name ) ? "Unknown" : this.Name)} ({this.Id})";
         }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     } // end public partial class RFDevice
 }

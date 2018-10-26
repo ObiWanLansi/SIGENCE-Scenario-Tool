@@ -392,6 +392,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\star_yellow.png" />
+    <Resource Include="Images\star_yellow_add.png" />
+    <Resource Include="Images\star_yellow_delete.png" />
     <Content Include="ReleaseNotes\ReleaseNotes.Hypertext.html">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

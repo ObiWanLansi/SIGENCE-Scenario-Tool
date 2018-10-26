@@ -58,6 +58,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// The empty template
+        /// </summary>
+        private static readonly RFDeviceTemplate EMPTY_TEMPLATE = new RFDeviceTemplate( new RFDevice { PrimaryKey = Guid.Empty, Name = "Empty Device" } );
 
         /// <summary>
         /// The b data grid in edit mode
@@ -144,6 +148,31 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// The dt current selected template
+        /// </summary>
+        private RFDeviceTemplate dtCurrentSelectedTemplate = EMPTY_TEMPLATE;
+
+        /// <summary>
+        /// Gets or sets the current selected template.
+        /// </summary>
+        /// <value>
+        /// The current selected template.
+        /// </value>
+        public RFDeviceTemplate CurrentSelectedTemplate
+        {
+            get { return this.dtCurrentSelectedTemplate; }
+            set
+            {
+                this.dtCurrentSelectedTemplate = value;
+
+                FirePropertyChanged();
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// The b creating RFDevice
         /// </summary>
         private bool bCreatingRFDevice = false;
@@ -169,6 +198,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// The b received data
