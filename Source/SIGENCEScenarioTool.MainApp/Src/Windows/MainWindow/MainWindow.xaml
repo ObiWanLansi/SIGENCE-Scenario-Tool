@@ -289,7 +289,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Type" Binding="{Binding DeviceType}">
+                                <DataGridTextColumn Header="Type" Binding="{Binding DeviceType,Mode=OneWay}">
                                     <!--<DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_}" />

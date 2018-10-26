@@ -85,6 +85,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 UpdateMarkerShape();
 
                 FirePropertyChanged();
+                FirePropertyChanged( "DeviceType" );
             }
         }
 

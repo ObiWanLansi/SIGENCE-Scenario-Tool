@@ -27,6 +27,7 @@
         </Features>
         <Bugs>
             <Issue Id="164" Description="Fix CSV Export Of RFDevices" />
+            <Issue Id="165" Description="Click On A DeviceType Cell Caused A Exception And Crash" />
         </Bugs>
     </Version>
 
