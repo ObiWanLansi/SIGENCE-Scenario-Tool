@@ -817,6 +817,40 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        ///// <summary>
+        ///// Checks the version.
+        ///// </summary>
+        //private void CheckVersion()
+        //{
+        //    // The Problem is that GitHub Not Return The Plain Text File Rather The Version As Full Blown HTML Content :-( 
+        //    string strCurrentVersion = ApplicationResource.ReadResourceAsString( "SIGENCEScenarioTool.Properties.VERSION" );
+
+        //    if(string.IsNullOrEmpty( strCurrentVersion ))
+        //    {
+        //        MB.Warning( "The Current Version Could Not Be Determined!" );
+        //        return;
+        //    }
+
+        //    try
+        //    {
+        //        using(WebClient wc = new WebClient())
+        //        {
+        //            wc.Proxy = WebRequest.DefaultWebProxy;
+        //            wc.Proxy.Credentials = CredentialCache.DefaultCredentials;
+        //            wc.Encoding = Encoding.UTF8;
+
+        //            string strResult = wc.DownloadString( "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/Source/LATEST" );
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        MB.Error( ex );
+        //    }
+        //}
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Creates the randomized RFDevices.
         /// </summary>

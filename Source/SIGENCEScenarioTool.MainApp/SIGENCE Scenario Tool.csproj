@@ -327,9 +327,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\VERSION">
+    <EmbeddedResource Include="..\VERSION">
       <Link>Properties\VERSION</Link>
-    </None>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

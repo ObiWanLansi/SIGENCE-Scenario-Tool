@@ -214,6 +214,7 @@
     </Compile>
     <Compile Include="Src\Models\Templates\RFDeviceTemplate.cs" />
     <Compile Include="Src\Models\Validation\ValidationResult.cs" />
+    <Compile Include="Src\Tools\ApplicationResource.cs" />
     <Compile Include="Src\Tools\Blink.cs" />
     <Compile Include="Src\Tools\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Tools\GeoHelper.cs" />

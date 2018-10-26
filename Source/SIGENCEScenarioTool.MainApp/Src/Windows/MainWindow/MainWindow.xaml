@@ -139,6 +139,8 @@
                 <MenuItem Header="_Open Issues" Icon="{StaticResource BUG_GREEN}" Click="MenuItem_OpenIssues_Click" />
                 <MenuItem Header="_Open Kanban Board" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_KanbanBoard_Click" />
                 <!--<MenuItem Header="_About" IsEnabled="False" />-->
+                <!--<Separator />
+                <MenuItem Header="Check _Version" Icon="{StaticResource HELP}" Click="MenuItem_CheckVersion_Click" />-->
             </MenuItem>
         </Menu>
 
