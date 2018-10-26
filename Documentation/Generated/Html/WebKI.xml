@@ -37,6 +37,18 @@
   <HelpKINode Title="ANTENNATYPE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ANTENNATYPE.htm" />
   <HelpKINode Title="AntennaType property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_AntennaType.htm" />
   <HelpKINode Title="AppendLine method" Url="html/M_SIGENCEScenarioTool_Extensions_StringBuilderExtension_AppendLine.htm" />
+  <HelpKINode Title="ApplicationResource class">
+    <HelpKINode Title="ApplicationResource Class" Url="html/T_SIGENCEScenarioTool_Tools_ApplicationResource.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_ApplicationResource.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_ApplicationResource.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ApplicationResource.Assembly property" Url="html/P_SIGENCEScenarioTool_Tools_ApplicationResource_Assembly.htm" />
+  <HelpKINode Title="ApplicationResource.Contains method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_Contains.htm" />
+  <HelpKINode Title="ApplicationResource.GetEmbeddedResourcenNames method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_GetEmbeddedResourcenNames.htm" />
+  <HelpKINode Title="ApplicationResource.ReadResourceAsByteArray method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsByteArray.htm" />
+  <HelpKINode Title="ApplicationResource.ReadResourceAsString method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsString.htm" />
+  <HelpKINode Title="ApplicationResource.ReadResourceAsXDocument method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsXDocument.htm" />
+  <HelpKINode Title="Assembly property" Url="html/P_SIGENCEScenarioTool_Tools_ApplicationResource_Assembly.htm" />
   <HelpKINode Title="Atto field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Atto.htm" />
   <HelpKINode Title="Automatic enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
   <HelpKINode Title="B200mini property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_B200mini.htm" />
@@ -78,6 +90,7 @@
   <HelpKINode Title="ColorExtension.WithAlpha method" Url="html/M_SIGENCEScenarioTool_Extensions_ColorExtension_WithAlpha.htm" />
   <HelpKINode Title="CompareTo method" Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_CompareTo.htm" />
   <HelpKINode Title="Connection property" Url="html/P_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Connection.htm" />
+  <HelpKINode Title="Contains method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_Contains.htm" />
   <HelpKINode Title="CoordinateToPointLatLng method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CoordinateToPointLatLng.htm" />
   <HelpKINode Title="CopyTo method" Url="html/Overload_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo.htm" />
   <HelpKINode Title="Craft enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
@@ -370,6 +383,7 @@
   <HelpKINode Title="GetDoubleFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetDoubleFromNode.htm" />
   <HelpKINode Title="GetDoubleFromNodeComma method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetDoubleFromNodeComma.htm" />
   <HelpKINode Title="GetDoubleFromNodePoint method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetDoubleFromNodePoint.htm" />
+  <HelpKINode Title="GetEmbeddedResourcenNames method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_GetEmbeddedResourcenNames.htm" />
   <HelpKINode Title="GetEnumFromNode(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetEnumFromNode__1.htm" />
   <HelpKINode Title="GetEnumFromNode&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetEnumFromNode__1.htm" />
   <HelpKINode Title="GetFileInfoFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetFileInfoFromNode.htm" />
@@ -516,6 +530,8 @@
   </HelpKINode>
   <HelpKINode Title="ListExtension.SaveAsCsv(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsCsv__1.htm" />
   <HelpKINode Title="ListExtension.SaveAsCsv&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsCsv__1.htm" />
+  <HelpKINode Title="ListExtension.SaveAsJson(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsJson__1.htm" />
+  <HelpKINode Title="ListExtension.SaveAsJson&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsJson__1.htm" />
   <HelpKINode Title="ListExtension.SaveAsXml(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsXml__1.htm" />
   <HelpKINode Title="ListExtension.SaveAsXml&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsXml__1.htm" />
   <HelpKINode Title="Load method" Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Load.htm" />
@@ -647,7 +663,12 @@
   <HelpKINode Title="RandomExtension.NextString method" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextString.htm" />
   <HelpKINode Title="RandomExtension.NextUInt method" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextUInt.htm" />
   <HelpKINode Title="RandomExtension.NextULong method" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextULong.htm" />
-  <HelpKINode Title="ReadResourceAsString method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_ReadResourceAsString.htm" />
+  <HelpKINode Title="ReadResourceAsByteArray method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsByteArray.htm" />
+  <HelpKINode Title="ReadResourceAsString method">
+    <HelpKINode Title="ApplicationResource.ReadResourceAsString Method " Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsString.htm" />
+    <HelpKINode Title="Tool.ReadResourceAsString Method " Url="html/M_SIGENCEScenarioTool_Tools_Tool_ReadResourceAsString.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadResourceAsXDocument method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsXDocument.htm" />
   <HelpKINode Title="Receiver enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
   <HelpKINode Title="Reference enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
   <HelpKINode Title="Reindex method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Reindex.htm" />
@@ -775,6 +796,23 @@
   </HelpKINode>
   <HelpKINode Title="RFDeviceList.CreateRandomizedRFDeviceList method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceList_CreateRandomizedRFDeviceList.htm" />
   <HelpKINode Title="RFDeviceList.RFDeviceList constructor" Url="html/Overload_SIGENCEScenarioTool_Models_RFDeviceList__ctor.htm" />
+  <HelpKINode Title="RFDeviceTemplate class">
+    <HelpKINode Title="RFDeviceTemplate Class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RFDeviceTemplate to RFDevice conversion" Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate_op_Implicit.htm" />
+  <HelpKINode Title="RFDeviceTemplate.RFDeviceTemplate constructor" Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate__ctor.htm" />
+  <HelpKINode Title="RFDeviceTemplate.ToString method" Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate_ToString.htm" />
+  <HelpKINode Title="RFDeviceTemplateCollection class">
+    <HelpKINode Title="RFDeviceTemplateCollection Class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RFDeviceTemplateCollection.RFDeviceTemplateCollection constructor" Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection__ctor.htm" />
   <HelpKINode Title="RFDeviceTooltips class">
     <HelpKINode Title="RFDeviceTooltips Class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceTooltips.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceTooltips__ctor.htm" />
@@ -848,6 +886,8 @@
   <HelpKINode Title="SaveAsCSV method" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SaveAsCSV.htm" />
   <HelpKINode Title="SaveAsCsv(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsCsv__1.htm" />
   <HelpKINode Title="SaveAsCsv&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsCsv__1.htm" />
+  <HelpKINode Title="SaveAsJson(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsJson__1.htm" />
+  <HelpKINode Title="SaveAsJson&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsJson__1.htm" />
   <HelpKINode Title="SaveAsXml(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsXml__1.htm" />
   <HelpKINode Title="SaveAsXml&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsXml__1.htm" />
   <HelpKINode Title="SaveDefault method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_SaveDefault.htm" />
@@ -921,10 +961,14 @@
   <HelpKINode Title="SIGENCEScenarioTool.Models.RxTxTypes.RxTxType class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.RxTxTypes.RxTxTypes class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.Servity enumeration" Url="html/T_SIGENCEScenarioTool_Models_Servity.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.Templates namespace" Url="html/N_SIGENCEScenarioTool_Models_Templates.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.Templates.RFDeviceTemplate class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.Templates.RFDeviceTemplateCollection class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.Validation namespace" Url="html/N_SIGENCEScenarioTool_Models_Validation.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.Validation.ValidationResult class" Url="html/T_SIGENCEScenarioTool_Models_Validation_ValidationResult.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.Validation.ValidationResultList class" Url="html/T_SIGENCEScenarioTool_Models_Validation_ValidationResultList.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools namespace" Url="html/N_SIGENCEScenarioTool_Tools.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Tools.ApplicationResource class" Url="html/T_SIGENCEScenarioTool_Tools_ApplicationResource.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Blink class" Url="html/T_SIGENCEScenarioTool_Tools_Blink.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoHelper class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoTag enumeration" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
@@ -932,7 +976,6 @@
   <HelpKINode Title="SIGENCEScenarioTool.Tools.MB class" Url="html/T_SIGENCEScenarioTool_Tools_MB.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.PythonSyntaxModeFileProvider class" Url="html/T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Speech class" Url="html/T_SIGENCEScenarioTool_Tools_Speech.htm" />
-  <HelpKINode Title="SIGENCEScenarioTool.Tools.SSTTniop structure" Url="html/T_SIGENCEScenarioTool_Tools_SSTTniop.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Tool class" Url="html/T_SIGENCEScenarioTool_Tools_Tool.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Windows class" Url="html/T_SIGENCEScenarioTool_Tools_Windows.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Ui namespace" Url="html/N_SIGENCEScenarioTool_Ui.htm" />
@@ -1003,15 +1046,6 @@
   <HelpKINode Title="SQLiteMemoryDatabase.Load method" Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Load.htm" />
   <HelpKINode Title="SQLiteMemoryDatabase.Save method" Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Save.htm" />
   <HelpKINode Title="SQLiteMemoryDatabase.SQLiteMemoryDatabase constructor" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase__ctor.htm" />
-  <HelpKINode Title="SSTTniop structure">
-    <HelpKINode Title="SSTTniop Structure" Url="html/T_SIGENCEScenarioTool_Tools_SSTTniop.htm" />
-    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Tools_SSTTniop__ctor.htm" />
-    <HelpKINode Title="fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_SSTTniop.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_SSTTniop.htm" />
-  </HelpKINode>
-  <HelpKINode Title="SSTTniop.SSTTniop constructor" Url="html/M_SIGENCEScenarioTool_Tools_SSTTniop__ctor.htm" />
-  <HelpKINode Title="SSTTniop.x field" Url="html/F_SIGENCEScenarioTool_Tools_SSTTniop_x.htm" />
-  <HelpKINode Title="SSTTniop.y field" Url="html/F_SIGENCEScenarioTool_Tools_SSTTniop_y.htm" />
   <HelpKINode Title="STARTTIME field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_STARTTIME.htm" />
   <HelpKINode Title="StartTime property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_StartTime.htm" />
   <HelpKINode Title="StartupPath property" Url="html/P_SIGENCEScenarioTool_Tools_Tool_StartupPath.htm" />
@@ -1117,6 +1151,7 @@
     <HelpKINode Title="Latitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_ToString.htm" />
     <HelpKINode Title="Longitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_ToString.htm" />
     <HelpKINode Title="RFDevice.ToString Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_ToString.htm" />
+    <HelpKINode Title="RFDeviceTemplate.ToString Method " Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate_ToString.htm" />
     <HelpKINode Title="RxTxType.ToString Method " Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_ToString.htm" />
     <HelpKINode Title="SignalToNoiseRatio.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_ToString.htm" />
   </HelpKINode>
@@ -1248,7 +1283,6 @@
   <HelpKINode Title="WithYaw method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithYaw.htm" />
   <HelpKINode Title="WithYPos method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithYPos.htm" />
   <HelpKINode Title="WithZPos method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithZPos.htm" />
-  <HelpKINode Title="x field" Url="html/F_SIGENCEScenarioTool_Tools_SSTTniop_x.htm" />
   <HelpKINode Title="XElementExtension class">
     <HelpKINode Title="XElementExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_XElementExtension.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_XElementExtension.htm" />
@@ -1289,7 +1323,6 @@
   <HelpKINode Title="XPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_XPOS.htm" />
   <HelpKINode Title="XPos property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_XPos.htm" />
   <HelpKINode Title="XYLOPHONMUSIK field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_XYLOPHONMUSIK.htm" />
-  <HelpKINode Title="y field" Url="html/F_SIGENCEScenarioTool_Tools_SSTTniop_y.htm" />
   <HelpKINode Title="YAW field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_YAW.htm" />
   <HelpKINode Title="Yaw property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Yaw.htm" />
   <HelpKINode Title="YPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_YPOS.htm" />
