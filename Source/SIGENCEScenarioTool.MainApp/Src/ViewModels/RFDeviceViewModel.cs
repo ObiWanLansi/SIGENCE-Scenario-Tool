@@ -14,8 +14,7 @@ using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
-
-
+using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.ViewModels
 {
@@ -563,6 +562,40 @@ namespace SIGENCEScenarioTool.ViewModels
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// Gets the human center frequency.
+        /// </summary>
+        /// <value>
+        /// The human center frequency.
+        /// </value>
+        public string HumanCenterFrequency => Tool.GetHumanSizeForPhysics( this.RFDevice.CenterFrequency_Hz, "Hz" );
+
+        /// <summary>
+        /// Gets the human bandwidth.
+        /// </summary>
+        /// <value>
+        /// The human bandwidth.
+        /// </value>
+        public string HumanBandwidth => Tool.GetHumanSizeForPhysics( this.RFDevice.Bandwidth_Hz, "Hz" );
+
+        /// <summary>
+        /// Gets the human gain.
+        /// </summary>
+        /// <value>
+        /// The human gain.
+        /// </value>
+        public string HumanGain => Tool.GetHumanSizeForPhysics( this.RFDevice.Gain_dB, "dB" );
+
+        /// <summary>
+        /// Gets the human signal to noise ratio.
+        /// </summary>
+        /// <value>
+        /// The human signal to noise ratio.
+        /// </value>
+        public string HumanSignalToNoiseRatio => Tool.GetHumanSizeForPhysics( this.RFDevice.SignalToNoiseRatio_dB, "dB" );
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>

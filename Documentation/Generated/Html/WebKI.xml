@@ -374,6 +374,7 @@
   <HelpKINode Title="GetColorFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetColorFromNode.htm" />
   <HelpKINode Title="GetDateTimeAttribute method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetDateTimeAttribute.htm" />
   <HelpKINode Title="GetDateTimeFromNodeUTC method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetDateTimeFromNodeUTC.htm" />
+  <HelpKINode Title="GetDateTimeFromUnixTimestamp method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetDateTimeFromUnixTimestamp.htm" />
   <HelpKINode Title="GetDateTimeOrNull method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetDateTimeOrNull.htm" />
   <HelpKINode Title="GetDbType method" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_GetDbType.htm" />
   <HelpKINode Title="GetDictionary(Of T1, T2) method" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_GetDictionary__2.htm" />
@@ -394,7 +395,8 @@
   <HelpKINode Title="GetGradMinutesSeconds method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
   <HelpKINode Title="GetGuidFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetGuidFromNode.htm" />
   <HelpKINode Title="GetHumanDistance method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
-  <HelpKINode Title="GetHumanSize method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSize.htm" />
+  <HelpKINode Title="GetHumanSizeForInformatics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForInformatics.htm" />
+  <HelpKINode Title="GetHumanSizeForPhysics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForPhysics.htm" />
   <HelpKINode Title="GetInt32Attribute method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetInt32Attribute.htm" />
   <HelpKINode Title="GetInt32FromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetInt32FromNode.htm" />
   <HelpKINode Title="GetInt32OrNull method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetInt32OrNull.htm" />
@@ -1108,10 +1110,12 @@
   <HelpKINode Title="Tool.ALLPANGRAMS field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLPANGRAMS.htm" />
   <HelpKINode Title="Tool.FOX field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_FOX.htm" />
   <HelpKINode Title="Tool.FRANZ field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_FRANZ.htm" />
+  <HelpKINode Title="Tool.GetDateTimeFromUnixTimestamp method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetDateTimeFromUnixTimestamp.htm" />
   <HelpKINode Title="Tool.GetGrad method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGrad.htm" />
   <HelpKINode Title="Tool.GetGradMinutesSeconds method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
   <HelpKINode Title="Tool.GetHumanDistance method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
-  <HelpKINode Title="Tool.GetHumanSize method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSize.htm" />
+  <HelpKINode Title="Tool.GetHumanSizeForInformatics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForInformatics.htm" />
+  <HelpKINode Title="Tool.GetHumanSizeForPhysics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForPhysics.htm" />
   <HelpKINode Title="Tool.ProductName property" Url="html/P_SIGENCEScenarioTool_Tools_Tool_ProductName.htm" />
   <HelpKINode Title="Tool.ProductTitle property" Url="html/P_SIGENCEScenarioTool_Tools_Tool_ProductTitle.htm" />
   <HelpKINode Title="Tool.ReadResourceAsString method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_ReadResourceAsString.htm" />

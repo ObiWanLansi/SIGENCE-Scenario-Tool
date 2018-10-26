@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -445,6 +446,47 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.mcMapControl.ShowCenter = value;
                 this.mcMapControl.ReloadMap();
+
+                FirePropertyChanged();
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Gets or sets the data grid visibility.
+        /// </summary>
+        /// <value>
+        /// The data grid visibility.
+        /// </value>
+        public Visibility DataGridVisibility { get; set; } = Visibility.Visible;
+
+        /// <summary>
+        /// Gets or sets the information window visibility.
+        /// </summary>
+        /// <value>
+        /// The information window visibility.
+        /// </value>
+        public Visibility InfoWindowVisibility { get; set; } = Visibility.Collapsed;
+
+
+        /// <summary>
+        /// The DVM current selected device
+        /// </summary>
+        private RFDeviceViewModel dvmCurrentSelectedDevice = null;
+
+        /// <summary>
+        /// Gets or sets the current selected device.
+        /// </summary>
+        /// <value>
+        /// The current selected device.
+        /// </value>
+        public RFDeviceViewModel CurrentSelectedDevice
+        {
+            get { return this.dvmCurrentSelectedDevice; }
+            set
+            {
+                this.dvmCurrentSelectedDevice = value;
 
                 FirePropertyChanged();
             }

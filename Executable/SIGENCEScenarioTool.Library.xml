@@ -3467,9 +3467,25 @@
             Initializes the <see cref="N:SIGENCEScenarioTool.Tools" /> class.
             </summary>
         </member>
-        <member name="M:SIGENCEScenarioTool.Tools.Tool.GetHumanSize(System.Int64)">
+        <member name="M:SIGENCEScenarioTool.Tools.Tool.GetDateTimeFromUnixTimestamp(System.Int64,System.DateTimeKind)">
             <summary>
-            Gets the size of the human.
+            Gets the date time from unix timestamp.
+            </summary>
+            <param name="lUnixTimeStamp">The l unix time stamp.</param>
+            <param name="dtk">The DTK.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.Tool.GetHumanSizeForPhysics(System.Double,System.String)">
+            <summary>
+            Gets the human size for physics.
+            </summary>
+            <param name="dValue">The d value.</param>
+            <param name="strSuffix">The string suffix.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.Tool.GetHumanSizeForInformatics(System.Int64)">
+            <summary>
+            Gets the human size for informatics.
             </summary>
             <param name="lSizeInBytes">The l size in bytes.</param>
             <returns></returns>

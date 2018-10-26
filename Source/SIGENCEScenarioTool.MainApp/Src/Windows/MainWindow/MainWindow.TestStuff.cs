@@ -356,7 +356,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void MenuItem_LoadStreets_Click( object sender, RoutedEventArgs e )
         {
-            Task t = Task.Run( () => { LoadStreets(); } );
+            Task.Run( () => { LoadStreets(); } );
+
+            e.Handled = true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_SwitchInfoWindow control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_SwitchInfoWindow_Click( object sender, RoutedEventArgs e )
+        {
+            ToggleInfoWindow();
+
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

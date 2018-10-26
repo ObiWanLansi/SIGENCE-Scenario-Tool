@@ -117,6 +117,9 @@
                 <MenuItem Header="_Edit Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
             </MenuItem>
             <MenuItem x:Name="miTest" Header="_Test">
+                <MenuItem Header="Toggle Info _Window" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleInfoWindow}" />
+                <!--<MenuItem Header="Toggle Data _Grid" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleDataGrid}" />-->
+                <Separator />
                 <MenuItem Header="_Load Streets" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
                 <MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
@@ -209,7 +212,74 @@
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
 
-                    <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
+                    <Grid Grid.Row="0">
+                        <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
+
+                        <Border BorderBrush="Black" BorderThickness="2" Width="240" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" Background="AliceBlue" Visibility="{Binding InfoWindowVisibility}">
+
+                            <Border.Effect>
+                                <DropShadowEffect />
+                            </Border.Effect>
+
+                            <Grid>
+
+                                <Grid.Resources>
+                                    <Style x:Key="Header">
+                                        <Style.Setters>
+                                            <Setter Property="Control.FontWeight" Value="Bold" />
+                                            <!--<Setter Property="Label.HorizontalContentAlignment" Value="Right" />-->
+                                        </Style.Setters>
+                                    </Style>
+                                    <Style x:Key="Data">
+                                        <Style.Setters>
+                                            <Setter Property="Label.HorizontalContentAlignment" Value="Right" />
+                                        </Style.Setters>
+                                    </Style>
+                                </Grid.Resources>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Column="0" Grid.Row="0" Content="Id" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="0" Content="{Binding CurrentSelectedDevice.Id}" Style="{StaticResource Data}" />
+
+                                <Label Grid.Column="0" Grid.Row="1" Content="Name" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="1" Content="{Binding CurrentSelectedDevice.Name}" Style="{StaticResource Data}" />
+
+                                <Label Grid.Column="0" Grid.Row="2" Content="RxTxType" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="2" Content="{Binding CurrentSelectedDevice.RxTxType}" Style="{StaticResource Data}" />
+
+                                <Label Grid.Column="0" Grid.Row="3" Content="AntennaType" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="3" Content="{Binding CurrentSelectedDevice.AntennaType}" Style="{StaticResource Data}" />
+
+                                <Label Grid.Column="0" Grid.Row="4" Content="CenterFrequency" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="4" Content="{Binding CurrentSelectedDevice.HumanCenterFrequency}" Style="{StaticResource Data}" />
+
+                                <Label Grid.Column="0" Grid.Row="5" Content="Bandwidth" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="5" Content="{Binding CurrentSelectedDevice.HumanBandwidth}" Style="{StaticResource Data}" />
+
+                                <Label Grid.Column="0" Grid.Row="6" Content="Gain" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="6" Content="{Binding CurrentSelectedDevice.HumanGain}" Style="{StaticResource Data}" />
+
+                                <Label Grid.Column="0" Grid.Row="7" Content="SignalToNoiseRatio" Style="{StaticResource Header}" />
+                                <Label Grid.Column="1" Grid.Row="7" Content="{Binding CurrentSelectedDevice.HumanSignalToNoiseRatio}" Style="{StaticResource Data}" />
+
+                            </Grid>
+                        </Border>
+                    </Grid>
 
                     <Grid Grid.Row="1">
 

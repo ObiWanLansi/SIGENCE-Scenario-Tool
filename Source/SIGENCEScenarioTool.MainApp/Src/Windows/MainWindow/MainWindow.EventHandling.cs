@@ -198,7 +198,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
         /// <summary>
         /// Handles the PreviewKeyDown event of the DataGrid control.
         /// </summary>
@@ -315,14 +314,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             foreach(var item in e.AddedItems)
             {
-                if(item is RFDeviceViewModel)
+                if(item is RFDeviceViewModel dvm)
                 {
-                    (item as RFDeviceViewModel).IsSelected = true;
+                    dvm.IsSelected = true;
 
                     if(this.SyncMapAndGrid == true)
                     {
-                        ZoomToRFDevice( (item as RFDeviceViewModel).RFDevice, false );
+                        ZoomToRFDevice( dvm.RFDevice, false );
                     }
+
+                    this.CurrentSelectedDevice = dvm;
                 }
             }
 
@@ -468,7 +469,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-
         /// <summary>
         /// Handles the Click event of the MenuItem_About control.
         /// </summary>
@@ -583,7 +583,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             e.Handled = true;
         }
-
 
 
         /// <summary>
@@ -801,6 +800,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         model.IsSelected = false;
                     }
                 }
+
+                this.CurrentSelectedDevice = sender as RFDeviceViewModel;
 
                 if(this.SyncMapAndGrid == true)
                 {

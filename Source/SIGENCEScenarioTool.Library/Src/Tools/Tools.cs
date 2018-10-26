@@ -171,13 +171,60 @@ namespace SIGENCEScenarioTool.Tools
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Gets the date time from unix timestamp.
+        /// </summary>
+        /// <param name="lUnixTimeStamp">The l unix time stamp.</param>
+        /// <param name="dtk">The DTK.</param>
+        /// <returns></returns>
+        public static DateTime GetDateTimeFromUnixTimestamp( long lUnixTimeStamp, DateTimeKind dtk )
+        {
+            return new DateTime( 1970, 1, 1, 0, 0, 0, dtk ).AddMilliseconds( lUnixTimeStamp );
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
-        /// Gets the size of the human.
+        /// Gets the human size for physics.
+        /// </summary>
+        /// <param name="dValue">The d value.</param>
+        /// <param name="strSuffix">The string suffix.</param>
+        /// <returns></returns>
+        public static string GetHumanSizeForPhysics( double dValue, string strSuffix )
+        {
+            if(dValue >= 1_000_000_000_000)
+            {
+                return string.Format( "{0:F} T{1}", dValue / 1_000_000_000_000, strSuffix );
+            }
+
+            if(dValue >= 1_000_000_000)
+            {
+                return string.Format( "{0:F} G{1}", dValue / 1_000_000_000, strSuffix );
+            }
+
+            if(dValue >= 1_000_000)
+            {
+                return string.Format( "{0:F} M{1}", dValue / 1_000_000, strSuffix );
+            }
+
+            if(dValue >= 1_000)
+            {
+                return string.Format( "{0:F} K{1}", dValue / 1_000, strSuffix );
+            }
+
+            return string.Format( "{0:F} {1}", dValue, strSuffix );
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Gets the human size for informatics.
         /// </summary>
         /// <param name="lSizeInBytes">The l size in bytes.</param>
         /// <returns></returns>
-        public static string GetHumanSize( long lSizeInBytes )
+        public static string GetHumanSizeForInformatics( long lSizeInBytes )
         {
             if(lSizeInBytes >= 1099511627776)
             {

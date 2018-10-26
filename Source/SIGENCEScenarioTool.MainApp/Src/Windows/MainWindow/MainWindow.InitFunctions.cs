@@ -29,10 +29,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     NewFile();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( ApplicationCommands.Open,
@@ -41,10 +38,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     LoadFile();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( ApplicationCommands.Save,
@@ -53,10 +47,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     SaveFile();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( ApplicationCommands.SaveAs,
@@ -65,10 +56,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     SaveAsFile();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( ApplicationCommands.Close,
@@ -77,10 +65,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     Close();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             //---------------------------------------------------------------------
@@ -91,10 +76,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     OpenCheatSheet();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             //---------------------------------------------------------------------
@@ -105,23 +87,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     BeginCreateRFDevice();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.DeleteRFDevice,
                 ( sender, e ) =>
                 {
-                    //DeleteRFDevice();
                     DeleteRFDevices();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.MoveRFDevice,
@@ -130,10 +105,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.IsDeviceMovingMode = !this.IsDeviceMovingMode;
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.CopyRFDevice,
@@ -142,10 +114,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     CopyRFDevice();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.PasteRFDevice,
@@ -154,10 +123,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     PasteRFDevice();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ExportRFDevice,
@@ -166,10 +132,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     ExportRFDevices();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ImportRFDevice,
@@ -178,10 +141,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     ImportRFDevices();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ZoomToRFDevice,
@@ -190,10 +150,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     ZoomToRFDevice();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.RFDeviceQRCode,
@@ -202,10 +159,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     RFDeviceQRCode();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ToggleDALF,
@@ -214,11 +168,31 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.StartedDALF = !this.StartedDALF;
                     e.Handled = true;
                 },
+                ( sender, e ) => { e.CanExecute = true; }
+            ) );
+
+            this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ToggleInfoWindow,
                 ( sender, e ) =>
                 {
-                    e.CanExecute = true;
-                }
+                    ToggleInfoWindow();
+
+                    e.Handled = true;
+                },
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
+
+            //this.CommandBindings.Add( new CommandBinding( RegisteredCommands.ToggleDataGrid,
+            //    ( sender, e ) =>
+            //    {
+            //        ToggleDataGrid();
+
+            //        e.Handled = true;
+            //    },
+            //    ( sender, e ) =>
+            //    {
+            //        e.CanExecute = true;
+            //    }
+            //) );
 
             //---------------------------------------------------------------------
 
@@ -228,10 +202,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     CreateScreenshot();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             //---------------------------------------------------------------------
@@ -268,10 +239,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     OpenSettings();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.SyncMapAndGrid,
@@ -280,10 +248,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.SyncMapAndGrid = !this.SyncMapAndGrid;
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.OpenScriptEditor,
@@ -292,10 +257,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     OpenScriptEditor();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
 
             this.CommandBindings.Add( new CommandBinding( RegisteredCommands.OpenInGoogleMaps,
@@ -304,10 +266,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     OpenInGoogleMaps();
                     e.Handled = true;
                 },
-                ( sender, e ) =>
-                {
-                    e.CanExecute = true;
-                }
+                ( sender, e ) => { e.CanExecute = true; }
             ) );
         }
 
