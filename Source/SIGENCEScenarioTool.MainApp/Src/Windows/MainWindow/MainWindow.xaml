@@ -215,7 +215,8 @@
                     <Grid Grid.Row="0">
                         <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
-                        <Border BorderBrush="Black" BorderThickness="2" Width="240" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" Background="AliceBlue" Visibility="{Binding InfoWindowVisibility}">
+                        <!--<Border BorderBrush="Black" BorderThickness="2" Width="240" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" Background="AliceBlue" Visibility="{Binding InfoWindowVisibility}">-->
+                        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="10" Opacity="0.7" Width="240" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" Background="Black" Visibility="{Binding InfoWindowVisibility}">
 
                             <Border.Effect>
                                 <DropShadowEffect />
@@ -226,13 +227,15 @@
                                 <Grid.Resources>
                                     <Style x:Key="Header">
                                         <Style.Setters>
-                                            <Setter Property="Control.FontWeight" Value="Bold" />
+                                            <Setter Property="Label.FontWeight" Value="Bold" />
+                                            <Setter Property="Label.Foreground" Value="White" />
                                             <!--<Setter Property="Label.HorizontalContentAlignment" Value="Right" />-->
                                         </Style.Setters>
                                     </Style>
                                     <Style x:Key="Data">
                                         <Style.Setters>
                                             <Setter Property="Label.HorizontalContentAlignment" Value="Right" />
+                                            <Setter Property="Label.Foreground" Value="White" />
                                         </Style.Setters>
                                     </Style>
                                 </Grid.Resources>
