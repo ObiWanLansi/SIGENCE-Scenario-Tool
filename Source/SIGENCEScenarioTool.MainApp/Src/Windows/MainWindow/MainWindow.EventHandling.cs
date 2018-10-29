@@ -12,11 +12,11 @@ using GMap.NET.WindowsPresentation;
 
 using ICSharpCode.TextEditor.Document;
 
-using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
+
 // ReSharper disable ExplicitCallerInfoArgument
 
 
@@ -388,15 +388,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Handles the MouseDoubleClick event of the DataGridGeoData control.
+        /// Handles the Click event of the MenuItem_SwitchInfoWindow control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void DataGridGeoData_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_SwitchInfoWindow_Click( object sender, RoutedEventArgs e )
         {
-            GeoNode gn = (sender as DataGrid).SelectedItem as GeoNode;
-
-            JumpToGeoNode( gn );
+            ToggleInfoWindow();
 
             e.Handled = true;
         }
@@ -405,29 +403,57 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Handles the Click event of the MenuItem_AddToFavorites control.
+        /// Handles the Click event of the MenuItem_LoadTemplates control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_AddToFavorites_Click( object sender, RoutedEventArgs e )
+        private void MenuItem_LoadTemplates_Click( object sender, RoutedEventArgs e )
         {
-            AddToFavorites();
+            LoadTemplates();
 
             e.Handled = true;
         }
 
 
         /// <summary>
-        /// Handles the Click event of the MenuItem_DelFromFavorites control.
+        /// Handles the Click event of the MenuItem_SaveTemplates control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_DelFromFavorites_Click( object sender, RoutedEventArgs e )
+        private void MenuItem_SaveTemplates_Click( object sender, RoutedEventArgs e )
         {
-            DeleteFromFavorites();
+            SaveTemplates();
 
             e.Handled = true;
         }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_AddToTemplates control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_AddToTemplates_Click( object sender, RoutedEventArgs e )
+        {
+            AddToTemplates();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_DelFromTemplates control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_DelFromTemplates_Click( object sender, RoutedEventArgs e )
+        {
+            DeleteFromTemplates();
+
+            e.Handled = true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
@@ -454,6 +480,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             e.Handled = true;
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>

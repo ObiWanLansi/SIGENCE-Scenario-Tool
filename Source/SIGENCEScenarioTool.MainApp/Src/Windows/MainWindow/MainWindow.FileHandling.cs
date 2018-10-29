@@ -117,9 +117,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 XElement eRFDeviceCollection = new XElement( "RFDeviceCollection" );
 
-                foreach(RFDevice t in from rfdevice in this.RFDeviceViewModelCollection select rfdevice.RFDevice)
+                foreach(RFDevice d in from rfdevice in this.RFDeviceViewModelCollection select rfdevice.RFDevice)
                 {
-                    eRFDeviceCollection.Add( t.ToXml() );
+                    eRFDeviceCollection.Add( d.ToXml() );
                 }
 
                 eSIGENCEScenarioTool.Add( eRFDeviceCollection );

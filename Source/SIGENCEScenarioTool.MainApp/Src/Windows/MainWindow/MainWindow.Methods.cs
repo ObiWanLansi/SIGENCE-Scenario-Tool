@@ -827,14 +827,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// Toggles the data grid.
-        /// </summary>
-        private void ToggleDataGrid()
-        {
-            this.DataGridVisibility = this.DataGridVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
-            FirePropertyChanged( "DataGridVisibility" );
-        }
+        ///// <summary>
+        ///// Toggles the data grid.
+        ///// </summary>
+        //private void ToggleDataGrid()
+        //{
+        //    this.DataGridVisibility = this.DataGridVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+        //    FirePropertyChanged( "DataGridVisibility" );
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

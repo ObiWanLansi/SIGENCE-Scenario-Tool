@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
+using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
@@ -31,8 +33,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
     /// </summary>
     public partial class MainWindow
     {
-
-
         /// <summary>
         /// Handles the Click event of the MenuItem_ChartingTest control.
         /// </summary>
@@ -365,13 +365,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Handles the Click event of the MenuItem_SwitchInfoWindow control.
+        /// Handles the MouseDoubleClick event of the DataGridGeoData control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_SwitchInfoWindow_Click( object sender, RoutedEventArgs e )
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void DataGridGeoData_MouseDoubleClick( object sender, MouseButtonEventArgs e )
         {
-            ToggleInfoWindow();
+            GeoNode gn = (sender as DataGrid).SelectedItem as GeoNode;
+
+            JumpToGeoNode( gn );
 
             e.Handled = true;
         }

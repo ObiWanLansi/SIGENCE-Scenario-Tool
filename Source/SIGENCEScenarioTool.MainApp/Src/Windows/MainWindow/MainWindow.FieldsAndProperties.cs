@@ -45,12 +45,22 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The SFD export rf devices
         /// </summary>
-        private readonly SaveFileDialog sfdExportRFDevices = new SaveFileDialog();
+        private readonly SaveFileDialog sfdExportSIGENCEScenario = new SaveFileDialog();
 
         /// <summary>
         /// The ofd import rf devices
         /// </summary>
-        private readonly OpenFileDialog ofdImportRFDevices = new OpenFileDialog();
+        private readonly OpenFileDialog ofdImportSIGENCEScenario = new OpenFileDialog();
+
+        /// <summary>
+        /// The SFD save templates
+        /// </summary>
+        private readonly SaveFileDialog sfdSaveTemplates = new SaveFileDialog();
+
+        /// <summary>
+        /// The ofd load templates
+        /// </summary>
+        private readonly OpenFileDialog ofdLoadTemplates = new OpenFileDialog();
 
         /// <summary>
         /// The SFD save screenshot

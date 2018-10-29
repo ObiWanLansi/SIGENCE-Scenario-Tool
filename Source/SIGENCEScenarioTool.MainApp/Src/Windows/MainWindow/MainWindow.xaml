@@ -184,10 +184,12 @@
 
             <Separator />
 
+            <Button Content="{StaticResource OPEN}" ToolTip="Open Templates" Click="MenuItem_LoadTemplates_Click" />
+            <Button Content="{StaticResource SAVE}" ToolTip="Save Templates" Click="MenuItem_SaveTemplates_Click" />
             <Label Content="RFDevice Template" />
             <ComboBox x:Name="cbTemplate" Width="120" ItemsSource="{Binding RFDeviceTemplateCollection}" SelectedItem="{Binding CurrentSelectedTemplate}" ToolTip="Here You Can Select The Template For New RFDevices." Margin="3" />
-            <Button Content="{StaticResource STAR_ADD}" ToolTip="Add To Favorites" Click="MenuItem_AddToFavorites_Click" />
-            <Button Content="{StaticResource STAR_DEL}" ToolTip="Del From Favorites" Click="MenuItem_DelFromFavorites_Click" />
+            <Button Content="{StaticResource STAR_ADD}" ToolTip="Add To Templates" Click="MenuItem_AddToTemplates_Click" />
+            <Button Content="{StaticResource STAR_DEL}" ToolTip="Del From Templates" Click="MenuItem_DelFromTemplates_Click" />
 
             <Separator />
 
@@ -216,7 +218,7 @@
                         <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" OnPositionChanged="MapControl_OnPositionChanged" MouseLeftButtonDown="MapControl_MouseLeftButtonDown" MouseRightButtonDown="MapControl_MouseRightButtonDown" OnMapZoomChanged="MapControl_OnMapZoomChanged" />
 
                         <!--<Border BorderBrush="Black" BorderThickness="2" Width="240" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" Background="AliceBlue" Visibility="{Binding InfoWindowVisibility}">-->
-                        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="10" Opacity="0.7" Width="240" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" Background="Black" Visibility="{Binding InfoWindowVisibility}">
+                        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="10" Opacity="0.65" Width="240" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" Background="Black" Visibility="{Binding InfoWindowVisibility}">
 
                             <Border.Effect>
                                 <DropShadowEffect />
@@ -329,7 +331,7 @@
                                     <MenuItem Header="_QRCode From RFDevice" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.RFDeviceQRCode}" />
                                     <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
                                     <Separator />
-                                    <MenuItem Header="_Add To Favorites" Icon="{StaticResource STAR_ADD}" Click="MenuItem_AddToFavorites_Click" />
+                                    <MenuItem Header="_Add To Favorites" Icon="{StaticResource STAR_ADD}" Click="MenuItem_AddToTemplates_Click" />
                                 </ContextMenu>
                             </DataGrid.ContextMenu>
 

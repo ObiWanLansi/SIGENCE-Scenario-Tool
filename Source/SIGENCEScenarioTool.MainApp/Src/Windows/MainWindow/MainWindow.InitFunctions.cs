@@ -319,38 +319,54 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitFileOpenSaveDialogs()
         {
-            this.sfdSaveSIGENCEScenario.Title = "Save SIGENCE Scenario Tool File";
-            this.sfdSaveSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario Tool File (*.stf)|*.stf";
+            this.sfdSaveSIGENCEScenario.Title = "Save SIGENCE Scenario File";
+            this.sfdSaveSIGENCEScenario.Filter = "SIGENCE Scenario File (*.stf)|*.stf";
             this.sfdSaveSIGENCEScenario.AddExtension = true;
             this.sfdSaveSIGENCEScenario.CheckPathExists = true;
 
             //-----------------------------------------------------------------
 
-            this.ofdLoadSIGENCEScenario.Title = "Load SIGENCE Scenario Tool File";
-            this.ofdLoadSIGENCEScenario.Filter = "SIGINT SIGENCE Scenario ToolFile (*.stf)|*.stf";
+            this.ofdLoadSIGENCEScenario.Title = "Load SIGENCE Scenario File";
+            this.ofdLoadSIGENCEScenario.Filter = "SIGENCE Scenario File (*.stf)|*.stf";
             this.ofdLoadSIGENCEScenario.AddExtension = true;
             this.ofdLoadSIGENCEScenario.CheckPathExists = true;
             this.ofdLoadSIGENCEScenario.CheckFileExists = true;
             this.ofdLoadSIGENCEScenario.Multiselect = false;
 
-            //-----------------------------------------------------------------
+            //-------------------------------------------------------------------------------------
 
-            this.sfdExportRFDevices.Title = "Export RF Devices";
+            this.sfdExportSIGENCEScenario.Title = "Export SIGENCE Scenario";
             //sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json|Office Open XML File Format (*.xlsx)|*.xlsx|SQLite Database (*.sqlite)|*.sqlite";
-            this.sfdExportRFDevices.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx|Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
-            this.sfdExportRFDevices.AddExtension = true;
-            this.sfdExportRFDevices.CheckPathExists = true;
+            this.sfdExportSIGENCEScenario.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx|Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json";
+            this.sfdExportSIGENCEScenario.AddExtension = true;
+            this.sfdExportSIGENCEScenario.CheckPathExists = true;
 
             //-----------------------------------------------------------------
 
-            this.ofdImportRFDevices.Title = "Import RF Devices";
-            this.ofdImportRFDevices.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx";
-            this.ofdImportRFDevices.AddExtension = true;
-            this.ofdImportRFDevices.CheckPathExists = true;
-            this.ofdImportRFDevices.CheckFileExists = true;
-            this.ofdImportRFDevices.Multiselect = false;
+            this.ofdImportSIGENCEScenario.Title = "Import SIGENCE Scenario";
+            this.ofdImportSIGENCEScenario.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx";
+            this.ofdImportSIGENCEScenario.AddExtension = true;
+            this.ofdImportSIGENCEScenario.CheckPathExists = true;
+            this.ofdImportSIGENCEScenario.CheckFileExists = true;
+            this.ofdImportSIGENCEScenario.Multiselect = false;
+
+            //-------------------------------------------------------------------------------------
+
+            this.sfdSaveTemplates.Title = "Save SIGENCE Scenario Templates";
+            this.sfdSaveTemplates.Filter = "SIGENCE Scenario Templates (*.stt)|*.stt";
+            this.sfdSaveTemplates.AddExtension = true;
+            this.sfdSaveTemplates.CheckPathExists = true;
 
             //-----------------------------------------------------------------
+
+            this.ofdLoadTemplates.Title = "Load SIGENCE Scenario Templates";
+            this.ofdLoadTemplates.Filter = "SIGENCE Scenario Templates (*.stt)|*.stt";
+            this.ofdLoadTemplates.AddExtension = true;
+            this.ofdLoadTemplates.CheckPathExists = true;
+            this.ofdLoadTemplates.CheckFileExists = true;
+            this.ofdLoadTemplates.Multiselect = false;
+
+            //-------------------------------------------------------------------------------------
 
             this.sfdSaveScreenshot.Title = "Save Screenshot";
             this.sfdSaveScreenshot.Filter = "Portable Network Graphics (*.png)|*.png";

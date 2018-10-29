@@ -677,11 +677,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            this.sfdExportRFDevices.FileName = this.CurrentFile != null ? new FileInfo( this.CurrentFile ).GetFilenameWithoutExtension() : DateTime.Now.Fmt_YYYYMMDDHHMMSS();
+            this.sfdExportSIGENCEScenario.FileName = this.CurrentFile != null ? new FileInfo( this.CurrentFile ).GetFilenameWithoutExtension() : DateTime.Now.Fmt_YYYYMMDDHHMMSS();
 
-            if(this.sfdExportRFDevices.ShowDialog() == true)
+            if(this.sfdExportSIGENCEScenario.ShowDialog() == true)
             {
-                ExportRFDevices( devicelist, new FileInfo( this.sfdExportRFDevices.FileName ) );
+                ExportRFDevices( devicelist, new FileInfo( this.sfdExportSIGENCEScenario.FileName ) );
             }
         }
 
@@ -691,9 +691,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ImportRFDevices()
         {
-            if(this.ofdImportRFDevices.ShowDialog() == true)
+            if(this.ofdImportSIGENCEScenario.ShowDialog() == true)
             {
-                ImportRFDevices( new FileInfo( this.ofdImportRFDevices.FileName ) );
+                ImportRFDevices( new FileInfo( this.ofdImportSIGENCEScenario.FileName ) );
             }
         }
 
@@ -740,29 +740,111 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Adds to favorites.
+        /// Clears the templates.
+        /// </summary>
+        private void ClearTemplates()
+        {
+            this.RFDeviceTemplateCollection.Clear();
+            this.RFDeviceTemplateCollection.Add( EMPTY_TEMPLATE );
+        }
+
+
+        /// <summary>
+        /// Loads the templates.
+        /// </summary>
+        /// <param name="strFilename">The string filename.</param>
+        private void LoadTemplates( string strFilename )
+        {
+            ClearTemplates();
+        }
+
+
+        /// <summary>
+        /// Loads the templates.
+        /// </summary>
+        private void LoadTemplates()
+        {
+            if(this.ofdLoadTemplates.ShowDialog() == true)
+            {
+
+                MB.NotYetImplemented();
+            }
+        }
+
+
+        /// <summary>
+        /// Saves the templates.
+        /// </summary>
+        /// <param name="strFilename">The string filename.</param>
+        private void SaveTemplates( string strFilename )
+        {
+            this.Cursor = Cursors.Wait;
+
+            try
+            {
+                XElement eSIGENCEScenarioTemplates = new XElement( "SIGENCEScenarioTemplates", new XAttribute( "Version", Tool.Version ) );
+
+                //-------------------------------------------------------------
+
+                foreach(RFDevice d in from template in this.RFDeviceTemplateCollection select template)
+                {
+                    if(d.PrimaryKey != Guid.Empty)
+                    {
+                        eSIGENCEScenarioTemplates.Add( d.ToXml() );
+                    }
+                }
+
+                //-------------------------------------------------------------
+
+                eSIGENCEScenarioTemplates.SaveDefault( strFilename );
+
+                MB.Information( "{0}\nsuccessfully saved.", strFilename );
+            }
+            catch(Exception ex)
+            {
+                MB.Error( ex );
+            }
+
+            this.Cursor = Cursors.Arrow;
+        }
+
+
+        /// <summary>
+        /// Saves the templates.
+        /// </summary>
+        private void SaveTemplates()
+        {
+            if(this.sfdSaveTemplates.ShowDialog() == true)
+            {
+                SaveTemplates( this.sfdSaveTemplates.FileName );
+            }
+        }
+
+
+        /// <summary>
+        /// Adds to templates.
         /// </summary>
         /// <param name="device">The device.</param>
-        private void AddToFavorites( RFDevice device )
+        private void AddToTemplates( RFDevice device )
         {
             this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( device ) );
         }
 
 
         /// <summary>
-        /// Adds to favorites.
+        /// Adds to templates.
         /// </summary>
         /// <param name="dvm">The DVM.</param>
-        private void AddToFavorites( RFDeviceViewModel dvm )
+        private void AddToTemplates( RFDeviceViewModel dvm )
         {
-            AddToFavorites( dvm.RFDevice );
+            AddToTemplates( dvm.RFDevice );
         }
 
 
         /// <summary>
-        /// Adds to favorites.
+        /// Adds to templates.
         /// </summary>
-        private void AddToFavorites()
+        private void AddToTemplates()
         {
             if(this.dgRFDevices.SelectedItem == null)
             {
@@ -776,15 +858,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            AddToFavorites( this.dgRFDevices.SelectedItem as RFDeviceViewModel );
+            AddToTemplates( this.dgRFDevices.SelectedItem as RFDeviceViewModel );
         }
 
 
         /// <summary>
-        /// Deletes from favorites.
+        /// Deletes from templates.
         /// </summary>
         /// <param name="dvm">The DVM.</param>
-        private void DeleteFromFavorites( RFDeviceViewModel dvm = null )
+        private void DeleteFromTemplates( RFDeviceViewModel dvm = null )
         {
             if(this.CurrentSelectedTemplate == EMPTY_TEMPLATE)
             {
