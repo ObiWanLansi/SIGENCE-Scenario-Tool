@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool", "SIGENCEScenarioTool.MainApp\SIGENCE Scenario Tool.csproj", "{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool", "SIGENCEScenarioTool.MainApp\SIGENCEScenarioTool.csproj", "{21E6D61C-05BD-41BD-B4F3-A1A8F3D3D73E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.UnitTests", "SIGENCEScenarioTool.UnitTests\SIGENCE Scenario Tool.UnitTests.csproj", "{4A837532-76D1-4A78-99CB-E53BE9525C80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.UnitTests", "SIGENCEScenarioTool.UnitTests\SIGENCEScenarioTool.UnitTests.csproj", "{4A837532-76D1-4A78-99CB-E53BE9525C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.TestSuite", "SIGENCEScenarioTool.TestSuite\SIGENCE Scenario Tool.TestSuite.csproj", "{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.TestSuite", "SIGENCEScenarioTool.TestSuite\SIGENCEScenarioTool.TestSuite.csproj", "{66CEA7D3-5871-46B1-A24A-2B9CED8C298D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Library", "SIGENCEScenarioTool.Library\SIGENCE Scenario Tool.Library.csproj", "{E61FB891-442D-4285-9AB8-E7F3BFF66370}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGENCE Scenario Tool.Library", "SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.csproj", "{E61FB891-442D-4285-9AB8-E7F3BFF66370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

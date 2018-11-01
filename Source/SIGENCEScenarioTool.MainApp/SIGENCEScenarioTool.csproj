@@ -514,7 +514,7 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SIGENCEScenarioTool.Library\SIGENCE Scenario Tool.Library.csproj">
+    <ProjectReference Include="..\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.csproj">
       <Project>{e61fb891-442d-4285-9ab8-e7f3bff66370}</Project>
       <Name>SIGENCE Scenario Tool.Library</Name>
     </ProjectReference>

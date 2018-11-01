@@ -18,7 +18,7 @@
     <HtmlHelpName>SIGENCEScenarioTool.Library</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="SIGENCE Scenario Tool.Library.csproj" xmlns="" />
+      <DocumentationSource sourceFile="SIGENCEScenarioTool.Library.csproj" xmlns="" />
     </DocumentationSources>
     <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
     <SyntaxFilters>C#</SyntaxFilters>

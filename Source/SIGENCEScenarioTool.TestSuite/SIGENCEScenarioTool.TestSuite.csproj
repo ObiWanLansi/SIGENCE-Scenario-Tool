@@ -183,11 +183,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SIGENCEScenarioTool.Library\SIGENCE Scenario Tool.Library.csproj">
+    <ProjectReference Include="..\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.csproj">
       <Project>{e61fb891-442d-4285-9ab8-e7f3bff66370}</Project>
       <Name>SIGENCE Scenario Tool.Library</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SIGENCEScenarioTool.MainApp\SIGENCE Scenario Tool.csproj">
+    <ProjectReference Include="..\SIGENCEScenarioTool.MainApp\SIGENCEScenarioTool.csproj">
       <Project>{21e6d61c-05bd-41bd-b4f3-a1a8f3d3d73e}</Project>
       <Name>SIGENCE Scenario Tool</Name>
     </ProjectReference>
