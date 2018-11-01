@@ -2006,6 +2006,19 @@
              The Localization Time.
             </summary>
         </member>
+        <member name="M:SIGENCEScenarioTool.Models.GeoLocalizationResult.ToXml">
+            <summary>
+            Return An XML Element From This Instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.GeoLocalizationResult.FromXml(System.Xml.Linq.XElement)">
+            <summary>
+            Create An Instance From An XML Element.
+            </summary>
+            <param name="eRoot">The e root.</param>
+            <returns></returns>
+        </member>
         <member name="M:SIGENCEScenarioTool.Models.GeoLocalizationResult.Clone">
             <summary>
             
