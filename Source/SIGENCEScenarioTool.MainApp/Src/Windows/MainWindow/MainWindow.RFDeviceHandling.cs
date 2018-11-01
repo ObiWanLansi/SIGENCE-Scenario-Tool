@@ -755,7 +755,30 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="strFilename">The string filename.</param>
         private void LoadTemplates( string strFilename )
         {
+            this.Cursor = Cursors.Wait;
+
             ClearTemplates();
+
+            try
+            {
+                XDocument xdoc = XDocument.Load( strFilename );
+
+                foreach(XElement eTemplate in xdoc.Root.Elements( "RFDevice" ))
+                {
+                    RFDevice device = RFDevice.FromXml( eTemplate );
+
+                    if(device != null)
+                    {
+                        this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( device ) );
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MB.Error( ex );
+            }
+
+            this.Cursor = Cursors.Arrow;
         }
 
 
@@ -766,8 +789,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if(this.ofdLoadTemplates.ShowDialog() == true)
             {
-
-                MB.NotYetImplemented();
+                LoadTemplates( this.ofdLoadTemplates.FileName );
             }
         }
 

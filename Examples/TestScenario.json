@@ -1,0 +1,4202 @@
+[
+  {
+    "PrimaryKey": "daf971f4-18c4-49c9-b349-712355cd7e87",
+    "Id": 0,
+    "DeviceSource": 2,
+    "StartTime": 2.0,
+    "Name": "RFDevice #1",
+    "Latitude": {
+      "Value": 47.62328946917188
+    },
+    "Longitude": {
+      "Value": 9.40704345703125
+    },
+    "Altitude": {
+      "Value": 265
+    },
+    "Roll": 53.0,
+    "Pitch": 48.0,
+    "Yaw": -17.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9800000.35756455
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.954889559631
+    },
+    "Gain_dB": {
+      "Value": 81.938688324735821
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 42.228772130901355
+    },
+    "XPos": -35,
+    "YPos": 28,
+    "ZPos": -14,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "45cfaf09-549f-4bd4-b01e-422136244cd5",
+    "Id": -631,
+    "DeviceSource": 2,
+    "StartTime": 2.5,
+    "Name": "RFDevice #2",
+    "Latitude": {
+      "Value": 47.5952600027617
+    },
+    "Longitude": {
+      "Value": 9.4184889365972229
+    },
+    "Altitude": {
+      "Value": 11326
+    },
+    "Roll": 0.0,
+    "Pitch": 54.0,
+    "Yaw": -67.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9400000.216439724
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.962158038728
+    },
+    "Gain_dB": {
+      "Value": 74.032347715009166
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 111.23330047690929
+    },
+    "XPos": 55,
+    "YPos": -64,
+    "ZPos": 65,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "0dcf0790-604d-4b47-9d6e-e5fa20442f0a",
+    "Id": 904,
+    "DeviceSource": 2,
+    "StartTime": 3.3333333333333335,
+    "Name": "RFDevice #3",
+    "Latitude": {
+      "Value": 47.585254864035726
+    },
+    "Longitude": {
+      "Value": 9.3614746054422255
+    },
+    "Altitude": {
+      "Value": 11164
+    },
+    "Roll": 2.0,
+    "Pitch": 52.0,
+    "Yaw": -88.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 10400000.834868981
+    },
+    "Bandwidth_Hz": {
+      "Value": 10000.996552816125
+    },
+    "Gain_dB": {
+      "Value": 3.3942434635917857
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 35.291848109705306
+    },
+    "XPos": 31,
+    "YPos": 35,
+    "ZPos": -56,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "be543fa5-2afb-42d0-be44-25c22f3061cd",
+    "Id": 540,
+    "DeviceSource": 2,
+    "StartTime": 4.25,
+    "Name": "RFDevice #4",
+    "Latitude": {
+      "Value": 47.673288223527933
+    },
+    "Longitude": {
+      "Value": 9.4523313564459279
+    },
+    "Altitude": {
+      "Value": 5695
+    },
+    "Roll": -11.0,
+    "Pitch": -54.0,
+    "Yaw": -67.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9700000.2390595488
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.608527148892
+    },
+    "Gain_dB": {
+      "Value": 46.468217488596316
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 133.98162910341361
+    },
+    "XPos": -4,
+    "YPos": -56,
+    "ZPos": -8,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "4d87b3b4-bf5a-46de-a411-8eac6d6e97df",
+    "Id": 532,
+    "DeviceSource": 2,
+    "StartTime": 5.2,
+    "Name": "RFDevice #5",
+    "Latitude": {
+      "Value": 47.635657196226333
+    },
+    "Longitude": {
+      "Value": 9.4378343947607988
+    },
+    "Altitude": {
+      "Value": 1020
+    },
+    "Roll": 22.0,
+    "Pitch": -14.0,
+    "Yaw": -37.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9900000.8285127878
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.990617313419
+    },
+    "Gain_dB": {
+      "Value": 107.91140194465937
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 51.373177155094773
+    },
+    "XPos": -9,
+    "YPos": 38,
+    "ZPos": 31,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "8c541b05-06f6-40f8-b107-0ad313e4d482",
+    "Id": 853,
+    "DeviceSource": 2,
+    "StartTime": 6.166666666666667,
+    "Name": "RFDevice #6",
+    "Latitude": {
+      "Value": 47.594961653854178
+    },
+    "Longitude": {
+      "Value": 9.378489811635319
+    },
+    "Altitude": {
+      "Value": 6304
+    },
+    "Roll": -9.0,
+    "Pitch": 14.0,
+    "Yaw": -89.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.319988525
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.2338618125
+    },
+    "Gain_dB": {
+      "Value": 97.658403447204464
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 132.94341350297603
+    },
+    "XPos": 16,
+    "YPos": 41,
+    "ZPos": 54,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "1daa155e-4e64-4a0b-ba23-80804015deb8",
+    "Id": -642,
+    "DeviceSource": 2,
+    "StartTime": 7.1428571428571432,
+    "Name": "RFDevice #7",
+    "Latitude": {
+      "Value": 47.627055860017883
+    },
+    "Longitude": {
+      "Value": 9.432350515166906
+    },
+    "Altitude": {
+      "Value": 685
+    },
+    "Roll": 39.0,
+    "Pitch": -73.0,
+    "Yaw": -58.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9000000.0516589433
+    },
+    "Bandwidth_Hz": {
+      "Value": 10000.320843943078
+    },
+    "Gain_dB": {
+      "Value": 96.049262448236931
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 38.486963666270938
+    },
+    "XPos": 16,
+    "YPos": 25,
+    "ZPos": 16,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "ce8275b9-da42-485d-8748-8d79244600bc",
+    "Id": 332,
+    "DeviceSource": 2,
+    "StartTime": 8.125,
+    "Name": "RFDevice #8",
+    "Latitude": {
+      "Value": 47.6570644566561
+    },
+    "Longitude": {
+      "Value": 9.4492018657467138
+    },
+    "Altitude": {
+      "Value": 10631
+    },
+    "Roll": 16.0,
+    "Pitch": -87.0,
+    "Yaw": -34.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 8500000.0565760769
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.387396863376
+    },
+    "Gain_dB": {
+      "Value": 103.4957450909986
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 95.101684575016463
+    },
+    "XPos": 56,
+    "YPos": -48,
+    "ZPos": 21,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "6fd3ad39-3e90-4b3d-8f77-4f788bbca492",
+    "Id": -480,
+    "DeviceSource": 2,
+    "StartTime": 9.11111111111111,
+    "Name": "RFDevice #9",
+    "Latitude": {
+      "Value": 47.614302203016457
+    },
+    "Longitude": {
+      "Value": 9.3927777060473971
+    },
+    "Altitude": {
+      "Value": 6347
+    },
+    "Roll": -64.0,
+    "Pitch": 4.0,
+    "Yaw": 80.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.568848683
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.40911233258
+    },
+    "Gain_dB": {
+      "Value": 16.830641413028651
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 80.9864466683876
+    },
+    "XPos": -67,
+    "YPos": -35,
+    "ZPos": -24,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "1d14216c-2281-41f6-9045-ec67aca57856",
+    "Id": 74,
+    "DeviceSource": 2,
+    "StartTime": 10.1,
+    "Name": "RFDevice #10",
+    "Latitude": {
+      "Value": 47.625316722374052
+    },
+    "Longitude": {
+      "Value": 9.4367242798813056
+    },
+    "Altitude": {
+      "Value": 7291
+    },
+    "Roll": 16.0,
+    "Pitch": -17.0,
+    "Yaw": 53.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9400000.0200230479
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.415235446493
+    },
+    "Gain_dB": {
+      "Value": 81.663422851200878
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 107.46535242836241
+    },
+    "XPos": 5,
+    "YPos": 47,
+    "ZPos": -23,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "8abdf7c3-45e7-40b9-80b6-07fd98dd5b1c",
+    "Id": 131,
+    "DeviceSource": 2,
+    "StartTime": 11.090909090909092,
+    "Name": "RFDevice #11",
+    "Latitude": {
+      "Value": 47.622617595208126
+    },
+    "Longitude": {
+      "Value": 9.3987894929208533
+    },
+    "Altitude": {
+      "Value": 4378
+    },
+    "Roll": 30.0,
+    "Pitch": -10.0,
+    "Yaw": 61.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 8600000.917575866
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.642685454173
+    },
+    "Gain_dB": {
+      "Value": 14.244769955633567
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 72.003116349225451
+    },
+    "XPos": 58,
+    "YPos": -17,
+    "ZPos": 35,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "5342aea7-b7f5-42c8-ac36-bb82881917c1",
+    "Id": 982,
+    "DeviceSource": 2,
+    "StartTime": 12.083333333333334,
+    "Name": "RFDevice #12",
+    "Latitude": {
+      "Value": 47.642264618555174
+    },
+    "Longitude": {
+      "Value": 9.4249070041197651
+    },
+    "Altitude": {
+      "Value": 7884
+    },
+    "Roll": -23.0,
+    "Pitch": -44.0,
+    "Yaw": -15.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.192046046
+    },
+    "Bandwidth_Hz": {
+      "Value": 19000.474562815612
+    },
+    "Gain_dB": {
+      "Value": 101.58017897772611
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 78.1936188722931
+    },
+    "XPos": -30,
+    "YPos": -1,
+    "ZPos": -22,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "f1d3fbbe-c857-41e0-86c6-3d29e36d71e4",
+    "Id": 329,
+    "DeviceSource": 2,
+    "StartTime": 13.076923076923077,
+    "Name": "RFDevice #13",
+    "Latitude": {
+      "Value": 47.6267978634549
+    },
+    "Longitude": {
+      "Value": 9.4006468440609066
+    },
+    "Altitude": {
+      "Value": 1120
+    },
+    "Roll": 82.0,
+    "Pitch": 19.0,
+    "Yaw": -70.0,
+    "RxTxType": {
+      "Value": 8,
+      "Name": "NFMRadio",
+      "Remark": "Narrow Fm Band (Voice With 5Khz Bandwidth)"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9800000.8282129653
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.022397324454
+    },
+    "Gain_dB": {
+      "Value": 99.7855762945421
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 40.877567298187671
+    },
+    "XPos": -17,
+    "YPos": -8,
+    "ZPos": -45,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "64531f5c-ac05-4cba-a765-bdcf6284d9f5",
+    "Id": 593,
+    "DeviceSource": 2,
+    "StartTime": 14.071428571428571,
+    "Name": "RFDevice #14",
+    "Latitude": {
+      "Value": 47.628865239174473
+    },
+    "Longitude": {
+      "Value": 9.38366462535999
+    },
+    "Altitude": {
+      "Value": 7861
+    },
+    "Roll": 38.0,
+    "Pitch": 65.0,
+    "Yaw": 43.0,
+    "RxTxType": {
+      "Value": 8,
+      "Name": "NFMRadio",
+      "Remark": "Narrow Fm Band (Voice With 5Khz Bandwidth)"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 10300000.638138162
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.714794219804
+    },
+    "Gain_dB": {
+      "Value": 117.28710305611003
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 32.33941017991836
+    },
+    "XPos": -44,
+    "YPos": 21,
+    "ZPos": 54,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "37e61d07-10a0-4936-883e-877172d2915e",
+    "Id": 694,
+    "DeviceSource": 2,
+    "StartTime": 15.066666666666666,
+    "Name": "RFDevice #15",
+    "Latitude": {
+      "Value": 47.627333330535912
+    },
+    "Longitude": {
+      "Value": 9.4301227200185309
+    },
+    "Altitude": {
+      "Value": 8616
+    },
+    "Roll": 55.0,
+    "Pitch": 41.0,
+    "Yaw": -20.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 9600000.466654988
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.27347374208
+    },
+    "Gain_dB": {
+      "Value": 137.01641685935502
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 117.51010574051649
+    },
+    "XPos": 64,
+    "YPos": -18,
+    "ZPos": -14,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "c83393ae-7d5d-4662-b19e-5182585120fb",
+    "Id": -99,
+    "DeviceSource": 2,
+    "StartTime": 16.0625,
+    "Name": "RFDevice #16",
+    "Latitude": {
+      "Value": 47.586936104312009
+    },
+    "Longitude": {
+      "Value": 9.42709860409147
+    },
+    "Altitude": {
+      "Value": 6460
+    },
+    "Roll": 42.0,
+    "Pitch": 6.0,
+    "Yaw": 31.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 8700000.929099679
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.264193533112
+    },
+    "Gain_dB": {
+      "Value": 118.38669940614453
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 35.506034670167615
+    },
+    "XPos": 34,
+    "YPos": -38,
+    "ZPos": -17,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "69f8176a-f5ff-4cc5-bab3-d71bdc66c7f3",
+    "Id": -501,
+    "DeviceSource": 2,
+    "StartTime": 17.058823529411764,
+    "Name": "RFDevice #17",
+    "Latitude": {
+      "Value": 47.579453865216756
+    },
+    "Longitude": {
+      "Value": 9.4537218907366878
+    },
+    "Altitude": {
+      "Value": 5890
+    },
+    "Roll": -11.0,
+    "Pitch": 65.0,
+    "Yaw": -5.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.4394523874
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.630164563483
+    },
+    "Gain_dB": {
+      "Value": 110.7345179625482
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 60.982610149300939
+    },
+    "XPos": -26,
+    "YPos": -24,
+    "ZPos": -57,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "78ecb299-2d4e-4fec-865b-54eb8b0c09c4",
+    "Id": 979,
+    "DeviceSource": 2,
+    "StartTime": 18.055555555555557,
+    "Name": "RFDevice #18",
+    "Latitude": {
+      "Value": 47.651134184000576
+    },
+    "Longitude": {
+      "Value": 9.3741188122504742
+    },
+    "Altitude": {
+      "Value": 4985
+    },
+    "Roll": 2.0,
+    "Pitch": 66.0,
+    "Yaw": 89.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.059388714
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.477165926004
+    },
+    "Gain_dB": {
+      "Value": 132.52439086210188
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 23.772688744018176
+    },
+    "XPos": 28,
+    "YPos": 48,
+    "ZPos": 1,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "7e54d022-e1ee-4a77-9896-3e9c83adeeb7",
+    "Id": -78,
+    "DeviceSource": 2,
+    "StartTime": 19.05263157894737,
+    "Name": "RFDevice #19",
+    "Latitude": {
+      "Value": 47.6385114194045
+    },
+    "Longitude": {
+      "Value": 9.395363289904
+    },
+    "Altitude": {
+      "Value": 10719
+    },
+    "Roll": 4.0,
+    "Pitch": -7.0,
+    "Yaw": 47.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9800000.1321416628
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.887192391272
+    },
+    "Gain_dB": {
+      "Value": 32.376674377534854
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 35.593490707498738
+    },
+    "XPos": 2,
+    "YPos": 10,
+    "ZPos": -43,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "5b9aca9b-f410-4b61-84ea-2fc4145586ec",
+    "Id": -25,
+    "DeviceSource": 2,
+    "StartTime": 20.05,
+    "Name": "RFDevice #20",
+    "Latitude": {
+      "Value": 47.609649611941336
+    },
+    "Longitude": {
+      "Value": 9.4551310027707771
+    },
+    "Altitude": {
+      "Value": 5612
+    },
+    "Roll": 55.0,
+    "Pitch": -81.0,
+    "Yaw": 89.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 10300000.48016841
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.095442759848
+    },
+    "Gain_dB": {
+      "Value": 63.354053890963108
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 119.47645158668814
+    },
+    "XPos": 60,
+    "YPos": -23,
+    "ZPos": -19,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "b18044e7-33ff-45ef-904b-d656a9ace9ec",
+    "Id": 871,
+    "DeviceSource": 2,
+    "StartTime": 21.047619047619047,
+    "Name": "RFDevice #21",
+    "Latitude": {
+      "Value": 47.61025633369767
+    },
+    "Longitude": {
+      "Value": 9.4307209512096257
+    },
+    "Altitude": {
+      "Value": 2816
+    },
+    "Roll": 19.0,
+    "Pitch": -32.0,
+    "Yaw": 37.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.2458189838
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.81655035625
+    },
+    "Gain_dB": {
+      "Value": 13.960806197934229
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 108.81074476605781
+    },
+    "XPos": 21,
+    "YPos": -14,
+    "ZPos": 54,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "cb087051-f649-4322-b057-61142c61ac67",
+    "Id": 601,
+    "DeviceSource": 2,
+    "StartTime": 22.045454545454547,
+    "Name": "RFDevice #22",
+    "Latitude": {
+      "Value": 47.589618880410463
+    },
+    "Longitude": {
+      "Value": 9.35922154965912
+    },
+    "Altitude": {
+      "Value": 5733
+    },
+    "Roll": -55.0,
+    "Pitch": 65.0,
+    "Yaw": -3.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 10300000.115112944
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.337116352905
+    },
+    "Gain_dB": {
+      "Value": 97.701088205306363
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 24.871428153417739
+    },
+    "XPos": -48,
+    "YPos": 51,
+    "ZPos": 64,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "4bba10fa-3cd7-4829-8a8b-51c09530e297",
+    "Id": 518,
+    "DeviceSource": 2,
+    "StartTime": 23.043478260869566,
+    "Name": "RFDevice #23",
+    "Latitude": {
+      "Value": 47.62178261122466
+    },
+    "Longitude": {
+      "Value": 9.3878223941804748
+    },
+    "Altitude": {
+      "Value": 7200
+    },
+    "Roll": 5.0,
+    "Pitch": 19.0,
+    "Yaw": 78.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "GPSJammer",
+      "Remark": "10MHz L1 GPS Jammer"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 8900000.0704293288
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.459804948168
+    },
+    "Gain_dB": {
+      "Value": 5.8001381083392252
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 33.104531660724682
+    },
+    "XPos": 15,
+    "YPos": 29,
+    "ZPos": -34,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "fd5a8dc8-459f-4118-9fab-b308b0836bd0",
+    "Id": -836,
+    "DeviceSource": 2,
+    "StartTime": 24.041666666666668,
+    "Name": "RFDevice #24",
+    "Latitude": {
+      "Value": 47.644984477799809
+    },
+    "Longitude": {
+      "Value": 9.3816407386328073
+    },
+    "Altitude": {
+      "Value": 9589
+    },
+    "Roll": 40.0,
+    "Pitch": -41.0,
+    "Yaw": -21.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9300000.8626502659
+    },
+    "Bandwidth_Hz": {
+      "Value": 17000.914181268268
+    },
+    "Gain_dB": {
+      "Value": 65.926300988498284
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 31.191771785352273
+    },
+    "XPos": 13,
+    "YPos": -35,
+    "ZPos": 11,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "6728bed7-d14f-4857-b49d-f5dc7a7f7298",
+    "Id": -726,
+    "DeviceSource": 2,
+    "StartTime": 25.04,
+    "Name": "RFDevice #25",
+    "Latitude": {
+      "Value": 47.575448913136206
+    },
+    "Longitude": {
+      "Value": 9.4548020406150073
+    },
+    "Altitude": {
+      "Value": 7055
+    },
+    "Roll": 81.0,
+    "Pitch": -35.0,
+    "Yaw": -21.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.487047464
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.948078588557
+    },
+    "Gain_dB": {
+      "Value": 18.950521084456948
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 18.130954714087281
+    },
+    "XPos": 27,
+    "YPos": 14,
+    "ZPos": -25,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "7323fc9c-a05f-42a4-867a-944a866705d4",
+    "Id": 539,
+    "DeviceSource": 2,
+    "StartTime": 26.03846153846154,
+    "Name": "RFDevice #26",
+    "Latitude": {
+      "Value": 47.608029718325454
+    },
+    "Longitude": {
+      "Value": 9.3963926725738443
+    },
+    "Altitude": {
+      "Value": 4055
+    },
+    "Roll": -70.0,
+    "Pitch": 3.0,
+    "Yaw": 4.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9200000.5017038584
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.296584957418
+    },
+    "Gain_dB": {
+      "Value": 53.551243247255329
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 2.9664175188943824
+    },
+    "XPos": 54,
+    "YPos": -11,
+    "ZPos": 11,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "053d9524-52fe-43f1-8e96-759fb83e3177",
+    "Id": -810,
+    "DeviceSource": 2,
+    "StartTime": 27.037037037037038,
+    "Name": "RFDevice #27",
+    "Latitude": {
+      "Value": 47.653004319987694
+    },
+    "Longitude": {
+      "Value": 9.3853978267537226
+    },
+    "Altitude": {
+      "Value": 3484
+    },
+    "Roll": -89.0,
+    "Pitch": 3.0,
+    "Yaw": 55.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 9700000.8003023341
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.187032013288
+    },
+    "Gain_dB": {
+      "Value": 81.649976654746553
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 21.69884198238088
+    },
+    "XPos": 5,
+    "YPos": -8,
+    "ZPos": -36,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "83cd90aa-5c16-4efe-af20-3838456c2235",
+    "Id": 497,
+    "DeviceSource": 2,
+    "StartTime": 28.035714285714285,
+    "Name": "RFDevice #28",
+    "Latitude": {
+      "Value": 47.670185355057058
+    },
+    "Longitude": {
+      "Value": 9.4207283543719367
+    },
+    "Altitude": {
+      "Value": 2017
+    },
+    "Roll": -19.0,
+    "Pitch": -5.0,
+    "Yaw": 18.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9400000.1903640665
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.209872749267
+    },
+    "Gain_dB": {
+      "Value": 24.618718672831879
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 26.882899752763517
+    },
+    "XPos": -41,
+    "YPos": -1,
+    "ZPos": -45,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "52102982-b3f1-4005-9c03-16488a4c5d99",
+    "Id": -138,
+    "DeviceSource": 2,
+    "StartTime": 29.03448275862069,
+    "Name": "RFDevice #29",
+    "Latitude": {
+      "Value": 47.671231470892742
+    },
+    "Longitude": {
+      "Value": 9.4329648211020611
+    },
+    "Altitude": {
+      "Value": 4266
+    },
+    "Roll": 42.0,
+    "Pitch": 13.0,
+    "Yaw": -31.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "GPSJammer",
+      "Remark": "10MHz L1 GPS Jammer"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9500000.8339497354
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.845402632767
+    },
+    "Gain_dB": {
+      "Value": 78.494994887846985
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 131.60669871401353
+    },
+    "XPos": 33,
+    "YPos": 73,
+    "ZPos": -18,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "7c36ad2d-4b69-4162-869e-3a4a5ccde6be",
+    "Id": 954,
+    "DeviceSource": 2,
+    "StartTime": 30.033333333333335,
+    "Name": "RFDevice #30",
+    "Latitude": {
+      "Value": 47.664374377093417
+    },
+    "Longitude": {
+      "Value": 9.4273752101093216
+    },
+    "Altitude": {
+      "Value": 720
+    },
+    "Roll": -68.0,
+    "Pitch": 60.0,
+    "Yaw": -64.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.5526685715
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.506873026261
+    },
+    "Gain_dB": {
+      "Value": 3.31485791239648
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 47.552447729535608
+    },
+    "XPos": 24,
+    "YPos": -19,
+    "ZPos": 13,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "78c4f0a0-07d9-4063-9545-56fcfcb4a7c7",
+    "Id": 247,
+    "DeviceSource": 2,
+    "StartTime": 31.032258064516128,
+    "Name": "RFDevice #31",
+    "Latitude": {
+      "Value": 47.60034034731531
+    },
+    "Longitude": {
+      "Value": 9.3635050076090085
+    },
+    "Altitude": {
+      "Value": 8036
+    },
+    "Roll": 87.0,
+    "Pitch": 34.0,
+    "Yaw": 53.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "HackRF",
+      "Remark": "HackRF One"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9200000.0473029241
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.981631116469
+    },
+    "Gain_dB": {
+      "Value": 103.69672912298549
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 99.214787994611441
+    },
+    "XPos": -11,
+    "YPos": -31,
+    "ZPos": -23,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "6b476f13-98e3-4aa6-a42b-b2f8f921644d",
+    "Id": 828,
+    "DeviceSource": 2,
+    "StartTime": 32.03125,
+    "Name": "RFDevice #32",
+    "Latitude": {
+      "Value": 47.642851394851121
+    },
+    "Longitude": {
+      "Value": 9.417224671370434
+    },
+    "Altitude": {
+      "Value": 10976
+    },
+    "Roll": -21.0,
+    "Pitch": 88.0,
+    "Yaw": -76.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 8600000.3879800271
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.198196437768
+    },
+    "Gain_dB": {
+      "Value": 34.947652624429971
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 26.971081688055342
+    },
+    "XPos": 51,
+    "YPos": -6,
+    "ZPos": -52,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "6df38721-85f2-4f14-8f82-ba2acfcf66fd",
+    "Id": 203,
+    "DeviceSource": 2,
+    "StartTime": 33.030303030303031,
+    "Name": "RFDevice #33",
+    "Latitude": {
+      "Value": 47.602425822031847
+    },
+    "Longitude": {
+      "Value": 9.3990541574275177
+    },
+    "Altitude": {
+      "Value": 12075
+    },
+    "Roll": 14.0,
+    "Pitch": 3.0,
+    "Yaw": -31.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9400000.2763494439
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.544616102959
+    },
+    "Gain_dB": {
+      "Value": 80.47953047486
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 88.963501723000547
+    },
+    "XPos": 46,
+    "YPos": 13,
+    "ZPos": -10,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "8ecdd10c-8a4e-48f6-8040-379c8e054418",
+    "Id": -83,
+    "DeviceSource": 2,
+    "StartTime": 34.029411764705884,
+    "Name": "RFDevice #34",
+    "Latitude": {
+      "Value": 47.663173301032323
+    },
+    "Longitude": {
+      "Value": 9.4275777216397856
+    },
+    "Altitude": {
+      "Value": 5421
+    },
+    "Roll": 42.0,
+    "Pitch": -3.0,
+    "Yaw": -49.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "HackRF",
+      "Remark": "HackRF One"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9500000.7649763767
+    },
+    "Bandwidth_Hz": {
+      "Value": 19000.789506839024
+    },
+    "Gain_dB": {
+      "Value": 23.786351343983018
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 37.6909802084281
+    },
+    "XPos": 48,
+    "YPos": 62,
+    "ZPos": 51,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "b16d4840-109a-4be3-ad00-db2e61669285",
+    "Id": 220,
+    "DeviceSource": 2,
+    "StartTime": 35.028571428571432,
+    "Name": "RFDevice #35",
+    "Latitude": {
+      "Value": 47.585491903535747
+    },
+    "Longitude": {
+      "Value": 9.3819260831339673
+    },
+    "Altitude": {
+      "Value": 4088
+    },
+    "Roll": 39.0,
+    "Pitch": -42.0,
+    "Yaw": 49.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "IdealSDR",
+      "Remark": "Ideal Sdr Receiver (Passes Signal Through)"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9900000.1677540671
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.958462705816
+    },
+    "Gain_dB": {
+      "Value": 49.362109354865787
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 36.168415788173867
+    },
+    "XPos": 54,
+    "YPos": 41,
+    "ZPos": 17,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "4ad7a5ed-968b-4cf9-8616-18ae606ee7c1",
+    "Id": -70,
+    "DeviceSource": 2,
+    "StartTime": 36.027777777777779,
+    "Name": "RFDevice #36",
+    "Latitude": {
+      "Value": 47.607584106806435
+    },
+    "Longitude": {
+      "Value": 9.3773282467249253
+    },
+    "Altitude": {
+      "Value": 4037
+    },
+    "Roll": -60.0,
+    "Pitch": -18.0,
+    "Yaw": -14.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9600000.6091440935
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.187304163439
+    },
+    "Gain_dB": {
+      "Value": 31.654733979448086
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 57.707433652462171
+    },
+    "XPos": -42,
+    "YPos": 18,
+    "ZPos": 45,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "9db46c13-d4ac-4ae4-b7b1-aa868a648d8d",
+    "Id": 822,
+    "DeviceSource": 2,
+    "StartTime": 37.027027027027025,
+    "Name": "RFDevice #37",
+    "Latitude": {
+      "Value": 47.599381006692212
+    },
+    "Longitude": {
+      "Value": 9.43244235507464
+    },
+    "Altitude": {
+      "Value": 6856
+    },
+    "Roll": -89.0,
+    "Pitch": -23.0,
+    "Yaw": 10.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "IdealSDR",
+      "Remark": "Ideal Sdr Receiver (Passes Signal Through)"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 9700000.9909198359
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.290853213653
+    },
+    "Gain_dB": {
+      "Value": 118.18824023063678
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 70.533544135062741
+    },
+    "XPos": 41,
+    "YPos": -23,
+    "ZPos": -2,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "b972b1e4-9060-454a-bdc5-6982a11c0918",
+    "Id": -937,
+    "DeviceSource": 2,
+    "StartTime": 38.026315789473685,
+    "Name": "RFDevice #38",
+    "Latitude": {
+      "Value": 47.607873147098253
+    },
+    "Longitude": {
+      "Value": 9.3765865248718967
+    },
+    "Altitude": {
+      "Value": 5808
+    },
+    "Roll": -81.0,
+    "Pitch": -13.0,
+    "Yaw": 23.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 8600000.6571967918
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.403085657117
+    },
+    "Gain_dB": {
+      "Value": 69.116134956533159
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 1.8572609219035416
+    },
+    "XPos": -39,
+    "YPos": -45,
+    "ZPos": -11,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "7dac7a6c-03f5-4ebb-94a1-b8a87f9a86cb",
+    "Id": 124,
+    "DeviceSource": 2,
+    "StartTime": 39.025641025641029,
+    "Name": "RFDevice #39",
+    "Latitude": {
+      "Value": 47.656421093503177
+    },
+    "Longitude": {
+      "Value": 9.4279226995636147
+    },
+    "Altitude": {
+      "Value": 10427
+    },
+    "Roll": 1.0,
+    "Pitch": -42.0,
+    "Yaw": 16.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9400000.4196438249
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.4462850366
+    },
+    "Gain_dB": {
+      "Value": 112.19965151939525
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 138.53555423791315
+    },
+    "XPos": 34,
+    "YPos": 19,
+    "ZPos": 0,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "c5f220f6-8401-439d-b7a7-fbb3b257cd23",
+    "Id": -984,
+    "DeviceSource": 2,
+    "StartTime": 40.025,
+    "Name": "RFDevice #40",
+    "Latitude": {
+      "Value": 47.6732767394824
+    },
+    "Longitude": {
+      "Value": 9.3816597634342571
+    },
+    "Altitude": {
+      "Value": 4302
+    },
+    "Roll": 10.0,
+    "Pitch": -89.0,
+    "Yaw": 23.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 10400000.6060477
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.746094029744
+    },
+    "Gain_dB": {
+      "Value": 6.9465061565612007
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 84.934312387804653
+    },
+    "XPos": 54,
+    "YPos": 71,
+    "ZPos": -24,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "cbd8d7ed-a514-4890-a721-0fd26b93e3c7",
+    "Id": -586,
+    "DeviceSource": 2,
+    "StartTime": 41.024390243902438,
+    "Name": "RFDevice #41",
+    "Latitude": {
+      "Value": 47.620275937539617
+    },
+    "Longitude": {
+      "Value": 9.4009033510898519
+    },
+    "Altitude": {
+      "Value": 11964
+    },
+    "Roll": 32.0,
+    "Pitch": 46.0,
+    "Yaw": -60.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9900000.06161876
+    },
+    "Bandwidth_Hz": {
+      "Value": 17000.654175527234
+    },
+    "Gain_dB": {
+      "Value": 62.417839444436993
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 45.55407715148948
+    },
+    "XPos": -49,
+    "YPos": 50,
+    "ZPos": 22,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "384baee6-51be-4cd5-a5aa-68e801dbc072",
+    "Id": 895,
+    "DeviceSource": 2,
+    "StartTime": 42.023809523809526,
+    "Name": "RFDevice #42",
+    "Latitude": {
+      "Value": 47.5780625424683
+    },
+    "Longitude": {
+      "Value": 9.4087830886020036
+    },
+    "Altitude": {
+      "Value": 8971
+    },
+    "Roll": -40.0,
+    "Pitch": -23.0,
+    "Yaw": 74.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.665596597
+    },
+    "Bandwidth_Hz": {
+      "Value": 17000.79231539126
+    },
+    "Gain_dB": {
+      "Value": 120.44740323929462
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 63.595807299295352
+    },
+    "XPos": -12,
+    "YPos": 27,
+    "ZPos": -29,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "2954484b-bfab-4595-bab7-117943b7c30a",
+    "Id": -693,
+    "DeviceSource": 2,
+    "StartTime": 43.02325581395349,
+    "Name": "RFDevice #43",
+    "Latitude": {
+      "Value": 47.611885104587209
+    },
+    "Longitude": {
+      "Value": 9.4545885599206869
+    },
+    "Altitude": {
+      "Value": 1366
+    },
+    "Roll": 83.0,
+    "Pitch": 40.0,
+    "Yaw": -13.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.554248843
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.112387163152
+    },
+    "Gain_dB": {
+      "Value": 43.218263584756414
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 88.571086200685741
+    },
+    "XPos": 63,
+    "YPos": 72,
+    "ZPos": 29,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "0184ac55-a691-4033-bf18-3b4e73217c26",
+    "Id": -64,
+    "DeviceSource": 2,
+    "StartTime": 44.022727272727273,
+    "Name": "RFDevice #44",
+    "Latitude": {
+      "Value": 47.611948228746591
+    },
+    "Longitude": {
+      "Value": 9.3626687123932069
+    },
+    "Altitude": {
+      "Value": 9914
+    },
+    "Roll": 3.0,
+    "Pitch": 87.0,
+    "Yaw": -1.0,
+    "RxTxType": {
+      "Value": 8,
+      "Name": "NFMRadio",
+      "Remark": "Narrow Fm Band (Voice With 5Khz Bandwidth)"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 10000000.637748543
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.750920098159
+    },
+    "Gain_dB": {
+      "Value": 114.80670533972173
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 38.052958649607824
+    },
+    "XPos": 61,
+    "YPos": -39,
+    "ZPos": 23,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "3c6a95da-1ef3-4b06-8840-549bd3bb4032",
+    "Id": -711,
+    "DeviceSource": 2,
+    "StartTime": 45.022222222222226,
+    "Name": "RFDevice #45",
+    "Latitude": {
+      "Value": 47.655762363807149
+    },
+    "Longitude": {
+      "Value": 9.3596622084745285
+    },
+    "Altitude": {
+      "Value": 8557
+    },
+    "Roll": -25.0,
+    "Pitch": 72.0,
+    "Yaw": -33.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9100000.45142759
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.759928218442
+    },
+    "Gain_dB": {
+      "Value": 48.724077249283006
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 132.9269788292828
+    },
+    "XPos": -10,
+    "YPos": -4,
+    "ZPos": -73,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "d5f3ad9f-db42-43a9-84fd-b8cd7e74ceab",
+    "Id": 622,
+    "DeviceSource": 2,
+    "StartTime": 46.021739130434781,
+    "Name": "RFDevice #46",
+    "Latitude": {
+      "Value": 47.657866906259109
+    },
+    "Longitude": {
+      "Value": 9.45266875671019
+    },
+    "Altitude": {
+      "Value": 11667
+    },
+    "Roll": 7.0,
+    "Pitch": 2.0,
+    "Yaw": -44.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9200000.8127444871
+    },
+    "Bandwidth_Hz": {
+      "Value": 17000.082146450917
+    },
+    "Gain_dB": {
+      "Value": 110.23803700005544
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 0.97914446889383
+    },
+    "XPos": 72,
+    "YPos": -30,
+    "ZPos": 63,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "d82c1381-0a34-41ce-b23f-9c00afbb8a52",
+    "Id": 857,
+    "DeviceSource": 2,
+    "StartTime": 47.021276595744681,
+    "Name": "RFDevice #47",
+    "Latitude": {
+      "Value": 47.651920120765382
+    },
+    "Longitude": {
+      "Value": 9.4137568689914
+    },
+    "Altitude": {
+      "Value": 186
+    },
+    "Roll": -13.0,
+    "Pitch": 56.0,
+    "Yaw": 30.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 10200000.134005319
+    },
+    "Bandwidth_Hz": {
+      "Value": 19000.838156793656
+    },
+    "Gain_dB": {
+      "Value": 5.2560762293897927
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 2.3402724523750473
+    },
+    "XPos": 0,
+    "YPos": 66,
+    "ZPos": 10,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "543406d4-cf0f-4a4e-984b-dd623d25b250",
+    "Id": -681,
+    "DeviceSource": 2,
+    "StartTime": 48.020833333333336,
+    "Name": "RFDevice #48",
+    "Latitude": {
+      "Value": 47.605166176240466
+    },
+    "Longitude": {
+      "Value": 9.4460561049818121
+    },
+    "Altitude": {
+      "Value": 11340
+    },
+    "Roll": 48.0,
+    "Pitch": -6.0,
+    "Yaw": 16.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "HackRF",
+      "Remark": "HackRF One"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.8815357629
+    },
+    "Bandwidth_Hz": {
+      "Value": 17000.763023333049
+    },
+    "Gain_dB": {
+      "Value": 48.339892961708777
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 123.35592965565432
+    },
+    "XPos": 60,
+    "YPos": 66,
+    "ZPos": 55,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "74be9acf-75f9-4c84-b917-042db59334a4",
+    "Id": 929,
+    "DeviceSource": 2,
+    "StartTime": 49.020408163265309,
+    "Name": "RFDevice #49",
+    "Latitude": {
+      "Value": 47.597260302440816
+    },
+    "Longitude": {
+      "Value": 9.4484043567634011
+    },
+    "Altitude": {
+      "Value": 2214
+    },
+    "Roll": -36.0,
+    "Pitch": 26.0,
+    "Yaw": -70.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "GPSJammer",
+      "Remark": "10MHz L1 GPS Jammer"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 8600000.3544144686
+    },
+    "Bandwidth_Hz": {
+      "Value": 16000.412644827931
+    },
+    "Gain_dB": {
+      "Value": 51.771802380574776
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 12.137169220083006
+    },
+    "XPos": 35,
+    "YPos": 67,
+    "ZPos": -27,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "962abe11-bac7-4744-9988-3c2c18289d2a",
+    "Id": 350,
+    "DeviceSource": 2,
+    "StartTime": 50.02,
+    "Name": "RFDevice #50",
+    "Latitude": {
+      "Value": 47.5958947276882
+    },
+    "Longitude": {
+      "Value": 9.4519455962557828
+    },
+    "Altitude": {
+      "Value": 413
+    },
+    "Roll": 60.0,
+    "Pitch": 6.0,
+    "Yaw": -9.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9800000.2835588381
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.39789389139
+    },
+    "Gain_dB": {
+      "Value": 28.259669624389925
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 103.387480901269
+    },
+    "XPos": 17,
+    "YPos": -14,
+    "ZPos": 23,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "1754409d-dc15-4986-920f-8d0793fbc3c8",
+    "Id": 27,
+    "DeviceSource": 2,
+    "StartTime": 51.019607843137258,
+    "Name": "RFDevice #51",
+    "Latitude": {
+      "Value": 47.65717625783342
+    },
+    "Longitude": {
+      "Value": 9.3925174261841331
+    },
+    "Altitude": {
+      "Value": 3278
+    },
+    "Roll": -20.0,
+    "Pitch": 44.0,
+    "Yaw": 34.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9300000.645100737
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.845298845248
+    },
+    "Gain_dB": {
+      "Value": 24.279323164969366
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 101.73426630475291
+    },
+    "XPos": 72,
+    "YPos": -55,
+    "ZPos": -62,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "b4418f64-4366-4bed-8ce8-eef5e2c06318",
+    "Id": 781,
+    "DeviceSource": 2,
+    "StartTime": 52.019230769230766,
+    "Name": "RFDevice #52",
+    "Latitude": {
+      "Value": 47.595332250226875
+    },
+    "Longitude": {
+      "Value": 9.3931433223588865
+    },
+    "Altitude": {
+      "Value": 2553
+    },
+    "Roll": -19.0,
+    "Pitch": 65.0,
+    "Yaw": -64.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 8600000.0177115053
+    },
+    "Bandwidth_Hz": {
+      "Value": 10000.034386289788
+    },
+    "Gain_dB": {
+      "Value": 122.22030701125986
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 98.064363522485067
+    },
+    "XPos": 51,
+    "YPos": 37,
+    "ZPos": 69,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "f5a69788-da01-45a5-b2b5-cf9f065385cf",
+    "Id": 133,
+    "DeviceSource": 2,
+    "StartTime": 53.0188679245283,
+    "Name": "RFDevice #53",
+    "Latitude": {
+      "Value": 47.617464092123036
+    },
+    "Longitude": {
+      "Value": 9.4101656531231122
+    },
+    "Altitude": {
+      "Value": 10780
+    },
+    "Roll": 76.0,
+    "Pitch": 79.0,
+    "Yaw": 79.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10000000.431251803
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.786961344902
+    },
+    "Gain_dB": {
+      "Value": 63.731376238042195
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 1.5538404060312736
+    },
+    "XPos": -53,
+    "YPos": 48,
+    "ZPos": -59,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "a320a5c6-29b2-4979-b30f-8a6bc51eb39c",
+    "Id": 696,
+    "DeviceSource": 2,
+    "StartTime": 54.018518518518519,
+    "Name": "RFDevice #54",
+    "Latitude": {
+      "Value": 47.588678072384837
+    },
+    "Longitude": {
+      "Value": 9.3923256986473138
+    },
+    "Altitude": {
+      "Value": 1619
+    },
+    "Roll": 59.0,
+    "Pitch": -24.0,
+    "Yaw": -27.0,
+    "RxTxType": {
+      "Value": 8,
+      "Name": "NFMRadio",
+      "Remark": "Narrow Fm Band (Voice With 5Khz Bandwidth)"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9700000.920159338
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.99216161342
+    },
+    "Gain_dB": {
+      "Value": 21.161495152470419
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 56.438915296662095
+    },
+    "XPos": -34,
+    "YPos": 15,
+    "ZPos": 24,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "6de26d61-6dfa-424a-ad9f-9567d744c941",
+    "Id": -510,
+    "DeviceSource": 2,
+    "StartTime": 55.018181818181816,
+    "Name": "RFDevice #55",
+    "Latitude": {
+      "Value": 47.603798240212591
+    },
+    "Longitude": {
+      "Value": 9.3959311586752943
+    },
+    "Altitude": {
+      "Value": 11158
+    },
+    "Roll": 5.0,
+    "Pitch": 57.0,
+    "Yaw": -55.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 9600000.4644622914
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.268216617063
+    },
+    "Gain_dB": {
+      "Value": 40.3702159860964
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 27.422669789019352
+    },
+    "XPos": 13,
+    "YPos": 54,
+    "ZPos": 72,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "f26f8050-ae26-42d5-9507-00a09f1643a2",
+    "Id": 714,
+    "DeviceSource": 2,
+    "StartTime": 56.017857142857146,
+    "Name": "RFDevice #56",
+    "Latitude": {
+      "Value": 47.5972034203313
+    },
+    "Longitude": {
+      "Value": 9.4128174609531534
+    },
+    "Altitude": {
+      "Value": 9606
+    },
+    "Roll": -31.0,
+    "Pitch": 56.0,
+    "Yaw": -73.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 9700000.185012836
+    },
+    "Bandwidth_Hz": {
+      "Value": 10000.447004490739
+    },
+    "Gain_dB": {
+      "Value": 48.904530588492996
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 115.75734130142133
+    },
+    "XPos": 55,
+    "YPos": 4,
+    "ZPos": -32,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "ec68388d-c022-43f5-ba07-26903ac021b2",
+    "Id": -764,
+    "DeviceSource": 2,
+    "StartTime": 57.017543859649123,
+    "Name": "RFDevice #57",
+    "Latitude": {
+      "Value": 47.591529248857618
+    },
+    "Longitude": {
+      "Value": 9.366038368250706
+    },
+    "Altitude": {
+      "Value": 5634
+    },
+    "Roll": -82.0,
+    "Pitch": -70.0,
+    "Yaw": 24.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "QPSK",
+      "Remark": "QPSK Signal With 2kHz Bandwidth"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9600000.2529857513
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.532460340546
+    },
+    "Gain_dB": {
+      "Value": 128.7005249903074
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 56.693673217992149
+    },
+    "XPos": -42,
+    "YPos": -62,
+    "ZPos": -44,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "90cdef22-5a84-4eda-a575-d0f6d42df3c3",
+    "Id": 691,
+    "DeviceSource": 2,
+    "StartTime": 58.017241379310342,
+    "Name": "RFDevice #58",
+    "Latitude": {
+      "Value": 47.587784995549221
+    },
+    "Longitude": {
+      "Value": 9.36393117138971
+    },
+    "Altitude": {
+      "Value": 9593
+    },
+    "Roll": -24.0,
+    "Pitch": -48.0,
+    "Yaw": -71.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 8900000.5705451779
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.403505489418
+    },
+    "Gain_dB": {
+      "Value": 60.480275672152764
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 116.65418610891987
+    },
+    "XPos": 2,
+    "YPos": -46,
+    "ZPos": 37,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "51b51c83-3412-468c-9d49-aafab19d83ac",
+    "Id": 814,
+    "DeviceSource": 2,
+    "StartTime": 59.016949152542374,
+    "Name": "RFDevice #59",
+    "Latitude": {
+      "Value": 47.669871167682018
+    },
+    "Longitude": {
+      "Value": 9.4046322561789246
+    },
+    "Altitude": {
+      "Value": 9429
+    },
+    "Roll": -37.0,
+    "Pitch": 53.0,
+    "Yaw": -66.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.911512824
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.789607476345
+    },
+    "Gain_dB": {
+      "Value": 59.110012303157717
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 55.546091261574112
+    },
+    "XPos": -18,
+    "YPos": 68,
+    "ZPos": -13,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "420a3e20-0a91-4f17-b8e7-e5e4a696799c",
+    "Id": 933,
+    "DeviceSource": 2,
+    "StartTime": 60.016666666666666,
+    "Name": "RFDevice #60",
+    "Latitude": {
+      "Value": 47.612615039598445
+    },
+    "Longitude": {
+      "Value": 9.42033116240673
+    },
+    "Altitude": {
+      "Value": 12196
+    },
+    "Roll": -27.0,
+    "Pitch": -33.0,
+    "Yaw": 0.0,
+    "RxTxType": {
+      "Value": 8,
+      "Name": "NFMRadio",
+      "Remark": "Narrow Fm Band (Voice With 5Khz Bandwidth)"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9900000.0920111462
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.802742171942
+    },
+    "Gain_dB": {
+      "Value": 0.93061174262809188
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 92.723462430631486
+    },
+    "XPos": 27,
+    "YPos": -2,
+    "ZPos": -32,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "0df0581e-62b6-4672-b884-9d56587c1e00",
+    "Id": -187,
+    "DeviceSource": 2,
+    "StartTime": 61.016393442622949,
+    "Name": "RFDevice #61",
+    "Latitude": {
+      "Value": 47.672089277075607
+    },
+    "Longitude": {
+      "Value": 9.4477337056727571
+    },
+    "Altitude": {
+      "Value": 8878
+    },
+    "Roll": -77.0,
+    "Pitch": 60.0,
+    "Yaw": -51.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9300000.49065311
+    },
+    "Bandwidth_Hz": {
+      "Value": 17000.965001490418
+    },
+    "Gain_dB": {
+      "Value": 126.83473542557785
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 42.625034184486154
+    },
+    "XPos": -13,
+    "YPos": 29,
+    "ZPos": -33,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "161acb30-001d-4f66-84af-464616401a39",
+    "Id": -219,
+    "DeviceSource": 2,
+    "StartTime": 62.016129032258064,
+    "Name": "RFDevice #62",
+    "Latitude": {
+      "Value": 47.591380437479962
+    },
+    "Longitude": {
+      "Value": 9.4462960042707866
+    },
+    "Altitude": {
+      "Value": 759
+    },
+    "Roll": 85.0,
+    "Pitch": 31.0,
+    "Yaw": 39.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "QPSK",
+      "Remark": "QPSK Signal With 2kHz Bandwidth"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10100000.677834945
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.806695726145
+    },
+    "Gain_dB": {
+      "Value": 127.28975794943504
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 42.158560610450131
+    },
+    "XPos": 34,
+    "YPos": -28,
+    "ZPos": -38,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "7d472379-cda4-4447-8aa0-4a36bebe05d2",
+    "Id": 507,
+    "DeviceSource": 2,
+    "StartTime": 63.015873015873019,
+    "Name": "RFDevice #63",
+    "Latitude": {
+      "Value": 47.620964363503681
+    },
+    "Longitude": {
+      "Value": 9.4284283100261277
+    },
+    "Altitude": {
+      "Value": 10509
+    },
+    "Roll": -35.0,
+    "Pitch": 81.0,
+    "Yaw": 47.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 10400000.126251733
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.585252655943
+    },
+    "Gain_dB": {
+      "Value": 10.175624338991765
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 90.27187435760716
+    },
+    "XPos": 67,
+    "YPos": -32,
+    "ZPos": -18,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "23582732-96b4-444f-94c9-eb0f03348605",
+    "Id": -218,
+    "DeviceSource": 2,
+    "StartTime": 64.015625,
+    "Name": "RFDevice #64",
+    "Latitude": {
+      "Value": 47.584446038086142
+    },
+    "Longitude": {
+      "Value": 9.4193164664843465
+    },
+    "Altitude": {
+      "Value": 9185
+    },
+    "Roll": 67.0,
+    "Pitch": 5.0,
+    "Yaw": 54.0,
+    "RxTxType": {
+      "Value": 8,
+      "Name": "NFMRadio",
+      "Remark": "Narrow Fm Band (Voice With 5Khz Bandwidth)"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 10400000.14612305
+    },
+    "Bandwidth_Hz": {
+      "Value": 16000.884219317177
+    },
+    "Gain_dB": {
+      "Value": 25.738548831426794
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 51.029073514523482
+    },
+    "XPos": 4,
+    "YPos": 26,
+    "ZPos": 26,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "93c63eec-69ef-4889-a1f9-b29e503e176f",
+    "Id": -543,
+    "DeviceSource": 2,
+    "StartTime": 65.015384615384619,
+    "Name": "RFDevice #65",
+    "Latitude": {
+      "Value": 47.639569567415627
+    },
+    "Longitude": {
+      "Value": 9.4275876891429284
+    },
+    "Altitude": {
+      "Value": 9660
+    },
+    "Roll": -67.0,
+    "Pitch": -88.0,
+    "Yaw": 14.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9800000.3717993926
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.655097374532
+    },
+    "Gain_dB": {
+      "Value": 50.650828438182749
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 24.027652347473264
+    },
+    "XPos": -39,
+    "YPos": -10,
+    "ZPos": -12,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "95046523-8490-4539-8e46-65d4c5913711",
+    "Id": -70,
+    "DeviceSource": 2,
+    "StartTime": 66.015151515151516,
+    "Name": "RFDevice #66",
+    "Latitude": {
+      "Value": 47.5760914412886
+    },
+    "Longitude": {
+      "Value": 9.36271688428506
+    },
+    "Altitude": {
+      "Value": 5220
+    },
+    "Roll": 47.0,
+    "Pitch": -10.0,
+    "Yaw": 64.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 9100000.7141727731
+    },
+    "Bandwidth_Hz": {
+      "Value": 16000.548184347594
+    },
+    "Gain_dB": {
+      "Value": 97.919858224186981
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 48.566028966366325
+    },
+    "XPos": 69,
+    "YPos": 1,
+    "ZPos": -27,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "9230172f-973f-473c-a4be-65270ccdc97a",
+    "Id": -990,
+    "DeviceSource": 2,
+    "StartTime": 67.014925373134332,
+    "Name": "RFDevice #67",
+    "Latitude": {
+      "Value": 47.588075209260914
+    },
+    "Longitude": {
+      "Value": 9.4408863369300224
+    },
+    "Altitude": {
+      "Value": 6339
+    },
+    "Roll": 66.0,
+    "Pitch": -55.0,
+    "Yaw": 3.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "IdealSDR",
+      "Remark": "Ideal Sdr Receiver (Passes Signal Through)"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9000000.8066589069
+    },
+    "Bandwidth_Hz": {
+      "Value": 16000.860451766224
+    },
+    "Gain_dB": {
+      "Value": 121.46692408456789
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 120.66260671925852
+    },
+    "XPos": 1,
+    "YPos": 65,
+    "ZPos": 33,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "53bad5bd-bb69-47de-97aa-d435d1bc5170",
+    "Id": -49,
+    "DeviceSource": 2,
+    "StartTime": 68.014705882352942,
+    "Name": "RFDevice #68",
+    "Latitude": {
+      "Value": 47.662531487320763
+    },
+    "Longitude": {
+      "Value": 9.3660671290052235
+    },
+    "Altitude": {
+      "Value": 9822
+    },
+    "Roll": -29.0,
+    "Pitch": -46.0,
+    "Yaw": -40.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 10000000.143169729
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.938539627445
+    },
+    "Gain_dB": {
+      "Value": 76.182246256704559
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 128.80497647812822
+    },
+    "XPos": -20,
+    "YPos": 35,
+    "ZPos": -74,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "ef7db3ff-c09f-42ff-88b0-612127ecf799",
+    "Id": -47,
+    "DeviceSource": 2,
+    "StartTime": 69.014492753623188,
+    "Name": "RFDevice #69",
+    "Latitude": {
+      "Value": 47.668483446427807
+    },
+    "Longitude": {
+      "Value": 9.4565073455215725
+    },
+    "Altitude": {
+      "Value": 9565
+    },
+    "Roll": 25.0,
+    "Pitch": 32.0,
+    "Yaw": -26.0,
+    "RxTxType": {
+      "Value": 8,
+      "Name": "NFMRadio",
+      "Remark": "Narrow Fm Band (Voice With 5Khz Bandwidth)"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 8700000.2757752817
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.228363253747
+    },
+    "Gain_dB": {
+      "Value": 55.89201723499783
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 8.2792929654378877
+    },
+    "XPos": 61,
+    "YPos": 32,
+    "ZPos": -13,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "73bd24ef-fb2f-4cec-9c76-c8356108779b",
+    "Id": -376,
+    "DeviceSource": 2,
+    "StartTime": 70.01428571428572,
+    "Name": "RFDevice #70",
+    "Latitude": {
+      "Value": 47.575869415243993
+    },
+    "Longitude": {
+      "Value": 9.4160579438363268
+    },
+    "Altitude": {
+      "Value": 3262
+    },
+    "Roll": 31.0,
+    "Pitch": 51.0,
+    "Yaw": -30.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "GPSJammer",
+      "Remark": "10MHz L1 GPS Jammer"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9200000.471240906
+    },
+    "Bandwidth_Hz": {
+      "Value": 10000.308273425004
+    },
+    "Gain_dB": {
+      "Value": 49.91564701540193
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 1.5935792641684317
+    },
+    "XPos": -29,
+    "YPos": 24,
+    "ZPos": -34,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "cfecee7f-d0b0-4719-959b-7c8c1714f7b4",
+    "Id": 44,
+    "DeviceSource": 2,
+    "StartTime": 71.014084507042256,
+    "Name": "RFDevice #71",
+    "Latitude": {
+      "Value": 47.63707123316405
+    },
+    "Longitude": {
+      "Value": 9.43898514499047
+    },
+    "Altitude": {
+      "Value": 8430
+    },
+    "Roll": 8.0,
+    "Pitch": -4.0,
+    "Yaw": 74.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "QPSK",
+      "Remark": "QPSK Signal With 2kHz Bandwidth"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9100000.0593734365
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.59172710245
+    },
+    "Gain_dB": {
+      "Value": 42.040876691248677
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 53.812835238321142
+    },
+    "XPos": 61,
+    "YPos": 38,
+    "ZPos": -23,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "712b8195-441a-4022-a313-f9a76734ce72",
+    "Id": 424,
+    "DeviceSource": 2,
+    "StartTime": 72.013888888888886,
+    "Name": "RFDevice #72",
+    "Latitude": {
+      "Value": 47.654668775339886
+    },
+    "Longitude": {
+      "Value": 9.3730296958545161
+    },
+    "Altitude": {
+      "Value": 1563
+    },
+    "Roll": 32.0,
+    "Pitch": 85.0,
+    "Yaw": -22.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 10200000.041687509
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.426275183179
+    },
+    "Gain_dB": {
+      "Value": 67.904654456258129
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 41.023427428688585
+    },
+    "XPos": 30,
+    "YPos": -38,
+    "ZPos": 41,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "eaba860b-bf09-4e4c-aee6-1151b28f03ee",
+    "Id": 418,
+    "DeviceSource": 2,
+    "StartTime": 73.013698630136986,
+    "Name": "RFDevice #73",
+    "Latitude": {
+      "Value": 47.637919524233716
+    },
+    "Longitude": {
+      "Value": 9.3675580866916643
+    },
+    "Altitude": {
+      "Value": 10210
+    },
+    "Roll": 83.0,
+    "Pitch": 82.0,
+    "Yaw": 80.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.1740457322
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.563289754355
+    },
+    "Gain_dB": {
+      "Value": 84.011247635824262
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 83.705191115245782
+    },
+    "XPos": 30,
+    "YPos": 7,
+    "ZPos": 40,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "b4251ac3-ba89-4859-8e53-17fda80e0ff2",
+    "Id": 809,
+    "DeviceSource": 2,
+    "StartTime": 74.013513513513516,
+    "Name": "RFDevice #74",
+    "Latitude": {
+      "Value": 47.61080240691301
+    },
+    "Longitude": {
+      "Value": 9.41855101159844
+    },
+    "Altitude": {
+      "Value": 11589
+    },
+    "Roll": -40.0,
+    "Pitch": -70.0,
+    "Yaw": 33.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9100000.93204154
+    },
+    "Bandwidth_Hz": {
+      "Value": 10000.91841830775
+    },
+    "Gain_dB": {
+      "Value": 75.38767412229798
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 21.593293773752308
+    },
+    "XPos": -26,
+    "YPos": -37,
+    "ZPos": -52,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "5f754c70-877c-420e-9788-d2ec9046caec",
+    "Id": 377,
+    "DeviceSource": 2,
+    "StartTime": 75.013333333333335,
+    "Name": "RFDevice #75",
+    "Latitude": {
+      "Value": 47.618917640025188
+    },
+    "Longitude": {
+      "Value": 9.4277263152509381
+    },
+    "Altitude": {
+      "Value": 9223
+    },
+    "Roll": -15.0,
+    "Pitch": 57.0,
+    "Yaw": 5.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 10000000.93256956
+    },
+    "Bandwidth_Hz": {
+      "Value": 19000.388092234447
+    },
+    "Gain_dB": {
+      "Value": 9.5399661616142684
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 51.521088369433343
+    },
+    "XPos": 73,
+    "YPos": 19,
+    "ZPos": 9,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "e81b5728-0884-4cbc-9299-8a7c649d294e",
+    "Id": -885,
+    "DeviceSource": 2,
+    "StartTime": 76.013157894736835,
+    "Name": "RFDevice #76",
+    "Latitude": {
+      "Value": 47.5827000837897
+    },
+    "Longitude": {
+      "Value": 9.440381577323814
+    },
+    "Altitude": {
+      "Value": 7292
+    },
+    "Roll": 71.0,
+    "Pitch": -84.0,
+    "Yaw": 64.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9200000.755050391
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.560746304021
+    },
+    "Gain_dB": {
+      "Value": 62.142714508409945
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 93.964359164687039
+    },
+    "XPos": -35,
+    "YPos": 71,
+    "ZPos": 14,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "4db6ddc0-87f9-43bc-b3fb-856ea149b5e1",
+    "Id": -823,
+    "DeviceSource": 2,
+    "StartTime": 77.012987012987011,
+    "Name": "RFDevice #77",
+    "Latitude": {
+      "Value": 47.668915541080217
+    },
+    "Longitude": {
+      "Value": 9.3936158402760377
+    },
+    "Altitude": {
+      "Value": 6307
+    },
+    "Roll": -3.0,
+    "Pitch": 73.0,
+    "Yaw": -3.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9900000.1228837147
+    },
+    "Bandwidth_Hz": {
+      "Value": 19000.029736187789
+    },
+    "Gain_dB": {
+      "Value": 133.60186945675028
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 53.632610433098215
+    },
+    "XPos": 11,
+    "YPos": 19,
+    "ZPos": -1,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "fc533096-34cc-4ab7-853c-9e0d3391a45c",
+    "Id": 851,
+    "DeviceSource": 2,
+    "StartTime": 78.012820512820511,
+    "Name": "RFDevice #78",
+    "Latitude": {
+      "Value": 47.660728656619156
+    },
+    "Longitude": {
+      "Value": 9.4389210521857621
+    },
+    "Altitude": {
+      "Value": 11837
+    },
+    "Roll": 78.0,
+    "Pitch": 25.0,
+    "Yaw": 17.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 8700000.459564643
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.722970662044
+    },
+    "Gain_dB": {
+      "Value": 43.754240967684538
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 139.59578234776657
+    },
+    "XPos": 52,
+    "YPos": -10,
+    "ZPos": 3,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "3077dbae-5d3c-4d7a-8bcf-32e75e9b4255",
+    "Id": 430,
+    "DeviceSource": 2,
+    "StartTime": 79.0126582278481,
+    "Name": "RFDevice #79",
+    "Latitude": {
+      "Value": 47.597621150613548
+    },
+    "Longitude": {
+      "Value": 9.4256611502117558
+    },
+    "Altitude": {
+      "Value": 4398
+    },
+    "Roll": -55.0,
+    "Pitch": 78.0,
+    "Yaw": 58.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9200000.5907890238
+    },
+    "Bandwidth_Hz": {
+      "Value": 10000.986936579919
+    },
+    "Gain_dB": {
+      "Value": 30.519768586158644
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 91.0824487330776
+    },
+    "XPos": 46,
+    "YPos": 10,
+    "ZPos": 19,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "83863a5c-6915-436d-9e83-9c268af800a4",
+    "Id": -863,
+    "DeviceSource": 2,
+    "StartTime": 80.0125,
+    "Name": "RFDevice #80",
+    "Latitude": {
+      "Value": 47.647642300297306
+    },
+    "Longitude": {
+      "Value": 9.37955450002221
+    },
+    "Altitude": {
+      "Value": 11522
+    },
+    "Roll": 79.0,
+    "Pitch": 19.0,
+    "Yaw": -12.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9500000.400276877
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.033359126204
+    },
+    "Gain_dB": {
+      "Value": 68.124185531923629
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 77.4020564800138
+    },
+    "XPos": 66,
+    "YPos": -55,
+    "ZPos": -39,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "7da5f4e3-6d58-42c0-b268-fc4a6d3fb8f6",
+    "Id": 565,
+    "DeviceSource": 2,
+    "StartTime": 81.012345679012341,
+    "Name": "RFDevice #81",
+    "Latitude": {
+      "Value": 47.609323386593374
+    },
+    "Longitude": {
+      "Value": 9.386854592631483
+    },
+    "Altitude": {
+      "Value": 11369
+    },
+    "Roll": -74.0,
+    "Pitch": -30.0,
+    "Yaw": 80.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9500000.0804155245
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.444557684215
+    },
+    "Gain_dB": {
+      "Value": 73.88529724110164
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 5.9503814964324153
+    },
+    "XPos": 4,
+    "YPos": 12,
+    "ZPos": 66,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "bdc3eaea-1b36-4cec-bb68-6684b28aaa36",
+    "Id": -671,
+    "DeviceSource": 2,
+    "StartTime": 82.012195121951223,
+    "Name": "RFDevice #82",
+    "Latitude": {
+      "Value": 47.591282161225195
+    },
+    "Longitude": {
+      "Value": 9.36311081827435
+    },
+    "Altitude": {
+      "Value": 2537
+    },
+    "Roll": 39.0,
+    "Pitch": 76.0,
+    "Yaw": 33.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "IdealSDR",
+      "Remark": "Ideal Sdr Receiver (Passes Signal Through)"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9900000.8304145876
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.704547657959
+    },
+    "Gain_dB": {
+      "Value": 33.270457488610624
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 52.6293010309475
+    },
+    "XPos": 32,
+    "YPos": 67,
+    "ZPos": -73,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "480aaf6a-5544-4bec-af49-ec77eda8d4ca",
+    "Id": -937,
+    "DeviceSource": 2,
+    "StartTime": 83.01204819277109,
+    "Name": "RFDevice #83",
+    "Latitude": {
+      "Value": 47.668360901024322
+    },
+    "Longitude": {
+      "Value": 9.38963801990384
+    },
+    "Altitude": {
+      "Value": 7628
+    },
+    "Roll": 1.0,
+    "Pitch": -17.0,
+    "Yaw": -19.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "HackRF",
+      "Remark": "HackRF One"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.8329860847
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.114629785583
+    },
+    "Gain_dB": {
+      "Value": 84.763631129061636
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 54.736591610934859
+    },
+    "XPos": 35,
+    "YPos": 16,
+    "ZPos": -13,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "1e8b310d-6b1b-4fd8-b780-64a2805d96d9",
+    "Id": 609,
+    "DeviceSource": 2,
+    "StartTime": 84.011904761904759,
+    "Name": "RFDevice #84",
+    "Latitude": {
+      "Value": 47.587508756239636
+    },
+    "Longitude": {
+      "Value": 9.41849973763407
+    },
+    "Altitude": {
+      "Value": 7488
+    },
+    "Roll": -79.0,
+    "Pitch": 11.0,
+    "Yaw": -68.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9500000.1563873272
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.608597165257
+    },
+    "Gain_dB": {
+      "Value": 2.9772241380890945
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 76.784904901769437
+    },
+    "XPos": 63,
+    "YPos": 54,
+    "ZPos": 21,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "2c18f606-adfb-4b7a-9fa2-a7dacacef562",
+    "Id": 543,
+    "DeviceSource": 2,
+    "StartTime": 85.011764705882356,
+    "Name": "RFDevice #85",
+    "Latitude": {
+      "Value": 47.606639909185731
+    },
+    "Longitude": {
+      "Value": 9.4160409880145437
+    },
+    "Altitude": {
+      "Value": 3861
+    },
+    "Roll": -73.0,
+    "Pitch": -40.0,
+    "Yaw": 19.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 8600000.6181229874
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.096641372469
+    },
+    "Gain_dB": {
+      "Value": 136.63249448390329
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 127.95359543149992
+    },
+    "XPos": -66,
+    "YPos": 67,
+    "ZPos": -27,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "29871244-a452-4701-a67d-06113fce0e4b",
+    "Id": -260,
+    "DeviceSource": 2,
+    "StartTime": 86.011627906976742,
+    "Name": "RFDevice #86",
+    "Latitude": {
+      "Value": 47.575375635837808
+    },
+    "Longitude": {
+      "Value": 9.3904874177339686
+    },
+    "Altitude": {
+      "Value": 2134
+    },
+    "Roll": 74.0,
+    "Pitch": 85.0,
+    "Yaw": 69.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9100000.1566420384
+    },
+    "Bandwidth_Hz": {
+      "Value": 15000.943838846844
+    },
+    "Gain_dB": {
+      "Value": 117.89613441233344
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 58.719370305873163
+    },
+    "XPos": -43,
+    "YPos": 72,
+    "ZPos": 26,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "166d4d11-92b4-4c0f-92c8-8a9dc383515f",
+    "Id": 145,
+    "DeviceSource": 2,
+    "StartTime": 87.011494252873561,
+    "Name": "RFDevice #87",
+    "Latitude": {
+      "Value": 47.615694066257966
+    },
+    "Longitude": {
+      "Value": 9.405755208525207
+    },
+    "Altitude": {
+      "Value": 8013
+    },
+    "Roll": -73.0,
+    "Pitch": 13.0,
+    "Yaw": -66.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.4487512782
+    },
+    "Bandwidth_Hz": {
+      "Value": 17000.962537842785
+    },
+    "Gain_dB": {
+      "Value": 60.221673952984474
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 96.225021329347513
+    },
+    "XPos": -71,
+    "YPos": 65,
+    "ZPos": -8,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "366ea00f-bdf7-4346-87b1-9344a96a45bd",
+    "Id": -850,
+    "DeviceSource": 2,
+    "StartTime": 88.01136363636364,
+    "Name": "RFDevice #88",
+    "Latitude": {
+      "Value": 47.657383952709523
+    },
+    "Longitude": {
+      "Value": 9.3724477826689387
+    },
+    "Altitude": {
+      "Value": 972
+    },
+    "Roll": 60.0,
+    "Pitch": -83.0,
+    "Yaw": 11.0,
+    "RxTxType": {
+      "Value": 4242,
+      "Name": "Unknown",
+      "Remark": "Unknown RxTxType"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.6895725876
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.385679614908
+    },
+    "Gain_dB": {
+      "Value": 66.179212727667391
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 78.46360714988019
+    },
+    "XPos": -26,
+    "YPos": -1,
+    "ZPos": -56,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "f82d7374-8d41-4a22-96b6-251193424750",
+    "Id": 973,
+    "DeviceSource": 2,
+    "StartTime": 89.011235955056179,
+    "Name": "RFDevice #89",
+    "Latitude": {
+      "Value": 47.634601023270996
+    },
+    "Longitude": {
+      "Value": 9.3677232868553517
+    },
+    "Altitude": {
+      "Value": 7864
+    },
+    "Roll": 2.0,
+    "Pitch": -68.0,
+    "Yaw": -30.0,
+    "RxTxType": {
+      "Value": 7,
+      "Name": "AIS",
+      "Remark": "AIS Signal"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10300000.120178917
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.076626207716
+    },
+    "Gain_dB": {
+      "Value": 77.343875299368
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 12.573596114559843
+    },
+    "XPos": 6,
+    "YPos": -34,
+    "ZPos": 7,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "cca71481-31c9-4df3-99c4-91c2a9229c33",
+    "Id": -570,
+    "DeviceSource": 2,
+    "StartTime": 90.0111111111111,
+    "Name": "RFDevice #90",
+    "Latitude": {
+      "Value": 47.650093278076504
+    },
+    "Longitude": {
+      "Value": 9.3919830372719737
+    },
+    "Altitude": {
+      "Value": 12136
+    },
+    "Roll": -5.0,
+    "Pitch": -35.0,
+    "Yaw": -84.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.9474269971
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.694927133012
+    },
+    "Gain_dB": {
+      "Value": 8.46568240526397
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 45.286882512404993
+    },
+    "XPos": 64,
+    "YPos": -35,
+    "ZPos": -73,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "fd05d4ca-42c0-40b8-b7b4-6e3efb472da3",
+    "Id": -981,
+    "DeviceSource": 2,
+    "StartTime": 91.010989010989007,
+    "Name": "RFDevice #91",
+    "Latitude": {
+      "Value": 47.66062775897074
+    },
+    "Longitude": {
+      "Value": 9.40447129821285
+    },
+    "Altitude": {
+      "Value": 2496
+    },
+    "Roll": 30.0,
+    "Pitch": 11.0,
+    "Yaw": 88.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "HackRF",
+      "Remark": "HackRF One"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9800000.4355934467
+    },
+    "Bandwidth_Hz": {
+      "Value": 16000.010801493196
+    },
+    "Gain_dB": {
+      "Value": 98.250327225425437
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 73.55414840977366
+    },
+    "XPos": -35,
+    "YPos": -55,
+    "ZPos": -11,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "869ca42a-642a-47e8-8739-096337cc1540",
+    "Id": -955,
+    "DeviceSource": 2,
+    "StartTime": 92.010869565217391,
+    "Name": "RFDevice #92",
+    "Latitude": {
+      "Value": 47.613955479538014
+    },
+    "Longitude": {
+      "Value": 9.450345566330153
+    },
+    "Altitude": {
+      "Value": 2924
+    },
+    "Roll": 76.0,
+    "Pitch": -84.0,
+    "Yaw": -25.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9600000.2067065574
+    },
+    "Bandwidth_Hz": {
+      "Value": 19000.526538878923
+    },
+    "Gain_dB": {
+      "Value": 138.5544425992083
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 71.323920900152956
+    },
+    "XPos": -6,
+    "YPos": -36,
+    "ZPos": -15,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "fd863915-e264-49a7-9865-dd2f3fecdace",
+    "Id": 240,
+    "DeviceSource": 2,
+    "StartTime": 93.010752688172047,
+    "Name": "RFDevice #93",
+    "Latitude": {
+      "Value": 47.670704622783056
+    },
+    "Longitude": {
+      "Value": 9.4252733356869918
+    },
+    "Altitude": {
+      "Value": 4604
+    },
+    "Roll": -28.0,
+    "Pitch": -14.0,
+    "Yaw": 58.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10400000.580462087
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.723879713436
+    },
+    "Gain_dB": {
+      "Value": 50.864763383690622
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 51.290167635441833
+    },
+    "XPos": -61,
+    "YPos": 45,
+    "ZPos": 38,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "ff78155c-1621-4da9-a73b-5f67a337399e",
+    "Id": 63,
+    "DeviceSource": 2,
+    "StartTime": 94.010638297872347,
+    "Name": "RFDevice #94",
+    "Latitude": {
+      "Value": 47.615396721805126
+    },
+    "Longitude": {
+      "Value": 9.4105722820868376
+    },
+    "Altitude": {
+      "Value": 2874
+    },
+    "Roll": -47.0,
+    "Pitch": -37.0,
+    "Yaw": -6.0,
+    "RxTxType": {
+      "Value": 5,
+      "Name": "Iridium",
+      "Remark": "Iridium Satcom Transmitter"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 9200000.6203309968
+    },
+    "Bandwidth_Hz": {
+      "Value": 16000.566661316234
+    },
+    "Gain_dB": {
+      "Value": 112.91773911375446
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 67.87285422062169
+    },
+    "XPos": 69,
+    "YPos": 66,
+    "ZPos": 3,
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "9f0daf1f-be99-4221-8584-a5a4d6e6b15f",
+    "Id": -699,
+    "DeviceSource": 2,
+    "StartTime": 95.010526315789477,
+    "Name": "RFDevice #95",
+    "Latitude": {
+      "Value": 47.595344447991472
+    },
+    "Longitude": {
+      "Value": 9.4060063187028113
+    },
+    "Altitude": {
+      "Value": 494
+    },
+    "Roll": 1.0,
+    "Pitch": -53.0,
+    "Yaw": 20.0,
+    "RxTxType": {
+      "Value": 1,
+      "Name": "QPSK",
+      "Remark": "QPSK Signal With 2kHz Bandwidth"
+    },
+    "AntennaType": 1,
+    "CenterFrequency_Hz": {
+      "Value": 9800000.8567467462
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.416544214551
+    },
+    "Gain_dB": {
+      "Value": 105.20674262577982
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 18.200652354955977
+    },
+    "XPos": -62,
+    "YPos": -59,
+    "ZPos": 30,
+    "Remark": "The quick brown fox jumps over a lazy dog.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "7120da4a-894e-4fec-92fc-ff06e9342f87",
+    "Id": 127,
+    "DeviceSource": 2,
+    "StartTime": 96.010416666666671,
+    "Name": "RFDevice #96",
+    "Latitude": {
+      "Value": 47.580135122814241
+    },
+    "Longitude": {
+      "Value": 9.4361554438616668
+    },
+    "Altitude": {
+      "Value": 9776
+    },
+    "Roll": 76.0,
+    "Pitch": 81.0,
+    "Yaw": -35.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 10000000.009768911
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.006962590855
+    },
+    "Gain_dB": {
+      "Value": 109.51167607750357
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 67.742808149076438
+    },
+    "XPos": -74,
+    "YPos": 31,
+    "ZPos": -2,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "158aa682-249c-4dea-b0cb-8f364287128e",
+    "Id": 452,
+    "DeviceSource": 2,
+    "StartTime": 97.010309278350519,
+    "Name": "RFDevice #97",
+    "Latitude": {
+      "Value": 47.628714590739754
+    },
+    "Longitude": {
+      "Value": 9.3589203378892858
+    },
+    "Altitude": {
+      "Value": 9382
+    },
+    "Roll": 3.0,
+    "Pitch": -34.0,
+    "Yaw": -79.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "TwinRx",
+      "Remark": "Ettus X310 / TwinRx"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 9900000.4417565688
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.99496703455
+    },
+    "Gain_dB": {
+      "Value": 52.157655839416037
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 68.854668316829333
+    },
+    "XPos": 5,
+    "YPos": -14,
+    "ZPos": 12,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "90cb9aa2-67cc-4479-b9eb-595628e8179e",
+    "Id": -301,
+    "DeviceSource": 2,
+    "StartTime": 98.010204081632651,
+    "Name": "RFDevice #98",
+    "Latitude": {
+      "Value": 47.6242929692465
+    },
+    "Longitude": {
+      "Value": 9.4414850344343311
+    },
+    "Altitude": {
+      "Value": 1585
+    },
+    "Roll": -84.0,
+    "Pitch": -10.0,
+    "Yaw": 12.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 9600000.0758388
+    },
+    "Bandwidth_Hz": {
+      "Value": 18000.136617085493
+    },
+    "Gain_dB": {
+      "Value": 123.47373730525082
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 97.3734623158227
+    },
+    "XPos": -9,
+    "YPos": 9,
+    "ZPos": 17,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "55816544-3480-447f-bde2-767fd1fbbb2c",
+    "Id": -779,
+    "DeviceSource": 2,
+    "StartTime": 99.01010101010101,
+    "Name": "RFDevice #99",
+    "Latitude": {
+      "Value": 47.601486461933426
+    },
+    "Longitude": {
+      "Value": 9.4465225154950652
+    },
+    "Altitude": {
+      "Value": 8485
+    },
+    "Roll": -34.0,
+    "Pitch": 77.0,
+    "Yaw": 42.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "GPSJammer",
+      "Remark": "10MHz L1 GPS Jammer"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 8600000.1402640063
+    },
+    "Bandwidth_Hz": {
+      "Value": 14000.758959906063
+    },
+    "Gain_dB": {
+      "Value": 57.94239238134697
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 41.642625235320359
+    },
+    "XPos": 10,
+    "YPos": 62,
+    "ZPos": 0,
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.",
+    "TechnicalParameters": ""
+  },
+  {
+    "PrimaryKey": "56f852ad-d89b-4b23-98d4-7c87a96b0eeb",
+    "Id": 211,
+    "DeviceSource": 2,
+    "StartTime": 100.01,
+    "Name": "RFDevice #100",
+    "Latitude": {
+      "Value": 47.581985871389463
+    },
+    "Longitude": {
+      "Value": 9.4085370176478733
+    },
+    "Altitude": {
+      "Value": 1096
+    },
+    "Roll": -87.0,
+    "Pitch": 79.0,
+    "Yaw": -68.0,
+    "RxTxType": {
+      "Value": 6,
+      "Name": "LTE",
+      "Remark": "LTE Signal"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9700000.7284570355
+    },
+    "Bandwidth_Hz": {
+      "Value": 11000.909194238442
+    },
+    "Gain_dB": {
+      "Value": 123.25277140329256
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 4.0049832589016221
+    },
+    "XPos": 40,
+    "YPos": 73,
+    "ZPos": -13,
+    "Remark": "Vom Ödipuskomplex maßlos gequält, übt Wilfried zyklisches Jodeln.",
+    "TechnicalParameters": ""
+  }
+]

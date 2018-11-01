@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Models
             string strPropertyName = e.Attribute("Name").Value;
 #>
 
-        static public <#=eRoot.Name#> With<#=strPropertyName#>(this <#=eRoot.Name#> instance,<#=strPropertyType#> value)
+        public static <#=eRoot.Name#> With<#=strPropertyName#>(this <#=eRoot.Name#> instance,<#=strPropertyType#> value)
         {
             instance.<#=strPropertyName#> = value;
             return instance;

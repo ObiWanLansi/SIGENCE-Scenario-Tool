@@ -71,7 +71,7 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For <#=strPropertyName#>.
         ///</summary>
-        static public readonly <#=strPropertyType#> DEFAULT_<#=strPropertyName.ToUpper()#><#=strDefaultValue#>;
+        public static readonly <#=strPropertyType#> DEFAULT_<#=strPropertyName.ToUpper()#><#=strDefaultValue#>;
         
         ///<summary>
         /// The Internal Field For <#=strPropertyName#>.
@@ -103,6 +103,10 @@ namespace SIGENCEScenarioTool.Models
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Return An XML Element From This Instance.
+        /// </summary>
+        /// <returns></returns>
         public XElement ToXml()
         {
             return new XElement("<#=eRoot.Name#>",
@@ -123,7 +127,12 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        static public <#=eRoot.Name#> FromXml(XElement eRoot)
+        /// <summary>
+        /// Create An Instance From An XML Element.
+        /// </summary>
+        /// <param name="eRoot">The e root.</param>
+        /// <returns></returns>
+        public static <#=eRoot.Name#> FromXml(XElement eRoot)
         {
             XElement eChild = null;
 

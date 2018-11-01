@@ -112,6 +112,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "HackRF", Id = -3 } ) );
             this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "TwinRx", Id = -4 } ) );
 
+            //LoadTemplates( @"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\Templates.stt" );
+
             //-----------------------------------------------------------------
 
             try
@@ -152,23 +154,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //RFDeviceList devicelist = GetDeviceList();
 
-            //ExportRFDevices( devicelist , new FileInfo( @"C:\Transfer\TestScenario.csv" ) );
-            //ExportRFDevices( devicelist , new FileInfo( @"C:\Transfer\TestScenario.xml" ) );
-
-            //ExportRFDevices( devicelist , new FileInfo( @"C:\Transfer\TestScenario.xlsx" ) );
-            //ImportRFDevices( new FileInfo( @"C:\Transfer\TestScenario.xlsx" ) );
-
-            //-----------------------------------------------------------------
-
-            //SaveFile( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.stf" );
-            ////LoadFile( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.stf" );
-
-            //RFDeviceList devicelist = GetDeviceList();
-
-            //ExportRFDevices( devicelist , new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.csv" ) );
-            //ExportRFDevices( devicelist , new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.xml" ) );
-            //ExportRFDevices( devicelist , new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.xlsx" ) );
-            //ImportRFDevices( new FileInfo( @"C:\Lanser\Entwicklung\GitRepositories\SIGENCE-Scenario-Tool\Examples\TestScenario.xlsx" ) );
+            //ExportRFDevices( devicelist, new FileInfo( @"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.csv" ) );
+            //ExportRFDevices( devicelist, new FileInfo( @"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.xml" ) );
+            //ExportRFDevices( devicelist, new FileInfo( @"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.json" ) );
+            //ExportRFDevices( devicelist, new FileInfo( @"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.xlsx" ) );
 
             //-----------------------------------------------------------------
 
@@ -181,7 +170,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.QuickCommands.Add( "save" );
             this.QuickCommands.Add( "exit" );
 
-            //OpenFile(@"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+            //-----------------------------------------------------------------
 
             //RFDevice device = new RFDevice().WithId(0).WithName("Hello").WithStartTime(5);
             //MB.Information(device.ToXml().ToString());

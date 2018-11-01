@@ -2,6 +2,27 @@
 
 <br/>
 
+## Version 16 - November 2018 Release
+
+### Features (5)
+
+Issue|Description
+-:|-
+[58](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/58)|Delete RFDevices In The DataGrid
+[127](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/127)|Create A Concealable Window (Overlay) For The Map With Additional Info
+[139](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/139)|Templates For Creating RFDevices
+[144](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/144)|Template For Scenario Description
+[162](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/162)|Validate The PrimaryKey
+
+### Bugs (2)
+
+Issue|Description
+-:|-
+[164](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/164)|Fix CSV Export Of RFDevices
+[165](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/165)|Click On A DeviceType Cell Caused A Exception And Crash
+
+<br/>
+
 ## Version 15 - October 2018 Release
 
 ### Features (13)

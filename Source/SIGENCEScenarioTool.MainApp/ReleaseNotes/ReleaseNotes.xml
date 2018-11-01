@@ -23,7 +23,7 @@
             <Issue Id="58" Description="Delete RFDevices In The DataGrid" />
             <Issue Id="144" Description="Template For Scenario Description" />
             <Issue Id="162" Description="Validate The PrimaryKey" />
-            <Issue Id="139" Description="Default Values For Easier Creating RFDevices" />
+            <Issue Id="139" Description="Templates For Creating RFDevices" />
             <Issue Id="127" Description="Create A Concealable Window (Overlay) For The Map With Additional Info" />
         </Features>
         <Bugs>
