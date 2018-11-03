@@ -29,7 +29,7 @@
     <IndentHtml>False</IndentHtml>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpTitle>SIGENCE Scenario Tool Library</HelpTitle>
-    <HelpFileVersion>1.5</HelpFileVersion>
+    <HelpFileVersion>16</HelpFileVersion>
     <NamingMethod>MemberName</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <RootNamespaceContainer>False</RootNamespaceContainer>
