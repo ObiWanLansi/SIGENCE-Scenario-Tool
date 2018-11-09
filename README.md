@@ -11,7 +11,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 
 ### Advanced
 - [RF Device Model](Source/SIGENCEScenarioTool.Library/Src/Models/RFDevice/RFDevice.Properties.md)
-- [Known RxTxTypes](Source/SIGENCEScenarioTool.Library/Src/Models/RxTxTypes/RxTxTypes.Known.md )
+- [Known RxTxTypes](Source/SIGENCEScenarioTool.Library/Src/Models/RxTxTypes/RxTxTypes.Known.md)
 - [Other Enumerations](Source/SIGENCEScenarioTool.Library/Src/Models/EnumerationsAndConstants.md)
 
 
