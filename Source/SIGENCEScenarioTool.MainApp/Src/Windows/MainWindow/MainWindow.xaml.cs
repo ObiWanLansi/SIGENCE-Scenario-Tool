@@ -136,9 +136,21 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            CreateRandomizedRFDevices( 100, true );
+            //CreateRandomizedRFDevices( 100, true );
 
-            //AddRFDevice(new RFDevice { PrimaryKey = Guid.Empty, Id = -1, Latitude = 1974, Longitude = 1974, StartTime = -1974 });
+            //AddRFDevice( new RFDevice { PrimaryKey = Guid.Empty, Id = -1, Latitude = 1974, Longitude = 1974, StartTime = -1974 } );
+
+            AddRFDevice( new RFDevice
+            {
+                Id = 42,
+                DeviceSource = DeviceSource.User,
+                Latitude = 47.6675404910724,
+                Longitude = 9.38468456268311,
+                AntennaType = AntennaType.HyperLOG60200,
+                RxTxType = RxTxTypes.FMBroadcast,
+                CenterFrequency_Hz = 90_000_000,
+                Bandwidth_Hz = 30_000
+            } );
 
             //CreateHeatmap();
 

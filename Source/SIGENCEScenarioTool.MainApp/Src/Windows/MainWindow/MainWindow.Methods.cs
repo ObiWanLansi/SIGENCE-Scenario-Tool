@@ -374,10 +374,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 // Erst die alten löschen ...
                 DeleteRFDevices( device => device.Id == this.dvmLastSelectedDevice.Id && device.DeviceSource == DeviceSource.Automatic );
 
-                int iCounter = 1;
+                //if(this.mrDALF.Points.Count == 2)
+                //{
+                //    MB.NotYetImplemented();
+                //}
+                //else
+                //{
+                int iCounter = -1;
 
                 foreach(PointLatLng pos in this.mrDALF.Points)
                 {
+                    iCounter++;
+
+                    // Den ersten müssen wir überspringen da es das Original selbst noch ist welches wir natürlich nicht zweimal brauchen ...    
+                    if(iCounter == 0)
+                    {
+                        continue;
+                    }
+
                     RFDevice device = this.dvmLastSelectedDevice.Clone();
 
                     device.DeviceSource = DeviceSource.Automatic;
@@ -388,8 +402,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     AddRFDevice( device );
 
-                    iCounter++;
                 }
+                //}
             }
 
             ResetDALF();
