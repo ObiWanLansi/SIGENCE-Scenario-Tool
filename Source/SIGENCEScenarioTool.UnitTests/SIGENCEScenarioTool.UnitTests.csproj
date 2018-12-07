@@ -116,7 +116,7 @@
     <Compile Include="Src\Framework\Attributes\SIGENCEScenarioToolTestCaseAttribute.cs" />
     <Compile Include="Src\Framework\SIGENCEScenarioToolInit_And_Deinit.cs" />
     <Compile Include="Src\Framework\SIGENCEScenarioToolTestCaseHelper.cs" />
-    <Compile Include="Src\UnitTests\SIGENCEScenarioToolExportImportTest.cs" />
+    <Compile Include="Src\UnitTests\BuildProccess\SIGENCEScenarioToolExportImportTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -137,6 +137,9 @@
       <Project>{e61fb891-442d-4285-9ab8-e7f3bff66370}</Project>
       <Name>SIGENCE Scenario Tool.Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Src\UnitTests\DeveloperTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
