@@ -17,6 +17,17 @@
     </Version>
     -->
 
+    
+    <Version Version="17" Title="Dezember 2018 Release">
+        <Features>
+            <Issue Id="-1" Description="" />
+        </Features>
+        <Bugs>
+            <Issue Id="169" Description="Double RFDevice When Using The DAL Feature" />
+        </Bugs>
+    </Version>
+
+
 
     <Version Version="16" Title="November 2018 Release">
         <Features>

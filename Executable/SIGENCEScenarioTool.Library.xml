@@ -3286,45 +3286,108 @@
         </member>
         <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.wkbreader">
             <summary>
-            
+            The wkbreader
             </summary>
         </member>
         <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.wkbwriter">
             <summary>
-            
+            The wkbwriter
             </summary>
         </member>
         <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.GERMANY_CENTERPOINT">
             <summary>
-            
+            The germany centerpoint
             </summary>
         </member>
-        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.StringToGeometry(System.String)">
+        <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.PORTANIGRA">
             <summary>
-            
+            The portanigra
             </summary>
-            <param name="strWKBAsString"></param>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.KAISERTHERMEN">
+            <summary>
+            The kaiserthermen
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.BARBARATHERMEN">
+            <summary>
+            The barbarathermen
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.AMPHITHEATER">
+            <summary>
+            The amphitheater
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.GeoHelper.RÖMERBRÜCKE">
+            <summary>
+            The römerbrücke
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.ToGeometry(System.String)">
+            <summary>
+            Strings to geometry.
+            </summary>
+            <param name="strWKBAsString">The string WKB as string.</param>
             <returns></returns>
         </member>
-        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.GeometryToString(GeoAPI.Geometries.IGeometry)">
-             <summary>
-            
-             </summary>
-             <param name="geo"></param>
-             <returns></returns>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.ToString(GeoAPI.Geometries.IGeometry)">
+            <summary>
+            Geometries to string.
+            </summary>
+            <param name="geo">The geo.</param>
+            <returns></returns>
         </member>
         <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.CreatePolygon(NetTopologySuite.Geometries.Point[])">
-             <summary>
-            
-             </summary>
-             <param name="points"></param>
-             <returns></returns>
-        </member>
-        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.CoordinateToPointLatLng(GeoAPI.Geometries.Coordinate)">
             <summary>
-            
+            Creates the polygon.
             </summary>
-            <param name="c"></param>
+            <param name="points">The points.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">Es müssen mindestens drei Punkte übergeben werden!</exception>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.CreateCoordinate(System.Double,System.Double)">
+            <summary>
+            Creates the coordinate.
+            </summary>
+            <param name="dLat">The d lat.</param>
+            <param name="dLon">The d lon.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.CreatePoint(System.Double,System.Double)">
+            <summary>
+            Creates the point.
+            </summary>
+            <param name="dLat">The d lat.</param>
+            <param name="dLon">The d lon.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.ToPointLatLng(GeoAPI.Geometries.Coordinate)">
+            <summary>
+            Coordinates to point lat LNG.
+            </summary>
+            <param name="c">The c.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.ToCoordinate(GMap.NET.PointLatLng)">
+            <summary>
+            To the coordinate.
+            </summary>
+            <param name="pll">The PLL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.ToCoordinate(NetTopologySuite.Geometries.Point)">
+            <summary>
+            Points the lat LNG to coordinate.
+            </summary>
+            <param name="pll">The PLL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GeoHelper.ToPoint(GMap.NET.PointLatLng)">
+            <summary>
+            To the point.
+            </summary>
+            <param name="pll">The PLL.</param>
             <returns></returns>
         </member>
         <member name="T:SIGENCEScenarioTool.Tools.PythonSyntaxModeFileProvider">

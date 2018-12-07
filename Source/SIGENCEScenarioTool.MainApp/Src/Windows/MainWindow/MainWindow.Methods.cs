@@ -8,8 +8,13 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
+using GeoAPI.Geometries;
+
 using GMap.NET;
 using GMap.NET.MapProviders;
+
+using NetTopologySuite.Densify;
+using NetTopologySuite.Geometries;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs.Scripting;
@@ -374,36 +379,83 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 // Erst die alten löschen ...
                 DeleteRFDevices( device => device.Id == this.dvmLastSelectedDevice.Id && device.DeviceSource == DeviceSource.Automatic );
 
-                //if(this.mrDALF.Points.Count == 2)
-                //{
-                //    MB.NotYetImplemented();
-                //}
-                //else
-                //{
-                int iCounter = -1;
-
-                foreach(PointLatLng pos in this.mrDALF.Points)
+                if(this.mrDALF.Points.Count == 2)
                 {
-                    iCounter++;
+                    PointLatLng pllStart = this.mrDALF.Points[0];
+                    PointLatLng pllEnd = this.mrDALF.Points[1];
 
-                    // Den ersten müssen wir überspringen da es das Original selbst noch ist welches wir natürlich nicht zweimal brauchen ...    
-                    if(iCounter == 0)
+                    Coordinate cStart = pllStart.ToCoordinate();
+                    Coordinate cEnd = pllEnd.ToCoordinate();
+
+                    LineString ls = new LineString( new[] { cStart, cEnd } );
+
+                    float fDensifyInKM = Properties.Settings.Default.DensifyInMeters / 100_000;
+
+                    IGeometry result = Densifier.Densify( ls, fDensifyInKM );
+
+                    if(result is LineString)
                     {
-                        continue;
+                        LineString lsDensified = result as LineString;
+
+                        int iCounter = -1;
+                        foreach(Coordinate c in lsDensified.Coordinates)
+                        {
+                            iCounter++;
+
+                            // Den ersten müssen wir überspringen da es das Original selbst noch ist welches wir natürlich nicht zweimal brauchen ...    
+                            if(iCounter == 0)
+                            {
+                                continue;
+                            }
+
+                            PointLatLng pos = c.ToPointLatLng();
+
+                            RFDevice device = this.dvmLastSelectedDevice.Clone();
+
+                            device.DeviceSource = DeviceSource.Automatic;
+                            //device.Name = string.Format("{0} #{1}", 42 < 0 ? "Receiver" : "Transmitter", iCounter);
+                            device.Latitude = pos.Lat;
+                            device.Longitude = pos.Lng;
+                            device.StartTime = this.settings.DeviceCopyTimeAddValue * iCounter;
+
+                            AddRFDevice( device );
+                        }
+
+#if DEBUG
+                        StringBuilder sb = new StringBuilder();
+                        sb.AppendLine( "Total Distance     : {0} Km", (cStart.Distance( cEnd ) * 100) );
+                        sb.AppendLine( "Densify Settings   : {0} m", Properties.Settings.Default.DensifyInMeters );
+                        sb.AppendLine( "Densify Point Count: {0}", lsDensified.Coordinates.Length );
+                        MB.Information( sb.ToString() );
+#endif
                     }
 
-                    RFDevice device = this.dvmLastSelectedDevice.Clone();
-
-                    device.DeviceSource = DeviceSource.Automatic;
-                    //device.Name = string.Format("{0} #{1}", 42 < 0 ? "Receiver" : "Transmitter", iCounter);
-                    device.Latitude = pos.Lat;
-                    device.Longitude = pos.Lng;
-                    device.StartTime = this.settings.DeviceCopyTimeAddValue * iCounter;
-
-                    AddRFDevice( device );
-
                 }
-                //}
+                else
+                {
+                    int iCounter = -1;
+
+                    foreach(PointLatLng pos in this.mrDALF.Points)
+                    {
+                        iCounter++;
+
+                        // Den ersten müssen wir überspringen da es das Original selbst noch ist welches wir natürlich nicht zweimal brauchen ...    
+                        if(iCounter == 0)
+                        {
+                            continue;
+                        }
+
+                        RFDevice device = this.dvmLastSelectedDevice.Clone();
+
+                        device.DeviceSource = DeviceSource.Automatic;
+                        //device.Name = string.Format("{0} #{1}", 42 < 0 ? "Receiver" : "Transmitter", iCounter);
+                        device.Latitude = pos.Lat;
+                        device.Longitude = pos.Lng;
+                        device.StartTime = this.settings.DeviceCopyTimeAddValue * iCounter;
+
+                        AddRFDevice( device );
+                    }
+                }
             }
 
             ResetDALF();

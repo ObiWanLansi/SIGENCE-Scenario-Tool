@@ -144,10 +144,22 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 Id = 42,
                 DeviceSource = DeviceSource.User,
-                Latitude = 47.6675404910724,
-                Longitude = 9.38468456268311,
+                Latitude = 47.666557,
+                Longitude = 9.386941,
                 AntennaType = AntennaType.HyperLOG60200,
                 RxTxType = RxTxTypes.FMBroadcast,
+                CenterFrequency_Hz = 90_000_000,
+                Bandwidth_Hz = 30_000
+            } );
+
+            AddRFDevice( new RFDevice
+            {
+                Id = -42,
+                DeviceSource = DeviceSource.User,
+                Latitude = 47.666100,
+                Longitude = 9.172648,
+                AntennaType = AntennaType.OmniDirectional,
+                RxTxType = RxTxTypes.IdealSDR,
                 CenterFrequency_Hz = 90_000_000,
                 Bandwidth_Hz = 30_000
             } );

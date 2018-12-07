@@ -305,13 +305,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                 string strName = dbResult.GetStringOrNull( 2 );
                                 NTS.LineString way = (NTS.LineString)dbResult.GetGeometryFromWKB( 3 );
 
-                                if(bb.Contains( GeoHelper.CoordinateToPointLatLng( way.Coordinate ) ))
+                                if(bb.Contains( way.Coordinate.ToPointLatLng() ))
                                 {
                                     List<PointLatLng> list = new List<PointLatLng>( way.Count );
 
                                     foreach(var pos in way.Coordinates)
                                     {
-                                        list.Add( GeoHelper.CoordinateToPointLatLng( pos ) );
+                                        list.Add( pos.ToPointLatLng() );
                                     }
 
                                     this.Dispatcher.Invoke( () =>

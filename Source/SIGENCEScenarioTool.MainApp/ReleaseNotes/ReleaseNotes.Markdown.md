@@ -2,6 +2,22 @@
 
 <br/>
 
+## Version 17 - Dezember 2018 Release
+
+### Features (1)
+
+Issue|Description
+-:|-
+[-1](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/-1)|
+
+### Bugs (1)
+
+Issue|Description
+-:|-
+[169](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/169)|Double RFDevice When Using The DAL Feature
+
+<br/>
+
 ## Version 16 - November 2018 Release
 
 ### Features (5)

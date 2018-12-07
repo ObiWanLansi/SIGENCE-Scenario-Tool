@@ -32,6 +32,7 @@
   <HelpKINode Title="Altitude.Altitude constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude__ctor.htm" />
   <HelpKINode Title="Altitude.IsValid method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude_IsValid.htm" />
   <HelpKINode Title="Amenity enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
+  <HelpKINode Title="AMPHITHEATER field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_AMPHITHEATER.htm" />
   <HelpKINode Title="Analyze method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Analyze.htm" />
   <HelpKINode Title="AntennaType enumeration" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
   <HelpKINode Title="ANTENNATYPE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ANTENNATYPE.htm" />
@@ -64,6 +65,7 @@
   <HelpKINode Title="Bandwidth.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_ToString.htm" />
   <HelpKINode Title="BANDWIDTH_HZ field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_BANDWIDTH_HZ.htm" />
   <HelpKINode Title="Bandwidth_Hz property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Bandwidth_Hz.htm" />
+  <HelpKINode Title="BARBARATHERMEN field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_BARBARATHERMEN.htm" />
   <HelpKINode Title="Blink class">
     <HelpKINode Title="Blink Class" Url="html/T_SIGENCEScenarioTool_Tools_Blink.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Blink.htm" />
@@ -91,9 +93,10 @@
   <HelpKINode Title="CompareTo method" Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_CompareTo.htm" />
   <HelpKINode Title="Connection property" Url="html/P_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Connection.htm" />
   <HelpKINode Title="Contains method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_Contains.htm" />
-  <HelpKINode Title="CoordinateToPointLatLng method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CoordinateToPointLatLng.htm" />
   <HelpKINode Title="CopyTo method" Url="html/Overload_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo.htm" />
   <HelpKINode Title="Craft enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
+  <HelpKINode Title="CreateCoordinate method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreateCoordinate.htm" />
+  <HelpKINode Title="CreatePoint method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePoint.htm" />
   <HelpKINode Title="CreatePolygon method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePolygon.htm" />
   <HelpKINode Title="CreateRandomizedRFDeviceList method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceList_CreateRandomizedRFDeviceList.htm" />
   <HelpKINode Title="CULTUREINFO field" Url="html/F_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_CULTUREINFO.htm" />
@@ -298,11 +301,20 @@
     <HelpKINode Title="fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
   </HelpKINode>
-  <HelpKINode Title="GeoHelper.CoordinateToPointLatLng method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CoordinateToPointLatLng.htm" />
+  <HelpKINode Title="GeoHelper.AMPHITHEATER field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_AMPHITHEATER.htm" />
+  <HelpKINode Title="GeoHelper.BARBARATHERMEN field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_BARBARATHERMEN.htm" />
+  <HelpKINode Title="GeoHelper.CreateCoordinate method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreateCoordinate.htm" />
+  <HelpKINode Title="GeoHelper.CreatePoint method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePoint.htm" />
   <HelpKINode Title="GeoHelper.CreatePolygon method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePolygon.htm" />
-  <HelpKINode Title="GeoHelper.GeometryToString method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_GeometryToString.htm" />
   <HelpKINode Title="GeoHelper.GERMANY_CENTERPOINT field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_GERMANY_CENTERPOINT.htm" />
-  <HelpKINode Title="GeoHelper.StringToGeometry method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_StringToGeometry.htm" />
+  <HelpKINode Title="GeoHelper.KAISERTHERMEN field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_KAISERTHERMEN.htm" />
+  <HelpKINode Title="GeoHelper.PORTANIGRA field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_PORTANIGRA.htm" />
+  <HelpKINode Title="GeoHelper.R&#214;MERBR&#220;CKE field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_R&#214;MERBR&#220;CKE.htm" />
+  <HelpKINode Title="GeoHelper.ToCoordinate method" Url="html/Overload_SIGENCEScenarioTool_Tools_GeoHelper_ToCoordinate.htm" />
+  <HelpKINode Title="GeoHelper.ToGeometry method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToGeometry.htm" />
+  <HelpKINode Title="GeoHelper.ToPoint method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPoint.htm" />
+  <HelpKINode Title="GeoHelper.ToPointLatLng method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPointLatLng.htm" />
+  <HelpKINode Title="GeoHelper.ToString method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToString.htm" />
   <HelpKINode Title="GeoLocalizationResult class">
     <HelpKINode Title="GeoLocalizationResult Class" Url="html/T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResult__ctor.htm" />
@@ -341,7 +353,6 @@
     <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_GeoLocalizationResultList.htm" />
   </HelpKINode>
   <HelpKINode Title="GeoLocalizationResultList.GeoLocalizationResultList constructor" Url="html/Overload_SIGENCEScenarioTool_Models_GeoLocalizationResultList__ctor.htm" />
-  <HelpKINode Title="GeometryToString method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_GeometryToString.htm" />
   <HelpKINode Title="GeoNode class">
     <HelpKINode Title="GeoNode Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_GeoNode.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_GeoNode__ctor.htm" />
@@ -505,6 +516,7 @@
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Interfaces_IXmlExport.htm" />
   </HelpKINode>
   <HelpKINode Title="IXmlExport.ToXml method" Url="html/M_SIGENCEScenarioTool_Interfaces_IXmlExport_ToXml.htm" />
+  <HelpKINode Title="KAISERTHERMEN field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_KAISERTHERMEN.htm" />
   <HelpKINode Title="Kilo field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Kilo.htm" />
   <HelpKINode Title="Latitude class">
     <HelpKINode Title="Latitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm" />
@@ -621,6 +633,7 @@
   <HelpKINode Title="PITCH field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_PITCH.htm" />
   <HelpKINode Title="Pitch property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Pitch.htm" />
   <HelpKINode Title="Place enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
+  <HelpKINode Title="PORTANIGRA field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_PORTANIGRA.htm" />
   <HelpKINode Title="Position property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Position.htm" />
   <HelpKINode Title="Power enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="PrepareInsertStatement method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_PrepareInsertStatement.htm" />
@@ -884,6 +897,7 @@
   <HelpKINode Title="RxTxTypes.TwinRx property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_TwinRx.htm" />
   <HelpKINode Title="RxTxTypes.Unknown property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Unknown.htm" />
   <HelpKINode Title="RxTxTypes.Values property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Values.htm" />
+  <HelpKINode Title="R&#214;MERBR&#220;CKE field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_R&#214;MERBR&#220;CKE.htm" />
   <HelpKINode Title="Save method" Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Save.htm" />
   <HelpKINode Title="SaveAsCSV method" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SaveAsCSV.htm" />
   <HelpKINode Title="SaveAsCsv(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsCsv__1.htm" />
@@ -1079,7 +1093,6 @@
   <HelpKINode Title="StringList to String() conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList_op_Implicit.htm" />
   <HelpKINode Title="StringList to String[] conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList_op_Implicit.htm" />
   <HelpKINode Title="StringList.StringList constructor" Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor.htm" />
-  <HelpKINode Title="StringToGeometry method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_StringToGeometry.htm" />
   <HelpKINode Title="Symbol property" Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Symbol.htm" />
   <HelpKINode Title="SyntaxModes property" Url="html/P_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_SyntaxModes.htm" />
   <HelpKINode Title="TableExists method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_TableExists.htm" />
@@ -1098,7 +1111,9 @@
   <HelpKINode Title="TimeSpanExtension.ToShortString method" Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToShortString.htm" />
   <HelpKINode Title="Timestamp property" Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Timestamp.htm" />
   <HelpKINode Title="ToColor method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_ToColor.htm" />
+  <HelpKINode Title="ToCoordinate method" Url="html/Overload_SIGENCEScenarioTool_Tools_GeoHelper_ToCoordinate.htm" />
   <HelpKINode Title="ToDefaultString method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_ToDefaultString.htm" />
+  <HelpKINode Title="ToGeometry method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToGeometry.htm" />
   <HelpKINode Title="ToHHMMSSString method" Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToHHMMSSString.htm" />
   <HelpKINode Title="Tool class">
     <HelpKINode Title="Tool Class" Url="html/T_SIGENCEScenarioTool_Tools_Tool.htm" />
@@ -1145,6 +1160,8 @@
   <HelpKINode Title="TOOLTIP_YAW property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_YAW.htm" />
   <HelpKINode Title="TOOLTIP_YPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_YPOS.htm" />
   <HelpKINode Title="TOOLTIP_ZPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_ZPOS.htm" />
+  <HelpKINode Title="ToPoint method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPoint.htm" />
+  <HelpKINode Title="ToPointLatLng method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPointLatLng.htm" />
   <HelpKINode Title="ToShortString method" Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToShortString.htm" />
   <HelpKINode Title="ToString method">
     <HelpKINode Title="Bandwidth.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_ToString.htm" />
@@ -1152,6 +1169,7 @@
     <HelpKINode Title="DisplayableEnumeration.ToString Method " Url="html/M_SIGENCEScenarioTool_Ui_DisplayableEnumeration_ToString.htm" />
     <HelpKINode Title="Frequency.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_ToString.htm" />
     <HelpKINode Title="Gain.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_ToString.htm" />
+    <HelpKINode Title="GeoHelper.ToString Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToString.htm" />
     <HelpKINode Title="Latitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_ToString.htm" />
     <HelpKINode Title="Longitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_ToString.htm" />
     <HelpKINode Title="RFDevice.ToString Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_ToString.htm" />

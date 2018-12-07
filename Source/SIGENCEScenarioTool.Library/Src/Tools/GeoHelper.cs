@@ -71,7 +71,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strWKBAsString">The string WKB as string.</param>
         /// <returns></returns>
-        public static IGeometry StringToGeometry( string strWKBAsString )
+        public static IGeometry ToGeometry( this string strWKBAsString )
         {
             if(strWKBAsString == null || strWKBAsString.Trim().Length == 0)
             {
@@ -99,7 +99,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="geo">The geo.</param>
         /// <returns></returns>
-        public static string GeometryToString( IGeometry geo )
+        public static string ToString( this IGeometry geo )
         {
             // Kann ja passieren, ist ja auch nicht weiter schlimm, liefern wir halt eben auch null zurück.
             if(geo == null)
@@ -149,13 +149,73 @@ namespace SIGENCEScenarioTool.Tools
 
 
         /// <summary>
+        /// Creates the coordinate.
+        /// </summary>
+        /// <param name="dLat">The d lat.</param>
+        /// <param name="dLon">The d lon.</param>
+        /// <returns></returns>
+        public static Coordinate CreateCoordinate( double dLat, double dLon )
+        {
+            return new Coordinate( dLon, dLat );
+        }
+
+
+        /// <summary>
+        /// Creates the point.
+        /// </summary>
+        /// <param name="dLat">The d lat.</param>
+        /// <param name="dLon">The d lon.</param>
+        /// <returns></returns>
+        public static Point CreatePoint( double dLat, double dLon )
+        {
+            return new Point( dLon, dLat );
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        /// <summary>
         /// Coordinates to point lat LNG.
         /// </summary>
         /// <param name="c">The c.</param>
         /// <returns></returns>
-        public static PointLatLng CoordinateToPointLatLng( Coordinate c )
+        public static PointLatLng ToPointLatLng( this Coordinate c )
         {
             return new PointLatLng( c.Y, c.X );
+        }
+
+
+        /// <summary>
+        /// To the coordinate.
+        /// </summary>
+        /// <param name="pll">The PLL.</param>
+        /// <returns></returns>
+        public static Coordinate ToCoordinate( this PointLatLng pll )
+        {
+            return new Coordinate( pll.Lng, pll.Lat );
+        }
+
+
+        /// <summary>
+        /// Points the lat LNG to coordinate.
+        /// </summary>
+        /// <param name="pll">The PLL.</param>
+        /// <returns></returns>
+        public static Coordinate ToCoordinate( this Point p )
+        {
+            return new Coordinate( p.X, p.Y );
+        }
+
+
+        /// <summary>
+        /// To the point.
+        /// </summary>
+        /// <param name="pll">The PLL.</param>
+        /// <returns></returns>
+        public static Point ToPoint( this PointLatLng pll )
+        {
+            return new Point( pll.Lng, pll.Lat );
         }
 
     } // end public static class GeoHelper

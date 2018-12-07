@@ -1,5 +1,5 @@
 ﻿
-# GeoLocalizationResult (Version 16)
+# GeoLocalizationResult (Version 17)
 
 *Represent The Geo Localization Result Of A RFDevice.*
 
