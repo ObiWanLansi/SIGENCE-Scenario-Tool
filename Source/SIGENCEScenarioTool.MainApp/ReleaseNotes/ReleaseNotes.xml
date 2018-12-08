@@ -20,7 +20,7 @@
     
     <Version Version="17" Title="Dezember 2018 Release">
         <Features>
-            <Issue Id="-1" Description="" />
+            <Issue Id="168" Description="Mark Two Points In The Map And Create Devices Between Them" />
         </Features>
         <Bugs>
             <Issue Id="169" Description="Double RFDevice When Using The DAL Feature" />
