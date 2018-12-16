@@ -245,6 +245,37 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             dlg = null;
         }
 
+
+        /// <summary>
+        /// Creates the example rf devices.
+        /// </summary>
+        private void CreateExampleRFDevices()
+        {
+            AddRFDevice( new RFDevice
+            {
+                Id = 42 ,
+                DeviceSource = DeviceSource.User ,
+                Latitude = 47.666557 ,
+                Longitude = 9.386941 ,
+                AntennaType = AntennaType.HyperLOG60200 ,
+                RxTxType = RxTxTypes.FMBroadcast ,
+                CenterFrequency_Hz = 90_000_000 ,
+                Bandwidth_Hz = 30_000
+            } );
+
+            AddRFDevice( new RFDevice
+            {
+                Id = -42 ,
+                DeviceSource = DeviceSource.User ,
+                Latitude = 47.666100 ,
+                Longitude = 9.172648 ,
+                AntennaType = AntennaType.OmniDirectional ,
+                RxTxType = RxTxTypes.IdealSDR ,
+                CenterFrequency_Hz = 90_000_000 ,
+                Bandwidth_Hz = 30_000
+            } );
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -654,6 +685,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         OpenWebbrowser( "https://www.google.de/" );
                         break;
 
+                    case "xmp":
+                        CreateExampleRFDevices();
+                        break;
 
                     case "close":
                     case "exit":
