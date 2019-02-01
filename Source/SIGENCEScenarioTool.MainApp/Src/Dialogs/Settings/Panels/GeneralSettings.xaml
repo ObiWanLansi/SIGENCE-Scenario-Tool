@@ -7,12 +7,84 @@
 
 
     <Grid>
-        <Label Content="Preview" FontSize="120" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#40FF0000" Margin="-120,0">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Margin" Value="5,1,5,1" />
+                        <Setter Property="TextAlignment" Value="Right" />
+                    </Style>
+                </Grid.Resources>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="Initial Values" FontWeight="Bold" Background="WhiteSmoke" Margin="0,0,0,5" />
+
+                <Label Grid.Column="0" Grid.Row="1" Content="MapProvider" ToolTip="The Initial MapProvider." />
+                <TextBox Grid.Column="1" Grid.Row="1" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="2" Content="Latitude" ToolTip="The Initial Latitude." />
+                <TextBox Grid.Column="1" Grid.Row="2" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="3" Content="Longitude" ToolTip="The Initial Longitude." />
+                <TextBox Grid.Column="1" Grid.Row="3" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="4" Content="ZoomLevel" ToolTip="The Initial Zoom Level." />
+                <TextBox Grid.Column="1" Grid.Row="4" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Window Settings" FontWeight="Bold" Background="WhiteSmoke" Margin="0,10,0,5" />
+
+                <Label Grid.Column="0" Grid.Row="6" Content="Left" ToolTip="" />
+                <TextBox Grid.Column="1" Grid.Row="6" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="7" Content="Top" ToolTip="" />
+                <TextBox Grid.Column="1" Grid.Row="7" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="8" Content="Width" ToolTip="" />
+                <TextBox Grid.Column="1" Grid.Row="8" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="9" Content="Height" ToolTip="" />
+                <TextBox Grid.Column="1" Grid.Row="9" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="10" Content="WindowState" ToolTip="" />
+                <TextBox Grid.Column="1" Grid.Row="10" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2" Content="Device Create &amp; Copy Settings" FontWeight="Bold" Background="WhiteSmoke" Margin="0,10,0,5" />
+
+                <Label Grid.Column="0" Grid.Row="12" Content="DensifyInMeters" ToolTip="" />
+                <TextBox Grid.Column="1" Grid.Row="12" Text="" />
+
+                <Label Grid.Column="0" Grid.Row="13" Content="DeviceCopyTimeAddValue" ToolTip="" />
+                <TextBox Grid.Column="1" Grid.Row="13" Text="" />
+            </Grid>
+        </ScrollViewer>
+        <!--<Label Content="Preview" FontSize="120" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#40FF0000" Margin="-120,0">
             <Label.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="45" />
                 </TransformGroup>
             </Label.RenderTransform>
-        </Label>
+        </Label>-->
     </Grid>
 </UserControl>

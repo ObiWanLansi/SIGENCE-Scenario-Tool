@@ -1,0 +1,76 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ output extension=".cs" #>
+/**
+ * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
+ */
+using SIGENCEScenarioTool.Models;
+
+
+
+namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
+{
+    public sealed class GeneralSettingsViewModel : AbstractModelBase
+    {
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+
+    string strConfiguration= File.ReadAllText(this.Host.ResolvePath("..\\..\\..\\..\\..\\Properties\\Settings.settings"));
+    XDocument xd = XDocument.Parse(strConfiguration);
+
+    XElement eRoot = xd.Root;
+
+    XName setting = XName.Get( "Setting", "http://schemas.microsoft.com/VisualStudio/2004/01/settings" );
+    XName value = XName.Get( "Value", "http://schemas.microsoft.com/VisualStudio/2004/01/settings" );
+
+    foreach(XElement eSetting in eRoot.Descendants( setting ))
+    {
+        string strScope = eSetting.Attribute( "Scope").Value;
+
+        if(strScope != "User")
+        {
+            continue;
+        }
+
+        string strName = eSetting.Attribute( "Name" ).Value;
+        string strType = eSetting.Attribute( "Type" ).Value;
+
+        string strDefaultValue = eSetting.Element( value ).Value;
+
+        switch(strType)
+        {
+            case "System.String":
+                strDefaultValue = "\"" + strDefaultValue + "\"";
+                break;
+            case "System.Boolean":
+                strDefaultValue = strDefaultValue.ToLower();
+                break;
+        }
+//                Console.Out.WriteLine( $"{strName}->{strSerializeAs}" );
+#>
+        private <#= strType #> _<#= strName #> = <#= strDefaultValue #>;
+
+        public <#= strType #> <#= strName #>
+        {
+            get { return _<#= strName #>; }
+            set
+            {
+                this._<#= strName #> = value;
+                FirePropertyChanged();
+            }
+        }
+
+<#
+            }
+
+#>    
+    } // end public sealed class GeneralSettingsViewModel
+}

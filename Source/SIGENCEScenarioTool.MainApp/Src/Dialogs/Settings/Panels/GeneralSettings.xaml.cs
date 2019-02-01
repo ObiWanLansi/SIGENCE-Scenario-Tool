@@ -4,6 +4,34 @@
 
 namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
 {
+    //internal class GeneralSettingsViewModel
+    //{
+
+
+    //    public string MapProvider
+    //    {
+    //        get; set;
+    //    }
+
+    //    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    //    /// <summary>
+    //    /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
+    //    /// </summary>
+    //    public event PropertyChangedEventHandler PropertyChanged;
+
+
+    //    /// <summary>
+    //    /// Fires the property changed.
+    //    /// </summary>
+    //    /// <param name="strPropertyName">Name of the string property.</param>
+    //    private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+    //    {
+    //        PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( strPropertyName ) );
+    //    }
+    //}
+
     /// <summary>
     /// Interaktionslogik für GeneralSettings.xaml
     /// </summary>
@@ -24,7 +52,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
         /// <returns></returns>
         public Image GetImage()
         {
-            return ( Image ) Resources ["NUT_AND_BOLT"];
+            return (Image)this.Resources["NUT_AND_BOLT"];
         }
 
 

@@ -21,7 +21,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// <value>
         /// The name.
         /// </value>
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets or sets the image.
@@ -29,17 +29,35 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// <value>
         /// The image.
         /// </value>
-        public Image Image { get; set; }
+        public Image Image { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the control.
+        /// </summary>
+        /// <value>
+        /// The control.
+        /// </value>
+        public UserControl Control { get; private set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is enabled.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is enabled; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsEnabled { get; set; } = true;
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SettingsPanelViewModel"/> class.
+        /// Initializes a new instance of the <see cref="SettingsPanelViewModel" /> class.
         /// </summary>
+        /// <param name="uc">The uc.</param>
         /// <param name="sc">The sc.</param>
-        public SettingsPanelViewModel( ISettingsControl sc )
+        public SettingsPanelViewModel( UserControl uc, ISettingsControl sc )
         {
-            Name = sc.GetName();
-            Image = sc.GetImage();
+            this.Control = uc;
+            this.Name = sc.GetName();
+            this.Image = sc.GetImage();
         }
 
     } // end public sealed class SettingsPanelViewModel
@@ -62,7 +80,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// <summary>
         /// The uc selected panel
         /// </summary>
-        private UserControl ucSelectedPanel = new GeneralSettings();
+        private UserControl ucSelectedPanel = null;// new GeneralSettings();
         /// <summary>
         /// Gets or sets the selected panel.
         /// </summary>
@@ -71,10 +89,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// </value>
         public UserControl SelectedPanel
         {
-            get { return ucSelectedPanel; }
+            get { return this.ucSelectedPanel; }
             set
             {
-                ucSelectedPanel = value;
+                this.ucSelectedPanel = value;
                 FirePropertyChanged();
             }
         }
@@ -91,7 +109,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
 
             InitPanels();
 
-            DataContext = this;
+            this.DataContext = this;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -102,12 +120,17 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// </summary>
         private void InitPanels()
         {
-            Panels = new ObservableCollection<SettingsPanelViewModel>
+            var _gs = new GeneralSettings();
+            var _ns = new NetworkSettings();
+            var _is = new ImportSettings();
+            var _es = new ExportSettings();
+
+            this.Panels = new ObservableCollection<SettingsPanelViewModel>
             {
-                new SettingsPanelViewModel(new GeneralSettings()),
-                new SettingsPanelViewModel(new NetworkSettings()),
-                new SettingsPanelViewModel(new ImportSettings()),
-                new SettingsPanelViewModel(new ExportSettings())
+                new SettingsPanelViewModel(_gs,_gs),
+                new SettingsPanelViewModel(_ns,_ns) { IsEnabled = false },
+                new SettingsPanelViewModel(_is,_is) { IsEnabled = false },
+                new SettingsPanelViewModel(_es,_es) { IsEnabled = false }
             };
         }
 
@@ -119,9 +142,9 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_Accept_Click( object sender , RoutedEventArgs e )
+        private void Button_Accept_Click( object sender, RoutedEventArgs e )
         {
-            DialogResult = true;
+            this.DialogResult = true;
             Properties.Settings.Default.Save();
 
             e.Handled = true;
@@ -133,9 +156,9 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_Cancel_Click( object sender , RoutedEventArgs e )
+        private void Button_Cancel_Click( object sender, RoutedEventArgs e )
         {
-            DialogResult = false;
+            this.DialogResult = false;
             Properties.Settings.Default.Reload();
 
             e.Handled = true;
@@ -147,9 +170,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs" /> instance containing the event data.</param>
-        private void ListBox_SelectionChanged( object sender , SelectionChangedEventArgs e )
+        private void ListBox_SelectionChanged( object sender, SelectionChangedEventArgs e )
         {
-            // TODO: Switch Panel
+            this.SelectedPanel = ((sender as ListBox).SelectedItem as SettingsPanelViewModel).Control;
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -167,7 +191,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// <param name="strPropertyName">Name of the string property.</param>
         private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( strPropertyName ) );
         }
 
     } // end public partial class SettingsDialog 

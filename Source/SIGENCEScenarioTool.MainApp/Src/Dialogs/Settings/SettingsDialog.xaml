@@ -21,7 +21,7 @@
         <ListBox Grid.Column="0" ItemsSource="{Binding Panels}" SelectedIndex="0" Margin="10" SelectionChanged="ListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" IsEnabled="{Binding IsEnabled}">
                         <Label Content="{Binding Image}" />
                         <Label Content="{Binding Name}" />
                     </StackPanel>
@@ -30,7 +30,7 @@
         </ListBox>
 
         <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="13,10,10,10">
-            <ContentControl Content="{Binding SelectedPanel}"/>
+            <ContentControl Content="{Binding SelectedPanel}" />
         </Border>
 
         <GridSplitter Grid.Column="1" Background="Blue" Width="3" ShowsPreview="True" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0,10,0,10" />

@@ -224,6 +224,11 @@
       <DependentUpon>GeneralSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Src\Dialogs\Settings\Panels\ISettingsControl.cs" />
+    <Compile Include="Src\Dialogs\Settings\Panels\ViewModels\GeneralSettingsViewModel.cs">
+      <DependentUpon>GeneralSettingsViewModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Src\Dialogs\Settings\SettingsDialog.xaml.cs">
       <DependentUpon>SettingsDialog.xaml</DependentUpon>
     </Compile>
@@ -392,6 +397,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Src\Dialogs\Settings\Panels\ViewModels\GeneralSettingsViewModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GeneralSettingsViewModel.cs</LastGenOutput>
+    </Content>
     <Resource Include="Images\star_yellow.png" />
     <Resource Include="Images\star_yellow_add.png" />
     <Resource Include="Images\star_yellow_delete.png" />
