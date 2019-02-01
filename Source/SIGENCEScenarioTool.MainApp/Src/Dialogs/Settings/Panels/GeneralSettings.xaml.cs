@@ -1,49 +1,34 @@
 ﻿using System.Windows.Controls;
 
+using SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels;
+
 
 
 namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
 {
-    //internal class GeneralSettingsViewModel
-    //{
-
-
-    //    public string MapProvider
-    //    {
-    //        get; set;
-    //    }
-
-    //    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-    //    /// <summary>
-    //    /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
-    //    /// </summary>
-    //    public event PropertyChangedEventHandler PropertyChanged;
-
-
-    //    /// <summary>
-    //    /// Fires the property changed.
-    //    /// </summary>
-    //    /// <param name="strPropertyName">Name of the string property.</param>
-    //    private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
-    //    {
-    //        PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( strPropertyName ) );
-    //    }
-    //}
-
     /// <summary>
     /// Interaktionslogik für GeneralSettings.xaml
     /// </summary>
     public partial class GeneralSettings : ISettingsControl
     {
         /// <summary>
+        /// The model
+        /// </summary>
+        private GeneralSettingsViewModel model = new GeneralSettingsViewModel();
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="GeneralSettings"/> class.
         /// </summary>
         public GeneralSettings()
         {
+            this.DataContext = this.model;
             InitializeComponent();
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>

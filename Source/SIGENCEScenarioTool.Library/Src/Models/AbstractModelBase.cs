@@ -11,9 +11,6 @@ namespace SIGENCEScenarioTool.Models
     /// <seealso cref="INotifyPropertyChanged" />
     public abstract class AbstractModelBase : INotifyPropertyChanged
     {
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         /// <summary>
         /// 
         /// </summary>
@@ -24,9 +21,9 @@ namespace SIGENCEScenarioTool.Models
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( strPropertyName ) );
         }
 
     } // end public abstract class AbstractModelBase
