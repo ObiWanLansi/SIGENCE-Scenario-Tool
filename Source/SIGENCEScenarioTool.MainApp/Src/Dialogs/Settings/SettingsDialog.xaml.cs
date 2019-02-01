@@ -122,6 +122,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         {
             var _gs = new GeneralSettings();
             var _ns = new NetworkSettings();
+            var _ds = new DatabaseSettings();
             var _is = new ImportSettings();
             var _es = new ExportSettings();
 
@@ -129,6 +130,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
             {
                 new SettingsPanelViewModel(_gs,_gs),
                 new SettingsPanelViewModel(_ns,_ns) { IsEnabled = false },
+                new SettingsPanelViewModel(_ds,_ds) { IsEnabled = false },
                 new SettingsPanelViewModel(_is,_is) { IsEnabled = false },
                 new SettingsPanelViewModel(_es,_es) { IsEnabled = false }
             };

@@ -115,7 +115,7 @@
         </member>
         <member name="F:Markdig.Extensions.AutoIdentifiers.AutoIdentifierOptions.None">
             <summary>
-            No options
+            No options: does not apply any additional formatting and/or transformations.  
             </summary>
         </member>
         <member name="F:Markdig.Extensions.AutoIdentifiers.AutoIdentifierOptions.Default">
@@ -161,7 +161,7 @@
             </summary>
             <seealso cref="T:Markdig.Parsers.InlineParser" />
         </member>
-        <member name="M:Markdig.Extensions.AutoLinks.AutoLinkParser.#ctor">
+        <member name="M:Markdig.Extensions.AutoLinks.AutoLinkParser.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Markdig.Extensions.AutoLinks.AutoLinkParser"/> class.
             </summary>
@@ -1556,6 +1556,14 @@
             <param name="replacement">Object to replace this element with</param>
             <returns><c>true</c> if a replacement was made; otherwise <c>false</c>.</returns>
         </member>
+        <member name="M:Markdig.Helpers.OrderedList`1.ReplaceOrAdd``1(`0)">
+            <summary>
+            Replaces <typeparamref name="TElement"/> with <paramref name="newElement"/> or adds <paramref name="newElement"/>.
+            </summary>
+            <typeparam name="TElement">Element type to find in the list</typeparam>
+            <param name="newElement">Object to add/replace the found element with</param>
+            <returns><c>true</c> if a replacement was made; otherwise <c>false</c>.</returns>
+        </member>
         <member name="T:Markdig.Helpers.StringBuilderCache">
             <summary>
             An implementation of <see cref="T:Markdig.Helpers.ObjectCache`1"/> for <see cref="T:System.Text.StringBuilder"/>
@@ -2063,7 +2071,7 @@
             <param name="pipeline">The pipeline.</param>
             <returns>The modified pipeline</returns>
         </member>
-        <member name="M:Markdig.MarkdownExtensions.UseAutoLinks(Markdig.MarkdownPipelineBuilder)">
+        <member name="M:Markdig.MarkdownExtensions.UseAutoLinks(Markdig.MarkdownPipelineBuilder,System.String)">
             <summary>
             Uses this extension to enable autolinks from text `http://`, `https://`, `ftp://`, `mailto:`, `www.xxx.yyy`
             </summary>
@@ -2828,6 +2836,11 @@
         <member name="M:Markdig.Parsers.HeadingBlockParser.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Markdig.Parsers.HeadingBlockParser"/> class.
+            </summary>
+        </member>
+        <member name="P:Markdig.Parsers.HeadingBlockParser.MaxLeadingCount">
+            <summary>
+            Gets or sets the max count of the leading unescaped # characters
             </summary>
         </member>
         <member name="P:Markdig.Parsers.HeadingBlockParser.TryParseAttributes">

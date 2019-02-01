@@ -18,8 +18,19 @@ using SIGENCEScenarioTool.Models;
 
 namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
 {
-    public sealed class GeneralSettingsViewModel : AbstractModelBase
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="SIGENCEScenarioTool.Models.AbstractModelBase" />
+    internal sealed class GeneralSettingsViewModel : AbstractModelBase
     {
+        /// <summary>
+        /// The properties
+        /// </summary>
+        private readonly Properties.Settings properties = Properties.Settings.Default;
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <#
     EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
 
@@ -42,35 +53,19 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
 
         string strName = eSetting.Attribute( "Name" ).Value;
         string strType = eSetting.Attribute( "Type" ).Value;
-
-        string strDefaultValue = eSetting.Element( value ).Value;
-
-        switch(strType)
-        {
-            case "System.String":
-                strDefaultValue = "\"" + strDefaultValue + "\"";
-                break;
-            case "System.Boolean":
-                strDefaultValue = strDefaultValue.ToLower();
-                break;
-        }
-//                Console.Out.WriteLine( $"{strName}->{strSerializeAs}" );
 #>
-        private <#= strType #> _<#= strName #> = <#= strDefaultValue #>;
 
         public <#= strType #> <#= strName #>
         {
-            get { return _<#= strName #>; }
+            get { return this.properties.<#= strName #>; }
             set
             {
-                this._<#= strName #> = value;
+                this.properties.<#= strName #> = value;
                 FirePropertyChanged();
             }
         }
-
 <#
             }
-
 #>    
-    } // end public sealed class GeneralSettingsViewModel
+    } // end internal sealed class GeneralSettingsViewModel
 }
