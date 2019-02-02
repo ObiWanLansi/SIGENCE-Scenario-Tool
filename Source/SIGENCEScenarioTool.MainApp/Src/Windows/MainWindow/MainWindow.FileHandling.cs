@@ -62,6 +62,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     AddRFDevice( RFDevice.FromXml( e ) );
                 }
+
+                AddFileHistory( strInputFilename );
             }
             catch(Exception ex)
             {

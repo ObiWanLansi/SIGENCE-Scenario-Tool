@@ -764,6 +764,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Handles the Click event of the MenuItem_FileHistory control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_FileHistory_Click( object sender, RoutedEventArgs e )
+        {
+            if((sender as MenuItem).Tag != null)
+            {
+                string strFilename = (string)((sender as MenuItem).Tag);
+
+                LoadFile( strFilename );
+            }
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
         /// Handles the Click event of the Button_ExecuteValidateScenario control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>

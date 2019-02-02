@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -115,6 +116,77 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void UpdateFileHistory()
+        {
+            this.miRecentFiles.BeginInit();
+            this.miRecentFiles.Items.Clear();
+
+            foreach(string strFileName in Properties.Settings.Default.LastOpenFiles)
+            {
+                FileInfo fi = new FileInfo( strFileName );
+
+                MenuItem mi = new MenuItem
+                {
+                    Header = fi.Name,
+                    Foreground = fi.Exists == false ? Brushes.Red : SystemColors.MenuTextBrush,
+                    IsEnabled = fi.Exists,
+                    Tag = fi.FullName,
+                    Icon = FindResource( "OPEN" ),
+                    ToolTip = fi.FullName
+                };
+                mi.Click += MenuItem_FileHistory_Click;
+
+                this.miRecentFiles.Items.Add( mi );
+            }
+
+            this.miRecentFiles.EndInit();
+        }
+
+
+        /// <summary>
+        /// Adds the file history.
+        /// </summary>
+        /// <param name="strFilename">The string filename.</param>
+        private void AddFileHistory( string strFilename )
+        {
+            StringCollection sc = Properties.Settings.Default.LastOpenFiles;
+
+            //switch(fh)
+            //{
+            //    case FileHistory.MainFile:
+            //        sc = Properties.Settings.Default.LastOpenFiles;
+            //        break;
+
+            //    case FileHistory.TemplateFile:
+            //        sc = Properties.Settings.Default.LastOpenTemplates;
+            //        break;
+
+            //    case FileHistory.StyleFile:
+            //        sc = Properties.Settings.Default.LastOpenStyles;
+            //        break;
+            //}
+
+            if(sc.Contains( strFilename ) == true)
+            {
+                sc.Remove( strFilename );
+            }
+
+            sc.Insert( 0, strFilename );
+
+            if(sc.Count > Properties.Settings.Default.MaxLastItems)
+            {
+                sc.RemoveAt( Properties.Settings.Default.MaxLastItems );
+            }
+
+            UpdateFileHistory();
+
+            // Die geänderten Einstellungen müssen jedesmal von Hand gespeichert werden, dies übernimmt der Framwork nicht automatisch ...
+            Properties.Settings.Default.Save();
+        }
 
 
         /// <summary>
@@ -341,12 +413,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if(this.mrDALF != null)
             {
-
                 if(this.mcMapControl.Markers.Contains( this.mrDALF ))
                 {
                     this.mcMapControl.Markers.Remove( this.mrDALF );
 
                 }
+
                 this.mrDALF = null;
             }
 

@@ -2,6 +2,16 @@
 
 <br/>
 
+## Version 18 - Month 2019 Release
+
+### Features (1)
+
+Issue|Description
+-:|-
+[36](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/36)|Create An Settings Dialog
+
+<br/>
+
 ## Version 17 - Dezember 2018 Release
 
 ### Features (1)

@@ -190,6 +190,26 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
                 FirePropertyChanged();
             }
         }
+
+        public System.Collections.Specialized.StringCollection LastOpenFiles
+        {
+            get { return this.properties.LastOpenFiles; }
+            set
+            {
+                this.properties.LastOpenFiles = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public System.Int32 MaxLastItems
+        {
+            get { return this.properties.MaxLastItems; }
+            set
+            {
+                this.properties.MaxLastItems = value;
+                FirePropertyChanged();
+            }
+        }
     
     } // end internal sealed class GeneralSettingsViewModel
 }

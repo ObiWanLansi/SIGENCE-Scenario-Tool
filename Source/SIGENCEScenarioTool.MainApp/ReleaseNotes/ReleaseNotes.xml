@@ -17,7 +17,16 @@
     </Version>
     -->
 
-    
+    <Version Version="18" Title="Month 2019 Release">
+        <Features>
+            <Issue Id="36" Description="Create An Settings Dialog" />
+        </Features>
+        <Features>
+            <Issue Id="161" Description="Remind The Last Opened Files" />
+        </Features>
+    </Version>
+
+
     <Version Version="17" Title="Dezember 2018 Release">
         <Features>
             <Issue Id="168" Description="Mark Two Points In The Map And Create Devices Between Them" />

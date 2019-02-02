@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
@@ -66,6 +67,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
+            if(Properties.Settings.Default.LastOpenFiles == null)
+            {
+                Properties.Settings.Default.LastOpenFiles = new StringCollection();
+            }
+
+            //-----------------------------------------------------------------
+
             InitMapControl();
             InitMapProvider();
             InitCommands();
@@ -76,6 +84,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             SetTitle();
             UpdateScenarioDescription();
+            UpdateFileHistory();
 
             //-----------------------------------------------------------------
 

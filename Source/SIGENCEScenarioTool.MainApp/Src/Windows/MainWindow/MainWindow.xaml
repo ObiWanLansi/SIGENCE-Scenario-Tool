@@ -80,6 +80,7 @@
                 <MenuItem Header="_New File" Icon="{StaticResource NEW}" Command="{x:Static ApplicationCommands.New}" />
                 <Separator />
                 <MenuItem Header="_Open File" Icon="{StaticResource OPEN}" Command="{x:Static ApplicationCommands.Open}" />
+                <MenuItem Header="Recent Files" x:Name="miRecentFiles" Icon="{StaticResource OPEN}" />
                 <Separator />
                 <MenuItem Header="_Save File" Icon="{StaticResource SAVE}" Command="{x:Static ApplicationCommands.Save}" />
                 <MenuItem Header="_Save File As" Icon="{StaticResource SAVEAS}" Command="{x:Static ApplicationCommands.SaveAs}" />

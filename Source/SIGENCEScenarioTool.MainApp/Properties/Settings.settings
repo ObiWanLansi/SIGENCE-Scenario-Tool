@@ -53,5 +53,11 @@
     <Setting Name="DensifyInMeters" Type="System.Single" Scope="User">
       <Value Profile="(Default)">500</Value>
     </Setting>
+    <Setting Name="LastOpenFiles" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MaxLastItems" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

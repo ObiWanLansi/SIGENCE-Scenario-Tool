@@ -226,5 +226,28 @@ namespace SIGENCEScenarioTool.Properties {
                 this["DensifyInMeters"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection LastOpenFiles {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["LastOpenFiles"]));
+            }
+            set {
+                this["LastOpenFiles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int MaxLastItems {
+            get {
+                return ((int)(this["MaxLastItems"]));
+            }
+            set {
+                this["MaxLastItems"] = value;
+            }
+        }
     }
 }
