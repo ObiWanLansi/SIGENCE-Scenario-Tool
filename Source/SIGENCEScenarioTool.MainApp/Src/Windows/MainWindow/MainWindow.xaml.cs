@@ -211,6 +211,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 #else
             this.mMainMenu.Items.Remove(this.miTest);
             this.tcTabControl.Items.Remove(this.tiGeoNodes);
+            this.tcTabControl.Items.Remove(this.tiMetaInformation);
 #endif
         }
 
