@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public double DirectionAngle
         {
-            get { return dDirectionAngle; }
+            get { return this.dDirectionAngle; }
             set
             {
                 this.dDirectionAngle = value;
@@ -42,10 +42,10 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="mcMapControl">The mc map control.</param>
         /// <param name="mmMarker">The mm marker.</param>
         /// <param name="strToolTip">The tooltip.</param>
-        public RectangleMarker( GMapControl mcMapControl , GMapMarker mmMarker , string strToolTip ) :
-            base( mcMapControl , mmMarker , strToolTip )
+        public RectangleMarker( GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip ) :
+            base( mcMapControl, mmMarker, strToolTip )
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             this.DataContext = this;
         }

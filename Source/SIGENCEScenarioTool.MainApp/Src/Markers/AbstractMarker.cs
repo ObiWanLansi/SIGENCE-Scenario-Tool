@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
+
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
@@ -53,7 +54,7 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="strPropertyName">Name of the string property.</param>
         protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
         {
-            PropertyChanged?.Invoke( this , new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( strPropertyName ) );
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -64,7 +65,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="pll">The PLL.</param>
-        public delegate void PositionChangedHandler( object sender , PointLatLng pll );
+        public delegate void PositionChangedHandler( object sender, PointLatLng pll );
 
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="bIsSelected">if set to <c>true</c> [b is selected].</param>
-        public delegate void SelectionChangedHandler( object sender , bool bIsSelected );
+        public delegate void SelectionChangedHandler( object sender, bool bIsSelected );
 
         /// <summary>
         /// Occurs when [on selection changed].
@@ -96,8 +97,8 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public string MarkerToolTip
         {
-            get { return label.Content as string; }
-            set { label.Content = value; }
+            get { return this.label.Content as string; }
+            set { this.label.Content = value; }
         }
 
 
@@ -114,13 +115,13 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public bool IsSelected
         {
-            get { return bIsSelected; }
+            get { return this.bIsSelected; }
             set
             {
-                bIsSelected = value;
+                this.bIsSelected = value;
 
-                Stroke = bIsSelected ? Brushes.Blue : Brushes.Black;
-                StrokeThickness = bIsSelected ? 4 : 1;
+                this.Stroke = this.bIsSelected ? Brushes.Blue : Brushes.Black;
+                this.StrokeThickness = this.bIsSelected ? 4 : 1;
 
                 FirePropertyChanged();
             }
@@ -140,10 +141,10 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public Brush Stroke
         {
-            get { return bStroke; }
+            get { return this.bStroke; }
             set
             {
-                bStroke = value;
+                this.bStroke = value;
                 FirePropertyChanged();
             }
         }
@@ -162,10 +163,10 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public double StrokeThickness
         {
-            get { return dStrokeThickness; }
+            get { return this.dStrokeThickness; }
             set
             {
-                dStrokeThickness = value;
+                this.dStrokeThickness = value;
                 FirePropertyChanged();
             }
         }
@@ -179,40 +180,40 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="mcMapControl">The mc map control.</param>
         /// <param name="mmMarker">The mm marker.</param>
         /// <param name="strToolTip">The string tool tip.</param>
-        protected AbstractMarker( GMapControl mcMapControl , GMapMarker mmMarker , string strToolTip )
+        protected AbstractMarker( GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip )
         {
             this.DataContext = this;
             this.mcMapControl = mcMapControl;
             this.mmMarker = mmMarker;
 
-            label = new Label
+            this.label = new Label
             {
                 //Background = Brushes.Yellow,
                 //Foreground = Brushes.Black,
-                Background = SystemColors.InfoBrush ,
-                Foreground = SystemColors.InfoTextBrush ,
-                BorderBrush = Brushes.Black ,
-                BorderThickness = new Thickness( 2 ) ,
-                Padding = new Thickness( 3 ) ,
-                FontSize = 12 ,
-                FontFamily = new FontFamily( "Courier New" ) ,
+                Background = SystemColors.InfoBrush,
+                Foreground = SystemColors.InfoTextBrush,
+                BorderBrush = Brushes.Black,
+                BorderThickness = new Thickness( 2 ),
+                Padding = new Thickness( 3 ),
+                FontSize = 12,
+                FontFamily = new FontFamily( "Courier New" ),
                 Content = strToolTip
             };
 
-            popup = new Popup
+            this.popup = new Popup
             {
-                Placement = PlacementMode.Mouse ,
+                Placement = PlacementMode.Mouse,
                 Child = label
             };
 
-            Cursor = Cursors.Hand;
+            this.Cursor = Cursors.Hand;
 
-            this.MouseMove += MarkerControl_MouseMove;
-            this.MouseLeftButtonUp += MarkerControl_MouseLeftButtonUp;
-            this.MouseLeftButtonDown += MarkerControl_MouseLeftButtonDown;
+            MouseMove += MarkerControl_MouseMove;
+            MouseLeftButtonUp += MarkerControl_MouseLeftButtonUp;
+            MouseLeftButtonDown += MarkerControl_MouseLeftButtonDown;
 
-            this.MouseEnter += MarkerControl_MouseEnter;
-            this.MouseLeave += MarkerControl_MouseLeave;
+            MouseEnter += MarkerControl_MouseEnter;
+            MouseLeave += MarkerControl_MouseLeave;
         }
 
 
@@ -221,17 +222,17 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseMove( object sender , MouseEventArgs e )
+        private void MarkerControl_MouseMove( object sender, MouseEventArgs e )
         {
-            if( e.LeftButton == MouseButtonState.Pressed && IsMouseCaptured )
+            if(e.LeftButton == MouseButtonState.Pressed && this.IsMouseCaptured)
             {
-                Point p = e.GetPosition( mcMapControl );
+                Point p = e.GetPosition( this.mcMapControl );
 
-                PointLatLng pll = mcMapControl.FromLocalToLatLng( ( int ) p.X , ( int ) p.Y );
+                PointLatLng pll = this.mcMapControl.FromLocalToLatLng( (int)p.X, (int)p.Y );
 
-                mmMarker.Position = pll;
+                this.mmMarker.Position = pll;
 
-                OnPositionChanged?.Invoke( this , pll );
+                OnPositionChanged?.Invoke( this, pll );
 
                 e.Handled = true;
             }
@@ -243,19 +244,19 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseLeftButtonDown( object sender , MouseButtonEventArgs e )
+        private void MarkerControl_MouseLeftButtonDown( object sender, MouseButtonEventArgs e )
         {
-            if( mcMapControl.DragButton == MouseButton.Left )
+            if(this.mcMapControl.DragButton == MouseButton.Left)
             {
-                IsSelected = !IsSelected;
+                this.IsSelected = !this.IsSelected;
 
-                OnSelectionChanged?.Invoke( this , bIsSelected );
+                OnSelectionChanged?.Invoke( this, this.bIsSelected );
 
                 e.Handled = true;
                 return;
             }
 
-            if( !IsMouseCaptured )
+            if(!this.IsMouseCaptured)
             {
                 Mouse.Capture( this );
                 e.Handled = true;
@@ -268,9 +269,9 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseLeftButtonUp( object sender , MouseButtonEventArgs e )
+        private void MarkerControl_MouseLeftButtonUp( object sender, MouseButtonEventArgs e )
         {
-            if( IsMouseCaptured )
+            if(this.IsMouseCaptured)
             {
                 Mouse.Capture( null );
 
@@ -286,10 +287,10 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseLeave( object sender , MouseEventArgs e )
+        private void MarkerControl_MouseLeave( object sender, MouseEventArgs e )
         {
-            mmMarker.ZIndex -= 10000;
-            popup.IsOpen = false;
+            this.mmMarker.ZIndex -= 10000;
+            this.popup.IsOpen = false;
 
             e.Handled = true;
         }
@@ -300,10 +301,10 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseEnter( object sender , MouseEventArgs e )
+        private void MarkerControl_MouseEnter( object sender, MouseEventArgs e )
         {
-            mmMarker.ZIndex += 10000;
-            popup.IsOpen = true;
+            this.mmMarker.ZIndex += 10000;
+            this.popup.IsOpen = true;
 
             e.Handled = true;
         }

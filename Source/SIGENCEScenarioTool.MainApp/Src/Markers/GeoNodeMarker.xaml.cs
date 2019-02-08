@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
+
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Extensions;
 
@@ -30,24 +31,24 @@ namespace SIGENCEScenarioTool.Markers
         {
             InitializeComponent();
 
-            popup = new Popup
+            this.popup = new Popup
             {
-                Placement = PlacementMode.Mouse ,
+                Placement = PlacementMode.Mouse,
                 Child = new Label
                 {
-                    Background = Brushes.Yellow ,
-                    Foreground = Brushes.Black ,
-                    BorderBrush = Brushes.Black ,
-                    BorderThickness = new Thickness( 2 ) ,
-                    Padding = new Thickness( 3 ) ,
-                    FontSize = 14 ,
-                    FontFamily = new FontFamily( "Courier New" ) ,
+                    Background = Brushes.Yellow,
+                    Foreground = Brushes.Black,
+                    BorderBrush = Brushes.Black,
+                    BorderThickness = new Thickness( 2 ),
+                    Padding = new Thickness( 3 ),
+                    FontSize = 14,
+                    FontFamily = new FontFamily( "Courier New" ),
                     Content = $"[{gn.Tag}/{gn.Value}]: {(gn.Name.IsNotEmpty() ? gn.Name : "Unknown")}"
                 }
             };
 
-            this.MouseEnter += MarkerControl_MouseEnter;
-            this.MouseLeave += MarkerControl_MouseLeave;
+            MouseEnter += MarkerControl_MouseEnter;
+            MouseLeave += MarkerControl_MouseLeave;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -58,9 +59,9 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseLeave( object sender , MouseEventArgs e )
+        private void MarkerControl_MouseLeave( object sender, MouseEventArgs e )
         {
-            popup.IsOpen = false;
+            this.popup.IsOpen = false;
 
             e.Handled = true;
         }
@@ -71,9 +72,9 @@ namespace SIGENCEScenarioTool.Markers
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
-        private void MarkerControl_MouseEnter( object sender , MouseEventArgs e )
+        private void MarkerControl_MouseEnter( object sender, MouseEventArgs e )
         {
-            popup.IsOpen = true;
+            this.popup.IsOpen = true;
 
             e.Handled = true;
         }

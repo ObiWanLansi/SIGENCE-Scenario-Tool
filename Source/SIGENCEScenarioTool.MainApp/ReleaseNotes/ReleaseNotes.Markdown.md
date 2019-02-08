@@ -8,7 +8,7 @@
 
 Issue|Description
 -:|-
-[36](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/36)|Create An Settings Dialog
+[170](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/170)|Correct The Roll, Pitch And Yaw Display On The Map
 
 <br/>
 

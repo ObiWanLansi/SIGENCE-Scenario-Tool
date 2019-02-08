@@ -851,14 +851,17 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private void UpdateDirectionAngle()
         {
+            // Remark: In the Simulation the Angle 0 starts at 3'Clock ...
+            const int iAngleCorrection = 90;
+
             if(this.Marker.Shape is RectangleMarker rm)
             {
-                rm.DirectionAngle = this.Yaw;
+                rm.DirectionAngle = this.Yaw + iAngleCorrection;
             }
 
             if(this.Marker.Shape is TriangleMarker tm)
             {
-                tm.DirectionAngle = this.Yaw;
+                tm.DirectionAngle = this.Yaw + iAngleCorrection;
             }
         }
 

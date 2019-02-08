@@ -19,6 +19,9 @@
 
     <Version Version="18" Title="Month 2019 Release">
         <Features>
+            <Issue Id="170" Description="Correct The Roll, Pitch And Yaw Display On The Map" />
+        </Features>
+        <Features>
             <Issue Id="36" Description="Create An Settings Dialog" />
         </Features>
         <Features>
