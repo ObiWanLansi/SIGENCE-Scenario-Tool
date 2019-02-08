@@ -20,6 +20,7 @@ using NetTopologySuite.Geometries;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs.Scripting;
 using SIGENCEScenarioTool.Dialogs.Settings;
+using SIGENCEScenarioTool.Dialogs.Simulation;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
@@ -304,19 +305,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void OpenSettings()
         {
             SettingsDialog dlg = new SettingsDialog();
-
             dlg.ShowDialog();
-
-            //if(dlg.ShowDialog() == true)
-            //{
-            //    //MB.Information("Saving The Settings ...");
-            //}
-            //else
-            //{
-            //    //MB.Warning("Not Saving The Settings ...");
-            //}
-
             dlg = null;
+        }
+
+
+        /// <summary>
+        /// Scenarioes the simulation player.
+        /// </summary>
+        private void ScenarioSimulationPlayer()
+        {
+            SimulationDialog sd = new SimulationDialog( this.RFDeviceViewModelCollection );
+            sd.ShowDialog();
+            sd = null;
         }
 
 
@@ -390,7 +391,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="strMapProvider">The string map provider.</param>
         /// <returns></returns>
-        private static GMapProvider GetProviderFromString( string strMapProvider )
+        public static GMapProvider GetProviderFromString( string strMapProvider )
         {
             foreach(var mp in GMapProviders.List)
             {

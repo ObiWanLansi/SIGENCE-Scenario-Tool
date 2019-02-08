@@ -145,7 +145,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            //CreateRandomizedRFDevices( 100, true );
+            CreateRandomizedRFDevices( 100, true );
 
             //AddRFDevice( new RFDevice { PrimaryKey = Guid.Empty, Id = -1, Latitude = 1974, Longitude = 1974, StartTime = -1974 } );
 

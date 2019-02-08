@@ -485,6 +485,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Handles the Click event of the MenuItem_ScenarioSimulationPlayer control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_ScenarioSimulationPlayer_Click( object sender, RoutedEventArgs e )
+        {
+            ScenarioSimulationPlayer();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
         /// Handles the Click event of the MenuItem_CreateSomeRandomizedRFDevices_Click control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -508,6 +521,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             e.Handled = true;
         }
+
 
         /// <summary>
         /// Handles the Click event of the MenuItem_OpenIssues control.

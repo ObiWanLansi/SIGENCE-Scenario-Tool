@@ -231,6 +231,9 @@
     <Compile Include="Src\Dialogs\Settings\SettingsDialog.xaml.cs">
       <DependentUpon>SettingsDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Dialogs\Simulation\SimulationDialog.xaml.cs">
+      <DependentUpon>SimulationDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Markers\AbstractMarker.cs" />
     <Compile Include="Src\Markers\DiamondMarker.xaml.cs">
       <DependentUpon>DiamondMarker.xaml</DependentUpon>
@@ -282,6 +285,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Src\Dialogs\Settings\SettingsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Src\Dialogs\Simulation\SimulationDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
