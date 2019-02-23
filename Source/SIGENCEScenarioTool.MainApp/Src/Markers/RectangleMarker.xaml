@@ -10,7 +10,7 @@
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <!--<RotateTransform x:Name="DirectionAngle" Angle="67" />-->
-                    <RotateTransform Angle="{Binding DirectionAngle}" />
+                    <RotateTransform Angle="{Binding Yaw}" />
                 </TransformGroup>
             </Polygon.RenderTransform>
             <Polygon.Points>

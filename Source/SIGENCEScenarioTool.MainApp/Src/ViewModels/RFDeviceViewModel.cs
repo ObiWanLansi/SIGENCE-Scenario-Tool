@@ -254,7 +254,7 @@ namespace SIGENCEScenarioTool.ViewModels
             {
                 this.RFDevice.Yaw = value;
 
-                UpdateDirectionAngle();
+                UpdateYaw();
                 FirePropertyChanged();
             }
         }
@@ -824,7 +824,7 @@ namespace SIGENCEScenarioTool.ViewModels
             this.Marker.Shape = marker;
 
             // Das können wir direkt mal aktualisieren da es ja noch nicht gesetzt wurde ...
-            UpdateDirectionAngle();
+            UpdateYaw();
         }
 
 
@@ -849,19 +849,19 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <summary>
         /// Updates the direction angle.
         /// </summary>
-        private void UpdateDirectionAngle()
+        private void UpdateYaw()
         {
             // Remark: In the Simulation the Angle 0 starts at 3'Clock ...
-            const int iAngleCorrection = 90;
+            const int iYawCorrection = 90;
 
             if(this.Marker.Shape is RectangleMarker rm)
             {
-                rm.DirectionAngle = this.Yaw + iAngleCorrection;
+                rm.Yaw = this.Yaw + iYawCorrection;
             }
 
             if(this.Marker.Shape is TriangleMarker tm)
             {
-                tm.DirectionAngle = this.Yaw + iAngleCorrection;
+                tm.Yaw = this.Yaw + iYawCorrection;
             }
         }
 

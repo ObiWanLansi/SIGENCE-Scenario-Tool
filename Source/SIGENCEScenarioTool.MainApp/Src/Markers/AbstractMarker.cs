@@ -173,6 +173,11 @@ namespace SIGENCEScenarioTool.Markers
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+#if DEBUG
+        public AbstractMarker()
+        {
+        }
+#endif
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractMarker" /> class.

@@ -12,22 +12,22 @@ namespace SIGENCEScenarioTool.Markers
     public partial class RectangleMarker
     {
         /// <summary>
-        /// The d direction angle
+        /// The d yaw
         /// </summary>
-        private double dDirectionAngle = 0;
+        private double dYaw = 0;
 
         /// <summary>
-        /// Gets or sets the direction angle.
+        /// Gets or sets the yaw.
         /// </summary>
         /// <value>
-        /// The direction angle.
+        /// The yaw.
         /// </value>
-        public double DirectionAngle
+        public double Yaw
         {
-            get { return this.dDirectionAngle; }
+            get { return this.dYaw; }
             set
             {
-                this.dDirectionAngle = value;
+                this.dYaw = value;
 
                 FirePropertyChanged();
             }
