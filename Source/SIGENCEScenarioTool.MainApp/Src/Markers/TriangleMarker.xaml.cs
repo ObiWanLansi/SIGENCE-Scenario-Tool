@@ -33,6 +33,29 @@ namespace SIGENCEScenarioTool.Markers
             }
         }
 
+
+        /// <summary>
+        /// The d pitch
+        /// </summary>
+        private double dPitch = 0;
+
+        /// <summary>
+        /// Gets or sets the pitch.
+        /// </summary>
+        /// <value>
+        /// The pitch.
+        /// </value>
+        public double Pitch
+        {
+            get { return this.dPitch; }
+            set
+            {
+                this.dPitch = value;
+
+                FirePropertyChanged();
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

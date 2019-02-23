@@ -16,6 +16,8 @@ using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Tools;
 
+
+
 namespace SIGENCEScenarioTool.ViewModels
 {
     /// <summary>
@@ -236,6 +238,7 @@ namespace SIGENCEScenarioTool.ViewModels
             {
                 this.RFDevice.Pitch = value;
 
+                UpdatePitch();
                 FirePropertyChanged();
             }
         }
@@ -825,6 +828,7 @@ namespace SIGENCEScenarioTool.ViewModels
 
             // Das können wir direkt mal aktualisieren da es ja noch nicht gesetzt wurde ...
             UpdateYaw();
+            UpdatePitch();
         }
 
 
@@ -847,7 +851,7 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
-        /// Updates the direction angle.
+        /// Updates the yaw.
         /// </summary>
         private void UpdateYaw()
         {
@@ -864,6 +868,24 @@ namespace SIGENCEScenarioTool.ViewModels
                 tm.Yaw = this.Yaw + iYawCorrection;
             }
         }
+
+
+        /// <summary>
+        /// Updates the pitch.
+        /// </summary>
+        private void UpdatePitch()
+        {
+            if(this.Marker.Shape is RectangleMarker rm)
+            {
+                rm.Pitch = this.Pitch;
+            }
+
+            if(this.Marker.Shape is TriangleMarker tm)
+            {
+                tm.Pitch = this.Pitch;
+            }
+        }
+
 
         /// <summary>
         /// Determines whether the specified b is filtered is filtered.

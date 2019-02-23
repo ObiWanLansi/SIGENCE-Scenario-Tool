@@ -6,10 +6,9 @@
         <Line X1="0" Y1="48" X2="48" Y2="0" Stroke="Black" />
         <Rectangle Width="48" Height="48" Stroke="{Binding Stroke}" StrokeThickness="{Binding StrokeThickness}" />
 
-        <Polygon x:Name="DirectionArrow" Fill="Red" Height="48" Width="48" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="0.5">
+        <Polygon Fill="Red" Height="48" Width="48" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
-                    <!--<RotateTransform x:Name="DirectionAngle" Angle="67" />-->
                     <RotateTransform Angle="{Binding Yaw}" />
                 </TransformGroup>
             </Polygon.RenderTransform>
@@ -19,6 +18,21 @@
                 <Point X="27" Y="7" />
             </Polygon.Points>
         </Polygon>
+
+        <Polygon Fill="Cyan" Height="48" Width="48" RenderTransformOrigin="0.5,0.5" Stroke="Blue" StrokeThickness="0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="{Binding Pitch}" />
+                    <!--<RotateTransform Angle="45" />-->
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Points>
+                <Point X="21" Y="17" />
+                <Point X="24" Y="10" />
+                <Point X="27" Y="17" />
+            </Polygon.Points>
+        </Polygon>
+        <!--<Ellipse Canvas.Left="12" Canvas.Top="12" Width="24" Height="24" StrokeThickness="0.25" Stroke="Blue" />-->
 
     </Canvas>
 </marker:AbstractMarker>

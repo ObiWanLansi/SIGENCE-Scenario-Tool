@@ -84,14 +84,14 @@ namespace SIGENCEScenarioTool.Models
                 vrl.Add( Servity.Warning, "The Roll Is Not In The Normal Range (-360/360)!", this, "Roll", this.Roll );
             }
 
-            if(this.Pitch < -360 || this.Pitch > 360)
+            if(this.Pitch < -90 || this.Pitch > 90)
             {
-                vrl.Add( Servity.Warning, "The Pitch Is Not In The Normal Range (-360/360)!", this, "Pitch", this.Pitch );
+                vrl.Add( Servity.Warning, "The Pitch Is Not In The Normal Range (-90/90)!", this, "Pitch", this.Pitch );
             }
 
-            if(this.Yaw < -360 || this.Yaw > 360)
+            if(this.Yaw < -180 || this.Yaw > 180)
             {
-                vrl.Add( Servity.Warning, "The Yaw Is Not In The Normal Range (-360/360)!", this, "Yaw", this.Yaw );
+                vrl.Add( Servity.Warning, "The Yaw Is Not In The Normal Range (-180/180)!", this, "Yaw", this.Yaw );
             }
 
             //-----------------------------------------------------------------

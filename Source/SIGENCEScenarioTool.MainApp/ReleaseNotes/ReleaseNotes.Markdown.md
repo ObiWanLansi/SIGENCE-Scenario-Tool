@@ -2,13 +2,16 @@
 
 <br/>
 
-## Version 18 - Month 2019 Release
+## Version 18 - [Month] 2019 Release
 
-### Features (1)
+### Features (4)
 
 Issue|Description
 -:|-
+[36](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/36)|Create An Settings Dialog
+[161](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/161)|Remind The Last Opened Files
 [170](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/170)|Correct The Roll, Pitch And Yaw Display On The Map
+[175](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/175)|Display The Pitch Angle From An RFDevice On The Map
 
 <br/>
 
