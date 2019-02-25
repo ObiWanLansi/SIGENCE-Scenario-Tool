@@ -15,12 +15,12 @@ namespace SIGENCEScenarioTool.Tools
     /// <summary>
     /// Eine Klasse zum auslesen von statischen Ressourcen direkt aus einem Assembly.
     /// </summary>
-    static public class ApplicationResource
+    public static class ApplicationResource
     {
         /// <summary>
         /// a
         /// </summary>
-        static private Assembly a = Assembly.GetEntryAssembly();
+        private static Assembly a = Assembly.GetEntryAssembly();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ namespace SIGENCEScenarioTool.Tools
         /// The assembly.
         /// </value>
         /// <exception cref="ArgumentNullException"></exception>
-        static public Assembly Assembly
+        public static Assembly Assembly
         {
             get { return a; }
             set
@@ -53,7 +53,7 @@ namespace SIGENCEScenarioTool.Tools
         /// Gets the embedded resourcen names.
         /// </summary>
         /// <returns></returns>
-        static public string[] GetEmbeddedResourcenNames() => a.GetManifestResourceNames();
+        public static string[] GetEmbeddedResourcenNames() => a.GetManifestResourceNames();
 
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace SIGENCEScenarioTool.Tools
         /// <returns>
         ///   <c>true</c> if [contains] [the specified string resource name]; otherwise, <c>false</c>.
         /// </returns>
-        static public bool Contains( string strResourceName ) => a.GetManifestResourceNames().Any( strName => strName.EqualsIgnoreCase( strResourceName ) == true );
+        public static bool Contains( string strResourceName ) => a.GetManifestResourceNames().Any( strName => strName.EqualsIgnoreCase( strResourceName ) == true );
 
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strResourceName">Name of the string resource.</param>
         /// <returns></returns>
-        static public byte[] ReadResourceAsByteArray( string strResourceName )
+        public static byte[] ReadResourceAsByteArray( string strResourceName )
         {
             using(Stream s = a.GetManifestResourceStream( strResourceName ))
             {
@@ -92,7 +92,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strResourceName">Name of the string resource.</param>
         /// <returns></returns>
-        static public XDocument ReadResourceAsXDocument( string strResourceName )
+        public static XDocument ReadResourceAsXDocument( string strResourceName )
         {
             using(Stream s = a.GetManifestResourceStream( strResourceName ))
             {
@@ -106,7 +106,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strResourceName">Name of the string resource.</param>
         /// <returns></returns>
-        static public string ReadResourceAsString( string strResourceName )
+        public static string ReadResourceAsString( string strResourceName )
         {
             using(Stream s = a.GetManifestResourceStream( strResourceName ))
             {

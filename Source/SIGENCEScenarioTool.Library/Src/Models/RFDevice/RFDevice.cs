@@ -880,7 +880,7 @@ namespace SIGENCEScenarioTool.Models
         /// </summary>
         /// <param name="eRoot">The e root.</param>
         /// <returns></returns>
-        static public RFDevice FromXml(XElement eRoot)
+        public static RFDevice FromXml(XElement eRoot)
         {
             XElement eChild = null;
 

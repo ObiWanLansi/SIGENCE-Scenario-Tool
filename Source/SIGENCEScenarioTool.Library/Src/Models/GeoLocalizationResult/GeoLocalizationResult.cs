@@ -16,7 +16,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent The Geo Localization Result Of A RFDevice.
     ///</summary>
-    sealed public class GeoLocalizationResult : AbstractModelBase, IEquatable<GeoLocalizationResult>, ICloneable, IXmlExport
+    public sealed class GeoLocalizationResult : AbstractModelBase, IEquatable<GeoLocalizationResult>, ICloneable, IXmlExport
     {
 
         #region Instance Properties

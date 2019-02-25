@@ -38,7 +38,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_ChartingTest_Click( object sender, RoutedEventArgs e )
+        private void MenuItem_ChartingTest_Click( object sender , RoutedEventArgs e )
         {
             ChartingDialog cw = new ChartingDialog( new RFDeviceList( from device in this.RFDeviceViewModelCollection select device.RFDevice ) );
             cw.ShowDialog();
@@ -173,7 +173,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         [Conditional( "DEBUG" )]
         private void CreateScenarioReport()
         {
-            if(string.IsNullOrEmpty( this.CurrentFile ))
+            if( string.IsNullOrEmpty( this.CurrentFile ) )
             {
                 MB.Information( "The scenario has not been saved yet.\nSave it first and then try again." );
                 return;
@@ -191,13 +191,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            sb.AppendFormat( "<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension() );
+            sb.AppendFormat( "<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>" , fiCurrentFile.GetFilenameWithoutExtension() );
 
             sb.Append( "<hr />" );
 
             //-----------------------------------------------------------------
 
-            if(string.IsNullOrEmpty( this.ScenarioDescription ) == false)
+            if( string.IsNullOrEmpty( this.ScenarioDescription ) == false )
             {
                 sb.Append( this.ScenarioDescription );
             }
@@ -218,7 +218,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             sb.Append( "</body></html> " );
 
-            File.WriteAllText( strOutputFilename, sb.ToString(), Encoding.Default );
+            File.WriteAllText( strOutputFilename , sb.ToString() , Encoding.Default );
 
             Tools.Windows.OpenWithDefaultApplication( strOutputFilename );
 
@@ -236,9 +236,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             List<GMapMarker> lDelete = new List<GMapMarker>();
 
-            foreach(GMapMarker mm in this.mcMapControl.Markers)
+            foreach( GMapMarker mm in this.mcMapControl.Markers )
             {
-                if(mm.Tag is Highway)
+                if( mm.Tag is Highway )
                 {
                     lDelete.Add( mm );
                 }
@@ -270,7 +270,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 DataSource = strFilename
             };
 
-            using(SQLiteConnection dbConnection = new SQLiteConnection( csbDatabase.ConnectionString ))
+            using( SQLiteConnection dbConnection = new SQLiteConnection( csbDatabase.ConnectionString ) )
             {
                 dbConnection.Open();
 
@@ -284,39 +284,36 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStart = DateTime.Now;
 
-                    using(SQLiteCommand dbSelectCommand = new SQLiteCommand( strSelectStatement, dbConnection ))
+                    using( SQLiteCommand dbSelectCommand = new SQLiteCommand( strSelectStatement , dbConnection ) )
                     {
-                        using(SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader())
+                        using( SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader() )
                         {
-                            while(dbResult.Read())
+                            while( dbResult.Read() )
                             {
                                 Highway type = Highway.Unknown;
 
                                 try
                                 {
-                                    type = (Highway)Enum.Parse( typeof( Highway ), dbResult.GetString( 0 ), true );
+                                    type = ( Highway ) Enum.Parse( typeof( Highway ) , dbResult.GetString( 0 ) , true );
                                 }
-                                catch(Exception ex)
+                                catch( Exception ex )
                                 {
                                     Debug.WriteLine( ex.Message );
                                 }
 
                                 string strRef = dbResult.GetStringOrNull( 1 );
                                 string strName = dbResult.GetStringOrNull( 2 );
-                                NTS.LineString way = (NTS.LineString)dbResult.GetGeometryFromWKB( 3 );
+                                NTS.LineString way = ( NTS.LineString ) dbResult.GetGeometryFromWKB( 3 );
 
-                                if(bb.Contains( way.Coordinate.ToPointLatLng() ))
+                                if( bb.Contains( way.Coordinate.ToPointLatLng() ) )
                                 {
                                     List<PointLatLng> list = new List<PointLatLng>( way.Count );
 
-                                    foreach(var pos in way.Coordinates)
-                                    {
-                                        list.Add( pos.ToPointLatLng() );
-                                    }
+                                    list.AddRange( way.Coordinates.Select( pos => pos.ToPointLatLng() ) );
 
                                     this.Dispatcher.Invoke( () =>
                                      {
-                                         PathMarker mrWay = new PathMarker( this.mcMapControl, list, type, string.Format( "{0}{1}", strName.IsNotEmpty() ? strName : "Unknown", strRef.IsNotEmpty() ? string.Format( " ({0})", strRef ) : "" ) )
+                                         PathMarker mrWay = new PathMarker( this.mcMapControl , list , type , $"{( strName.IsNotEmpty() ? strName : "Unknown" )}{( strRef.IsNotEmpty() ? $" ({strRef})" : "" )}" )
                                          {
                                              Tag = type
                                          };
@@ -332,15 +329,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStop = DateTime.Now;
 
-                    MB.Information( "Load {0} Ways In {1}.", iCounter, (dtStop - dtStart).ToHHMMSSString() );
+                    MB.Information( "Load {0} Ways In {1}." , iCounter , ( dtStop - dtStart ).ToHHMMSSString() );
                 }
-                catch(Exception ex)
+                catch( Exception ex )
                 {
                     MB.Error( ex );
                 }
                 finally
                 {
-                    if(dbConnection.State == ConnectionState.Open)
+                    if( dbConnection.State == ConnectionState.Open )
                     {
                         dbConnection.Close();
                     }
@@ -354,7 +351,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_LoadStreets_Click( object sender, RoutedEventArgs e )
+        private void MenuItem_LoadStreets_Click( object sender , RoutedEventArgs e )
         {
             Task.Run( () => { LoadStreets(); } );
 
@@ -369,9 +366,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void DataGridGeoData_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+        private void DataGridGeoData_MouseDoubleClick( object sender , MouseButtonEventArgs e )
         {
-            GeoNode gn = (sender as DataGrid).SelectedItem as GeoNode;
+            GeoNode gn = ( sender as DataGrid ).SelectedItem as GeoNode;
 
             JumpToGeoNode( gn );
 
@@ -388,7 +385,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="pllBottomRight">The PLL bottom right.</param>
         /// <param name="bColor">Color of the b.</param>
         [Conditional( "DEBUG" )]
-        private void CreateHeatmap( PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor )
+        private void CreateHeatmap( PointLatLng pllTopLeft , PointLatLng pllBottomRight , Brush bColor )
         {
             List<PointLatLng> points = new List<PointLatLng>
             {
@@ -402,7 +399,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             mp.RegenerateShape( this.mcMapControl );
 
-            if(mp.Shape is System.Windows.Shapes.Path path)
+            if( mp.Shape is System.Windows.Shapes.Path path )
             {
                 path.Stroke = Brushes.Black;
                 path.StrokeThickness = 0.1;
@@ -428,16 +425,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             int iKachelHöhe = 16;
 
             Random r = new Random();
-            List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
+            List<Brush> colors = new List<Brush> { Brushes.White , Brushes.LightYellow , Brushes.Yellow , Brushes.Orange , Brushes.OrangeRed , Brushes.Red };
 
-            for(double x = pll.Lng - (iKachelBreite * dWidth) ; x < pll.Lng + (iKachelBreite * dWidth) ; x += dWidth)
+            for( double x = pll.Lng - ( iKachelBreite * dWidth ) ; x < pll.Lng + ( iKachelBreite * dWidth ) ; x += dWidth )
             {
-                for(double y = pll.Lat - (iKachelHöhe * dHeight) ; y < pll.Lat + (iKachelHöhe * dHeight) ; y += dHeight)
+                for( double y = pll.Lat - ( iKachelHöhe * dHeight ) ; y < pll.Lat + ( iKachelHöhe * dHeight ) ; y += dHeight )
                 {
-                    PointLatLng pllTopLeft = new PointLatLng( y, x );
-                    PointLatLng pllBottomRight = new PointLatLng( y + dHeight, x + dWidth );
+                    PointLatLng pllTopLeft = new PointLatLng( y , x );
+                    PointLatLng pllBottomRight = new PointLatLng( y + dHeight , x + dWidth );
 
-                    CreateHeatmap( pllTopLeft, pllBottomRight, r.NextObject( colors ) );
+                    CreateHeatmap( pllTopLeft , pllBottomRight , r.NextObject( colors ) );
                 }
             }
         }
@@ -449,12 +446,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="pllCenter">The PLL center.</param>
         /// <param name="bColor">Color of the b.</param>
         [Conditional( "DEBUG" )]
-        private void CreateHeatmap2( PointLatLng pllCenter, Brush bColor )
+        private void CreateHeatmap2( PointLatLng pllCenter , Brush bColor )
         {
             // Die Größe der Punkte sind in Pixel, dasm uss natürlich angepasst werden an die GeoKoordinaten, siehe GMap.NET.WindowsPresentation.GMapPolygon .
             GMapMarker marker = new GMapMarker( pllCenter )
             {
-                Shape = new System.Windows.Shapes.Ellipse { Width = 10, Height = 10, Fill = bColor }
+                Shape = new System.Windows.Shapes.Ellipse { Width = 10 , Height = 10 , Fill = bColor }
             };
 
             this.mcMapControl.Markers.Add( marker );
@@ -476,15 +473,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             const int iKachelHöhe = 8;
 
             Random r = new Random();
-            List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
+            List<Brush> colors = new List<Brush> { Brushes.White , Brushes.LightYellow , Brushes.Yellow , Brushes.Orange , Brushes.OrangeRed , Brushes.Red };
 
-            for(double x = pll.Lng - (iKachelBreite * dWidth) ; x < pll.Lng + (iKachelBreite * dWidth) ; x += dWidth)
+            for( double x = pll.Lng - ( iKachelBreite * dWidth ) ; x < pll.Lng + ( iKachelBreite * dWidth ) ; x += dWidth )
             {
-                for(double y = pll.Lat - (iKachelHöhe * dHeight) ; y < pll.Lat + (iKachelHöhe * dHeight) ; y += dHeight)
+                for( double y = pll.Lat - ( iKachelHöhe * dHeight ) ; y < pll.Lat + ( iKachelHöhe * dHeight ) ; y += dHeight )
                 {
-                    PointLatLng pllPos = new PointLatLng( y, x );
+                    PointLatLng pllPos = new PointLatLng( y , x );
 
-                    CreateHeatmap2( pllPos, r.NextObject( colors ) );
+                    CreateHeatmap2( pllPos , r.NextObject( colors ) );
                 }
             }
         }
@@ -495,7 +492,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_HeatmapTest_Click( object sender, RoutedEventArgs e )
+        private void MenuItem_HeatmapTest_Click( object sender , RoutedEventArgs e )
         {
             CreateHeatmap();
 

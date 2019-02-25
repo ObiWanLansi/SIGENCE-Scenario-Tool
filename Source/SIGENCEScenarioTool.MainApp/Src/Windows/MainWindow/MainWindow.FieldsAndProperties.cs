@@ -72,7 +72,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The empty template
         /// </summary>
-        private static readonly RFDeviceTemplate EMPTY_TEMPLATE = new RFDeviceTemplate( new RFDevice { PrimaryKey = Guid.Empty, Name = "Empty Device" } );
+        private static readonly RFDeviceTemplate EMPTY_TEMPLATE = new RFDeviceTemplate( new RFDevice { PrimaryKey = Guid.Empty , Name = "Empty Device" } );
 
         /// <summary>
         /// The b data grid in edit mode
@@ -418,7 +418,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lat; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( value, this.mcMapControl.Position.Lng );
+                this.mcMapControl.Position = new PointLatLng( value , this.mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -436,7 +436,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lng; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat, value );
+                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat , value );
 
                 FirePropertyChanged();
             }
@@ -808,10 +808,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.bStartedDALF; }
             set
             {
-                if(value == true)
+                if( value == true )
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if(StartDALF() == false)
+                    if( StartDALF() == false )
                     {
                         return;
                     }
@@ -853,7 +853,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.iIdFilter != null ? this.iIdFilter.ToString() : ""; }
             set
             {
-                if(string.IsNullOrEmpty( value ))
+                if( string.IsNullOrEmpty( value ) )
                 {
                     this.iIdFilter = null;
                 }
@@ -864,7 +864,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                         this.iIdFilter = int.Parse( value );
                     }
-                    catch(Exception)
+                    catch( Exception )
                     {
                         this.iIdFilter = null;
                     }

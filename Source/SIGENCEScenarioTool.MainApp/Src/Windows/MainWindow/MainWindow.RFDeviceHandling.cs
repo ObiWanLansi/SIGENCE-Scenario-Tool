@@ -267,7 +267,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if(strInputFilename.IsEmpty())
             {
-                throw new ArgumentException( "The input filename can not be empty!", "strInputFilename" );
+                throw new ArgumentException( "The input filename can not be empty!", nameof(strInputFilename) );
             }
 
             Excel.Application excel = new Excel.Application();
@@ -285,14 +285,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 if(iColumnCount < 17)
                 {
-                    throw new Exception( string.Format( "The Current Excel File Can Not Be Imported Because There Are Only {0} Columns!\nWe Need At Least 17 Columns For A Good Import.", iColumnCount ) );
+                    throw new Exception(
+                        $"The Current Excel File Can Not Be Imported Because There Are Only {iColumnCount} Columns!\nWe Need At Least 17 Columns For A Good Import.");
                 }
 
                 int iRowCount = range.Rows.Count;
 
                 if(iRowCount < 2)
                 {
-                    throw new Exception( string.Format( "The Current Excel File Can Not Be Imported Because There Are Only {0} Rows!\nWe Need At Least 2 Rows For A Good Import.", iRowCount ) );
+                    throw new Exception(
+                        $"The Current Excel File Can Not Be Imported Because There Are Only {iRowCount} Rows!\nWe Need At Least 2 Rows For A Good Import.");
                 }
 
                 RFDeviceList dlImportedDevices = new RFDeviceList();
@@ -1018,7 +1020,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if(rfdefvice == null)
             {
-                throw new ArgumentNullException( "rfdefvice" );
+                throw new ArgumentNullException( nameof(rfdefvice) );
             }
 
             //string strUrl = string.Format(new NumberFormatInfo { NumberDecimalSeparator = "." }, "https://www.google.de/maps/@{0},{1},500m/sensorset=!3m1!1e3", rfdefvice.Latitude, rfdefvice.Longitude);
