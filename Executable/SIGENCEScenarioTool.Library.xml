@@ -1111,11 +1111,6 @@
             The hs ignore types
             </summary>
         </member>
-        <member name="F:SIGENCEScenarioTool.Extensions.ListExtension.CULTUREINFO">
-            <summary>
-            The cultureinfo
-            </summary>
-        </member>
         <member name="M:SIGENCEScenarioTool.Extensions.ListExtension.SaveAsXml``1(System.Collections.Generic.List{``0},System.String)">
             <summary>
             Saves the list as XML.
