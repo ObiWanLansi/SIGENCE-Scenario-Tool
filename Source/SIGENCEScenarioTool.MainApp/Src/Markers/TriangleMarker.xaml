@@ -1,57 +1,52 @@
-﻿<marker:AbstractMarker x:Class="SIGENCEScenarioTool.Markers.TriangleMarker" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:marker="clr-namespace:SIGENCEScenarioTool.Markers" Height="48" Width="48">
+﻿<marker:AbstractMarker x:Class="SIGENCEScenarioTool.Markers.TriangleMarker" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:marker="clr-namespace:SIGENCEScenarioTool.Markers" Height="32" Width="32">
     <Canvas>
 
         <Polygon Fill="Blue" Opacity="0.5">
             <Polygon.Points>
-                <Point X="0" Y="48" />
-                <Point X="24" Y="0" />
-                <Point X="48" Y="48" />
+                <Point X="0" Y="32" />
+                <Point X="16" Y="0" />
+                <Point X="32" Y="32" />
             </Polygon.Points>
         </Polygon>
 
-        <Line X1="0" Y1="48" X2="24" Y2="24" Stroke="Black" />
-        <Line X1="24" Y1="0" X2="24" Y2="24" Stroke="Black" />
-        <Line X1="48" Y1="48" X2="24" Y2="24" Stroke="Black" />
-        
+
         <Polygon Stroke="{Binding Stroke}" StrokeThickness="{Binding StrokeThickness}">
             <Polygon.Points>
-                <Point X="0" Y="48" />
-                <Point X="24" Y="0" />
-                <Point X="48" Y="48" />
+                <Point X="0" Y="32" />
+                <Point X="16" Y="0" />
+                <Point X="32" Y="32" />
             </Polygon.Points>
         </Polygon>
 
-        <Polygon Fill="Red" Height="48" Width="48" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="0.5">
+
+        <Polygon Height="32" Width="32" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="1">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="{Binding Pitch}" />
+                    <!--<RotateTransform Angle="0" />-->
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Points>
+                <Point X="16" Y="3" />
+                <Point X="16" Y="10" />
+            </Polygon.Points>
+        </Polygon>
+
+
+        <Polygon Fill="Orange" Height="32" Width="32" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="{Binding Yaw}" />
                 </TransformGroup>
             </Polygon.RenderTransform>
             <Polygon.Points>
-                <Point X="21" Y="7" />
-                <Point X="24" Y="0" />
-                <Point X="27" Y="7" />
-            </Polygon.Points>
-        </Polygon>
-       
-        <!--<Ellipse Width="48" Height="48" StrokeThickness="0.25" Stroke="Black"/>-->
-
-
-        <Polygon Fill="Cyan" Height="48" Width="48" RenderTransformOrigin="0.5,0.5" Stroke="Blue" StrokeThickness="0.5">
-            <Polygon.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="{Binding Pitch}" />
-                    <!--<RotateTransform Angle="45" />-->
-                </TransformGroup>
-            </Polygon.RenderTransform>
-            <Polygon.Points>
-                <Point X="21" Y="17" />
-                <Point X="24" Y="10" />
-                <Point X="27" Y="17" />
+                <Point X="13" Y="9" />
+                <Point X="16" Y="0" />
+                <Point X="19" Y="9" />
             </Polygon.Points>
         </Polygon>
 
-        <!--<Ellipse Canvas.Left="12" Canvas.Top="12" Width="24" Height="24" StrokeThickness="0.25" Stroke="Blue" />-->
+        <Ellipse Canvas.Left="14" Canvas.Top="14" Width="4" Height="4" Fill="Black"/>
 
     </Canvas>
 </marker:AbstractMarker>
