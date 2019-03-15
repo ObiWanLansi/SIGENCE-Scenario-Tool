@@ -887,11 +887,11 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
+
                             <Label Grid.Row="0" Content="Attachments" Style="{StaticResource Header}" />
-                            <!--<StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
-                            </StackPanel>-->
+
                             <ScrollViewer Grid.Row="1">
-                                <ItemsControl x:Name="icAttachements" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
+                                <ItemsControl Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" ItemsSource="{Binding Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <WrapPanel />
@@ -899,11 +899,17 @@
                                     </ItemsControl.ItemsPanel>
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="1" Margin="3">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
 
-                                            <!--<Border CornerRadius="5" Width="330" BorderBrush="Black" BorderThickness="1" Margin="5" Background="{Binding Alert,Converter={StaticResource aBrush}}">
-                                                --><!--<StackPanel Margin="5">
-                                                </StackPanel>--><!--
-                                            </Border>-->
+                                                    <Label Grid.Row="0" Width="32" Height="32" Content="{Binding FileIcon}" Margin="2" Background="AntiqueWhite" />
+                                                    <Label Grid.Row="1" Width="64" Height="24" Content="{Binding DisplayName}" Margin="2" HorizontalContentAlignment="Center" />
+                                                </Grid>
+                                            </Border>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>

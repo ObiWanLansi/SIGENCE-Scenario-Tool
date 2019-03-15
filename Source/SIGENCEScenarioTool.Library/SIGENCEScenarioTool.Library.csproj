@@ -184,6 +184,7 @@
     <Compile Include="Src\Extensions\XElementExtension.cs" />
     <Compile Include="Src\Interfaces\IXmlExport.cs" />
     <Compile Include="Src\Models\AbstractModelBase.cs" />
+    <Compile Include="Src\Models\Attachements\Attachement.cs" />
     <Compile Include="Src\Models\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.cs">
       <DependentUpon>GeoLocalizationResult.tt</DependentUpon>
@@ -214,6 +215,7 @@
     <Compile Include="Src\Tools\ApplicationResource.cs" />
     <Compile Include="Src\Tools\Blink.cs" />
     <Compile Include="Src\Tools\EnumerationsAndConstants.cs" />
+    <Compile Include="Src\Tools\ExtractIcon.cs" />
     <Compile Include="Src\Tools\GeoHelper.cs" />
     <Compile Include="Src\Tools\PythonSyntaxModeFileProvider.cs" />
     <Compile Include="Src\Tools\Speech.cs" />

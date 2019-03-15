@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -13,6 +14,7 @@ using Microsoft.Win32;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -969,6 +971,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The validation result.
         /// </value>
         public ValidationResultViewModelList ValidationResult { get; set; } = new ValidationResultViewModelList();
+
+        /// <summary>
+        /// The attachements
+        /// </summary>
+        public ObservableCollection<Attachement> Attachements { get; set; } = new ObservableCollection<Attachement>();
 
     } // end public partial class MainWindow
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +16,7 @@ using ICSharpCode.TextEditor.Document;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -940,6 +943,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        #region Drag & Drop Test
+
+
         /// <summary>
         /// Handles the DragOver event of the StackPanel_Attachements control.
         /// </summary>
@@ -962,7 +968,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
         private void StackPanel_Drop( object sender, DragEventArgs e )
         {
+            bool bIsControlKeyPressed = (e.KeyStates & DragDropKeyStates.ControlKey) == DragDropKeyStates.ControlKey;
+
+            foreach(FileInfo fi in from strFilename in (string[])e.Data.GetData( DataFormats.FileDrop ) select new FileInfo( strFilename ))
+            {
+                this.Attachements.Add( new Attachement( fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link ) );
+            }
+
+            e.Handled = true;
         }
+
+        #endregion
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

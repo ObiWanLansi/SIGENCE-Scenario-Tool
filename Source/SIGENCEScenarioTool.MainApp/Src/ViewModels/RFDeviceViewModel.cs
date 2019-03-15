@@ -993,7 +993,6 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         public RFDeviceViewModelCollection()
         {
-
         }
 
 
@@ -1004,7 +1003,6 @@ namespace SIGENCEScenarioTool.ViewModels
         public RFDeviceViewModelCollection( RFDeviceViewModelCollection dvmc ) :
             base( dvmc )
         {
-
         }
 
     } // end public sealed class RFDeviceViewModelCollection

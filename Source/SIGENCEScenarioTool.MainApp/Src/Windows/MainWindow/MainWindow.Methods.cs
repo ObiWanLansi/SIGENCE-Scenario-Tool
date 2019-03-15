@@ -315,13 +315,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void OpenScenarioSimulationPlayer()
         {
-            //RFDeviceList dl = new RFDeviceList( this.RFDeviceViewModelCollection.Count );
-
-            //foreach(RFDevice dev in from device in this.RFDeviceViewModelCollection select device.RFDevice)
-            //{
-            //    dl.Add( dev );
-            //}
-
             SimulationDialog sd = new SimulationDialog( this.RFDeviceViewModelCollection );
             sd.ShowDialog();
             sd = null;

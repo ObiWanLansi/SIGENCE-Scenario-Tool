@@ -52,6 +52,7 @@ namespace SIGENCEScenarioTool.Models.Templates
     } // end sealed public class RFDeviceTemplate
 
 
+
     /// <summary>
     /// 
     /// </summary>

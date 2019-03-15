@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -207,6 +209,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
             //OpenScenarioSimulationPlayer();
+
+            this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\6,w=658,c=2.bild.jpg" ), AttachementType.Embedded ) );
+            this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\MCS_Spectrum_Analyzer_2.1.6_Qt5_Setup.zip" ), AttachementType.Link ) );
+            this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\test.sh" ), AttachementType.Embedded ) );
+            
+            this.tiMetaInformation.IsSelected = true;
 
             //-----------------------------------------------------------------
 
