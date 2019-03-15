@@ -186,6 +186,17 @@ namespace SIGENCEScenarioTool.Tools
 
 
         /// <summary>
+        /// Gets the human distance.
+        /// </summary>
+        /// <param name="iMeter">The i meter.</param>
+        /// <returns></returns>
+        public static string GetHumanDistance( int iMeter )
+        {
+            return (iMeter < 1000) ? $"{iMeter} m" : $"{((float)iMeter) / 1000} km";
+        }
+
+
+        /// <summary>
         /// Gets the human size for physics.
         /// </summary>
         /// <param name="dValue">The d value.</param>
@@ -195,25 +206,25 @@ namespace SIGENCEScenarioTool.Tools
         {
             if(dValue >= 1_000_000_000_000)
             {
-                return string.Format( "{0:F} T{1}", dValue / 1_000_000_000_000, strSuffix );
+                return $"{dValue / 1_000_000_000_000:F} T{strSuffix}";
             }
 
             if(dValue >= 1_000_000_000)
             {
-                return string.Format( "{0:F} G{1}", dValue / 1_000_000_000, strSuffix );
+                return $"{dValue / 1_000_000_000:F} G{strSuffix}";
             }
 
             if(dValue >= 1_000_000)
             {
-                return string.Format( "{0:F} M{1}", dValue / 1_000_000, strSuffix );
+                return $"{dValue / 1_000_000:F} M{strSuffix}";
             }
 
             if(dValue >= 1_000)
             {
-                return string.Format( "{0:F} K{1}", dValue / 1_000, strSuffix );
+                return $"{dValue / 1_000:F} K{strSuffix}";
             }
 
-            return string.Format( "{0:F} {1}", dValue, strSuffix );
+            return $"{dValue:F} {strSuffix}";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -228,25 +239,25 @@ namespace SIGENCEScenarioTool.Tools
         {
             if(lSizeInBytes >= 1099511627776)
             {
-                return string.Format( "{0:F} Tb", (float)lSizeInBytes / 1099511627776 );
+                return $"{(float)lSizeInBytes / 1099511627776:F} Tb";
             }
 
             if(lSizeInBytes >= 1073741824)
             {
-                return string.Format( "{0:F} Gb", (float)lSizeInBytes / 1073741824 );
+                return $"{(float)lSizeInBytes / 1073741824:F} Gb";
             }
 
             if(lSizeInBytes >= 1048576)
             {
-                return string.Format( "{0:F} Mb", (float)lSizeInBytes / 1048576 );
+                return $"{(float)lSizeInBytes / 1048576:F} Mb";
             }
 
             if(lSizeInBytes >= 1024)
             {
-                return string.Format( "{0:F} Kb", (float)lSizeInBytes / 1024 );
+                return $"{(float)lSizeInBytes / 1024:F} Kb";
             }
 
-            return string.Format( "{0} Bytes", lSizeInBytes );
+            return $"{lSizeInBytes} Bytes";
         }
 
 
@@ -259,10 +270,10 @@ namespace SIGENCEScenarioTool.Tools
         {
             if(lLengthInMeter < 1000)
             {
-                return string.Format( "{0} m", lLengthInMeter );
+                return $"{lLengthInMeter} m";
             }
 
-            return string.Format( "{0:F} km", (float)lLengthInMeter / 1000 );
+            return $"{(float)lLengthInMeter / 1000:F} km";
         }
 
 
@@ -327,7 +338,7 @@ namespace SIGENCEScenarioTool.Tools
             double dMinGrad = Math.Floor( dMin );
             double dSec = (dMin - dMinGrad) * 60;
 
-            return string.Format( "{0}°{1}'{2:F}''", dGrad, dMinGrad, dSec );
+            return $"{dGrad}°{dMinGrad}'{dSec:F}''";
         }
 
     } // end static public class Tools
@@ -346,7 +357,7 @@ namespace SIGENCEScenarioTool.Tools
         /// <param name="strCallerName">Name of the string caller.</param>
         public static void NotYetImplemented( [CallerMemberName]string strCallerName = null )
         {
-            MessageBox.Show( string.Format( "{0} reported :\nNotYetImplemented ...", strCallerName ), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation );
+            MessageBox.Show( $"{strCallerName} reported :\nNotYetImplemented ...", Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Exclamation );
         }
 
 
@@ -367,7 +378,7 @@ namespace SIGENCEScenarioTool.Tools
         /// <param name="strCallerName">Name of the string caller.</param>
         public static void Error( Exception ex, [CallerMemberName]string strCallerName = null )
         {
-            string strMessage = string.Format( "{0} reported:\n{1}", strCallerName, ex.InnerException != null ? ex.InnerException.Message : ex.Message );
+            string strMessage = $"{strCallerName} reported:\n{(ex.InnerException != null ? ex.InnerException.Message : ex.Message)}";
             MessageBox.Show( strMessage, Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Error );
         }
 
@@ -421,7 +432,7 @@ namespace SIGENCEScenarioTool.Tools
         [Conditional( "DEBUG" )]
         public static void HereIAm( [CallerMemberName]string strCallerName = null )
         {
-            MessageBox.Show( string.Format( "Here I'am:\n{0}", strCallerName ), Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information );
+            MessageBox.Show( $"Here I'am:\n{strCallerName}", Tool.ProductTitle, MessageBoxButton.OK, MessageBoxImage.Information );
         }
 
     } // end static public class MB

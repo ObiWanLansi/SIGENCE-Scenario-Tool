@@ -1,19 +1,26 @@
 ﻿using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
 
 using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 using SIGENCEScenarioTool.Windows.MainWindow;
 
 
+
+/*
+ * Bei der Simluation müssen nachher nur die Sender berücksichtigt werden, die Receiver empfangen einfach nur ... ?
+*/
 
 namespace SIGENCEScenarioTool.Dialogs.Simulation
 {
@@ -143,14 +150,46 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <seealso cref="System.Collections.IComparer" />
+        private class Comparer : IComparer
+        {
+            /// <summary>
+            /// Vergleicht zwei Objekte und gibt einen Wert zurück, der angibt, ob ein Wert niedriger, gleich oder größer als der andere Wert ist.
+            /// </summary>
+            /// <param name="x">Das erste zu vergleichende Objekt.</param>
+            /// <param name="y">Das zweite zu vergleichende Objekt.</param>
+            /// <returns>
+            /// Eine ganze Zahl mit Vorzeichen, die die relativen Werte von <paramref name="x" /> und <paramref name="y" /> angibt, wie in der folgenden Tabelle veranschaulicht.Wert Bedeutung Kleiner als 0 <paramref name="x" /> ist kleiner als <paramref name="y" />. Zero <paramref name="x" /> ist gleich <paramref name="y" />. Größer als 0 (null) <paramref name="x" /> ist größer als <paramref name="y" />.
+            /// </returns>
+            public int Compare( object x, object y )
+            {
+                return (x as RFDeviceViewModel).StartTime.CompareTo( (y as RFDeviceViewModel).StartTime );
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SimulationDialog"/> class.
         /// </summary>
         public SimulationDialog( RFDeviceViewModelCollection _RFDeviceViewModelCollection )
         {
             this.DataContext = this;
 
-            //TODO: Sort List bei StartTime und vorher ggf. noch als Clone (wir brauchen auch ein eigenes ViewModell und als Parameter nur die RFDeviceList) ...
-            this.RFDeviceViewModelCollection = _RFDeviceViewModelCollection;
+            this.RFDeviceViewModelCollection = new RFDeviceViewModelCollection( _RFDeviceViewModelCollection );
+
+            //-----------------------------------------------------------------
+
+            if(CollectionViewSource.GetDefaultView( this.RFDeviceViewModelCollection ) is ListCollectionView lcvRFDevices)
+            {
+                lcvRFDevices.IsLiveSorting = false;
+                lcvRFDevices.CustomSort = new Comparer();
+            }
+
+            //-----------------------------------------------------------------
 
             InitializeComponent();
 
@@ -205,24 +244,13 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_PlayStop_Click( object sender, RoutedEventArgs e )
         {
-            ////TODO: Switch Start/Stop Image, Disable / Enable COntrols ...
-            //if(this.IsRunning == true)
-            //{
-            //    this.IsRunning = false;
-            //    //this.btnPause.IsEnabled = false;
-            //}
-            //else
-            //{
-            //    this.IsRunning = true;
-            //    //this.btnPause.IsEnabled = true;
-            //}
-
             this.IsRunning = !this.IsRunning;
 
-            this.btnPause.IsEnabled = !this.bIsRunning;
+            this.btnPause.IsEnabled = this.bIsRunning;
             this.sCurrentTime.IsEnabled = !this.bIsRunning;
             this.btnPlayStop.Content = this.Resources[this.bIsRunning ? "STOP" : "PLAY"];
         }
+
 
         /// <summary>
         /// Handles the Click event of the Button_Pause control.
@@ -231,7 +259,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Pause_Click( object sender, RoutedEventArgs e )
         {
-
+            MB.NotYetImplemented();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

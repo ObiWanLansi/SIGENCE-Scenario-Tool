@@ -492,7 +492,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void MenuItem_ScenarioSimulationPlayer_Click( object sender , RoutedEventArgs e )
         {
-            ScenarioSimulationPlayer();
+            OpenScenarioSimulationPlayer();
 
             e.Handled = true;
         }
