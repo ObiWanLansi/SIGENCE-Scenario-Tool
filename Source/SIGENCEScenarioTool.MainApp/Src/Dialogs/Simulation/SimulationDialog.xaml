@@ -16,20 +16,20 @@
         <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" />
 
         <Border Grid.Row="1" BorderThickness="1" BorderBrush="Black">
-        <Grid Background="Gold">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Width="28" Height="28" Content="{StaticResource PLAY}" ToolTip="Play" Margin="3"/>
-            <Button Grid.Column="1" Width="28" Height="28" Content="{StaticResource PAUSE}" ToolTip="Pause" Margin="3"/>
-            <Button Grid.Column="2" Width="28" Height="28" Content="{StaticResource STOP}" ToolTip="Stop" Margin="3"/>
-            <Slider Grid.Column="3" Minimum="0" Maximum="100" Value="5" TickPlacement="Both" TickFrequency="2" VerticalAlignment="Center" Margin="3"/>
-            <Label Grid.Column="4" Content="88:88:88.888" FontWeight="Bold" FontFamily="Courier New" FontSize="14" Margin="3" VerticalAlignment="Center" />
-        </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnPlayStop" Grid.Column="0" Width="28" Height="28" Content="{StaticResource PLAY}" IsEnabled="True" ToolTip="Play Or Stop" Margin="3" Click="Button_PlayStop_Click"/>
+                <Button x:Name="btnPause" Grid.Column="1" Width="28" Height="28" Content="{StaticResource PAUSE}" IsEnabled="False" ToolTip="Pause" Margin="3" Click="Button_Pause_Click" />
+                <!--<Button Grid.Column="2" Width="28" Height="28" Content="{StaticResource STOP}" ToolTip="Stop" Margin="3" />-->
+                <Slider x:Name="sCurrentTime" Grid.Column="3" Minimum="{Binding MinTime}" Maximum="{Binding MaxTime}" Value="{Binding CurrentTime}" IsEnabled="True" AutoToolTipPlacement="BottomRight" TickPlacement="Both" TickFrequency="2" VerticalAlignment="Center" Margin="3" />
+                <Label Grid.Column="4" Content="{Binding CurrentTimeAsString}" FontWeight="Normal" FontFamily="Courier New" FontSize="14" Margin="3" VerticalAlignment="Center" />
+            </Grid>
         </Border>
 
         <DataGrid x:Name="dgRFDevices" Grid.Row="2" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="True" FontFamily="Courier New" FontSize="14" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" />

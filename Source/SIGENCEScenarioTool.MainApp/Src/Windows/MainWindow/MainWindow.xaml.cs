@@ -206,6 +206,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
+            ScenarioSimulationPlayer();
+
+            //-----------------------------------------------------------------
+
             //RFDevice device = new RFDevice().WithId(0).WithName("Hello").WithStartTime(5);
             //MB.Information(device.ToXml().ToString());
 #else

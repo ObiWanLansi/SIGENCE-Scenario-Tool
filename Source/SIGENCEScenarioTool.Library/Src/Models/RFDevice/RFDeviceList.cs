@@ -73,7 +73,7 @@ namespace SIGENCEScenarioTool.Models
                     DeviceSource = DeviceSource.Automatic,
                     Name = $"RFDevice #{i}",
 
-                    StartTime = i + ((double)1 / i),
+                    StartTime = Math.Round( i + ((double)1 / i), 2 ),
 
                     Latitude = pllCenter.Lat + (r.NextBool() ? (r.NextDouble() * 0.05) : (r.NextDouble() * 0.05) * -1),
                     Longitude = pllCenter.Lng + (r.NextBool() ? (r.NextDouble() * 0.05) : (r.NextDouble() * 0.05) * -1),
