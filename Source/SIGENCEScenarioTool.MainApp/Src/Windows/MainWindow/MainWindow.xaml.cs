@@ -206,7 +206,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            OpenScenarioSimulationPlayer();
+            //OpenScenarioSimulationPlayer();
 
             //-----------------------------------------------------------------
 

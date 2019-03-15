@@ -62,21 +62,6 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>-->
 
-                <DataGridTextColumn Header="Type" Binding="{Binding DeviceType}">
-                    <!--<DataGridTextColumn.HeaderStyle>
-                                        <Style TargetType="{x:Type DataGridColumnHeader}">
-                                            <Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_}" />
-                                        </Style>
-                                    </DataGridTextColumn.HeaderStyle>-->
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <!--<Setter Property="HorizontalAlignment" Value="Center" />-->
-                            <Setter Property="Margin" Value="5" />
-                            <Setter Property="FontWeight" Value="Bold" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -88,10 +73,26 @@
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Right" />
                             <Setter Property="Margin" Value="5" />
-                            <Setter Property="FontWeight" Value="Bold" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
+
+
+                <DataGridTextColumn Header="Type" Binding="{Binding DeviceType}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="FontWeight" Value="Bold" />
+                            <!--<Setter Property="ToolTip" Value="{Binding Source={StaticResource ToolTips},Path=TOOLTIP_}" />-->
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <!--<Setter Property="HorizontalAlignment" Value="Center" />-->
+                            <Setter Property="Margin" Value="5" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
 
                 <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime}">
                     <DataGridTextColumn.HeaderStyle>
@@ -246,7 +247,7 @@
                 </DataGridTextColumn>
 
 
-                <DataGridTextColumn  Header="AntennaType" Binding="{Binding AntennaType}">
+                <DataGridTextColumn Header="AntennaType" Binding="{Binding AntennaType}">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="FontWeight" Value="Bold" />

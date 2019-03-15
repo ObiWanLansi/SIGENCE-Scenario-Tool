@@ -776,6 +776,7 @@
 
 
             <TabItem x:Name="tiMetaInformation">
+
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{StaticResource TEXT_RICH_COLORED}" />
@@ -801,17 +802,20 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
+
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
                     <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="5">
+
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
+
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -827,6 +831,7 @@
                             <Label Grid.Column="0" Grid.Row="2" Content="Application Context" />
                             <Label Grid.Column="0" Grid.Row="3" Content="Contact Person" />
                             <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="Tags" Style="{StaticResource Header}" />
+                            <!--
                             <StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal">
                                 <Border BorderBrush="Blue" BorderThickness="1" CornerRadius="5" Margin="3">
                                     <Label Content="#Scenario" FontSize="10" FontFamily="Tahoma" />
@@ -845,7 +850,9 @@
                                 </Border>
 
                             </StackPanel>
+                            -->
                         </Grid>
+
                     </Border>
 
                     <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="5">
@@ -881,8 +888,27 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Grid.Row="0" Content="Attachments" Style="{StaticResource Header}" />
-                            <StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">
-                            </StackPanel>
+                            <!--<StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
+                            </StackPanel>-->
+                            <ScrollViewer Grid.Row="1">
+                                <ItemsControl x:Name="icAttachements" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+
+                                            <!--<Border CornerRadius="5" Width="330" BorderBrush="Black" BorderThickness="1" Margin="5" Background="{Binding Alert,Converter={StaticResource aBrush}}">
+                                                --><!--<StackPanel Margin="5">
+                                                </StackPanel>--><!--
+                                            </Border>-->
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+
                         </Grid>
                     </Border>
 
