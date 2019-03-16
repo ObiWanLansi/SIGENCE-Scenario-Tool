@@ -502,6 +502,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Handles the Click event of the MenuItem_DisplayScenarioDescription control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_DisplayScenarioDescription_Click( object sender, RoutedEventArgs e )
+        {
+            DisplayScenarioDescription();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
         /// Handles the Click event of the MenuItem_CreateSomeRandomizedRFDevices_Click control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>

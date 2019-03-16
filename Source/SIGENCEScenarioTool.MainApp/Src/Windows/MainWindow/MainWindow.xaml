@@ -121,6 +121,7 @@
             </MenuItem>
             <MenuItem x:Name="miTest" Header="_Test">
                 <MenuItem Header="Scenario Simulation _Player" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioSimulationPlayer_Click" />
+                <MenuItem Header="Display Scenario Description" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_DisplayScenarioDescription_Click" />
                 <!--<MenuItem Header="Toggle Data _Grid" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleDataGrid}" />-->
                 <Separator />
                 <MenuItem Header="_Load Streets" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
@@ -812,8 +813,8 @@
 
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
 
                             <Grid.RowDefinitions>
@@ -828,34 +829,39 @@
                             <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="General Information" Style="{StaticResource Header}" />
 
                             <Label Grid.Column="0" Grid.Row="1" Content="Scenario Version" />
+                            <TextBox Grid.Column="1" Grid.Row="1" Margin="2" />
+
                             <Label Grid.Column="0" Grid.Row="2" Content="Application Context" />
+                            <TextBox Grid.Column="1" Grid.Row="2" Margin="2" />
+
                             <Label Grid.Column="0" Grid.Row="3" Content="Contact Person" />
+                            <TextBox Grid.Column="1" Grid.Row="3" Margin="2" />
+
                             <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="Tags" Style="{StaticResource Header}" />
-                            <!--
+
                             <StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal">
-                                <Border BorderBrush="Blue" BorderThickness="1" CornerRadius="5" Margin="3">
+                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
                                     <Label Content="#Scenario" FontSize="10" FontFamily="Tahoma" />
                                 </Border>
-                                <Border BorderBrush="Blue" BorderThickness="1" CornerRadius="5" Margin="3">
+                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
                                     <Label Content="#Simulation" FontSize="10" FontFamily="Tahoma" />
                                 </Border>
-                                <Border BorderBrush="Blue" BorderThickness="1" CornerRadius="5" Margin="3">
+                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
                                     <Label Content="#Lansi" FontSize="10" FontFamily="Tahoma" />
                                 </Border>
-                                <Border BorderBrush="Blue" BorderThickness="1" CornerRadius="5" Margin="3">
+                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
                                     <Label Content="#42" FontSize="10" FontFamily="Tahoma" />
                                 </Border>
-                                <Border BorderBrush="Blue" BorderThickness="1" CornerRadius="5" Margin="3">
+                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
                                     <Label Content="#Airbus" FontSize="10" FontFamily="Tahoma" />
                                 </Border>
-
                             </StackPanel>
-                            -->
+
                         </Grid>
 
                     </Border>
 
-                    <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="5">
+                    <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1" Margin="5">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -863,25 +869,25 @@
                             </Grid.RowDefinitions>
                             <Label Grid.Row="0" Content="Description" Style="{StaticResource Header}" />
                             <WindowsFormsHost Grid.Row="1">
-                                <icsharpcode:TextEditorControl />
+                                <icsharpcode:TextEditorControl x:Name="tecDescription" />
                             </WindowsFormsHost>
                         </Grid>
                     </Border>
 
-                    <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
+                    <!--<Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Content="Execpted Result Or Behavior" Style="{StaticResource Header}" />
+                            <Label Grid.Row="0" Content="Excepted Result Or Behavior" Style="{StaticResource Header}" />
                             <WindowsFormsHost Grid.Row="1">
-                                <icsharpcode:TextEditorControl />
+                                <icsharpcode:TextEditorControl x:Name="tecExceptedResultOrBehavior" />
                             </WindowsFormsHost>
                         </Grid>
-                    </Border>
+                    </Border>-->
 
-                    <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
+                    <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -890,6 +896,43 @@
 
                             <Label Grid.Row="0" Content="Attachments" Style="{StaticResource Header}" />
 
+                            <ListView Grid.Row="1" ItemsSource="{Binding Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
+                                <!--<ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>-->
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="Black" BorderThickness="1" Margin="3" Width="380">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Width="32" Height="32" Margin="2" VerticalAlignment="Center">
+                                                    <Image Source="{Binding FileIcon}" />
+                                                </Label>
+                                                <Label Grid.Column="0" Grid.Row="4" Content="{Binding Size}" Width="64" HorizontalContentAlignment="Right" />
+
+                                                <Label Grid.Column="1" Grid.Row="0" Content="{Binding Type}" />
+                                                <Label Grid.Column="1" Grid.Row="1" Content="{Binding AddedUsername}" />
+                                                <Label Grid.Column="1" Grid.Row="2" Content="{Binding AddedTimestamp}" />
+                                                <Label Grid.Column="1" Grid.Row="3" Content="{Binding DisplayName}" />
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!--
                             <ScrollViewer Grid.Row="1">
                                 <ItemsControl Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" ItemsSource="{Binding Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
                                     <ItemsControl.ItemsPanel>
@@ -906,15 +949,17 @@
                                                         <RowDefinition Height="*" />
                                                     </Grid.RowDefinitions>
 
-                                                    <Label Grid.Row="0" Width="32" Height="32" Content="{Binding FileIcon}" Margin="2" Background="AntiqueWhite" />
-                                                    <Label Grid.Row="1" Width="64" Height="24" Content="{Binding DisplayName}" Margin="2" HorizontalContentAlignment="Center" />
+                                                    <Label Grid.Row="0" Width="32" Height="32" Margin="2">
+                                                        <Image Source="{Binding FileIcon}" />
+                                                    </Label>
+                                                    <Label Grid.Row="1" Width="48" Height="24" Content="{Binding DisplayName}" Margin="2" HorizontalContentAlignment="Center" />
                                                 </Grid>
                                             </Border>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
                             </ScrollViewer>
-
+                                -->
                         </Grid>
                     </Border>
 

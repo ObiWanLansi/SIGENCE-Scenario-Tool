@@ -8,7 +8,6 @@ using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -210,10 +209,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //OpenScenarioSimulationPlayer();
 
-            this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\6,w=658,c=2.bild.jpg" ), AttachementType.Embedded ) );
-            this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\MCS_Spectrum_Analyzer_2.1.6_Qt5_Setup.zip" ), AttachementType.Link ) );
-            this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\test.sh" ), AttachementType.Embedded ) );
-            
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\6,w=658,c=2.bild.jpg" ), AttachementType.Embedded ) );
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\MCS_Spectrum_Analyzer_2.1.6_Qt5_Setup.zip" ), AttachementType.Link ) );
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\test.sh" ), AttachementType.Embedded ) );
+
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\90's Popular Song's (Deep-House _ House Mix )-L4e9Hm3rHiY.mp3" ), AttachementType.Link ) );
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Funky Disco House Mix - March 2019-g7XBQIV77XM.jpg" ), AttachementType.Link ) );
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Funky Disco House Mix - March 2019-g7XBQIV77XM.mp3" ), AttachementType.Link ) );
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix -March 2019 - 5ZBgx1NeUWg.jpg" ), AttachementType.Link ) );
+            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix - March 2019 - 5ZBgx1NeUWg.mp3" ), AttachementType.Link ) );
+
+            string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
+            this.tecDescription.Text = File.ReadAllText( strMarkdown );
+
             this.tiMetaInformation.IsSelected = true;
 
             //-----------------------------------------------------------------

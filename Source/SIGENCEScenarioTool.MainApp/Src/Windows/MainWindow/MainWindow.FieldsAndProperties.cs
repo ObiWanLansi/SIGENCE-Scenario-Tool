@@ -9,6 +9,8 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsPresentation;
 
+using Markdig;
+
 using Microsoft.Win32;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
@@ -74,7 +76,38 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The empty template
         /// </summary>
-        private static readonly RFDeviceTemplate EMPTY_TEMPLATE = new RFDeviceTemplate( new RFDevice { PrimaryKey = Guid.Empty , Name = "Empty Device" } );
+        private static readonly RFDeviceTemplate EMPTY_TEMPLATE = new RFDeviceTemplate( new RFDevice { PrimaryKey = Guid.Empty, Name = "Empty Device" } );
+
+        /// <summary>
+        /// The pipeline
+        /// </summary>
+        //private static readonly MarkdownPipeline MAPI = new MarkdownPipelineBuilder().UseAdvancedExtensions().UseEmojiAndSmiley().UseBootstrap().Build();
+        private static readonly MarkdownPipeline MAPI = new MarkdownPipelineBuilder().UseAdvancedExtensions().UseEmojiAndSmiley().Build();
+
+        /// <summary>
+        /// The string header
+        /// </summary>
+        private static readonly string HEADER =
+            "<!DOCTYPE html>\n" +
+            "<html>\n" +
+            "    <head>\n" +
+            "        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\" integrity=\"sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu\" crossorigin=\"anonymous\">\n" +
+            "        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css\" integrity=\"sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ\" crossorigin=\"anonymous\">\n" +
+            "        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\" integrity=\"sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd\" crossorigin=\"anonymous\"></script>\n" +
+            "        <style>\n" +
+            "            table { border: 2px solid black; }\n" +
+            "            th { border: 1px solid black; padding: 3px; background: #D0D0D0; }\n" +
+            "            td { border: 1px solid black; padding: 3px; background: #F0F0F0; }\n" +
+            "        </style>\n" +
+            "    </head>\n" +
+            "    <body style=\"padding: 10px;\">\n";
+
+        /// <summary>
+        /// The string footer
+        /// </summary>
+        private static readonly string FOOTER =
+            "    </body>\n" +
+            "</html>";
 
         /// <summary>
         /// The b data grid in edit mode
@@ -110,6 +143,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The DVM last selected device
         /// </summary>
         private RFDevice dvmLastSelectedDevice = null;
+
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -420,7 +454,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lat; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( value , this.mcMapControl.Position.Lng );
+                this.mcMapControl.Position = new PointLatLng( value, this.mcMapControl.Position.Lng );
 
                 FirePropertyChanged();
             }
@@ -438,7 +472,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lng; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat , value );
+                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat, value );
 
                 FirePropertyChanged();
             }
@@ -810,10 +844,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.bStartedDALF; }
             set
             {
-                if( value == true )
+                if(value == true)
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if( StartDALF() == false )
+                    if(StartDALF() == false)
                     {
                         return;
                     }
@@ -855,7 +889,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.iIdFilter != null ? this.iIdFilter.ToString() : ""; }
             set
             {
-                if( string.IsNullOrEmpty( value ) )
+                if(string.IsNullOrEmpty( value ))
                 {
                     this.iIdFilter = null;
                 }
@@ -866,7 +900,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                         this.iIdFilter = int.Parse( value );
                     }
-                    catch( Exception )
+                    catch(Exception)
                     {
                         this.iIdFilter = null;
                     }

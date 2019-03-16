@@ -14,6 +14,8 @@ using GeoAPI.Geometries;
 using GMap.NET;
 using GMap.NET.MapProviders;
 
+using Markdig;
+
 using NetTopologySuite.Densify;
 using NetTopologySuite.Geometries;
 
@@ -318,6 +320,31 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             SimulationDialog sd = new SimulationDialog( this.RFDeviceViewModelCollection );
             sd.ShowDialog();
             sd = null;
+        }
+
+
+        /// <summary>
+        /// Displays the scenario description.
+        /// </summary>
+        private void DisplayScenarioDescription()
+        {
+            if(this.tecDescription.Text.IsNotEmpty())
+            {
+                string strOutputFilename = $"{Path.GetTempPath()}{Guid.NewGuid()}.html";
+                StringBuilder sbHtml = new StringBuilder( 8192 );
+
+                sbHtml.AppendLine( HEADER );
+                sbHtml.AppendLine( Markdown.ToHtml( this.tecDescription.Text, MAPI ) );
+                sbHtml.AppendLine( FOOTER );
+
+                File.WriteAllText( strOutputFilename, sbHtml.ToString() );
+
+                Tools.Windows.OpenWithDefaultApplication( strOutputFilename );
+            }
+            else
+            {
+                MB.Warning( "No Description For The Scenario Avaible!" );
+            }
         }
 
 

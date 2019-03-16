@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
 
 using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.Models.Attachements
 {
@@ -55,6 +58,14 @@ namespace SIGENCEScenarioTool.Models.Attachements
         public string DisplayName { get; set; }
 
         /// <summary>
+        /// Gets or sets the size.
+        /// </summary>
+        /// <value>
+        /// The size.
+        /// </value>
+        public string Size { get; set; }
+
+        /// <summary>
         /// Gets or sets the added timestamp.
         /// </summary>
         /// <value>
@@ -72,18 +83,16 @@ namespace SIGENCEScenarioTool.Models.Attachements
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
-        /// Gets or sets the file icon.
+        /// Gets or sets the bitmap.
         /// </summary>
         /// <value>
-        /// The file icon.
+        /// The bitmap.
         /// </value>
-        //public ImageSource FileIcon { get; set; }
-        public Image FileIcon { get; set; }
+        public BitmapSource FileIcon { get; set; }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        //private readonly Icon iDefault = ExtractIcon.GetIcon( "shell32.dll", 0, true );
 
 
         /// <summary>
@@ -94,15 +103,27 @@ namespace SIGENCEScenarioTool.Models.Attachements
         public Attachement( FileInfo fiSource, AttachementType at = AttachementType.Link )
         {
             this.Source = fiSource;
+            this.Type = at;
             this.DisplayName = fiSource.Name;
             this.AddedTimestamp = DateTime.Now;
             this.AddedUsername = Environment.UserName;
-            //this.FileIcon = new BitmapImage()
-            //this.FileIcon = this.iDefault;
-            Icon icon = fiSource.GetAssociatedIcon();
-            //this.FileIcon = Imaging.CreateBitmapSourceFromHIcon( icon.Handle, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions() );
 
-            //this.FileIcon = Image.FromHbitmap( icon.ToBitmap().GetHbitmap() );
+            if(fiSource.Exists == true)
+            {
+                using(Icon icon = fiSource.GetAssociatedIcon())
+                {
+                    this.FileIcon = Imaging.CreateBitmapSourceFromHIcon( icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions() );
+                }
+
+                this.Size = fiSource.GetFileSize();
+            }
+            else
+            {
+                using(Icon icon = ExtractIcon.GetIcon( "shell32.dll", 0, true ))
+                {
+                    this.FileIcon = Imaging.CreateBitmapSourceFromHIcon( icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions() );
+                }
+            }
         }
 
     } // end public sealed class Attachement
