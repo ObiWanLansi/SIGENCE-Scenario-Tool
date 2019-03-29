@@ -868,9 +868,16 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Grid.Row="0" Content="Description" Style="{StaticResource Header}" />
-                            <WindowsFormsHost Grid.Row="1">
-                                <icsharpcode:TextEditorControl x:Name="tecDescription" />
-                            </WindowsFormsHost>
+                            <TabControl Grid.Row="1">
+                                <TabItem Header="Viewer" >
+                                    <WebBrowser x:Name="wbWebBrowser" IsVisibleChanged="WebBrowser_Markdown_IsVisibleChanged"/>
+                                </TabItem>
+                                <TabItem Header="Editor">
+                                    <WindowsFormsHost>
+                                        <icsharpcode:TextEditorControl x:Name="tecDescription" />
+                                    </WindowsFormsHost>
+                                </TabItem>
+                            </TabControl>
                         </Grid>
                     </Border>
 

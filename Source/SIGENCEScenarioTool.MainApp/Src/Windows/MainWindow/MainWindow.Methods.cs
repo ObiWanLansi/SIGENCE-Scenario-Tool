@@ -324,6 +324,36 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Updates the scenario description.
+        /// </summary>
+        private void UpdateScenarioDescriptionMarkdown()
+        {
+            if(this.tecDescription.Text.IsNotEmpty())
+            {
+                try
+                {
+                    StringBuilder sbHtml = new StringBuilder( 8192 );
+
+                    sbHtml.AppendLine( HEADER );
+                    sbHtml.AppendLine( Markdown.ToHtml( this.tecDescription.Text, MAPI ) );
+                    sbHtml.AppendLine( FOOTER );
+
+                    this.wbWebBrowser.NavigateToString( sbHtml.ToString() );
+                }
+                catch(Exception ex)
+                {
+                    this.wbWebBrowser.NavigateToString( $"<h1>{ex.Message}</h1>" );
+                }
+            }
+            else
+            {
+                //wbScenarioDescription.NavigateToString( "<html/>" );
+                this.wbWebBrowser.NavigateToString( "<h1><i>There Is No Description Yet.</i></h1>" );
+            }
+        }
+
+
+        /// <summary>
         /// Displays the scenario description.
         /// </summary>
         private void DisplayScenarioDescription()

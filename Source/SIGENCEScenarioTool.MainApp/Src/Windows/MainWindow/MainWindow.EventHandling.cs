@@ -515,6 +515,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Handles the IsVisibleChanged event of the WebBrowser_Markdown control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        private void WebBrowser_Markdown_IsVisibleChanged( object sender, DependencyPropertyChangedEventArgs e )
+        {
+            if(this.wbWebBrowser.IsVisible)
+            {
+                UpdateScenarioDescriptionMarkdown();
+            }
+        }
+
+
+        /// <summary>
         /// Handles the Click event of the MenuItem_CreateSomeRandomizedRFDevices_Click control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
