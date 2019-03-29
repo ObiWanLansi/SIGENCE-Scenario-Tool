@@ -7,6 +7,8 @@ using System.Windows.Media.Imaging;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
 
+
+
 namespace SIGENCEScenarioTool.Models.Attachements
 {
     /// <summary>
@@ -63,7 +65,15 @@ namespace SIGENCEScenarioTool.Models.Attachements
         /// <value>
         /// The size.
         /// </value>
-        public string Size { get; set; }
+        public string FileSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the file timestamp.
+        /// </summary>
+        /// <value>
+        /// The file timestamp.
+        /// </value>
+        public DateTime FileTimestamp { get; set; }
 
         /// <summary>
         /// Gets or sets the added timestamp.
@@ -92,6 +102,21 @@ namespace SIGENCEScenarioTool.Models.Attachements
         /// </value>
         public BitmapSource FileIcon { get; set; }
 
+
+        /// <summary>
+        /// Gets the timestamp.
+        /// </summary>
+        /// <value>
+        /// The timestamp.
+        /// </value>
+        public string Timestamp
+        {
+            get
+            {
+                return this.FileTimestamp.Fmt_DD_MM_YYYY_HH_MM();
+            }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -115,7 +140,8 @@ namespace SIGENCEScenarioTool.Models.Attachements
                     this.FileIcon = Imaging.CreateBitmapSourceFromHIcon( icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions() );
                 }
 
-                this.Size = fiSource.GetFileSize();
+                this.FileSize = fiSource.GetFileSize();
+                this.FileTimestamp = fiSource.LastWriteTime;
             }
             else
             {

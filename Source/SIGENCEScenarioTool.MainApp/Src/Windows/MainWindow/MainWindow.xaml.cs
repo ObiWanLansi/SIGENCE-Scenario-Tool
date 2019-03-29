@@ -8,6 +8,7 @@ using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -218,11 +219,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Funky Disco House Mix - March 2019-g7XBQIV77XM.mp3" ), AttachementType.Link ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix -March 2019 - 5ZBgx1NeUWg.jpg" ), AttachementType.Link ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix - March 2019 - 5ZBgx1NeUWg.mp3" ), AttachementType.Link ) );
+            
+            this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\ExampleScenarioDescription.md" ), AttachementType.Link ) );
+            this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\HelloWorld.py" ), AttachementType.Embedded ) );
+            this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\CheatSheet.pdf" ), AttachementType.Link ) );
+
 
             string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
             this.tecDescription.Text = File.ReadAllText( strMarkdown );
 
             this.tiMetaInformation.IsSelected = true;
+            this.tcTabControl.Items.Remove( this.tiDescription);
 
             //-----------------------------------------------------------------
 

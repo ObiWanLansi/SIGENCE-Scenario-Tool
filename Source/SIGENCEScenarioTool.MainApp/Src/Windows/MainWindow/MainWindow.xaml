@@ -800,8 +800,8 @@
                     </Grid.Resources>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
@@ -840,21 +840,21 @@
                             <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="Tags" Style="{StaticResource Header}" />
 
                             <StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal">
-                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
-                                    <Label Content="#Scenario" FontSize="10" FontFamily="Tahoma" />
-                                </Border>
-                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
-                                    <Label Content="#Simulation" FontSize="10" FontFamily="Tahoma" />
-                                </Border>
-                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
-                                    <Label Content="#Lansi" FontSize="10" FontFamily="Tahoma" />
-                                </Border>
-                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
-                                    <Label Content="#42" FontSize="10" FontFamily="Tahoma" />
-                                </Border>
-                                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="0" Margin="3">
-                                    <Label Content="#Airbus" FontSize="10" FontFamily="Tahoma" />
-                                </Border>
+                                <StackPanel.Resources>
+
+                                    <Style TargetType="Button">
+                                        <Setter Property="Margin" Value="3" />
+                                        <Setter Property="Width" Value="80" />
+                                        <Setter Property="Cursor" Value="Hand" />
+                                    </Style>
+
+                                </StackPanel.Resources>
+                                <Button Content="#Scenario" />
+                                <Button Content="#Simulation" />
+                                <Button Content="#Lansi" />
+                                <Button Content="#Jammer" />
+                                <Button Content="#Airbus" />
+                                <Button Content="+" Width="20" />
                             </StackPanel>
 
                         </Grid>
@@ -869,8 +869,8 @@
                             </Grid.RowDefinitions>
                             <Label Grid.Row="0" Content="Description" Style="{StaticResource Header}" />
                             <TabControl Grid.Row="1">
-                                <TabItem Header="Viewer" >
-                                    <WebBrowser x:Name="wbWebBrowser" IsVisibleChanged="WebBrowser_Markdown_IsVisibleChanged"/>
+                                <TabItem Header="Viewer">
+                                    <WebBrowser x:Name="wbWebBrowser" IsVisibleChanged="WebBrowser_Markdown_IsVisibleChanged" />
                                 </TabItem>
                                 <TabItem Header="Editor">
                                     <WindowsFormsHost>
@@ -911,7 +911,7 @@
                                 </ListView.ItemsPanel>-->
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <Border BorderBrush="Black" BorderThickness="1" Margin="3" Width="380">
+                                        <Border BorderBrush="Black" BorderThickness="1" Margin="3" Width="240">
                                             <Grid>
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
@@ -925,15 +925,14 @@
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
 
-                                                <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Width="32" Height="32" Margin="2" VerticalAlignment="Center">
+                                                <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" Width="32" Height="32" Margin="2" VerticalAlignment="Center">
                                                     <Image Source="{Binding FileIcon}" />
                                                 </Label>
-                                                <Label Grid.Column="0" Grid.Row="4" Content="{Binding Size}" Width="64" HorizontalContentAlignment="Right" />
 
                                                 <Label Grid.Column="1" Grid.Row="0" Content="{Binding Type}" />
-                                                <Label Grid.Column="1" Grid.Row="1" Content="{Binding AddedUsername}" />
-                                                <Label Grid.Column="1" Grid.Row="2" Content="{Binding AddedTimestamp}" />
-                                                <Label Grid.Column="1" Grid.Row="3" Content="{Binding DisplayName}" />
+                                                <Label Grid.Column="1" Grid.Row="1" Content="{Binding DisplayName}" />
+                                                <Label Grid.Column="1" Grid.Row="2" Content="{Binding Timestamp}" />
+                                                <Label Grid.Column="1" Grid.Row="3" Content="{Binding FileSize}" />
                                             </Grid>
                                         </Border>
                                     </DataTemplate>
