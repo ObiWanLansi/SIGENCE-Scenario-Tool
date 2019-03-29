@@ -39,23 +39,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.settings.Save();
             }
 
-            if(string.IsNullOrEmpty( this.settings.UDPHost ))
-            {
-                MB.Warning( "The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application." );
-                this.settings.UDPHost = "127.0.0.1";
-            }
+            //if(string.IsNullOrEmpty( this.settings.UDPHost ))
+            //{
+            //    MB.Warning( "The value in the configuration file for the setting UDPHost is invalid!\nPlease correct the value and restart the application." );
+            //    this.settings.UDPHost = "127.0.0.1";
+            //}
 
-            if(this.settings.UDPPortSending < 1025 || this.settings.UDPPortSending > 65535)
-            {
-                MB.Warning( "The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application." );
-                this.settings.UDPPortSending = 4242;
-            }
+            //if(this.settings.UDPPortSending < 1025 || this.settings.UDPPortSending > 65535)
+            //{
+            //    MB.Warning( "The value in the configuration file for the setting UDPPort is invalid!\nPlease correct the value and restart the application." );
+            //    this.settings.UDPPortSending = 4242;
+            //}
 
-            if(this.settings.UDPDelay < 0 || this.settings.UDPDelay > 10000)
-            {
-                MB.Warning( "The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application." );
-                this.settings.UDPDelay = 500;
-            }
+            //if(this.settings.UDPDelay < 0 || this.settings.UDPDelay > 10000)
+            //{
+            //    MB.Warning( "The value in the configuration file for the setting UDPDelay is invalid!\nPlease correct the value and restart the application." );
+            //    this.settings.UDPDelay = 500;
+            //}
 
             if(this.settings.MapZoomLevel < 1 || this.settings.MapZoomLevel > 20)
             {
@@ -147,7 +147,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            CreateRandomizedRFDevices( 100, true );
+            CreateRandomizedRFDevices( 10, true );
 
             //AddRFDevice( new RFDevice { PrimaryKey = Guid.Empty, Id = -1, Latitude = 1974, Longitude = 1974, StartTime = -1974 } );
 
@@ -208,7 +208,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            //OpenScenarioSimulationPlayer();
+            OpenScenarioSimulationPlayer();
 
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\6,w=658,c=2.bild.jpg" ), AttachementType.Embedded ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\MCS_Spectrum_Analyzer_2.1.6_Qt5_Setup.zip" ), AttachementType.Link ) );
@@ -219,7 +219,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Funky Disco House Mix - March 2019-g7XBQIV77XM.mp3" ), AttachementType.Link ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix -March 2019 - 5ZBgx1NeUWg.jpg" ), AttachementType.Link ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix - March 2019 - 5ZBgx1NeUWg.mp3" ), AttachementType.Link ) );
-            
+
             this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\ExampleScenarioDescription.md" ), AttachementType.Link ) );
             this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\HelloWorld.py" ), AttachementType.Embedded ) );
             this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\CheatSheet.pdf" ), AttachementType.Link ) );
@@ -229,7 +229,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.tecDescription.Text = File.ReadAllText( strMarkdown );
 
             this.tiMetaInformation.IsSelected = true;
-            this.tcTabControl.Items.Remove( this.tiDescription);
+            this.tcTabControl.Items.Remove( this.tiDescription );
 
             //-----------------------------------------------------------------
 

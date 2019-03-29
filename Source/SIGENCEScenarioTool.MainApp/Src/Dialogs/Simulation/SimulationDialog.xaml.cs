@@ -7,19 +7,19 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
 
 using SIGENCEScenarioTool.Extensions;
-using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 using SIGENCEScenarioTool.Windows.MainWindow;
 
 
 
 /*
- * Bei der Simluation müssen nachher nur die Sender berücksichtigt werden, die Receiver empfangen einfach nur ... ?
+ * Bei der Simluation müssen nachher nur die Sender berücksichtigt werden, die Receiver empfangen ja einfach nur ... ?
 */
 
 namespace SIGENCEScenarioTool.Dialogs.Simulation
@@ -29,6 +29,19 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
     /// </summary>
     public partial class SimulationDialog : Window, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The dt timer
+        /// </summary>
+        private readonly DispatcherTimer dtTimer = new DispatcherTimer();
+
+        /// <summary>
+        /// The i start time
+        /// </summary>
+        private int iStartTime = 0;
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Gets or sets the RFDevice collection.
         /// </summary>
@@ -41,7 +54,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <summary>
         /// The i current time
         /// </summary>
-        private double iCurrentTime;
+        private double iCurrentTimeSeconds;
 
         /// <summary>
         /// Gets or sets the current time.
@@ -49,12 +62,12 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <value>
         /// The current time.
         /// </value>
-        public double CurrentTime
+        public double CurrentTimeSeconds
         {
-            get { return this.iCurrentTime; }
+            get { return this.iCurrentTimeSeconds; }
             set
             {
-                this.iCurrentTime = value;
+                this.iCurrentTimeSeconds = value;
                 this.CurrentTimeAsString = TimeSpan.FromSeconds( value ).ToShortString();
 
                 FirePropertyChanged();
@@ -64,18 +77,18 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
         /// <summary>
         /// </summary>
-        private double iMinTime = 0;
+        private double iMinTimeSeconds = 0;
 
         /// <summary>
         /// </summary>
         /// <value>
         /// </value>
-        public double MinTime
+        public double MinTimeSeconds
         {
-            get { return this.iMinTime; }
+            get { return this.iMinTimeSeconds; }
             set
             {
-                this.iMinTime = value;
+                this.iMinTimeSeconds = value;
                 FirePropertyChanged();
             }
         }
@@ -84,7 +97,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <summary>
         /// The i maximum time
         /// </summary>
-        private double iMaxTime = 0;
+        private double iMaxTimeSeconds = 0;
 
         /// <summary>
         /// Gets or sets the maximum time.
@@ -92,12 +105,12 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <value>
         /// The maximum time.
         /// </value>
-        public double MaxTime
+        public double MaxTimeSeconds
         {
-            get { return this.iMaxTime; }
+            get { return this.iMaxTimeSeconds; }
             set
             {
-                this.iMaxTime = value;
+                this.iMaxTimeSeconds = value;
                 FirePropertyChanged();
             }
         }
@@ -193,8 +206,19 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
             InitializeComponent();
 
+            //-----------------------------------------------------------------
+
             InitMapControl();
             InitSlider();
+
+            //-----------------------------------------------------------------
+
+            this.dtTimer.Interval = TimeSpan.FromMilliseconds( 400 );
+
+            this.dtTimer.Tick += ( s, args ) =>
+            {
+                Update();
+            };
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -227,11 +251,70 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         private void InitSlider()
         {
-            this.MinTime = 0;
-            this.CurrentTime = 0;
+            this.MinTimeSeconds = 0;
+            this.CurrentTimeSeconds = 0;
 
             //TODO: Das muss natürlich über die letzte Startzeit noch eine gewisse Zeit X hinausgehen ...
-            this.MaxTime = this.RFDeviceViewModelCollection.Max( d => d.StartTime ) + 10;
+            //this.MaxTimeSeconds = this.RFDeviceViewModelCollection.Max( d => d.StartTime ) + 10;
+            this.MaxTimeSeconds = Math.Ceiling( this.RFDeviceViewModelCollection.Max( d => d.StartTime ) );
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Starts the stop.
+        /// </summary>
+        private void StartStop()
+        {
+            if(this.IsRunning)
+            {
+                this.dtTimer.Stop();
+                this.CurrentTimeSeconds = 0;
+            }
+            else
+            {
+                this.dtTimer.Start();
+                this.iStartTime = Environment.TickCount - ((int)(this.iCurrentTimeSeconds * 1000));
+            }
+
+            this.IsRunning = !this.IsRunning;
+
+            this.btnPause.IsEnabled = this.bIsRunning;
+            this.sCurrentTime.IsEnabled = !this.bIsRunning;
+            this.btnPlayStop.Content = this.Resources[this.bIsRunning ? "STOP" : "PLAY"];
+        }
+
+
+        /// <summary>
+        /// Pauses this instance.
+        /// </summary>
+        private void Pause()
+        {
+            if(this.dtTimer.IsEnabled)
+            {
+                this.dtTimer.Stop();
+            }
+            else
+            {
+                this.iStartTime = Environment.TickCount - ((int)(this.iCurrentTimeSeconds * 1000));
+                this.dtTimer.Start();
+            }
+        }
+
+
+        /// <summary>
+        /// Updates this instance.
+        /// </summary>
+        private void Update()
+        {
+            int iMilliSecondsSinceStart = Environment.TickCount - this.iStartTime;
+            this.CurrentTimeSeconds = iMilliSecondsSinceStart / 1000;
+
+            if(this.CurrentTimeSeconds >= this.MaxTimeSeconds)
+            {
+                Pause();
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -244,11 +327,9 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_PlayStop_Click( object sender, RoutedEventArgs e )
         {
-            this.IsRunning = !this.IsRunning;
+            StartStop();
 
-            this.btnPause.IsEnabled = this.bIsRunning;
-            this.sCurrentTime.IsEnabled = !this.bIsRunning;
-            this.btnPlayStop.Content = this.Resources[this.bIsRunning ? "STOP" : "PLAY"];
+            e.Handled = true;
         }
 
 
@@ -259,7 +340,9 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Pause_Click( object sender, RoutedEventArgs e )
         {
-            MB.NotYetImplemented();
+            Pause();
+
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

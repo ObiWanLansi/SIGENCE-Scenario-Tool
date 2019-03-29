@@ -903,15 +903,10 @@
 
                             <Label Grid.Row="0" Content="Attachments" Style="{StaticResource Header}" />
 
-                            <ListView Grid.Row="1" ItemsSource="{Binding Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
-                                <!--<ListView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel Orientation="Horizontal"/>
-                                    </ItemsPanelTemplate>
-                                </ListView.ItemsPanel>-->
+                            <ListView Grid.Row="1" ItemsSource="{Binding Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke" HorizontalContentAlignment="Stretch">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <Border BorderBrush="Black" BorderThickness="1" Margin="3" Width="240">
+                                        <Border BorderBrush="Black" BorderThickness="1" Margin="3" CornerRadius="5">
                                             <Grid>
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
@@ -938,34 +933,6 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            <!--
-                            <ScrollViewer Grid.Row="1">
-                                <ItemsControl Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" ItemsSource="{Binding Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke">
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <WrapPanel />
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border BorderBrush="Black" BorderThickness="1" Margin="3">
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="*" />
-                                                        <RowDefinition Height="*" />
-                                                    </Grid.RowDefinitions>
-
-                                                    <Label Grid.Row="0" Width="32" Height="32" Margin="2">
-                                                        <Image Source="{Binding FileIcon}" />
-                                                    </Label>
-                                                    <Label Grid.Row="1" Width="48" Height="24" Content="{Binding DisplayName}" Margin="2" HorizontalContentAlignment="Center" />
-                                                </Grid>
-                                            </Border>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                                -->
                         </Grid>
                     </Border>
 

@@ -30,37 +30,14 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnPlayStop" Grid.Column="0" Width="28" Height="28" Content="{StaticResource PLAY}" IsEnabled="True" ToolTip="Play Or Stop" Margin="3" Click="Button_PlayStop_Click" />
                 <Button x:Name="btnPause" Grid.Column="1" Width="28" Height="28" Content="{StaticResource PAUSE}" IsEnabled="False" ToolTip="Pause" Margin="3" Click="Button_Pause_Click" />
-                <!--<Button Grid.Column="2" Width="28" Height="28" Content="{StaticResource STOP}" ToolTip="Stop" Margin="3" />-->
-                <Slider x:Name="sCurrentTime" Grid.Column="3" Minimum="{Binding MinTime}" Maximum="{Binding MaxTime}" Value="{Binding CurrentTime}" IsEnabled="True" AutoToolTipPlacement="BottomRight" TickPlacement="Both" TickFrequency="2" VerticalAlignment="Center" Margin="3" />
+                <Slider x:Name="sCurrentTime" Grid.Column="3" Minimum="{Binding MinTimeSeconds}" Maximum="{Binding MaxTimeSeconds}" Value="{Binding CurrentTimeSeconds}" IsEnabled="True" AutoToolTipPlacement="BottomRight" TickPlacement="Both" TickFrequency="2" VerticalAlignment="Center" Margin="3" />
                 <Label Grid.Column="4" Content="{Binding CurrentTimeAsString}" FontWeight="Normal" FontFamily="Courier New" FontSize="14" Margin="3" VerticalAlignment="Center" />
             </Grid>
         </Border>
 
-        <!--<DataGrid x:Name="dgRFDevices" Grid.Row="2" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="True" FontFamily="Courier New" FontSize="14" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended" />-->
         <DataGrid x:Name="dgRFDevices" Grid.Row="2" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended">
 
             <DataGrid.Columns>
-
-                <!--<DataGridCheckBoxColumn Header="" Binding="{Binding IsMarked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                    <DataGridCheckBoxColumn.ElementStyle>
-                        <Style TargetType="CheckBox">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="Margin" Value="5" />
-                        </Style>
-                    </DataGridCheckBoxColumn.ElementStyle>
-                </DataGridCheckBoxColumn>
-
-                <DataGridTextColumn Header="" Width="10" IsReadOnly="True">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
-                            <Setter Property="Margin" Value="5" />
-                            <Setter Property="Text" Value=" " />
-                            <Setter Property="Background" Value="{Binding ValidationBackground}" />
-                            <Setter Property="ToolTip" Value="{Binding ValidationHint}" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>-->
 
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}">
                     <DataGridTextColumn.HeaderStyle>
