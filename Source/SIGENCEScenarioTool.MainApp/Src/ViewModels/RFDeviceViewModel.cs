@@ -535,6 +535,21 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
+        /// Gets a value indicating whether this instance is visible.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is visible; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsVisible
+        {
+            get
+            {
+                return ((AbstractMarker)this.Marker.Shape).Visibility != Visibility.Hidden;
+            }
+        }
+
+
+        /// <summary>
         /// Gets the type of the device.
         /// </summary>
         /// <value>

@@ -213,7 +213,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
             //-----------------------------------------------------------------
 
-            this.dtTimer.Interval = TimeSpan.FromMilliseconds( 400 );
+            this.dtTimer.Interval = TimeSpan.FromMilliseconds( 100 );
 
             this.dtTimer.Tick += ( s, args ) =>
             {
@@ -243,6 +243,11 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             this.mcMapControl.Position = new PointLatLng( settings.InitialLatitude, settings.InitialLongitude );
             this.mcMapControl.Zoom = settings.InitialZoom;
             this.mcMapControl.MapProvider = MainWindow.GetProviderFromString( settings.InitialMap );
+
+            foreach(var device in this.RFDeviceViewModelCollection)
+            {
+                this.mcMapControl.Markers.Add( device.Marker );
+            }
         }
 
 
@@ -274,6 +279,11 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             }
             else
             {
+                foreach(var device in this.RFDeviceViewModelCollection)
+                {
+                    device.SetVisible( false );
+                }
+
                 this.dtTimer.Start();
                 this.iStartTime = Environment.TickCount - ((int)(this.iCurrentTimeSeconds * 1000));
             }
@@ -309,7 +319,18 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         private void Update()
         {
             int iMilliSecondsSinceStart = Environment.TickCount - this.iStartTime;
-            this.CurrentTimeSeconds = iMilliSecondsSinceStart / 1000;
+            double dSecondsSinceStart = (double)iMilliSecondsSinceStart / 1000;
+            this.CurrentTimeSeconds = dSecondsSinceStart;
+
+            foreach(var device in this.RFDeviceViewModelCollection)
+            {
+                if((dSecondsSinceStart > device.StartTime) && (device.IsVisible == false))
+                {
+                    device.SetVisible( true );
+                    this.dgRFDevices.ScrollIntoView( device );
+
+                }
+            }
 
             if(this.CurrentTimeSeconds >= this.MaxTimeSeconds)
             {
