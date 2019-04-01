@@ -556,10 +556,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     IGeometry result = Densifier.Densify( ls, fDensifyInKM );
 
-                    if(result is LineString)
+                    if(result is LineString lsDensified)
                     {
-                        LineString lsDensified = result as LineString;
-
                         int iCounter = -1;
                         foreach(Coordinate c in lsDensified.Coordinates)
                         {
@@ -574,9 +572,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                             PointLatLng pos = c.ToPointLatLng();
 
                             RFDevice device = this.dvmLastSelectedDevice.Clone();
-
+                            device.PrimaryKey = Guid.NewGuid();
                             device.DeviceSource = DeviceSource.Automatic;
-                            //device.Name = string.Format("{0} #{1}", 42 < 0 ? "Receiver" : "Transmitter", iCounter);
                             device.Latitude = pos.Lat;
                             device.Longitude = pos.Lng;
                             device.StartTime = this.settings.DeviceCopyTimeAddValue * iCounter;
@@ -610,8 +607,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                         RFDevice device = this.dvmLastSelectedDevice.Clone();
 
+                        device.PrimaryKey = Guid.NewGuid();
                         device.DeviceSource = DeviceSource.Automatic;
-                        //device.Name = string.Format("{0} #{1}", 42 < 0 ? "Receiver" : "Transmitter", iCounter);
                         device.Latitude = pos.Lat;
                         device.Longitude = pos.Lng;
                         device.StartTime = this.settings.DeviceCopyTimeAddValue * iCounter;
