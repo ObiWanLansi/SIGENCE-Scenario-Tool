@@ -342,16 +342,6 @@
             Gets or sets a boolean indicating whether to process smiley.
             </summary>
         </member>
-        <member name="P:Markdig.Extensions.Emoji.EmojiParser.EmojiToUnicode">
-            <summary>
-            Gets the emoji to unicode mapping. This can be modified before this parser is initialized.
-            </summary>
-        </member>
-        <member name="P:Markdig.Extensions.Emoji.EmojiParser.SmileyToEmoji">
-            <summary>
-            Gets the smiley to emoji mapping. This can be modified before this parser is initialized.
-            </summary>
-        </member>
         <member name="T:Markdig.Extensions.EmphasisExtras.EmphasisExtraExtension">
             <summary>
             Extension for strikethrough, subscript, superscript, inserted and marked.
@@ -1372,6 +1362,282 @@
             <param name="c">The input char.</param>
             <returns>The simple ASCII string or null if the char itself cannot be simplified</returns>
         </member>
+        <member name="T:Markdig.Helpers.CompactPrefixTree`1">
+            <summary>
+            A compact insert-only key/value collection for fast prefix lookups
+            <para>Something between a Trie and a full Radix tree, but stored linearly in memory</para>
+            </summary>
+            <typeparam name="TValue">The value associated with the key</typeparam>
+        </member>
+        <member name="T:Markdig.Helpers.CompactPrefixTree`1.InsertionBehavior">
+            <summary>
+            Used internally to control behavior of insertion
+            <para>Copied from <see cref="T:System.Collections.Generic.Dictionary`2"/> internals</para>
+            </summary>
+        </member>
+        <member name="F:Markdig.Helpers.CompactPrefixTree`1.InsertionBehavior.None">
+            <summary>
+            The default insertion behavior. Does not overwrite or throw.
+            </summary>
+        </member>
+        <member name="F:Markdig.Helpers.CompactPrefixTree`1.InsertionBehavior.OverwriteExisting">
+            <summary>
+            Specifies that an existing entry with the same key should be overwritten if encountered.
+            </summary>
+        </member>
+        <member name="F:Markdig.Helpers.CompactPrefixTree`1.InsertionBehavior.ThrowOnExisting">
+            <summary>
+            Specifies that if an existing entry with the same key is encountered, an exception should be thrown.
+            </summary>
+        </member>
+        <member name="F:Markdig.Helpers.CompactPrefixTree`1.Node.Char">
+            <summary>
+            The character this node represents, should never be 0
+            </summary>
+        </member>
+        <member name="F:Markdig.Helpers.CompactPrefixTree`1.Node.ChildChar">
+            <summary>
+            Will be 0 if this is a leaf node
+            </summary>
+        </member>
+        <member name="F:Markdig.Helpers.CompactPrefixTree`1.Node.MatchIndex">
+            <summary>
+            Set to -1 if it does not point to a match
+            </summary>
+        </member>
+        <member name="F:Markdig.Helpers.CompactPrefixTree`1.Node.Children">
+            <summary>
+            -1 if not present
+            </summary>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.TreeSize">
+            <summary>
+            Gets the number of nodes in the internal tree structure
+            <para>You might be looking for <see cref="P:Markdig.Helpers.CompactPrefixTree`1.Count"/></para>
+            <para>Exposing this might help in deducing more efficient initial parameters</para>
+            </summary>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.TreeCapacity">
+            <summary>
+            Gets or sets the capacity of the internal tree structure buffer
+            <para>You might be looking for <see cref="P:Markdig.Helpers.CompactPrefixTree`1.Capacity"/></para>
+            </summary>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.Count">
+            <summary>
+            Gets the number of key/value pairs contained in the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.Capacity">
+            <summary>
+            Gets or sets the capacity of the internal key/value pair buffer
+            </summary>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.ChildrenCount">
+            <summary>
+            Gets the size of the children buffer in the internal tree structure
+            <para>You might be looking for <see cref="P:Markdig.Helpers.CompactPrefixTree`1.Count"/></para>
+            <para>Exposing this might help in deducing more efficient initial parameters</para>
+            </summary>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.ChildrenCapacity">
+            <summary>
+            Gets or sets the capacity of the internal children buffer
+            <para>You might be looking for <see cref="P:Markdig.Helpers.CompactPrefixTree`1.Capacity"/></para>
+            </summary>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> with no initial prefixes
+            </summary>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.#ctor(System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.String,`0}})">
+            <summary>
+            Constructs a new <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> with the supplied matches
+            </summary>
+            <param name="input">Matches to initialize the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> with. For best lookup performance, this collection should be sorted.</param>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.Item(System.Int32)">
+            <summary>
+            Retrieves the key/value pair at the specified index (must be lower than <see cref="P:Markdig.Helpers.CompactPrefixTree`1.Count"/>)
+            </summary>
+            <param name="index">Index of pair to get, must be lower than <see cref="P:Markdig.Helpers.CompactPrefixTree`1.Count"/> (the order is the same as the order in which the elements were added)</param>
+            <returns>The key/value pair of the element at the specified index</returns>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.Item(System.String)">
+            <summary>
+            Gets or sets the value associated with the specified key
+            </summary>
+            <param name="key">The key of the value to get or set</param>
+            <returns>The value of the element with the specified key</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.Add(System.String,`0)">
+            <summary>
+            Adds the specified key/value pair to the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="key">The key of the element to add</param>
+            <param name="value">The value of the element to add</param>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.Add(System.Collections.Generic.KeyValuePair{System.String,`0})">
+            <summary>
+            Adds the specified key/value pair to the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="pair">The key/value pair to add</param>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryAdd(System.String,`0)">
+            <summary>
+            Tries to add the key/value pair to the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> if the key is not yet present
+            </summary>
+            <param name="key">The key of the element to add</param>
+            <param name="value">The value of the element to add</param>
+            <returns>True if the element was added, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryAdd(System.Collections.Generic.KeyValuePair{System.String,`0})">
+            <summary>
+            Tries to add the key/value pair to the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> if the key is not yet present
+            </summary>
+            <param name="pair">The pair to add</param>
+            <returns>True if the element was added, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchLongest(System.String,System.Int32,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find the longest prefix of text, starting at offset, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="offset">Index of the character at which to start searching</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchLongest(System.String,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find the longest prefix of text, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchLongest(System.String,System.Int32,System.Int32,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find the longest prefix of text, starting at offset, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="offset">The offset in text at which to start looking for the prefix</param>
+            <param name="length">The longest prefix allowed to match</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchExact(System.String,System.Int32,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find a suffix of text, starting at offset, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> and is exactly (text.Length - offset) characters long
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="offset">Index of the character at which to start searching</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchExact(System.String,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find a prefix of text, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> and is exactly text.Length characters long
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchExact(System.String,System.Int32,System.Int32,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find a prefix of text, starting at offset, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> and is exactly length characters long
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="offset">The offset in text at which to start looking for the prefix</param>
+            <param name="length">The longest prefix allowed to match</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchShortest(System.String,System.Int32,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find the shortest prefix of text, starting at offset, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="offset">Index of the character at which to start searching</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchShortest(System.String,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find the shortest prefix of text, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryMatchShortest(System.String,System.Int32,System.Int32,System.Collections.Generic.KeyValuePair{System.String,`0}@)">
+            <summary>
+            Tries to find the shortest prefix of text, starting at offset, that is contained in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+            <param name="text">The text in which to search for the prefix</param>
+            <param name="offset">The offset in text at which to start looking for the prefix</param>
+            <param name="length">The longest prefix allowed to match</param>
+            <param name="match">The found prefix and the corresponding value</param>
+            <returns>True if a match was found, false otherwise</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.ContainsKey(System.String)">
+            <summary>
+            Determines whether the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/> contains the specified key
+            </summary>
+            <param name="key">The key to locate in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/></param>
+            <returns>True if the key is contained in this PrefixTree, false otherwise.</returns>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.TryGetValue(System.String,`0@)">
+            <summary>
+            Gets the value associated with the specified key
+            </summary>
+            <param name="key">The key of the value to get</param>
+            <param name="value">The value associated with the specified key</param>
+            <returns>True if the key is contained in this PrefixTree, false otherwise.</returns>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.Keys">
+            <summary>
+            Gets a collection containing the keys in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.Values">
+            <summary>
+            Gets a collection containing the values in this <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.GetEnumerator">
+            <summary>
+            Returns an Enumerator that iterates through the <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>.
+            <para>Use the index accessor instead (<see cref="P:Markdig.Helpers.CompactPrefixTree`1.Item(System.Int32)"/>)</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Markdig.Helpers.CompactPrefixTree`1.Enumerator">
+            <summary>
+            Enumerates the elements of a <see cref="T:Markdig.Helpers.CompactPrefixTree`1"/>
+            </summary>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.Enumerator.MoveNext">
+            <summary>
+            Increments the internal index
+            </summary>
+            <returns>True if the index is less than the length of the internal array</returns>
+        </member>
+        <member name="P:Markdig.Helpers.CompactPrefixTree`1.Enumerator.Current">
+            <summary>
+            Gets the <see cref="T:System.Collections.Generic.KeyValuePair`2"/> at the current position
+            </summary>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.Enumerator.Dispose">
+            <summary>
+            Does nothing
+            </summary>
+        </member>
+        <member name="M:Markdig.Helpers.CompactPrefixTree`1.Enumerator.Reset">
+            <summary>
+            Resets the internal index to the beginning of the array
+            </summary>
+        </member>
         <member name="T:Markdig.Helpers.DefaultObjectCache`1">
             <summary>
             A default object cache that expect the type {T} to provide a parameter less constructor
@@ -1912,30 +2178,10 @@
             </summary>
             <returns><c>true</c> if this slice is empty or made only of whitespaces; <c>false</c> otherwise</returns>
         </member>
-        <member name="T:Markdig.Helpers.TextMatchHelper">
+        <member name="T:Markdig.Helpers.ThrowHelper">
             <summary>
-            Match a text against a list of ASCII string using internally a tree to speedup the lookup
+            Inspired by CoreLib, taken from https://github.com/MihaZupan/SharpCollections, cc @MihaZupan
             </summary>
-        </member>
-        <member name="M:Markdig.Helpers.TextMatchHelper.#ctor(System.Collections.Generic.HashSet{System.String})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Markdig.Helpers.TextMatchHelper"/> class.
-            </summary>
-            <param name="matches">The matches to match against.</param>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Markdig.Helpers.TextMatchHelper.TryMatch(System.String,System.Int32,System.Int32,System.String@)">
-            <summary>
-            Tries to match in the text, at offset position, the list of string matches registered to this instance.
-            </summary>
-            <param name="text">The text.</param>
-            <param name="offset">The offset.</param>
-            <param name="length">The length.</param>
-            <param name="match">The match string if the match was successfull.</param>
-            <returns>
-              <c>true</c> if the match was successfull; <c>false</c> otherwise
-            </returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
         </member>
         <member name="T:Markdig.IMarkdownExtension">
             <summary>
@@ -1960,16 +2206,17 @@
             Provides methods for parsing a Markdown string to a syntax tree and converting it to other formats.
             </summary>
         </member>
-        <member name="M:Markdig.Markdown.Normalize(System.String,Markdig.Renderers.Normalize.NormalizeOptions,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Markdown.Normalize(System.String,Markdig.Renderers.Normalize.NormalizeOptions,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Normalizes the specified markdown to a normalized markdown text.
             </summary>
             <param name="markdown">The markdown.</param>
             <param name="options">The normalize options</param>
             <param name="pipeline">The pipeline.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <returns>A normalized markdown text.</returns>
         </member>
-        <member name="M:Markdig.Markdown.Normalize(System.String,System.IO.TextWriter,Markdig.Renderers.Normalize.NormalizeOptions,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Markdown.Normalize(System.String,System.IO.TextWriter,Markdig.Renderers.Normalize.NormalizeOptions,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Normalizes the specified markdown to a normalized markdown text.
             </summary>
@@ -1977,6 +2224,7 @@
             <param name="writer">The destination <see cref="T:System.IO.TextWriter"/> that will receive the result of the conversion.</param>
             <param name="options">The normalize options</param>
             <param name="pipeline">The pipeline.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <returns>A normalized markdown text.</returns>
         </member>
         <member name="M:Markdig.Markdown.ToHtml(System.String,Markdig.MarkdownPipeline)">
@@ -1988,23 +2236,25 @@
             <returns>The result of the conversion</returns>
             <exception cref="T:System.ArgumentNullException">if markdown variable is null</exception>
         </member>
-        <member name="M:Markdig.Markdown.ToHtml(System.String,System.IO.TextWriter,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Markdown.ToHtml(System.String,System.IO.TextWriter,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Converts a Markdown string to HTML and output to the specified writer.
             </summary>
             <param name="markdown">A Markdown text.</param>
             <param name="writer">The destination <see cref="T:System.IO.TextWriter"/> that will receive the result of the conversion.</param>
             <param name="pipeline">The pipeline used for the conversion.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <returns>The Markdown document that has been parsed</returns>
             <exception cref="T:System.ArgumentNullException">if reader or writer variable are null</exception>
         </member>
-        <member name="M:Markdig.Markdown.Convert(System.String,Markdig.Renderers.IMarkdownRenderer,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Markdown.Convert(System.String,Markdig.Renderers.IMarkdownRenderer,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Converts a Markdown string using a custom <see cref="T:Markdig.Renderers.IMarkdownRenderer"/>.
             </summary>
             <param name="markdown">A Markdown text.</param>
             <param name="renderer">The renderer to convert Markdown to.</param>
             <param name="pipeline">The pipeline used for the conversion.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <exception cref="T:System.ArgumentNullException">if markdown or writer variable are null</exception>
         </member>
         <member name="M:Markdig.Markdown.Parse(System.String)">
@@ -2015,31 +2265,34 @@
             <returns>An AST Markdown document</returns>
             <exception cref="T:System.ArgumentNullException">if markdown variable is null</exception>
         </member>
-        <member name="M:Markdig.Markdown.Parse(System.String,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Markdown.Parse(System.String,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Parses the specified markdown into an AST <see cref="T:Markdig.Syntax.MarkdownDocument"/>
             </summary>
             <param name="markdown">The markdown text.</param>
             <param name="pipeline">The pipeline used for the parsing.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <returns>An AST Markdown document</returns>
             <exception cref="T:System.ArgumentNullException">if markdown variable is null</exception>
         </member>
-        <member name="M:Markdig.Markdown.ToPlainText(System.String,System.IO.TextWriter,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Markdown.ToPlainText(System.String,System.IO.TextWriter,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Converts a Markdown string to Plain text and output to the specified writer.
             </summary>
             <param name="markdown">A Markdown text.</param>
             <param name="writer">The destination <see cref="T:System.IO.TextWriter"/> that will receive the result of the conversion.</param>
             <param name="pipeline">The pipeline used for the conversion.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <returns>The Markdown document that has been parsed</returns>
             <exception cref="T:System.ArgumentNullException">if reader or writer variable are null</exception>
         </member>
-        <member name="M:Markdig.Markdown.ToPlainText(System.String,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Markdown.ToPlainText(System.String,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Converts a Markdown string to HTML.
             </summary>
             <param name="markdown">A Markdown text.</param>
             <param name="pipeline">The pipeline used for the conversion.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <returns>The result of the conversion</returns>
             <exception cref="T:System.ArgumentNullException">if markdown variable is null</exception>
         </member>
@@ -2325,6 +2578,21 @@
             <param name="newLine">The string to be used for line-endings.</param>
             <returns>The modified pipeline</returns>
         </member>
+        <member name="T:Markdig.MarkdownParserContext">
+            <summary>
+            Provides a context that can be used as part of parsing Markdown documents.
+            </summary>
+        </member>
+        <member name="P:Markdig.MarkdownParserContext.Properties">
+            <summary>
+            Gets or sets the context property collection.
+            </summary>
+        </member>
+        <member name="M:Markdig.MarkdownParserContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Markdig.MarkdownParserContext" /> class.
+            </summary>
+        </member>
         <member name="T:Markdig.MarkdownPipeline">
             <summary>
             This class is the Markdown pipeline build from a <see cref="T:Markdig.MarkdownPipelineBuilder"/>.
@@ -2389,7 +2657,7 @@
         </member>
         <member name="E:Markdig.MarkdownPipelineBuilder.DocumentProcessed">
             <summary>
-            Occurs when a document has been processed after the <see cref="M:Markdig.Parsers.MarkdownParser.Parse(System.String,Markdig.MarkdownPipeline)"/> method.
+            Occurs when a document has been processed after the <see cref="M:Markdig.Parsers.MarkdownParser.Parse(System.String,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)"/> method.
             </summary>
         </member>
         <member name="M:Markdig.MarkdownPipelineBuilder.Build">
@@ -2464,7 +2732,7 @@
             The block processor.
             </summary>
         </member>
-        <member name="M:Markdig.Parsers.BlockProcessor.#ctor(Markdig.Helpers.StringBuilderCache,Markdig.Syntax.MarkdownDocument,Markdig.Parsers.BlockParserList)">
+        <member name="M:Markdig.Parsers.BlockProcessor.#ctor(Markdig.Helpers.StringBuilderCache,Markdig.Syntax.MarkdownDocument,Markdig.Parsers.BlockParserList,Markdig.MarkdownParserContext)">
             <summary>
             Initializes a new instance of the <see cref="T:Markdig.Parsers.BlockProcessor" /> class.
             </summary>
@@ -2482,6 +2750,11 @@
         <member name="P:Markdig.Parsers.BlockProcessor.Parsers">
             <summary>
             Gets the list of <see cref="T:Markdig.Parsers.BlockParser"/> configured with this parser state.
+            </summary>
+        </member>
+        <member name="P:Markdig.Parsers.BlockProcessor.Context">
+            <summary>
+            Gets the parser context or <c>null</c> if none is available.
             </summary>
         </member>
         <member name="P:Markdig.Parsers.BlockProcessor.CurrentContainer">
@@ -2995,7 +3268,7 @@
             The inline parser state used by all <see cref="T:Markdig.Parsers.InlineParser"/>.
             </summary>
         </member>
-        <member name="M:Markdig.Parsers.InlineProcessor.#ctor(Markdig.Helpers.StringBuilderCache,Markdig.Syntax.MarkdownDocument,Markdig.Parsers.InlineParserList,System.Boolean)">
+        <member name="M:Markdig.Parsers.InlineProcessor.#ctor(Markdig.Helpers.StringBuilderCache,Markdig.Syntax.MarkdownDocument,Markdig.Parsers.InlineParserList,System.Boolean,Markdig.MarkdownParserContext)">
             <summary>
             Initializes a new instance of the <see cref="T:Markdig.Parsers.InlineProcessor" /> class.
             </summary>
@@ -3034,6 +3307,11 @@
         <member name="P:Markdig.Parsers.InlineProcessor.Parsers">
             <summary>
             Gets the list of inline parsers.
+            </summary>
+        </member>
+        <member name="P:Markdig.Parsers.InlineProcessor.Context">
+            <summary>
+            Gets the parser context or <c>null</c> if none is available.
             </summary>
         </member>
         <member name="P:Markdig.Parsers.InlineProcessor.Document">
@@ -3132,7 +3410,7 @@
         </member>
         <member name="F:Markdig.Parsers.Inlines.EmphasisDescriptor.MaximumCount">
             <summary>
-            The maximum number of character this emphasis is expected to have (must be >=1 and >= minumunCount and &lt;= 2)
+            The maximum number of character this emphasis is expected to have (must be >=1 and >= minumunCount)
             </summary>
         </member>
         <member name="F:Markdig.Parsers.Inlines.EmphasisDescriptor.EnableWithinWord">
@@ -3334,21 +3612,23 @@
             The Markdown parser.
             </summary>
         </member>
-        <member name="M:Markdig.Parsers.MarkdownParser.#ctor(System.String,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Parsers.MarkdownParser.#ctor(System.String,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Initializes a new instance of the <see cref="T:Markdig.Parsers.MarkdownParser" /> class.
             </summary>
             <param name="text">The reader.</param>
             <param name="pipeline">The pipeline.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <exception cref="T:System.ArgumentNullException">
             </exception>
         </member>
-        <member name="M:Markdig.Parsers.MarkdownParser.Parse(System.String,Markdig.MarkdownPipeline)">
+        <member name="M:Markdig.Parsers.MarkdownParser.Parse(System.String,Markdig.MarkdownPipeline,Markdig.MarkdownParserContext)">
             <summary>
             Parses the specified markdown into an AST <see cref="T:Markdig.Syntax.MarkdownDocument"/>
             </summary>
             <param name="text">A Markdown text</param>
             <param name="pipeline">The pipeline used for the parsing.</param>
+            <param name="context">A parser context used for the parsing.</param>
             <returns>An AST Markdown document</returns>
             <exception cref="T:System.ArgumentNullException">if reader variable is null</exception>
         </member>
@@ -3758,7 +4038,7 @@
             <summary>
             A HTML renderer for an <see cref="T:Markdig.Syntax.Inlines.EmphasisInline"/>.
             </summary>
-            <seealso cref="!:Markdig.Renderers.Html.HtmlObjectRenderer&lt;Markdig.Syntax.Inlines.EmphasisInline&gt;" />
+            <seealso cref="T:Markdig.Renderers.Html.HtmlObjectRenderer`1" />
         </member>
         <member name="T:Markdig.Renderers.Html.Inlines.EmphasisInlineRenderer.GetTagDelegate">
             <summary>
@@ -3949,7 +4229,7 @@
             <summary>
             A Normalize renderer for an <see cref="T:Markdig.Syntax.Inlines.EmphasisInline"/>.
             </summary>
-            <seealso cref="!:Markdig.Renderers.Normalize.NormalizeObjectRenderer&lt;Markdig.Syntax.Inlines.EmphasisInline&gt;" />
+            <seealso cref="T:Markdig.Renderers.Normalize.NormalizeObjectRenderer`1" />
         </member>
         <member name="T:Markdig.Renderers.Normalize.Inlines.LineBreakInlineRenderer">
             <summary>
@@ -4755,6 +5035,12 @@
         <member name="P:Markdig.Syntax.Inlines.EmphasisInline.IsDouble">
             <summary>
             Gets or sets a value indicating whether this <see cref="T:Markdig.Syntax.Inlines.EmphasisInline"/> is strong.
+            <para>Marked obsolete as EmphasisInline can now be represented by more than two delimiter characters</para>
+            </summary>
+        </member>
+        <member name="P:Markdig.Syntax.Inlines.EmphasisInline.DelimiterCount">
+            <summary>
+            Gets or sets the number of delimiter characters for this emphasis.
             </summary>
         </member>
         <member name="T:Markdig.Syntax.Inlines.HtmlEntityInline">
@@ -5336,6 +5622,7 @@
         <member name="M:Markdig.Syntax.MarkdownObjectExtensions.Descendants(Markdig.Syntax.MarkdownObject)">
             <summary>
             Iterates over the descendant elements for the specified markdown element, including <see cref="T:Markdig.Syntax.Block"/> and <see cref="T:Markdig.Syntax.Inlines.Inline"/>.
+            <para>The descendant elements are returned in DFS-like order.</para>
             </summary>
             <param name="markdownObject">The markdown object.</param>
             <returns>An iteration over the descendant elements</returns>

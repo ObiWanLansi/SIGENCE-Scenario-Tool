@@ -916,6 +916,13 @@
             <param name="bOverwrite">if set to <c>true</c> [b overwrite].</param>
             <returns></returns>
         </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.FileInfoExtension.GetAssociatedIcon(System.IO.FileInfo)">
+            <summary>
+            Gets the associated icon.
+            </summary>
+            <param name="fi">The fi.</param>
+            <returns></returns>
+        </member>
         <member name="T:SIGENCEScenarioTool.Extensions.IDataReaderExtension">
             <summary>
             
@@ -1790,6 +1797,105 @@
             Fires the property changed.
             </summary>
             <param name="strPropertyName">Name of the string property.</param>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Models.Attachements.AttachementType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.Attachements.AttachementType.Link">
+            <summary>
+            The link
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.Attachements.AttachementType.Embedded">
+            <summary>
+            The embedded
+            </summary>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Models.Attachements.Attachement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.Source">
+            <summary>
+            Gets or sets the source.
+            </summary>
+            <value>
+            The source.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.DisplayName">
+            <summary>
+            Gets or sets the display name.
+            </summary>
+            <value>
+            The display name.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.FileSize">
+            <summary>
+            Gets or sets the size.
+            </summary>
+            <value>
+            The size.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.FileTimestamp">
+            <summary>
+            Gets or sets the file timestamp.
+            </summary>
+            <value>
+            The file timestamp.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.AddedTimestamp">
+            <summary>
+            Gets or sets the added timestamp.
+            </summary>
+            <value>
+            The added timestamp.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.AddedUsername">
+            <summary>
+            Gets or sets the added username.
+            </summary>
+            <value>
+            The added username.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.FileIcon">
+            <summary>
+            Gets or sets the bitmap.
+            </summary>
+            <value>
+            The bitmap.
+            </value>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.Timestamp">
+            <summary>
+            Gets the timestamp.
+            </summary>
+            <value>
+            The timestamp.
+            </value>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.Attachements.Attachement.#ctor(System.IO.FileInfo,SIGENCEScenarioTool.Models.Attachements.AttachementType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SIGENCEScenarioTool.Models.Attachements.Attachement" /> class.
+            </summary>
+            <param name="fiSource">The fi source.</param>
+            <param name="at">At.</param>
         </member>
         <member name="T:SIGENCEScenarioTool.Models.AntennaType">
             <summary>
@@ -3274,6 +3380,54 @@
             https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtertiary_link 
             </summary>
         </member>
+        <member name="T:SIGENCEScenarioTool.Tools.ExtractIcon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.ExtractIcon.ExtractIconEx(System.String,System.Int32,System.IntPtr[],System.IntPtr[],System.Int32)">
+            <summary>
+            Extracts the icon ex.
+            </summary>
+            <param name="lpszFile">The LPSZ file.</param>
+            <param name="nIconIndex">Index of the n icon.</param>
+            <param name="phIconLarge">The ph icon large.</param>
+            <param name="phIconSmall">The ph icon small.</param>
+            <param name="nIcons">The n icons.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.ExtractIcon.GetIcon(System.String)">
+            <summary>
+            Gets the icon.
+            </summary>
+            <param name="strFilenameAndIconIndex">Index of the string filename and icon.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.ExtractIcon.GetIcon(System.String,System.Int32)">
+            <summary>
+            Gets the icon.
+            </summary>
+            <param name="strFilename">The string filename.</param>
+            <param name="iIconIndex">Index of the i icon.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.ExtractIcon.GetIcon(System.String,System.Boolean)">
+            <summary>
+            Gets the icon.
+            </summary>
+            <param name="strFilenameAndIconIndex">Index of the string filename and icon.</param>
+            <param name="bLargeIcon">if set to <c>true</c> [b large icon].</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.ExtractIcon.GetIcon(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Gets the icon.
+            </summary>
+            <param name="strFilename">The string filename.</param>
+            <param name="iIconIndex">Index of the i icon.</param>
+            <param name="bLargeIcon">if set to <c>true</c> [b large icon].</param>
+            <returns></returns>
+        </member>
         <member name="T:SIGENCEScenarioTool.Tools.GeoHelper">
             <summary>
             
@@ -3544,6 +3698,13 @@
             </summary>
             <param name="lUnixTimeStamp">The l unix time stamp.</param>
             <param name="dtk">The DTK.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.Tool.GetHumanDistance(System.Int32)">
+            <summary>
+            Gets the human distance.
+            </summary>
+            <param name="iMeter">The i meter.</param>
             <returns></returns>
         </member>
         <member name="M:SIGENCEScenarioTool.Tools.Tool.GetHumanSizeForPhysics(System.Double,System.String)">

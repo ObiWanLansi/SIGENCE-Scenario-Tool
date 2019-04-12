@@ -10,6 +10,8 @@
   <HelpKINode Title="AbstractModelBase.FirePropertyChanged method" Url="html/M_SIGENCEScenarioTool_Models_AbstractModelBase_FirePropertyChanged.htm" />
   <HelpKINode Title="AbstractModelBase.PropertyChanged event" Url="html/E_SIGENCEScenarioTool_Models_AbstractModelBase_PropertyChanged.htm" />
   <HelpKINode Title="Add method" Url="html/Overload_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Add.htm" />
+  <HelpKINode Title="AddedTimestamp property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_AddedTimestamp.htm" />
+  <HelpKINode Title="AddedUsername property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_AddedUsername.htm" />
   <HelpKINode Title="Aeroway enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="AIS property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_AIS.htm" />
   <HelpKINode Title="ALLCHARS field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLCHARS.htm" />
@@ -50,6 +52,23 @@
   <HelpKINode Title="ApplicationResource.ReadResourceAsString method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsString.htm" />
   <HelpKINode Title="ApplicationResource.ReadResourceAsXDocument method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsXDocument.htm" />
   <HelpKINode Title="Assembly property" Url="html/P_SIGENCEScenarioTool_Tools_ApplicationResource_Assembly.htm" />
+  <HelpKINode Title="Attachement class">
+    <HelpKINode Title="Attachement Class" Url="html/T_SIGENCEScenarioTool_Models_Attachements_Attachement.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Models_Attachements_Attachement__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Attachements_Attachement.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_Attachements_Attachement.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Attachement.AddedTimestamp property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_AddedTimestamp.htm" />
+  <HelpKINode Title="Attachement.AddedUsername property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_AddedUsername.htm" />
+  <HelpKINode Title="Attachement.Attachement constructor" Url="html/M_SIGENCEScenarioTool_Models_Attachements_Attachement__ctor.htm" />
+  <HelpKINode Title="Attachement.DisplayName property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_DisplayName.htm" />
+  <HelpKINode Title="Attachement.FileIcon property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_FileIcon.htm" />
+  <HelpKINode Title="Attachement.FileSize property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_FileSize.htm" />
+  <HelpKINode Title="Attachement.FileTimestamp property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_FileTimestamp.htm" />
+  <HelpKINode Title="Attachement.Source property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_Source.htm" />
+  <HelpKINode Title="Attachement.Timestamp property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_Timestamp.htm" />
+  <HelpKINode Title="Attachement.Type property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_Type.htm" />
+  <HelpKINode Title="AttachementType enumeration" Url="html/T_SIGENCEScenarioTool_Models_Attachements_AttachementType.htm" />
   <HelpKINode Title="Atto field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Atto.htm" />
   <HelpKINode Title="Automatic enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
   <HelpKINode Title="B200mini property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_B200mini.htm" />
@@ -216,6 +235,7 @@
   <HelpKINode Title="DisplayableEnumeration.Name property" Url="html/P_SIGENCEScenarioTool_Ui_DisplayableEnumeration_Name.htm" />
   <HelpKINode Title="DisplayableEnumeration.ToString method" Url="html/M_SIGENCEScenarioTool_Ui_DisplayableEnumeration_ToString.htm" />
   <HelpKINode Title="DisplayableEnumeration.Value property" Url="html/P_SIGENCEScenarioTool_Ui_DisplayableEnumeration_Value.htm" />
+  <HelpKINode Title="DisplayName property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_DisplayName.htm" />
   <HelpKINode Title="Dispose method">
     <HelpKINode Title="Speech.Dispose Method " Url="html/M_SIGENCEScenarioTool_Tools_Speech_Dispose.htm" />
     <HelpKINode Title="SQLiteMemoryDatabase.Dispose Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Dispose.htm" />
@@ -227,6 +247,7 @@
   <HelpKINode Title="Double to Longitude conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_op_Implicit.htm" />
   <HelpKINode Title="Double to SignalToNoiseRatio conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_op_Implicit.htm" />
   <HelpKINode Title="DropTable method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_DropTable.htm" />
+  <HelpKINode Title="Embedded enumeration member" Url="html/T_SIGENCEScenarioTool_Models_Attachements_AttachementType.htm" />
   <HelpKINode Title="Emergency enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="Empty field" Url="html/F_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Empty.htm" />
   <HelpKINode Title="Empty property" Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Empty.htm" />
@@ -242,18 +263,29 @@
   <HelpKINode Title="Exa field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Exa.htm" />
   <HelpKINode Title="ExecuteNonQuery method" Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteNonQuery.htm" />
   <HelpKINode Title="ExecuteScalar method" Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteScalar.htm" />
+  <HelpKINode Title="ExtractIcon class">
+    <HelpKINode Title="ExtractIcon Class" Url="html/T_SIGENCEScenarioTool_Tools_ExtractIcon.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_ExtractIcon.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExtractIcon.ExtractIconEx method" Url="html/M_SIGENCEScenarioTool_Tools_ExtractIcon_ExtractIconEx.htm" />
+  <HelpKINode Title="ExtractIcon.GetIcon method" Url="html/Overload_SIGENCEScenarioTool_Tools_ExtractIcon_GetIcon.htm" />
+  <HelpKINode Title="ExtractIconEx method" Url="html/M_SIGENCEScenarioTool_Tools_ExtractIcon_ExtractIconEx.htm" />
   <HelpKINode Title="Factor property" Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Factor.htm" />
   <HelpKINode Title="FadeWhiteToBlack method" Url="html/M_SIGENCEScenarioTool_Tools_Blink_FadeWhiteToBlack.htm" />
   <HelpKINode Title="Fatal enumeration member" Url="html/T_SIGENCEScenarioTool_Models_Servity.htm" />
   <HelpKINode Title="Femto field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Femto.htm" />
+  <HelpKINode Title="FileIcon property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_FileIcon.htm" />
   <HelpKINode Title="FileInfoExtension class">
     <HelpKINode Title="FileInfoExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_FileInfoExtension.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_FileInfoExtension.htm" />
   </HelpKINode>
   <HelpKINode Title="FileInfoExtension.CopyTo method" Url="html/Overload_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo.htm" />
+  <HelpKINode Title="FileInfoExtension.GetAssociatedIcon method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_GetAssociatedIcon.htm" />
   <HelpKINode Title="FileInfoExtension.GetFilenameWithoutExtension method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_GetFilenameWithoutExtension.htm" />
   <HelpKINode Title="FileInfoExtension.GetFileSize method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_GetFileSize.htm" />
   <HelpKINode Title="FileInfoExtension.MoveTo method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_MoveTo.htm" />
+  <HelpKINode Title="FileSize property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_FileSize.htm" />
+  <HelpKINode Title="FileTimestamp property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_FileTimestamp.htm" />
   <HelpKINode Title="Finalize method" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Finalize.htm" />
   <HelpKINode Title="FirePropertyChanged method" Url="html/M_SIGENCEScenarioTool_Models_AbstractModelBase_FirePropertyChanged.htm" />
   <HelpKINode Title="FMBroadcast property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FMBroadcast.htm" />
@@ -376,6 +408,7 @@
   <HelpKINode Title="GeoNodeCollection.GetCollection method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection_GetCollection.htm" />
   <HelpKINode Title="GeoTag enumeration" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="GERMANY_CENTERPOINT field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_GERMANY_CENTERPOINT.htm" />
+  <HelpKINode Title="GetAssociatedIcon method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_GetAssociatedIcon.htm" />
   <HelpKINode Title="GetBitmapSourceFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetBitmapSourceFromNode.htm" />
   <HelpKINode Title="GetBoolAttribute method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetBoolAttribute.htm" />
   <HelpKINode Title="GetBoolFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetBoolFromNode.htm" />
@@ -405,9 +438,10 @@
   <HelpKINode Title="GetGrad method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGrad.htm" />
   <HelpKINode Title="GetGradMinutesSeconds method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
   <HelpKINode Title="GetGuidFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetGuidFromNode.htm" />
-  <HelpKINode Title="GetHumanDistance method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
+  <HelpKINode Title="GetHumanDistance method" Url="html/Overload_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
   <HelpKINode Title="GetHumanSizeForInformatics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForInformatics.htm" />
   <HelpKINode Title="GetHumanSizeForPhysics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForPhysics.htm" />
+  <HelpKINode Title="GetIcon method" Url="html/Overload_SIGENCEScenarioTool_Tools_ExtractIcon_GetIcon.htm" />
   <HelpKINode Title="GetInt32Attribute method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetInt32Attribute.htm" />
   <HelpKINode Title="GetInt32FromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetInt32FromNode.htm" />
   <HelpKINode Title="GetInt32OrNull method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetInt32OrNull.htm" />
@@ -538,6 +572,7 @@
   <HelpKINode Title="Latitude.Latitude constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude__ctor.htm" />
   <HelpKINode Title="Latitude.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_ToString.htm" />
   <HelpKINode Title="Leisure enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
+  <HelpKINode Title="Link enumeration member" Url="html/T_SIGENCEScenarioTool_Models_Attachements_AttachementType.htm" />
   <HelpKINode Title="ListExtension class">
     <HelpKINode Title="ListExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_ListExtension.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_ListExtension.htm" />
@@ -965,6 +1000,9 @@
   <HelpKINode Title="SIGENCEScenarioTool.Models namespace" Url="html/N_SIGENCEScenarioTool_Models.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.AbstractModelBase class" Url="html/T_SIGENCEScenarioTool_Models_AbstractModelBase.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.AntennaType enumeration" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.Attachements namespace" Url="html/N_SIGENCEScenarioTool_Models_Attachements.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.Attachements.Attachement class" Url="html/T_SIGENCEScenarioTool_Models_Attachements_Attachement.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Models.Attachements.AttachementType enumeration" Url="html/T_SIGENCEScenarioTool_Models_Attachements_AttachementType.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.DeviceSource enumeration" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.DeviceType enumeration" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Models.GeoLocalizationResult class" Url="html/T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm" />
@@ -986,6 +1024,7 @@
   <HelpKINode Title="SIGENCEScenarioTool.Tools namespace" Url="html/N_SIGENCEScenarioTool_Tools.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.ApplicationResource class" Url="html/T_SIGENCEScenarioTool_Tools_ApplicationResource.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Blink class" Url="html/T_SIGENCEScenarioTool_Tools_Blink.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Tools.ExtractIcon class" Url="html/T_SIGENCEScenarioTool_Tools_ExtractIcon.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoHelper class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoTag enumeration" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Highway enumeration" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
@@ -1011,7 +1050,10 @@
   <HelpKINode Title="SimradArgusRadar enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
   <HelpKINode Title="SimulationResult enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
   <HelpKINode Title="SIN property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SIN.htm" />
-  <HelpKINode Title="Source property" Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Source.htm" />
+  <HelpKINode Title="Source property">
+    <HelpKINode Title="Attachement.Source Property " Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_Source.htm" />
+    <HelpKINode Title="ValidationResult.Source Property " Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Source.htm" />
+  </HelpKINode>
   <HelpKINode Title="Speak method" Url="html/M_SIGENCEScenarioTool_Tools_Speech_Speak.htm" />
   <HelpKINode Title="Speech class">
     <HelpKINode Title="Speech Class" Url="html/T_SIGENCEScenarioTool_Tools_Speech.htm" />
@@ -1109,7 +1151,10 @@
   </HelpKINode>
   <HelpKINode Title="TimeSpanExtension.ToHHMMSSString method" Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToHHMMSSString.htm" />
   <HelpKINode Title="TimeSpanExtension.ToShortString method" Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToShortString.htm" />
-  <HelpKINode Title="Timestamp property" Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Timestamp.htm" />
+  <HelpKINode Title="Timestamp property">
+    <HelpKINode Title="Attachement.Timestamp Property " Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_Timestamp.htm" />
+    <HelpKINode Title="ValidationResult.Timestamp Property " Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Timestamp.htm" />
+  </HelpKINode>
   <HelpKINode Title="ToColor method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_ToColor.htm" />
   <HelpKINode Title="ToCoordinate method" Url="html/Overload_SIGENCEScenarioTool_Tools_GeoHelper_ToCoordinate.htm" />
   <HelpKINode Title="ToDefaultString method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_ToDefaultString.htm" />
@@ -1128,7 +1173,7 @@
   <HelpKINode Title="Tool.GetDateTimeFromUnixTimestamp method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetDateTimeFromUnixTimestamp.htm" />
   <HelpKINode Title="Tool.GetGrad method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGrad.htm" />
   <HelpKINode Title="Tool.GetGradMinutesSeconds method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
-  <HelpKINode Title="Tool.GetHumanDistance method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
+  <HelpKINode Title="Tool.GetHumanDistance method" Url="html/Overload_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
   <HelpKINode Title="Tool.GetHumanSizeForInformatics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForInformatics.htm" />
   <HelpKINode Title="Tool.GetHumanSizeForPhysics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForPhysics.htm" />
   <HelpKINode Title="Tool.ProductName property" Url="html/P_SIGENCEScenarioTool_Tools_Tool_ProductName.htm" />
@@ -1189,6 +1234,7 @@
   <HelpKINode Title="Trunk enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Trunk_Link enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="TwinRx property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_TwinRx.htm" />
+  <HelpKINode Title="Type property" Url="html/P_SIGENCEScenarioTool_Models_Attachements_Attachement_Type.htm" />
   <HelpKINode Title="TypeExtension class">
     <HelpKINode Title="TypeExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_TypeExtension.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_TypeExtension.htm" />

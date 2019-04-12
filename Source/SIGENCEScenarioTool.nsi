@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "SIGENCE Scenario Tool"
-!define PRODUCT_VERSION "17"
+!define PRODUCT_VERSION "18"
 !define PRODUCT_PUBLISHER "ObiWanLansi"
 !define PRODUCT_WEB_SITE "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
