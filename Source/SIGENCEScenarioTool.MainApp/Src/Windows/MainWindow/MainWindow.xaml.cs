@@ -176,7 +176,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //} );
 
             //CreateHeatmap();
-            // CreateExampleRFDevices();
+            //CreateExampleRFDevices();
+            CreateRandomizedRFDevices(42);
 
             //-----------------------------------------------------------------
 
@@ -186,7 +187,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //SaveFile( @"C:\Transfer\TestScenario.stf" );
             //LoadFile( @"C:\Transfer\TestScenario.stf" );
 
-            LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\LongLineForSimulationPlayer.stf");
+            //LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\LongLineForSimulationPlayer.stf");
 
             //-----------------------------------------------------------------
 
@@ -210,7 +211,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            OpenScenarioSimulationPlayer();
+            //OpenScenarioSimulationPlayer();
 
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\6,w=658,c=2.bild.jpg" ), AttachementType.Embedded ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\MCS_Spectrum_Analyzer_2.1.6_Qt5_Setup.zip" ), AttachementType.Link ) );

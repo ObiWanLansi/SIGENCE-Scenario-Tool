@@ -2,16 +2,18 @@
 
 <br/>
 
-## Version 18 - [Month] 2019 Release
+## Version 18 - April 2019 Release
 
-### Features (4)
+### Features (6)
 
 Issue|Description
 -:|-
 [36](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/36)|Create An Settings Dialog
 [161](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/161)|Remind The Last Opened Files
 [170](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/170)|Correct The Roll, Pitch And Yaw Display On The Map
+[174](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/174)|Play The Scenario Based On The Start Time
 [175](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/175)|Display The Pitch Angle From An RFDevice On The Map
+[176](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/176)|When Changed A Value In The DataGrid No Jump To The Next Row
 
 <br/>
 

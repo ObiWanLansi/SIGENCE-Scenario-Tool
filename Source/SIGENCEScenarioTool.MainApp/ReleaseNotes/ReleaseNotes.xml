@@ -17,13 +17,14 @@
     </Version>
     -->
 
-    <Version Version="18" Title="[Month] 2019 Release">
+    <Version Version="18" Title="April 2019 Release">
         <Features>
             <Issue Id="170" Description="Correct The Roll, Pitch And Yaw Display On The Map" />
             <Issue Id="36" Description="Create An Settings Dialog" />
             <Issue Id="161" Description="Remind The Last Opened Files" />
             <Issue Id="175" Description="Display The Pitch Angle From An RFDevice On The Map" />
             <Issue Id="174" Description="Play The Scenario Based On The Start Time" />
+            <Issue Id="176" Description="When Changed A Value In The DataGrid No Jump To The Next Row" />
         </Features>
     </Version>
 
