@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
@@ -11,17 +12,16 @@ using System.Windows.Threading;
 
 using GMap.NET;
 using GMap.NET.MapProviders;
+using GMap.NET.WindowsPresentation;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.ViewModels;
-using SIGENCEScenarioTool.Windows.MainWindow;
 
 
 
 /*
  * Bei der Simluation müssen nachher nur die Sender berücksichtigt werden, die Receiver empfangen ja einfach nur ... ?
 */
-
 namespace SIGENCEScenarioTool.Dialogs.Simulation
 {
     /// <summary>
@@ -39,6 +39,11 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         private int iStartTime = 0;
 
+        /// <summary>
+        /// The device time cache
+        /// </summary>
+        private readonly SortedDictionary<int, List<Tuple<double, RFDeviceViewModel>>> sdDeviceTimeCache = new SortedDictionary<int, List<Tuple<double, RFDeviceViewModel>>>();
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -49,6 +54,28 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// The RFDevice collection.
         /// </value>
         public RFDeviceViewModelCollection RFDeviceViewModelCollection { get; set; } = new RFDeviceViewModelCollection();
+
+
+        /// <summary>
+        /// The i unique device count
+        /// </summary>
+        private int iUniqueDeviceCount = 0;
+
+        /// <summary>
+        /// Gets the unique device count.
+        /// </summary>
+        /// <value>
+        /// The unique device count.
+        /// </value>
+        public int UniqueDeviceCount
+        {
+            get { return this.iUniqueDeviceCount; }
+            set
+            {
+                this.iUniqueDeviceCount = value;
+                FirePropertyChanged();
+            }
+        }
 
 
         /// <summary>
@@ -68,8 +95,9 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             set
             {
                 this.iCurrentTimeSeconds = value;
-                this.CurrentTimeAsString = TimeSpan.FromSeconds( value ).ToShortString();
+                this.CurrentTimeAsString = TimeSpan.FromSeconds(value).ToShortString();
 
+                UpdateHmi();
                 FirePropertyChanged();
             }
         }
@@ -176,9 +204,14 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             /// <returns>
             /// Eine ganze Zahl mit Vorzeichen, die die relativen Werte von <paramref name="x" /> und <paramref name="y" /> angibt, wie in der folgenden Tabelle veranschaulicht.Wert Bedeutung Kleiner als 0 <paramref name="x" /> ist kleiner als <paramref name="y" />. Zero <paramref name="x" /> ist gleich <paramref name="y" />. Größer als 0 (null) <paramref name="x" /> ist größer als <paramref name="y" />.
             /// </returns>
-            public int Compare( object x, object y )
+            public int Compare(object x, object y)
             {
-                return (x as RFDeviceViewModel).StartTime.CompareTo( (y as RFDeviceViewModel).StartTime );
+                if ((x as RFDeviceViewModel).StartTime == (y as RFDeviceViewModel).StartTime)
+                {
+                    return (x as RFDeviceViewModel).Id.CompareTo((y as RFDeviceViewModel).Id);
+                }
+
+                return (x as RFDeviceViewModel).StartTime.CompareTo((y as RFDeviceViewModel).StartTime);
             }
         }
 
@@ -186,17 +219,19 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimulationDialog"/> class.
+        /// Initializes a new instance of the <see cref="SimulationDialog" /> class.
         /// </summary>
-        public SimulationDialog( RFDeviceViewModelCollection _RFDeviceViewModelCollection )
+        /// <param name="_RFDeviceViewModelCollection">The rf device view model collection.</param>
+        /// <param name="mcSourceMapControl">The mc source map control.</param>
+        public SimulationDialog(RFDeviceViewModelCollection _RFDeviceViewModelCollection, GMapControl mcSourceMapControl)
         {
             this.DataContext = this;
 
-            this.RFDeviceViewModelCollection = new RFDeviceViewModelCollection( _RFDeviceViewModelCollection );
+            this.RFDeviceViewModelCollection = new RFDeviceViewModelCollection(_RFDeviceViewModelCollection);
 
             //-----------------------------------------------------------------
 
-            if(CollectionViewSource.GetDefaultView( this.RFDeviceViewModelCollection ) is ListCollectionView lcvRFDevices)
+            if (CollectionViewSource.GetDefaultView(this.RFDeviceViewModelCollection) is ListCollectionView lcvRFDevices)
             {
                 lcvRFDevices.IsLiveSorting = false;
                 lcvRFDevices.CustomSort = new Comparer();
@@ -208,16 +243,17 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
             //-----------------------------------------------------------------
 
-            InitMapControl();
+            CreateDeviceTimeCache();
+            InitMapControl(mcSourceMapControl);
             InitSlider();
 
             //-----------------------------------------------------------------
 
-            this.dtTimer.Interval = TimeSpan.FromMilliseconds( 100 );
+            this.dtTimer.Interval = TimeSpan.FromMilliseconds(100);
 
-            this.dtTimer.Tick += ( s, args ) =>
+            this.dtTimer.Tick += (s, args) =>
             {
-                Update();
+                UpdateTime();
             };
         }
 
@@ -225,9 +261,31 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
 
         /// <summary>
+        /// Creates the device time cache.
+        /// </summary>
+        private void CreateDeviceTimeCache()
+        {
+            foreach (var device in from dev in this.RFDeviceViewModelCollection orderby dev.StartTime descending select dev)
+            {
+                if (this.sdDeviceTimeCache.ContainsKey(device.Id))
+                {
+                    this.sdDeviceTimeCache[device.Id].Add(new Tuple<double, RFDeviceViewModel>(device.StartTime, device));
+                }
+                else
+                {
+                    this.sdDeviceTimeCache.Add(device.Id, new List<Tuple<double, RFDeviceViewModel>> { new Tuple<double, RFDeviceViewModel>(device.StartTime, device) });
+                }
+            }
+
+            this.UniqueDeviceCount = this.sdDeviceTimeCache.Count;
+        }
+
+
+        /// <summary>
         /// Initializes the map control.
         /// </summary>
-        private void InitMapControl()
+        /// <param name="mcSourceMapControl">The mc source map control.</param>
+        private void InitMapControl(GMapControl mcSourceMapControl)
         {
             Properties.Settings settings = Properties.Settings.Default;
 
@@ -240,13 +298,16 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             this.mcMapControl.ShowCenter = false;
             this.mcMapControl.MinZoom = 2;
             this.mcMapControl.MaxZoom = 22;
-            this.mcMapControl.Position = new PointLatLng( settings.InitialLatitude, settings.InitialLongitude );
-            this.mcMapControl.Zoom = settings.InitialZoom;
-            this.mcMapControl.MapProvider = MainWindow.GetProviderFromString( settings.InitialMap );
+            //this.mcMapControl.Position = new PointLatLng(settings.InitialLatitude, settings.InitialLongitude);
+            this.mcMapControl.Position = mcSourceMapControl.Position;
+            //this.mcMapControl.Zoom = settings.InitialZoom;
+            this.mcMapControl.Zoom = mcSourceMapControl.Zoom;
+            //this.mcMapControl.MapProvider = MainWindow.GetProviderFromString(settings.InitialMap);
+            this.mcMapControl.MapProvider = mcSourceMapControl.MapProvider;
 
-            foreach(var device in this.RFDeviceViewModelCollection)
+            foreach (var device in this.RFDeviceViewModelCollection)
             {
-                this.mcMapControl.Markers.Add( device.Marker );
+                this.mcMapControl.Markers.Add(device.Marker);
             }
         }
 
@@ -259,9 +320,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             this.MinTimeSeconds = 0;
             this.CurrentTimeSeconds = 0;
 
-            //TODO: Das muss natürlich über die letzte Startzeit noch eine gewisse Zeit X hinausgehen ...
-            //this.MaxTimeSeconds = this.RFDeviceViewModelCollection.Max( d => d.StartTime ) + 10;
-            this.MaxTimeSeconds = Math.Ceiling( this.RFDeviceViewModelCollection.Max( d => d.StartTime ) );
+            this.MaxTimeSeconds = this.RFDeviceViewModelCollection.Count > 0 ? Math.Ceiling(this.RFDeviceViewModelCollection.Max(d => d.StartTime)) : 0;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -272,18 +331,13 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         private void StartStop()
         {
-            if(this.IsRunning)
+            if (this.IsRunning)
             {
                 this.dtTimer.Stop();
                 this.CurrentTimeSeconds = 0;
             }
             else
             {
-                foreach(var device in this.RFDeviceViewModelCollection)
-                {
-                    device.SetVisible( false );
-                }
-
                 this.dtTimer.Start();
                 this.iStartTime = Environment.TickCount - ((int)(this.iCurrentTimeSeconds * 1000));
             }
@@ -301,7 +355,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         private void Pause()
         {
-            if(this.dtTimer.IsEnabled)
+            if (this.dtTimer.IsEnabled)
             {
                 this.dtTimer.Stop();
             }
@@ -314,27 +368,70 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
 
         /// <summary>
-        /// Updates this instance.
+        /// Updates the time.
         /// </summary>
-        private void Update()
+        private void UpdateTime()
         {
             int iMilliSecondsSinceStart = Environment.TickCount - this.iStartTime;
             double dSecondsSinceStart = (double)iMilliSecondsSinceStart / 1000;
             this.CurrentTimeSeconds = dSecondsSinceStart;
 
-            foreach(var device in this.RFDeviceViewModelCollection)
-            {
-                if((dSecondsSinceStart > device.StartTime) && (device.IsVisible == false))
-                {
-                    device.SetVisible( true );
-                    this.dgRFDevices.ScrollIntoView( device );
-
-                }
-            }
-
-            if(this.CurrentTimeSeconds >= this.MaxTimeSeconds)
+            if (this.CurrentTimeSeconds >= this.MaxTimeSeconds)
             {
                 Pause();
+            }
+        }
+
+
+        /// <summary>
+        /// Updates the hmi.
+        /// </summary>
+        private void UpdateHmi()
+        {
+            //foreach (var device in this.RFDeviceViewModelCollection)
+            //{
+            //    device.SetVisible(this.iCurrentTimeSeconds > device.StartTime);
+            //}
+
+            foreach (int id in this.sdDeviceTimeCache.Keys)
+            {
+                bool bIsSet = false;
+
+                foreach (var tuple in this.sdDeviceTimeCache[id])
+                {
+                    if ((this.iCurrentTimeSeconds > tuple.Item2.StartTime) && bIsSet == false)
+                    {
+                        tuple.Item2.SetVisible(true);
+                        tuple.Item2.CurrentSimulationState = RFDeviceViewModel.SimulationState.Current;
+
+                        bIsSet = true;
+
+
+                        // Wird zu langsam und ist dann nicht mehr syncrohn ...
+                        //this.dgRFDevices.SelectedItems.Clear();
+                        //this.dgRFDevices.SelectedItems.Add(tuple.Item2);
+                        //this.dgRFDevices.ScrollIntoView(tuple.Item2);
+                        //this.dgRFDevices.Focus();
+                    }
+                    else
+                    {
+                        tuple.Item2.SetVisible(false);
+                        tuple.Item2.CurrentSimulationState = RFDeviceViewModel.SimulationState.None;
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Sets the device visibility.
+        /// </summary>
+        /// <param name="bVisible">if set to <c>true</c> [b visible].</param>
+        private void SetDeviceVisibility(bool bVisible = true)
+        {
+            foreach (var device in this.RFDeviceViewModelCollection)
+            {
+                device.SetVisible(bVisible);
             }
         }
 
@@ -346,7 +443,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_PlayStop_Click( object sender, RoutedEventArgs e )
+        private void Button_PlayStop_Click(object sender, RoutedEventArgs e)
         {
             StartStop();
 
@@ -359,11 +456,27 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_Pause_Click( object sender, RoutedEventArgs e )
+        private void Button_Pause_Click(object sender, RoutedEventArgs e)
         {
             Pause();
 
             e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Closed event of the Window control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (this.IsRunning)
+            {
+                this.dtTimer.Stop();
+            }
+
+            SetDeviceVisibility();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -379,9 +492,9 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        private void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
-            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }
 
     } // end public partial class SimulationDialog

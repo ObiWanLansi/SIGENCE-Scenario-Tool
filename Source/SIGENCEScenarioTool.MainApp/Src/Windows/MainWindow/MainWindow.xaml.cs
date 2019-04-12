@@ -32,7 +32,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if(this.settings.IsUpgraded == false)
+            if (this.settings.IsUpgraded == false)
             {
                 this.settings.Upgrade();
                 this.settings.IsUpgraded = true;
@@ -57,9 +57,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    this.settings.UDPDelay = 500;
             //}
 
-            if(this.settings.MapZoomLevel < 1 || this.settings.MapZoomLevel > 20)
+            if (this.settings.MapZoomLevel < 1 || this.settings.MapZoomLevel > 20)
             {
-                MB.Warning( "The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application." );
+                MB.Warning("The value in the configuration file for the setting MapZoomLevel is invalid!\nPlease correct the value and restart the application.");
                 this.settings.MapZoomLevel = 18;
             }
 
@@ -69,7 +69,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if(Properties.Settings.Default.LastOpenFiles == null)
+            if (Properties.Settings.Default.LastOpenFiles == null)
             {
                 Properties.Settings.Default.LastOpenFiles = new StringCollection();
             }
@@ -90,9 +90,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            this.lcvRFDevices = CollectionViewSource.GetDefaultView( this.RFDeviceViewModelCollection ) as ListCollectionView;
+            this.lcvRFDevices = CollectionViewSource.GetDefaultView(this.RFDeviceViewModelCollection) as ListCollectionView;
 
-            if(this.lcvRFDevices != null)
+            if (this.lcvRFDevices != null)
             {
                 this.lcvRFDevices.IsLiveFiltering = true;
                 this.lcvRFDevices.Filter = IsWantedRFDevice;
@@ -103,25 +103,25 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.dgcbcRxTxType.ItemsSource = RxTxTypes.Values;
 
             List<RxTxType> lRxTxTypes = new List<RxTxType> { RxTxType.Empty };
-            lRxTxTypes.AddRange( RxTxTypes.Values );
+            lRxTxTypes.AddRange(RxTxTypes.Values);
             this.cbRxTxType.ItemsSource = lRxTxTypes;
 
             this.cbAntennaType.ItemsSource = DisplayableEnumeration.GetCollection<AntennaType>();
 
             //-----------------------------------------------------------------
 
-            this.RFDeviceTemplateCollection.Add( EMPTY_TEMPLATE );
+            this.RFDeviceTemplateCollection.Add(EMPTY_TEMPLATE);
 
             //-----------------------------------------------------------------
 #if DEBUG
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "GPS Jammer", Id = 1 } ) );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "FMBroadcast", Id = 2 } ) );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "NFMRadio", Id = 3 } ) );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "AIS Sender", Id = 4 } ) );
+            this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
+            this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "FMBroadcast", Id = 2 }));
+            this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "NFMRadio", Id = 3 }));
+            this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "AIS Sender", Id = 4 }));
 
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "B200 Mini", Id = -2 } ) );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "HackRF", Id = -3 } ) );
-            this.RFDeviceTemplateCollection.Add( new RFDeviceTemplate( new RFDevice { Name = "TwinRx", Id = -4 } ) );
+            this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "B200 Mini", Id = -2 }));
+            this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "HackRF", Id = -3 }));
+            this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "TwinRx", Id = -4 }));
 
             //LoadTemplates( @"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\Templates.stt" );
 
@@ -130,16 +130,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             try
             {
                 string strFilename = $"{Tool.StartupPath}\\tuebingen-regbez-latest.osm.sqlite";
-                this.GeoNodeCollection = GeoNodeCollection.GetCollection( strFilename );
+                this.GeoNodeCollection = GeoNodeCollection.GetCollection(strFilename);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
 
-            this.lcvGeoNodes = CollectionViewSource.GetDefaultView( this.GeoNodeCollection ) as ListCollectionView;
+            this.lcvGeoNodes = CollectionViewSource.GetDefaultView(this.GeoNodeCollection) as ListCollectionView;
 
-            if(this.lcvGeoNodes != null)
+            if (this.lcvGeoNodes != null)
             {
                 this.lcvGeoNodes.IsLiveFiltering = true;
                 this.lcvGeoNodes.Filter = IsWantedGeoNode;
@@ -147,7 +147,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            CreateRandomizedRFDevices( 10, true );
+            //CreateRandomizedRFDevices(10, true);
 
             //AddRFDevice( new RFDevice { PrimaryKey = Guid.Empty, Id = -1, Latitude = 1974, Longitude = 1974, StartTime = -1974 } );
 
@@ -186,6 +186,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //SaveFile( @"C:\Transfer\TestScenario.stf" );
             //LoadFile( @"C:\Transfer\TestScenario.stf" );
 
+            LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\LongLineForSimulationPlayer.stf");
+
             //-----------------------------------------------------------------
 
             //RFDeviceList devicelist = GetDeviceList();
@@ -197,14 +199,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            this.QuickCommands.Add( "new" );
-            this.QuickCommands.Add( "rand 20" );
-            this.QuickCommands.Add( "export csv" );
-            this.QuickCommands.Add( "set rxtxtype unknown" );
-            this.QuickCommands.Add( "set name nasenbär" );
-            this.QuickCommands.Add( "remove" );
-            this.QuickCommands.Add( "save" );
-            this.QuickCommands.Add( "exit" );
+            this.QuickCommands.Add("new");
+            this.QuickCommands.Add("rand 20");
+            this.QuickCommands.Add("export csv");
+            this.QuickCommands.Add("set rxtxtype unknown");
+            this.QuickCommands.Add("set name nasenbär");
+            this.QuickCommands.Add("remove");
+            this.QuickCommands.Add("save");
+            this.QuickCommands.Add("exit");
 
             //-----------------------------------------------------------------
 
@@ -220,16 +222,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix -March 2019 - 5ZBgx1NeUWg.jpg" ), AttachementType.Link ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix - March 2019 - 5ZBgx1NeUWg.mp3" ), AttachementType.Link ) );
 
-            this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\ExampleScenarioDescription.md" ), AttachementType.Link ) );
-            this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\HelloWorld.py" ), AttachementType.Embedded ) );
-            this.Attachements.Add( new Attachement( new FileInfo( $"{Tool.StartupPath}\\CheatSheet.pdf" ), AttachementType.Link ) );
+            this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Link));
+            this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
+            this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
 
 
             string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
-            this.tecDescription.Text = File.ReadAllText( strMarkdown );
+            this.tecDescription.Text = File.ReadAllText(strMarkdown);
 
-            this.tiMetaInformation.IsSelected = true;
-            this.tcTabControl.Items.Remove( this.tiDescription );
+            //this.tiMetaInformation.IsSelected = true;
+            //this.tcTabControl.Items.Remove( this.tiDescription );
 
             //-----------------------------------------------------------------
 

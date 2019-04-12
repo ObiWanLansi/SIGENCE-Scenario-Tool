@@ -112,6 +112,7 @@
                 <MenuItem Header="Open _Scripting Editor" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.OpenScriptEditor}" />
             </MenuItem>
             <MenuItem Header="_Extras">
+                <MenuItem Header="Scenario Simulation _Player" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioSimulationPlayer_Click" />
                 <MenuItem Header="Toggle Info _Window" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleInfoWindow}" />
                 <Separator />
                 <MenuItem Header="_Restore Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_RestoreInitialMapValues_Click" />
@@ -120,7 +121,6 @@
                 <MenuItem Header="_Edit Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
             </MenuItem>
             <MenuItem x:Name="miTest" Header="_Test">
-                <MenuItem Header="Scenario Simulation _Player" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioSimulationPlayer_Click" />
                 <MenuItem Header="Display Scenario Description" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_DisplayScenarioDescription_Click" />
                 <!--<MenuItem Header="Toggle Data _Grid" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleDataGrid}" />-->
                 <Separator />
@@ -721,8 +721,9 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <ToolBar Grid.Row="0">
-                        <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description" Click="ToogleButton_EditScenarioDescription_Click" />
-                        <Button Content="{StaticResource MAGIC_WAND}" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Insert A Small Template For A Scenario Description" Click="Button_InsertScenarioDescriptionTemplate_Click" />
+                        <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description [OBSOLETE]" IsEnabled="False" Click="ToogleButton_EditScenarioDescription_Click" />
+                        <!--<Button Content="{StaticResource MAGIC_WAND}" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Insert A Small Template For A Scenario Description" Click="Button_InsertScenarioDescriptionTemplate_Click" />-->
+                        <Button Content="{StaticResource MAGIC_WAND}" IsEnabled="False" ToolTip="Insert A Small Template For A Scenario Description" Click="Button_InsertScenarioDescriptionTemplate_Click" />
                         <Separator />
                         <Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
                             <MenuItem Header="ÄÖÜ" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The German Umlauts To HTML" Click="MenuItem_HtmlConvertGermanUmlauts_Click" />
@@ -875,6 +876,11 @@
                                 <TabItem Header="Editor">
                                     <WindowsFormsHost>
                                         <icsharpcode:TextEditorControl x:Name="tecDescription" />
+                                    </WindowsFormsHost>
+                                </TabItem>
+                                <TabItem Header="StyleSheet">
+                                    <WindowsFormsHost>
+                                        <icsharpcode:TextEditorControl x:Name="tecStyleSheet" />
                                     </WindowsFormsHost>
                                 </TabItem>
                             </TabControl>

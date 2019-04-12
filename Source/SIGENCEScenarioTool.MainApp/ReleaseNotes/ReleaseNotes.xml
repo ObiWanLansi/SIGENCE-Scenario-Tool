@@ -23,6 +23,7 @@
             <Issue Id="36" Description="Create An Settings Dialog" />
             <Issue Id="161" Description="Remind The Last Opened Files" />
             <Issue Id="175" Description="Display The Pitch Angle From An RFDevice On The Map" />
+            <Issue Id="174" Description="Play The Scenario Based On The Start Time" />
         </Features>
     </Version>
 
