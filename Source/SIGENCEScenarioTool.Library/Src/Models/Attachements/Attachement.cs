@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Interop;
@@ -125,7 +126,7 @@ namespace SIGENCEScenarioTool.Models.Attachements
         /// </summary>
         /// <param name="fiSource">The fi source.</param>
         /// <param name="at">At.</param>
-        public Attachement( FileInfo fiSource, AttachementType at = AttachementType.Link )
+        public Attachement(FileInfo fiSource, AttachementType at = AttachementType.Link)
         {
             this.Source = fiSource;
             this.Type = at;
@@ -133,11 +134,11 @@ namespace SIGENCEScenarioTool.Models.Attachements
             this.AddedTimestamp = DateTime.Now;
             this.AddedUsername = Environment.UserName;
 
-            if(fiSource.Exists == true)
+            if (fiSource.Exists == true)
             {
-                using(Icon icon = fiSource.GetAssociatedIcon())
+                using (Icon icon = fiSource.GetAssociatedIcon())
                 {
-                    this.FileIcon = Imaging.CreateBitmapSourceFromHIcon( icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions() );
+                    this.FileIcon = Imaging.CreateBitmapSourceFromHIcon(icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 }
 
                 this.FileSize = fiSource.GetFileSize();
@@ -145,12 +146,22 @@ namespace SIGENCEScenarioTool.Models.Attachements
             }
             else
             {
-                using(Icon icon = ExtractIcon.GetIcon( "shell32.dll", 0, true ))
+                using (Icon icon = ExtractIcon.GetIcon("shell32.dll", 0, true))
                 {
-                    this.FileIcon = Imaging.CreateBitmapSourceFromHIcon( icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions() );
+                    this.FileIcon = Imaging.CreateBitmapSourceFromHIcon(icon.Handle, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 }
             }
         }
 
     } // end public sealed class Attachement
+
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="List{SIGENCEScenarioTool.Models.Attachements.Attachement}" />
+    public sealed class AttachementList : List<Attachement>
+    {
+    } // end public sealed class AttachementList 
 }
