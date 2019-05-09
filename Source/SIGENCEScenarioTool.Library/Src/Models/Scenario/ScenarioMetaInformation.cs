@@ -11,7 +11,7 @@ namespace SIGENCEScenarioTool.Models.Scenario
     /// <summary>
     /// 
     /// </summary>
-    public sealed class SIGENCEScenario
+    public sealed class ScenarioMetaInformation
     {
         /// <summary>
         /// Gets or sets the version.
@@ -53,15 +53,6 @@ namespace SIGENCEScenarioTool.Models.Scenario
         /// </value>
         public string Stylesheet { get; set; }
 
-
-        /// <summary>
-        /// Gets or sets the devices.
-        /// </summary>
-        /// <value>
-        /// The devices.
-        /// </value>
-        public RFDeviceList Devices { get; set; }
-
         /// <summary>
         /// Gets or sets the attachements.
         /// </summary>
@@ -90,10 +81,10 @@ namespace SIGENCEScenarioTool.Models.Scenario
         /// <param name="eRoot">The e root.</param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        static public SIGENCEScenario FromXml(XElement eRoot)
+        static public ScenarioMetaInformation FromXml(XElement eRoot)
         {
             throw new NotImplementedException();
         }
 
-    } // end public sealed class SIGENCEScenario
+    } // end public sealed class ScenarioMetaInformation
 }

@@ -227,7 +227,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RxTxTypes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Src\Models\Scenario\SIGENCEScenario.cs" />
+    <Compile Include="Src\Models\Scenario\ScenarioMetaInformation.cs" />
     <Compile Include="Src\Models\Templates\RFDeviceTemplate.cs" />
     <Compile Include="Src\Models\Validation\ValidationResult.cs" />
     <Compile Include="Src\Tools\ApplicationResource.cs" />
