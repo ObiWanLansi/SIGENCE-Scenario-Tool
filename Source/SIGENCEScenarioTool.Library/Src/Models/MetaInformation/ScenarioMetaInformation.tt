@@ -122,10 +122,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
 
         foreach(XElement e in eRoot.Elements())
         {
-            //string strPropertyType = e.Attribute("Type").Value;
             string strPropertyName = e.Attribute("Name").Value;
+
+            var vUseCDATA = e.Attribute("UseCDATA");
+            string strUseCDATA = vUseCDATA!=null ? vUseCDATA.Value : "False";
 #>
-                XElementExtension.GetXElement("<#=strPropertyName#>", <#=strPropertyName #>)<#if(e!= eRoot.LastNode) {#>,
+                XElementExtension.GetXElement("<#=strPropertyName#>", <#=strPropertyName#>, <#=strUseCDATA.ToLower()#>)<#if(e!= eRoot.LastNode) {#>,
 <#}
         }
 #>

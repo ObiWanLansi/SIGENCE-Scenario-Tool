@@ -8,7 +8,6 @@ using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -227,11 +226,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //this.MetaInformation.Stylesheet = "h1 { border: 1px solid red; }";
             this.MetaInformation.SetDescriptionAndStylesheet(File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), "h1 { border: 1px solid red; }");
 
-            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Embedded));
-            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
-            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
-            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.xps"), AttachementType.Link));
-            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\streets_bw.sqlite"), AttachementType.Link));
+            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Embedded));
+            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
+            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
+            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.xps"), AttachementType.Link));
+            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\streets_bw.sqlite"), AttachementType.Link));
 
             this.tecDescription.Text = this.MetaInformation.Description;
             this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;

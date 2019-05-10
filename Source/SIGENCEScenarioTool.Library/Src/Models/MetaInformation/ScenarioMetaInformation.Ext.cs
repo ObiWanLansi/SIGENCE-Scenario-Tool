@@ -1,10 +1,4 @@
-﻿using System.Collections.ObjectModel;
-
-using SIGENCEScenarioTool.Models.Attachements;
-
-
-
-namespace SIGENCEScenarioTool.Models.MetaInformation
+﻿namespace SIGENCEScenarioTool.Models.MetaInformation
 {
     /// <summary>
     /// 
@@ -40,14 +34,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             //this.Description = DEFAULT_DESCRIPTION;
             //this.Stylesheet = DEFAULT_STYLESHEET;
 
-            if (this.Attachements == null)
-            {
-                this.Attachements = new ObservableCollection<Attachement>();
-            }
-            else
-            {
-                this.Attachements.Clear();
-            }
+            //if (this.Attachements == null)
+            //{
+            //    this.Attachements = new ObservableCollection<Attachement>();
+            //}
+            //else
+            //{
+            //    this.Attachements.Clear();
+            //}
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

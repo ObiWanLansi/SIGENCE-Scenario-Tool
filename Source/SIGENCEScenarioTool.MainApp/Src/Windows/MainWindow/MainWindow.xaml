@@ -832,7 +832,7 @@
                     </Border>-->
 
                     <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
-                        <Grid>
+                        <!--    <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="*" />
@@ -870,7 +870,7 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                        </Grid>
+                        </Grid>-->
                     </Border>
 
                 </Grid>

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,7 +11,6 @@ using GMap.NET.WindowsPresentation;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.MetaInformation;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
@@ -1062,41 +1059,41 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         #region Drag & Drop Test
 
 
-        /// <summary>
-        /// Handles the DragOver event of the StackPanel_Attachements control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
-        private void StackPanel_Attachements_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effects = e.Data.GetDataPresent(DataFormats.FileDrop) == false
-                ? DragDropEffects.None
-                : (e.KeyStates & DragDropKeyStates.ControlKey) == DragDropKeyStates.ControlKey ? DragDropEffects.Copy : DragDropEffects.Link;
+        ///// <summary>
+        ///// Handles the DragOver event of the StackPanel_Attachements control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
+        //private void StackPanel_Attachements_DragOver(object sender, DragEventArgs e)
+        //{
+        //    e.Effects = e.Data.GetDataPresent(DataFormats.FileDrop) == false
+        //        ? DragDropEffects.None
+        //        : (e.KeyStates & DragDropKeyStates.ControlKey) == DragDropKeyStates.ControlKey ? DragDropEffects.Copy : DragDropEffects.Link;
 
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
-        /// <summary>
-        /// Handles the Drop event of the StackPanel control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
-        private void StackPanel_Drop(object sender, DragEventArgs e)
-        {
-            //throw new NotImplementedException();
+        ///// <summary>
+        ///// Handles the Drop event of the StackPanel control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
+        //private void StackPanel_Drop(object sender, DragEventArgs e)
+        //{
+        //    //throw new NotImplementedException();
 
-            bool bIsControlKeyPressed = (e.KeyStates & DragDropKeyStates.ControlKey) == DragDropKeyStates.ControlKey;
+        //    bool bIsControlKeyPressed = (e.KeyStates & DragDropKeyStates.ControlKey) == DragDropKeyStates.ControlKey;
 
-            foreach (FileInfo fi in from strFilename in (string[])e.Data.GetData(DataFormats.FileDrop) select new FileInfo(strFilename))
-            {
-                //this.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
-                //this.ScenarioMetaInformation.Attachements.Add(new Attachement(fi, bIsControlKeyPressed? AttachementType.Embedded : AttachementType.Link));
-                this.MetaInformation.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
-            }
+        //    foreach (FileInfo fi in from strFilename in (string[])e.Data.GetData(DataFormats.FileDrop) select new FileInfo(strFilename))
+        //    {
+        //        //this.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
+        //        //this.ScenarioMetaInformation.Attachements.Add(new Attachement(fi, bIsControlKeyPressed? AttachementType.Embedded : AttachementType.Link));
+        //        this.MetaInformation.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
+        //    }
 
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
         #endregion
 

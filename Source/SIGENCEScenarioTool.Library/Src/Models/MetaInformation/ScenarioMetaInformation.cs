@@ -4,12 +4,10 @@
  */
 
 using System;
-using System.Collections.ObjectModel;
 using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Interfaces;
-using SIGENCEScenarioTool.Models.Attachements;
 
 
 
@@ -19,7 +17,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
     ///<summary>
     /// Represent MetaInformationData For An Scenario.
     ///</summary>
-    public partial class ScenarioMetaInformation :AbstractModelBase, IEquatable<ScenarioMetaInformation>, ICloneable, IXmlExport
+    public partial class ScenarioMetaInformation : AbstractModelBase, IEquatable<ScenarioMetaInformation>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
@@ -35,7 +33,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// The DefaultValue For Version.
         ///</summary>
         public static readonly string DEFAULT_VERSION = "";
-        
+
         ///<summary>
         /// The Internal Field For Version.
         ///</summary>
@@ -45,12 +43,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// The Version Of This Scenario.
         ///</summary>
-        public string Version 
+        public string Version
         {
-            get { return _Version; }
+            get { return this._Version; }
             set
             {
-                _Version = value;
+                this._Version = value;
                 FirePropertyChanged();
             }
         }
@@ -72,7 +70,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// The DefaultValue For ApplicationContext.
         ///</summary>
         public static readonly string DEFAULT_APPLICATIONCONTEXT = "";
-        
+
         ///<summary>
         /// The Internal Field For ApplicationContext.
         ///</summary>
@@ -82,12 +80,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// For Which Application Or Tool Is The Scenario.
         ///</summary>
-        public string ApplicationContext 
+        public string ApplicationContext
         {
-            get { return _ApplicationContext; }
+            get { return this._ApplicationContext; }
             set
             {
-                _ApplicationContext = value;
+                this._ApplicationContext = value;
                 FirePropertyChanged();
             }
         }
@@ -109,7 +107,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// The DefaultValue For ContactPerson.
         ///</summary>
         public static readonly string DEFAULT_CONTACTPERSON = "";
-        
+
         ///<summary>
         /// The Internal Field For ContactPerson.
         ///</summary>
@@ -119,12 +117,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// An Contact Person If You Have Questions About The Scenario.
         ///</summary>
-        public string ContactPerson 
+        public string ContactPerson
         {
-            get { return _ContactPerson; }
+            get { return this._ContactPerson; }
             set
             {
-                _ContactPerson = value;
+                this._ContactPerson = value;
                 FirePropertyChanged();
             }
         }
@@ -146,7 +144,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// The DefaultValue For Description.
         ///</summary>
         public static readonly string DEFAULT_DESCRIPTION = "";
-        
+
         ///<summary>
         /// The Internal Field For Description.
         ///</summary>
@@ -156,12 +154,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// An Markdown Text Content Where You Can Describe The Scenario And The Excepted Result.
         ///</summary>
-        public string Description 
+        public string Description
         {
-            get { return _Description; }
+            get { return this._Description; }
             set
             {
-                _Description = value;
+                this._Description = value;
                 FirePropertyChanged();
             }
         }
@@ -183,7 +181,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// The DefaultValue For Stylesheet.
         ///</summary>
         public static readonly string DEFAULT_STYLESHEET = "";
-        
+
         ///<summary>
         /// The Internal Field For Stylesheet.
         ///</summary>
@@ -193,54 +191,17 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// An Optional Stylesheet To Use For Rendering The Generated HTML.
         ///</summary>
-        public string Stylesheet 
+        public string Stylesheet
         {
-            get { return _Stylesheet; }
+            get { return this._Stylesheet; }
             set
             {
-                _Stylesheet = value;
+                this._Stylesheet = value;
                 FirePropertyChanged();
             }
         }
 
         //static public readonly string TOOLTIP_STYLESHEET = "An Optional Stylesheet To Use For Rendering The Generated HTML.";
-
-        #endregion        
-
-        //---------------------------------------------------------------------
-
-        #region Attachements
-
-        ///<summary>
-        /// The PropertyName As ReadOnly String For Attachements.
-        ///</summary>
-        public const string ATTACHEMENTS = "Attachements";
-
-        ///<summary>
-        /// The DefaultValue For Attachements.
-        ///</summary>
-        public static readonly ObservableCollection<Attachement> DEFAULT_ATTACHEMENTS = new ObservableCollection<Attachement>();
-        
-        ///<summary>
-        /// The Internal Field For Attachements.
-        ///</summary>
-        //private ObservableCollection<Attachement> _Attachements = new ObservableCollection<Attachement>();
-        private ObservableCollection<Attachement> _Attachements = DEFAULT_ATTACHEMENTS;
-
-        ///<summary>
-        /// Additional Attachments For The Scenario.
-        ///</summary>
-        public ObservableCollection<Attachement> Attachements 
-        {
-            get { return _Attachements; }
-            set
-            {
-                _Attachements = value;
-                FirePropertyChanged();
-            }
-        }
-
-        //static public readonly string TOOLTIP_ATTACHEMENTS = "Additional Attachments For The Scenario.";
 
         #endregion        
 
@@ -257,12 +218,11 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         {
             return new XElement("ScenarioMetaInformation",
 
-                XElementExtension.GetXElement("Version", Version),
-                XElementExtension.GetXElement("ApplicationContext", ApplicationContext),
-                XElementExtension.GetXElement("ContactPerson", ContactPerson),
-                XElementExtension.GetXElement("Description", Description),
-                XElementExtension.GetXElement("Stylesheet", Stylesheet),
-                XElementExtension.GetXElement("Attachements", Attachements)  
+                XElementExtension.GetXElement("Version", this.Version, false),
+                XElementExtension.GetXElement("ApplicationContext", this.ApplicationContext, false),
+                XElementExtension.GetXElement("ContactPerson", this.ContactPerson, false),
+                XElementExtension.GetXElement("Description", this.Description, true),
+                XElementExtension.GetXElement("Stylesheet", this.Stylesheet, true)
             );
         }
 
@@ -287,12 +247,11 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
 
             return new ScenarioMetaInformation
             {
-                Version = eChild.GetProperty<string>("Version",""),
-                ApplicationContext = eChild.GetProperty<string>("ApplicationContext",""),
-                ContactPerson = eChild.GetProperty<string>("ContactPerson",""),
-                Description = eChild.GetProperty<string>("Description",""),
-                Stylesheet = eChild.GetProperty<string>("Stylesheet",""),
-                Attachements = eChild.GetProperty<ObservableCollection<Attachement>>("Attachements",new ObservableCollection<Attachement>())            
+                Version = eChild.GetProperty<string>("Version", ""),
+                ApplicationContext = eChild.GetProperty<string>("ApplicationContext", ""),
+                ContactPerson = eChild.GetProperty<string>("ContactPerson", ""),
+                Description = eChild.GetProperty<string>("Description", ""),
+                Stylesheet = eChild.GetProperty<string>("Stylesheet", "")
             };
         }
 
@@ -313,92 +272,77 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
                 return false;
             }
 
-            if (other.Version == null && Version != null)
+            if (other.Version == null && this.Version != null)
             {
                 return false;
             }
 
-            if (other.Version != null && Version == null)
+            if (other.Version != null && this.Version == null)
             {
                 return false;
             }
 
-            if (other.Version != null && Version != null && other.Version.Equals(Version) == false)
+            if (other.Version != null && this.Version != null && other.Version.Equals(this.Version) == false)
             {
                 return false;
             }
 
-            if (other.ApplicationContext == null && ApplicationContext != null)
+            if (other.ApplicationContext == null && this.ApplicationContext != null)
             {
                 return false;
             }
 
-            if (other.ApplicationContext != null && ApplicationContext == null)
+            if (other.ApplicationContext != null && this.ApplicationContext == null)
             {
                 return false;
             }
 
-            if (other.ApplicationContext != null && ApplicationContext != null && other.ApplicationContext.Equals(ApplicationContext) == false)
+            if (other.ApplicationContext != null && this.ApplicationContext != null && other.ApplicationContext.Equals(this.ApplicationContext) == false)
             {
                 return false;
             }
 
-            if (other.ContactPerson == null && ContactPerson != null)
+            if (other.ContactPerson == null && this.ContactPerson != null)
             {
                 return false;
             }
 
-            if (other.ContactPerson != null && ContactPerson == null)
+            if (other.ContactPerson != null && this.ContactPerson == null)
             {
                 return false;
             }
 
-            if (other.ContactPerson != null && ContactPerson != null && other.ContactPerson.Equals(ContactPerson) == false)
+            if (other.ContactPerson != null && this.ContactPerson != null && other.ContactPerson.Equals(this.ContactPerson) == false)
             {
                 return false;
             }
 
-            if (other.Description == null && Description != null)
+            if (other.Description == null && this.Description != null)
             {
                 return false;
             }
 
-            if (other.Description != null && Description == null)
+            if (other.Description != null && this.Description == null)
             {
                 return false;
             }
 
-            if (other.Description != null && Description != null && other.Description.Equals(Description) == false)
+            if (other.Description != null && this.Description != null && other.Description.Equals(this.Description) == false)
             {
                 return false;
             }
 
-            if (other.Stylesheet == null && Stylesheet != null)
+            if (other.Stylesheet == null && this.Stylesheet != null)
             {
                 return false;
             }
 
-            if (other.Stylesheet != null && Stylesheet == null)
+            if (other.Stylesheet != null && this.Stylesheet == null)
             {
                 return false;
             }
 
-            if (other.Stylesheet != null && Stylesheet != null && other.Stylesheet.Equals(Stylesheet) == false)
-            {
-                return false;
-            }
-
-            if (other.Attachements == null && Attachements != null)
-            {
-                return false;
-            }
-
-            if (other.Attachements != null && Attachements == null)
-            {
-                return false;
-            }
-
-            if (other.Attachements != null && Attachements != null && other.Attachements.Equals(Attachements) == false)
+            if (other.Stylesheet != null && this.Stylesheet != null && other.Stylesheet.Equals(this.Stylesheet) == false)
             {
                 return false;
             }
@@ -415,7 +359,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// <returns></returns>
         public ScenarioMetaInformation Clone()
         {
-            return (ScenarioMetaInformation)this.MemberwiseClone();
+            return (ScenarioMetaInformation)MemberwiseClone();
         }
 
 
@@ -427,7 +371,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// </returns>
         object ICloneable.Clone()
         {
-            return this.MemberwiseClone();
+            return MemberwiseClone();
         }
 
     } // end sealed public class ScenarioMetaInformation
@@ -464,11 +408,6 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// The tooltip for the Stylesheet.
         /// </summary>
         public string TOOLTIP_STYLESHEET { get { return "An Optional Stylesheet To Use For Rendering\nThe Generated HTML."; } }
-
-        /// <summary>
-        /// The tooltip for the Attachements.
-        /// </summary>
-        public string TOOLTIP_ATTACHEMENTS { get { return "Additional Attachments For The Scenario."; } }
 
     } // end public class ScenarioMetaInformationTooltips
 }
