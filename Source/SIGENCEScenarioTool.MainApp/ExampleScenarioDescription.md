@@ -1,4 +1,4 @@
-﻿# This Is A Example For A Scenario Description
+﻿# This Is An Example For An Scenario Description
 
 ## Overview
 This scenario is for testing the EmitterMockup wich is a part of the FunkyBurpingMegaApplication.

@@ -1,0 +1,332 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ output extension=".cs" #>
+<#
+    EnvDTE.DTE dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));  
+    string strFileName = this.Host.ResolvePath("ScenarioMetaInformation.xml");
+#>
+
+/**
+ * !!! GENERATED STUFF - DO NOT MODIFY MANUALLY !!!
+ */
+
+using System;
+using System.Xml.Linq;
+
+using SIGENCEScenarioTool.Extensions;
+using SIGENCEScenarioTool.Interfaces;
+using SIGENCEScenarioTool.Models.Attachements;
+
+
+
+
+<#
+    XDocument xd = XDocument.Load(strFileName );
+
+    XElement eRoot = xd.Root;
+
+    XAttribute xClassComment = eRoot.Attribute("Comment");
+    string strClassCommment = xClassComment != null ? xClassComment.Value : "";
+
+    strClassCommment = !string.IsNullOrEmpty(strClassCommment) ? strClassCommment : string.Format("Generated Model Class from {0}.",new FileInfo(strFileName).Name);
+#>
+
+namespace SIGENCEScenarioTool.Models
+{
+    ///<summary>
+    /// <#=strClassCommment#>
+    ///</summary>
+    public partial class <#=eRoot.Name#> :AbstractModelBase, IEquatable<<#=eRoot.Name#>>, ICloneable, IXmlExport
+    {
+
+        #region Instance Properties
+<#
+    foreach(XElement eProperty in eRoot.Elements())
+    {
+        string strPropertyType = eProperty.Attribute("Type").Value;
+        string strPropertyName = eProperty.Attribute("Name").Value;
+
+        XAttribute xInitValue = eProperty.Attribute("Init");
+        string strDefaultValue = xInitValue != null ? string.Format(" = {0}",xInitValue.Value) : "";
+
+        XAttribute xComment = eProperty.Attribute("Comment");
+        string strCommment = xComment != null ? xComment.Value.Replace("<","&lt;").Replace(">","&gt;").Trim() : "";
+
+        strCommment = !string.IsNullOrEmpty(strCommment) ? strCommment : string.Format("{0} as {1}.",strPropertyName,strPropertyType);
+
+#>
+
+        #region <#=strPropertyName#>
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For <#=strPropertyName#>.
+        ///</summary>
+        public const string <#=strPropertyName.ToUpper()#> = "<#=strPropertyName#>";
+
+        ///<summary>
+        /// The DefaultValue For <#=strPropertyName#>.
+        ///</summary>
+        public static readonly <#=strPropertyType#> DEFAULT_<#=strPropertyName.ToUpper()#><#=strDefaultValue#>;
+        
+        ///<summary>
+        /// The Internal Field For <#=strPropertyName#>.
+        ///</summary>
+        //private <#=strPropertyType#> _<#=strPropertyName#><#=strDefaultValue#>;
+        private <#=strPropertyType#> _<#=strPropertyName#> = DEFAULT_<#=strPropertyName.ToUpper()#>;
+
+        ///<summary>
+        /// <#=strCommment#>
+        ///</summary>
+        public <#=strPropertyType#> <#=strPropertyName#> 
+        {
+            get { return _<#=strPropertyName #>; }
+            set
+            {
+                _<#=strPropertyName #> = value;
+                FirePropertyChanged();
+            }
+        }
+
+        //static public readonly string TOOLTIP_<#=strPropertyName.ToUpper()#> = "<#=strCommment#>";
+
+        #endregion        
+
+        <#
+            if(eProperty!= eRoot.LastNode) {#>//---------------------------------------------------------------------
+<#}
+}
+#>
+#endregion
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// To the XML.
+        /// </summary>
+        /// <returns></returns>
+        public XElement ToXml()
+        {
+            return new XElement("<#=eRoot.Name#>",
+
+<#
+
+        foreach(XElement e in eRoot.Elements())
+        {
+            //string strPropertyType = e.Attribute("Type").Value;
+            string strPropertyName = e.Attribute("Name").Value;
+#>
+                XElementExtension.GetXElement("<#=strPropertyName#>", <#=strPropertyName #>)<#if(e!= eRoot.LastNode) {#>,
+<#}
+        }
+#>
+  
+            );
+        }
+
+
+        /// <summary>
+        /// Froms the XML.
+        /// </summary>
+        /// <param name="eRoot">The e root.</param>
+        /// <returns></returns>
+        static public <#=eRoot.Name#> FromXml(XElement eRoot)
+        {
+            XElement eChild = null;
+
+            if (eRoot.Name.LocalName.Equals("<#=eRoot.Name#>"))
+            {
+                eChild = eRoot;
+            }
+            else
+            {
+                eChild = eRoot.Element("<#=eRoot.Name#>");
+            }
+
+            return new <#=eRoot.Name#>
+            {
+<#
+
+        foreach(XElement e in eRoot.Elements())
+        {
+            string strPropertyType = e.Attribute("Type").Value;
+            string strPropertyName = e.Attribute("Name").Value;
+            XAttribute xInitValue = e.Attribute("Init");
+
+            string strDefaultValue = "null";
+        
+            if(xInitValue!=null)
+            {
+                strDefaultValue = xInitValue.Value;
+            }
+
+#>
+                <#=strPropertyName #> = eChild.GetProperty<<#=strPropertyType #>>("<#=strPropertyName#>",<#=strDefaultValue#>)<#if(e!= eRoot.LastNode) {#>,
+<#}
+        }
+#>
+            
+            };
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Gibt an, ob das aktuelle Objekt gleich einem anderen Objekt des gleichen Typs ist.
+        /// </summary>
+        /// <param name="other">Ein Objekt, das mit diesem Objekt verglichen werden soll.</param>
+        /// <returns>
+        /// true, wenn das aktuelle Objekt gleich dem <paramref name="other" />-Parameter ist, andernfalls false.
+        /// </returns>
+        public bool Equals(<#=eRoot.Name#> other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+<#
+
+        List<string> slPrimitiveTypes=new List<string>
+        {
+            "double",
+            "int",
+            "DeviceSource",
+            "AntennaType"
+        };
+
+        foreach(XElement e in eRoot.Elements())
+        {
+            string strPropertyType=e.Attribute("Type").Value;
+            string strPropertyName=e.Attribute("Name").Value;
+
+            if(slPrimitiveTypes.Contains(strPropertyType)==false)
+        {
+#>
+
+            if (other.<#=strPropertyName#> == null && <#=strPropertyName#> != null)
+            {
+                return false;
+            }
+
+            if (other.<#=strPropertyName#> != null && <#=strPropertyName#> == null)
+            {
+                return false;
+            }
+
+            if (other.<#=strPropertyName#> != null && <#=strPropertyName#> != null && other.<#=strPropertyName#>.Equals(<#=strPropertyName#>) == false)
+            {
+                return false;
+            }
+<#
+        }
+       else
+      {
+#>
+
+            if (<#=strPropertyName#> != other.<#=strPropertyName#> )
+<#
+#>
+            {
+                return false;
+            }
+<#
+     }
+    }
+ #>
+
+            return true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Clones this instance.
+        /// </summary>
+        /// <returns></returns>
+        public <#=eRoot.Name#> Clone()
+        {
+            return (<#=eRoot.Name#>)this.MemberwiseClone();
+        }
+
+
+        /// <summary>
+        /// Erstellt ein neues Objekt, das eine Kopie der aktuellen Instanz darstellt.
+        /// </summary>
+        /// <returns>
+        /// Ein neues Objekt, das eine Kopie dieser Instanz ist.
+        /// </returns>
+        object ICloneable.Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
+    } // end sealed public class <#=eRoot.Name#>
+
+
+
+    /// <summary>
+    /// The tooltips for our properties to display in the HMI.
+    /// </summary>
+    public sealed class ScenarioMetaInformationTooltips
+    {
+<#    
+    foreach(XElement eProperty in eRoot.Elements())
+    {
+        string strPropertyName = eProperty.Attribute("Name").Value;
+
+        XAttribute xComment = eProperty.Attribute("Comment");
+        string strCommment = xComment != null ? xComment.Value.Trim() : "";
+
+        strCommment = !string.IsNullOrEmpty(strCommment) ? strCommment : "";
+
+        // strCommment = strCommment.Replace(". ",".\\n");
+        int iCurrentLength = 0;
+
+        StringBuilder sb = new StringBuilder(256);
+
+        for(int iCounter=0;iCounter<strCommment.Length;iCounter++)
+        {
+            if(iCurrentLength > 40)
+            {
+                if(strCommment[iCounter] == 0x20)
+                {
+                    sb.Append("\\n");
+                    iCurrentLength = 0;
+                }
+                else
+                {
+                    sb.Append(strCommment[iCounter]);
+                }
+            }
+            else
+            {
+                sb.Append(strCommment[iCounter]);
+            }
+        
+            iCurrentLength++;
+        }
+
+        strCommment = sb.ToString();
+#>
+
+        /// <summary>
+        /// The tooltip for the <#=strPropertyName#>.
+        /// </summary>
+        public string TOOLTIP_<#=strPropertyName.ToUpper()#> { get { return "<#=strCommment#>"; } }
+<#
+    }
+#>
+
+    } // end public class ScenarioMetaInformationTooltips
+}

@@ -228,6 +228,11 @@
       <DependentUpon>RxTxTypes.tt</DependentUpon>
     </Compile>
     <None Include="Src\Models\Scenario\ScenarioMetaInformation.cs.xxx" />
+    <Compile Include="Src\Models\Scenario\ScenarioMetaInformation.cs">
+      <DependentUpon>ScenarioMetaInformation.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Src\Models\Templates\RFDeviceTemplate.cs" />
     <Compile Include="Src\Models\Validation\ValidationResult.cs" />
     <Compile Include="Src\Tools\ApplicationResource.cs" />
@@ -303,6 +308,10 @@
     <Content Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
+    </Content>
+    <Content Include="Src\Models\Scenario\ScenarioMetaInformation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ScenarioMetaInformation.cs</LastGenOutput>
     </Content>
     <Content Include="Src\Models\RxTxTypes\RxTxTypes.Known.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
