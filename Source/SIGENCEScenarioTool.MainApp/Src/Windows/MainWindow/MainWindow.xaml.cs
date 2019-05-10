@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -110,6 +112,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             this.RFDeviceTemplateCollection.Add(EMPTY_TEMPLATE);
 
+            this.MetaInformation.PropertyChanged += MetaInformation_PropertyChanged;
+
             //-----------------------------------------------------------------
 #if DEBUG
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
@@ -211,26 +215,28 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //OpenScenarioSimulationPlayer();
 
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\6,w=658,c=2.bild.jpg" ), AttachementType.Embedded ) );
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\MCS_Spectrum_Analyzer_2.1.6_Qt5_Setup.zip" ), AttachementType.Link ) );
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\test.sh" ), AttachementType.Embedded ) );
-
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\90's Popular Song's (Deep-House _ House Mix )-L4e9Hm3rHiY.mp3" ), AttachementType.Link ) );
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Funky Disco House Mix - March 2019-g7XBQIV77XM.jpg" ), AttachementType.Link ) );
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Funky Disco House Mix - March 2019-g7XBQIV77XM.mp3" ), AttachementType.Link ) );
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix -March 2019 - 5ZBgx1NeUWg.jpg" ), AttachementType.Link ) );
-            //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix - March 2019 - 5ZBgx1NeUWg.mp3" ), AttachementType.Link ) );
-
-            //this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Link));
-            //this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
-            //this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
-
+            //-----------------------------------------------------------------
 
             //string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
-            //this.tecDescription.Text = File.ReadAllText(strMarkdown);
 
-            //this.tiMetaInformation.IsSelected = true;
-            //this.tcTabControl.Items.Remove( this.tiDescription );
+            this.MetaInformation.Version = "1.0";
+            this.MetaInformation.ApplicationContext = "Scenario Meta Information Test";
+            this.MetaInformation.ContactPerson = "Jörg Lanser";
+
+            //this.MetaInformation.Description = File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md");
+            //this.MetaInformation.Stylesheet = "h1 { border: 1px solid red; }";
+            this.MetaInformation.SetDescriptionAndStylesheet(File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), "h1 { border: 1px solid red; }");
+
+            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Embedded));
+            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
+            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
+            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.xps"), AttachementType.Link));
+            this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\streets_bw.sqlite"), AttachementType.Link));
+
+            this.tecDescription.Text = this.MetaInformation.Description;
+            this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
+
+            this.tiMetaInformation.IsSelected = true;
 
             //-----------------------------------------------------------------
 

@@ -4,6 +4,7 @@
  */
 
 using System;
+using System.Collections.ObjectModel;
 using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
@@ -13,8 +14,7 @@ using SIGENCEScenarioTool.Models.Attachements;
 
 
 
-
-namespace SIGENCEScenarioTool.Models
+namespace SIGENCEScenarioTool.Models.MetaInformation
 {
     ///<summary>
     /// Represent MetaInformationData For An Scenario.
@@ -219,18 +219,18 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The DefaultValue For Attachements.
         ///</summary>
-        public static readonly AttachementList DEFAULT_ATTACHEMENTS = new AttachementList();
+        public static readonly ObservableCollection<Attachement> DEFAULT_ATTACHEMENTS = new ObservableCollection<Attachement>();
         
         ///<summary>
         /// The Internal Field For Attachements.
         ///</summary>
-        //private AttachementList _Attachements = new AttachementList();
-        private AttachementList _Attachements = DEFAULT_ATTACHEMENTS;
+        //private ObservableCollection<Attachement> _Attachements = new ObservableCollection<Attachement>();
+        private ObservableCollection<Attachement> _Attachements = DEFAULT_ATTACHEMENTS;
 
         ///<summary>
         /// Additional Attachments For The Scenario.
         ///</summary>
-        public AttachementList Attachements 
+        public ObservableCollection<Attachement> Attachements 
         {
             get { return _Attachements; }
             set
@@ -292,7 +292,7 @@ namespace SIGENCEScenarioTool.Models
                 ContactPerson = eChild.GetProperty<string>("ContactPerson",""),
                 Description = eChild.GetProperty<string>("Description",""),
                 Stylesheet = eChild.GetProperty<string>("Stylesheet",""),
-                Attachements = eChild.GetProperty<AttachementList>("Attachements",new AttachementList())            
+                Attachements = eChild.GetProperty<ObservableCollection<Attachement>>("Attachements",new ObservableCollection<Attachement>())            
             };
         }
 

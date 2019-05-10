@@ -51,7 +51,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.ValidationResult.Clear();
 
             this.mcMapControl.Markers.Clear();
-            //this.ScenarioMetaInformation.Clear();
+            this.MetaInformation.Clear();
 
             GC.WaitForPendingFinalizers();
             GC.Collect();
@@ -302,6 +302,55 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Views the validation results.
+        /// </summary>
+        private void ViewValidationResults()
+        {
+            this.tiValidation.IsSelected = true;
+        }
+
+
+        /// <summary>
+        /// Views the device map.
+        /// </summary>
+        private void ViewDeviceMap()
+        {
+            this.tiMap.IsSelected = true;
+        }
+
+        /// <summary>
+        /// Views the description hypertext.
+        /// </summary>
+        private void ViewDescriptionHypertext()
+        {
+            this.tiMetaInformation.IsSelected = true;
+            this.tiViewWebbrowser.IsSelected = true;
+        }
+
+
+        /// <summary>
+        /// Edits the description markdown.
+        /// </summary>
+        private void EditDescriptionMarkdown()
+        {
+            this.tiMetaInformation.IsSelected = true;
+            this.tiEditDescription.IsSelected = true;
+        }
+
+
+        /// <summary>
+        /// Edits the description stylesheet.
+        /// </summary>
+        private void EditDescriptionStylesheet()
+        {
+            this.tiMetaInformation.IsSelected = true;
+            this.tiEditStylesheet.IsSelected = true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Opens the settings.
         /// </summary>
         private void OpenSettings()
@@ -334,7 +383,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void UpdateScenarioDescriptionMarkdown()
         {
-            if (this.tecDescription.Text.IsNotEmpty())
+            if (this.MetaInformation.Description.IsNotEmpty())
             {
                 try
                 {
@@ -356,32 +405,60 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 //wbScenarioDescription.NavigateToString( "<html/>" );
                 this.wbWebBrowser.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
             }
+
+            //if (this.wbWebBrowser.IsVisible)
+            //{
+            //    this.wbWebBrowser.Refresh();
+            //}
+
+            //if (this.tecDescription.Text.IsNotEmpty())
+            //{
+            //    try
+            //    {
+            //        StringBuilder sbHtml = new StringBuilder(8192);
+
+            //        sbHtml.AppendLine(HEADER);
+            //        sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
+            //        sbHtml.AppendLine(FOOTER);
+
+            //        this.wbWebBrowser.NavigateToString(sbHtml.ToString());
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        this.wbWebBrowser.NavigateToString($"<h1>{ex.Message}</h1>");
+            //    }
+            //}
+            //else
+            //{
+            //    //wbScenarioDescription.NavigateToString( "<html/>" );
+            //    this.wbWebBrowser.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
+            //}
         }
 
 
-        /// <summary>
-        /// Displays the scenario description.
-        /// </summary>
-        private void DisplayScenarioDescription()
-        {
-            if (this.tecDescription.Text.IsNotEmpty())
-            {
-                string strOutputFilename = $"{Path.GetTempPath()}{Guid.NewGuid()}.html";
-                StringBuilder sbHtml = new StringBuilder(8192);
+        ///// <summary>
+        ///// Displays the scenario description.
+        ///// </summary>
+        //private void DisplayScenarioDescription()
+        //{
+        //    if (this.tecDescription.Text.IsNotEmpty())
+        //    {
+        //        string strOutputFilename = $"{Path.GetTempPath()}{Guid.NewGuid()}.html";
+        //        StringBuilder sbHtml = new StringBuilder(8192);
 
-                sbHtml.AppendLine(HEADER);
-                sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
-                sbHtml.AppendLine(FOOTER);
+        //        sbHtml.AppendLine(HEADER);
+        //        sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
+        //        sbHtml.AppendLine(FOOTER);
 
-                File.WriteAllText(strOutputFilename, sbHtml.ToString());
+        //        File.WriteAllText(strOutputFilename, sbHtml.ToString());
 
-                Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
-            }
-            else
-            {
-                MB.Warning("No Description For The Scenario Avaible!");
-            }
-        }
+        //        Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
+        //    }
+        //    else
+        //    {
+        //        MB.Warning("No Description For The Scenario Avaible!");
+        //    }
+        //}
 
 
         /// <summary>

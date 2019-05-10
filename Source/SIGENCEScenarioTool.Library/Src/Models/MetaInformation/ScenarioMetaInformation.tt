@@ -20,12 +20,12 @@
  */
 
 using System;
+using System.Collections.ObjectModel;
 using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Interfaces;
 using SIGENCEScenarioTool.Models.Attachements;
-
 
 
 
@@ -40,7 +40,7 @@ using SIGENCEScenarioTool.Models.Attachements;
     strClassCommment = !string.IsNullOrEmpty(strClassCommment) ? strClassCommment : string.Format("Generated Model Class from {0}.",new FileInfo(strFileName).Name);
 #>
 
-namespace SIGENCEScenarioTool.Models
+namespace SIGENCEScenarioTool.Models.MetaInformation
 {
     ///<summary>
     /// <#=strClassCommment#>

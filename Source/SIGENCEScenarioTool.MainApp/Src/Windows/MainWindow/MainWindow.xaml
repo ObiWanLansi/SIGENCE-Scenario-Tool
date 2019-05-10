@@ -121,12 +121,13 @@
                 <MenuItem Header="_Edit Settings" Icon="{StaticResource NUT_AND_BOLT}" Command="{x:Static cmd:RegisteredCommands.OpenSettings}" />
             </MenuItem>
             <MenuItem x:Name="miTest" Header="_Test">
-                <MenuItem Header="Display Scenario Description" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_DisplayScenarioDescription_Click" />
                 <!--<MenuItem Header="Toggle Data _Grid" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleDataGrid}" />-->
+                <MenuItem Header="_Open Script Editor" Icon="{StaticResource EARTH}" Command="{x:Static cmd:RegisteredCommands.OpenScriptEditor}"/>
                 <Separator />
                 <MenuItem Header="_Load Streets" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
                 <MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
+                <!--<MenuItem Header="Display Scenario Description" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_DisplayScenarioDescription_Click" />-->
                 <!--<MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />-->
                 <Separator />
                 <MenuItem Header="Create Randomized RFDevices" Icon="{StaticResource SATELLITE}">
@@ -760,13 +761,13 @@
                             <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="General Information" Style="{StaticResource Header}" />
 
                             <Label Grid.Column="0" Grid.Row="1" Content="Scenario Version" />
-                            <TextBox Grid.Column="1" Grid.Row="1" Margin="2" />
+                            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding MetaInformation.Version,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2" />
 
                             <Label Grid.Column="0" Grid.Row="2" Content="Application Context" />
-                            <TextBox Grid.Column="1" Grid.Row="2" Margin="2" />
+                            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding MetaInformation.ApplicationContext,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2" />
 
                             <Label Grid.Column="0" Grid.Row="3" Content="Contact Person" />
-                            <TextBox Grid.Column="1" Grid.Row="3" Margin="2" />
+                            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding MetaInformation.ContactPerson,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2" />
 
                             <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="Tags" Style="{StaticResource Header}" />
 
@@ -800,15 +801,15 @@
                             </Grid.RowDefinitions>
                             <Label Grid.Row="0" Content="Description" Style="{StaticResource Header}" />
                             <TabControl Grid.Row="1">
-                                <TabItem Header="Viewer">
+                                <TabItem x:Name="tiViewWebbrowser" Header="Viewer">
                                     <WebBrowser x:Name="wbWebBrowser" IsVisibleChanged="WebBrowser_Markdown_IsVisibleChanged" />
                                 </TabItem>
-                                <TabItem Header="Editor">
+                                <TabItem x:Name="tiEditDescription" Header="Editor">
                                     <WindowsFormsHost>
                                         <icsharpcode:TextEditorControl x:Name="tecDescription" />
                                     </WindowsFormsHost>
                                 </TabItem>
-                                <TabItem Header="StyleSheet">
+                                <TabItem x:Name="tiEditStylesheet" Header="StyleSheet">
                                     <WindowsFormsHost>
                                         <icsharpcode:TextEditorControl x:Name="tecStyleSheet" />
                                     </WindowsFormsHost>

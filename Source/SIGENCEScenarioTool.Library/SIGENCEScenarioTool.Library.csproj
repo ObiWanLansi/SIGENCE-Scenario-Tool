@@ -227,8 +227,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RxTxTypes.tt</DependentUpon>
     </Compile>
-    <None Include="Src\Models\Scenario\ScenarioMetaInformation.cs.xxx" />
-    <Compile Include="Src\Models\Scenario\ScenarioMetaInformation.cs">
+    <Compile Include="Src\Models\MetaInformation\ScenarioMetaInformation.Ext.cs" />
+    <Compile Include="Src\Models\MetaInformation\ScenarioMetaInformation.cs">
       <DependentUpon>ScenarioMetaInformation.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -309,7 +309,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoLocalizationResult.cs</LastGenOutput>
     </Content>
-    <Content Include="Src\Models\Scenario\ScenarioMetaInformation.tt">
+    <Content Include="Src\Models\MetaInformation\ScenarioMetaInformation.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ScenarioMetaInformation.cs</LastGenOutput>
     </Content>
@@ -322,7 +322,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RxTxTypes.tt.xxx</DependentUpon>
     </Content>
-    <Resource Include="Src\Models\Scenario\ScenarioMetaInformation.xml">
+    <Resource Include="Src\Models\MetaInformation\ScenarioMetaInformation.xml">
       <SubType>Designer</SubType>
     </Resource>
     <None Include="Src\Models\RxTxTypes\RxTxTypes.Known.md">

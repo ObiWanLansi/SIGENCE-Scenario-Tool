@@ -15,6 +15,7 @@ using Microsoft.Win32;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.MetaInformation;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -70,6 +71,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// The empty template
@@ -142,6 +144,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private RFDevice dvmLastSelectedDevice = null;
 
+        /// <summary>
+        /// The b text changed
+        /// </summary>
+        private bool bTextChanged = false;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1008,6 +1014,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         ///// </summary>
         //public ObservableCollection<Attachement> Attachements { get; set; } = new ObservableCollection<Attachement>();
 
+
+        /// <summary>
+        /// Gets or sets the meta information.
+        /// </summary>
+        /// <value>
+        /// The meta information.
+        /// </value>
+        public ScenarioMetaInformation MetaInformation { get; set; } = new ScenarioMetaInformation();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

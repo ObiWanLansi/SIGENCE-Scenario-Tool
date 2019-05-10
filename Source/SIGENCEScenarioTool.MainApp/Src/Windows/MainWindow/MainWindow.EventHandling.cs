@@ -13,6 +13,8 @@ using GMap.NET.WindowsPresentation;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
+using SIGENCEScenarioTool.Models.Attachements;
+using SIGENCEScenarioTool.Models.MetaInformation;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -503,17 +505,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// Handles the Click event of the MenuItem_DisplayScenarioDescription control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_DisplayScenarioDescription_Click(object sender, RoutedEventArgs e)
-        {
-            DisplayScenarioDescription();
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_DisplayScenarioDescription control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_DisplayScenarioDescription_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DisplayScenarioDescription();
 
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
         /// <summary>
@@ -523,10 +525,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private void WebBrowser_Markdown_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (this.wbWebBrowser.IsVisible)
-            {
-                UpdateScenarioDescriptionMarkdown();
-            }
+            //if (this.wbWebBrowser.IsVisible)
+            //{
+            //    // Jedesmal wenn der Browser sichtbar wir updaten ...
+            //    //UpdateScenarioDescriptionMarkdown();
+            //    //this.MetaInformation.Description = this.tecDescription.Text;
+            //    //this.MetaInformation.Stylesheet = this.tecStyleSheet.Text;
+
+            //    this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
+            //}
         }
 
 
@@ -972,6 +979,86 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// Handles the PropertyChanged event of the MetaInformation control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="PropertyChangedEventArgs"/> instance containing the event data.</param>
+        private void MetaInformation_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "DescriptionAndStylesheet")
+            {
+                // Nur wenn der Browser gerade sichbar ist noch updaten ...
+                //if (this.wbWebBrowser.IsVisible)
+                {
+                    UpdateScenarioDescriptionMarkdown();
+                }
+
+                return;
+            }
+
+            if (e.PropertyName == ScenarioMetaInformation.DESCRIPTION)
+            {
+                this.tecDescription.Text = this.MetaInformation.Description;
+                this.tecDescription.Refresh();
+
+                // Nur wenn der Browser gerade sichbar ist noch updaten ...
+                //if (this.wbWebBrowser.IsVisible)
+                {
+                    UpdateScenarioDescriptionMarkdown();
+                }
+
+                return;
+            }
+
+            if (e.PropertyName == ScenarioMetaInformation.STYLESHEET)
+            {
+                this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
+                this.tecStyleSheet.Refresh();
+
+                // Nur wenn der Browser gerade sichbar ist noch updaten ...
+                //if (this.wbWebBrowser.IsVisible)
+                {
+                    UpdateScenarioDescriptionMarkdown();
+                }
+
+                return;
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Handles the KeyUp event of the TextArea control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+        private void TextArea_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            this.bTextChanged = true;
+        }
+
+
+        /// <summary>
+        /// Handles the LostFocus event of the TextArea control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void TextArea_LostFocus(object sender, EventArgs e)
+        {
+            if (this.bTextChanged == true)
+            {
+                this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
+
+                this.bTextChanged = false;
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
         #region Drag & Drop Test
 
 
@@ -997,7 +1084,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
         private void StackPanel_Drop(object sender, DragEventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
 
             bool bIsControlKeyPressed = (e.KeyStates & DragDropKeyStates.ControlKey) == DragDropKeyStates.ControlKey;
 
@@ -1005,6 +1092,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 //this.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
                 //this.ScenarioMetaInformation.Attachements.Add(new Attachement(fi, bIsControlKeyPressed? AttachementType.Embedded : AttachementType.Link));
+                this.MetaInformation.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
             }
 
             e.Handled = true;

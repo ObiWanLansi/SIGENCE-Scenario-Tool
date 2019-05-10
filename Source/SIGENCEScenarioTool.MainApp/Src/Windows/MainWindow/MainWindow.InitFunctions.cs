@@ -10,8 +10,6 @@ using ICSharpCode.TextEditor.Document;
 
 using SIGENCEScenarioTool.Commands;
 
-
-
 namespace SIGENCEScenarioTool.Windows.MainWindow
 {
     /// <summary>
@@ -270,6 +268,53 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 },
                 (sender, e) => { e.CanExecute = true; }
             ));
+
+            //---------------------------------------------------------------------
+
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ViewDeviceMap,
+                (sender, e) =>
+                {
+                    ViewDeviceMap();
+                    e.Handled = true;
+                },
+                (sender, e) => { e.CanExecute = true; }
+            ));
+
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ViewDescriptionHypertext,
+                (sender, e) =>
+                {
+                    ViewDescriptionHypertext();
+                    e.Handled = true;
+                },
+                (sender, e) => { e.CanExecute = true; }
+            ));
+
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.EditDescriptionMarkdown,
+                (sender, e) =>
+                {
+                    EditDescriptionMarkdown();
+                    e.Handled = true;
+                },
+                (sender, e) => { e.CanExecute = true; }
+            ));
+
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.EditDescriptionStylesheet,
+                (sender, e) =>
+                {
+                    EditDescriptionStylesheet();
+                    e.Handled = true;
+                },
+                (sender, e) => { e.CanExecute = true; }
+            ));
+
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.ViewValidationResults,
+                (sender, e) =>
+                {
+                    ViewValidationResults();
+                    e.Handled = true;
+                },
+                (sender, e) => { e.CanExecute = true; }
+            ));
         }
 
 
@@ -398,6 +443,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 tec.AllowDrop = false;
                 tec.VRulerRow = 120;
                 //this.tecScenarioDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter( "HTML" );
+
+                tec.ActiveTextAreaControl.TextArea.LostFocus += TextArea_LostFocus;
+                tec.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
+
             };
 
             Init(this.tecDescription);

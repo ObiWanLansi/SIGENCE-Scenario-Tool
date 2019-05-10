@@ -7,6 +7,6 @@
     <Property Name="Description" Type="string" Init="&quot;&quot;" Comment="An Markdown Text Content Where You Can Describe The Scenario And The Excepted Result." />
     <Property Name="Stylesheet" Type="string" Init="&quot;&quot;" Comment="An Optional Stylesheet To Use For Rendering The Generated HTML." />
 
-    <Property Name="Attachements" Type="AttachementList" Init="new AttachementList()" Comment="Additional Attachments For The Scenario." />
+    <Property Name="Attachements" Type="ObservableCollection&lt;Attachement&gt;" Init="new ObservableCollection&lt;Attachement&gt;()" Comment="Additional Attachments For The Scenario." />
 
 </ScenarioMetaInformation>
