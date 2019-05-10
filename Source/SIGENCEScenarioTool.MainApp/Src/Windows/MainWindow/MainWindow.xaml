@@ -127,7 +127,7 @@
                 <MenuItem Header="_Load Streets" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
                 <MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
-                <MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
+                <!--<MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />-->
                 <Separator />
                 <MenuItem Header="Create Randomized RFDevices" Icon="{StaticResource SATELLITE}">
                     <MenuItem Header="50" Tag="50" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />
@@ -707,76 +707,6 @@
             </TabItem>
 
 
-            <TabItem x:Name="tiDescription">
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="{StaticResource TEXT_RICH_COLORED}" />
-                        <Label Content="Description" />
-                    </StackPanel>
-                </TabItem.Header>
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <ToolBar Grid.Row="0">
-                        <ToggleButton Content="{StaticResource EDIT}" ToolTip="Edit Scenario Description [OBSOLETE]" IsEnabled="False" Click="ToogleButton_EditScenarioDescription_Click" />
-                        <!--<Button Content="{StaticResource MAGIC_WAND}" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Insert A Small Template For A Scenario Description" Click="Button_InsertScenarioDescriptionTemplate_Click" />-->
-                        <Button Content="{StaticResource MAGIC_WAND}" IsEnabled="False" ToolTip="Insert A Small Template For A Scenario Description" Click="Button_InsertScenarioDescriptionTemplate_Click" />
-                        <Separator />
-                        <Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
-                            <MenuItem Header="ÄÖÜ" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The German Umlauts To HTML" Click="MenuItem_HtmlConvertGermanUmlauts_Click" />
-                            <MenuItem Header="Upper" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The Selected Text To Upper Case" Click="MenuItem_HtmlConvertToUpperText_Click" />
-                            <MenuItem Header="Lower" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The Selected Text To Lower Case" Click="MenuItem_HtmlConvertToLowerText_Click" />
-                            <MenuItem Header="Capitalize" IsEnabled="{Binding ScenarioDescriptionEditMode}" ToolTip="Converts The Selected Text To Upper Case" Click="MenuItem_HtmlConvertToCapitalize_Click" />
-                        </Menu>
-                        <Separator />
-                        <Menu IsEnabled="{Binding ScenarioDescriptionEditMode}">
-                            <MenuItem Header="Font">
-                                <MenuItem Header="Bold" Tag="b" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Cursiv" Tag="i" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Underline" Tag="u" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Preformatted" Tag="pre" Click="MenuItem_InsertHtmlSnippet_Click" />
-                            </MenuItem>
-                            <MenuItem Header="Table">
-                                <MenuItem Header="Table" Tag="table" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Row" Tag="tr" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Header" Tag="th" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Column" Tag="td" Click="MenuItem_InsertHtmlSnippet_Click" />
-                            </MenuItem>
-                            <MenuItem Header="Header">
-                                <MenuItem Header="H1" Tag="h1" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="H2" Tag="h2" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="H3" Tag="h3" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="H4" Tag="h4" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="H5" Tag="h5" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="H6" Tag="h6" Click="MenuItem_InsertHtmlSnippet_Click" />
-                            </MenuItem>
-                            <MenuItem Header="Misc">
-                                <MenuItem Header="Line Break" Tag="br" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Horizontal Line" Tag="hr" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Image" Tag="image" Click="MenuItem_InsertHtmlSnippet_Click" />
-                                <MenuItem Header="Link" Tag="link" Click="MenuItem_InsertHtmlSnippet_Click" />
-                            </MenuItem>
-                        </Menu>
-                        <Separator />
-
-                        <Button Content="{StaticResource HELP}" ToolTip="Open Help For Writing A Document" Click="Button_DocumentationHelp_Click" />
-                    </ToolBar>
-
-                    <WebBrowser x:Name="wbScenarioDescription" Grid.Row="1" Visibility="Visible" />
-
-                    <!--<TextBox x:Name="tbScenarioDescription" Grid.Row="1" Text="{Binding ScenarioDescription,Mode=TwoWay,UpdateSourceTrigger=LostFocus}" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="12" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />-->
-                    <!--<TextBox x:Name="tbScenarioDescription" Grid.Row="1" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="false" FontFamily="Courier New" FontSize="14" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Visibility="Hidden" />-->
-
-                    <WindowsFormsHost x:Name="wfhHtmlEdit" Grid.Row="1" Visibility="Hidden">
-                        <icsharpcode:TextEditorControl x:Name="tecScenarioDescription" />
-                    </WindowsFormsHost>
-                </Grid>
-            </TabItem>
-
-
             <TabItem x:Name="tiMetaInformation">
 
                 <TabItem.Header>
@@ -850,11 +780,11 @@
                                     </Style>
 
                                 </StackPanel.Resources>
-                                <Button Content="#Scenario" />
+                                <!--<Button Content="#Scenario" />
                                 <Button Content="#Simulation" />
                                 <Button Content="#Lansi" />
                                 <Button Content="#Jammer" />
-                                <Button Content="#Airbus" />
+                                <Button Content="#Airbus" />-->
                                 <Button Content="+" Width="20" />
                             </StackPanel>
 
@@ -909,7 +839,7 @@
 
                             <Label Grid.Row="0" Content="Attachments" Style="{StaticResource Header}" />
 
-                            <ListView Grid.Row="1" ItemsSource="{Binding Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke" HorizontalContentAlignment="Stretch">
+                            <ListView Grid.Row="1" ItemsSource="{Binding MetaInformation.Attachements}" AllowDrop="True" DragOver="StackPanel_Attachements_DragOver" Drop="StackPanel_Drop" Background="WhiteSmoke" HorizontalContentAlignment="Stretch">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border BorderBrush="Black" BorderThickness="1" Margin="3" CornerRadius="5">

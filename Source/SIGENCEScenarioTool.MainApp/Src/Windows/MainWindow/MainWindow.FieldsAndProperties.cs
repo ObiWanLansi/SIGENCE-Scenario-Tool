@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -16,7 +15,6 @@ using Microsoft.Win32;
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Datatypes.Observable;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -76,7 +74,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The empty template
         /// </summary>
-        private static readonly RFDeviceTemplate EMPTY_TEMPLATE = new RFDeviceTemplate( new RFDevice { PrimaryKey = Guid.Empty, Name = "Empty Device" } );
+        private static readonly RFDeviceTemplate EMPTY_TEMPLATE = new RFDeviceTemplate(new RFDevice { PrimaryKey = Guid.Empty, Name = "Empty Device" });
 
         /// <summary>
         /// The pipeline
@@ -167,29 +165,29 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// The string scenario description
-        /// </summary>
-        private string strScenarioDescription = "";
+        ///// <summary>
+        ///// The string scenario description
+        ///// </summary>
+        //private string strScenarioDescription = "";
 
-        /// <summary>
-        /// Gets or sets the scenario description.
-        /// </summary>
-        /// <value>
-        /// The scenario description.
-        /// </value>
-        public string ScenarioDescription
-        {
-            get { return this.strScenarioDescription; }
-            set
-            {
-                this.strScenarioDescription = value;
+        ///// <summary>
+        ///// Gets or sets the scenario description.
+        ///// </summary>
+        ///// <value>
+        ///// The scenario description.
+        ///// </value>
+        //public string ScenarioDescription
+        //{
+        //    get { return this.strScenarioDescription; }
+        //    set
+        //    {
+        //        this.strScenarioDescription = value;
 
-                UpdateScenarioDescription();
+        //        UpdateScenarioDescription();
 
-                FirePropertyChanged();
-            }
-        }
+        //        FirePropertyChanged();
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -329,29 +327,29 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// The b scenario description edit mode
-        /// </summary>
-        private bool bScenarioDescriptionEditMode = false;
+        ///// <summary>
+        ///// The b scenario description edit mode
+        ///// </summary>
+        //private bool bScenarioDescriptionEditMode = false;
 
-        /// <summary>
-        /// Gets or sets a value indicating whether [scenario description edit mode].
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if [scenario description edit mode]; otherwise, <c>false</c>.
-        /// </value>
-        public bool ScenarioDescriptionEditMode
-        {
-            get { return this.bScenarioDescriptionEditMode; }
-            set
-            {
-                this.bScenarioDescriptionEditMode = value;
+        ///// <summary>
+        ///// Gets or sets a value indicating whether [scenario description edit mode].
+        ///// </summary>
+        ///// <value>
+        /////   <c>true</c> if [scenario description edit mode]; otherwise, <c>false</c>.
+        ///// </value>
+        //public bool ScenarioDescriptionEditMode
+        //{
+        //    get { return this.bScenarioDescriptionEditMode; }
+        //    set
+        //    {
+        //        this.bScenarioDescriptionEditMode = value;
 
-                SwitchScenarioEditMode();
+        //        SwitchScenarioEditMode();
 
-                FirePropertyChanged();
-            }
-        }
+        //        FirePropertyChanged();
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -454,7 +452,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lat; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( value, this.mcMapControl.Position.Lng );
+                this.mcMapControl.Position = new PointLatLng(value, this.mcMapControl.Position.Lng);
 
                 FirePropertyChanged();
             }
@@ -472,7 +470,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.mcMapControl.Position.Lng; }
             set
             {
-                this.mcMapControl.Position = new PointLatLng( this.mcMapControl.Position.Lat, value );
+                this.mcMapControl.Position = new PointLatLng(this.mcMapControl.Position.Lat, value);
 
                 FirePropertyChanged();
             }
@@ -742,7 +740,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -768,7 +766,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -794,7 +792,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -819,7 +817,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.lcvGeoNodes.Refresh();
 
                 FirePropertyChanged();
-                FirePropertyChanged( "CurrentNodes" );
+                FirePropertyChanged("CurrentNodes");
             }
         }
 
@@ -844,10 +842,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.bStartedDALF; }
             set
             {
-                if(value == true)
+                if (value == true)
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if(StartDALF() == false)
+                    if (StartDALF() == false)
                     {
                         return;
                     }
@@ -889,7 +887,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             get { return this.iIdFilter != null ? this.iIdFilter.ToString() : ""; }
             set
             {
-                if(string.IsNullOrEmpty( value ))
+                if (string.IsNullOrEmpty(value))
                 {
                     this.iIdFilter = null;
                 }
@@ -898,9 +896,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     try
                     {
 
-                        this.iIdFilter = int.Parse( value );
+                        this.iIdFilter = int.Parse(value);
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         this.iIdFilter = null;
                     }
@@ -987,7 +985,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
         #endregion
 
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
@@ -1006,10 +1003,41 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public ValidationResultViewModelList ValidationResult { get; set; } = new ValidationResultViewModelList();
 
+        ///// <summary>
+        ///// The attachements
+        ///// </summary>
+        //public ObservableCollection<Attachement> Attachements { get; set; } = new ObservableCollection<Attachement>();
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
-        /// The attachements
+        /// The scenario meta information
         /// </summary>
-        public ObservableCollection<Attachement> Attachements { get; set; } = new ObservableCollection<Attachement>();
+        //public readonly ScenarioMetaInformationViewModel ScenarioMetaInformation = new ScenarioMetaInformationViewModel();
+
+        ///// <summary>
+        ///// The smi meta information
+        ///// </summary>
+        //private ScenarioMetaInformation smiMetaInformation = new ScenarioMetaInformation();
+
+        ///// <summary>
+        ///// Gets or sets the meta information.
+        ///// </summary>
+        ///// <value>
+        ///// The meta information.
+        ///// </value>
+        //public ScenarioMetaInformation MetaInformation
+        //{
+        //    get { return this.smiMetaInformation; }
+        //    set
+        //    {
+        //        this.smiMetaInformation = value;
+
+        //        FirePropertyChanged();
+        //    }
+        //}
 
     } // end public partial class MainWindow
 }

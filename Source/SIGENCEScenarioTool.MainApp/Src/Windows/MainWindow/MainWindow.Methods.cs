@@ -51,7 +51,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.ValidationResult.Clear();
 
             this.mcMapControl.Markers.Clear();
-            this.ScenarioDescription = "";
+            //this.ScenarioMetaInformation.Clear();
 
             GC.WaitForPendingFinalizers();
             GC.Collect();
@@ -192,111 +192,111 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// Switches the scenario edit mode.
-        /// </summary>
-        private void SwitchScenarioEditMode()
-        {
-            this.wfhHtmlEdit.Visibility = this.ScenarioDescriptionEditMode ? Visibility.Hidden : Visibility.Visible;
-            this.wfhHtmlEdit.Visibility = this.ScenarioDescriptionEditMode ? Visibility.Visible : Visibility.Hidden;
-        }
+        ///// <summary>
+        ///// Switches the scenario edit mode.
+        ///// </summary>
+        //private void SwitchScenarioEditMode()
+        //{
+        //    this.wfhHtmlEdit.Visibility = this.ScenarioDescriptionEditMode ? Visibility.Hidden : Visibility.Visible;
+        //    this.wfhHtmlEdit.Visibility = this.ScenarioDescriptionEditMode ? Visibility.Visible : Visibility.Hidden;
+        //}
 
 
-        /// <summary>
-        /// Updates the scenario description.
-        /// </summary>
-        private void UpdateScenarioDescription()
-        {
-            if (string.IsNullOrEmpty(this.ScenarioDescription) == false)
-            {
-                try
-                {
-                    //string strHtmlContent = Markdown.ToHtml(this.ScenarioDescription);
-                    //this.wbScenarioDescription.NavigateToString(strHtmlContent);
+        ///// <summary>
+        ///// Updates the scenario description.
+        ///// </summary>
+        //private void UpdateScenarioDescription()
+        //{
+        //    if (string.IsNullOrEmpty(this.ScenarioDescription) == false)
+        //    {
+        //        try
+        //        {
+        //            //string strHtmlContent = Markdown.ToHtml(this.ScenarioDescription);
+        //            //this.wbScenarioDescription.NavigateToString(strHtmlContent);
 
-                    this.wbScenarioDescription.NavigateToString(this.ScenarioDescription);
-                }
-                catch (Exception ex)
-                {
-                    this.wbScenarioDescription.NavigateToString($"<h1>{ex.Message}</h1>");
-                }
-            }
-            else
-            {
-                //wbScenarioDescription.NavigateToString( "<html/>" );
-                this.wbScenarioDescription.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
-            }
-        }
-
-
-        /// <summary>
-        /// Inserts the scenario description template.
-        /// </summary>
-        private void InsertScenarioDescriptionTemplate()
-        {
-            StringBuilder sb = new StringBuilder();
-            string strDivider = new string('*', 40 - 9);
-
-            sb.AppendLine("<!-- {0} -->", strDivider);
-            sb.AppendLine("<h1>Enter Here The Name Of The Scenario</h1>");
-            sb.AppendLine();
-            sb.AppendLine("<table border=\"1\">");
-            sb.AppendLine("    <tr><th>Filename</th><td>{0}</td></tr>", this.strCurrentFile ?? "Enter Here The Filename");
-            sb.AppendLine("    <tr><th>Author</th><td>{0}</td></tr>", Environment.UserName);
-            sb.AppendLine("    <tr><th>Date</th><td>{0}</td></tr>", DateTime.Now.ToShortDateString());
-            sb.AppendLine("</table>");
-            sb.AppendLine();
-            sb.AppendLine("<!-- {0} -->", strDivider);
-            sb.AppendLine();
-            sb.AppendLine("<p>");
-            sb.AppendLine("Describe Here Your Scenario, What Is It For And What Must Others Now ...");
-            sb.AppendLine("</p>");
-
-            this.tecScenarioDescription.ActiveTextAreaControl.TextArea.InsertString(sb.ToString());
-        }
+        //            this.wbScenarioDescription.NavigateToString(this.ScenarioDescription);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            this.wbScenarioDescription.NavigateToString($"<h1>{ex.Message}</h1>");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //wbScenarioDescription.NavigateToString( "<html/>" );
+        //        this.wbScenarioDescription.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
+        //    }
+        //}
 
 
-        /// <summary>
-        /// Inserts the HTML snippet.
-        /// </summary>
-        /// <param name="strSnippetId">The string snippet identifier.</param>
-        private void InsertHtmlSnippet(string strSnippetId)
-        {
-            string strSnippet = null;
+        ///// <summary>
+        ///// Inserts the scenario description template.
+        ///// </summary>
+        //private void InsertScenarioDescriptionTemplate()
+        //{
+        //    StringBuilder sb = new StringBuilder();
+        //    string strDivider = new string('*', 40 - 9);
 
-            string GetDefaultTag(string tag) => string.Format("<{0}></{0}>", tag);
+        //    sb.AppendLine("<!-- {0} -->", strDivider);
+        //    sb.AppendLine("<h1>Enter Here The Name Of The Scenario</h1>");
+        //    sb.AppendLine();
+        //    sb.AppendLine("<table border=\"1\">");
+        //    sb.AppendLine("    <tr><th>Filename</th><td>{0}</td></tr>", this.strCurrentFile ?? "Enter Here The Filename");
+        //    sb.AppendLine("    <tr><th>Author</th><td>{0}</td></tr>", Environment.UserName);
+        //    sb.AppendLine("    <tr><th>Date</th><td>{0}</td></tr>", DateTime.Now.ToShortDateString());
+        //    sb.AppendLine("</table>");
+        //    sb.AppendLine();
+        //    sb.AppendLine("<!-- {0} -->", strDivider);
+        //    sb.AppendLine();
+        //    sb.AppendLine("<p>");
+        //    sb.AppendLine("Describe Here Your Scenario, What Is It For And What Must Others Now ...");
+        //    sb.AppendLine("</p>");
 
-            strSnippetId = strSnippetId.ToLower();
+        //    this.tecScenarioDescription.ActiveTextAreaControl.TextArea.InsertString(sb.ToString());
+        //}
 
-            switch (strSnippetId)
-            {
-                case "table":
-                    strSnippet = "<table border=\"1\">\n<tr><th>Column1</th><th>Column2</th></tr>\n<tr><td></td><td></td></tr>\n</table>";
-                    break;
 
-                case "br":
-                    strSnippet = "<br />";
-                    break;
+        ///// <summary>
+        ///// Inserts the HTML snippet.
+        ///// </summary>
+        ///// <param name="strSnippetId">The string snippet identifier.</param>
+        //private void InsertHtmlSnippet(string strSnippetId)
+        //{
+        //    string strSnippet = null;
 
-                case "hr":
-                    strSnippet = "<hr />";
-                    break;
+        //    string GetDefaultTag(string tag) => string.Format("<{0}></{0}>", tag);
 
-                case "image":
-                    strSnippet = "<image src=\"your_url\" />";
-                    break;
+        //    strSnippetId = strSnippetId.ToLower();
 
-                case "link":
-                    strSnippet = "<a href=\"your_url\">Link Text</a>";
-                    break;
+        //    switch (strSnippetId)
+        //    {
+        //        case "table":
+        //            strSnippet = "<table border=\"1\">\n<tr><th>Column1</th><th>Column2</th></tr>\n<tr><td></td><td></td></tr>\n</table>";
+        //            break;
 
-                default:
-                    strSnippet = GetDefaultTag(strSnippetId);
-                    break;
-            }
+        //        case "br":
+        //            strSnippet = "<br />";
+        //            break;
 
-            this.tecScenarioDescription.ActiveTextAreaControl.TextArea.InsertString(strSnippet);
-        }
+        //        case "hr":
+        //            strSnippet = "<hr />";
+        //            break;
+
+        //        case "image":
+        //            strSnippet = "<image src=\"your_url\" />";
+        //            break;
+
+        //        case "link":
+        //            strSnippet = "<a href=\"your_url\">Link Text</a>";
+        //            break;
+
+        //        default:
+        //            strSnippet = GetDefaultTag(strSnippetId);
+        //            break;
+        //    }
+
+        //    this.tecScenarioDescription.ActiveTextAreaControl.TextArea.InsertString(strSnippet);
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

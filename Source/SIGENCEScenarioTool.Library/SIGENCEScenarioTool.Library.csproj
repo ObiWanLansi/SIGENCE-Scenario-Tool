@@ -227,7 +227,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RxTxTypes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Src\Models\Scenario\ScenarioMetaInformation.cs" />
+    <None Include="Src\Models\Scenario\ScenarioMetaInformation.cs.xxx" />
     <Compile Include="Src\Models\Templates\RFDeviceTemplate.cs" />
     <Compile Include="Src\Models\Validation\ValidationResult.cs" />
     <Compile Include="Src\Tools\ApplicationResource.cs" />
@@ -313,6 +313,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RxTxTypes.tt.xxx</DependentUpon>
     </Content>
+    <Resource Include="Src\Models\Scenario\ScenarioMetaInformation.xml">
+      <SubType>Designer</SubType>
+    </Resource>
     <None Include="Src\Models\RxTxTypes\RxTxTypes.Known.md">
       <DependentUpon>RxTxTypes.Known.tt</DependentUpon>
       <AutoGen>True</AutoGen>

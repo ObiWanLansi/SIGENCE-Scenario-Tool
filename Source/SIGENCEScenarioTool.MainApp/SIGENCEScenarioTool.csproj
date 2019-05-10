@@ -341,7 +341,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Src\ViewModels\SIGENCEScenarioViewModel.cs" />
+    <None Include="Src\ViewModels\ScenarioMetaInformationViewModel.cs.xxx" />
     <Compile Include="Src\ViewModels\ValidationResultViewModel.cs" />
     <Compile Include="Src\Windows\HelpWindow\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>

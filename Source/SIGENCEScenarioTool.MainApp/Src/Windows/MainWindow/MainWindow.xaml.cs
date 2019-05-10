@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.IO;
 using System.Windows;
 using System.Windows.Data;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
@@ -80,12 +78,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             InitMapProvider();
             InitCommands();
             InitFileOpenSaveDialogs();
-            InitScenarioDescriptionEditor();
+            InitTextEditorControls();
 
             //-----------------------------------------------------------------
 
             SetTitle();
-            UpdateScenarioDescription();
+            //UpdateScenarioDescription();
             UpdateFileHistory();
 
             //-----------------------------------------------------------------
@@ -223,13 +221,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix -March 2019 - 5ZBgx1NeUWg.jpg" ), AttachementType.Link ) );
             //this.Attachements.Add( new Attachement( new FileInfo( @"S:\Work\Youtube\Techno Mix - March 2019 - 5ZBgx1NeUWg.mp3" ), AttachementType.Link ) );
 
-            this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Link));
-            this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
-            this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
+            //this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Link));
+            //this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
+            //this.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
 
 
-            string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
-            this.tecDescription.Text = File.ReadAllText(strMarkdown);
+            //string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
+            //this.tecDescription.Text = File.ReadAllText(strMarkdown);
 
             //this.tiMetaInformation.IsSelected = true;
             //this.tcTabControl.Items.Remove( this.tiDescription );
@@ -241,7 +239,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 #else
             this.mMainMenu.Items.Remove(this.miTest);
             this.tcTabControl.Items.Remove(this.tiGeoNodes);
-            this.tcTabControl.Items.Remove(this.tiMetaInformation);
+            //this.tcTabControl.Items.Remove(this.tiMetaInformation);
 #endif
         }
 

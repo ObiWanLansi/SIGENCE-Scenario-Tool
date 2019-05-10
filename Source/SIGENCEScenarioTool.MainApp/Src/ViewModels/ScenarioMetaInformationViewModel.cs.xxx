@@ -1,0 +1,77 @@
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+using SIGENCEScenarioTool.Models.Scenario;
+
+namespace SIGENCEScenarioTool.ViewModels
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
+    public sealed class ScenarioMetaInformationViewModel : INotifyPropertyChanged
+    {
+
+        /// <summary>
+        /// Tritt ein, wenn sich ein Eigenschaftswert ändert.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        /// <summary>
+        /// Fires the property changed.
+        /// </summary>
+        /// <param name="strPropertyName">Name of the string property.</param>
+        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// The smi meta information
+        /// </summary>
+        private ScenarioMetaInformation smiMetaInformation = new ScenarioMetaInformation();
+
+
+        /// <summary>
+        /// Gets or sets the meta information.
+        /// </summary>
+        /// <value>
+        /// The meta information.
+        /// </value>
+        public ScenarioMetaInformation MetaInformation
+        {
+            get { return this.smiMetaInformation; }
+            set
+            {
+                this.smiMetaInformation = value;
+
+                FirePropertyChanged();
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
+        public void Clear()
+        {
+            this.MetaInformation = new ScenarioMetaInformation();
+        }
+
+
+        ///// <summary>
+        ///// Adds the specified a.
+        ///// </summary>
+        ///// <param name="a">a.</param>
+        //public void Add(Attachement a)
+        //{
+        //    this.
+        //}
+
+    } // end public sealed class ScenarioMetaInformationViewModel
+}

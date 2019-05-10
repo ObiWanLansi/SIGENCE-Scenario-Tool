@@ -59,7 +59,7 @@ namespace SIGENCEScenarioTool.Models.Scenario
         /// <value>
         /// The attachements.
         /// </value>
-        public AttachementList Attachements { get; set; }
+        public AttachementList Attachements { get; set; } = new AttachementList();
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

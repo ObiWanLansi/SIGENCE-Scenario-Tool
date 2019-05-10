@@ -6,17 +6,13 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
-using ICSharpCode.TextEditor.Document;
-
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
-using SIGENCEScenarioTool.Models.Attachements;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -638,30 +634,30 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //}
 
 
-        /// <summary>
-        /// Handles the Click event of the ToogleButton_EditScenarioDescription control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void ToogleButton_EditScenarioDescription_Click(object sender, RoutedEventArgs e)
-        {
-            bool bSwitchToEdit = (sender as ToggleButton).IsChecked ?? false;
+        ///// <summary>
+        ///// Handles the Click event of the ToogleButton_EditScenarioDescription control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void ToogleButton_EditScenarioDescription_Click(object sender, RoutedEventArgs e)
+        //{
+        //    bool bSwitchToEdit = (sender as ToggleButton).IsChecked ?? false;
 
-            if (bSwitchToEdit == true)
-            {
-                this.tecScenarioDescription.Text = this.ScenarioDescription;
-            }
-            else
-            {
-                this.ScenarioDescription = this.tecScenarioDescription.Text;
-            }
+        //    if (bSwitchToEdit == true)
+        //    {
+        //        this.tecScenarioDescription.Text = this.ScenarioDescription;
+        //    }
+        //    else
+        //    {
+        //        this.ScenarioDescription = this.tecScenarioDescription.Text;
+        //    }
 
-            this.ScenarioDescriptionEditMode = bSwitchToEdit;
+        //    this.ScenarioDescriptionEditMode = bSwitchToEdit;
 
-            //UpdateScenarioDescription();
+        //    //UpdateScenarioDescription();
 
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
         /// <summary>
@@ -678,140 +674,140 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// Handles the Click event of the Button_InsertScenarioDescriptionTemplate control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void Button_InsertScenarioDescriptionTemplate_Click(object sender, RoutedEventArgs e)
-        {
-            InsertScenarioDescriptionTemplate();
+        ///// <summary>
+        ///// Handles the Click event of the Button_InsertScenarioDescriptionTemplate control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        //private void Button_InsertScenarioDescriptionTemplate_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InsertScenarioDescriptionTemplate();
 
-            this.tecScenarioDescription.Focus();
+        //    this.tecScenarioDescription.Focus();
 
-            e.Handled = true;
-        }
-
-
-        /// <summary>
-        /// Handles the Click event of the Button_HtmlConvertGermanUmlauts control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void MenuItem_HtmlConvertGermanUmlauts_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(this.tecScenarioDescription.Text) == false)
-            {
-                this.tecScenarioDescription.Text = this.tecScenarioDescription.Text.ReplaceHtml(true);
-            }
-
-            this.tecScenarioDescription.Focus();
-
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
-        /// <summary>
-        /// Handles the Click event of the MenuItem_HtmlConvertToCapitalize control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void MenuItem_HtmlConvertToCapitalize_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
-            {
-                List<ISelection> lSelection = this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.SelectionCollection;
+        ///// <summary>
+        ///// Handles the Click event of the Button_HtmlConvertGermanUmlauts control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        //private void MenuItem_HtmlConvertGermanUmlauts_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(this.tecScenarioDescription.Text) == false)
+        //    {
+        //        this.tecScenarioDescription.Text = this.tecScenarioDescription.Text.ReplaceHtml(true);
+        //    }
 
-                if (lSelection.Count == 1)
-                {
-                    ISelection selection = lSelection[0];
-                    this.tecScenarioDescription.Document.Replace(selection.Offset, selection.Length, selection.SelectedText.Capitalize());
+        //    this.tecScenarioDescription.Focus();
 
-                }
-            }
-
-            this.tecScenarioDescription.Focus();
-
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
-        /// <summary>
-        /// Handles the Click event of the MenuItem_HtmlConvertToLowerText control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void MenuItem_HtmlConvertToLowerText_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
-            {
-                List<ISelection> lSelection = this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.SelectionCollection;
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_HtmlConvertToCapitalize control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        //private void MenuItem_HtmlConvertToCapitalize_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
+        //    {
+        //        List<ISelection> lSelection = this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.SelectionCollection;
 
-                if (lSelection.Count == 1)
-                {
-                    ISelection selection = lSelection[0];
-                    this.tecScenarioDescription.Document.Replace(selection.Offset, selection.Length, selection.SelectedText.ToLower());
+        //        if (lSelection.Count == 1)
+        //        {
+        //            ISelection selection = lSelection[0];
+        //            this.tecScenarioDescription.Document.Replace(selection.Offset, selection.Length, selection.SelectedText.Capitalize());
 
-                }
-            }
+        //        }
+        //    }
 
-            this.tecScenarioDescription.Focus();
+        //    this.tecScenarioDescription.Focus();
 
-            e.Handled = true;
-        }
-
-
-        /// <summary>
-        /// Handles the Click event of the MenuItem_HtmlConvertToUpperText control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_HtmlConvertToUpperText_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
-            {
-                List<ISelection> lSelection = this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.SelectionCollection;
-
-                if (lSelection.Count == 1)
-                {
-                    ISelection selection = lSelection[0];
-                    this.tecScenarioDescription.Document.Replace(selection.Offset, selection.Length, selection.SelectedText.ToUpper());
-
-                }
-            }
-
-            this.tecScenarioDescription.Focus();
-
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
-        /// <summary>
-        /// Handles the Click event of the MenuItem_ScenarioReport control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void MenuItem_ScenarioReport_Click(object sender, RoutedEventArgs e)
-        {
-            CreateScenarioReport();
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_HtmlConvertToLowerText control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        //private void MenuItem_HtmlConvertToLowerText_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
+        //    {
+        //        List<ISelection> lSelection = this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.SelectionCollection;
 
-            e.Handled = true;
-        }
+        //        if (lSelection.Count == 1)
+        //        {
+        //            ISelection selection = lSelection[0];
+        //            this.tecScenarioDescription.Document.Replace(selection.Offset, selection.Length, selection.SelectedText.ToLower());
+
+        //        }
+        //    }
+
+        //    this.tecScenarioDescription.Focus();
+
+        //    e.Handled = true;
+        //}
 
 
-        /// <summary>
-        /// Handles the Click event of the MenuItem_InsertHtmlSnippet control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_InsertHtmlSnippet_Click(object sender, RoutedEventArgs e)
-        {
-            InsertHtmlSnippet((sender as Control).Tag as string);
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_HtmlConvertToUpperText control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_HtmlConvertToUpperText_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
+        //    {
+        //        List<ISelection> lSelection = this.tecScenarioDescription.ActiveTextAreaControl.SelectionManager.SelectionCollection;
 
-            this.tecScenarioDescription.Focus();
+        //        if (lSelection.Count == 1)
+        //        {
+        //            ISelection selection = lSelection[0];
+        //            this.tecScenarioDescription.Document.Replace(selection.Offset, selection.Length, selection.SelectedText.ToUpper());
 
-            e.Handled = true;
-        }
+        //        }
+        //    }
+
+        //    this.tecScenarioDescription.Focus();
+
+        //    e.Handled = true;
+        //}
+
+
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_ScenarioReport control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        //private void MenuItem_ScenarioReport_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CreateScenarioReport();
+
+        //    e.Handled = true;
+        //}
+
+
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_InsertHtmlSnippet control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_InsertHtmlSnippet_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InsertHtmlSnippet((sender as Control).Tag as string);
+
+        //    this.tecScenarioDescription.Focus();
+
+        //    e.Handled = true;
+        //}
 
 
         /// <summary>
@@ -1001,11 +997,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
         private void StackPanel_Drop(object sender, DragEventArgs e)
         {
+            throw new NotImplementedException();
+
             bool bIsControlKeyPressed = (e.KeyStates & DragDropKeyStates.ControlKey) == DragDropKeyStates.ControlKey;
 
             foreach (FileInfo fi in from strFilename in (string[])e.Data.GetData(DataFormats.FileDrop) select new FileInfo(strFilename))
             {
-                this.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
+                //this.Attachements.Add(new Attachement(fi, bIsControlKeyPressed ? AttachementType.Embedded : AttachementType.Link));
+                //this.ScenarioMetaInformation.Attachements.Add(new Attachement(fi, bIsControlKeyPressed? AttachementType.Embedded : AttachementType.Link));
             }
 
             e.Handled = true;
