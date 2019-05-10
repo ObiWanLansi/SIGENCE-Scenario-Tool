@@ -1727,7 +1727,7 @@
             <param name="strName">Name of the string.</param>
             <returns></returns>
         </member>
-        <member name="M:SIGENCEScenarioTool.Extensions.XElementExtension.GetXElement(System.String,System.Object)">
+        <member name="M:SIGENCEScenarioTool.Extensions.XElementExtension.GetXElement(System.String,System.Object,System.Boolean)">
             <summary>
             Gets the x element.
             </summary>
@@ -1797,105 +1797,6 @@
             Fires the property changed.
             </summary>
             <param name="strPropertyName">Name of the string property.</param>
-        </member>
-        <member name="T:SIGENCEScenarioTool.Models.Attachements.AttachementType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:SIGENCEScenarioTool.Models.Attachements.AttachementType.Link">
-            <summary>
-            The link
-            </summary>
-        </member>
-        <member name="F:SIGENCEScenarioTool.Models.Attachements.AttachementType.Embedded">
-            <summary>
-            The embedded
-            </summary>
-        </member>
-        <member name="T:SIGENCEScenarioTool.Models.Attachements.Attachement">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.Source">
-            <summary>
-            Gets or sets the source.
-            </summary>
-            <value>
-            The source.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.Type">
-            <summary>
-            Gets or sets the type.
-            </summary>
-            <value>
-            The type.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.DisplayName">
-            <summary>
-            Gets or sets the display name.
-            </summary>
-            <value>
-            The display name.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.FileSize">
-            <summary>
-            Gets or sets the size.
-            </summary>
-            <value>
-            The size.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.FileTimestamp">
-            <summary>
-            Gets or sets the file timestamp.
-            </summary>
-            <value>
-            The file timestamp.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.AddedTimestamp">
-            <summary>
-            Gets or sets the added timestamp.
-            </summary>
-            <value>
-            The added timestamp.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.AddedUsername">
-            <summary>
-            Gets or sets the added username.
-            </summary>
-            <value>
-            The added username.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.FileIcon">
-            <summary>
-            Gets or sets the bitmap.
-            </summary>
-            <value>
-            The bitmap.
-            </value>
-        </member>
-        <member name="P:SIGENCEScenarioTool.Models.Attachements.Attachement.Timestamp">
-            <summary>
-            Gets the timestamp.
-            </summary>
-            <value>
-            The timestamp.
-            </value>
-        </member>
-        <member name="M:SIGENCEScenarioTool.Models.Attachements.Attachement.#ctor(System.IO.FileInfo,SIGENCEScenarioTool.Models.Attachements.AttachementType)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SIGENCEScenarioTool.Models.Attachements.Attachement" /> class.
-            </summary>
-            <param name="fiSource">The fi source.</param>
-            <param name="at">At.</param>
         </member>
         <member name="T:SIGENCEScenarioTool.Models.AntennaType">
             <summary>
@@ -2997,6 +2898,198 @@
             <param name="iRFDeviceId">The rf device identifier.</param>
             <param name="iValue">The value.</param>
             <returns></returns>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation">
+            <summary>
+            
+            </summary>
+            <summary>
+             Represent MetaInformationData For An Scenario.
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.SetDescriptionAndStylesheet(System.String,System.String)">
+            <summary>
+            Sets the description and stylesheet.
+            </summary>
+            <param name="strDescription">The string description.</param>
+            <param name="strStylesheet">The string stylesheet.</param>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.LoadFromXml(System.Xml.Linq.XElement)">
+            <summary>
+            Loads from XML.
+            </summary>
+            <param name="eRoot">The e root.</param>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.VERSION">
+            <summary>
+             The PropertyName As ReadOnly String For Version.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.DEFAULT_VERSION">
+            <summary>
+             The DefaultValue For Version.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation._Version">
+            <summary>
+             The Internal Field For Version.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.Version">
+            <summary>
+             The Version Of This Scenario.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.APPLICATIONCONTEXT">
+            <summary>
+             The PropertyName As ReadOnly String For ApplicationContext.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.DEFAULT_APPLICATIONCONTEXT">
+            <summary>
+             The DefaultValue For ApplicationContext.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation._ApplicationContext">
+            <summary>
+             The Internal Field For ApplicationContext.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.ApplicationContext">
+            <summary>
+             For Which Application Or Tool Is The Scenario.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.CONTACTPERSON">
+            <summary>
+             The PropertyName As ReadOnly String For ContactPerson.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.DEFAULT_CONTACTPERSON">
+            <summary>
+             The DefaultValue For ContactPerson.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation._ContactPerson">
+            <summary>
+             The Internal Field For ContactPerson.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.ContactPerson">
+            <summary>
+             An Contact Person If You Have Questions About The Scenario.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.DESCRIPTION">
+            <summary>
+             The PropertyName As ReadOnly String For Description.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.DEFAULT_DESCRIPTION">
+            <summary>
+             The DefaultValue For Description.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation._Description">
+            <summary>
+             The Internal Field For Description.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.Description">
+            <summary>
+             An Markdown Text Content Where You Can Describe The Scenario And The Excepted Result.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.STYLESHEET">
+            <summary>
+             The PropertyName As ReadOnly String For Stylesheet.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.DEFAULT_STYLESHEET">
+            <summary>
+             The DefaultValue For Stylesheet.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation._Stylesheet">
+            <summary>
+             The Internal Field For Stylesheet.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.Stylesheet">
+            <summary>
+             An Optional Stylesheet To Use For Rendering The Generated HTML.
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.ToXml">
+            <summary>
+            To the XML.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.FromXml(System.Xml.Linq.XElement)">
+            <summary>
+            Froms the XML.
+            </summary>
+            <param name="eRoot">The e root.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.Equals(SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation)">
+            <summary>
+            Gibt an, ob das aktuelle Objekt gleich einem anderen Objekt des gleichen Typs ist.
+            </summary>
+            <param name="other">Ein Objekt, das mit diesem Objekt verglichen werden soll.</param>
+            <returns>
+            true, wenn das aktuelle Objekt gleich dem <paramref name="other" />-Parameter ist, andernfalls false.
+            </returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.System#ICloneable#Clone">
+            <summary>
+            Erstellt ein neues Objekt, das eine Kopie der aktuellen Instanz darstellt.
+            </summary>
+            <returns>
+            Ein neues Objekt, das eine Kopie dieser Instanz ist.
+            </returns>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformationTooltips">
+            <summary>
+            The tooltips for our properties to display in the HMI.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformationTooltips.TOOLTIP_VERSION">
+            <summary>
+            The tooltip for the Version.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformationTooltips.TOOLTIP_APPLICATIONCONTEXT">
+            <summary>
+            The tooltip for the ApplicationContext.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformationTooltips.TOOLTIP_CONTACTPERSON">
+            <summary>
+            The tooltip for the ContactPerson.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformationTooltips.TOOLTIP_DESCRIPTION">
+            <summary>
+            The tooltip for the Description.
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformationTooltips.TOOLTIP_STYLESHEET">
+            <summary>
+            The tooltip for the Stylesheet.
+            </summary>
         </member>
         <member name="T:SIGENCEScenarioTool.Models.Templates.RFDeviceTemplate">
             <summary>
