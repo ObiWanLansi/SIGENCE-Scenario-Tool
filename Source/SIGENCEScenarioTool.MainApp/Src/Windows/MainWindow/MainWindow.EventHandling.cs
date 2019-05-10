@@ -522,15 +522,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private void WebBrowser_Markdown_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            //if (this.wbWebBrowser.IsVisible)
-            //{
-            //    // Jedesmal wenn der Browser sichtbar wir updaten ...
-            //    //UpdateScenarioDescriptionMarkdown();
-            //    //this.MetaInformation.Description = this.tecDescription.Text;
-            //    //this.MetaInformation.Stylesheet = this.tecStyleSheet.Text;
+            if (this.wbWebBrowser.IsVisible)
+            {
+                // Jedesmal wenn der Browser sichtbar wir updaten ...
+                //UpdateScenarioDescriptionMarkdown();
+                //this.MetaInformation.Description = this.tecDescription.Text;
+                //this.MetaInformation.Stylesheet = this.tecStyleSheet.Text;
 
-            //    this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
-            //}
+                //this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
+                UpdateScenarioDescriptionMarkdown();
+            }
         }
 
 
@@ -983,16 +984,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="PropertyChangedEventArgs"/> instance containing the event data.</param>
         private void MetaInformation_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "DescriptionAndStylesheet")
-            {
-                // Nur wenn der Browser gerade sichbar ist noch updaten ...
-                //if (this.wbWebBrowser.IsVisible)
-                {
-                    UpdateScenarioDescriptionMarkdown();
-                }
+            //if (e.PropertyName == "DescriptionAndStylesheet")
+            //{
+            //    // Nur wenn der Browser gerade sichbar ist noch updaten ...
+            //    //if (this.wbWebBrowser.IsVisible)
+            //    {
+            //        UpdateScenarioDescriptionMarkdown();
+            //    }
 
-                return;
-            }
+            //    return;
+            //}
 
             if (e.PropertyName == ScenarioMetaInformation.DESCRIPTION)
             {

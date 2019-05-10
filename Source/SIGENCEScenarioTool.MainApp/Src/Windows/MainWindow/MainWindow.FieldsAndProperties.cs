@@ -1014,14 +1014,37 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         ///// </summary>
         //public ObservableCollection<Attachement> Attachements { get; set; } = new ObservableCollection<Attachement>();
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
-        /// Gets or sets the meta information.
+        /// Gets the meta information.
         /// </summary>
         /// <value>
         /// The meta information.
         /// </value>
-        public ScenarioMetaInformation MetaInformation { get; set; } = new ScenarioMetaInformation();
+        public ScenarioMetaInformation MetaInformation { get; } = new ScenarioMetaInformation();
+
+        ///// <summary>
+        ///// The meta information
+        ///// </summary>
+        //private ScenarioMetaInformation _MetaInformation = new ScenarioMetaInformation();
+
+        ///// <summary>
+        ///// Gets or sets the meta information.
+        ///// </summary>
+        ///// <value>
+        ///// The meta information.
+        ///// </value>
+        //public ScenarioMetaInformation MetaInformation
+        //{
+        //    get { return this._MetaInformation; }
+        //    set
+        //    {
+        //        this._MetaInformation = value;
+        //        FirePropertyChanged();
+        //    }
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

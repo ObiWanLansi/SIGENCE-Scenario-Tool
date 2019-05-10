@@ -393,7 +393,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
                     sbHtml.AppendLine(FOOTER);
 
-                    this.wbWebBrowser.NavigateToString(sbHtml.ToString());
+                    this.Dispatcher.Invoke(() => this.wbWebBrowser.NavigateToString(sbHtml.ToString()));
                 }
                 catch (Exception ex)
                 {

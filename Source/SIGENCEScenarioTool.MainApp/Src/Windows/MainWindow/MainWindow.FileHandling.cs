@@ -56,6 +56,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 //---------------------------------------------------------
 
+                this.MetaInformation.LoadFromXml(xdoc.Root);
+
+                //this.tecDescription.Text = this.MetaInformation.Description;
+                //this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
+
+                //---------------------------------------------------------
+
                 XElement eRFDeviceCollection = xdoc.Root.Element("RFDeviceCollection");
 
                 foreach (XElement e in eRFDeviceCollection.Elements())

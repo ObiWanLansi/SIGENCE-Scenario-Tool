@@ -1,4 +1,10 @@
-﻿namespace SIGENCEScenarioTool.Models.MetaInformation
+﻿using System.Xml.Linq;
+
+using SIGENCEScenarioTool.Extensions;
+
+
+
+namespace SIGENCEScenarioTool.Models.MetaInformation
 {
     /// <summary>
     /// 
@@ -16,10 +22,11 @@
             this._Description = strDescription;
             this._Stylesheet = strStylesheet;
 
-            FirePropertyChanged("DescriptionAndStylesheet");
+            //FirePropertyChanged("DescriptionAndStylesheet");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Clears this instance.
@@ -30,9 +37,10 @@
             this.ApplicationContext = DEFAULT_APPLICATIONCONTEXT;
             this.ContactPerson = DEFAULT_CONTACTPERSON;
 
-            SetDescriptionAndStylesheet(DEFAULT_DESCRIPTION, DEFAULT_STYLESHEET);
-            //this.Description = DEFAULT_DESCRIPTION;
-            //this.Stylesheet = DEFAULT_STYLESHEET;
+            //SetDescriptionAndStylesheet(DEFAULT_DESCRIPTION, DEFAULT_STYLESHEET);
+
+            this.Description = DEFAULT_DESCRIPTION;
+            this.Stylesheet = DEFAULT_STYLESHEET;
 
             //if (this.Attachements == null)
             //{
@@ -42,6 +50,30 @@
             //{
             //    this.Attachements.Clear();
             //}
+        }
+
+        /// <summary>
+        /// Loads from XML.
+        /// </summary>
+        /// <param name="eRoot">The e root.</param>
+        public void LoadFromXml(XElement eRoot)
+        {
+            XElement eChild = null;
+
+            if (eRoot.Name.LocalName.Equals("ScenarioMetaInformation"))
+            {
+                eChild = eRoot;
+            }
+            else
+            {
+                eChild = eRoot.Element("ScenarioMetaInformation");
+            }
+
+            this.Version = eChild.GetProperty<string>(VERSION, "");
+            this.ApplicationContext = eChild.GetProperty<string>(APPLICATIONCONTEXT, "");
+            this.ContactPerson = eChild.GetProperty<string>(CONTACTPERSON, "");
+            this.Description = eChild.GetProperty<string>(DESCRIPTION, "");
+            this.Stylesheet = eChild.GetProperty<string>(STYLESHEET, "");
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

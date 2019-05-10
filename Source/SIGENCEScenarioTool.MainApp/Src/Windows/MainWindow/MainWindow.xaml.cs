@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.IO;
 using System.Windows;
 using System.Windows.Data;
 
@@ -216,26 +215,26 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            //string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
+            ////string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
 
-            this.MetaInformation.Version = "1.0";
-            this.MetaInformation.ApplicationContext = "Scenario Meta Information Test";
-            this.MetaInformation.ContactPerson = "Jörg Lanser";
+            //this.MetaInformation.Version = "1.0";
+            //this.MetaInformation.ApplicationContext = "Scenario Meta Information Test";
+            //this.MetaInformation.ContactPerson = "Jörg Lanser";
 
-            //this.MetaInformation.Description = File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md");
-            //this.MetaInformation.Stylesheet = "h1 { border: 1px solid red; }";
-            this.MetaInformation.SetDescriptionAndStylesheet(File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), "h1 { border: 1px solid red; }");
+            ////this.MetaInformation.Description = File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md");
+            ////this.MetaInformation.Stylesheet = "h1 { border: 1px solid red; }";
+            //this.MetaInformation.SetDescriptionAndStylesheet(File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), "h1 { border: 1px solid red; }");
 
-            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Embedded));
-            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
-            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
-            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.xps"), AttachementType.Link));
-            //this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\streets_bw.sqlite"), AttachementType.Link));
+            ////this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\ExampleScenarioDescription.md"), AttachementType.Embedded));
+            ////this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\HelloWorld.py"), AttachementType.Embedded));
+            ////this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.pdf"), AttachementType.Link));
+            ////this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\CheatSheet.xps"), AttachementType.Link));
+            ////this.MetaInformation.Attachements.Add(new Attachement(new FileInfo($"{Tool.StartupPath}\\streets_bw.sqlite"), AttachementType.Link));
 
-            this.tecDescription.Text = this.MetaInformation.Description;
-            this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
+            //this.tecDescription.Text = this.MetaInformation.Description;
+            //this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
 
-            this.tiMetaInformation.IsSelected = true;
+            //this.tiMetaInformation.IsSelected = true;
 
             //-----------------------------------------------------------------
 
