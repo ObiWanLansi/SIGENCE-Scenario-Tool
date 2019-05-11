@@ -12,17 +12,37 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
     public partial class ScenarioMetaInformation
     {
 
+        ///// <summary>
+        ///// Sets the description and stylesheet.
+        ///// </summary>
+        ///// <param name="strDescription">The string description.</param>
+        ///// <param name="strStylesheet">The string stylesheet.</param>
+        //public void SetDescriptionAndStylesheet(string strDescription, string strStylesheet)
+        //{
+        //    this._Description = strDescription;
+        //    this._Stylesheet = strStylesheet;
+
+        //    //FirePropertyChanged("DescriptionAndStylesheet");
+        //}
+
+
         /// <summary>
-        /// Sets the description and stylesheet.
+        /// Sets the description without event.
         /// </summary>
         /// <param name="strDescription">The string description.</param>
-        /// <param name="strStylesheet">The string stylesheet.</param>
-        public void SetDescriptionAndStylesheet(string strDescription, string strStylesheet)
+        public void SetDescriptionWithoutEvent(string strDescription)
         {
             this._Description = strDescription;
-            this._Stylesheet = strStylesheet;
+        }
 
-            //FirePropertyChanged("DescriptionAndStylesheet");
+
+        /// <summary>
+        /// Sets the style sheet without event.
+        /// </summary>
+        /// <param name="strStyleSheet">The string style sheet.</param>
+        public void SetStyleSheetWithoutEvent(string strStyleSheet)
+        {
+            this._Stylesheet = strStyleSheet;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -51,6 +71,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             //    this.Attachements.Clear();
             //}
         }
+
 
         /// <summary>
         /// Loads from XML.

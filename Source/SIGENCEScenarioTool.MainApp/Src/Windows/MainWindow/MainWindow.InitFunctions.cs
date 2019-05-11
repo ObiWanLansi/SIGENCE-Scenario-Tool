@@ -444,7 +444,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 tec.VRulerRow = 120;
                 //this.tecScenarioDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter( "HTML" );
 
-                tec.ActiveTextAreaControl.TextArea.LostFocus += TextArea_LostFocus;
+                //tec.ActiveTextAreaControl.TextArea.LostFocus += TextArea_LostFocus;
                 tec.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
 
             };

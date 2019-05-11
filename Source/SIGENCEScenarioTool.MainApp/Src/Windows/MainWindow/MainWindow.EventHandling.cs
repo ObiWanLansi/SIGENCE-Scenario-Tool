@@ -515,24 +515,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //}
 
 
-        /// <summary>
-        /// Handles the IsVisibleChanged event of the WebBrowser_Markdown control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
-        private void WebBrowser_Markdown_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (this.wbWebBrowser.IsVisible)
-            {
-                // Jedesmal wenn der Browser sichtbar wir updaten ...
-                //UpdateScenarioDescriptionMarkdown();
-                //this.MetaInformation.Description = this.tecDescription.Text;
-                //this.MetaInformation.Stylesheet = this.tecStyleSheet.Text;
+        ///// <summary>
+        ///// Handles the IsVisibleChanged event of the WebBrowser_Markdown control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        //private void WebBrowser_Markdown_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    if (this.wbWebBrowser.IsVisible)
+        //    {
+        //        // Jedesmal wenn der Browser sichtbar wir updaten ...
+        //        //UpdateScenarioDescriptionMarkdown();
+        //        //this.MetaInformation.Description = this.tecDescription.Text;
+        //        //this.MetaInformation.Stylesheet = this.tecStyleSheet.Text;
 
-                //this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
-                UpdateScenarioDescriptionMarkdown();
-            }
-        }
+        //        //this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
+        //        UpdateScenarioDescriptionMarkdown();
+        //    }
+        //}
 
 
         /// <summary>
@@ -605,7 +605,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_IniMetaInformation(object sender, RoutedEventArgs e)
+        private void MenuItem_InitMetaInformation(object sender, RoutedEventArgs e)
         {
             InitMetaInformation();
 
@@ -1051,23 +1051,77 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
+        ///// <summary>
+        ///// Handles the LostFocus event of the TextArea control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        //private void TextArea_LostFocus(object sender, EventArgs e)
+        //{
+        //    if (this.bTextChanged == true)
+        //    {
+        //        this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
+
+        //        this.bTextChanged = false;
+        //    }
+        //}
+
         /// <summary>
-        /// Handles the LostFocus event of the TextArea control.
+        /// Handles the Click event of the Button_AcceptMarkdown control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void TextArea_LostFocus(object sender, EventArgs e)
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_AcceptMarkdown_Click(object sender, RoutedEventArgs e)
         {
-            if (this.bTextChanged == true)
-            {
-                this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
+            this.MetaInformation.SetDescriptionWithoutEvent(this.tecDescription.Text);
+            UpdateScenarioDescriptionMarkdown();
 
-                this.bTextChanged = false;
-            }
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_DiscardMarkdown control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_DiscardMarkdown_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.Text = this.MetaInformation.Description;
+            this.tecDescription.Refresh();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_AcceptStylesheet control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_AcceptStylesheet_Click(object sender, RoutedEventArgs e)
+        {
+            this.MetaInformation.SetStyleSheetWithoutEvent(this.tecStyleSheet.Text);
+            UpdateScenarioDescriptionMarkdown();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_DiscardStylesheet control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_DiscardStylesheet_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
+            this.tecStyleSheet.Refresh();
+
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 
         #region Drag & Drop Test
