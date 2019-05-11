@@ -184,7 +184,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             FileInfo fiCurrentFile = new FileInfo(this.CurrentFile);
 
-            string strOutputFilename = $"{Path.GetTempPath()}{fiCurrentFile.GetFilenameWithoutExtension()}.md";
+            string strScenarioName = fiCurrentFile.GetFilenameWithoutExtension();
+
+            string strOutputDirectory = $"{fiCurrentFile.DirectoryName}\\{strScenarioName}.Report";
+            if (Directory.Exists(strOutputDirectory) == false)
+            {
+                Directory.CreateDirectory(strOutputDirectory);
+            }
+
+            string strOutputFilenameMarkdown = $"{strOutputDirectory}\\{strScenarioName}.md";
 
             StringBuilder sb = new StringBuilder(8192);
 
@@ -204,7 +212,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             if (this.MetaInformation.Description.IsNotEmpty())
             {
                 sb.AppendLine($"|User Description|[ScenarioDescription.md](./ScenarioDescription.md)|");
-                string strOutputUserDescription = string.Format("{0}ScenarioDescription.md", Path.GetTempPath());
+                string strOutputUserDescription = $"{strOutputDirectory}\\ScenarioDescription.md";
                 File.WriteAllText(strOutputUserDescription, this.MetaInformation.Description, Encoding.UTF8);
             }
             sb.AppendLine();
@@ -243,7 +251,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             sb.AppendLine("## Screenshot");
             sb.AppendLine();
 
-            string strOutputFilenameScreenshot = string.Format("{0}ScenarioScreenshot.png", Path.GetTempPath());
+            string strOutputFilenameScreenshot = $"{strOutputDirectory}\\ScenarioScreenshot.png";
             var screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
             Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
 
@@ -251,9 +259,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.UTF8);
+            File.WriteAllText(strOutputFilenameMarkdown, sb.ToString(), Encoding.UTF8);
 
-            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
+            Tools.Windows.OpenWithDefaultApplication(strOutputFilenameMarkdown);
 
             this.Cursor = Cursors.Arrow;
         }
