@@ -97,7 +97,7 @@
         </member>
         <member name="M:Markdig.Extensions.AutoIdentifiers.AutoIdentifierExtension.CreateLinkInlineForHeading(Markdig.Parsers.InlineProcessor,Markdig.Syntax.LinkReferenceDefinition,Markdig.Syntax.Inlines.Inline)">
             <summary>
-            Callback when there is a reference to found to a heading. 
+            Callback when there is a reference to found to a heading.
             Note that reference are only working if they are declared after.
             </summary>
         </member>
@@ -155,13 +155,23 @@
             </summary>
             <seealso cref="T:Markdig.IMarkdownExtension" />
         </member>
+        <member name="P:Markdig.Extensions.AutoLinks.AutoLinkOptions.OpenInNewWindow">
+            <summary>
+            Should the link open in a new window when clicked (false by default)
+            </summary>
+        </member>
+        <member name="P:Markdig.Extensions.AutoLinks.AutoLinkOptions.UseHttpsForWWWLinks">
+            <summary>
+            Should a www link be prefixed with https:// instead of http:// (false by default)
+            </summary>
+        </member>
         <member name="T:Markdig.Extensions.AutoLinks.AutoLinkParser">
             <summary>
             The inline parser used to for autolinks.
             </summary>
             <seealso cref="T:Markdig.Parsers.InlineParser" />
         </member>
-        <member name="M:Markdig.Extensions.AutoLinks.AutoLinkParser.#ctor(System.String)">
+        <member name="M:Markdig.Extensions.AutoLinks.AutoLinkParser.#ctor(Markdig.Extensions.AutoLinks.AutoLinkOptions)">
             <summary>
             Initializes a new instance of the <see cref="T:Markdig.Extensions.AutoLinks.AutoLinkParser"/> class.
             </summary>
@@ -459,7 +469,7 @@
         </member>
         <member name="T:Markdig.Extensions.Footers.FooterBlock">
             <summary>
-            A block elemeent for a footer.
+            A block element for a footer.
             </summary>
             <seealso cref="T:Markdig.Syntax.ContainerBlock" />
         </member>
@@ -637,7 +647,7 @@
             </summary>
             <param name="slice">The slice to parse.</param>
             <param name="attributes">The output attributes or null if not found or invalid</param>
-            <returns><c>true</c> if parsing the HTML attributes was succsesfull</returns>
+            <returns><c>true</c> if parsing the HTML attributes was successful</returns>
         </member>
         <member name="T:Markdig.Extensions.Globalization.GlobalizationExtension">
             <summary>
@@ -1263,7 +1273,7 @@
         </member>
         <member name="T:Markdig.Extensions.Yaml.YamlFrontMatterParser">
             <summary>
-            Block parser for a YAML frontmatter. 
+            Block parser for a YAML frontmatter.
             </summary>
             <seealso cref="T:Markdig.Extensions.Yaml.YamlFrontMatterBlock" />
         </member>
@@ -1812,7 +1822,7 @@
             </summary>
             <typeparam name="T">Type of the list item</typeparam>
             <seealso cref="T:System.Collections.Generic.List`1" />
-            <remarks>We use a typed list and don't use extension methods because it would pollute all list implemts and the top level namespace.</remarks>
+            <remarks>We use a typed list and don't use extension methods because it would pollute all list implements and the top level namespace.</remarks>
         </member>
         <member name="M:Markdig.Helpers.OrderedList`1.Replace``1(`0)">
             <summary>
@@ -1829,6 +1839,11 @@
             <typeparam name="TElement">Element type to find in the list</typeparam>
             <param name="newElement">Object to add/replace the found element with</param>
             <returns><c>true</c> if a replacement was made; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Markdig.Helpers.OrderedList`1.TryRemove``1">
+            <summary>
+            Removes the first occurrence of <typeparamref name="TElement"/>
+            </summary>
         </member>
         <member name="T:Markdig.Helpers.StringBuilderCache">
             <summary>
@@ -2324,7 +2339,7 @@
             <param name="pipeline">The pipeline.</param>
             <returns>The modified pipeline</returns>
         </member>
-        <member name="M:Markdig.MarkdownExtensions.UseAutoLinks(Markdig.MarkdownPipelineBuilder,System.String)">
+        <member name="M:Markdig.MarkdownExtensions.UseAutoLinks(Markdig.MarkdownPipelineBuilder,Markdig.Extensions.AutoLinks.AutoLinkOptions)">
             <summary>
             Uses this extension to enable autolinks from text `http://`, `https://`, `ftp://`, `mailto:`, `www.xxx.yyy`
             </summary>
@@ -2578,6 +2593,13 @@
             <param name="newLine">The string to be used for line-endings.</param>
             <returns>The modified pipeline</returns>
         </member>
+        <member name="M:Markdig.MarkdownExtensions.DisableHeadings(Markdig.MarkdownPipelineBuilder)">
+            <summary>
+            Disables parsing of ATX and Setex headings
+            </summary>
+            <param name="pipeline">The pipeline.</param>
+            <returns>The modified pipeline</returns>
+        </member>
         <member name="T:Markdig.MarkdownParserContext">
             <summary>
             Provides a context that can be used as part of parsing Markdown documents.
@@ -2814,7 +2836,7 @@
         </member>
         <member name="P:Markdig.Parsers.BlockProcessor.Start">
             <summary>
-            Gets the position of the current character in the line being processed. 
+            Gets the position of the current character in the line being processed.
             </summary>
         </member>
         <member name="P:Markdig.Parsers.BlockProcessor.Indent">
@@ -2829,12 +2851,12 @@
         </member>
         <member name="P:Markdig.Parsers.BlockProcessor.ColumnBeforeIndent">
             <summary>
-            Gets the column position before the indent occured.
+            Gets the column position before the indent occurred.
             </summary>
         </member>
         <member name="P:Markdig.Parsers.BlockProcessor.StartBeforeIndent">
             <summary>
-            Gets the character position before the indent occured.
+            Gets the character position before the indent occurred.
             </summary>
         </member>
         <member name="P:Markdig.Parsers.BlockProcessor.StringBuilders">
@@ -2883,7 +2905,7 @@
         </member>
         <member name="M:Markdig.Parsers.BlockProcessor.ParseIndent">
             <summary>
-            Parses the indentation from the current position in the line, updating <see cref="P:Markdig.Parsers.BlockProcessor.StartBeforeIndent"/>, 
+            Parses the indentation from the current position in the line, updating <see cref="P:Markdig.Parsers.BlockProcessor.StartBeforeIndent"/>,
             <see cref="P:Markdig.Parsers.BlockProcessor.ColumnBeforeIndent"/>, <see cref="P:Markdig.Parsers.BlockProcessor.Start"/> and <see cref="P:Markdig.Parsers.BlockProcessor.Column"/> accordingly
             taking into account space taken by tabs.
             </summary>
@@ -3052,6 +3074,7 @@
             <param name="state">The parser processor.</param>
             <param name="line">The being processed line.</param>
             <param name="fenced">The fenced code block.</param>
+            <param name="openingCharacter">The opening character for the fenced code block (usually ` or ~)</param>
             <returns><c>true</c> if parsing of the line is successfull; <c>false</c> otherwise</returns>
         </member>
         <member name="P:Markdig.Parsers.FencedBlockParserBase.InfoParser">
@@ -3080,7 +3103,7 @@
             Gets or sets the language prefix (default is "language-")
             </summary>
         </member>
-        <member name="M:Markdig.Parsers.FencedBlockParserBase`1.DefaultInfoParser(Markdig.Parsers.BlockProcessor,Markdig.Helpers.StringSlice@,Markdig.Syntax.IFencedBlock)">
+        <member name="M:Markdig.Parsers.FencedBlockParserBase`1.DefaultInfoParser(Markdig.Parsers.BlockProcessor,Markdig.Helpers.StringSlice@,Markdig.Syntax.IFencedBlock,System.Char)">
             <summary>
             The default parser for the information after the fenced code block special characters (usually ` or ~)
             </summary>
@@ -3134,7 +3157,7 @@
         </member>
         <member name="T:Markdig.Parsers.TryParseAttributesDelegate">
             <summary>
-            A delegates that allows to porcess attached attributes at <see cref="T:Markdig.Parsers.BlockParser"/> time.
+            A delegates that allows to process attached attributes at <see cref="T:Markdig.Parsers.BlockParser"/> time.
             </summary>
             <param name="processor">The processor.</param>
             <param name="slice">The slice to look for attached attributes.</param>
@@ -3281,7 +3304,7 @@
         </member>
         <member name="P:Markdig.Parsers.InlineProcessor.Block">
             <summary>
-            Gets the current block being proessed.
+            Gets the current block being processed.
             </summary>
         </member>
         <member name="P:Markdig.Parsers.InlineProcessor.PreciseSourceLocation">
@@ -3410,7 +3433,7 @@
         </member>
         <member name="F:Markdig.Parsers.Inlines.EmphasisDescriptor.MaximumCount">
             <summary>
-            The maximum number of character this emphasis is expected to have (must be >=1 and >= minumunCount)
+            The maximum number of character this emphasis is expected to have (must be >=1 and >= minimumCount)
             </summary>
         </member>
         <member name="F:Markdig.Parsers.Inlines.EmphasisDescriptor.EnableWithinWord">
@@ -3523,8 +3546,8 @@
             <param name="lastChild">The last child.</param>
             <param name="postInlineProcessorIndex">Index of this delimiter processor.</param>
             <param name="isFinalProcessing"></param>
-            <returns><c>true</c> to continue to the next delimiter processor; 
-            <c>false</c> to stop the process (in case a processor is perfoming sub-sequent processor itself)</returns>
+            <returns><c>true</c> to continue to the next delimiter processor;
+            <c>false</c> to stop the process (in case a processor is performing sub-sequent processor itself)</returns>
         </member>
         <member name="T:Markdig.Parsers.ListBlockParser">
             <summary>
@@ -3599,7 +3622,7 @@
             <param name="state">The block processor</param>
             <param name="pendingBulletType">The type of the current bullet type</param>
             <param name="result">The result of parsing</param>
-            <returns><c>true</c> if parsing was sucessfull; <c>false</c> otherwise</returns>
+            <returns><c>true</c> if parsing was successful; <c>false</c> otherwise</returns>
         </member>
         <member name="T:Markdig.Parsers.ProcessDocumentDelegate">
             <summary>
@@ -4586,10 +4609,10 @@
         </member>
         <member name="T:Markdig.Syntax.CodeBlock">
             <summary>
-            Repressents an indented code block.
+            Represents an indented code block.
             </summary>
             <remarks>
-            Related to CommonMark spec: 4.4 Indented code blocks 
+            Related to CommonMark spec: 4.4 Indented code blocks
             </remarks>
         </member>
         <member name="M:Markdig.Syntax.CodeBlock.#ctor(Markdig.Parsers.BlockParser)">
@@ -4623,7 +4646,7 @@
         </member>
         <member name="T:Markdig.Syntax.FencedCodeBlock">
             <summary>
-            Repressents a fenced code block.
+            Represents a fenced code block.
             </summary>
             <remarks>
             Related to CommonMark spec: 4.5 Fenced code blocks
@@ -4637,7 +4660,7 @@
         </member>
         <member name="P:Markdig.Syntax.FencedCodeBlock.Info">
             <summary>
-            Gets or sets the language parsed after the first line of 
+            Gets or sets the language parsed after the first line of
             the fenced code block. May be null.
             </summary>
         </member>
@@ -4659,13 +4682,13 @@
         </member>
         <member name="P:Markdig.Syntax.FencedCodeBlock.IndentCount">
             <summary>
-            Gets or sets the indent count when the fenced code block was indented 
+            Gets or sets the indent count when the fenced code block was indented
             and we need to remove up to indent count chars spaces from the begining of a line.
             </summary>
         </member>
         <member name="T:Markdig.Syntax.HeadingBlock">
             <summary>
-            Repressents a heading.
+            Represents a heading.
             </summary>
         </member>
         <member name="M:Markdig.Syntax.HeadingBlock.#ctor(Markdig.Parsers.BlockParser)">
@@ -5134,7 +5157,7 @@
             <summary>
             Inserts the specified inline before this instance.
             </summary>
-            <param name="previous">The inlnie previous to insert before this instance.</param>
+            <param name="previous">The inline previous to insert before this instance.</param>
             <exception cref="T:System.ArgumentNullException"></exception>
             <exception cref="T:System.ArgumentException">Inline has already a parent</exception>
         </member>
@@ -5150,7 +5173,7 @@
             <param name="inline">The inline.</param>
             <param name="copyChildren">if set to <c>true</c> the children of this instance are copied to the specified inline.</param>
             <returns>The last children</returns>
-            <exception cref="T:System.ArgumentNullException">If inlnie is null</exception>
+            <exception cref="T:System.ArgumentNullException">If inline is null</exception>
         </member>
         <member name="M:Markdig.Syntax.Inlines.Inline.ContainsParentOfType``1">
             <summary>
@@ -5343,8 +5366,8 @@
         </member>
         <member name="F:Markdig.Syntax.LeafBlock.Lines">
             <summary>
-            Gets or sets the string lines accumulated for this leaf block. 
-            May be null after process inlines have occured.
+            Gets or sets the string lines accumulated for this leaf block.
+            May be null after process inlines have occurred.
             </summary>
         </member>
         <member name="P:Markdig.Syntax.LeafBlock.Inline">
@@ -5649,7 +5672,7 @@
         </member>
         <member name="T:Markdig.Syntax.ParagraphBlock">
             <summary>
-            Repressents a paragraph.
+            Represents a paragraph.
             </summary>
             <remarks>
             Related to CommonMark spec: 4.8 Paragraphs
@@ -5714,7 +5737,7 @@
         </member>
         <member name="T:Markdig.Syntax.ThematicBreakBlock">
             <summary>
-            Repressents a thematic break (Section 4.1 CommonMark specs).
+            Represents a thematic break (Section 4.1 CommonMark specs).
             </summary>
         </member>
         <member name="M:Markdig.Syntax.ThematicBreakBlock.#ctor(Markdig.Parsers.BlockParser)">

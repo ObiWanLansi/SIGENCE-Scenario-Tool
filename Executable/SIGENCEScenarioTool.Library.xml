@@ -1154,6 +1154,206 @@
             or
             Der Ausgabedateiname darf nicht leer sein! - strOutputFilename</exception>
         </member>
+        <member name="T:SIGENCEScenarioTool.Extensions.MarkdownExtension">
+            <summary>
+            A Extension Class For The String Class With Markdown Functions.
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Extensions.MarkdownExtension.sbTemp">
+            <summary>
+            The temporary StringBuilder for private use.
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.PartingLine">
+            <summary>
+            A Parting Line.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Bold(System.String)">
+            <summary>
+            Converts the string into a bold string.
+            </summary>
+            <param name="strContent">Content of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Italic(System.String)">
+            <summary>
+            Converts the string into a italic string.
+            </summary>
+            <param name="strContent">Content of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Strikethrough(System.String)">
+            <summary>
+            Converts the string into a strikethrough string.
+            </summary>
+            <param name="strContent">Content of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Header(System.String,System.UInt32)">
+            <summary>
+            Converts the string into a header string.
+            </summary>
+            <param name="strContent">Content of the string.</param>
+            <param name="iLevel">The level.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Hyperlink(System.String,System.String)">
+            <summary>
+            Create a Hyperlink from the link with caption.
+            </summary>
+            <param name="strLink">The link.</param>
+            <param name="strCaption">The caption.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Hyperlink(System.String,System.String,System.String)">
+            <summary>
+            Create a Hyperlink from the link with caption and tooltip.
+            </summary>
+            <param name="strLink">The link.</param>
+            <param name="strCaption">The caption.</param>
+            <param name="strTooltip">The tooltip.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Image(System.String,System.String)">
+            <summary>
+            Create a Image from the source with a alttext.
+            </summary>
+            <param name="strImageSource">The image source.</param>
+            <param name="strAltText">The alt text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.GenericList``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Generics the list.
+            </summary>
+            <param name="items">The items.</param>
+            <param name="strPrefix">The string prefix.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.UnorderedList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Create a unordered list.
+            </summary>
+            <param name="items">The items.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.OrderedList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Create a ordered list.
+            </summary>
+            <param name="items">The items.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.TaskList(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Create a taskslist.
+            </summary>
+            <param name="items">The items.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.BlockQuote(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Blockquotes the specified items.
+            </summary>
+            <param name="items">The items.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.SourceCode(System.String,System.String)">
+            <summary>
+            Sources the code.
+            </summary>
+            <param name="strContent">Content of the string.</param>
+            <param name="strType">Type of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.SourceCode(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Sources the code.
+            </summary>
+            <param name="lines">The lines.</param>
+            <param name="strType">Type of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.SourceCode(System.IO.FileInfo,System.String)">
+            <summary>
+            Sources the code.
+            </summary>
+            <param name="fiSourceFile">The fi source file.</param>
+            <param name="strType">Type of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Include(System.IO.FileInfo)">
+            <summary>
+            Includes the specified fi markdown file.
+            </summary>
+            <param name="fiMarkdownFile">The fi markdown file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Include(System.String)">
+            <summary>
+            Includes the specified string include filename.
+            </summary>
+            <param name="strIncludeFilename">The string include filename.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.DirectoryTree(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Directories the tree.
+            </summary>
+            <param name="strRootDirectory">The string root directory.</param>
+            <param name="bFiles">if set to <c>true</c> [b files].</param>
+            <param name="iMaxLevel">The i maximum level.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.DirectoryTree(System.IO.DirectoryInfo,System.Boolean,System.Int32)">
+            <summary>
+            Directories the tree.
+            </summary>
+            <param name="diRootDirectory">The di root directory.</param>
+            <param name="bFiles">if set to <c>true</c> [b files].</param>
+            <param name="iMaxLevel">The i maximum level.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.DirectoryTable(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Directories the table.
+            </summary>
+            <param name="strRootDirectory">The string root directory.</param>
+            <param name="bDisplaySize">if set to <c>true</c> [b display size].</param>
+            <param name="bDisplayTimestamp">if set to <c>true</c> [b display timestamp].</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.DirectoryTable(System.IO.DirectoryInfo,System.Boolean,System.Boolean)">
+            <summary>
+            Directories the table.
+            </summary>
+            <param name="diRootDirectory">The di root directory.</param>
+            <param name="bDisplaySize">if set to <c>true</c> [b display size].</param>
+            <param name="bDisplayTimestamp">if set to <c>true</c> [b display timestamp].</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Table(System.Data.DataTable)">
+            <summary>
+            Converts the datatable to a markdown table.
+            </summary>
+            <param name="dtDataTable">The data table.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Extensions.MarkdownExtension.Table``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Converts the list to a markdown table.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list">The list.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">list</exception>
+            <exception cref="T:System.ArgumentException">The List Contains No Data!</exception>
+        </member>
         <member name="T:SIGENCEScenarioTool.Extensions.RandomExtension">
             <summary>
             Eine Erweiterungsklasse für System.Random .
@@ -2907,12 +3107,17 @@
              Represent MetaInformationData For An Scenario.
             </summary>
         </member>
-        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.SetDescriptionAndStylesheet(System.String,System.String)">
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.SetDescriptionWithoutEvent(System.String)">
             <summary>
-            Sets the description and stylesheet.
+            Sets the description without event.
             </summary>
             <param name="strDescription">The string description.</param>
-            <param name="strStylesheet">The string stylesheet.</param>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.SetStyleSheetWithoutEvent(System.String)">
+            <summary>
+            Sets the style sheet without event.
+            </summary>
+            <param name="strStyleSheet">The string style sheet.</param>
         </member>
         <member name="M:SIGENCEScenarioTool.Models.MetaInformation.ScenarioMetaInformation.Clear">
             <summary>
@@ -3704,6 +3909,31 @@
             Führt anwendungsspezifische Aufgaben durch, die mit der Freigabe, der Zurückgabe oder dem Zurücksetzen von nicht verwalteten Ressourcen zusammenhängen.
             </summary>
         </member>
+        <member name="T:SIGENCEScenarioTool.Tools.NoDisplayAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Tools.TextAlign">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.TextAlign.Left">
+            <summary>
+            The left
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.TextAlign.Center">
+            <summary>
+            The center
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.TextAlign.Right">
+            <summary>
+            The right
+            </summary>
+        </member>
         <member name="T:SIGENCEScenarioTool.Tools.Tool">
             <summary>
             Klasse mit statischen Standalonefunktionen.
@@ -3770,6 +4000,36 @@
             <value>
             The version.
             </value>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.Tool.IGNORETYPES">
+            <summary>
+            The hs ignore types
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.Tool.TYPETEXTALIGN">
+            <summary>
+            The typetextalign
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.Tool.NUMBERTYPES">
+            <summary>
+            The numbertypes
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.Tool.FLOATINGTYPES">
+            <summary>
+            The floatingtypes
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.Tool.VALUETYPES">
+            <summary>
+            The valuetypes
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.Tool.DATETIMEFORMATS">
+            <summary>
+            The datetimeformats
+            </summary>
         </member>
         <member name="M:SIGENCEScenarioTool.Tools.Tool.GetModuleFileName(System.Runtime.InteropServices.HandleRef,System.Text.StringBuilder,System.Int32)">
             <summary>
