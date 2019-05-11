@@ -215,6 +215,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
+            InitMetaInformation();
+            this.tiMetaInformation.IsSelected = true;
+
             ////string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
 
             //this.MetaInformation.Version = "1.0";

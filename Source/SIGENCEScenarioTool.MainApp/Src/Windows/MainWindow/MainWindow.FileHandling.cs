@@ -99,7 +99,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Saves the file.
         /// </summary>
         /// <param name="strOutputFilename">The string output filename.</param>
-        private void SaveFile(string strOutputFilename)
+        internal void SaveFile(string strOutputFilename)
         {
             this.Cursor = Cursors.Wait;
 

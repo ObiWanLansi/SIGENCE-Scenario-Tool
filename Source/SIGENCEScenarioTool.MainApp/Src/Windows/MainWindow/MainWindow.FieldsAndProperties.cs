@@ -95,9 +95,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //"        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css\" integrity=\"sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ\" crossorigin=\"anonymous\">\n" +
             //"        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\" integrity=\"sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd\" crossorigin=\"anonymous\"></script>\n" +
             "        <style>\n" +
-            "            table { border: 2px solid black; }\n" +
-            "            th { border: 1px solid black; padding: 3px; background: #D0D0D0; }\n" +
-            "            td { border: 1px solid black; padding: 3px; background: #F0F0F0; }\n" +
+            "           $STYLE$\n" +
+            //"            table { border: 2px solid black; }\n" +
+            //"            th { border: 1px solid black; padding: 3px; background: #D0D0D0; }\n" +
+            //"            td { border: 1px solid black; padding: 3px; background: #F0F0F0; }\n" +
             "        </style>\n" +
             "    </head>\n" +
             "    <body style=\"padding: 10px;\">\n";

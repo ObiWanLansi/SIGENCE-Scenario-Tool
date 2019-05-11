@@ -608,6 +608,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void MenuItem_IniMetaInformation(object sender, RoutedEventArgs e)
         {
             InitMetaInformation();
+
             e.Handled = true;
         }
 

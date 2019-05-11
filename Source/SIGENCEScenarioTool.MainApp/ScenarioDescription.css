@@ -1,0 +1,16 @@
+﻿table {
+    border: 2px solid black;
+}
+
+th {
+    border: 1px solid black;
+    padding: 3px;
+    background: #D0D0D0;
+    /*color: white;*/
+}
+
+td {
+    border: 1px solid black;
+    padding: 3px;
+    background: #F0F0F0;
+}

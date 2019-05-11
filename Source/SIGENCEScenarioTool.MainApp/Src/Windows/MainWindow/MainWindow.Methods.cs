@@ -397,12 +397,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     StringBuilder sbHtml = new StringBuilder(8192);
 
-                    sbHtml.AppendLine(HEADER);
+                    string strHeaderWithCSS = HEADER.Replace("$STYLE$", this.MetaInformation.Stylesheet);
+
+                    sbHtml.AppendLine(strHeaderWithCSS);
                     sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
                     sbHtml.AppendLine(FOOTER);
 
                     //this.Dispatcher.Invoke(() => this.wbWebBrowser.NavigateToString(sbHtml.ToString()));
                     this.wbWebBrowser.NavigateToString(sbHtml.ToString());
+                    //this.wbWebBrowser.Refresh();
                 }
                 catch (Exception ex)
                 {
@@ -492,10 +495,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             if (this.MetaInformation.Description.IsEmpty())
             {
-                if (this.MetaInformation.Description.IsEmpty())
-                {
-                    this.MetaInformation.Description = File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md");
-                }
+                this.MetaInformation.Description = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.md");
+            }
+
+            if (this.MetaInformation.Stylesheet.IsEmpty())
+            {
+                this.MetaInformation.Stylesheet = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.css");
             }
 
             this.tiMetaInformation.IsSelected = true;
