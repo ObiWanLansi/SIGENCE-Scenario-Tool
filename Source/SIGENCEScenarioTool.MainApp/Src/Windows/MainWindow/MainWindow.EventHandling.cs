@@ -9,6 +9,8 @@ using System.Windows.Input;
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
+using ICSharpCode.TextEditor.Actions;
+
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.MetaInformation;
@@ -1040,31 +1042,61 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// Handles the KeyUp event of the TextArea control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
-        //private void TextArea_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
-        //{
-        //    this.bTextChanged = true;
-        //}
+        /// <summary>
+        /// Handles the KeyUp event of the TextArea control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+        private void TextArea_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            //if (e.KeyCode == System.Windows.Forms.Keys.F1 && (e.Alt || e.Control || e.Shift))
+            //{
+            //    // Display a pop-up Help topic to assist the user.
+            //    System.Windows.Forms.Help.ShowPopup(this.tecDescription, "Enter your name.", new System.Drawing.Point(this.tecDescription.Bottom, this.tecDescription.Right));
+            //}
 
+            //TextEditorControl tec = sender as TextEditorControl;
 
-        ///// <summary>
-        ///// Handles the LostFocus event of the TextArea control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        //private void TextArea_LostFocus(object sender, EventArgs e)
-        //{
-        //    if (this.bTextChanged == true)
-        //    {
-        //        this.MetaInformation.SetDescriptionAndStylesheet(this.tecDescription.Text, this.tecStyleSheet.Text);
+            //TODO: Accept / Discard Changes
+            //      Insert Table, Orderd List, NUmberlist, image, link, ....
 
-        //        this.bTextChanged = false;
-        //    }
-        //}
+            switch (e.KeyData)
+            {
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U:
+                    this.tecDescription.ToUpperCase();
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L:
+                    this.tecDescription.ToLowerCase();
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X:
+                    this.tecDescription.ShowSpaces = !this.tecDescription.ShowSpaces;
+                    this.tecDescription.ShowTabs = !this.tecDescription.ShowTabs;
+                    this.tecDescription.ShowEOLMarkers = !this.tecDescription.ShowEOLMarkers;
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T:
+                    new ConvertTabsToSpaces().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W:
+                    new RemoveTrailingWS().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L:
+                    this.tecDescription.ActiveTextAreaControl.TextArea.InsertString(LoremIpsum.GetLoremIpsum());
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D:
+                    this.tecDescription.ActiveTextAreaControl.TextArea.InsertString(DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS());
+                    break;
+
+            }
+
+            e.Handled = true;
+        }
+
 
         /// <summary>
         /// Handles the Click event of the Button_AcceptMarkdown control.

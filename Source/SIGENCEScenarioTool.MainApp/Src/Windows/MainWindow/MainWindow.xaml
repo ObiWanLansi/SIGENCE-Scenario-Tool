@@ -843,19 +843,6 @@
                         </Grid>
                     </Border>
 
-                    <!--<Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Content="Excepted Result Or Behavior" Style="{StaticResource Header}" />
-                            <WindowsFormsHost Grid.Row="1">
-                                <icsharpcode:TextEditorControl x:Name="tecExceptedResultOrBehavior" />
-                            </WindowsFormsHost>
-                        </Grid>
-                    </Border>-->
-
                     <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
                         <!--    <Grid>
                             <Grid.RowDefinitions>

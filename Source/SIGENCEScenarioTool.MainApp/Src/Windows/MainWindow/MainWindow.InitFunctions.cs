@@ -442,16 +442,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 tec.AllowCaretBeyondEOL = true;
                 tec.AllowDrop = false;
                 tec.VRulerRow = 120;
-                //this.tecScenarioDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter( "HTML" );
-
-                //tec.ActiveTextAreaControl.TextArea.LostFocus += TextArea_LostFocus;
-                //tec.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
-
             };
 
             Init(this.tecDescription);
+            this.tecDescription.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
+
+            //HighlightingManager.Manager.AddSyntaxModeFileProvider(new PythonSyntaxModeFileProvider());
+            //this.tecDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
+
             Init(this.tecStyleSheet);
         }
+
 
     } // end public partial class MainWindow 
 }

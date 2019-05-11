@@ -182,7 +182,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
             //SaveFile( @"D:\BigData\GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf" );
-            LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
+            //LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestScenario.stf");
 
             //SaveFile( @"C:\Transfer\TestScenario.stf" );
             //LoadFile( @"C:\Transfer\TestScenario.stf" );
@@ -215,8 +215,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            //this.tiMetaInformation.IsSelected = true;
-            //InitMetaInformation();
+            this.tiEditDescription.IsSelected = true;
+            this.tiMetaInformation.IsSelected = true;
+            InitMetaInformation();
             //UpdateScenarioDescriptionMarkdown();
 
             ////string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
