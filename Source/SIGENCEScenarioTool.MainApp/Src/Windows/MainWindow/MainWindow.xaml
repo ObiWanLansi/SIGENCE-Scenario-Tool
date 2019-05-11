@@ -114,6 +114,7 @@
             <MenuItem Header="_Extras">
                 <MenuItem Header="Scenario Simulation _Player" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioSimulationPlayer_Click" />
                 <MenuItem Header="Toggle Info _Window" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleInfoWindow}" />
+                <MenuItem Header="_Init Meta Information" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_IniMetaInformation" />
                 <Separator />
                 <MenuItem Header="_Restore Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_RestoreInitialMapValues_Click" />
                 <MenuItem Header="_Save Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_SaveInitialMapValues_Click" />
@@ -760,16 +761,16 @@
 
                             <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="General Information" Style="{StaticResource Header}" />
 
-                            <Label Grid.Column="0" Grid.Row="1" Content="Scenario Version" />
-                            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding MetaInformation.Version,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2" />
+                            <Label Grid.Column="0" Grid.Row="1" Content="Scenario Version" Margin="5" />
+                            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding MetaInformation.Version,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5" />
 
-                            <Label Grid.Column="0" Grid.Row="2" Content="Application Context" />
-                            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding MetaInformation.ApplicationContext,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2" />
+                            <Label Grid.Column="0" Grid.Row="2" Content="Application Context" Margin="5" />
+                            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding MetaInformation.ApplicationContext,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5" />
 
-                            <Label Grid.Column="0" Grid.Row="3" Content="Contact Person" />
-                            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding MetaInformation.ContactPerson,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="2" />
+                            <Label Grid.Column="0" Grid.Row="3" Content="Contact Person" Margin="5" />
+                            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding MetaInformation.ContactPerson,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5" />
 
-                            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="Tags" Style="{StaticResource Header}" />
+                            <!--<Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="Tags" Style="{StaticResource Header}" />
 
                             <StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal">
                                 <StackPanel.Resources>
@@ -781,13 +782,15 @@
                                     </Style>
 
                                 </StackPanel.Resources>
-                                <!--<Button Content="#Scenario" />
+                                -->
+                            <!--<Button Content="#Scenario" />
                                 <Button Content="#Simulation" />
                                 <Button Content="#Lansi" />
                                 <Button Content="#Jammer" />
                                 <Button Content="#Airbus" />-->
+                            <!--
                                 <Button Content="+" Width="20" />
-                            </StackPanel>
+                            </StackPanel>-->
 
                         </Grid>
 

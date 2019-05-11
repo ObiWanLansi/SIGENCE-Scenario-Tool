@@ -318,6 +318,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.tiMap.IsSelected = true;
         }
 
+
         /// <summary>
         /// Views the description hypertext.
         /// </summary>
@@ -335,6 +336,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             this.tiMetaInformation.IsSelected = true;
             this.tiEditDescription.IsSelected = true;
+
+            // Warum auch immer, aber es hat nicht geholfen.
+            //this.tecDescription.ActiveTextAreaControl.TextArea.Focus();
         }
 
 
@@ -345,6 +349,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             this.tiMetaInformation.IsSelected = true;
             this.tiEditStylesheet.IsSelected = true;
+
+            // Warum auch immer, aber es hat nicht geholfen.
+            // Warum auch immer, aber es hat nicht geholfen.
+            //this.tecStyleSheet.ActiveTextAreaControl.Focus();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -393,7 +401,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
                     sbHtml.AppendLine(FOOTER);
 
-                    this.Dispatcher.Invoke(() => this.wbWebBrowser.NavigateToString(sbHtml.ToString()));
+                    //this.Dispatcher.Invoke(() => this.wbWebBrowser.NavigateToString(sbHtml.ToString()));
+                    this.wbWebBrowser.NavigateToString(sbHtml.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -402,8 +411,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
             else
             {
-                //wbScenarioDescription.NavigateToString( "<html/>" );
-                this.wbWebBrowser.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
+                this.wbWebBrowser.NavigateToString("<html/>");
+                //this.wbWebBrowser.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
             }
 
             //if (this.wbWebBrowser.IsVisible)
@@ -459,6 +468,38 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //        MB.Warning("No Description For The Scenario Avaible!");
         //    }
         //}
+
+
+        /// <summary>
+        /// Initializes the meta information.
+        /// </summary>
+        private void InitMetaInformation()
+        {
+            if (this.MetaInformation.Version.IsEmpty())
+            {
+                this.MetaInformation.Version = "1.0";
+            }
+
+            if (this.MetaInformation.ApplicationContext.IsEmpty())
+            {
+                this.MetaInformation.ApplicationContext = "Please Type The Name Of The ApplicationContext Here ...";
+            }
+
+            if (this.MetaInformation.ContactPerson.IsEmpty())
+            {
+                this.MetaInformation.ContactPerson = Environment.UserName;
+            }
+
+            if (this.MetaInformation.Description.IsEmpty())
+            {
+                if (this.MetaInformation.Description.IsEmpty())
+                {
+                    this.MetaInformation.Description = File.ReadAllText($"{Tool.StartupPath}\\ExampleScenarioDescription.md");
+                }
+            }
+
+            this.tiMetaInformation.IsSelected = true;
+        }
 
 
         /// <summary>

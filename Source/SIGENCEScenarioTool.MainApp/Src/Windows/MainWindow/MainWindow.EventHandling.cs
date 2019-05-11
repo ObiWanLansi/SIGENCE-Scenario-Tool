@@ -600,6 +600,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
+        /// <summary>
+        /// Handles the IniMetaInformation event of the MenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_IniMetaInformation(object sender, RoutedEventArgs e)
+        {
+            InitMetaInformation();
+            e.Handled = true;
+        }
+
+
         ///// <summary>
         ///// Handles the Click event of the MenuItem_CheckVersion control.
         ///// </summary>

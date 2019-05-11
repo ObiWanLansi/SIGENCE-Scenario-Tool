@@ -20,12 +20,10 @@
  */
 
 using System;
-using System.Collections.ObjectModel;
 using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Interfaces;
-using SIGENCEScenarioTool.Models.Attachements;
 
 
 
@@ -45,7 +43,7 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
     ///<summary>
     /// <#=strClassCommment#>
     ///</summary>
-    public partial class <#=eRoot.Name#> :AbstractModelBase, IEquatable<<#=eRoot.Name#>>, ICloneable, IXmlExport
+    public partial class <#=eRoot.Name#> : AbstractModelBase, IEquatable<<#=eRoot.Name#>>, ICloneable, IXmlExport
     {
 
         #region Instance Properties

@@ -17,6 +17,19 @@
     </Version>
     -->
 
+
+    <Version Version="19" Title="XXXXX 2019 Release">
+        <Features>
+            <Issue Id="144" Description="Template For Scenario Description" />
+            <Issue Id="57" Description="Add Markdown Support For Scenario Description" />
+            <Issue Id="63" Description="Create A Model For All MetaInformations Of An Scenario" />
+            <Issue Id="112" Description="QuickCommander For Fast Commands In The UI" />
+            <Issue Id="171" Description="Replace The Description TabItem With MetaInformation" />
+        </Features>
+    </Version>
+
+
+
     <Version Version="18" Title="April 2019 Release">
         <Features>
             <Issue Id="170" Description="Correct The Roll, Pitch And Yaw Display On The Map" />
