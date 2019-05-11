@@ -193,70 +193,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         ///// <summary>
-        ///// Switches the scenario edit mode.
-        ///// </summary>
-        //private void SwitchScenarioEditMode()
-        //{
-        //    this.wfhHtmlEdit.Visibility = this.ScenarioDescriptionEditMode ? Visibility.Hidden : Visibility.Visible;
-        //    this.wfhHtmlEdit.Visibility = this.ScenarioDescriptionEditMode ? Visibility.Visible : Visibility.Hidden;
-        //}
-
-
-        ///// <summary>
-        ///// Updates the scenario description.
-        ///// </summary>
-        //private void UpdateScenarioDescription()
-        //{
-        //    if (string.IsNullOrEmpty(this.ScenarioDescription) == false)
-        //    {
-        //        try
-        //        {
-        //            //string strHtmlContent = Markdown.ToHtml(this.ScenarioDescription);
-        //            //this.wbScenarioDescription.NavigateToString(strHtmlContent);
-
-        //            this.wbScenarioDescription.NavigateToString(this.ScenarioDescription);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            this.wbScenarioDescription.NavigateToString($"<h1>{ex.Message}</h1>");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        //wbScenarioDescription.NavigateToString( "<html/>" );
-        //        this.wbScenarioDescription.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
-        //    }
-        //}
-
-
-        ///// <summary>
-        ///// Inserts the scenario description template.
-        ///// </summary>
-        //private void InsertScenarioDescriptionTemplate()
-        //{
-        //    StringBuilder sb = new StringBuilder();
-        //    string strDivider = new string('*', 40 - 9);
-
-        //    sb.AppendLine("<!-- {0} -->", strDivider);
-        //    sb.AppendLine("<h1>Enter Here The Name Of The Scenario</h1>");
-        //    sb.AppendLine();
-        //    sb.AppendLine("<table border=\"1\">");
-        //    sb.AppendLine("    <tr><th>Filename</th><td>{0}</td></tr>", this.strCurrentFile ?? "Enter Here The Filename");
-        //    sb.AppendLine("    <tr><th>Author</th><td>{0}</td></tr>", Environment.UserName);
-        //    sb.AppendLine("    <tr><th>Date</th><td>{0}</td></tr>", DateTime.Now.ToShortDateString());
-        //    sb.AppendLine("</table>");
-        //    sb.AppendLine();
-        //    sb.AppendLine("<!-- {0} -->", strDivider);
-        //    sb.AppendLine();
-        //    sb.AppendLine("<p>");
-        //    sb.AppendLine("Describe Here Your Scenario, What Is It For And What Must Others Now ...");
-        //    sb.AppendLine("</p>");
-
-        //    this.tecScenarioDescription.ActiveTextAreaControl.TextArea.InsertString(sb.ToString());
-        //}
-
-
-        ///// <summary>
         ///// Inserts the HTML snippet.
         ///// </summary>
         ///// <param name="strSnippetId">The string snippet identifier.</param>
@@ -415,62 +351,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             else
             {
                 this.wbWebBrowser.NavigateToString("<html/>");
-                //this.wbWebBrowser.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
             }
-
-            //if (this.wbWebBrowser.IsVisible)
-            //{
-            //    this.wbWebBrowser.Refresh();
-            //}
-
-            //if (this.tecDescription.Text.IsNotEmpty())
-            //{
-            //    try
-            //    {
-            //        StringBuilder sbHtml = new StringBuilder(8192);
-
-            //        sbHtml.AppendLine(HEADER);
-            //        sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
-            //        sbHtml.AppendLine(FOOTER);
-
-            //        this.wbWebBrowser.NavigateToString(sbHtml.ToString());
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        this.wbWebBrowser.NavigateToString($"<h1>{ex.Message}</h1>");
-            //    }
-            //}
-            //else
-            //{
-            //    //wbScenarioDescription.NavigateToString( "<html/>" );
-            //    this.wbWebBrowser.NavigateToString("<h1><i>There Is No Description Yet.</i></h1>");
-            //}
         }
-
-
-        ///// <summary>
-        ///// Displays the scenario description.
-        ///// </summary>
-        //private void DisplayScenarioDescription()
-        //{
-        //    if (this.tecDescription.Text.IsNotEmpty())
-        //    {
-        //        string strOutputFilename = $"{Path.GetTempPath()}{Guid.NewGuid()}.html";
-        //        StringBuilder sbHtml = new StringBuilder(8192);
-
-        //        sbHtml.AppendLine(HEADER);
-        //        sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
-        //        sbHtml.AppendLine(FOOTER);
-
-        //        File.WriteAllText(strOutputFilename, sbHtml.ToString());
-
-        //        Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
-        //    }
-        //    else
-        //    {
-        //        MB.Warning("No Description For The Scenario Avaible!");
-        //    }
-        //}
 
 
         /// <summary>

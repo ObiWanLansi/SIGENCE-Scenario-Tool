@@ -732,10 +732,23 @@ namespace SIGENCEScenarioTool.ViewModels
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// 
+        /// </summary>
         public enum SimulationState : byte { None, Current }
 
+        /// <summary>
+        /// The simsa
+        /// </summary>
         private SimulationState simsa = SimulationState.None;
 
+        /// <summary>
+        /// Gets or sets the state of the current simulation.
+        /// </summary>
+        /// <value>
+        /// The state of the current simulation.
+        /// </value>
         public SimulationState CurrentSimulationState
         {
             get { return this.simsa; }
@@ -747,6 +760,12 @@ namespace SIGENCEScenarioTool.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets the current simulation state brush.
+        /// </summary>
+        /// <value>
+        /// The current simulation state brush.
+        /// </value>
         public Brush CurrentSimulationStateBrush
         {
             get
@@ -763,6 +782,7 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// 

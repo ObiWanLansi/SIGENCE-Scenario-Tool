@@ -4,7 +4,7 @@
 
 ## Version 19 - XXXXX 2019 Release
 
-### Features (5)
+### Features (6)
 
 Issue|Description
 -:|-
@@ -13,6 +13,7 @@ Issue|Description
 [112](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/112)|QuickCommander For Fast Commands In The UI
 [144](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/144)|Template For Scenario Description
 [171](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/171)|Replace The Description TabItem With MetaInformation
+[178](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/178)|Implement Stylesheets For The Markdown Description
 
 <br/>
 

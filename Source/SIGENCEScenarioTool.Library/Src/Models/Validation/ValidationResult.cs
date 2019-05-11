@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
+using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.Models.Validation
 {
@@ -16,6 +16,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <value>
         /// The identifier.
         /// </value>
+        [NoDisplay]
         public Guid Id { get; }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <param name="oSource">The source.</param>
         /// <param name="strPropertyName">Name of the property.</param>
         /// <param name="oValue">The value.</param>
-        public ValidationResult( Servity sServity, string strMessage, object oSource, string strPropertyName, object oValue )
+        public ValidationResult(Servity sServity, string strMessage, object oSource, string strPropertyName, object oValue)
         {
             this.Id = Guid.NewGuid();
             this.Timestamp = DateTime.Now;
@@ -116,9 +117,9 @@ namespace SIGENCEScenarioTool.Models.Validation
         /// <param name="oSource">The o source.</param>
         /// <param name="strPropertyName">Name of the string property.</param>
         /// <param name="oValue">The o value.</param>
-        public void Add( Servity sServity, string strMessage, object oSource, string strPropertyName, object oValue )
+        public void Add(Servity sServity, string strMessage, object oSource, string strPropertyName, object oValue)
         {
-            Add( new ValidationResult( sServity, strMessage, oSource, strPropertyName, oValue ) );
+            Add(new ValidationResult(sServity, strMessage, oSource, strPropertyName, oValue));
         }
 
     } // end public sealed class ValidationResultList

@@ -25,6 +25,7 @@
             <Issue Id="63" Description="Create A Model For All MetaInformations Of An Scenario" />
             <Issue Id="112" Description="QuickCommander For Fast Commands In The UI" />
             <Issue Id="171" Description="Replace The Description TabItem With MetaInformation" />
+            <Issue Id="178" Description="Implement Stylesheets For The Markdown Description" />
         </Features>
     </Version>
 

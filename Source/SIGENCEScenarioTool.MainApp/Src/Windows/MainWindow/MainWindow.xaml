@@ -118,6 +118,7 @@
                 <MenuItem Header="Scenario Simulation _Player" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioSimulationPlayer_Click" />
                 <MenuItem Header="Toggle Info _Window" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleInfoWindow}" />
                 <MenuItem Header="_Init Meta Information" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_InitMetaInformation" />
+                <MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />
                 <MenuItem Header="_Open Script Editor" Icon="{StaticResource EARTH}" Command="{x:Static cmd:RegisteredCommands.OpenScriptEditor}" />
                 <Separator />
                 <MenuItem Header="_Restore Initial Map Values" Icon="{StaticResource NUT_AND_BOLT}" Click="MenuItem_RestoreInitialMapValues_Click" />
@@ -131,7 +132,6 @@
                 <MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
                 <!--<MenuItem Header="Display Scenario Description" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_DisplayScenarioDescription_Click" />-->
-                <!--<MenuItem Header="Create Scenario _Report" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_ScenarioReport_Click" />-->
                 <Separator />
                 <MenuItem Header="Create Randomized RFDevices" Icon="{StaticResource SATELLITE}">
                     <MenuItem Header="50" Tag="50" Icon="{StaticResource SATELLITE}" Click="MenuItem_CreateSomeRandomizedRFDevices_Click" />

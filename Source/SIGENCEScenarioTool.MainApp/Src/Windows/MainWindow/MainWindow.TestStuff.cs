@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +21,7 @@ using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
+using SIGENCEScenarioTool.ViewModels;
 
 using NTS = NetTopologySuite.Geometries;
 
@@ -169,59 +172,91 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         ///// Creates the scenario report.
         ///// </summary>
         //[Conditional("DEBUG")]
-        //private void CreateScenarioReport()
-        //{
-        //    if (string.IsNullOrEmpty(this.CurrentFile))
-        //    {
-        //        MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
-        //        return;
-        //    }
+        private void CreateScenarioReport()
+        {
+            if (string.IsNullOrEmpty(this.CurrentFile))
+            {
+                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
+                return;
+            }
 
-        //    this.Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
-        //    FileInfo fiCurrentFile = new FileInfo(this.CurrentFile);
+            FileInfo fiCurrentFile = new FileInfo(this.CurrentFile);
 
-        //    string strOutputFilename = $"{Path.GetTempPath()}{fiCurrentFile.GetFilenameWithoutExtension()}.html";
+            string strOutputFilename = $"{Path.GetTempPath()}{fiCurrentFile.GetFilenameWithoutExtension()}.md";
 
-        //    StringBuilder sb = new StringBuilder(8192);
+            StringBuilder sb = new StringBuilder(8192);
 
-        //    sb.Append("<!DOCTYPE html><html><head><title>Scenario Documentation</title></head><body>");
+            //-----------------------------------------------------------------
 
-        //    //-----------------------------------------------------------------
+            sb.AppendLine($"# Scenario {fiCurrentFile.GetFilenameWithoutExtension()}");
+            sb.AppendLine();
 
-        //    sb.AppendFormat("<center style=\"width: 100%; border: 1px solid black; background-color: lightblue;\"><h1>{0}</h1></center>", fiCurrentFile.GetFilenameWithoutExtension());
+            //1. MetaInformation
+            sb.AppendLine("## About This Scenario");
+            sb.AppendLine();
+            sb.AppendLine("|Property|Value|");
+            sb.AppendLine("|--------|-----|");
+            sb.AppendLine($"|Version|{this.MetaInformation.Version}|");
+            sb.AppendLine($"|Application Context|{this.MetaInformation.ApplicationContext}|");
+            sb.AppendLine($"|Contact Person|{this.MetaInformation.ContactPerson}|");
+            if (this.MetaInformation.Description.IsNotEmpty())
+            {
+                sb.AppendLine($"|User Description|[ScenarioDescription.md](./ScenarioDescription.md)|");
+                string strOutputUserDescription = string.Format("{0}ScenarioDescription.md", Path.GetTempPath());
+                File.WriteAllText(strOutputUserDescription, this.MetaInformation.Description, Encoding.UTF8);
+            }
+            sb.AppendLine();
+            sb.AppendLine("---");
 
-        //    sb.Append("<hr />");
+            //2. Devices
+            sb.AppendLine();
+            sb.AppendLine("## RFDevice List");
+            sb.AppendLine();
+            if (this.RFDeviceViewModelCollection != null && this.RFDeviceViewModelCollection.Count > 0)
+            {
+                sb.AppendLine("|  Id|DeviceSource|StartTime|Name|Latitude|Longitude|Altitude|Roll|Pitch|Yaw|RxTxType|AntennaType|CenterFrequency|Bandwidth|Gain|SignalToNoiseRatio|");
+                sb.AppendLine("|---:|:-----------|:-------:|:---|-------:|--------:|-------:|---:|----:|--:|:-------|:----------|--------------:|--------:|---:|-----------------:|");
 
-        //    //-----------------------------------------------------------------
+                foreach (RFDeviceViewModel dev in from device in this.RFDeviceViewModelCollection orderby device.Id, device.StartTime select device)
+                {
+                    sb.AppendLine($"|{dev.Id}|{dev.DeviceSource}|{dev.StartTime}|{dev.Name}|{dev.HumanLatitude}|{dev.HumanLongitude}|{dev.HumanAltitude}|{dev.Roll}|{dev.Pitch}|{dev.Yaw}|{dev.RxTxType}|{dev.AntennaType}|{dev.HumanCenterFrequency}|{dev.HumanBandwidth}|{dev.HumanGain}|{dev.HumanSignalToNoiseRatio}|");
+                }
+            }
+            sb.AppendLine("---");
 
-        //    //if( string.IsNullOrEmpty( this.ScenarioDescription ) == false )
-        //    //{
-        //    //    sb.Append( this.ScenarioDescription );
-        //    //}
+            // 3. Validation Results
+            ExecuteValidateScenario();
+            sb.AppendLine();
+            sb.AppendLine("## Validation Results");
+            sb.AppendLine();
+            if (this.ValidationResult != null && this.ValidationResult.Count > 0)
+            {
+                List<Models.Validation.ValidationResult> lResults = (from result in this.ValidationResult select result.Result).ToList();
+                sb.AppendLine(lResults.Table());
+            }
+            sb.AppendLine("---");
 
-        //    //-----------------------------------------------------------------
+            //4. Screenshot
+            sb.AppendLine();
+            sb.AppendLine("## Screenshot");
+            sb.AppendLine();
 
-        //    //Guid gScreenshot = Guid.NewGuid();
-        //    //string strOutputFilenameScreenshot = string.Format("{0}{1}.png", Path.GetTempPath(), gScreenshot);
-        //    //var screenshot = Tools.Windows.GetWPFScreenshot(mcMapControl);
-        //    //Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
-        //    //sb.AppendFormat("<center><img src=\"{0}.png\" style=\"border: 1px solid black;\"/></center>", gScreenshot);
+            string strOutputFilenameScreenshot = string.Format("{0}ScenarioScreenshot.png", Path.GetTempPath());
+            var screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
+            Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
 
-        //    //-----------------------------------------------------------------
+            sb.AppendLine("![ScenarioScreenshot](./ScenarioScreenshot.png)");
 
+            //-----------------------------------------------------------------
 
+            File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.UTF8);
 
-        //    //-----------------------------------------------------------------
+            Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
 
-        //    sb.Append("</body></html> ");
-
-        //    File.WriteAllText(strOutputFilename, sb.ToString(), Encoding.Default);
-
-        //    Tools.Windows.OpenWithDefaultApplication(strOutputFilename);
-
-        //    this.Cursor = Cursors.Arrow;
-        //}
+            this.Cursor = Cursors.Arrow;
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -192,6 +192,7 @@
     <Compile Include="Src\Extensions\IDataReaderExtension.cs" />
     <Compile Include="Src\Extensions\IDbConnectionExtension.cs" />
     <Compile Include="Src\Extensions\ListExtension.cs" />
+    <Compile Include="Src\Extensions\MarkdownExtension.cs" />
     <Compile Include="Src\Extensions\RandomExtension.cs" />
     <Compile Include="Src\Extensions\SQLiteExtension.cs" />
     <Compile Include="Src\Extensions\StringBuilderExtension.cs" />

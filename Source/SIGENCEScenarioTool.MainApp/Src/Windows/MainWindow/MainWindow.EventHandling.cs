@@ -800,17 +800,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //}
 
 
-        ///// <summary>
-        ///// Handles the Click event of the MenuItem_ScenarioReport control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        //private void MenuItem_ScenarioReport_Click(object sender, RoutedEventArgs e)
-        //{
-        //    CreateScenarioReport();
+        /// <summary>
+        /// Handles the Click event of the MenuItem_ScenarioReport control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
+        private void MenuItem_ScenarioReport_Click(object sender, RoutedEventArgs e)
+        {
+            CreateScenarioReport();
 
-        //    e.Handled = true;
-        //}
+            e.Handled = true;
+        }
 
 
         ///// <summary>
@@ -1040,15 +1040,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Handles the KeyUp event of the TextArea control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
-        private void TextArea_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
-        {
-            this.bTextChanged = true;
-        }
+        ///// <summary>
+        ///// Handles the KeyUp event of the TextArea control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+        //private void TextArea_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
+        //{
+        //    this.bTextChanged = true;
+        //}
 
 
         ///// <summary>

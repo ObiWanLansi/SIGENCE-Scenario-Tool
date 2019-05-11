@@ -145,10 +145,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private RFDevice dvmLastSelectedDevice = null;
 
-        /// <summary>
-        /// The b text changed
-        /// </summary>
-        private bool bTextChanged = false;
+        ///// <summary>
+        ///// The b text changed
+        ///// </summary>
+        //private bool bTextChanged = false;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -941,6 +941,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 FirePropertyChanged();
             }
         }
+
 
         /// <summary>
         /// The b show transmitter
