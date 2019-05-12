@@ -1055,10 +1055,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    System.Windows.Forms.Help.ShowPopup(this.tecDescription, "Enter your name.", new System.Drawing.Point(this.tecDescription.Bottom, this.tecDescription.Right));
             //}
 
-
-            //TODO: 
-            //      Insert Table, Orderd List, NUmberlist, image, link, .... check list
-
             switch (e.KeyData)
             {
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.A:
@@ -1097,6 +1093,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.tecDescription.ToItalic();
                     break;
 
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.S:
+                    this.tecDescription.ToStrikethrough();
+                    break;
+
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D1:
                     this.tecDescription.ToHeader(1);
                     break;
@@ -1113,17 +1113,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.tecDescription.ToHeader(4);
                     break;
 
-                //case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D5:
-                //    this.tecDescription.ToHeader(5);
-                //    break;
-
                 //-------------------------------------------------------------
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.X:
-                    this.tecDescription.ShowSpaces = !this.tecDescription.ShowSpaces;
-                    this.tecDescription.ShowTabs = !this.tecDescription.ShowTabs;
-                    this.tecDescription.ShowEOLMarkers = !this.tecDescription.ShowEOLMarkers;
-                    // ToogleSpecialCharacter
+                    this.tecDescription.ToogleSpecialCharacter();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.T:
@@ -1216,6 +1209,97 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
             //this.tecStyleSheet.Refresh();
             UpdateScenarioDescriptionMarkdown();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_InsertTable control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_InsertTable_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.InsertTable();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_InsertImage control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_InsertImage_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.InsertImage();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_InsertLink control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_InsertLink_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.InsertLink();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_OrderedList control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_InsertOrderedList_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.InsertOrderedList();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_UnorderedList control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_InsertUnorderedList_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.InsertUnorderedList();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_InsertBlockquote control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_InsertBlockquote_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.InsertBlockquote();
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_InsertCode control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_InsertCode_Click(object sender, RoutedEventArgs e)
+        {
+            this.tecDescription.InsertCode();
 
             e.Handled = true;
         }

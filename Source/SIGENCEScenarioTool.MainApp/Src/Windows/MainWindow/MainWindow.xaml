@@ -812,38 +812,63 @@
                                 <TabItem x:Name="tiEditDescription" Header="Editor">
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
                                             <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-                                        <WindowsFormsHost Grid.Row="0">
-                                            <icsharpcode:TextEditorControl x:Name="tecDescription" />
-                                        </WindowsFormsHost>
-                                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                                            <Button Content="{StaticResource OK}" Width="30" Height="30" ToolTip="Accept The Changes." Margin="5" Click="Button_AcceptMarkdown_Click" />
-                                            <Button Content="{StaticResource DISCARD}" Width="30" Height="30" ToolTip="Discard The Changes." Margin="5" Click="Button_DiscardMarkdown_Click" />
-                                        </StackPanel>
+                                        <DockPanel Grid.Row="0">
+                                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                                                <Button Content="Table" Width="80" Height="30" Margin="5" Click="Button_InsertTable_Click" />
+                                                <Button Content="Image" Width="80" Height="30" Margin="5" Click="Button_InsertImage_Click" />
+                                                <Button Content="Link" Width="80" Height="30" Margin="5" Click="Button_InsertLink_Click" />
+                                                <Button Content="Code" Width="80" Height="30" Margin="5" Click="Button_InsertCode_Click" />
+                                                <Button Content="Ordered List" Width="100" Height="30" Margin="5" Click="Button_InsertOrderedList_Click" />
+                                                <Button Content="Unordered List" Width="100" Height="30" Margin="5" Click="Button_InsertUnorderedList_Click" />
+                                                <Button Content="Blockquote" Width="100" Height="30" Margin="5" Click="Button_InsertBlockquote_Click" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right">
+                                                <Button Content="{StaticResource OK}" Width="30" Height="30" ToolTip="Accept The Changes." Margin="5" Click="Button_AcceptMarkdown_Click" />
+                                                <Button Content="{StaticResource DISCARD}" Width="30" Height="30" ToolTip="Discard The Changes." Margin="5" Click="Button_DiscardMarkdown_Click" />
+                                            </StackPanel>
+                                        </DockPanel>
+                                        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1">
+                                            <WindowsFormsHost>
+                                                <icsharpcode:TextEditorControl x:Name="tecDescription" />
+                                            </WindowsFormsHost>
+                                        </Border>
                                     </Grid>
                                 </TabItem>
                                 <TabItem x:Name="tiEditStylesheet" Header="StyleSheet">
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
                                             <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
-                                        <WindowsFormsHost Grid.Row="0">
-                                            <icsharpcode:TextEditorControl x:Name="tecStyleSheet" />
-                                    </WindowsFormsHost>
-                                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
                                             <Button Content="{StaticResource OK}" Width="30" Height="30" ToolTip="Accept The Changes." Margin="5" Click="Button_AcceptStylesheet_Click" />
                                             <Button Content="{StaticResource DISCARD}" Width="30" Height="30" ToolTip="Discard The Changes." Margin="5" Click="Button_DiscardStylesheet_Click" />
                                         </StackPanel>
+                                        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1">
+                                            <WindowsFormsHost>
+                                                <icsharpcode:TextEditorControl x:Name="tecStyleSheet" />
+                                            </WindowsFormsHost>
+                                        </Border>
                                     </Grid>
                                 </TabItem>
                             </TabControl>
                         </Grid>
                     </Border>
 
-                    <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5">
+                    <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5" Background="Gray">
+                        <Label Content="Placeholder" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkTurquoise" FontWeight="Bold">
+                            <Label.Effect>
+                                <DropShadowEffect BlurRadius="80" ShadowDepth="0" Direction="0" Color="Blue" />
+                            </Label.Effect>
+                            <!--<Label.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="45" CenterX="120" CenterY="70"/>
+                                </TransformGroup>
+                            </Label.RenderTransform>-->
+                        </Label>
                         <!--    <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
