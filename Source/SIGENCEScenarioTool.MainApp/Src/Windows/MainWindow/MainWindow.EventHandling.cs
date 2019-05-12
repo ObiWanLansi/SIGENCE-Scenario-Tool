@@ -9,8 +9,6 @@ using System.Windows.Input;
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
-using ICSharpCode.TextEditor.Actions;
-
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.MetaInformation;
@@ -1046,7 +1044,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Handles the KeyUp event of the TextArea control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs" /> instance containing the event data.</param>
         private void TextArea_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             //if (e.KeyCode == System.Windows.Forms.Keys.F1 && (e.Alt || e.Control || e.Shift))
@@ -1055,41 +1053,72 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    System.Windows.Forms.Help.ShowPopup(this.tecDescription, "Enter your name.", new System.Drawing.Point(this.tecDescription.Bottom, this.tecDescription.Right));
             //}
 
-            //TextEditorControl tec = sender as TextEditorControl;
 
-            //TODO: Accept / Discard Changes
+            //TODO: 
             //      Insert Table, Orderd List, NUmberlist, image, link, ....
 
             switch (e.KeyData)
             {
-                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U:
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.A:
+                    this.MetaInformation.SetDescriptionWithoutEvent(this.tecDescription.Text);
+                    UpdateScenarioDescriptionMarkdown();
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D:
+                    this.tecDescription.Text = this.MetaInformation.Description;
+                    UpdateScenarioDescriptionMarkdown();
+                    break;
+
+                //-------------------------------------------------------------
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.U:
                     this.tecDescription.ToUpperCase();
                     break;
 
-                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L:
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.L:
                     this.tecDescription.ToLowerCase();
                     break;
 
-                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X:
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.C:
+                    this.tecDescription.ToCapitalize();
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.B:
+                    this.tecDescription.ToBold();
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.I:
+                    this.tecDescription.ToItalic();
+                    break;
+
+                //case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.S:
+                //    this.tecDescription.ToCapitalize();
+                //    break;
+
+                //-------------------------------------------------------------
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.X:
                     this.tecDescription.ShowSpaces = !this.tecDescription.ShowSpaces;
                     this.tecDescription.ShowTabs = !this.tecDescription.ShowTabs;
                     this.tecDescription.ShowEOLMarkers = !this.tecDescription.ShowEOLMarkers;
                     break;
 
-                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T:
-                    new ConvertTabsToSpaces().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.T:
+                    this.tecDescription.ConvertTabsToSpaces();
                     break;
 
-                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W:
-                    new RemoveTrailingWS().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.W:
+                    this.tecDescription.RemoveTrailingWhiteSpaces();
                     break;
+
+                //-------------------------------------------------------------
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L:
-                    this.tecDescription.ActiveTextAreaControl.TextArea.InsertString(LoremIpsum.GetLoremIpsum());
+                    this.tecDescription.InsertLoremIpsum();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D:
-                    this.tecDescription.ActiveTextAreaControl.TextArea.InsertString(DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS());
+                    this.tecDescription.InsertDateTime();
                     break;
 
             }
@@ -1120,7 +1149,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void Button_DiscardMarkdown_Click(object sender, RoutedEventArgs e)
         {
             this.tecDescription.Text = this.MetaInformation.Description;
-            this.tecDescription.Refresh();
+            //this.tecDescription.Refresh();
+            UpdateScenarioDescriptionMarkdown();
 
             e.Handled = true;
         }
@@ -1148,7 +1178,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void Button_DiscardStylesheet_Click(object sender, RoutedEventArgs e)
         {
             this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
-            this.tecStyleSheet.Refresh();
+            //this.tecStyleSheet.Refresh();
+            UpdateScenarioDescriptionMarkdown();
 
             e.Handled = true;
         }

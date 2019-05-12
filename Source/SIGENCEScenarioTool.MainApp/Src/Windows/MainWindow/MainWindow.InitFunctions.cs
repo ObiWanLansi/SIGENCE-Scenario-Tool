@@ -438,19 +438,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 tec.ShowEOLMarkers = false;
                 tec.ShowLineNumbers = true;
 
-                tec.IsIconBarVisible = true;
+                tec.IsIconBarVisible = false;
                 tec.AllowCaretBeyondEOL = true;
                 tec.AllowDrop = false;
                 tec.VRulerRow = 120;
             };
 
             Init(this.tecDescription);
-            this.tecDescription.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
+            Init(this.tecStyleSheet);
 
             //HighlightingManager.Manager.AddSyntaxModeFileProvider(new PythonSyntaxModeFileProvider());
             //this.tecDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
 
-            Init(this.tecStyleSheet);
+            this.tecDescription.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
         }
 
 
