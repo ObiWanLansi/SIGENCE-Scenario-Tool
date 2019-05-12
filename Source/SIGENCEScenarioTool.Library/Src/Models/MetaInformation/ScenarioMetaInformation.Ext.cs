@@ -29,20 +29,20 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// <summary>
         /// Sets the description without event.
         /// </summary>
-        /// <param name="strDescription">The string description.</param>
-        public void SetDescriptionWithoutEvent(string strDescription)
+        /// <param name="strDescriptionMarkdown">The string description.</param>
+        public void SetDescriptionWithoutEvent(string strDescriptionMarkdown)
         {
-            this._Description = strDescription;
+            this._DescriptionMarkdown = strDescriptionMarkdown;
         }
 
 
         /// <summary>
         /// Sets the style sheet without event.
         /// </summary>
-        /// <param name="strStyleSheet">The string style sheet.</param>
-        public void SetStyleSheetWithoutEvent(string strStyleSheet)
+        /// <param name="strDescriptionStylesheet">The string style sheet.</param>
+        public void SetStyleSheetWithoutEvent(string strDescriptionStylesheet)
         {
-            this._Stylesheet = strStyleSheet;
+            this._DescriptionStylesheet = strDescriptionStylesheet;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -59,8 +59,8 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
 
             //SetDescriptionAndStylesheet(DEFAULT_DESCRIPTION, DEFAULT_STYLESHEET);
 
-            this.Description = DEFAULT_DESCRIPTION;
-            this.Stylesheet = DEFAULT_STYLESHEET;
+            this.DescriptionMarkdown = DEFAULT_DESCRIPTIONMARKDOWN;
+            this.DescriptionStylesheet = DEFAULT_DESCRIPTIONSTYLESHEET;
 
             //if (this.Attachements == null)
             //{
@@ -90,11 +90,19 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
                 eChild = eRoot.Element("ScenarioMetaInformation");
             }
 
-            this.Version = eChild.GetProperty<string>(VERSION, "");
-            this.ApplicationContext = eChild.GetProperty<string>(APPLICATIONCONTEXT, "");
-            this.ContactPerson = eChild.GetProperty<string>(CONTACTPERSON, "");
-            this.Description = eChild.GetProperty<string>(DESCRIPTION, "");
-            this.Stylesheet = eChild.GetProperty<string>(STYLESHEET, "");
+            if (eChild != null)
+            {
+                this.Version = eChild.GetProperty<string>(VERSION, "");
+                this.ApplicationContext = eChild.GetProperty<string>(APPLICATIONCONTEXT, "");
+                this.ContactPerson = eChild.GetProperty<string>(CONTACTPERSON, "");
+
+                this.DescriptionMarkdown = eChild.GetProperty<string>(DESCRIPTIONMARKDOWN, "");
+                this.DescriptionStylesheet = eChild.GetProperty<string>(DESCRIPTIONSTYLESHEET, "");
+            }
+            else
+            {
+                Clear();
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

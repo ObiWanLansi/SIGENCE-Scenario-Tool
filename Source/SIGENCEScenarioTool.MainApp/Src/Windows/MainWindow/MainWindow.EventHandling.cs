@@ -10,6 +10,7 @@ using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
 using ICSharpCode.TextEditor.Actions;
+using ICSharpCode.TextEditor.Document;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
@@ -1010,10 +1011,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    return;
             //}
 
-            if (e.PropertyName == ScenarioMetaInformation.DESCRIPTION)
+            if (e.PropertyName == ScenarioMetaInformation.DESCRIPTIONMARKDOWN)
             {
-                this.tecDescription.Text = this.MetaInformation.Description;
-                this.tecDescription.Refresh();
+                this.tecDescriptionMarkdown.Text = this.MetaInformation.DescriptionMarkdown;
+                this.tecDescriptionMarkdown.Refresh();
 
                 // Nur wenn der Browser gerade sichbar ist noch updaten ...
                 //if (this.wbWebBrowser.IsVisible)
@@ -1024,10 +1025,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            if (e.PropertyName == ScenarioMetaInformation.STYLESHEET)
+            if (e.PropertyName == ScenarioMetaInformation.DESCRIPTIONSTYLESHEET)
             {
-                this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
-                this.tecStyleSheet.Refresh();
+                this.tecDescriptionStyleheet.Text = this.MetaInformation.DescriptionStylesheet;
+                this.tecDescriptionStyleheet.Refresh();
 
                 // Nur wenn der Browser gerade sichbar ist noch updaten ...
                 //if (this.wbWebBrowser.IsVisible)
@@ -1043,6 +1044,26 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Handles the DocumentChanged event of the Document_DescriptionMarkdown control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DocumentEventArgs"/> instance containing the event data.</param>
+        private void Document_DescriptionMarkdown_DocumentChanged(object sender, DocumentEventArgs e)
+        {
+            this.DescriptionMarkdownChanged = true;
+        }
+
+        /// <summary>
+        /// Handles the DocumentChanged event of the Document_DescriptionStylesheet control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DocumentEventArgs"/> instance containing the event data.</param>
+        private void Document_DescriptionStylesheet_DocumentChanged(object sender, DocumentEventArgs e)
+        {
+            this.DescriptionStylesheetChanged = true;
+        }
+
+        /// <summary>
         /// Handles the KeyUp event of the TextArea control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -1055,100 +1076,103 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    System.Windows.Forms.Help.ShowPopup(this.tecDescription, "Enter your name.", new System.Drawing.Point(this.tecDescription.Bottom, this.tecDescription.Right));
             //}
 
+            // ToDo: Highliter for Markdown / CSS
+            // ToDo: CSS for <code />
+
             switch (e.KeyData)
             {
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.A:
-                    this.MetaInformation.SetDescriptionWithoutEvent(this.tecDescription.Text);
+                    this.MetaInformation.SetDescriptionWithoutEvent(this.tecDescriptionMarkdown.Text);
                     UpdateScenarioDescriptionMarkdown();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D:
-                    this.tecDescription.Text = this.MetaInformation.Description;
+                    this.tecDescriptionMarkdown.Text = this.MetaInformation.DescriptionMarkdown;
                     UpdateScenarioDescriptionMarkdown();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y:
-                    new DeleteLine().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    new DeleteLine().Execute(this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea);
                     break;
 
                 //-------------------------------------------------------------
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.U:
-                    this.tecDescription.ToUpperCase();
+                    this.tecDescriptionMarkdown.ToUpperCase();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.L:
-                    this.tecDescription.ToLowerCase();
+                    this.tecDescriptionMarkdown.ToLowerCase();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.C:
-                    this.tecDescription.ToCapitalize();
+                    this.tecDescriptionMarkdown.ToCapitalize();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.B:
-                    this.tecDescription.ToBold();
+                    this.tecDescriptionMarkdown.ToBold();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.I:
-                    this.tecDescription.ToItalic();
+                    this.tecDescriptionMarkdown.ToItalic();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.S:
-                    this.tecDescription.ToStrikethrough();
+                    this.tecDescriptionMarkdown.ToStrikethrough();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D1:
-                    this.tecDescription.ToHeader(1);
+                    this.tecDescriptionMarkdown.ToHeader(1);
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D2:
-                    this.tecDescription.ToHeader(2);
+                    this.tecDescriptionMarkdown.ToHeader(2);
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D3:
-                    this.tecDescription.ToHeader(3);
+                    this.tecDescriptionMarkdown.ToHeader(3);
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D4:
-                    this.tecDescription.ToHeader(4);
+                    this.tecDescriptionMarkdown.ToHeader(4);
                     break;
 
                 //-------------------------------------------------------------
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.X:
-                    this.tecDescription.ToogleSpecialCharacter();
+                    this.tecDescriptionMarkdown.ToogleSpecialCharacter();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.T:
-                    this.tecDescription.ConvertTabsToSpaces();
+                    this.tecDescriptionMarkdown.ConvertTabsToSpaces();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.R:
-                    this.tecDescription.RemoveTrailingWhiteSpaces();
+                    this.tecDescriptionMarkdown.RemoveTrailingWhiteSpaces();
                     break;
 
                 //-------------------------------------------------------------
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L:
-                    this.tecDescription.InsertLoremIpsum();
+                    this.tecDescriptionMarkdown.InsertLoremIpsum();
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D:
-                    this.tecDescription.InsertDateTime();
+                    this.tecDescriptionMarkdown.InsertDateTime();
                     break;
 
                 //-------------------------------------------------------------
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B:
-                    new ToggleBookmark().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    new ToggleBookmark().Execute(this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea);
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Up:
-                    new GotoPrevBookmark(b => true).Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    new GotoPrevBookmark(b => true).Execute(this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea);
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down:
-                    new GotoNextBookmark(b => true).Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    new GotoNextBookmark(b => true).Execute(this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea);
                     break;
             }
 
@@ -1163,8 +1187,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_AcceptMarkdown_Click(object sender, RoutedEventArgs e)
         {
-            this.MetaInformation.SetDescriptionWithoutEvent(this.tecDescription.Text);
+            this.MetaInformation.SetDescriptionWithoutEvent(this.tecDescriptionMarkdown.Text);
+
             UpdateScenarioDescriptionMarkdown();
+
+            this.DescriptionMarkdownChanged = false;
 
             e.Handled = true;
         }
@@ -1177,9 +1204,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_DiscardMarkdown_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.Text = this.MetaInformation.Description;
+            this.tecDescriptionMarkdown.Text = this.MetaInformation.DescriptionMarkdown;
+
             //this.tecDescription.Refresh();
             UpdateScenarioDescriptionMarkdown();
+
+            this.DescriptionMarkdownChanged = false;
 
             e.Handled = true;
         }
@@ -1192,8 +1222,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_AcceptStylesheet_Click(object sender, RoutedEventArgs e)
         {
-            this.MetaInformation.SetStyleSheetWithoutEvent(this.tecStyleSheet.Text);
+            this.MetaInformation.SetStyleSheetWithoutEvent(this.tecDescriptionStyleheet.Text);
+
             UpdateScenarioDescriptionMarkdown();
+
+            this.DescriptionStylesheetChanged = false;
 
             e.Handled = true;
         }
@@ -1206,12 +1239,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_DiscardStylesheet_Click(object sender, RoutedEventArgs e)
         {
-            this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;
+            this.tecDescriptionStyleheet.Text = this.MetaInformation.DescriptionStylesheet;
+
             //this.tecStyleSheet.Refresh();
             UpdateScenarioDescriptionMarkdown();
 
+            this.DescriptionStylesheetChanged = false;
+
             e.Handled = true;
         }
+
 
 
         /// <summary>
@@ -1221,7 +1258,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_InsertTable_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.InsertTable();
+            this.tecDescriptionMarkdown.InsertTable();
 
             e.Handled = true;
         }
@@ -1234,7 +1271,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_InsertImage_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.InsertImage();
+            this.tecDescriptionMarkdown.InsertImage();
 
             e.Handled = true;
         }
@@ -1247,7 +1284,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_InsertLink_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.InsertLink();
+            this.tecDescriptionMarkdown.InsertLink();
 
             e.Handled = true;
         }
@@ -1260,7 +1297,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_InsertOrderedList_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.InsertOrderedList();
+            this.tecDescriptionMarkdown.InsertOrderedList();
 
             e.Handled = true;
         }
@@ -1273,7 +1310,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_InsertUnorderedList_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.InsertUnorderedList();
+            this.tecDescriptionMarkdown.InsertUnorderedList();
 
             e.Handled = true;
         }
@@ -1286,7 +1323,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_InsertBlockquote_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.InsertBlockquote();
+            this.tecDescriptionMarkdown.InsertBlockquote();
 
             e.Handled = true;
         }
@@ -1299,7 +1336,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_InsertCode_Click(object sender, RoutedEventArgs e)
         {
-            this.tecDescription.InsertCode();
+            this.tecDescriptionMarkdown.InsertCode();
 
             e.Handled = true;
         }

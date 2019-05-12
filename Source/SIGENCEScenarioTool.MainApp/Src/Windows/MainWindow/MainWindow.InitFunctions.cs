@@ -444,15 +444,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 tec.VRulerRow = 120;
             };
 
-            Init(this.tecDescription);
-            Init(this.tecStyleSheet);
+            Init(this.tecDescriptionMarkdown);
+            Init(this.tecDescriptionStyleheet);
 
             //HighlightingManager.Manager.AddSyntaxModeFileProvider(new PythonSyntaxModeFileProvider());
             //this.tecDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
 
-            this.tecDescription.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
-        }
+            this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
+            this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionMarkdown_DocumentChanged;
 
+            this.tecDescriptionStyleheet.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionStylesheet_DocumentChanged;
+            //this.tecDescription.ActiveTextAreaControl.TextArea.TextChanged += TextArea_TextChanged;
+        }
 
     } // end public partial class MainWindow 
 }

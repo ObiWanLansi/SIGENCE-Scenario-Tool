@@ -826,13 +826,13 @@
                                                 <Button Content="Blockquote" Width="100" Height="30" Margin="5" Click="Button_InsertBlockquote_Click" />
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right">
-                                                <Button Content="{StaticResource OK}" Width="30" Height="30" ToolTip="Accept The Changes." Margin="5" Click="Button_AcceptMarkdown_Click" />
-                                                <Button Content="{StaticResource DISCARD}" Width="30" Height="30" ToolTip="Discard The Changes." Margin="5" Click="Button_DiscardMarkdown_Click" />
+                                                <Button Content="{StaticResource OK}" Width="30" Height="30" IsEnabled="{Binding DescriptionMarkdownChanged}" ToolTip="Accept The Changes." Margin="5" Click="Button_AcceptMarkdown_Click" />
+                                                <Button Content="{StaticResource DISCARD}" Width="30" Height="30" IsEnabled="{Binding DescriptionMarkdownChanged}" ToolTip="Discard The Changes." Margin="5" Click="Button_DiscardMarkdown_Click" />
                                             </StackPanel>
                                         </DockPanel>
                                         <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1">
                                             <WindowsFormsHost>
-                                                <icsharpcode:TextEditorControl x:Name="tecDescription" />
+                                                <icsharpcode:TextEditorControl x:Name="tecDescriptionMarkdown" />
                                             </WindowsFormsHost>
                                         </Border>
                                     </Grid>
@@ -844,12 +844,12 @@
                                             <RowDefinition Height="*" />
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
-                                            <Button Content="{StaticResource OK}" Width="30" Height="30" ToolTip="Accept The Changes." Margin="5" Click="Button_AcceptStylesheet_Click" />
-                                            <Button Content="{StaticResource DISCARD}" Width="30" Height="30" ToolTip="Discard The Changes." Margin="5" Click="Button_DiscardStylesheet_Click" />
+                                            <Button Content="{StaticResource OK}" Width="30" Height="30" IsEnabled="{Binding DescriptionStylesheetChanged}" ToolTip="Accept The Changes." Margin="5" Click="Button_AcceptStylesheet_Click" />
+                                            <Button Content="{StaticResource DISCARD}" Width="30" Height="30" IsEnabled="{Binding DescriptionStylesheetChanged}" ToolTip="Discard The Changes." Margin="5" Click="Button_DiscardStylesheet_Click" />
                                         </StackPanel>
                                         <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1">
                                             <WindowsFormsHost>
-                                                <icsharpcode:TextEditorControl x:Name="tecStyleSheet" />
+                                                <icsharpcode:TextEditorControl x:Name="tecDescriptionStyleheet" />
                                             </WindowsFormsHost>
                                         </Border>
                                     </Grid>

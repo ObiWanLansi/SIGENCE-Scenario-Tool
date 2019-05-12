@@ -209,11 +209,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             sb.AppendLine($"|Version|{this.MetaInformation.Version}|");
             sb.AppendLine($"|Application Context|{this.MetaInformation.ApplicationContext}|");
             sb.AppendLine($"|Contact Person|{this.MetaInformation.ContactPerson}|");
-            if (this.MetaInformation.Description.IsNotEmpty())
+            if (this.MetaInformation.DescriptionMarkdown.IsNotEmpty())
             {
                 sb.AppendLine($"|User Description|[ScenarioDescription.md](./ScenarioDescription.md)|");
                 string strOutputUserDescription = $"{strOutputDirectory}\\ScenarioDescription.md";
-                File.WriteAllText(strOutputUserDescription, this.MetaInformation.Description, Encoding.UTF8);
+                File.WriteAllText(strOutputUserDescription, this.MetaInformation.DescriptionMarkdown, Encoding.UTF8);
             }
             sb.AppendLine();
             sb.AppendLine("---");
@@ -251,12 +251,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             sb.AppendLine("## Screenshot");
             sb.AppendLine();
 
-            string strOutputFilenameScreenshot = $"{strOutputDirectory}\\ScenarioScreenshot.png";
-            var screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
-            Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
+            try
+            {
+                string strOutputFilenameScreenshot = $"{strOutputDirectory}\\ScenarioScreenshot.png";
+                var screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
+                Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
 
-            sb.AppendLine("![ScenarioScreenshot](./ScenarioScreenshot.png)");
-
+                sb.AppendLine("![ScenarioScreenshot](./ScenarioScreenshot.png)");
+            }
+            catch (Exception ex)
+            {
+                sb.AppendLine($"**{ex.Message}**");
+                MB.Error(ex);
+            }
             //-----------------------------------------------------------------
 
             File.WriteAllText(strOutputFilenameMarkdown, sb.ToString(), Encoding.UTF8);

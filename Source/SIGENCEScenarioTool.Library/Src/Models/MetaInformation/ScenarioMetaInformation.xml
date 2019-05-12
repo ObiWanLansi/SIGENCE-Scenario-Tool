@@ -4,7 +4,7 @@
     <Property Name="Version" Type="string" Init="&quot;&quot;" Comment="The Version Of This Scenario." />
     <Property Name="ApplicationContext" Type="string" Init="&quot;&quot;" Comment="For Which Application Or Tool Is The Scenario." />
     <Property Name="ContactPerson" Type="string" Init="&quot;&quot;" Comment="An Contact Person If You Have Questions About The Scenario." />
-    <Property Name="Description" Type="string" Init="&quot;&quot;" Comment="An Markdown Text Content Where You Can Describe The Scenario And The Excepted Result." UseCDATA="True" />
-    <Property Name="Stylesheet" Type="string" Init="&quot;&quot;" Comment="An Optional Stylesheet To Use For Rendering The Generated HTML." UseCDATA="True" />
+    <Property Name="DescriptionMarkdown" Type="string" Init="&quot;&quot;" Comment="An Markdown Content Where You Can Describe The Scenario And The Excepted Result." UseCDATA="True" />
+    <Property Name="DescriptionStylesheet" Type="string" Init="&quot;&quot;" Comment="An Optional Stylesheet To Use For Rendering The Generated HTML." UseCDATA="True" />
 
 </ScenarioMetaInformation>

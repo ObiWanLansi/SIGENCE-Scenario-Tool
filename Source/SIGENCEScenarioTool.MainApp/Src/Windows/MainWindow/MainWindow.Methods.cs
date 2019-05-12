@@ -53,6 +53,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.mcMapControl.Markers.Clear();
             this.MetaInformation.Clear();
 
+            // Ist ja noch nix passiert ...
+            this.DescriptionMarkdownChanged = false;
+            this.DescriptionStylesheetChanged = false;
+
             GC.WaitForPendingFinalizers();
             GC.Collect();
 
@@ -327,16 +331,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void UpdateScenarioDescriptionMarkdown()
         {
-            if (this.MetaInformation.Description.IsNotEmpty())
+            if (this.MetaInformation.DescriptionMarkdown.IsNotEmpty())
             {
                 try
                 {
                     StringBuilder sbHtml = new StringBuilder(8192);
 
-                    string strHeaderWithCSS = HEADER.Replace("$STYLE$", this.MetaInformation.Stylesheet);
+                    string strHeaderWithCSS = HEADER.Replace("$STYLE$", this.MetaInformation.DescriptionStylesheet);
 
                     sbHtml.AppendLine(strHeaderWithCSS);
-                    sbHtml.AppendLine(Markdown.ToHtml(this.tecDescription.Text, MAPI));
+                    sbHtml.AppendLine(Markdown.ToHtml(this.tecDescriptionMarkdown.Text, MAPI));
                     sbHtml.AppendLine(FOOTER);
 
                     //this.Dispatcher.Invoke(() => this.wbWebBrowser.NavigateToString(sbHtml.ToString()));
@@ -375,15 +379,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 this.MetaInformation.ContactPerson = Environment.UserName;
             }
 
-            if (this.MetaInformation.Description.IsEmpty())
+            if (this.MetaInformation.DescriptionMarkdown.IsEmpty())
             {
-                this.MetaInformation.Description = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.md");
+                this.MetaInformation.DescriptionMarkdown = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.md");
             }
 
-            if (this.MetaInformation.Stylesheet.IsEmpty())
+            if (this.MetaInformation.DescriptionStylesheet.IsEmpty())
             {
-                this.MetaInformation.Stylesheet = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.css");
+                this.MetaInformation.DescriptionStylesheet = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.css");
             }
+
+            // Ist ja noch nix passiert ...
+            this.DescriptionMarkdownChanged = false;
+            this.DescriptionStylesheetChanged = false;
 
             this.tiMetaInformation.IsSelected = true;
         }

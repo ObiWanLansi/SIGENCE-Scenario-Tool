@@ -56,7 +56,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 //---------------------------------------------------------
 
+                // Create not an new instance, only load the data into the existing one ...
                 this.MetaInformation.LoadFromXml(xdoc.Root);
+
+                // Ist ja noch nix passiert ...
+                this.DescriptionMarkdownChanged = false;
+                this.DescriptionStylesheetChanged = false;
 
                 //this.tecDescription.Text = this.MetaInformation.Description;
                 //this.tecStyleSheet.Text = this.MetaInformation.Stylesheet;

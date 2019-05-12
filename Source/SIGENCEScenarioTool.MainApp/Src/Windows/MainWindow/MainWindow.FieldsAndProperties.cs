@@ -172,29 +172,48 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// The string scenario description
-        ///// </summary>
-        //private string strScenarioDescription = "";
+        /// <summary>
+        /// The b description markdown changed
+        /// </summary>
+        private bool _bDescriptionMarkdownChanged = false;
 
-        ///// <summary>
-        ///// Gets or sets the scenario description.
-        ///// </summary>
-        ///// <value>
-        ///// The scenario description.
-        ///// </value>
-        //public string ScenarioDescription
-        //{
-        //    get { return this.strScenarioDescription; }
-        //    set
-        //    {
-        //        this.strScenarioDescription = value;
+        /// <summary>
+        /// Gets or sets a value indicating whether [description markdown changed].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [description markdown changed]; otherwise, <c>false</c>.
+        /// </value>
+        public bool DescriptionMarkdownChanged
+        {
+            get { return this._bDescriptionMarkdownChanged; }
+            set
+            {
+                this._bDescriptionMarkdownChanged = value;
+                FirePropertyChanged();
+            }
+        }
 
-        //        UpdateScenarioDescription();
 
-        //        FirePropertyChanged();
-        //    }
-        //}
+        /// <summary>
+        /// The b description stylesheet changed
+        /// </summary>
+        private bool _bDescriptionStylesheetChanged = false;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [description stylesheet changed].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [description stylesheet changed]; otherwise, <c>false</c>.
+        /// </value>
+        public bool DescriptionStylesheetChanged
+        {
+            get { return this._bDescriptionStylesheetChanged; }
+            set
+            {
+                this._bDescriptionStylesheetChanged = value;
+                FirePropertyChanged();
+            }
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

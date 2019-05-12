@@ -133,75 +133,75 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
 
         //---------------------------------------------------------------------
 
-        #region Description
+        #region DescriptionMarkdown
 
         ///<summary>
-        /// The PropertyName As ReadOnly String For Description.
+        /// The PropertyName As ReadOnly String For DescriptionMarkdown.
         ///</summary>
-        public const string DESCRIPTION = "Description";
+        public const string DESCRIPTIONMARKDOWN = "DescriptionMarkdown";
 
         ///<summary>
-        /// The DefaultValue For Description.
+        /// The DefaultValue For DescriptionMarkdown.
         ///</summary>
-        public static readonly string DEFAULT_DESCRIPTION = "";
+        public static readonly string DEFAULT_DESCRIPTIONMARKDOWN = "";
         
         ///<summary>
-        /// The Internal Field For Description.
+        /// The Internal Field For DescriptionMarkdown.
         ///</summary>
-        //private string _Description = "";
-        private string _Description = DEFAULT_DESCRIPTION;
+        //private string _DescriptionMarkdown = "";
+        private string _DescriptionMarkdown = DEFAULT_DESCRIPTIONMARKDOWN;
 
         ///<summary>
-        /// An Markdown Text Content Where You Can Describe The Scenario And The Excepted Result.
+        /// An Markdown Content Where You Can Describe The Scenario And The Excepted Result.
         ///</summary>
-        public string Description 
+        public string DescriptionMarkdown 
         {
-            get { return _Description; }
+            get { return _DescriptionMarkdown; }
             set
             {
-                _Description = value;
+                _DescriptionMarkdown = value;
                 FirePropertyChanged();
             }
         }
 
-        //static public readonly string TOOLTIP_DESCRIPTION = "An Markdown Text Content Where You Can Describe The Scenario And The Excepted Result.";
+        //static public readonly string TOOLTIP_DESCRIPTIONMARKDOWN = "An Markdown Content Where You Can Describe The Scenario And The Excepted Result.";
 
         #endregion        
 
         //---------------------------------------------------------------------
 
-        #region Stylesheet
+        #region DescriptionStylesheet
 
         ///<summary>
-        /// The PropertyName As ReadOnly String For Stylesheet.
+        /// The PropertyName As ReadOnly String For DescriptionStylesheet.
         ///</summary>
-        public const string STYLESHEET = "Stylesheet";
+        public const string DESCRIPTIONSTYLESHEET = "DescriptionStylesheet";
 
         ///<summary>
-        /// The DefaultValue For Stylesheet.
+        /// The DefaultValue For DescriptionStylesheet.
         ///</summary>
-        public static readonly string DEFAULT_STYLESHEET = "";
+        public static readonly string DEFAULT_DESCRIPTIONSTYLESHEET = "";
         
         ///<summary>
-        /// The Internal Field For Stylesheet.
+        /// The Internal Field For DescriptionStylesheet.
         ///</summary>
-        //private string _Stylesheet = "";
-        private string _Stylesheet = DEFAULT_STYLESHEET;
+        //private string _DescriptionStylesheet = "";
+        private string _DescriptionStylesheet = DEFAULT_DESCRIPTIONSTYLESHEET;
 
         ///<summary>
         /// An Optional Stylesheet To Use For Rendering The Generated HTML.
         ///</summary>
-        public string Stylesheet 
+        public string DescriptionStylesheet 
         {
-            get { return _Stylesheet; }
+            get { return _DescriptionStylesheet; }
             set
             {
-                _Stylesheet = value;
+                _DescriptionStylesheet = value;
                 FirePropertyChanged();
             }
         }
 
-        //static public readonly string TOOLTIP_STYLESHEET = "An Optional Stylesheet To Use For Rendering The Generated HTML.";
+        //static public readonly string TOOLTIP_DESCRIPTIONSTYLESHEET = "An Optional Stylesheet To Use For Rendering The Generated HTML.";
 
         #endregion        
 
@@ -221,8 +221,8 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
                 XElementExtension.GetXElement("Version", Version, false),
                 XElementExtension.GetXElement("ApplicationContext", ApplicationContext, false),
                 XElementExtension.GetXElement("ContactPerson", ContactPerson, false),
-                XElementExtension.GetXElement("Description", Description, true),
-                XElementExtension.GetXElement("Stylesheet", Stylesheet, true)  
+                XElementExtension.GetXElement("DescriptionMarkdown", DescriptionMarkdown, true),
+                XElementExtension.GetXElement("DescriptionStylesheet", DescriptionStylesheet, true)  
             );
         }
 
@@ -250,8 +250,8 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
                 Version = eChild.GetProperty<string>("Version",""),
                 ApplicationContext = eChild.GetProperty<string>("ApplicationContext",""),
                 ContactPerson = eChild.GetProperty<string>("ContactPerson",""),
-                Description = eChild.GetProperty<string>("Description",""),
-                Stylesheet = eChild.GetProperty<string>("Stylesheet","")            
+                DescriptionMarkdown = eChild.GetProperty<string>("DescriptionMarkdown",""),
+                DescriptionStylesheet = eChild.GetProperty<string>("DescriptionStylesheet","")            
             };
         }
 
@@ -317,32 +317,32 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
                 return false;
             }
 
-            if (other.Description == null && Description != null)
+            if (other.DescriptionMarkdown == null && DescriptionMarkdown != null)
             {
                 return false;
             }
 
-            if (other.Description != null && Description == null)
+            if (other.DescriptionMarkdown != null && DescriptionMarkdown == null)
             {
                 return false;
             }
 
-            if (other.Description != null && Description != null && other.Description.Equals(Description) == false)
+            if (other.DescriptionMarkdown != null && DescriptionMarkdown != null && other.DescriptionMarkdown.Equals(DescriptionMarkdown) == false)
             {
                 return false;
             }
 
-            if (other.Stylesheet == null && Stylesheet != null)
+            if (other.DescriptionStylesheet == null && DescriptionStylesheet != null)
             {
                 return false;
             }
 
-            if (other.Stylesheet != null && Stylesheet == null)
+            if (other.DescriptionStylesheet != null && DescriptionStylesheet == null)
             {
                 return false;
             }
 
-            if (other.Stylesheet != null && Stylesheet != null && other.Stylesheet.Equals(Stylesheet) == false)
+            if (other.DescriptionStylesheet != null && DescriptionStylesheet != null && other.DescriptionStylesheet.Equals(DescriptionStylesheet) == false)
             {
                 return false;
             }
@@ -400,14 +400,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         public string TOOLTIP_CONTACTPERSON { get { return "An Contact Person If You Have Questions About\nThe Scenario."; } }
 
         /// <summary>
-        /// The tooltip for the Description.
+        /// The tooltip for the DescriptionMarkdown.
         /// </summary>
-        public string TOOLTIP_DESCRIPTION { get { return "An Markdown Text Content Where You Can Describe\nThe Scenario And The Excepted Result."; } }
+        public string TOOLTIP_DESCRIPTIONMARKDOWN { get { return "An Markdown Content Where You Can Describe\nThe Scenario And The Excepted Result."; } }
 
         /// <summary>
-        /// The tooltip for the Stylesheet.
+        /// The tooltip for the DescriptionStylesheet.
         /// </summary>
-        public string TOOLTIP_STYLESHEET { get { return "An Optional Stylesheet To Use For Rendering\nThe Generated HTML."; } }
+        public string TOOLTIP_DESCRIPTIONSTYLESHEET { get { return "An Optional Stylesheet To Use For Rendering\nThe Generated HTML."; } }
 
     } // end public class ScenarioMetaInformationTooltips
 }
