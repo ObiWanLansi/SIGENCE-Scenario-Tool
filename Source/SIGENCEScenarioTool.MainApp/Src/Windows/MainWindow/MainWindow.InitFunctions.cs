@@ -438,7 +438,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 tec.ShowEOLMarkers = false;
                 tec.ShowLineNumbers = true;
 
-                tec.IsIconBarVisible = false;
+                tec.IsIconBarVisible = true;
                 tec.AllowCaretBeyondEOL = true;
                 tec.AllowDrop = false;
                 tec.VRulerRow = 120;

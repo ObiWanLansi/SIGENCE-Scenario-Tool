@@ -7,6 +7,8 @@ using ICSharpCode.TextEditor.Document;
 
 using SIGENCEScenarioTool.Tools;
 
+
+
 namespace SIGENCEScenarioTool.Extensions
 {
     /// <summary>
@@ -86,7 +88,7 @@ namespace SIGENCEScenarioTool.Extensions
                 {
                     ISelection selection = lSelection[0];
                     string strText = $"**{selection.SelectedText}**";
-                    tec.Document.Replace(selection.Offset, selection.Length + 4, strText);
+                    tec.Document.Replace(selection.Offset, selection.Length, strText);
                 }
             }
             else
@@ -110,7 +112,7 @@ namespace SIGENCEScenarioTool.Extensions
                 {
                     ISelection selection = lSelection[0];
                     string strText = $"*{selection.SelectedText}*";
-                    tec.Document.Replace(selection.Offset, selection.Length + 2, strText);
+                    tec.Document.Replace(selection.Offset, selection.Length, strText);
                 }
             }
             else
@@ -121,6 +123,41 @@ namespace SIGENCEScenarioTool.Extensions
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// To the header.
+        /// </summary>
+        /// <param name="tec">The tec.</param>
+        /// <param name="iLevel">The i level.</param>
+        public static void ToHeader(this TextEditorControl tec, int iLevel)
+        {
+            if (tec.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
+            {
+                tec.ActiveTextAreaControl.SelectionManager.ClearSelection();
+            }
+
+            tec.ActiveTextAreaControl.TextArea.Caret.Column = 0;
+
+            tec.ActiveTextAreaControl.TextArea.InsertString(new string('#', iLevel) + " ");
+
+            //if (tec.ActiveTextAreaControl.SelectionManager.HasSomethingSelected)
+            //{
+            //    List<ISelection> lSelection = tec.ActiveTextAreaControl.SelectionManager.SelectionCollection;
+
+            //    if (lSelection.Count == 1)
+            //    {
+            //        ISelection selection = lSelection[0];
+            //        string strText = $"*{selection.SelectedText}*";
+            //        tec.Document.Replace(selection.Offset, selection.Length, strText);
+            //    }
+            //}
+            //else
+            //{
+            //    tec.ActiveTextAreaControl.TextArea.InsertString("*Italic Text*");
+            //}
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// Inserts the lorem ipsum.

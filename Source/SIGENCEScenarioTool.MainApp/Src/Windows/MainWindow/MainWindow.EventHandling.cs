@@ -9,6 +9,8 @@ using System.Windows.Input;
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
+using ICSharpCode.TextEditor.Actions;
+
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.MetaInformation;
@@ -1055,7 +1057,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
             //TODO: 
-            //      Insert Table, Orderd List, NUmberlist, image, link, ....
+            //      Insert Table, Orderd List, NUmberlist, image, link, .... check list
 
             switch (e.KeyData)
             {
@@ -1067,6 +1069,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D:
                     this.tecDescription.Text = this.MetaInformation.Description;
                     UpdateScenarioDescriptionMarkdown();
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y:
+                    new DeleteLine().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
                     break;
 
                 //-------------------------------------------------------------
@@ -1091,8 +1097,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.tecDescription.ToItalic();
                     break;
 
-                //case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.S:
-                //    this.tecDescription.ToCapitalize();
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D1:
+                    this.tecDescription.ToHeader(1);
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D2:
+                    this.tecDescription.ToHeader(2);
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D3:
+                    this.tecDescription.ToHeader(3);
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D4:
+                    this.tecDescription.ToHeader(4);
+                    break;
+
+                //case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.D5:
+                //    this.tecDescription.ToHeader(5);
                 //    break;
 
                 //-------------------------------------------------------------
@@ -1101,13 +1123,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.tecDescription.ShowSpaces = !this.tecDescription.ShowSpaces;
                     this.tecDescription.ShowTabs = !this.tecDescription.ShowTabs;
                     this.tecDescription.ShowEOLMarkers = !this.tecDescription.ShowEOLMarkers;
+                    // ToogleSpecialCharacter
                     break;
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.T:
                     this.tecDescription.ConvertTabsToSpaces();
                     break;
 
-                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.W:
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.R:
                     this.tecDescription.RemoveTrailingWhiteSpaces();
                     break;
 
@@ -1121,6 +1144,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.tecDescription.InsertDateTime();
                     break;
 
+                //-------------------------------------------------------------
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B:
+                    new ToggleBookmark().Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Up:
+                    new GotoPrevBookmark(b => true).Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    break;
+
+                case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down:
+                    new GotoNextBookmark(b => true).Execute(this.tecDescription.ActiveTextAreaControl.TextArea);
+                    break;
             }
 
             e.Handled = true;
