@@ -173,7 +173,8 @@
   <HelpKINode Title="DEFAULT_BANDWIDTH_HZ field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_BANDWIDTH_HZ.htm" />
   <HelpKINode Title="DEFAULT_CENTERFREQUENCY_HZ field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_CENTERFREQUENCY_HZ.htm" />
   <HelpKINode Title="DEFAULT_CONTACTPERSON field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_CONTACTPERSON.htm" />
-  <HelpKINode Title="DEFAULT_DESCRIPTION field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_DESCRIPTION.htm" />
+  <HelpKINode Title="DEFAULT_DESCRIPTIONMARKDOWN field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_DESCRIPTIONMARKDOWN.htm" />
+  <HelpKINode Title="DEFAULT_DESCRIPTIONSTYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_DESCRIPTIONSTYLESHEET.htm" />
   <HelpKINode Title="DEFAULT_DEVICESOURCE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_DEVICESOURCE.htm" />
   <HelpKINode Title="DEFAULT_GAIN_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_GAIN_DB.htm" />
   <HelpKINode Title="DEFAULT_ID field">
@@ -200,7 +201,6 @@
   <HelpKINode Title="DEFAULT_RXTXTYPE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_RXTXTYPE.htm" />
   <HelpKINode Title="DEFAULT_SIGNALTONOISERATIO_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_SIGNALTONOISERATIO_DB.htm" />
   <HelpKINode Title="DEFAULT_STARTTIME field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_STARTTIME.htm" />
-  <HelpKINode Title="DEFAULT_STYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_STYLESHEET.htm" />
   <HelpKINode Title="DEFAULT_TECHNICALPARAMETERS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_TECHNICALPARAMETERS.htm" />
   <HelpKINode Title="DEFAULT_VERSION field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_VERSION.htm" />
   <HelpKINode Title="DEFAULT_XPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_XPOS.htm" />
@@ -208,8 +208,10 @@
   <HelpKINode Title="DEFAULT_YPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YPOS.htm" />
   <HelpKINode Title="DEFAULT_ZPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_ZPOS.htm" />
   <HelpKINode Title="DerivedFromType method" Url="html/M_SIGENCEScenarioTool_Extensions_TypeExtension_DerivedFromType.htm" />
-  <HelpKINode Title="DESCRIPTION field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DESCRIPTION.htm" />
-  <HelpKINode Title="Description property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Description.htm" />
+  <HelpKINode Title="DESCRIPTIONMARKDOWN field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DESCRIPTIONMARKDOWN.htm" />
+  <HelpKINode Title="DescriptionMarkdown property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DescriptionMarkdown.htm" />
+  <HelpKINode Title="DESCRIPTIONSTYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DESCRIPTIONSTYLESHEET.htm" />
+  <HelpKINode Title="DescriptionStylesheet property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DescriptionStylesheet.htm" />
   <HelpKINode Title="DeviceSource enumeration" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
   <HelpKINode Title="DEVICESOURCE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEVICESOURCE.htm" />
   <HelpKINode Title="DeviceSource property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_DeviceSource.htm" />
@@ -448,6 +450,7 @@
   <HelpKINode Title="GetLastPrimarykey method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_GetLastPrimarykey.htm" />
   <HelpKINode Title="GetLineStringFromWKB method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetLineStringFromWKB.htm" />
   <HelpKINode Title="GetLongFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetLongFromNode.htm" />
+  <HelpKINode Title="GetLoremIpsum method" Url="html/M_SIGENCEScenarioTool_Tools_LoremIpsum_GetLoremIpsum.htm" />
   <HelpKINode Title="GetMultiPolygonFromWKB method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetMultiPolygonFromWKB.htm" />
   <HelpKINode Title="GetNativeType method" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_GetNativeType.htm" />
   <HelpKINode Title="GetPointFromWKB method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetPointFromWKB.htm" />
@@ -610,6 +613,13 @@
   <HelpKINode Title="Longitude.IsValid method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_IsValid.htm" />
   <HelpKINode Title="Longitude.Longitude constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude__ctor.htm" />
   <HelpKINode Title="Longitude.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_ToString.htm" />
+  <HelpKINode Title="LoremIpsum class">
+    <HelpKINode Title="LoremIpsum Class" Url="html/T_SIGENCEScenarioTool_Tools_LoremIpsum.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Tools_LoremIpsum__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_LoremIpsum.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LoremIpsum.GetLoremIpsum method" Url="html/M_SIGENCEScenarioTool_Tools_LoremIpsum_GetLoremIpsum.htm" />
+  <HelpKINode Title="LoremIpsum.LoremIpsum constructor" Url="html/M_SIGENCEScenarioTool_Tools_LoremIpsum__ctor.htm" />
   <HelpKINode Title="LTE property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_LTE.htm" />
   <HelpKINode Title="Man_Made enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="MarkdownExtension class">
@@ -999,19 +1009,19 @@
   <HelpKINode Title="ScenarioMetaInformation.ContactPerson property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_ContactPerson.htm" />
   <HelpKINode Title="ScenarioMetaInformation.DEFAULT_APPLICATIONCONTEXT field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_APPLICATIONCONTEXT.htm" />
   <HelpKINode Title="ScenarioMetaInformation.DEFAULT_CONTACTPERSON field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_CONTACTPERSON.htm" />
-  <HelpKINode Title="ScenarioMetaInformation.DEFAULT_DESCRIPTION field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_DESCRIPTION.htm" />
-  <HelpKINode Title="ScenarioMetaInformation.DEFAULT_STYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_STYLESHEET.htm" />
+  <HelpKINode Title="ScenarioMetaInformation.DEFAULT_DESCRIPTIONMARKDOWN field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_DESCRIPTIONMARKDOWN.htm" />
+  <HelpKINode Title="ScenarioMetaInformation.DEFAULT_DESCRIPTIONSTYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_DESCRIPTIONSTYLESHEET.htm" />
   <HelpKINode Title="ScenarioMetaInformation.DEFAULT_VERSION field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_VERSION.htm" />
-  <HelpKINode Title="ScenarioMetaInformation.DESCRIPTION field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DESCRIPTION.htm" />
-  <HelpKINode Title="ScenarioMetaInformation.Description property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Description.htm" />
+  <HelpKINode Title="ScenarioMetaInformation.DESCRIPTIONMARKDOWN field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DESCRIPTIONMARKDOWN.htm" />
+  <HelpKINode Title="ScenarioMetaInformation.DescriptionMarkdown property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DescriptionMarkdown.htm" />
+  <HelpKINode Title="ScenarioMetaInformation.DESCRIPTIONSTYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DESCRIPTIONSTYLESHEET.htm" />
+  <HelpKINode Title="ScenarioMetaInformation.DescriptionStylesheet property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DescriptionStylesheet.htm" />
   <HelpKINode Title="ScenarioMetaInformation.Equals method" Url="html/Overload_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Equals.htm" />
   <HelpKINode Title="ScenarioMetaInformation.FromXml method" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_FromXml.htm" />
   <HelpKINode Title="ScenarioMetaInformation.LoadFromXml method" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_LoadFromXml.htm" />
   <HelpKINode Title="ScenarioMetaInformation.ScenarioMetaInformation constructor" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation__ctor.htm" />
   <HelpKINode Title="ScenarioMetaInformation.SetDescriptionWithoutEvent method" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_SetDescriptionWithoutEvent.htm" />
   <HelpKINode Title="ScenarioMetaInformation.SetStyleSheetWithoutEvent method" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_SetStyleSheetWithoutEvent.htm" />
-  <HelpKINode Title="ScenarioMetaInformation.STYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_STYLESHEET.htm" />
-  <HelpKINode Title="ScenarioMetaInformation.Stylesheet property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Stylesheet.htm" />
   <HelpKINode Title="ScenarioMetaInformation.ToXml method" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_ToXml.htm" />
   <HelpKINode Title="ScenarioMetaInformation.VERSION field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_VERSION.htm" />
   <HelpKINode Title="ScenarioMetaInformation.Version property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Version.htm" />
@@ -1024,8 +1034,8 @@
   <HelpKINode Title="ScenarioMetaInformationTooltips.ScenarioMetaInformationTooltips constructor" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips__ctor.htm" />
   <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_APPLICATIONCONTEXT property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_APPLICATIONCONTEXT.htm" />
   <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_CONTACTPERSON property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_CONTACTPERSON.htm" />
-  <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_DESCRIPTION property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_DESCRIPTION.htm" />
-  <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_STYLESHEET property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_STYLESHEET.htm" />
+  <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_DESCRIPTIONMARKDOWN property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_DESCRIPTIONMARKDOWN.htm" />
+  <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_DESCRIPTIONSTYLESHEET property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_DESCRIPTIONSTYLESHEET.htm" />
   <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_VERSION property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_VERSION.htm" />
   <HelpKINode Title="Secondary enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Secondary_Link enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
@@ -1114,6 +1124,7 @@
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoHelper class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoTag enumeration" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Highway enumeration" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Tools.LoremIpsum class" Url="html/T_SIGENCEScenarioTool_Tools_LoremIpsum.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.MB class" Url="html/T_SIGENCEScenarioTool_Tools_MB.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.NoDisplayAttribute class" Url="html/T_SIGENCEScenarioTool_Tools_NoDisplayAttribute.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.PythonSyntaxModeFileProvider class" Url="html/T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm" />
@@ -1222,8 +1233,6 @@
   <HelpKINode Title="StringList to String() conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList_op_Implicit.htm" />
   <HelpKINode Title="StringList to String[] conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList_op_Implicit.htm" />
   <HelpKINode Title="StringList.StringList constructor" Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor.htm" />
-  <HelpKINode Title="STYLESHEET field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_STYLESHEET.htm" />
-  <HelpKINode Title="Stylesheet property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Stylesheet.htm" />
   <HelpKINode Title="Symbol property" Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Symbol.htm" />
   <HelpKINode Title="SyntaxModes property" Url="html/P_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_SyntaxModes.htm" />
   <HelpKINode Title="Table method" Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Table.htm" />
@@ -1284,7 +1293,8 @@
   <HelpKINode Title="TOOLTIP_BANDWIDTH_HZ property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_BANDWIDTH_HZ.htm" />
   <HelpKINode Title="TOOLTIP_CENTERFREQUENCY_HZ property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_CENTERFREQUENCY_HZ.htm" />
   <HelpKINode Title="TOOLTIP_CONTACTPERSON property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_CONTACTPERSON.htm" />
-  <HelpKINode Title="TOOLTIP_DESCRIPTION property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_DESCRIPTION.htm" />
+  <HelpKINode Title="TOOLTIP_DESCRIPTIONMARKDOWN property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_DESCRIPTIONMARKDOWN.htm" />
+  <HelpKINode Title="TOOLTIP_DESCRIPTIONSTYLESHEET property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_DESCRIPTIONSTYLESHEET.htm" />
   <HelpKINode Title="TOOLTIP_DEVICESOURCE property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_DEVICESOURCE.htm" />
   <HelpKINode Title="TOOLTIP_GAIN_DB property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_GAIN_DB.htm" />
   <HelpKINode Title="TOOLTIP_ID property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_ID.htm" />
@@ -1298,7 +1308,6 @@
   <HelpKINode Title="TOOLTIP_RXTXTYPE property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_RXTXTYPE.htm" />
   <HelpKINode Title="TOOLTIP_SIGNALTONOISERATIO_DB property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_SIGNALTONOISERATIO_DB.htm" />
   <HelpKINode Title="TOOLTIP_STARTTIME property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_STARTTIME.htm" />
-  <HelpKINode Title="TOOLTIP_STYLESHEET property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_STYLESHEET.htm" />
   <HelpKINode Title="TOOLTIP_TECHNICALPARAMETERS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_TECHNICALPARAMETERS.htm" />
   <HelpKINode Title="TOOLTIP_VERSION property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_VERSION.htm" />
   <HelpKINode Title="TOOLTIP_XPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_XPOS.htm" />
