@@ -1,6 +1,25 @@
 # SIGENCE Scenario Tool
 
+- [SIGENCE Scenario Tool](#sigence-scenario-tool)
+  - [General](#general)
+  - [Documentation](#documentation)
+    - [Basic](#basic)
+    - [Advanced](#advanced)
+  - [Quick Links](#quick-links)
+  - [Useful Links](#useful-links)
+    - [Technologie](#technologie)
+    - [Tutorials](#tutorials)
+    - [Tools](#tools)
+  - [Screenshot](#screenshot)
+  - [Dependencies &amp; Third Party Libraries](#dependencies-amp-third-party-libraries)
+  - [License](#license)
+
+---
+
+## General
 A **little** tool to place RF Devices on a map, edit, save and load them, or export the devicelist to a file (.csv,.json,.xml,.xlsx).
+
+---
 
 ## Documentation
 
@@ -14,11 +33,13 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [Known RxTxTypes](Source/SIGENCEScenarioTool.Library/Src/Models/RxTxTypes/RxTxTypes.Known.md)
 - [Other Enumerations](Source/SIGENCEScenarioTool.Library/Src/Models/EnumerationsAndConstants.md)
 
+---
 
 ## Quick Links
 - [Issues](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/)
 - [Kanban Board](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1?fullscreen=true)
 
+---
 
 ## Useful Links
 
@@ -45,11 +66,13 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [SQLite](https://sqlite.org/index.html)
 - [SQLite Administration](http://www.sqliteexpert.com/)
 
+---
 
 ## Screenshot
 
 ![Sorry, but here should be a Screenshot :-(](Screenshots/MainApplication.jpg  "Screenshot from the MainWindow.")
 
+---
 
 ## Dependencies &amp; Third Party Libraries
 
@@ -66,6 +89,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [IronPython](https://www.nuget.org/packages/IronPython/)
 - [Markdig](https://www.nuget.org/packages/Markdig/)
 
+---
 
 ## License
 
