@@ -65,6 +65,7 @@ A **little** tool to place RF Devices on a map, edit, save and load them, or exp
 - [IronPython](http://ironpython.net/documentation/dotnet/)
 - [SQLite](https://sqlite.org/index.html)
 - [SQLite Administration](http://www.sqliteexpert.com/)
+- [JSON Converter](https://app.quicktype.io/)
 
 ---
 
