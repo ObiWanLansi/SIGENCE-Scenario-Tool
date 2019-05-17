@@ -232,6 +232,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     sb.AppendLine($"|{dev.Id}|{dev.DeviceSource}|{dev.StartTime}|{dev.Name}|{dev.HumanLatitude}|{dev.HumanLongitude}|{dev.HumanAltitude}|{dev.Roll}|{dev.Pitch}|{dev.Yaw}|{dev.RxTxType}|{dev.AntennaType}|{dev.HumanCenterFrequency}|{dev.HumanBandwidth}|{dev.HumanGain}|{dev.HumanSignalToNoiseRatio}|");
                 }
             }
+            sb.AppendLine();
             sb.AppendLine("---");
 
             // 3. Validation Results

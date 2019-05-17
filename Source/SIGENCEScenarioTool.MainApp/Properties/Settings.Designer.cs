@@ -249,5 +249,17 @@ namespace SIGENCEScenarioTool.Properties {
                 this["MaxLastItems"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableMQTT {
+            get {
+                return ((bool)(this["EnableMQTT"]));
+            }
+            set {
+                this["EnableMQTT"] = value;
+            }
+        }
     }
 }
