@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
+using System.Net.Mqtt;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 using GMap.NET;
@@ -73,6 +76,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             set
             {
                 this.iUniqueDeviceCount = value;
+
                 FirePropertyChanged();
             }
         }
@@ -117,6 +121,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             set
             {
                 this.iMinTimeSeconds = value;
+
                 FirePropertyChanged();
             }
         }
@@ -139,6 +144,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             set
             {
                 this.iMaxTimeSeconds = value;
+
                 FirePropertyChanged();
             }
         }
@@ -161,6 +167,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             set
             {
                 this.strCurrentTime = value;
+
                 FirePropertyChanged();
             }
         }
@@ -183,9 +190,53 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             set
             {
                 this.bIsRunning = value;
+
                 FirePropertyChanged();
             }
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// The b MQTT is enabled
+        /// </summary>
+        private bool bIsMQTTEnabled = Properties.Settings.Default.EnableMQTT;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether [MQTT is enabled].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [MQTT is enabled]; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsMQTTEnabled
+        {
+            get { return this.bIsMQTTEnabled; }
+            set
+            {
+                this.bIsMQTTEnabled = value;
+
+                EnableOrDisableMQTT();
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the MQTT status brush.
+        /// </summary>
+        /// <value>
+        /// The MQTT status brush.
+        /// </value>
+        public Brush MQTTStatusBrush { get; set; } = Brushes.Gray;
+
+        /// <summary>
+        /// Gets or sets the MQTT status message.
+        /// </summary>
+        /// <value>
+        /// The MQTT status message.
+        /// </value>
+        public string MQTTStatusMessage { get; set; } = "";
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -246,6 +297,10 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             CreateDeviceTimeCache();
             InitMapControl(mcSourceMapControl);
             InitSlider();
+
+            //-----------------------------------------------------------------
+
+            //ConnectMQTTAsync();
 
             //-----------------------------------------------------------------
 
@@ -388,11 +443,6 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         private void UpdateHmi()
         {
-            //foreach (var device in this.RFDeviceViewModelCollection)
-            //{
-            //    device.SetVisible(this.iCurrentTimeSeconds > device.StartTime);
-            //}
-
             foreach (int id in this.sdDeviceTimeCache.Keys)
             {
                 bool bIsSet = false;
@@ -405,13 +455,6 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
                         tuple.Item2.CurrentSimulationState = RFDeviceViewModel.SimulationState.Current;
 
                         bIsSet = true;
-
-
-                        // Wird zu langsam und ist dann nicht mehr syncrohn ...
-                        //this.dgRFDevices.SelectedItems.Clear();
-                        //this.dgRFDevices.SelectedItems.Add(tuple.Item2);
-                        //this.dgRFDevices.ScrollIntoView(tuple.Item2);
-                        //this.dgRFDevices.Focus();
                     }
                     else
                     {
@@ -437,6 +480,103 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// The mqttclient
+        /// </summary>
+        private IMqttClient mqttclient = null;
+
+
+        /// <summary>
+        /// Connects the MQTT.
+        /// </summary>
+        private void ConnectMQTTAsync()
+        {
+            string strHost = Properties.Settings.Default.MQTTHost;
+            int iPort = Properties.Settings.Default.MQTTPort;
+
+            MqttConfiguration configuration = new MqttConfiguration
+            {
+                //BufferSize = 128 * 1024,
+                Port = iPort,
+                //KeepAliveSecs = 10,
+                //WaitTimeoutSecs = 2,
+                //MaximumQualityOfService = MqttQualityOfService.AtLeastOnce,
+                AllowWildcardsInTopicFilters = true
+            };
+
+            try
+            {
+                Task<IMqttClient> tClient = MqttClient.CreateAsync(strHost, configuration);
+                tClient.Wait();
+
+                this.mqttclient = tClient.Result;
+                //this.mqttclient.ConnectAsync(new MqttClientCredentials(Tool.ProductName)).Wait();
+
+                ////Task<SessionState> session = mqttclient.ConnectAsync(new MqttClientCredentials(Guid.NewGuid().ToString()));
+                //session.Wait();
+
+                this.MQTTStatusBrush = Brushes.Lime;
+                this.MQTTStatusMessage = $"Connected To MQTTT Broker ({strHost})";
+            }
+            catch (Exception ex)
+            {
+                this.MQTTStatusBrush = Brushes.Red;
+                this.MQTTStatusMessage = $"Not Connected To MQTTT Broker ({strHost}):\n{ex.Message}";
+            }
+        }
+
+
+        /// <summary>
+        /// Disconnects the MQTT.
+        /// </summary>
+        private void DisconnectMQTT()
+        {
+            if (this.mqttclient != null)
+            {
+                this.mqttclient.DisconnectAsync().Wait();
+            }
+
+            this.MQTTStatusBrush = Brushes.Gray;
+            this.MQTTStatusMessage = "Not Connected To An MQTTT Broker";
+        }
+
+
+        /// <summary>
+        /// Sends the MQTT message.
+        /// </summary>
+        /// <param name="strTopic">The string topic.</param>
+        /// <param name="strMessage">The string message.</param>
+        private void SendMQTTMessage(string strTopic, string strMessage)
+        {
+            //MqttApplicationMessage message = new MqttApplicationMessage( "foo/bar/topic1" , Encoding.UTF8.GetBytes( "Foo Message 1" ) );
+            //client.Result.PublishAsync( message , MqttQualityOfService.AtLeastOnce , true );
+        }
+
+
+        /// <summary>
+        /// Enables the or disable MQTT.
+        /// </summary>
+        private void EnableOrDisableMQTT()
+        {
+            if (this.bIsMQTTEnabled == true)
+            {
+                ConnectMQTTAsync();
+                //this.MQTTStatusBrush = Brushes.Lime;
+                //this.MQTTStatusMessage = $"Connected To MQTTT Broker ({Properties.Settings.Default.MQTTBrokerURL})";
+            }
+            else
+            {
+                DisconnectMQTT();
+                //this.MQTTStatusBrush = Brushes.Gray;
+                //this.MQTTStatusMessage = "Not Connected To An MQTTT Broker";
+            }
+
+            FirePropertyChanged("MQTTStatusBrush");
+            FirePropertyChanged("MQTTStatusMessage");
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// Handles the Click event of the Button_PlayStop control.
@@ -491,10 +631,12 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <summary>
         /// Fires the property changed.
         /// </summary>
+        /// <param name="oSource">The o source.</param>
         /// <param name="strPropertyName">Name of the string property.</param>
         private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
+
         }
 
     } // end public partial class SimulationDialog

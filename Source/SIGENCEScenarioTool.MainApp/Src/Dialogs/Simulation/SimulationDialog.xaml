@@ -4,6 +4,8 @@
         <Image x:Key="PLAY" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/media_play.png" />
         <Image x:Key="PAUSE" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/media_pause.png" />
         <Image x:Key="STOP" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/media_stop.png" />
+        <Image x:Key="MQTT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/server_earth.png" />
+        <Image x:Key="EXIT" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/exit.png" />
 
         <models:RFDeviceTooltips x:Key="ToolTips" />
 
@@ -12,21 +14,29 @@
     <Grid>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <gmap:GMapControl x:Name="mcMapControl" Grid.Row="0" />
+        <!--<ToolBar Grid.Row="0">
+            <CheckBox Content="{StaticResource EXIT}" />
+            <Separator />
+            <CheckBox Content="{StaticResource MQTT}" IsChecked="{Binding IsMQTTEnabled,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ToolTip="Enable Or Disable MQTT" />
+        </ToolBar>-->
 
-        <Border Grid.Row="1" BorderThickness="1" BorderBrush="Black">
+        <gmap:GMapControl x:Name="mcMapControl" Grid.Row="1" />
+
+        <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnPlayStop" Grid.Column="0" Width="28" Height="28" Content="{StaticResource PLAY}" IsEnabled="True" ToolTip="Play Or Stop" Margin="3" Click="Button_PlayStop_Click" />
@@ -36,7 +46,7 @@
             </Grid>
         </Border>
 
-        <DataGrid x:Name="dgRFDevices" Grid.Row="2" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended">
+        <DataGrid x:Name="dgRFDevices" Grid.Row="3" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended">
 
             <DataGrid.Columns>
 
@@ -376,7 +386,7 @@
 
         </DataGrid>
 
-        <StatusBar Grid.Row="3">
+        <StatusBar Grid.Row="4">
 
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
@@ -417,6 +427,10 @@
             <Separator />
 
             <StatusBarItem />
+
+            <StatusBarItem HorizontalContentAlignment="Right">
+                <Ellipse Width="20" Height="20" Fill="{Binding MQTTStatusBrush}" StrokeThickness="0.5" Stroke="Black" ToolTip="{Binding MQTTStatusMessage}" />
+            </StatusBarItem>
 
         </StatusBar>
     </Grid>

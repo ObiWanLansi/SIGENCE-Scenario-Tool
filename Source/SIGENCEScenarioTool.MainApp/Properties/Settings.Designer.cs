@@ -261,5 +261,29 @@ namespace SIGENCEScenarioTool.Properties {
                 this["EnableMQTT"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string MQTTHost {
+            get {
+                return ((string)(this["MQTTHost"]));
+            }
+            set {
+                this["MQTTHost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1883")]
+        public int MQTTPort {
+            get {
+                return ((int)(this["MQTTPort"]));
+            }
+            set {
+                this["MQTTPort"] = value;
+            }
+        }
     }
 }
