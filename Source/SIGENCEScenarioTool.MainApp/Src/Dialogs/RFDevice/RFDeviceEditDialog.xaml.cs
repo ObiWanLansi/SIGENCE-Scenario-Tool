@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-
+using SIGENCEScenarioTool.ViewModels;
 
 namespace SIGENCEScenarioTool.Dialogs.RFDevice
 {
@@ -9,6 +9,9 @@ namespace SIGENCEScenarioTool.Dialogs.RFDevice
     /// </summary>
     public partial class RFDeviceEditDialog : Window
     {
+
+        public RFDeviceViewModel Device { get; private set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RFDeviceEditDialog"/> class.
         /// </summary>

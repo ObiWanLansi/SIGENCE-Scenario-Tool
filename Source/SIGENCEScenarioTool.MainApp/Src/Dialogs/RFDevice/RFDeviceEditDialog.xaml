@@ -3,6 +3,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -31,38 +32,69 @@
         </Grid.RowDefinitions>
 
 
-        <Label Grid.Column="0" Grid.Row="0" Content="Id" />
+        <Label Grid.Column="0" Grid.Row="0" Content="Id" Margin="3" />
         <TextBox Grid.Column="1" Grid.Row="0" Margin="3" />
+        <Label Grid.Column="2" Grid.Row="0" Content="{Binding Device.Id}" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="1" Content="DeviceSource" />
         <TextBox Grid.Column="1" Grid.Row="1" Margin="3" />
+        <Label Grid.Column="2" Grid.Row="1" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="2" Content="StartTime" />
         <TextBox Grid.Column="1" Grid.Row="2" Margin="3" />
+        <Label Grid.Column="2" Grid.Row="2" Content="XXXX" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="3" Content="Name" />
+        <Label Grid.Column="2" Grid.Row="3" Content="XXXX" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="4" Content="Latitude" />
+        <Label Grid.Column="2" Grid.Row="4" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="5" Content="Longitude" />
+        <Label Grid.Column="2" Grid.Row="5" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="6" Content="Altitude" />
+        <Label Grid.Column="2" Grid.Row="6" Content="XXXX" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="7" Content="Roll" />
+        <Label Grid.Column="2" Grid.Row="7" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="8" Content="Pitch" />
+        <Label Grid.Column="2" Grid.Row="8" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="9" Content="Yaw" />
+        <Label Grid.Column="2" Grid.Row="9" Content="XXXX" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="10" Content="RxTxType" />
+        <Label Grid.Column="2" Grid.Row="10" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="11" Content="AntennaType" />
+        <Label Grid.Column="2" Grid.Row="11" Content="XXXX" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="12" Content="CenterFrequency_Hz" />
+        <Label Grid.Column="2" Grid.Row="12" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="13" Content="Bandwidth_Hz" />
+        <Label Grid.Column="2" Grid.Row="13" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="14" Content="Gain_dB" />
+        <Label Grid.Column="2" Grid.Row="14" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="15" Content="SignalToNoiseRatio_dB" />
+        <Label Grid.Column="2" Grid.Row="15" Content="XXXX" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="16" Content="XPos" />
+        <Label Grid.Column="2" Grid.Row="16" Content="XXXX" Margin="3" />
         <Label Grid.Column="0" Grid.Row="17" Content="YPos" />
+        <Label Grid.Column="2" Grid.Row="17" Content="XXXX" Margin="3" />
         <Label Grid.Column="0" Grid.Row="18" Content="ZPos" />
+        <Label Grid.Column="2" Grid.Row="18" Content="XXXX" Margin="3" />
 
         <Label Grid.Column="0" Grid.Row="19" Content="Remark" />
+        <Label Grid.Column="2" Grid.Row="19" Content="XXXX" Margin="3" />
+
         <Label Grid.Column="0" Grid.Row="20" Content="TechnicalParameters" />
+        <Label Grid.Column="2" Grid.Row="20" Content="XXXX" Margin="3" />
 
         <Grid Grid.Column="0" Grid.Row="22" Grid.ColumnSpan="2" >
             <Grid.ColumnDefinitions>
