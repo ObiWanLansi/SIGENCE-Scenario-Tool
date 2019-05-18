@@ -10,6 +10,12 @@ namespace SIGENCEScenarioTool.Dialogs.RFDevice
     public partial class RFDeviceEditDialog : Window
     {
 
+        /// <summary>
+        /// Gets the device.
+        /// </summary>
+        /// <value>
+        /// The device.
+        /// </value>
         public RFDeviceViewModel Device { get; private set; }
 
         /// <summary>
@@ -18,6 +24,10 @@ namespace SIGENCEScenarioTool.Dialogs.RFDevice
         public RFDeviceEditDialog(Models.RFDevice device)
         {
             InitializeComponent();
+
+            this.Device = new RFDeviceViewModel(device);
+
+            this.DataContext = this;
         }
 
     } // end public partial class RFDeviceEditDialog
