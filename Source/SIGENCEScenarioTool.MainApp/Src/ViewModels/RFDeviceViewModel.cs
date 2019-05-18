@@ -161,6 +161,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 UpdateMarkerTooltip();
 
                 FirePropertyChanged();
+                FirePropertyChanged("HumanLatitude");
             }
         }
 
@@ -185,6 +186,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 UpdateMarkerTooltip();
 
                 FirePropertyChanged();
+                FirePropertyChanged("HumanLongitude");
             }
         }
 
@@ -203,6 +205,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 this.RFDevice.Altitude = value;
 
                 FirePropertyChanged();
+                FirePropertyChanged("HumanAltitude");
             }
         }
 
@@ -313,6 +316,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 this.RFDevice.Gain_dB = value;
 
                 FirePropertyChanged();
+                FirePropertyChanged("HumanGain");
             }
         }
 
@@ -331,6 +335,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 this.RFDevice.CenterFrequency_Hz = value;
 
                 FirePropertyChanged();
+                FirePropertyChanged("HumanCenterFrequency");
             }
         }
 
@@ -349,6 +354,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 this.RFDevice.Bandwidth_Hz = value;
 
                 FirePropertyChanged();
+                FirePropertyChanged("HumanBandwidth");
             }
         }
 
@@ -367,6 +373,7 @@ namespace SIGENCEScenarioTool.ViewModels
                 this.RFDevice.SignalToNoiseRatio_dB = value;
 
                 FirePropertyChanged();
+                FirePropertyChanged("HumanSignalToNoiseRatio");
             }
         }
 
