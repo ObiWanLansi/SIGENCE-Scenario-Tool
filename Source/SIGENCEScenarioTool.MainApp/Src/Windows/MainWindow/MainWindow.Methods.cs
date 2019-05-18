@@ -20,6 +20,7 @@ using NetTopologySuite.Densify;
 using NetTopologySuite.Geometries;
 
 using SIGENCEScenarioTool.Datatypes.Geo;
+using SIGENCEScenarioTool.Dialogs.RFDevice;
 using SIGENCEScenarioTool.Dialogs.Scripting;
 using SIGENCEScenarioTool.Dialogs.Settings;
 using SIGENCEScenarioTool.Dialogs.Simulation;
@@ -323,6 +324,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 this.mcMapControl.Markers.Add(device.Marker);
             }
+        }
+
+
+        /// <summary>
+        /// Opens the device edit dialog.
+        /// </summary>
+        private void OpenDeviceEditDialog(RFDevice device)
+        {
+            RFDeviceEditDialog ded = new RFDeviceEditDialog(device);
+            ded.ShowDialog();
+            ded = null;
         }
 
 

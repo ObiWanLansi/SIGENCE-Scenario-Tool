@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
 
-using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
@@ -127,23 +125,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            try
-            {
-                string strFilename = $"{Tool.StartupPath}\\tuebingen-regbez-latest.osm.sqlite";
-                this.GeoNodeCollection = GeoNodeCollection.GetCollection(strFilename);
-            }
-            catch (Exception ex)
-            {
-                MB.Error(ex);
-            }
+            //try
+            //{
+            //    string strFilename = $"{Tool.StartupPath}\\tuebingen-regbez-latest.osm.sqlite";
+            //    this.GeoNodeCollection = GeoNodeCollection.GetCollection(strFilename);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MB.Error(ex);
+            //}
 
-            this.lcvGeoNodes = CollectionViewSource.GetDefaultView(this.GeoNodeCollection) as ListCollectionView;
+            //this.lcvGeoNodes = CollectionViewSource.GetDefaultView(this.GeoNodeCollection) as ListCollectionView;
 
-            if (this.lcvGeoNodes != null)
-            {
-                this.lcvGeoNodes.IsLiveFiltering = true;
-                this.lcvGeoNodes.Filter = IsWantedGeoNode;
-            }
+            //if (this.lcvGeoNodes != null)
+            //{
+            //    this.lcvGeoNodes.IsLiveFiltering = true;
+            //    this.lcvGeoNodes.Filter = IsWantedGeoNode;
+            //}
 
             //-----------------------------------------------------------------
 
@@ -177,7 +175,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //CreateHeatmap();
             //CreateExampleRFDevices();
-            //CreateRandomizedRFDevices(42);
+            CreateRandomizedRFDevices(42);
+
+            OpenDeviceEditDialog(RFDevice.DUMMY);
 
             //-----------------------------------------------------------------
 

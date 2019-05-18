@@ -339,7 +339,7 @@
                                     <MenuItem Header="_QRCode From RFDevice" Icon="{StaticResource CAMERA}" Command="{x:Static cmd:RegisteredCommands.RFDeviceQRCode}" />
                                     <MenuItem Header="_Open In Google Maps" Icon="{StaticResource PIN_BLUE}" Command="{x:Static cmd:RegisteredCommands.OpenInGoogleMaps}" />
                                     <Separator />
-                                    <MenuItem Header="_Add To Favorites" Icon="{StaticResource STAR_ADD}" Click="MenuItem_AddToTemplates_Click" />
+                                    <MenuItem Header="_Add To Templates" Icon="{StaticResource STAR_ADD}" Click="MenuItem_AddToTemplates_Click" />
                                 </ContextMenu>
                             </DataGrid.ContextMenu>
 
@@ -403,7 +403,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="StartTime" Binding="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="StartTime (s)" Binding="{Binding StartTime,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -447,7 +447,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="Latitude (° WGS84)" Binding="{Binding Latitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -462,7 +462,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="Longitude (° WGS84)" Binding="{Binding Longitude,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -477,7 +477,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Altitude" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DataGridTextColumn Header="Altitude (m)" Binding="{Binding Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -492,7 +492,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Roll" Binding="{Binding Roll,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="Roll (°)" Binding="{Binding Roll,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -507,7 +507,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Pitch" Binding="{Binding Pitch,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="Pitch (°)" Binding="{Binding Pitch,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -522,7 +522,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Yaw" Binding="{Binding Yaw,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="Yaw (°)" Binding="{Binding Yaw,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -569,7 +569,7 @@
                                     </DataGridComboBoxColumn.ElementStyle>
                                 </DataGridComboBoxColumn>
 
-                                <DataGridTextColumn Header="CenterFrequency" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="CenterFrequency (Hz)" Binding="{Binding CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -584,7 +584,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Bandwidth" Binding="{Binding Bandwidth,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="Bandwidth (Hz)" Binding="{Binding Bandwidth,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -599,7 +599,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="Gain" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="Gain (dB)" Binding="{Binding Gain,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />
@@ -614,7 +614,7 @@
                                     </DataGridTextColumn.ElementStyle>
                                 </DataGridTextColumn>
 
-                                <DataGridTextColumn Header="SignalToNoiseRatio" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                                <DataGridTextColumn Header="SignalToNoiseRatio (dB)" Binding="{Binding SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />

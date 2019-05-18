@@ -1,0 +1,76 @@
+﻿<Window x:Class="SIGENCEScenarioTool.Dialogs.RFDevice.RFDeviceEditDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SIGENCEScenarioTool.Dialogs.RFDevice" mc:Ignorable="d" Title="SIGENCE Scenario Tool - Edit RFDevice" Width="400" Height="680" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Id" />
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="3" />
+
+        <Label Grid.Column="0" Grid.Row="1" Content="DeviceSource" />
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" />
+        <Label Grid.Column="0" Grid.Row="2" Content="StartTime" />
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" />
+
+        <Label Grid.Column="0" Grid.Row="3" Content="Name" />
+
+        <Label Grid.Column="0" Grid.Row="4" Content="Latitude" />
+        <Label Grid.Column="0" Grid.Row="5" Content="Longitude" />
+        <Label Grid.Column="0" Grid.Row="6" Content="Altitude" />
+
+        <Label Grid.Column="0" Grid.Row="7" Content="Roll" />
+        <Label Grid.Column="0" Grid.Row="8" Content="Pitch" />
+        <Label Grid.Column="0" Grid.Row="9" Content="Yaw" />
+
+        <Label Grid.Column="0" Grid.Row="10" Content="RxTxType" />
+        <Label Grid.Column="0" Grid.Row="11" Content="AntennaType" />
+
+        <Label Grid.Column="0" Grid.Row="12" Content="CenterFrequency_Hz" />
+        <Label Grid.Column="0" Grid.Row="13" Content="Bandwidth_Hz" />
+        <Label Grid.Column="0" Grid.Row="14" Content="Gain_dB" />
+        <Label Grid.Column="0" Grid.Row="15" Content="SignalToNoiseRatio_dB" />
+
+        <Label Grid.Column="0" Grid.Row="16" Content="XPos" />
+        <Label Grid.Column="0" Grid.Row="17" Content="YPos" />
+        <Label Grid.Column="0" Grid.Row="18" Content="ZPos" />
+
+        <Label Grid.Column="0" Grid.Row="19" Content="Remark" />
+        <Label Grid.Column="0" Grid.Row="20" Content="TechnicalParameters" />
+
+        <Grid Grid.Column="0" Grid.Row="22" Grid.ColumnSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="_Accept"  IsDefault="True" Width="80" Margin="10" />
+            <Button Grid.Column="1" Content="_Cancel" IsCancel="True" Width="80" Margin="10" />
+        </Grid>
+    </Grid>
+</Window>

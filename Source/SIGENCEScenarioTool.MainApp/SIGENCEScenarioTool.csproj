@@ -221,6 +221,9 @@
     <Compile Include="Src\Dialogs\QRCode\QRCodeDialog.xaml.cs">
       <DependentUpon>QRCodeDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Dialogs\RFDevice\RFDeviceEditDialog.xaml.cs">
+      <DependentUpon>RFDeviceEditDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Src\Dialogs\Scripting\ScriptingDialog.xaml.cs">
       <DependentUpon>ScriptingDialog.xaml</DependentUpon>
     </Compile>
@@ -275,6 +278,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Src\Dialogs\QRCode\QRCodeDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Src\Dialogs\RFDevice\RFDeviceEditDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -564,6 +571,7 @@
       <Name>SIGENCE Scenario Tool.Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
