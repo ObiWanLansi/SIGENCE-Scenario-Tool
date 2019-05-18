@@ -71,7 +71,7 @@
 
 
     
-    <target name="deploy" depends="apidoc,doc,compile">
+    <target name="deploy" depends="doc,apidoc,compile">
     
         <delete dir="${DeployTarget}" />
         <mkdir dir="${DeployTarget}" />

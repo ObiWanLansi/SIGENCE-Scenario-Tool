@@ -207,6 +207,7 @@
   <HelpKINode Title="DEFAULT_YAW field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YAW.htm" />
   <HelpKINode Title="DEFAULT_YPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YPOS.htm" />
   <HelpKINode Title="DEFAULT_ZPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_ZPOS.htm" />
+  <HelpKINode Title="Degrees property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Degrees.htm" />
   <HelpKINode Title="DerivedFromType method" Url="html/M_SIGENCEScenarioTool_Extensions_TypeExtension_DerivedFromType.htm" />
   <HelpKINode Title="DESCRIPTIONMARKDOWN field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DESCRIPTIONMARKDOWN.htm" />
   <HelpKINode Title="DescriptionMarkdown property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DescriptionMarkdown.htm" />
@@ -248,6 +249,7 @@
   <HelpKINode Title="Double to Longitude conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_op_Implicit.htm" />
   <HelpKINode Title="Double to SignalToNoiseRatio conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_op_Implicit.htm" />
   <HelpKINode Title="DropTable method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_DropTable.htm" />
+  <HelpKINode Title="DUMMY field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DUMMY.htm" />
   <HelpKINode Title="Emergency enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="Empty field" Url="html/F_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Empty.htm" />
   <HelpKINode Title="Empty property" Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Empty.htm" />
@@ -309,6 +311,7 @@
   <HelpKINode Title="Frequency.Frequency constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency__ctor.htm" />
   <HelpKINode Title="Frequency.IsValid method" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_IsValid.htm" />
   <HelpKINode Title="Frequency.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_ToString.htm" />
+  <HelpKINode Title="FromDouble method" Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle_FromDouble.htm" />
   <HelpKINode Title="FromInt method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromInt.htm" />
   <HelpKINode Title="FromString method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromString.htm" />
   <HelpKINode Title="FromXml method">
@@ -328,6 +331,20 @@
   <HelpKINode Title="Gain.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_ToString.htm" />
   <HelpKINode Title="GAIN_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_GAIN_DB.htm" />
   <HelpKINode Title="Gain_dB property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Gain_dB.htm" />
+  <HelpKINode Title="GeoAngle class">
+    <HelpKINode Title="GeoAngle Class" Url="html/T_SIGENCEScenarioTool_Tools_GeoAngle.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GeoAngle.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_GeoAngle.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GeoAngle.Degrees property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Degrees.htm" />
+  <HelpKINode Title="GeoAngle.FromDouble method" Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle_FromDouble.htm" />
+  <HelpKINode Title="GeoAngle.GeoAngle constructor" Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle__ctor.htm" />
+  <HelpKINode Title="GeoAngle.IsNegative property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_IsNegative.htm" />
+  <HelpKINode Title="GeoAngle.Milliseconds property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Milliseconds.htm" />
+  <HelpKINode Title="GeoAngle.Minutes property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Minutes.htm" />
+  <HelpKINode Title="GeoAngle.Seconds property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Seconds.htm" />
+  <HelpKINode Title="GeoAngle.ToString method" Url="html/Overload_SIGENCEScenarioTool_Tools_GeoAngle_ToString.htm" />
   <HelpKINode Title="GeoHelper class">
     <HelpKINode Title="GeoHelper Class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
@@ -539,6 +556,7 @@
   <HelpKINode Title="IntegerList.Multiply operator" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_IntegerList_op_Multiply.htm" />
   <HelpKINode Title="Iridium property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Iridium.htm" />
   <HelpKINode Title="IsEmpty method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_IsEmpty.htm" />
+  <HelpKINode Title="IsNegative property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_IsNegative.htm" />
   <HelpKINode Title="IsNotEmpty method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_IsNotEmpty.htm" />
   <HelpKINode Title="IsValid method">
     <HelpKINode Title="Altitude.IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude_IsValid.htm" />
@@ -658,6 +676,8 @@
   <HelpKINode Title="Mikro field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Mikro.htm" />
   <HelpKINode Title="Military enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="Milli field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Milli.htm" />
+  <HelpKINode Title="Milliseconds property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Milliseconds.htm" />
+  <HelpKINode Title="Minutes property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Minutes.htm" />
   <HelpKINode Title="Motorway enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Motorway_Link enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="MoveTo method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_MoveTo.htm" />
@@ -820,6 +840,7 @@
   <HelpKINode Title="RFDevice.DEFAULT_ZPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_ZPOS.htm" />
   <HelpKINode Title="RFDevice.DEVICESOURCE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEVICESOURCE.htm" />
   <HelpKINode Title="RFDevice.DeviceSource property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_DeviceSource.htm" />
+  <HelpKINode Title="RFDevice.DUMMY field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DUMMY.htm" />
   <HelpKINode Title="RFDevice.Equals method" Url="html/Overload_SIGENCEScenarioTool_Models_RFDevice_Equals.htm" />
   <HelpKINode Title="RFDevice.FromXml method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_FromXml.htm" />
   <HelpKINode Title="RFDevice.GAIN_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_GAIN_DB.htm" />
@@ -1039,6 +1060,7 @@
   <HelpKINode Title="ScenarioMetaInformationTooltips.TOOLTIP_VERSION property" Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_VERSION.htm" />
   <HelpKINode Title="Secondary enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Secondary_Link enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
+  <HelpKINode Title="Seconds property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Seconds.htm" />
   <HelpKINode Title="Select method" Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_Select.htm" />
   <HelpKINode Title="SelectAsDataTable method" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SelectAsDataTable.htm" />
   <HelpKINode Title="Service enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
@@ -1121,6 +1143,7 @@
   <HelpKINode Title="SIGENCEScenarioTool.Tools.ApplicationResource class" Url="html/T_SIGENCEScenarioTool_Tools_ApplicationResource.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Blink class" Url="html/T_SIGENCEScenarioTool_Tools_Blink.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.ExtractIcon class" Url="html/T_SIGENCEScenarioTool_Tools_ExtractIcon.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoAngle class" Url="html/T_SIGENCEScenarioTool_Tools_GeoAngle.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoHelper class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoTag enumeration" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Highway enumeration" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
@@ -1323,6 +1346,7 @@
     <HelpKINode Title="DisplayableEnumeration.ToString Method " Url="html/M_SIGENCEScenarioTool_Ui_DisplayableEnumeration_ToString.htm" />
     <HelpKINode Title="Frequency.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_ToString.htm" />
     <HelpKINode Title="Gain.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_ToString.htm" />
+    <HelpKINode Title="GeoAngle.ToString Method " Url="html/Overload_SIGENCEScenarioTool_Tools_GeoAngle_ToString.htm" />
     <HelpKINode Title="GeoHelper.ToString Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToString.htm" />
     <HelpKINode Title="Latitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_ToString.htm" />
     <HelpKINode Title="Longitude.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_ToString.htm" />
