@@ -800,17 +800,6 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RFDeviceViewModel"/> class.
-        /// </summary>
-        /// <param name="device">The device.</param>
-        /// <exception cref="ArgumentNullException">device</exception>
-        public RFDeviceViewModel(RFDevice device)
-        {
-            this.RFDevice = device ?? throw new ArgumentNullException(nameof(device));
-        }
-
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="RFDeviceViewModel" /> class.
         /// </summary>
         /// <param name="mcMapControl">The mc map control.</param>
@@ -818,7 +807,8 @@ namespace SIGENCEScenarioTool.ViewModels
         /// <exception cref="ArgumentNullException">device</exception>
         public RFDeviceViewModel(GMapControl mcMapControl, RFDevice device)
         {
-            this.mcMapControl = mcMapControl ?? throw new ArgumentNullException(nameof(mcMapControl));
+            //this.mcMapControl = mcMapControl ?? throw new ArgumentNullException(nameof(mcMapControl));
+            this.mcMapControl = mcMapControl;
             this.RFDevice = device ?? throw new ArgumentNullException(nameof(device));
 
             //-----------------------------------------------------------------

@@ -2,6 +2,8 @@
 
 using SIGENCEScenarioTool.ViewModels;
 
+
+
 namespace SIGENCEScenarioTool.Dialogs.RFDevice
 {
     /// <summary>
@@ -18,6 +20,9 @@ namespace SIGENCEScenarioTool.Dialogs.RFDevice
         /// </value>
         public RFDeviceViewModel Device { get; private set; }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RFDeviceEditDialog"/> class.
         /// </summary>
@@ -25,7 +30,8 @@ namespace SIGENCEScenarioTool.Dialogs.RFDevice
         {
             InitializeComponent();
 
-            this.Device = new RFDeviceViewModel(device);
+            // Use An Copy If The User Discard The Changes ...
+            this.Device = new RFDeviceViewModel(null, device.Clone());
 
             this.DataContext = this;
         }
