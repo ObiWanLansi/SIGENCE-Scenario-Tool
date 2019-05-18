@@ -23,6 +23,7 @@ namespace SIGENCEScenarioTool.ViewModels
     /// <summary>
     /// A ViewModel for a RFDevice.
     /// </summary>
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     public sealed class RFDeviceViewModel : INotifyPropertyChanged
     {
 
@@ -162,6 +163,7 @@ namespace SIGENCEScenarioTool.ViewModels
 
                 FirePropertyChanged();
                 FirePropertyChanged("HumanLatitude");
+                FirePropertyChanged("LatitudeAsGeoAngle");
             }
         }
 
@@ -187,6 +189,7 @@ namespace SIGENCEScenarioTool.ViewModels
 
                 FirePropertyChanged();
                 FirePropertyChanged("HumanLongitude");
+                FirePropertyChanged("LongitudeAsGeoAngle");
             }
         }
 
@@ -597,12 +600,28 @@ namespace SIGENCEScenarioTool.ViewModels
         public string HumanLatitude => string.Format("{0:F4}", this.RFDevice.Latitude.Value);
 
         /// <summary>
+        /// Gets the latitude as geo angle.
+        /// </summary>
+        /// <value>
+        /// The latitude as geo angle.
+        /// </value>
+        public string LatitudeAsGeoAngle => GeoAngle.FromDouble(this.RFDevice.Latitude.Value).ToString();
+
+        /// <summary>
         /// Gets the human longitude.
         /// </summary>
         /// <value>
         /// The human longitude.
         /// </value>
         public string HumanLongitude => string.Format("{0:F4}", this.RFDevice.Longitude.Value);
+
+        /// <summary>
+        /// Gets the longitude as geo angle.
+        /// </summary>
+        /// <value>
+        /// The longitude as geo angle.
+        /// </value>
+        public string LongitudeAsGeoAngle => GeoAngle.FromDouble(this.RFDevice.Longitude.Value).ToString();
 
         /// <summary>
         /// Gets the human center frequency.

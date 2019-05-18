@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 
+using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.ViewModels;
 
 
@@ -32,6 +33,8 @@ namespace SIGENCEScenarioTool.Dialogs.RFDevice
 
             // Use An Copy If The User Discard The Changes ...
             this.Device = new RFDeviceViewModel(null, device.Clone());
+            
+            this.dgcbcRxTxType.ItemsSource = RxTxTypes.Values;
 
             this.DataContext = this;
         }
