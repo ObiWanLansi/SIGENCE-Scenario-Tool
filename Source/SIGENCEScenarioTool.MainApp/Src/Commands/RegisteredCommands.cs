@@ -76,6 +76,14 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         public static RoutedUICommand ImportRFDevice { get; private set; }
 
+        /// <summary>
+        /// Gets the edit rf device.
+        /// </summary>
+        /// <value>
+        /// The edit rf device.
+        /// </value>
+        public static RoutedUICommand EditRFDevice { get; private set; }
+
         //---------------------------------------------------------------------
 
 
@@ -88,21 +96,21 @@ namespace SIGENCEScenarioTool.Commands
         public static RoutedUICommand CreateScreenshot { get; private set; }
 
 
-        /// <summary>
-        /// Gets the send data UDP.
-        /// </summary>
-        /// <value>
-        /// The send data UDP.
-        /// </value>
-        public static RoutedUICommand SendDataUDP { get; private set; }
+        ///// <summary>
+        ///// Gets the send data UDP.
+        ///// </summary>
+        ///// <value>
+        ///// The send data UDP.
+        ///// </value>
+        //public static RoutedUICommand SendDataUDP { get; private set; }
 
-        /// <summary>
-        /// Gets the receive data UDP.
-        /// </summary>
-        /// <value>
-        /// The receive data UDP.
-        /// </value>
-        public static RoutedUICommand ReceiveDataUDP { get; private set; }
+        ///// <summary>
+        ///// Gets the receive data UDP.
+        ///// </summary>
+        ///// <value>
+        ///// The receive data UDP.
+        ///// </value>
+        //public static RoutedUICommand ReceiveDataUDP { get; private set; }
 
         /// <summary>
         /// Gets the zoom to rf device.
@@ -230,6 +238,10 @@ namespace SIGENCEScenarioTool.Commands
 
             //-----------------------------------------------------------------
 
+            CopyRFDevice = new RoutedUICommand("CopyRFDevice", "CopyRFDevice", typeof(RegisteredCommands));
+
+            PasteRFDevice = new RoutedUICommand("PasteRFDevice", "PasteRFDevice", typeof(RegisteredCommands));
+
             CreateRFDevice = new RoutedUICommand("CreateRFDevice", "CreateRFDevice", typeof(RegisteredCommands));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.F5));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Alt));
@@ -239,19 +251,22 @@ namespace SIGENCEScenarioTool.Commands
             DeleteRFDevice.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Alt));
 
             MoveRFDevice = new RoutedUICommand("MoveRFDevice", "MoveRFDevice", typeof(RegisteredCommands));
+            MoveRFDevice.InputGestures.Add(new KeyGesture(Key.F7));
             MoveRFDevice.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Alt));
 
-            CopyRFDevice = new RoutedUICommand("CopyRFDevice", "CopyRFDevice", typeof(RegisteredCommands));
-
-            PasteRFDevice = new RoutedUICommand("PasteRFDevice", "PasteRFDevice", typeof(RegisteredCommands));
+            EditRFDevice = new RoutedUICommand("EditRFDevice", "EditRFDevice", typeof(RegisteredCommands));
+            EditRFDevice.InputGestures.Add(new KeyGesture(Key.F8));
+            EditRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
 
             ExportRFDevice = new RoutedUICommand("ExportRFDevice", "ExportRFDevice", typeof(RegisteredCommands));
-            ExportRFDevice.InputGestures.Add(new KeyGesture(Key.F7));
-            ExportRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
+            ExportRFDevice.InputGestures.Add(new KeyGesture(Key.F9));
+            //ExportRFDevice.InputGestures.Add(new KeyGesture(Key.F7));
+            //ExportRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
 
             ImportRFDevice = new RoutedUICommand("ImportRFDevice", "ImportRFDevice", typeof(RegisteredCommands));
-            ImportRFDevice.InputGestures.Add(new KeyGesture(Key.F8));
-            ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
+            ImportRFDevice.InputGestures.Add(new KeyGesture(Key.F10));
+            //ImportRFDevice.InputGestures.Add(new KeyGesture(Key.F8));
+            //ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
 
             ZoomToRFDevice = new RoutedUICommand("ZoomToRFDevice", "ZoomToRFDevice", typeof(RegisteredCommands));
             //ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.F9));
@@ -262,13 +277,13 @@ namespace SIGENCEScenarioTool.Commands
 
             //-----------------------------------------------------------------
 
-            SendDataUDP = new RoutedUICommand("SendDataUDP", "SendDataUDP", typeof(RegisteredCommands));
-            SendDataUDP.InputGestures.Add(new KeyGesture(Key.F9));
-            //SendDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
+            //SendDataUDP = new RoutedUICommand("SendDataUDP", "SendDataUDP", typeof(RegisteredCommands));
+            //SendDataUDP.InputGestures.Add(new KeyGesture(Key.F9));
+            ////SendDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
 
-            ReceiveDataUDP = new RoutedUICommand("ReceiveDataUDP", "ReceiveDataUDP", typeof(RegisteredCommands));
-            ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.F10));
-            //ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
+            //ReceiveDataUDP = new RoutedUICommand("ReceiveDataUDP", "ReceiveDataUDP", typeof(RegisteredCommands));
+            //ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.F10));
+            ////ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
 
             // F11 is reserved for fullscreen ...
 

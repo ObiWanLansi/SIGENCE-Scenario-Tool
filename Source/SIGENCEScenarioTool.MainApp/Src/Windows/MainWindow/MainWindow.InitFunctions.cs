@@ -108,6 +108,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 (sender, e) => { e.CanExecute = true; }
             ));
 
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.EditRFDevice,
+                (sender, e) =>
+                {
+                    EditRFDevice();
+                    e.Handled = true;
+                },
+                (sender, e) => { e.CanExecute = true; }
+            ));
+
             this.CommandBindings.Add(new CommandBinding(RegisteredCommands.CopyRFDevice,
                 (sender, e) =>
                 {

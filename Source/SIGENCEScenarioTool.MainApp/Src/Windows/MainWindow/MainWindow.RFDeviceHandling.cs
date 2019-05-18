@@ -737,6 +737,27 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             ZoomToRFDevice((this.dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
         }
 
+
+        /// <summary>
+        /// Edits the rf device.
+        /// </summary>
+        private void EditRFDevice()
+        {
+            if (this.dgRFDevices.SelectedItem == null)
+            {
+                MB.Information("No RFDevice Is Selected In The DataGrid!");
+                return;
+            }
+
+            if (this.dgRFDevices.SelectedItems.Count > 1)
+            {
+                MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
+                return;
+            }
+
+            OpenDeviceEditDialog((this.dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
