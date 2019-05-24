@@ -755,7 +755,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            OpenDeviceEditDialog((this.dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
+            //OpenDeviceEditDialog((this.dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
+            OpenDeviceEditDialog(this.dgRFDevices.SelectedItem as RFDeviceViewModel);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

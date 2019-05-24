@@ -1,5 +1,13 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Dialogs.RFDevice.RFDeviceEditDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" mc:Ignorable="d" Title="SIGENCE Scenario Tool - Edit RFDevice" Width="400" Height="760" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+﻿<Window x:Class="SIGENCEScenarioTool.Dialogs.RFDevice.RFDeviceEditDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" mc:Ignorable="d" Title="SIGENCE Scenario Tool - Edit RFDevice" Width="400" Height="780" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
+
+        <ObjectDataProvider x:Key="eDeviceSource" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="models:DeviceSource" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+
         <ObjectDataProvider x:Key="eAntennaType" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="models:AntennaType" />
@@ -14,6 +22,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -40,90 +49,110 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
+        <Grid.Resources>
+            <!--<Style TargetType="TextBox">
+                            <Setter Property="Margin" Value="5,1,5,1" />
+                            <Setter Property="TextAlignment" Value="Right" />
+                        </Style>-->
+
+            <Style x:Key="HumanLabel">
+                <!--<Setter Property="Label.Background" Value="LightGray" />
+                <Setter Property="Label.FontWeight" Value="Bold" />-->
+                <Setter Property="Label.Margin" Value="3" />
+                <Setter Property="Label.HorizontalContentAlignment" Value="Right" />
+                <Setter Property="Label.VerticalContentAlignment" Value="Center" />
+                <Setter Property="Label.BorderBrush" Value="DarkGray" />
+                <Setter Property="Label.BorderThickness" Value="0.5" />
+                <Setter Property="Label.FontStyle" Value="Italic" />
+            </Style>
+
+        </Grid.Resources>
+
 
         <Label Grid.Column="0" Grid.Row="0" Content="DeviceSource" VerticalContentAlignment="Center" />
-        <Label Grid.Column="1" Grid.Row="0" Content="{Binding Device.DeviceSource}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="0" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <!--<Label Grid.Column="1" Grid.Row="0" Content="{Binding Device.DeviceSource}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />-->
+        <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Source={StaticResource eDeviceSource}}" SelectedItem="{Binding Device.DeviceSource,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="0" Content="" Style="{StaticResource HumanLabel}" />
 
-        <Label Grid.Column="0" Grid.Row="1" Content="Id" Margin="3" VerticalContentAlignment="Center" />
+        <Label Grid.Column="0" Grid.Row="1" Content="Id" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Device.Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="1" Content="{Binding Device.DeviceType}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="1" Content="{Binding Device.DeviceType}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="2" Content="StartTime (s)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Device.StartTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="2" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="2" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="3" Content="Name" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Device.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="3" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="3" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="4" Content="Latitude (WGS84)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Device.Latitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="4" Content="{Binding Device.LatitudeAsGeoAngle}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="4" Content="{Binding Device.LatitudeAsGeoAngle}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="5" Content="Longitude (WGS84)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Device.Longitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="5" Content="{Binding Device.LongitudeAsGeoAngle}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="5" Content="{Binding Device.LongitudeAsGeoAngle}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="6" Content="Altitude (m)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Device.Altitude,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="6" Content="{Binding Device.HumanAltitude}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="6" Content="{Binding Device.HumanAltitude}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="7" Content="Roll (°)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Device.Roll,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="7" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="7" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="8" Content="Pitch (°)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Device.Pitch,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="8" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="8" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="9" Content="Yaw (°)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="9" Text="{Binding Device.Yaw,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="9" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="9" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="10" Content="RxTxType" VerticalContentAlignment="Center" />
         <ComboBox x:Name="dgcbcRxTxType" Grid.Column="1" Grid.Row="10" SelectedItem="{Binding Device.RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" />
-        <Label Grid.Column="2" Grid.Row="10" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="10" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="11" Content="AntennaType" VerticalContentAlignment="Center" />
         <ComboBox Grid.Column="1" Grid.Row="11" ItemsSource="{Binding Source={StaticResource eAntennaType}}" SelectedItem="{Binding Device.AntennaType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" />
-        <Label Grid.Column="2" Grid.Row="11" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="11" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="12" Content="CenterFrequency (Hz)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="12" Text="{Binding Device.CenterFrequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="12" Content="{Binding Device.HumanCenterFrequency}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="12" Content="{Binding Device.HumanCenterFrequency}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="13" Content="Bandwidth (Hz)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="13" Text="{Binding Device.Bandwidth,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="13" Content="{Binding Device.HumanBandwidth}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="13" Content="{Binding Device.HumanBandwidth}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="14" Content="Gain (dB)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="14" Text="{Binding Device.Gain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="14" Content="{Binding Device.HumanGain}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="14" Content="{Binding Device.HumanGain}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="15" Content="SignalToNoiseRatio (dB)" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="15" Text="{Binding Device.SignalToNoiseRatio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="15" Content="{Binding Device.HumanSignalToNoiseRatio}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="15" Content="{Binding Device.HumanSignalToNoiseRatio}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="16" Content="XPos" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="16" Text="{Binding Device.XPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="16" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="16" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="17" Content="YPos" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="17" Text="{Binding Device.YPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="17" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="17" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="18" Content="ZPos" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="18" Text="{Binding Device.ZPos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="18" Content="" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="18" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="19" Content="Remark" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="19" Text="{Binding Device.Remark,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="19" Content="" Margin="3" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="19" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="20" Content="TechnicalParameters" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="20" Text="{Binding Device.TechnicalParameters,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="20" Content="" Margin="3" VerticalContentAlignment="Center" />
+        <Label Grid.Column="2" Grid.Row="20" Content="" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="22" Grid.ColumnSpan="3" />
         <Grid Grid.Column="0" Grid.Row="22" Grid.ColumnSpan="3">
@@ -131,7 +160,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="_Accept" IsDefault="True" Width="80" Height="28" Margin="10" />
+            <Button Grid.Column="0" Content="_Accept" IsDefault="True" Width="80" Height="28" Margin="10" Click="Button_Accept_Click" />
             <Button Grid.Column="1" Content="_Cancel" IsCancel="True" Width="80" Height="28" Margin="10" />
         </Grid>
     </Grid>

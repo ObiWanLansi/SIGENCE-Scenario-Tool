@@ -92,8 +92,19 @@ namespace SIGENCEScenarioTool.ViewModels
         }
 
 
+        ///// <summary>
+        ///// Gets the device source.
+        ///// </summary>
+        ///// <value>
+        ///// The device source.
+        ///// </value>
+        //public DeviceSource DeviceSource
+        //{
+        //    get { return this.RFDevice.DeviceSource; }
+        //}
+
         /// <summary>
-        /// Gets the device source.
+        /// Gets or sets the device source.
         /// </summary>
         /// <value>
         /// The device source.
@@ -101,6 +112,12 @@ namespace SIGENCEScenarioTool.ViewModels
         public DeviceSource DeviceSource
         {
             get { return this.RFDevice.DeviceSource; }
+            set
+            {
+                this.RFDevice.DeviceSource = value;
+
+                FirePropertyChanged();
+            }
         }
 
 
@@ -552,10 +569,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public bool IsVisible
         {
-            get
-            {
-                return ((AbstractMarker)this.Marker.Shape).Visibility != Visibility.Hidden;
-            }
+            get { return ((AbstractMarker)this.Marker.Shape).Visibility != Visibility.Hidden; }
         }
 
 
@@ -781,6 +795,7 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 this.simsa = value;
+
                 FirePropertyChanged();
                 FirePropertyChanged("CurrentSimulationStateBrush");
             }

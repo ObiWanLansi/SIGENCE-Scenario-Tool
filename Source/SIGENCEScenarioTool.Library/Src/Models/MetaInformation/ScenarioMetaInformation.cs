@@ -48,8 +48,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             get { return _Version; }
             set
             {
-                _Version = value;
-                FirePropertyChanged();
+                if(_Version != value)
+                {
+                    _Version = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
@@ -85,8 +89,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             get { return _ApplicationContext; }
             set
             {
-                _ApplicationContext = value;
-                FirePropertyChanged();
+                if(_ApplicationContext != value)
+                {
+                    _ApplicationContext = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
@@ -122,8 +130,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             get { return _ContactPerson; }
             set
             {
-                _ContactPerson = value;
-                FirePropertyChanged();
+                if(_ContactPerson != value)
+                {
+                    _ContactPerson = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
@@ -159,8 +171,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             get { return _DescriptionMarkdown; }
             set
             {
-                _DescriptionMarkdown = value;
-                FirePropertyChanged();
+                if(_DescriptionMarkdown != value)
+                {
+                    _DescriptionMarkdown = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
@@ -196,8 +212,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             get { return _DescriptionStylesheet; }
             set
             {
-                _DescriptionStylesheet = value;
-                FirePropertyChanged();
+                if(_DescriptionStylesheet != value)
+                {
+                    _DescriptionStylesheet = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 

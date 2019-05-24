@@ -27,26 +27,24 @@
             <CheckBox Content="{StaticResource MQTT}" IsChecked="{Binding IsMQTTEnabled,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ToolTip="Enable Or Disable MQTT" />
         </ToolBar>-->
 
-        <gmap:GMapControl x:Name="mcMapControl" Grid.Row="1" />
+        <gmap:GMapControl Name="mcMapControl" Grid.Row="1" />
 
         <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnPlayStop" Grid.Column="0" Width="28" Height="28" Content="{StaticResource PLAY}" IsEnabled="True" ToolTip="Play Or Stop" Margin="3" Click="Button_PlayStop_Click" />
-                <Button x:Name="btnPause" Grid.Column="1" Width="28" Height="28" Content="{StaticResource PAUSE}" IsEnabled="False" ToolTip="Pause" Margin="3" Click="Button_Pause_Click" />
-                <Slider x:Name="sCurrentTime" Grid.Column="3" Minimum="{Binding MinTimeSeconds}" Maximum="{Binding MaxTimeSeconds}" Value="{Binding CurrentTimeSeconds}" IsEnabled="True" AutoToolTipPlacement="BottomRight" TickPlacement="Both" TickFrequency="2" VerticalAlignment="Center" Margin="3" />
-                <Label Grid.Column="4" Content="{Binding CurrentTimeAsString}" FontWeight="Normal" FontFamily="Courier New" FontSize="14" Margin="3" VerticalAlignment="Center" />
+                <Button Name="btnPlayStop" Grid.Column="0" Width="28" Height="28" Content="{StaticResource PLAY}" IsEnabled="True" ToolTip="Play Or Stop" Margin="3" Click="Button_PlayStop_Click" />
+                <Button Name="btnPause" Grid.Column="1" Width="28" Height="28" Content="{StaticResource PAUSE}" IsEnabled="False" ToolTip="Pause" Margin="3" Click="Button_Pause_Click" />
+                <Slider Name="sCurrentTime" Grid.Column="2" Minimum="{Binding MinTimeSeconds}" Maximum="{Binding MaxTimeSeconds}" Value="{Binding CurrentTimeSeconds}" IsEnabled="True" AutoToolTipPlacement="BottomRight" TickPlacement="Both" TickFrequency="2" VerticalAlignment="Center" Margin="3" />
+                <Label Grid.Column="3" Content="{Binding CurrentTimeAsString}" FontWeight="Normal" FontFamily="Courier New" FontSize="14" Margin="3" VerticalAlignment="Center" />
             </Grid>
         </Border>
 
-        <DataGrid x:Name="dgRFDevices" Grid.Row="3" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended">
+        <DataGrid Name="dgRFDevices" Grid.Row="3" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended">
 
             <DataGrid.Columns>
 

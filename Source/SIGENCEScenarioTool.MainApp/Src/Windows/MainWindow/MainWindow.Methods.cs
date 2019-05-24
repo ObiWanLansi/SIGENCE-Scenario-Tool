@@ -330,10 +330,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Opens the device edit dialog.
         /// </summary>
-        private void OpenDeviceEditDialog(RFDevice device)
+        //private void OpenDeviceEditDialog(RFDevice device)
+        private void OpenDeviceEditDialog(RFDeviceViewModel device)
         {
             RFDeviceEditDialog ded = new RFDeviceEditDialog(device);
-            ded.ShowDialog();
+
+            if (ded.ShowDialog() ?? false == true)
+            {
+                DeleteRFDevice(device);
+                AddRFDevice(ded.Device);
+            }
+
             ded = null;
         }
 
@@ -660,6 +667,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ResetAllDeviceFilter()
         {
+            if (this.bDataGridInEditMode == true)
+            {
+                MB.Warning("You Are In The Edit Mode From The DataGrid.\nPlease End The Editing And Try Again.");
+                return;
+            }
+
             // Hier werden die Felder gesetzt damit die Liste nicht jedesmal aktualisiert wird was wei den Properties passieren würde ...
 
             this.iIdFilter = null;

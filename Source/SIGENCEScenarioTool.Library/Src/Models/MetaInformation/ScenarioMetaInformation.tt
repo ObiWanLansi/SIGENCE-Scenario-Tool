@@ -89,8 +89,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
             get { return _<#=strPropertyName #>; }
             set
             {
-                _<#=strPropertyName #> = value;
-                FirePropertyChanged();
+                if(_<#=strPropertyName#> != value)
+                {
+                    _<#=strPropertyName#> = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 

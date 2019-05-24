@@ -33,10 +33,25 @@ namespace SIGENCEScenarioTool.Dialogs.RFDevice
 
             // Use An Copy If The User Discard The Changes ...
             this.Device = new RFDeviceViewModel(null, device.Clone());
-            
+
             this.dgcbcRxTxType.ItemsSource = RxTxTypes.Values;
 
             this.DataContext = this;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Handles the Click event of the Button_Accept control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void Button_Accept_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+
+            //Close();
         }
 
     } // end public partial class RFDeviceEditDialog
