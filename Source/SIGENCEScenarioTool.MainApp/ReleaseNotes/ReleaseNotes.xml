@@ -47,6 +47,7 @@
     </Version>
 
 
+
     <Version Version="17" Title="Dezember 2018 Release">
         <Features>
             <Issue Id="168" Description="Mark Two Points In The Map And Create Devices Between Them" />

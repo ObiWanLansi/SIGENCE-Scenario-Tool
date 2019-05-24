@@ -55,15 +55,26 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         string strType = eSetting.Attribute( "Type" ).Value;
 #>
 
-        public <#= strType #> <#= strName #>
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
+        public <#=strType#> <#=strName#>
         {
-            get { return this.properties.<#= strName #>; }
+            get { return this.properties.<#=strName#>; }
             set
             {
-                this.properties.<#= strName #> = value;
-                FirePropertyChanged();
+                if(this.properties.<#=strName#> != value)
+                {
+                    this.properties.<#=strName#> = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
+
 <#
             }
 #>    

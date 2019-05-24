@@ -19,7 +19,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// Represent A Device Based On A Radio Frequency.
     ///</summary>
-    public partial class RFDevice :AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
+    public partial class RFDevice : AbstractModelBase, IEquatable<RFDevice>, ICloneable, IXmlExport
     {
 
         #region Instance Properties

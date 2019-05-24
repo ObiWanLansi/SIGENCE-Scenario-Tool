@@ -21,225 +21,467 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Int32 UDPPortSending
         {
             get { return this.properties.UDPPortSending; }
             set
             {
-                this.properties.UDPPortSending = value;
-                FirePropertyChanged();
+                if(this.properties.UDPPortSending != value)
+                {
+                    this.properties.UDPPortSending = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Int32 UDPDelay
         {
             get { return this.properties.UDPDelay; }
             set
             {
-                this.properties.UDPDelay = value;
-                FirePropertyChanged();
+                if(this.properties.UDPDelay != value)
+                {
+                    this.properties.UDPDelay = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Int32 MapZoomLevel
         {
             get { return this.properties.MapZoomLevel; }
             set
             {
-                this.properties.MapZoomLevel = value;
-                FirePropertyChanged();
+                if(this.properties.MapZoomLevel != value)
+                {
+                    this.properties.MapZoomLevel = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.String UDPHost
         {
             get { return this.properties.UDPHost; }
             set
             {
-                this.properties.UDPHost = value;
-                FirePropertyChanged();
+                if(this.properties.UDPHost != value)
+                {
+                    this.properties.UDPHost = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Int32 UDPPortReceiving
         {
             get { return this.properties.UDPPortReceiving; }
             set
             {
-                this.properties.UDPPortReceiving = value;
-                FirePropertyChanged();
+                if(this.properties.UDPPortReceiving != value)
+                {
+                    this.properties.UDPPortReceiving = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Double DeviceCopyTimeAddValue
         {
             get { return this.properties.DeviceCopyTimeAddValue; }
             set
             {
-                this.properties.DeviceCopyTimeAddValue = value;
-                FirePropertyChanged();
+                if(this.properties.DeviceCopyTimeAddValue != value)
+                {
+                    this.properties.DeviceCopyTimeAddValue = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Double InitialLatitude
         {
             get { return this.properties.InitialLatitude; }
             set
             {
-                this.properties.InitialLatitude = value;
-                FirePropertyChanged();
+                if(this.properties.InitialLatitude != value)
+                {
+                    this.properties.InitialLatitude = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Double InitialLongitude
         {
             get { return this.properties.InitialLongitude; }
             set
             {
-                this.properties.InitialLongitude = value;
-                FirePropertyChanged();
+                if(this.properties.InitialLongitude != value)
+                {
+                    this.properties.InitialLongitude = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.UInt32 InitialZoom
         {
             get { return this.properties.InitialZoom; }
             set
             {
-                this.properties.InitialZoom = value;
-                FirePropertyChanged();
+                if(this.properties.InitialZoom != value)
+                {
+                    this.properties.InitialZoom = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.String InitialMap
         {
             get { return this.properties.InitialMap; }
             set
             {
-                this.properties.InitialMap = value;
-                FirePropertyChanged();
+                if(this.properties.InitialMap != value)
+                {
+                    this.properties.InitialMap = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Double LastWidth
         {
             get { return this.properties.LastWidth; }
             set
             {
-                this.properties.LastWidth = value;
-                FirePropertyChanged();
+                if(this.properties.LastWidth != value)
+                {
+                    this.properties.LastWidth = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Double LastHeight
         {
             get { return this.properties.LastHeight; }
             set
             {
-                this.properties.LastHeight = value;
-                FirePropertyChanged();
+                if(this.properties.LastHeight != value)
+                {
+                    this.properties.LastHeight = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Double LastLeft
         {
             get { return this.properties.LastLeft; }
             set
             {
-                this.properties.LastLeft = value;
-                FirePropertyChanged();
+                if(this.properties.LastLeft != value)
+                {
+                    this.properties.LastLeft = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Double LastTop
         {
             get { return this.properties.LastTop; }
             set
             {
-                this.properties.LastTop = value;
-                FirePropertyChanged();
+                if(this.properties.LastTop != value)
+                {
+                    this.properties.LastTop = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.String LastWindowState
         {
             get { return this.properties.LastWindowState; }
             set
             {
-                this.properties.LastWindowState = value;
-                FirePropertyChanged();
+                if(this.properties.LastWindowState != value)
+                {
+                    this.properties.LastWindowState = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Boolean IsUpgraded
         {
             get { return this.properties.IsUpgraded; }
             set
             {
-                this.properties.IsUpgraded = value;
-                FirePropertyChanged();
+                if(this.properties.IsUpgraded != value)
+                {
+                    this.properties.IsUpgraded = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Single DensifyInMeters
         {
             get { return this.properties.DensifyInMeters; }
             set
             {
-                this.properties.DensifyInMeters = value;
-                FirePropertyChanged();
+                if(this.properties.DensifyInMeters != value)
+                {
+                    this.properties.DensifyInMeters = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Collections.Specialized.StringCollection LastOpenFiles
         {
             get { return this.properties.LastOpenFiles; }
             set
             {
-                this.properties.LastOpenFiles = value;
-                FirePropertyChanged();
+                if(this.properties.LastOpenFiles != value)
+                {
+                    this.properties.LastOpenFiles = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Int32 MaxLastItems
         {
             get { return this.properties.MaxLastItems; }
             set
             {
-                this.properties.MaxLastItems = value;
-                FirePropertyChanged();
+                if(this.properties.MaxLastItems != value)
+                {
+                    this.properties.MaxLastItems = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Boolean EnableMQTT
         {
             get { return this.properties.EnableMQTT; }
             set
             {
-                this.properties.EnableMQTT = value;
-                FirePropertyChanged();
+                if(this.properties.EnableMQTT != value)
+                {
+                    this.properties.EnableMQTT = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.String MQTTHost
         {
             get { return this.properties.MQTTHost; }
             set
             {
-                this.properties.MQTTHost = value;
-                FirePropertyChanged();
+                if(this.properties.MQTTHost != value)
+                {
+                    this.properties.MQTTHost = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
         public System.Int32 MQTTPort
         {
             get { return this.properties.MQTTPort; }
             set
             {
-                this.properties.MQTTPort = value;
-                FirePropertyChanged();
+                if(this.properties.MQTTPort != value)
+                {
+                    this.properties.MQTTPort = value;
+
+                    FirePropertyChanged();
+                }
             }
         }
+
     
     } // end internal sealed class GeneralSettingsViewModel
 }

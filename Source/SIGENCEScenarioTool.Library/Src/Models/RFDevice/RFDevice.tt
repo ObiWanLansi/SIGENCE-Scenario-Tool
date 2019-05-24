@@ -45,7 +45,7 @@ namespace SIGENCEScenarioTool.Models
     ///<summary>
     /// <#=strClassCommment#>
     ///</summary>
-    public partial class <#=eRoot.Name#> :AbstractModelBase, IEquatable<<#=eRoot.Name#>>, ICloneable, IXmlExport
+    public partial class <#=eRoot.Name#> : AbstractModelBase, IEquatable<<#=eRoot.Name#>>, ICloneable, IXmlExport
     {
 
         #region Instance Properties
