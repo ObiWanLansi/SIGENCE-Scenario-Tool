@@ -210,6 +210,36 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
                 FirePropertyChanged();
             }
         }
+
+        public System.Boolean EnableMQTT
+        {
+            get { return this.properties.EnableMQTT; }
+            set
+            {
+                this.properties.EnableMQTT = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public System.String MQTTHost
+        {
+            get { return this.properties.MQTTHost; }
+            set
+            {
+                this.properties.MQTTHost = value;
+                FirePropertyChanged();
+            }
+        }
+
+        public System.Int32 MQTTPort
+        {
+            get { return this.properties.MQTTPort; }
+            set
+            {
+                this.properties.MQTTPort = value;
+                FirePropertyChanged();
+            }
+        }
     
     } // end internal sealed class GeneralSettingsViewModel
 }

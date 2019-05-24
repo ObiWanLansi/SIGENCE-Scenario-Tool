@@ -192,9 +192,10 @@
 
             <Separator />
 
-            <Button Content="{StaticResource OPEN}" ToolTip="Open Templates" Click="MenuItem_LoadTemplates_Click" />
-            <Button Content="{StaticResource SAVE}" ToolTip="Save Templates" Click="MenuItem_SaveTemplates_Click" />
             <Label Content="RFDevice Template" />
+            <Button Content="{StaticResource OPEN}" ToolTip="Load Templates" Click="MenuItem_LoadTemplates_Click" />
+            <Button Content="{StaticResource SAVE}" ToolTip="Save Templates" Click="MenuItem_SaveTemplates_Click" />
+            <Button Content="{StaticResource EDIT}" ToolTip="Edit The Current Templates" Click="MenuItem_EditTemplate_Click" />
             <ComboBox x:Name="cbTemplate" Width="120" ItemsSource="{Binding RFDeviceTemplateCollection}" SelectedItem="{Binding CurrentSelectedTemplate}" ToolTip="Here You Can Select The Template For New RFDevices." Margin="3" />
             <Button Content="{StaticResource STAR_ADD}" ToolTip="Add To Templates" Click="MenuItem_AddToTemplates_Click" />
             <Button Content="{StaticResource STAR_DEL}" ToolTip="Del From Templates" Click="MenuItem_DelFromTemplates_Click" />

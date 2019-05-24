@@ -23,8 +23,10 @@
             <Issue Id="53" Description="Create A Report File From The Current Scenario" />
             <Issue Id="57" Description="Add Markdown Support For Scenario Description" />
             <Issue Id="63" Description="Create A Model For All MetaInformations Of An Scenario" />
+            <Issue Id="91" Description="Create A Dialog For Editing A RFDevice" />
             <Issue Id="112" Description="QuickCommander For Fast Commands In The UI" />
             <Issue Id="144" Description="Template For Scenario Description" />
+            <Issue Id="163" Description="Edit An RFDevice Template" />
             <Issue Id="171" Description="Replace The Description TabItem With MetaInformation" />
             <Issue Id="178" Description="Implement Stylesheets For The Markdown Description" />
             <Issue Id="179" Description="Extend The Markdown Editor With Quick Actions" />

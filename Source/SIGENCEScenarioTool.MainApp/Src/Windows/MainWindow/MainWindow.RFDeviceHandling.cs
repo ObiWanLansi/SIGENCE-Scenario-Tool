@@ -15,6 +15,7 @@ using GMap.NET;
 
 using SIGENCEScenarioTool.Datatypes.Standard;
 using SIGENCEScenarioTool.Dialogs.QRCode;
+using SIGENCEScenarioTool.Dialogs.RFDevice;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
@@ -922,6 +923,34 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.RFDeviceTemplateCollection.Remove(this.CurrentSelectedTemplate);
 
             this.CurrentSelectedTemplate = EMPTY_TEMPLATE;
+        }
+
+
+        /// <summary>
+        /// Edits the template.
+        /// </summary>
+        private void EditTemplate()
+        {
+            if (this.CurrentSelectedTemplate == EMPTY_TEMPLATE)
+            {
+                MB.Warning("You Can't Not Edit The Default Template!");
+                return;
+            }
+
+            RFDeviceEditDialog ded = new RFDeviceEditDialog(this.CurrentSelectedTemplate);
+
+            if (ded.ShowDialog() ?? false == true)
+            {
+                this.RFDeviceTemplateCollection.Remove(this.CurrentSelectedTemplate);
+
+                RFDeviceTemplate newtemplate = new RFDeviceTemplate(ded.Device);
+
+                this.RFDeviceTemplateCollection.Add(newtemplate);
+                this.CurrentSelectedTemplate = newtemplate;
+            }
+
+            ded = null;
+
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

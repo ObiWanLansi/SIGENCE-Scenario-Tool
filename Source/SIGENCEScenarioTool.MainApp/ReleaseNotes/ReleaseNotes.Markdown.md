@@ -4,15 +4,17 @@
 
 ## Version 19 - XXXXX 2019 Release
 
-### Features (8)
+### Features (10)
 
 Issue|Description
 -:|-
 [53](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/53)|Create A Report File From The Current Scenario
 [57](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/57)|Add Markdown Support For Scenario Description
 [63](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/63)|Create A Model For All MetaInformations Of An Scenario
+[91](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/91)|Create A Dialog For Editing A RFDevice
 [112](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/112)|QuickCommander For Fast Commands In The UI
 [144](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/144)|Template For Scenario Description
+[163](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/163)|Edit An RFDevice Template
 [171](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/171)|Replace The Description TabItem With MetaInformation
 [178](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/178)|Implement Stylesheets For The Markdown Description
 [179](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/179)|Extend The Markdown Editor With Quick Actions
