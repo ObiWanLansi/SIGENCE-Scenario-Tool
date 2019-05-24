@@ -482,6 +482,27 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
             }
         }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
+        public System.Boolean EnableUDP
+        {
+            get { return this.properties.EnableUDP; }
+            set
+            {
+                if(this.properties.EnableUDP != value)
+                {
+                    this.properties.EnableUDP = value;
+
+                    FirePropertyChanged();
+                }
+            }
+        }
+
     
     } // end internal sealed class GeneralSettingsViewModel
 }

@@ -68,5 +68,8 @@
     <Setting Name="MQTTPort" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1883</Value>
     </Setting>
+    <Setting Name="EnableUDP" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

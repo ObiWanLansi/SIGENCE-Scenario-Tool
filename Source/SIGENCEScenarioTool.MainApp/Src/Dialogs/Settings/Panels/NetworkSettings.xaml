@@ -7,12 +7,66 @@
 
 
     <Grid>
-        <Label Content="Preview" FontSize="120" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#40FF0000" Margin="-120,0">
+        <!--<Label Content="Preview" FontSize="120" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#40FF0000" Margin="-120,0">
             <Label.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="45" />
                 </TransformGroup>
             </Label.RenderTransform>
-        </Label>
+        </Label>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="5,1,5,1" />
+                <!--<Setter Property="TextAlignment" Value="Right" />-->
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+
+            </Style>
+        </Grid.Resources>
+
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="MQTT Configuration" FontWeight="Bold" Background="WhiteSmoke" Margin="0,0,0,5" />
+
+        <Label Grid.Column="0" Grid.Row="1" Content="Enabled" ToolTip="The URL To The MQTT Broker." />
+        <CheckBox Grid.Column="1" Grid.Row="1" IsChecked="True" VerticalAlignment="Center" Margin="5,1,5,1" />
+
+        <Label Grid.Column="0" Grid.Row="2" Content="Broker URL" ToolTip="The URL To The MQTT Broker." />
+        <TextBox Grid.Column="1" Grid.Row="2" Text="127.0.0.1" />
+
+        <Label Grid.Column="0" Grid.Row="3" Content="Broker Port" ToolTip="The Port From The MQTT Broker." />
+        <TextBox Grid.Column="1" Grid.Row="3" Text="1833" />
+
+
+        <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="UDP Configuration" FontWeight="Bold" Background="WhiteSmoke" Margin="0,10,0,5" />
+
+        <Label Grid.Column="0" Grid.Row="5" Content="Enabled" ToolTip="The URL To The MQTT Broker." />
+        <CheckBox Grid.Column="1" Grid.Row="5" IsChecked="True" VerticalAlignment="Center" Margin="5,1,5,1" />
+
+        <Label Grid.Column="0" Grid.Row="6" Content="Server IP" ToolTip="The IP Address To Send The UDP Data." />
+        <TextBox Grid.Column="1" Grid.Row="6" Text="127.0.0.1" />
+
+        <Label Grid.Column="0" Grid.Row="7" Content="Server Port" ToolTip="The Port To Send The UDP Data." />
+        <TextBox Grid.Column="1" Grid.Row="7" Text="4242" />
+
+        <Label Grid.Column="0" Grid.Row="8" Content="Receiving Port" ToolTip="The Port To Receive The UDP Data." />
+        <TextBox Grid.Column="1" Grid.Row="8" Text="1974" />
+
     </Grid>
 </UserControl>

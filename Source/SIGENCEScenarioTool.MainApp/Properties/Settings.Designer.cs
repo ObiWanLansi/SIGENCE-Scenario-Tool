@@ -285,5 +285,17 @@ namespace SIGENCEScenarioTool.Properties {
                 this["MQTTPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableUDP {
+            get {
+                return ((bool)(this["EnableUDP"]));
+            }
+            set {
+                this["EnableUDP"] = value;
+            }
+        }
     }
 }
