@@ -119,7 +119,7 @@ namespace SIGENCEScenarioTool.Models
 
             //-----------------------------------------------------------------
 
-            //  TODO:
+            //  TODO: Validate the following properties:
             //  CenterFrequency_Hz
             //  Bandwith_Hz
             //  Gain_dB

@@ -103,7 +103,7 @@
         
 #>
     <br/><br/>
-    <h2>Version <a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/<#=strVersionNumber#>"><#=strVersionNumber#></a> - <#=strVersionTitle#></h2>
+    <h2>Version <a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/<#=strVersionNumber#>" target="_blank"><#=strVersionNumber#></a> - <#=strVersionTitle#></h2>
 <#
         Action<string> ReadIssue = ((type)=>
         {
@@ -136,7 +136,7 @@
                 int iId = item.Item1;
                 string strDescription = item.Item2;
 #>
-                <tr><td style="text-align: right; width: 40px;"><a href="<#=GITHUB_ISSUE#><#=iId#>"><#=iId#></a></td><td><#=strDescription#></td></tr>
+                <tr><td style="text-align: right; width: 40px;"><a href="<#=GITHUB_ISSUE#><#=iId#>" target="_blank"><#=iId#></a></td><td><#=strDescription#></td></tr>
 <#
             }
 #>

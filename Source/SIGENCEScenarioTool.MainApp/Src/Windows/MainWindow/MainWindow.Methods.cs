@@ -125,6 +125,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// 
         /// </summary>
@@ -352,18 +353,32 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if (this.MetaInformation.DescriptionMarkdown.IsNotEmpty())
             {
+                this.sbHtml.Clear();
+                this.sbMarkdown.Clear();
+
                 try
                 {
-                    StringBuilder sbHtml = new StringBuilder(8192);
-
                     string strHeaderWithCSS = HEADER.Replace("$STYLE$", this.MetaInformation.DescriptionStylesheet);
 
-                    sbHtml.AppendLine(strHeaderWithCSS);
-                    sbHtml.AppendLine(Markdown.ToHtml(this.tecDescriptionMarkdown.Text, MAPI));
-                    sbHtml.AppendLine(FOOTER);
+                    string[] strLines = this.tecDescriptionMarkdown.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+
+                    foreach (string strLine in strLines)
+                    {
+                        if (strLine.StartsWith(GenericFoldingStrategy.REGION_START) || strLine.StartsWith(GenericFoldingStrategy.REGION_END))
+                        {
+                            continue;
+                        }
+
+                        this.sbMarkdown.AppendLine(strLine);
+                    }
+
+                    this.sbHtml.AppendLine(strHeaderWithCSS);
+                    //sbHtml.AppendLine(Markdown.ToHtml(this.tecDescriptionMarkdown.Text, MAPI));
+                    this.sbHtml.AppendLine(Markdown.ToHtml(this.sbMarkdown.ToString(), MAPI));
+                    this.sbHtml.AppendLine(FOOTER);
 
                     //this.Dispatcher.Invoke(() => this.wbWebBrowser.NavigateToString(sbHtml.ToString()));
-                    this.wbWebBrowser.NavigateToString(sbHtml.ToString());
+                    this.wbWebBrowser.NavigateToString(this.sbHtml.ToString());
                     //this.wbWebBrowser.Refresh();
                 }
                 catch (Exception ex)
@@ -444,6 +459,113 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 CenterFrequency_Hz = 90_000_000,
                 Bandwidth_Hz = 30_000
             });
+        }
+
+
+        ///// <summary>
+        ///// Creates the scenario report.
+        ///// </summary>
+        //[Conditional("DEBUG")]
+        private void CreateScenarioReport()
+        {
+            if (string.IsNullOrEmpty(this.CurrentFile))
+            {
+                MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
+                return;
+            }
+
+            this.Cursor = Cursors.Wait;
+
+            FileInfo fiCurrentFile = new FileInfo(this.CurrentFile);
+
+            string strScenarioName = fiCurrentFile.GetFilenameWithoutExtension();
+
+            string strOutputDirectory = $"{fiCurrentFile.DirectoryName}\\{strScenarioName}.Report";
+            if (Directory.Exists(strOutputDirectory) == false)
+            {
+                Directory.CreateDirectory(strOutputDirectory);
+            }
+
+            string strOutputFilenameMarkdown = $"{strOutputDirectory}\\{strScenarioName}.md";
+
+            StringBuilder sb = new StringBuilder(8192);
+
+            //-----------------------------------------------------------------
+
+            sb.AppendLine($"# Scenario {fiCurrentFile.GetFilenameWithoutExtension()}");
+            sb.AppendLine();
+
+            //1. MetaInformation
+            sb.AppendLine("## About This Scenario");
+            sb.AppendLine();
+            sb.AppendLine("|Property|Value|");
+            sb.AppendLine("|--------|-----|");
+            sb.AppendLine($"|Version|{this.MetaInformation.Version}|");
+            sb.AppendLine($"|Application Context|{this.MetaInformation.ApplicationContext}|");
+            sb.AppendLine($"|Contact Person|{this.MetaInformation.ContactPerson}|");
+            if (this.MetaInformation.DescriptionMarkdown.IsNotEmpty())
+            {
+                sb.AppendLine($"|User Description|[ScenarioDescription.md](./ScenarioDescription.md)|");
+                string strOutputUserDescription = $"{strOutputDirectory}\\ScenarioDescription.md";
+                File.WriteAllText(strOutputUserDescription, this.MetaInformation.DescriptionMarkdown, Encoding.UTF8);
+            }
+            sb.AppendLine();
+            sb.AppendLine("---");
+
+            //2. Devices
+            sb.AppendLine();
+            sb.AppendLine("## RFDevice List");
+            sb.AppendLine();
+            if (this.RFDeviceViewModelCollection != null && this.RFDeviceViewModelCollection.Count > 0)
+            {
+                sb.AppendLine("|  Id|DeviceSource|StartTime|Name|Latitude|Longitude|Altitude|Roll|Pitch|Yaw|RxTxType|AntennaType|CenterFrequency|Bandwidth|Gain|SignalToNoiseRatio|");
+                sb.AppendLine("|---:|:-----------|:-------:|:---|-------:|--------:|-------:|---:|----:|--:|:-------|:----------|--------------:|--------:|---:|-----------------:|");
+
+                foreach (RFDeviceViewModel dev in from device in this.RFDeviceViewModelCollection orderby device.Id, device.StartTime select device)
+                {
+                    sb.AppendLine($"|{dev.Id}|{dev.DeviceSource}|{dev.StartTime}|{dev.Name}|{dev.HumanLatitude}|{dev.HumanLongitude}|{dev.HumanAltitude}|{dev.Roll}|{dev.Pitch}|{dev.Yaw}|{dev.RxTxType}|{dev.AntennaType}|{dev.HumanCenterFrequency}|{dev.HumanBandwidth}|{dev.HumanGain}|{dev.HumanSignalToNoiseRatio}|");
+                }
+            }
+            sb.AppendLine();
+            sb.AppendLine("---");
+
+            // 3. Validation Results
+            ExecuteValidateScenario();
+            sb.AppendLine();
+            sb.AppendLine("## Validation Results");
+            sb.AppendLine();
+            if (this.ValidationResult != null && this.ValidationResult.Count > 0)
+            {
+                List<Models.Validation.ValidationResult> lResults = (from result in this.ValidationResult select result.Result).ToList();
+                sb.AppendLine(lResults.Table());
+            }
+            sb.AppendLine("---");
+
+            //4. Screenshot
+            sb.AppendLine();
+            sb.AppendLine("## Screenshot");
+            sb.AppendLine();
+
+            try
+            {
+                string strOutputFilenameScreenshot = $"{strOutputDirectory}\\ScenarioScreenshot.png";
+                var screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
+                Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
+
+                sb.AppendLine("![ScenarioScreenshot](./ScenarioScreenshot.png)");
+            }
+            catch (Exception ex)
+            {
+                sb.AppendLine($"**{ex.Message}**");
+                MB.Error(ex);
+            }
+            //-----------------------------------------------------------------
+
+            File.WriteAllText(strOutputFilenameMarkdown, sb.ToString(), Encoding.UTF8);
+
+            Tools.Windows.OpenWithDefaultApplication(strOutputFilenameMarkdown);
+
+            this.Cursor = Cursors.Arrow;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -986,7 +1108,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
         /// <summary>
         /// Opens the webbrowser.
         /// </summary>
@@ -1104,6 +1225,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.InfoWindowVisibility = this.InfoWindowVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
             FirePropertyChanged("InfoWindowVisibility");
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         ///// <summary>

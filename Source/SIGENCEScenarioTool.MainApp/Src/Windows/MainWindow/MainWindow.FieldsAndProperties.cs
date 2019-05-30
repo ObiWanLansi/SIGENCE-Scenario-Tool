@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -150,6 +151,21 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         ///// </summary>
         //private bool bTextChanged = false;
 
+        /// <summary>
+        /// The GFS
+        /// </summary>
+        private readonly GenericFoldingStrategy gfs = new GenericFoldingStrategy();
+
+        /// <summary>
+        /// The sb HTML
+        /// </summary>
+        private readonly StringBuilder sbHtml = new StringBuilder(8192);
+
+        /// <summary>
+        /// The sb markdown
+        /// </summary>
+        private readonly StringBuilder sbMarkdown = new StringBuilder(4096);
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -189,6 +205,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 this._bDescriptionMarkdownChanged = value;
+
                 FirePropertyChanged();
             }
         }
@@ -211,6 +228,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             set
             {
                 this._bDescriptionStylesheetChanged = value;
+
                 FirePropertyChanged();
             }
         }

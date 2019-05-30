@@ -462,6 +462,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
             this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionMarkdown_DocumentChanged;
 
+            this.tecDescriptionMarkdown.Document.FoldingManager.FoldingStrategy = this.gfs;
+            //this.tecDescriptionMarkdown.Document.FoldingManager.UpdateFoldings(null, null);
+
             this.tecDescriptionStyleheet.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionStylesheet_DocumentChanged;
             //this.tecDescription.ActiveTextAreaControl.TextArea.TextChanged += TextArea_TextChanged;
         }

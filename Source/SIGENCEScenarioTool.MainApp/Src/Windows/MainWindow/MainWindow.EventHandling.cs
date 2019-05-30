@@ -1040,13 +1040,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             if (e.PropertyName == ScenarioMetaInformation.DESCRIPTIONMARKDOWN)
             {
                 this.tecDescriptionMarkdown.Text = this.MetaInformation.DescriptionMarkdown;
+                this.tecDescriptionMarkdown.Document.FoldingManager.UpdateFoldings(null, null);
                 this.tecDescriptionMarkdown.Refresh();
+
 
                 // Nur wenn der Browser gerade sichbar ist noch updaten ...
                 //if (this.wbWebBrowser.IsVisible)
-                {
-                    UpdateScenarioDescriptionMarkdown();
-                }
+                //{
+                UpdateScenarioDescriptionMarkdown();
+                //}
 
                 return;
             }
@@ -1058,9 +1060,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 // Nur wenn der Browser gerade sichbar ist noch updaten ...
                 //if (this.wbWebBrowser.IsVisible)
-                {
-                    UpdateScenarioDescriptionMarkdown();
-                }
+                //{
+                UpdateScenarioDescriptionMarkdown();
+                //}
 
                 return;
             }
@@ -1199,6 +1201,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down:
                     new GotoNextBookmark(b => true).Execute(this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea);
+                    break;
+
+                //-------------------------------------------------------------
+
+                case System.Windows.Forms.Keys.Enter:
+                    this.tecDescriptionMarkdown.Document.FoldingManager.UpdateFoldings(null, null);
                     break;
             }
 

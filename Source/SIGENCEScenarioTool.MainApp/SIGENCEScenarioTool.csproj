@@ -272,6 +272,7 @@
     <Compile Include="Src\Markers\RectangleMarker.xaml.cs">
       <DependentUpon>RectangleMarker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Tools\GenericFoldingStrategy.cs" />
     <Compile Include="Src\ViewModels\RFDeviceViewModel.cs" />
     <Page Include="Src\Dialogs\Charting\ChartingDialog.xaml">
       <SubType>Designer</SubType>

@@ -13,6 +13,7 @@
             <Issue Id="" Description="" />
             <Issue Id="" Description="" />
             <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
         </Bugs>
     </Version>
     -->
@@ -30,6 +31,7 @@
             <Issue Id="171" Description="Replace The Description TabItem With MetaInformation" />
             <Issue Id="178" Description="Implement Stylesheets For The Markdown Description" />
             <Issue Id="179" Description="Extend The Markdown Editor With Quick Actions" />
+            <Issue Id="180" Description="Extend The Markdown Editor With Regions" />
             <Issue Id="183" Description="Display The Release Notes In SST" />
         </Features>
     </Version>
