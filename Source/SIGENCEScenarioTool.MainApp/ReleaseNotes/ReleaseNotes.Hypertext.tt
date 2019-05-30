@@ -103,7 +103,7 @@
         
 #>
     <br/><br/>
-    <h2>Version <#=strVersionNumber#> - <#=strVersionTitle#></h2>
+    <h2>Version <a href="https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/<#=strVersionNumber#>"><#=strVersionNumber#></a> - <#=strVersionTitle#></h2>
 <#
         Action<string> ReadIssue = ((type)=>
         {

@@ -437,6 +437,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReleaseNotes.Markdown.tt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -463,11 +464,12 @@
     <Resource Include="Images\star_yellow.png" />
     <Resource Include="Images\star_yellow_add.png" />
     <Resource Include="Images\star_yellow_delete.png" />
-    <Content Include="ReleaseNotes\ReleaseNotes.Hypertext.html">
+    <None Include="ReleaseNotes\ReleaseNotes.Hypertext.html">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReleaseNotes.Hypertext.tt</DependentUpon>
-    </Content>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="ReleaseNotes\ReleaseNotes.Hypertext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ReleaseNotes.Hypertext.html</LastGenOutput>

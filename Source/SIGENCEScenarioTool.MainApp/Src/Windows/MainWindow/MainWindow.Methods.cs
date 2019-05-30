@@ -627,7 +627,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         MB.Information(sb.ToString());
 #endif
                     }
-
                 }
                 else
                 {
@@ -1019,7 +1018,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Opens the webbrowser internal.
         /// </summary>
         /// <param name="strUrl">The string URL.</param>
-        private void OpenWebbrowserInternal(string strUrl)
+        /// <param name="strTitle">The string title.</param>
+        private void OpenWebbrowserInternal(string strUrl, string strTitle = null)
         {
             StackPanel header = new StackPanel
             {
@@ -1058,11 +1058,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 Source = strUrl != null ? new Uri(strUrl) : null
             };
 
-            webbrowser.LoadCompleted += Webbrowser_LoadCompleted;
+            //if (strTitle.IsEmpty())
+            //{
+            //    webbrowser.LoadCompleted += Webbrowser_LoadCompleted;
+            //}
 
-            TabItem ti = new TabItem { Header = header, Content = webbrowser, IsSelected = true };
-
-            this.tcTabControl.Items.Add(ti);
+            this.tcTabControl.Items.Add(new TabItem
+            {
+                Header = header,
+                Content = webbrowser,
+                IsSelected = true
+            });
         }
 
 
@@ -1077,15 +1083,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// Handles the LoadCompleted event of the Webbrowser control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.Windows.Navigation.NavigationEventArgs"/> instance containing the event data.</param>
-        private void Webbrowser_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-            ((((sender as WebBrowser).Parent as TabItem).Header as StackPanel).Children[1] as Label).Content = e.Uri != null ? e.Uri.AbsoluteUri : "Webbrowser";
-        }
+        ///// <summary>
+        ///// Handles the LoadCompleted event of the Webbrowser control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="System.Windows.Navigation.NavigationEventArgs"/> instance containing the event data.</param>
+        //private void Webbrowser_LoadCompleted(object sender, NavigationEventArgs e)
+        //{
+        //    ((((sender as WebBrowser).Parent as TabItem).Header as StackPanel).Children[1] as Label).Content = e.Uri != null ? e.Uri.AbsoluteUri : "Webbrowser";
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

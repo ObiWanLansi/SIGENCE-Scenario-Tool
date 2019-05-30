@@ -144,14 +144,15 @@
             </MenuItem>
             <MenuItem Header="_Help">
                 <!--<MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />-->
-                <MenuItem Header="_Cheat Sheet" Icon="{StaticResource HELP}" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
-                <MenuItem Header="_About" Icon="{StaticResource HELP}" Click="MenuItem_About_Click" />
-                <Separator />
-                <MenuItem Header="_Open Issues" Icon="{StaticResource BUG_GREEN}" Click="MenuItem_OpenIssues_Click" />
-                <MenuItem Header="_Open Kanban Board" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_KanbanBoard_Click" />
-                <!--<MenuItem Header="_About" IsEnabled="False" />-->
+                <MenuItem Header="_Open Cheat Sheet" Icon="{StaticResource HELP}" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
+                <MenuItem Header="_Open Release Notes" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_ReleaseNotes_Click" />
                 <!--<Separator />
-                <MenuItem Header="Check _Version" Icon="{StaticResource HELP}" Click="MenuItem_CheckVersion_Click" />-->
+                <MenuItem Header="_Open Issues" Icon="{StaticResource BUG_GREEN}" Click="MenuItem_OpenIssues_Click" />-->
+                <!--<MenuItem Header="_Open Kanban Board" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_KanbanBoard_Click" />-->
+                <Separator />
+                <MenuItem Header="_About SIGENCE Scenario Tool" Icon="{StaticResource HELP}" Click="MenuItem_About_Click" />
+                <!--<MenuItem Header="_About" IsEnabled="False" />-->
+                <!--<MenuItem Header="Check _Version" Icon="{StaticResource HELP}" Click="MenuItem_CheckVersion_Click" />-->
             </MenuItem>
         </Menu>
 
@@ -1057,7 +1058,7 @@
                 </Grid>
             </TabItem>
 
-
+<!--
             <TabItem x:Name="tiGeoNodes">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -1132,7 +1133,7 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-
+-->
 
             <!--<TabItem x:Name="tiMessages">
                 <TabItem.Header>

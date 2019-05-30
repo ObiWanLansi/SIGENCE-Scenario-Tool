@@ -571,49 +571,62 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
         private void MenuItem_About_Click(object sender, RoutedEventArgs e)
         {
-            Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/");
+            Tools.Windows.OpenWebAdress("https://obiwanlansi.github.io/SIGENCE-Scenario-Tool/");
 
             e.Handled = true;
         }
+
+
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_OpenIssues control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_OpenIssues_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/");
+
+        //    e.Handled = true;
+        //}
+
+
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_KanbanBoard control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_KanbanBoard_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1?fullscreen=true");
+
+        //    e.Handled = true;
+        //}
 
 
         /// <summary>
-        /// Handles the Click event of the MenuItem_OpenIssues control.
+        /// Handles the Click event of the MenuItem_ReleaseNotes control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_OpenIssues_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_ReleaseNotes_Click(object sender, RoutedEventArgs e)
         {
-            Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/");
+            OpenWebbrowserInternal($"{Tool.StartupPath}\\ReleaseNotes\\ReleaseNotes.Hypertext.html", "Release Notes");
 
             e.Handled = true;
         }
 
 
-        /// <summary>
-        /// Handles the Click event of the MenuItem_KanbanBoard control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_KanbanBoard_Click(object sender, RoutedEventArgs e)
-        {
-            Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1?fullscreen=true");
+        ///// <summary>
+        ///// Handles the Click event of the MenuItem_OpenWiki control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void MenuItem_OpenWiki_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki");
 
-            e.Handled = true;
-        }
-
-
-        /// <summary>
-        /// Handles the Click event of the MenuItem_OpenWiki control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_OpenWiki_Click(object sender, RoutedEventArgs e)
-        {
-            Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/wiki");
-
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
         /// <summary>

@@ -2,9 +2,9 @@
 
 <br/>
 
-## Version 19 - XXXXX 2019 Release
+## Version [19](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/19) - XXXXX 2019 Release
 
-### Features (10)
+### Features (11)
 
 Issue|Description
 -:|-
@@ -18,10 +18,11 @@ Issue|Description
 [171](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/171)|Replace The Description TabItem With MetaInformation
 [178](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/178)|Implement Stylesheets For The Markdown Description
 [179](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/179)|Extend The Markdown Editor With Quick Actions
+[183](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/183)|Display The Release Notes In SST
 
 <br/>
 
-## Version 18 - April 2019 Release
+## Version [18](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/18) - April 2019 Release
 
 ### Features (6)
 
@@ -36,7 +37,7 @@ Issue|Description
 
 <br/>
 
-## Version 17 - Dezember 2018 Release
+## Version [17](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/17) - Dezember 2018 Release
 
 ### Features (1)
 
@@ -52,7 +53,7 @@ Issue|Description
 
 <br/>
 
-## Version 16 - November 2018 Release
+## Version [16](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/16) - November 2018 Release
 
 ### Features (5)
 
@@ -73,7 +74,7 @@ Issue|Description
 
 <br/>
 
-## Version 15 - October 2018 Release
+## Version [15](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/15) - October 2018 Release
 
 ### Features (13)
 
@@ -101,7 +102,7 @@ Issue|Description
 
 <br/>
 
-## Version 1.4 - September 2018 Release
+## Version [1.4](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/1.4) - September 2018 Release
 
 ### Features (6)
 
@@ -122,7 +123,7 @@ Issue|Description
 
 <br/>
 
-## Version 1.3 - August 2018 Release
+## Version [1.3](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/1.3) - August 2018 Release
 
 ### Features (12)
 
@@ -149,7 +150,7 @@ Issue|Description
 
 <br/>
 
-## Version 1.2 - Juli 2018 Release
+## Version [1.2](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/1.2) - Juli 2018 Release
 
 ### Features (8)
 
@@ -172,7 +173,7 @@ Issue|Description
 
 <br/>
 
-## Version 1.1 - Juni 2018 Release
+## Version [1.1](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/1.1) - Juni 2018 Release
 
 ### Features (5)
 
@@ -186,7 +187,7 @@ Issue|Description
 
 <br/>
 
-## Version 1.0 - Initial Release
+## Version [1.0](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/1.0) - Initial Release
 
 ### Features (1)
 
