@@ -8,6 +8,7 @@ using System.Windows.Xps.Packaging;
 
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
+using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.Ui;
 

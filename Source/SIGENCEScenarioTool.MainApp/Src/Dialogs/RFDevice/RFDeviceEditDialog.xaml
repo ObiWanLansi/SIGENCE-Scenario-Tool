@@ -72,7 +72,7 @@
         <Label Grid.Column="0" Grid.Row="0" Content="DeviceSource" VerticalContentAlignment="Center" />
         <!--<Label Grid.Column="1" Grid.Row="0" Content="{Binding Device.DeviceSource}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />-->
         <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Source={StaticResource eDeviceSource}}" SelectedItem="{Binding Device.DeviceSource,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="0" Content="" Style="{StaticResource HumanLabel}" />
+        <Label Grid.Column="2" Grid.Row="0" Content="{Binding Device.FirstValidationHint}" Background="{Binding Device.ValidationBackground}" ToolTip="{Binding Device.ValidationHint}" Style="{StaticResource HumanLabel}" />
 
         <Label Grid.Column="0" Grid.Row="1" Content="Id" VerticalContentAlignment="Center" />
         <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Device.Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />

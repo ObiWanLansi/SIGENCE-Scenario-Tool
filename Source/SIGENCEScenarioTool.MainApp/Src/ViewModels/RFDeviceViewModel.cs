@@ -32,6 +32,11 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         private readonly GMapControl mcMapControl = null;
 
+        /// <summary>
+        /// The sb validation hint
+        /// </summary>
+        private readonly StringBuilder sbValidationHint = new StringBuilder(1024);
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -51,7 +56,7 @@ namespace SIGENCEScenarioTool.ViewModels
 
             // If A Property Changed, It Is Useful To ReValidate ...
 
-            if (strPropertyName != "ValidationBackground" && strPropertyName != "ValidationHint")
+            if (strPropertyName != "ValidationBackground" && strPropertyName != "ValidationHint" && strPropertyName != "FirstValidationHint")
             {
                 ExecValidation();
             }
@@ -102,6 +107,7 @@ namespace SIGENCEScenarioTool.ViewModels
         //{
         //    get { return this.RFDevice.DeviceSource; }
         //}
+
 
         /// <summary>
         /// Gets or sets the device source.
@@ -681,6 +687,29 @@ namespace SIGENCEScenarioTool.ViewModels
 
 
         /// <summary>
+        /// The string first validation hint
+        /// </summary>
+        private string strFirstValidationHint = "";
+
+        /// <summary>
+        /// Gets or sets the first validation hint.
+        /// </summary>
+        /// <value>
+        /// The first validation hint.
+        /// </value>
+        public string FirstValidationHint
+        {
+            get { return this.strFirstValidationHint; }
+            set
+            {
+                this.strFirstValidationHint = value;
+
+                FirePropertyChanged();
+            }
+        }
+
+
+        /// <summary>
         /// The string validation hint
         /// </summary>
         private string strValidationHint = "";
@@ -697,9 +726,11 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 this.strValidationHint = value;
+
                 FirePropertyChanged();
             }
         }
+
 
         /// <summary>
         /// The b validation background
@@ -718,27 +749,36 @@ namespace SIGENCEScenarioTool.ViewModels
             set
             {
                 this.bValidationBackground = value;
+
                 FirePropertyChanged();
             }
         }
+
 
         /// <summary>
         /// Executes the validation.
         /// </summary>
         private void ExecValidation()
         {
-            var validation = this.RFDevice.Validate();
+            Models.Validation.ValidationResultList validation = this.RFDevice.Validate();
 
             //-----------------------------------------------------------------
 
-            StringBuilder sb = new StringBuilder(512);
+            this.sbValidationHint.Clear();
+
+            int iCounter = 0;
 
             foreach (var v in from val in validation orderby val.Servity descending select val)
             {
-                sb.AppendLine("[{0}]: {1}", v.Servity, v.Message);
+                if (iCounter++ == 0)
+                {
+                    this.FirstValidationHint = string.Format("[{0}]: {1}", v.Servity, v.Message);
+                }
+
+                this.sbValidationHint.AppendLine("[{0}]: {1}", v.Servity, v.Message);
             }
 
-            this.ValidationHint = sb.ToString().Trim();
+            this.ValidationHint = this.sbValidationHint.ToString().Trim();
 
             //-----------------------------------------------------------------
 
