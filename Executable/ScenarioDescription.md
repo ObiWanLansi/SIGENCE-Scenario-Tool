@@ -37,11 +37,15 @@ When you kipp the Ahoi Brause in your nose it hurts ...
 
 ---
 
+#region Checklist ...
+
 ## Checklist
 
 - [ ] Application in aktueller Version (0.1)
 - [ ] UDP Port + Adresse eingestellt ?
 - [ ] Wetterdaten kontrolliert
+
+#endregion
 
 ---
 

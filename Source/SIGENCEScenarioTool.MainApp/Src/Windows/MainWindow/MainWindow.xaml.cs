@@ -8,7 +8,6 @@ using System.Windows.Xps.Packaging;
 
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
-using SIGENCEScenarioTool.Models.Templates;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.Ui;
 
@@ -259,7 +258,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //MB.Information(device.ToXml().ToString());
 #else
             this.mMainMenu.Items.Remove(this.miTest);
-            this.tcTabControl.Items.Remove(this.tiGeoNodes);
+            //this.tcTabControl.Items.Remove(this.tiGeoNodes);
             //this.tcTabControl.Items.Remove(this.tiMetaInformation);
 #endif
         }
