@@ -4,7 +4,7 @@
 
 ## Version [19](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/19) - XXXXX 2019 Release
 
-### Features (12)
+### Features (13)
 
 Issue|Description
 -:|-
@@ -20,6 +20,7 @@ Issue|Description
 [179](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/179)|Extend The Markdown Editor With Quick Actions
 [180](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/180)|Extend The Markdown Editor With Regions
 [183](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/183)|Display The Release Notes In SST
+[185](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/185)|Create An Useful Panel For The MetaInformation Tab
 
 <br/>
 

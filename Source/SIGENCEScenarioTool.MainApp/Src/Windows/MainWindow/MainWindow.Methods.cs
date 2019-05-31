@@ -1154,7 +1154,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             header.Children.Add(new Label
             {
-                Content = "Webbrowser"
+                Content = strTitle.IsNotEmpty() ? strTitle : "Webbrowser"
             });
 
             Button close = new Button

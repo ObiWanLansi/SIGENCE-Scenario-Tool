@@ -13,7 +13,7 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -27,9 +27,6 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/tree/master/SIGENCEScenarioTool.ClickAndOnce/</InstallUrl>
-    <SupportUrl>https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool</SupportUrl>
-    <ErrorReportUrl>https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/</ErrorReportUrl>
     <ProductName>SIGENCE Scenario Tool</ProductName>
     <PublisherName>LansiTools</PublisherName>
     <ApplicationRevision>1</ApplicationRevision>
@@ -421,7 +418,14 @@
       <Link>CheatSheet.pdf</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="ClassDiagram.cd" />
+    <None Include="..\..\Documentation\MarkdownCheatsheet.xps">
+      <Link>MarkdownCheatsheet.xps</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Documentation\MarkdownCheatsheet.pdf">
+      <Link>MarkdownCheatsheet.pdf</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="ScenarioDescription.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -479,7 +483,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ReleaseNotes.Markdown.md</LastGenOutput>
     </Content>
-    <Resource Include="ReleaseNotes\ReleaseNotes.xml" />
+    <Resource Include="ReleaseNotes\ReleaseNotes.xml">
+      <SubType>Designer</SubType>
+    </Resource>
     <Resource Include="mobilephone.ico" />
     <Resource Include="Images\copy.png" />
     <Resource Include="Images\paste.png" />

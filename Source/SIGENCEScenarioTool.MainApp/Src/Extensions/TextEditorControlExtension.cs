@@ -268,7 +268,7 @@ namespace SIGENCEScenarioTool.Extensions
             }
             else
             {
-                tec.ActiveTextAreaControl.TextArea.InsertString("[Caption](Link Address)");
+                tec.ActiveTextAreaControl.TextArea.InsertString("[Caption](https://www.google.de)");
             }
         }
 

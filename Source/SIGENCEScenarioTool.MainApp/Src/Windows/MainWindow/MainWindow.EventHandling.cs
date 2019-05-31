@@ -707,18 +707,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //}
 
 
-        /// <summary>
-        /// Handles the Click event of the Button_HtmlHelp control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Button_DocumentationHelp_Click(object sender, RoutedEventArgs e)
-        {
-            Tools.Windows.OpenWebAdress("https://www.w3schools.com/html/default.asp");
-            //Tools.Windows.OpenWebAdress("https://guides.github.com/features/mastering-markdown/");
+        ///// <summary>
+        ///// Handles the Click event of the Button_HtmlHelp control.
+        ///// </summary>
+        ///// <param name="sender">The source of the event.</param>
+        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //private void Button_DocumentationHelp_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Tools.Windows.OpenWebAdress("https://www.w3schools.com/html/default.asp");
+        //    //Tools.Windows.OpenWebAdress("https://guides.github.com/features/mastering-markdown/");
 
-            e.Handled = true;
-        }
+        //    e.Handled = true;
+        //}
 
 
         ///// <summary>

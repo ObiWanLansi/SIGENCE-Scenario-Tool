@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Xps.Packaging;
 
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
@@ -81,7 +83,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
             SetTitle();
-            //UpdateScenarioDescription();
             UpdateFileHistory();
 
             //-----------------------------------------------------------------
@@ -111,6 +112,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.MetaInformation.PropertyChanged += MetaInformation_PropertyChanged;
 
             //-----------------------------------------------------------------
+
+            XpsDocument xps = new XpsDocument("MarkdownCheatsheet.xps", FileAccess.Read);
+            this.dvMarkdownCheatsheet.Document = xps.GetFixedDocumentSequence();
+            this.dvMarkdownCheatsheet.FitToWidth();
+
+            //-----------------------------------------------------------------
+
 #if DEBUG
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "FMBroadcast", Id = 2 }));
@@ -218,11 +226,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
             //this.tiEditDescription.IsSelected = true;
-            this.tiMetaInformation.IsSelected = true;
-            
-            InitMetaInformation();
+            //this.tiMetaInformation.IsSelected = true;
 
-            UpdateScenarioDescriptionMarkdown();
+            //InitMetaInformation();
+
+            //UpdateScenarioDescriptionMarkdown();
 
             ////string strMarkdown = $"{Tool.StartupPath}\\ExampleScenarioDescription.md";
 

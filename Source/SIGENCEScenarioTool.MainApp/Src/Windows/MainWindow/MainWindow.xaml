@@ -742,8 +742,8 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="2*" />
                     </Grid.RowDefinitions>
 
                     <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="5">
@@ -861,16 +861,33 @@
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="5" Background="Gray">
-                        <Label Content="Placeholder" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkTurquoise" FontWeight="Bold">
+
+                        <DocumentViewer Name="dvMarkdownCheatsheet">
+                            <DocumentViewer.Resources>
+                                <Style TargetType="ContentControl">
+                                    <Style.Triggers>
+                                        <Trigger Property="Name" Value="PART_FindToolBarHost">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DocumentViewer.Resources>
+                        </DocumentViewer>
+
+                        <!--<WebBrowser Source="https://guides.github.com/features/mastering-markdown/" />-->
+
+                        <!--<Label Content="Placeholder" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkTurquoise" FontWeight="Bold">
                             <Label.Effect>
                                 <DropShadowEffect BlurRadius="80" ShadowDepth="0" Direction="0" Color="Blue" />
                             </Label.Effect>
-                            <!--<Label.RenderTransform>
+                            -->
+                        <!--<Label.RenderTransform>
                                 <TransformGroup>
                                     <RotateTransform Angle="45" CenterX="120" CenterY="70"/>
                                 </TransformGroup>
                             </Label.RenderTransform>-->
-                        </Label>
+                        <!--
+                        </Label>-->
                         <!--    <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -1058,7 +1075,7 @@
                 </Grid>
             </TabItem>
 
-<!--
+            <!--
             <TabItem x:Name="tiGeoNodes">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
