@@ -240,6 +240,7 @@
     <Compile Include="Src\Tools\Blink.cs" />
     <Compile Include="Src\Tools\EnumerationsAndConstants.cs" />
     <Compile Include="Src\Tools\ExtractIcon.cs" />
+    <Compile Include="Src\Tools\GenericFoldingStrategy.cs" />
     <Compile Include="Src\Tools\GeoHelper.cs" />
     <Compile Include="Src\Tools\LoremIpsum.cs" />
     <Compile Include="Src\Tools\MarkdownSyntaxModeFileProvider.cs" />
@@ -253,11 +254,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
+    <EmbeddedResource Include="Markdown.xshd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EmbeddedResource Include="Python.xshd" />
     <None Include="Src\Models\EnumerationsAndConstants.md" />
     <None Include="Src\Models\GeoLocalizationResult\GeoLocalizationResult.Properties.md">
       <DependentUpon>GeoLocalizationResult.Properties.tt</DependentUpon>

@@ -146,11 +146,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private RFDevice dvmLastSelectedDevice = null;
 
-        ///// <summary>
-        ///// The b text changed
-        ///// </summary>
-        //private bool bTextChanged = false;
-
         /// <summary>
         /// The GFS
         /// </summary>
@@ -164,7 +159,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// The sb markdown
         /// </summary>
-        private readonly StringBuilder sbMarkdown = new StringBuilder(4096);
+        private readonly StringBuilder sbMarkdown = new StringBuilder(8192);
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -371,37 +366,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// The b scenario description edit mode
-        ///// </summary>
-        //private bool bScenarioDescriptionEditMode = false;
-
-        ///// <summary>
-        ///// Gets or sets a value indicating whether [scenario description edit mode].
-        ///// </summary>
-        ///// <value>
-        /////   <c>true</c> if [scenario description edit mode]; otherwise, <c>false</c>.
-        ///// </value>
-        //public bool ScenarioDescriptionEditMode
-        //{
-        //    get { return this.bScenarioDescriptionEditMode; }
-        //    set
-        //    {
-        //        this.bScenarioDescriptionEditMode = value;
-
-        //        SwitchScenarioEditMode();
-
-        //        FirePropertyChanged();
-        //    }
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         /// <summary>
         /// The b is tile loading
         /// </summary>
         private bool bIsTileLoading = false;
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance is tile loading.
         /// </summary>
@@ -424,6 +393,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The b is device moving mode
         /// </summary>
         private bool bIsDeviceMovingMode = false;
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance is device moving mode.
         /// </summary>
@@ -1032,6 +1002,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// The quick commands
         /// </summary>
@@ -1048,11 +1019,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public ValidationResultViewModelList ValidationResult { get; set; } = new ValidationResultViewModelList();
 
-        ///// <summary>
-        ///// The attachements
-        ///// </summary>
-        //public ObservableCollection<Attachement> Attachements { get; set; } = new ObservableCollection<Attachement>();
-
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -1063,57 +1029,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// The meta information.
         /// </value>
         public ScenarioMetaInformation MetaInformation { get; } = new ScenarioMetaInformation();
-
-        ///// <summary>
-        ///// The meta information
-        ///// </summary>
-        //private ScenarioMetaInformation _MetaInformation = new ScenarioMetaInformation();
-
-        ///// <summary>
-        ///// Gets or sets the meta information.
-        ///// </summary>
-        ///// <value>
-        ///// The meta information.
-        ///// </value>
-        //public ScenarioMetaInformation MetaInformation
-        //{
-        //    get { return this._MetaInformation; }
-        //    set
-        //    {
-        //        this._MetaInformation = value;
-        //        FirePropertyChanged();
-        //    }
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
-        /// The scenario meta information
-        /// </summary>
-        //public readonly ScenarioMetaInformationViewModel ScenarioMetaInformation = new ScenarioMetaInformationViewModel();
-
-        ///// <summary>
-        ///// The smi meta information
-        ///// </summary>
-        //private ScenarioMetaInformation smiMetaInformation = new ScenarioMetaInformation();
-
-        ///// <summary>
-        ///// Gets or sets the meta information.
-        ///// </summary>
-        ///// <value>
-        ///// The meta information.
-        ///// </value>
-        //public ScenarioMetaInformation MetaInformation
-        //{
-        //    get { return this.smiMetaInformation; }
-        //    set
-        //    {
-        //        this.smiMetaInformation = value;
-
-        //        FirePropertyChanged();
-        //    }
-        //}
 
     } // end public partial class MainWindow
 }

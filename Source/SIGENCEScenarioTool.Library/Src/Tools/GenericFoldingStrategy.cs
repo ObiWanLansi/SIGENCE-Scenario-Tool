@@ -13,17 +13,17 @@ namespace SIGENCEScenarioTool.Tools
     /// 
     /// </summary>
     /// <seealso cref="ICSharpCode.TextEditor.Document.IFoldingStrategy" />
-    internal sealed class GenericFoldingStrategy : IFoldingStrategy
+    public sealed class GenericFoldingStrategy : IFoldingStrategy
     {
         /// <summary>
         /// The region start
         /// </summary>
-        public static readonly string REGION_START = "#region";
+        public static readonly string REGION_START = "@region";
 
         /// <summary>
         /// The region end
         /// </summary>
-        public static readonly string REGION_END = "#endregion";
+        public static readonly string REGION_END = "@endregion";
 
         /// <summary>
         /// The sb
@@ -95,5 +95,5 @@ namespace SIGENCEScenarioTool.Tools
             return lFolderMarker;
         }
 
-    } // end internal sealed class GenericFoldingStrategy
+    } // end public sealed class GenericFoldingStrategy 
 }

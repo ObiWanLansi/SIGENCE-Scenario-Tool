@@ -50,7 +50,8 @@ namespace SIGENCEScenarioTool.Tools
         /// <returns></returns>
         public XmlTextReader GetSyntaxModeFile(SyntaxMode syntaxMode)
         {
-            return new XmlTextReader(Assembly.GetEntryAssembly().GetManifestResourceStream("SIGENCEScenarioTool.Markdown.xshd"));
+            //return new XmlTextReader(Assembly.GetEntryAssembly().GetManifestResourceStream("SIGENCEScenarioTool.Markdown.xshd"));
+            return new XmlTextReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("SIGENCEScenarioTool.Markdown.xshd"));
         }
 
 

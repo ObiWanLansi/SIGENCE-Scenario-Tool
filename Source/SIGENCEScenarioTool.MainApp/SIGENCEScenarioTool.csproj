@@ -269,7 +269,6 @@
     <Compile Include="Src\Markers\RectangleMarker.xaml.cs">
       <DependentUpon>RectangleMarker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Src\Tools\GenericFoldingStrategy.cs" />
     <Compile Include="Src\ViewModels\RFDeviceViewModel.cs" />
     <Page Include="Src\Dialogs\Charting\ChartingDialog.xaml">
       <SubType>Designer</SubType>
@@ -347,7 +346,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <EmbeddedResource Include="Markdown.xshd" />
     <None Include="ScenarioDescription.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -438,7 +436,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EmbeddedResource Include="Python.xshd" />
     <None Include="ReleaseNotes\ReleaseNotes.Markdown.md">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

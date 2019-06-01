@@ -26,7 +26,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         public ICollection<SyntaxMode> SyntaxModes
         {
-            get { return syntaxModes; }
+            get { return this.syntaxModes; }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         public PythonSyntaxModeFileProvider()
         {
-            syntaxModes = new List<SyntaxMode> { new SyntaxMode("Python.xshd", "Python", ".py") };
+            this.syntaxModes = new List<SyntaxMode> { new SyntaxMode("Python.xshd", "Python", ".py") };
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ namespace SIGENCEScenarioTool.Tools
         /// <returns></returns>
         public XmlTextReader GetSyntaxModeFile(SyntaxMode syntaxMode)
         {
-            return new XmlTextReader(Assembly.GetEntryAssembly().GetManifestResourceStream("SIGENCEScenarioTool.Python.xshd"));
+            return new XmlTextReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("SIGENCEScenarioTool.Python.xshd"));
         }
 
 

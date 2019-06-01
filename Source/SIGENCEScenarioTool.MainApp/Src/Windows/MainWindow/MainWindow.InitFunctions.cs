@@ -463,16 +463,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionMarkdown_DocumentChanged;
 
             this.tecDescriptionMarkdown.Document.FoldingManager.FoldingStrategy = this.gfs;
-
             HighlightingManager.Manager.AddSyntaxModeFileProvider(new MarkdownSyntaxModeFileProvider());
             this.tecDescriptionMarkdown.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Markdown");
 
-            //this.tecDescriptionMarkdown.Document.FoldingManager.UpdateFoldings(null, null);
-
             //---------------------------------------------
 
+            //this.tecDescriptionStyleheet.ActiveTextAreaControl.TextArea.TextChanged += TextArea_TextChanged;
             this.tecDescriptionStyleheet.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionStylesheet_DocumentChanged;
-            //this.tecDescription.ActiveTextAreaControl.TextArea.TextChanged += TextArea_TextChanged;
         }
 
     } // end public partial class MainWindow 

@@ -32,6 +32,7 @@
             <Issue Id="178" Description="Implement Stylesheets For The Markdown Description" />
             <Issue Id="179" Description="Extend The Markdown Editor With Quick Actions" />
             <Issue Id="180" Description="Extend The Markdown Editor With Regions" />
+            <Issue Id="181" Description="Extend The Markdown Editor With An Little Syntax Highliting" />
             <Issue Id="183" Description="Display The Release Notes In SST" />
             <Issue Id="184" Description="Display The Validaion Result From The RFDevice In The Editor" />
             <Issue Id="185" Description="Create An Useful Panel For The MetaInformation Tab" />
