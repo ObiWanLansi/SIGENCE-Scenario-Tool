@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SyntaxDefinition name="Python" extensions=".py">
+<SyntaxDefinition name="Markdown" extensions=".md">
 
     <Environment> 
         <Default color="Black" bgcolor="#FFFFFF"/>
@@ -19,7 +19,6 @@
     </Environment>
             
     <Properties>
-        <Property name="LineComment" value="#"/>
     </Properties>
    
     <Digits name="Digits" color="Maroon"/>

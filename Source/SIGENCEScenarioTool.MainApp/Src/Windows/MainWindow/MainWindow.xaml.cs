@@ -225,10 +225,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            //this.tiEditDescription.IsSelected = true;
-            //this.tiMetaInformation.IsSelected = true;
+            InitMetaInformation();
 
-            //InitMetaInformation();
+            this.tiEditDescription.IsSelected = true;
+            this.tiMetaInformation.IsSelected = true;
+
 
             //UpdateScenarioDescriptionMarkdown();
 

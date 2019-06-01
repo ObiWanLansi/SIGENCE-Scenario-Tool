@@ -9,6 +9,7 @@ using ICSharpCode.TextEditor;
 using ICSharpCode.TextEditor.Document;
 
 using SIGENCEScenarioTool.Commands;
+using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.Windows.MainWindow
 {
@@ -456,14 +457,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             Init(this.tecDescriptionMarkdown);
             Init(this.tecDescriptionStyleheet);
 
-            //HighlightingManager.Manager.AddSyntaxModeFileProvider(new PythonSyntaxModeFileProvider());
-            //this.tecDescription.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
+            //---------------------------------------------
 
             this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea.KeyUp += TextArea_KeyUp;
             this.tecDescriptionMarkdown.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionMarkdown_DocumentChanged;
 
             this.tecDescriptionMarkdown.Document.FoldingManager.FoldingStrategy = this.gfs;
+
+            HighlightingManager.Manager.AddSyntaxModeFileProvider(new MarkdownSyntaxModeFileProvider());
+            this.tecDescriptionMarkdown.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Markdown");
+
             //this.tecDescriptionMarkdown.Document.FoldingManager.UpdateFoldings(null, null);
+
+            //---------------------------------------------
 
             this.tecDescriptionStyleheet.ActiveTextAreaControl.TextArea.Document.DocumentChanged += Document_DescriptionStylesheet_DocumentChanged;
             //this.tecDescription.ActiveTextAreaControl.TextArea.TextChanged += TextArea_TextChanged;

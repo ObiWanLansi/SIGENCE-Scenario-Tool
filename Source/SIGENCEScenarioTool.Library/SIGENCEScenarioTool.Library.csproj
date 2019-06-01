@@ -242,6 +242,7 @@
     <Compile Include="Src\Tools\ExtractIcon.cs" />
     <Compile Include="Src\Tools\GeoHelper.cs" />
     <Compile Include="Src\Tools\LoremIpsum.cs" />
+    <Compile Include="Src\Tools\MarkdownSyntaxModeFileProvider.cs" />
     <Compile Include="Src\Tools\PythonSyntaxModeFileProvider.cs" />
     <Compile Include="Src\Tools\Speech.cs" />
     <Compile Include="Src\Tools\Tools.cs" />
