@@ -331,6 +331,17 @@
   <HelpKINode Title="Gain.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_ToString.htm" />
   <HelpKINode Title="GAIN_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_GAIN_DB.htm" />
   <HelpKINode Title="Gain_dB property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Gain_dB.htm" />
+  <HelpKINode Title="GenerateFoldMarkers method" Url="html/M_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_GenerateFoldMarkers.htm" />
+  <HelpKINode Title="GenericFoldingStrategy class">
+    <HelpKINode Title="GenericFoldingStrategy Class" Url="html/T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Tools_GenericFoldingStrategy__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GenericFoldingStrategy.GenerateFoldMarkers method" Url="html/M_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_GenerateFoldMarkers.htm" />
+  <HelpKINode Title="GenericFoldingStrategy.GenericFoldingStrategy constructor" Url="html/M_SIGENCEScenarioTool_Tools_GenericFoldingStrategy__ctor.htm" />
+  <HelpKINode Title="GenericFoldingStrategy.REGION_END field" Url="html/F_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_REGION_END.htm" />
+  <HelpKINode Title="GenericFoldingStrategy.REGION_START field" Url="html/F_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_REGION_START.htm" />
   <HelpKINode Title="GeoAngle class">
     <HelpKINode Title="GeoAngle Class" Url="html/T_SIGENCEScenarioTool_Tools_GeoAngle.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle__ctor.htm" />
@@ -486,7 +497,10 @@
   <HelpKINode Title="GetStringFromCData method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringFromCData.htm" />
   <HelpKINode Title="GetStringFromNode method" Url="html/Overload_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringFromNode.htm" />
   <HelpKINode Title="GetStringOrNull method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetStringOrNull.htm" />
-  <HelpKINode Title="GetSyntaxModeFile method" Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_GetSyntaxModeFile.htm" />
+  <HelpKINode Title="GetSyntaxModeFile method">
+    <HelpKINode Title="MarkdownSyntaxModeFileProvider.GetSyntaxModeFile Method " Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_GetSyntaxModeFile.htm" />
+    <HelpKINode Title="PythonSyntaxModeFileProvider.GetSyntaxModeFile Method " Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_GetSyntaxModeFile.htm" />
+  </HelpKINode>
   <HelpKINode Title="GetTableNames method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_GetTableNames.htm" />
   <HelpKINode Title="GetUInt32Attribute method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetUInt32Attribute.htm" />
   <HelpKINode Title="GetUInt32FromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetUInt32FromNode.htm" />
@@ -662,6 +676,16 @@
   <HelpKINode Title="MarkdownExtension.TaskList method" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_TaskList.htm" />
   <HelpKINode Title="MarkdownExtension.UnorderedList(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_UnorderedList__1.htm" />
   <HelpKINode Title="MarkdownExtension.UnorderedList&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_UnorderedList__1.htm" />
+  <HelpKINode Title="MarkdownSyntaxModeFileProvider class">
+    <HelpKINode Title="MarkdownSyntaxModeFileProvider Class" Url="html/T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MarkdownSyntaxModeFileProvider.GetSyntaxModeFile method" Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_GetSyntaxModeFile.htm" />
+  <HelpKINode Title="MarkdownSyntaxModeFileProvider.MarkdownSyntaxModeFileProvider constructor" Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider__ctor.htm" />
+  <HelpKINode Title="MarkdownSyntaxModeFileProvider.SyntaxModes property" Url="html/P_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_SyntaxModes.htm" />
+  <HelpKINode Title="MarkdownSyntaxModeFileProvider.UpdateSyntaxModeList method" Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
   <HelpKINode Title="MB class">
     <HelpKINode Title="MB Class" Url="html/T_SIGENCEScenarioTool_Tools_MB.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_MB.htm" />
@@ -789,6 +813,8 @@
   <HelpKINode Title="ReadResourceAsXDocument method" Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsXDocument.htm" />
   <HelpKINode Title="Receiver enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
   <HelpKINode Title="Reference enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
+  <HelpKINode Title="REGION_END field" Url="html/F_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_REGION_END.htm" />
+  <HelpKINode Title="REGION_START field" Url="html/F_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_REGION_START.htm" />
   <HelpKINode Title="Reindex method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Reindex.htm" />
   <HelpKINode Title="REMARK field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_REMARK.htm" />
   <HelpKINode Title="Remark property">
@@ -1143,11 +1169,13 @@
   <HelpKINode Title="SIGENCEScenarioTool.Tools.ApplicationResource class" Url="html/T_SIGENCEScenarioTool_Tools_ApplicationResource.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Blink class" Url="html/T_SIGENCEScenarioTool_Tools_Blink.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.ExtractIcon class" Url="html/T_SIGENCEScenarioTool_Tools_ExtractIcon.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Tools.GenericFoldingStrategy class" Url="html/T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoAngle class" Url="html/T_SIGENCEScenarioTool_Tools_GeoAngle.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoHelper class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.GeoTag enumeration" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.Highway enumeration" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.LoremIpsum class" Url="html/T_SIGENCEScenarioTool_Tools_LoremIpsum.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider class" Url="html/T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.MB class" Url="html/T_SIGENCEScenarioTool_Tools_MB.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.NoDisplayAttribute class" Url="html/T_SIGENCEScenarioTool_Tools_NoDisplayAttribute.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Tools.PythonSyntaxModeFileProvider class" Url="html/T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm" />
@@ -1257,7 +1285,10 @@
   <HelpKINode Title="StringList to String[] conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList_op_Implicit.htm" />
   <HelpKINode Title="StringList.StringList constructor" Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor.htm" />
   <HelpKINode Title="Symbol property" Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Symbol.htm" />
-  <HelpKINode Title="SyntaxModes property" Url="html/P_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_SyntaxModes.htm" />
+  <HelpKINode Title="SyntaxModes property">
+    <HelpKINode Title="MarkdownSyntaxModeFileProvider.SyntaxModes Property " Url="html/P_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_SyntaxModes.htm" />
+    <HelpKINode Title="PythonSyntaxModeFileProvider.SyntaxModes Property " Url="html/P_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_SyntaxModes.htm" />
+  </HelpKINode>
   <HelpKINode Title="Table method" Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Table.htm" />
   <HelpKINode Title="TableExists method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_TableExists.htm" />
   <HelpKINode Title="Tag property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Tag.htm" />
@@ -1416,7 +1447,10 @@
   <HelpKINode Title="Unknown property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Unknown.htm" />
   <HelpKINode Title="UnorderedList(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_UnorderedList__1.htm" />
   <HelpKINode Title="UnorderedList&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_UnorderedList__1.htm" />
-  <HelpKINode Title="UpdateSyntaxModeList method" Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
+  <HelpKINode Title="UpdateSyntaxModeList method">
+    <HelpKINode Title="MarkdownSyntaxModeFileProvider.UpdateSyntaxModeList Method " Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
+    <HelpKINode Title="PythonSyntaxModeFileProvider.UpdateSyntaxModeList Method " Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
+  </HelpKINode>
   <HelpKINode Title="User enumeration member" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
   <HelpKINode Title="Vacuum method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Vacuum.htm" />
   <HelpKINode Title="Validate method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_Validate.htm" />

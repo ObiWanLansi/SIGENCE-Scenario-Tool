@@ -3731,6 +3731,36 @@
             <param name="bLargeIcon">if set to <c>true</c> [b large icon].</param>
             <returns></returns>
         </member>
+        <member name="T:SIGENCEScenarioTool.Tools.GenericFoldingStrategy">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:ICSharpCode.TextEditor.Document.IFoldingStrategy" />
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.GenericFoldingStrategy.REGION_START">
+            <summary>
+            The region start
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.GenericFoldingStrategy.REGION_END">
+            <summary>
+            The region end
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.GenericFoldingStrategy.sb">
+            <summary>
+            The sb
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.GenericFoldingStrategy.GenerateFoldMarkers(ICSharpCode.TextEditor.Document.IDocument,System.String,System.Object)">
+            <summary>
+            Generates the fold markers.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="strFileName">Name of the file.</param>
+            <param name="oParseInformation">The parse information.</param>
+            <returns></returns>
+        </member>
         <member name="T:SIGENCEScenarioTool.Tools.GeoHelper">
             <summary>
             
@@ -3867,6 +3897,38 @@
             Gets the lorem ipsum.
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider.syntaxModes">
+            <summary>
+            The syntax modes
+            </summary>
+        </member>
+        <member name="P:SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider.SyntaxModes">
+            <summary>
+            Gets the syntax modes.
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider.GetSyntaxModeFile(ICSharpCode.TextEditor.Document.SyntaxMode)">
+            <summary>
+            Gets the syntax mode file.
+            </summary>
+            <param name="syntaxMode">The syntax mode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SIGENCEScenarioTool.Tools.MarkdownSyntaxModeFileProvider.UpdateSyntaxModeList">
+            <summary>
+            Updates the syntax mode list.
+            </summary>
         </member>
         <member name="T:SIGENCEScenarioTool.Tools.PythonSyntaxModeFileProvider">
             <summary>
