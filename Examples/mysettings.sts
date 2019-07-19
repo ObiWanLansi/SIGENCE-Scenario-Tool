@@ -1,0 +1,1613 @@
+{
+  "UDPPortSending": 4242,
+  "UDPDelay": 100,
+  "MapZoomLevel": 18,
+  "UDPHost": "127.0.0.1",
+  "UDPPortReceiving": 7474,
+  "DeviceCopyTimeAddValue": 20.0,
+  "InitialLatitude": 47.62328946917188,
+  "InitialLongitude": 9.40704345703125,
+  "InitialZoom": 11,
+  "InitialMap": "GoogleTerrainMap",
+  "LastWidth": 800.0,
+  "LastHeight": 768.0,
+  "LastLeft": 604.0,
+  "LastTop": 216.0,
+  "LastWindowState": "Maximized",
+  "IsUpgraded": true,
+  "DensifyInMeters": 5000.0,
+  "LastOpenFiles": [
+    "D:\\EigeneDateien\\Entwicklung.GitHub\\SIGENCE-Scenario-Tool\\Examples\\LongLineForSimulationPlayer.stf",
+    "D:\\EigeneDateien\\Entwicklung.GitHub\\SIGENCE-Scenario-Tool\\Examples\\TestScenario.stf"
+  ],
+  "MaxLastItems": 5,
+  "EnableMQTT": false,
+  "MQTTHost": "localhost",
+  "MQTTPort": 1883,
+  "EnableUDP": false,
+  "Context": {
+    "GroupName": "SIGENCEScenarioTool.Properties.Settings",
+    "SettingsKey": "",
+    "SettingsClassType": "SIGENCEScenarioTool.Properties.Settings, SIGENCEScenarioTool, Version=19.0.0.0, Culture=neutral, PublicKeyToken=null"
+  },
+  "Properties": [
+    {
+      "Name": "InitialLatitude",
+      "IsReadOnly": false,
+      "DefaultValue": "0",
+      "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "MapZoomLevel",
+      "IsReadOnly": false,
+      "DefaultValue": "18",
+      "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "LastTop",
+      "IsReadOnly": false,
+      "DefaultValue": "0",
+      "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "LastHeight",
+      "IsReadOnly": false,
+      "DefaultValue": "0",
+      "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "UDPHost",
+      "IsReadOnly": false,
+      "DefaultValue": "127.0.0.1",
+      "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "LastLeft",
+      "IsReadOnly": false,
+      "DefaultValue": "0",
+      "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "EnableUDP",
+      "IsReadOnly": false,
+      "DefaultValue": "False",
+      "PropertyType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "InitialLongitude",
+      "IsReadOnly": false,
+      "DefaultValue": "0",
+      "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "LastWidth",
+      "IsReadOnly": false,
+      "DefaultValue": "0",
+      "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "MQTTHost",
+      "IsReadOnly": false,
+      "DefaultValue": "localhost",
+      "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "DeviceCopyTimeAddValue",
+      "IsReadOnly": false,
+      "DefaultValue": "5",
+      "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "DensifyInMeters",
+      "IsReadOnly": false,
+      "DefaultValue": "500",
+      "PropertyType": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "UDPDelay",
+      "IsReadOnly": false,
+      "DefaultValue": "100",
+      "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "InitialZoom",
+      "IsReadOnly": false,
+      "DefaultValue": "14",
+      "PropertyType": "System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "UDPPortReceiving",
+      "IsReadOnly": false,
+      "DefaultValue": "7474",
+      "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "LastOpenFiles",
+      "IsReadOnly": false,
+      "DefaultValue": null,
+      "PropertyType": "System.Collections.Specialized.StringCollection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 1,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "EnableMQTT",
+      "IsReadOnly": false,
+      "DefaultValue": "False",
+      "PropertyType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "LastWindowState",
+      "IsReadOnly": false,
+      "DefaultValue": "",
+      "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "MaxLastItems",
+      "IsReadOnly": false,
+      "DefaultValue": "5",
+      "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "IsUpgraded",
+      "IsReadOnly": false,
+      "DefaultValue": "False",
+      "PropertyType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "InitialMap",
+      "IsReadOnly": false,
+      "DefaultValue": "GoogleMap",
+      "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "MQTTPort",
+      "IsReadOnly": false,
+      "DefaultValue": "1883",
+      "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    },
+    {
+      "Name": "UDPPortSending",
+      "IsReadOnly": false,
+      "DefaultValue": "4242",
+      "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "SerializeAs": 0,
+      "Provider": {
+        "ApplicationName": "SIGENCE Scenario Tool",
+        "Name": "LocalFileSettingsProvider",
+        "Description": "LocalFileSettingsProvider"
+      },
+      "Attributes": {
+        "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+          "Version": "15.9.0.0",
+          "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        },
+        "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+          "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        }
+      },
+      "ThrowOnErrorDeserializing": false,
+      "ThrowOnErrorSerializing": false
+    }
+  ],
+  "PropertyValues": [
+    {
+      "Name": "InitialLatitude",
+      "IsDirty": false,
+      "Property": {
+        "Name": "InitialLatitude",
+        "IsReadOnly": false,
+        "DefaultValue": "0",
+        "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 47.62328946917188,
+      "SerializedValue": "47.62328946917188",
+      "Deserialized": true
+    },
+    {
+      "Name": "LastWindowState",
+      "IsDirty": false,
+      "Property": {
+        "Name": "LastWindowState",
+        "IsReadOnly": false,
+        "DefaultValue": "",
+        "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": "Maximized",
+      "SerializedValue": "Maximized",
+      "Deserialized": true
+    },
+    {
+      "Name": "LastTop",
+      "IsDirty": false,
+      "Property": {
+        "Name": "LastTop",
+        "IsReadOnly": false,
+        "DefaultValue": "0",
+        "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 216.0,
+      "SerializedValue": "216",
+      "Deserialized": true
+    },
+    {
+      "Name": "LastHeight",
+      "IsDirty": false,
+      "Property": {
+        "Name": "LastHeight",
+        "IsReadOnly": false,
+        "DefaultValue": "0",
+        "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 768.0,
+      "SerializedValue": "768",
+      "Deserialized": true
+    },
+    {
+      "Name": "UDPHost",
+      "IsDirty": false,
+      "Property": {
+        "Name": "UDPHost",
+        "IsReadOnly": false,
+        "DefaultValue": "127.0.0.1",
+        "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": "127.0.0.1",
+      "SerializedValue": "127.0.0.1",
+      "Deserialized": true
+    },
+    {
+      "Name": "LastLeft",
+      "IsDirty": false,
+      "Property": {
+        "Name": "LastLeft",
+        "IsReadOnly": false,
+        "DefaultValue": "0",
+        "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 604.0,
+      "SerializedValue": "604",
+      "Deserialized": true
+    },
+    {
+      "Name": "EnableUDP",
+      "IsDirty": false,
+      "Property": {
+        "Name": "EnableUDP",
+        "IsReadOnly": false,
+        "DefaultValue": "False",
+        "PropertyType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": false,
+      "SerializedValue": "False",
+      "Deserialized": true
+    },
+    {
+      "Name": "UDPPortReceiving",
+      "IsDirty": false,
+      "Property": {
+        "Name": "UDPPortReceiving",
+        "IsReadOnly": false,
+        "DefaultValue": "7474",
+        "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 7474,
+      "SerializedValue": "7474",
+      "Deserialized": true
+    },
+    {
+      "Name": "LastWidth",
+      "IsDirty": false,
+      "Property": {
+        "Name": "LastWidth",
+        "IsReadOnly": false,
+        "DefaultValue": "0",
+        "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 800.0,
+      "SerializedValue": "800",
+      "Deserialized": true
+    },
+    {
+      "Name": "MQTTHost",
+      "IsDirty": false,
+      "Property": {
+        "Name": "MQTTHost",
+        "IsReadOnly": false,
+        "DefaultValue": "localhost",
+        "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": "localhost",
+      "SerializedValue": "localhost",
+      "Deserialized": true
+    },
+    {
+      "Name": "DeviceCopyTimeAddValue",
+      "IsDirty": false,
+      "Property": {
+        "Name": "DeviceCopyTimeAddValue",
+        "IsReadOnly": false,
+        "DefaultValue": "5",
+        "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 20.0,
+      "SerializedValue": "20",
+      "Deserialized": true
+    },
+    {
+      "Name": "DensifyInMeters",
+      "IsDirty": false,
+      "Property": {
+        "Name": "DensifyInMeters",
+        "IsReadOnly": false,
+        "DefaultValue": "500",
+        "PropertyType": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 5000.0,
+      "SerializedValue": "5000",
+      "Deserialized": true
+    },
+    {
+      "Name": "UDPDelay",
+      "IsDirty": false,
+      "Property": {
+        "Name": "UDPDelay",
+        "IsReadOnly": false,
+        "DefaultValue": "100",
+        "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 100,
+      "SerializedValue": "100",
+      "Deserialized": true
+    },
+    {
+      "Name": "InitialLongitude",
+      "IsDirty": false,
+      "Property": {
+        "Name": "InitialLongitude",
+        "IsReadOnly": false,
+        "DefaultValue": "0",
+        "PropertyType": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 9.40704345703125,
+      "SerializedValue": "9.40704345703125",
+      "Deserialized": true
+    },
+    {
+      "Name": "InitialZoom",
+      "IsDirty": false,
+      "Property": {
+        "Name": "InitialZoom",
+        "IsReadOnly": false,
+        "DefaultValue": "14",
+        "PropertyType": "System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 11,
+      "SerializedValue": "11",
+      "Deserialized": true
+    },
+    {
+      "Name": "LastOpenFiles",
+      "IsDirty": true,
+      "Property": {
+        "Name": "LastOpenFiles",
+        "IsReadOnly": false,
+        "DefaultValue": null,
+        "PropertyType": "System.Collections.Specialized.StringCollection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 1,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": [
+        "D:\\EigeneDateien\\Entwicklung.GitHub\\SIGENCE-Scenario-Tool\\Examples\\LongLineForSimulationPlayer.stf",
+        "D:\\EigeneDateien\\Entwicklung.GitHub\\SIGENCE-Scenario-Tool\\Examples\\TestScenario.stf"
+      ],
+      "SerializedValue": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <string>D:\\EigeneDateien\\Entwicklung.GitHub\\SIGENCE-Scenario-Tool\\Examples\\LongLineForSimulationPlayer.stf</string>\r\n  <string>D:\\EigeneDateien\\Entwicklung.GitHub\\SIGENCE-Scenario-Tool\\Examples\\TestScenario.stf</string>\r\n</ArrayOfString>",
+      "Deserialized": true
+    },
+    {
+      "Name": "EnableMQTT",
+      "IsDirty": false,
+      "Property": {
+        "Name": "EnableMQTT",
+        "IsReadOnly": false,
+        "DefaultValue": "False",
+        "PropertyType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": false,
+      "SerializedValue": "False",
+      "Deserialized": true
+    },
+    {
+      "Name": "UDPPortSending",
+      "IsDirty": false,
+      "Property": {
+        "Name": "UDPPortSending",
+        "IsReadOnly": false,
+        "DefaultValue": "4242",
+        "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 4242,
+      "SerializedValue": "4242",
+      "Deserialized": true
+    },
+    {
+      "Name": "MaxLastItems",
+      "IsDirty": false,
+      "Property": {
+        "Name": "MaxLastItems",
+        "IsReadOnly": false,
+        "DefaultValue": "5",
+        "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 5,
+      "SerializedValue": "5",
+      "Deserialized": true
+    },
+    {
+      "Name": "IsUpgraded",
+      "IsDirty": false,
+      "Property": {
+        "Name": "IsUpgraded",
+        "IsReadOnly": false,
+        "DefaultValue": "False",
+        "PropertyType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": true,
+      "SerializedValue": "True",
+      "Deserialized": true
+    },
+    {
+      "Name": "InitialMap",
+      "IsDirty": false,
+      "Property": {
+        "Name": "InitialMap",
+        "IsReadOnly": false,
+        "DefaultValue": "GoogleMap",
+        "PropertyType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": "GoogleTerrainMap",
+      "SerializedValue": "GoogleTerrainMap",
+      "Deserialized": true
+    },
+    {
+      "Name": "MQTTPort",
+      "IsDirty": false,
+      "Property": {
+        "Name": "MQTTPort",
+        "IsReadOnly": false,
+        "DefaultValue": "1883",
+        "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 1883,
+      "SerializedValue": "1883",
+      "Deserialized": true
+    },
+    {
+      "Name": "MapZoomLevel",
+      "IsDirty": false,
+      "Property": {
+        "Name": "MapZoomLevel",
+        "IsReadOnly": false,
+        "DefaultValue": "18",
+        "PropertyType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "SerializeAs": 0,
+        "Provider": {
+          "ApplicationName": "SIGENCE Scenario Tool",
+          "Name": "LocalFileSettingsProvider",
+          "Description": "LocalFileSettingsProvider"
+        },
+        "Attributes": {
+          "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Diagnostics.DebuggerNonUserCodeAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Configuration.UserScopedSettingAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "Tool": "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "Version": "15.9.0.0",
+            "TypeId": "System.CodeDom.Compiler.GeneratedCodeAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089": {
+            "TypeId": "System.Runtime.CompilerServices.CompilerGeneratedAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          }
+        },
+        "ThrowOnErrorDeserializing": false,
+        "ThrowOnErrorSerializing": false
+      },
+      "UsingDefaultValue": false,
+      "PropertyValue": 18,
+      "SerializedValue": "18",
+      "Deserialized": true
+    }
+  ],
+  "Providers": [
+    {
+      "ApplicationName": "SIGENCE Scenario Tool",
+      "Name": "LocalFileSettingsProvider",
+      "Description": "LocalFileSettingsProvider"
+    }
+  ],
+  "SettingsKey": "",
+  "IsSynchronized": true
+}

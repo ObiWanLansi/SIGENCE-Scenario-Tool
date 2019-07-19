@@ -19,6 +19,8 @@ using Markdig;
 using NetTopologySuite.Densify;
 using NetTopologySuite.Geometries;
 
+using Newtonsoft.Json;
+
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs.RFDevice;
 using SIGENCEScenarioTool.Dialogs.Scripting;
@@ -318,7 +320,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if (this.ofdImportSettings.ShowDialog() == true)
             {
-
                 MB.NotYetImplemented();
             }
         }
@@ -331,7 +332,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if (this.sfdExportSettings.ShowDialog() == true)
             {
-                MB.NotYetImplemented();
+                string strJson = JsonConvert.SerializeObject(Properties.Settings.Default, Formatting.Indented);
+
+                File.WriteAllText(this.sfdExportSettings.FileName, strJson, Encoding.GetEncoding("ISO-8859-1"));
             }
         }
 
