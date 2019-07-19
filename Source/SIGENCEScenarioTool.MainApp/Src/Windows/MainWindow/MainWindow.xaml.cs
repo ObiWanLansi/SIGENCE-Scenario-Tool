@@ -120,6 +120,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //-----------------------------------------------------------------
 
 #if DEBUG
+
+            ImportSettings(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\mysettings.sts");
+
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "FMBroadcast", Id = 2 }));
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "NFMRadio", Id = 3 }));

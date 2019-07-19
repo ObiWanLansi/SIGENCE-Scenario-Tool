@@ -1,24 +1,24 @@
 <Settings>
-    <UDPPortSending>4242</UDPPortSending>
-    <UDPDelay>100</UDPDelay>
-    <MapZoomLevel>18</MapZoomLevel>
-    <UDPHost>127.0.0.1</UDPHost>
-    <UDPPortReceiving>7474</UDPPortReceiving>
-    <DeviceCopyTimeAddValue>20</DeviceCopyTimeAddValue>
-    <InitialLatitude>47,6232894691719</InitialLatitude>
-    <InitialLongitude>9,40704345703125</InitialLongitude>
-    <InitialZoom>11</InitialZoom>
-    <InitialMap>GoogleTerrainMap</InitialMap>
-    <LastWidth>800</LastWidth>
-    <LastHeight>768</LastHeight>
-    <LastLeft>604</LastLeft>
-    <LastTop>216</LastTop>
-    <LastWindowState>Maximized</LastWindowState>
-    <IsUpgraded>True</IsUpgraded>
-    <DensifyInMeters>5000</DensifyInMeters>
-    <MaxLastItems>5</MaxLastItems>
-    <EnableMQTT>False</EnableMQTT>
-    <MQTTHost>localhost</MQTTHost>
-    <MQTTPort>1883</MQTTPort>
-    <EnableUDP>False</EnableUDP>
-<Settings>
+    <UDPPortSending Type="System.Int32">4242</UDPPortSending>
+    <UDPDelay Type="System.Int32">100</UDPDelay>
+    <MapZoomLevel Type="System.Int32">8</MapZoomLevel>
+    <UDPHost Type="System.String">127.0.0.1</UDPHost>
+    <UDPPortReceiving Type="System.Int32">7474</UDPPortReceiving>
+    <DeviceCopyTimeAddValue Type="System.Double">20</DeviceCopyTimeAddValue>
+    <InitialLatitude Type="System.Double">47,6232894691719</InitialLatitude>
+    <InitialLongitude Type="System.Double">9,40704345703125</InitialLongitude>
+    <InitialZoom Type="System.UInt32">11</InitialZoom>
+    <InitialMap Type="System.String">GoogleTerrainMap</InitialMap>
+    <LastWidth Type="System.Double">900</LastWidth>
+    <LastHeight Type="System.Double">600</LastHeight>
+    <LastLeft Type="System.Double">10</LastLeft>
+    <LastTop Type="System.Double">10</LastTop>
+    <LastWindowState Type="System.String">Maximized</LastWindowState>
+    <IsUpgraded Type="System.Boolean">True</IsUpgraded>
+    <DensifyInMeters Type="System.Single">20</DensifyInMeters>
+    <MaxLastItems Type="System.Int32">10</MaxLastItems>
+    <EnableMQTT Type="System.Boolean">False</EnableMQTT>
+    <MQTTHost Type="System.String">localhost</MQTTHost>
+    <MQTTPort Type="System.Int32">1883</MQTTPort>
+    <EnableUDP Type="System.Boolean">False</EnableUDP>
+</Settings>

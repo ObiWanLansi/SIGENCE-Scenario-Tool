@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
+using System.Xml.Linq;
 
 using SIGENCEScenarioTool.Extensions;
 
@@ -436,6 +437,65 @@ namespace SIGENCEScenarioTool.Tools
 
 
         /// <summary>
+        /// Gets the object from flat XML string.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="strXml">The string XML.</param>
+        /// <returns></returns>
+        public static T GetObjectFromFlatXmlString<T>(string strXml)
+        {
+            if (strXml == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (strXml.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            Type t = typeof(T);
+
+            T instance = (T)Activator.CreateInstance(t);
+
+            XDocument doc = XDocument.Parse(strXml);
+
+            foreach (XElement eChild in doc.Root.Elements())
+            {
+                string strPropertyName = eChild.Name.LocalName;
+                string strPropertyType = eChild.Attribute("Type").Value;
+
+                PropertyInfo pi = t.GetProperty(strPropertyName);
+
+                if (pi == null)
+                {
+                    throw new Exception("Could Not Find The Property!");
+                }
+
+                if (pi.PropertyType.FullName != strPropertyType)
+                {
+                    throw new Exception("The PropertyType Does Not Match!");
+                }
+
+
+                Type tPropertyType = Type.GetType(strPropertyType);
+
+                if (tPropertyType == null)
+                {
+                    throw new Exception("Could Not Load The PropertyType!");
+                }
+
+                object oValue = Convert.ChangeType(eChild.Value, tPropertyType);
+
+                pi.SetValue(instance, oValue);
+
+            }
+
+            return instance;
+        }
+
+
+        /// <summary>
         /// Gets the flat XML string from object.
         /// </summary>
         /// <param name="o">The o.</param>
@@ -466,14 +526,14 @@ namespace SIGENCEScenarioTool.Tools
 
                 if (oValue != null)
                 {
-                    sb.AppendLine("    <{0}>{1}</{0}>", pi.Name, oValue);
+                    sb.AppendLine("    <{0} Type=\"{2}\">{1}</{0}>", pi.Name, oValue, pi.PropertyType.FullName);
                 }
                 else
                 {
-                    sb.AppendLine("    <{0} />", pi.Name);
+                    sb.AppendLine("    <{0} Type=\"{2}\" />", pi.Name, pi.PropertyType.FullName);
                 }
             }
-            sb.AppendLine("<{0}>", t.Name);
+            sb.AppendLine("</{0}>", t.Name);
 
             return sb.ToString();
         }

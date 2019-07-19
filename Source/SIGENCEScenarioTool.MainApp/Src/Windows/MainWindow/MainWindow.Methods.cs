@@ -314,22 +314,51 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <summary>
         /// Imports the settings.
         /// </summary>
+        /// <param name="strFileName">Name of the string file.</param>
+        private void ImportSettings(string strFileName)
+        {
+            try
+            {
+                string strContent = File.ReadAllText(strFileName);
+
+                this.settings = Tool.GetObjectFromFlatXmlString<Properties.Settings>(strContent);
+
+                this.settings.Save();
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Imports the settings.
+        /// </summary>
         private void ImportSettings()
         {
             if (this.ofdImportSettings.ShowDialog() == true)
             {
-                try
-                {
-                    //string strJson = File.ReadAllText(this.ofdImportSettings.FileName);
+                ImportSettings(this.ofdImportSettings.FileName);
+            }
+        }
 
-                    //this.settings = JsonConvert.DeserializeObject<Properties.Settings>(strJson);
 
-                    //this.settings.Save();
-                }
-                catch (Exception ex)
-                {
-                    MB.Error(ex);
-                }
+        /// <summary>
+        /// Exports the settings.
+        /// </summary>
+        /// <param name="strFileName">Name of the string file.</param>
+        private void ExportSettings(string strFileName)
+        {
+            try
+            {
+                string strContent = Tool.GetFlatXmlStringFromObject(this.settings);
+
+                File.WriteAllText(strFileName, strContent, Encoding.GetEncoding("ISO-8859-1"));
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
             }
         }
 
@@ -341,16 +370,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if (this.sfdExportSettings.ShowDialog() == true)
             {
-                try
-                {
-                    string strContent = Tool.GetFlatXmlStringFromObject(this.settings);
-
-                    File.WriteAllText(this.sfdExportSettings.FileName, strContent, Encoding.GetEncoding("ISO-8859-1"));
-                }
-                catch (Exception ex)
-                {
-                    MB.Error(ex);
-                }
+                ExportSettings(this.sfdExportSettings.FileName);
             }
         }
 
