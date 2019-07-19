@@ -1,5 +1,5 @@
 ﻿
-# RFDevice (Version 19)
+# RFDevice (Version 20)
 
 *Represent A Device Based On A Radio Frequency.*
 

@@ -19,8 +19,6 @@ using Markdig;
 using NetTopologySuite.Densify;
 using NetTopologySuite.Geometries;
 
-using Newtonsoft.Json;
-
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs.RFDevice;
 using SIGENCEScenarioTool.Dialogs.Scripting;
@@ -320,7 +318,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if (this.ofdImportSettings.ShowDialog() == true)
             {
-                MB.NotYetImplemented();
+                try
+                {
+                    //string strJson = File.ReadAllText(this.ofdImportSettings.FileName);
+
+                    //this.settings = JsonConvert.DeserializeObject<Properties.Settings>(strJson);
+
+                    //this.settings.Save();
+                }
+                catch (Exception ex)
+                {
+                    MB.Error(ex);
+                }
             }
         }
 
@@ -332,9 +341,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if (this.sfdExportSettings.ShowDialog() == true)
             {
-                string strJson = JsonConvert.SerializeObject(Properties.Settings.Default, Formatting.Indented);
+                try
+                {
+                    string strContent = Tool.GetFlatXmlStringFromObject(this.settings);
 
-                File.WriteAllText(this.sfdExportSettings.FileName, strJson, Encoding.GetEncoding("ISO-8859-1"));
+                    File.WriteAllText(this.sfdExportSettings.FileName, strContent, Encoding.GetEncoding("ISO-8859-1"));
+                }
+                catch (Exception ex)
+                {
+                    MB.Error(ex);
+                }
             }
         }
 
@@ -344,8 +360,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ResetSettings()
         {
-            Properties.Settings.Default.Reset();
-            Properties.Settings.Default.Save();
+            this.settings.Reset();
+            this.settings.Save();
 
             if (MessageBox.Show("The Settings Are Resetted!.\nPlease Restart The Application!\nWould You Restart Now?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
@@ -624,7 +640,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.mcMapControl.Position = new PointLatLng(this.settings.InitialLatitude, this.settings.InitialLongitude);
             this.mcMapControl.Zoom = this.settings.InitialZoom;
 
-            var mapprovider = GetProviderFromString(this.settings.InitialMap);
+            GMapProvider mapprovider = GetProviderFromString(this.settings.InitialMap);
+
             this.mcMapControl.MapProvider = mapprovider;
             this.cbMapProvider.SelectedItem = mapprovider;
         }

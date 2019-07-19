@@ -1,5 +1,5 @@
 ﻿
-# RxTxTypes (Version 19)
+# RxTxTypes (Version 20)
 
 *The Overview Of The Known RxTxTypes*
 

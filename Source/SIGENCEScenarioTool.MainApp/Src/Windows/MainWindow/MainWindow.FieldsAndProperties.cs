@@ -132,14 +132,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private bool bNoFlashBack = false;
 
         /// <summary>
+        /// The settings
+        /// </summary>
+        private Properties.Settings settings = Properties.Settings.Default;
+
+        /// <summary>
         /// The missing
         /// </summary>
         private readonly object Missing = Type.Missing;
-
-        /// <summary>
-        /// The settings
-        /// </summary>
-        private readonly Properties.Settings settings = Properties.Settings.Default;
 
         /// <summary>
         /// A list with temporery devices to copy and paste.

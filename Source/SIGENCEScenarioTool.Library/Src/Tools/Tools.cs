@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 
-
+using SIGENCEScenarioTool.Extensions;
 
 namespace SIGENCEScenarioTool.Tools
 {
@@ -288,6 +288,7 @@ namespace SIGENCEScenarioTool.Tools
             VALUETYPES.AddRange(FLOATINGTYPES);
             VALUETYPES.Add(typeof(string));
             VALUETYPES.Add(typeof(bool));
+            VALUETYPES.Add(typeof(DateTime));
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -429,6 +430,52 @@ namespace SIGENCEScenarioTool.Tools
 
                 return sb.ToString();
             }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Gets the flat XML string from object.
+        /// </summary>
+        /// <param name="o">The o.</param>
+        /// <param name="bf">The bf.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string GetFlatXmlStringFromObject(object o, BindingFlags bf = BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+        {
+            if (o == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            StringBuilder sb = new StringBuilder(8192);
+
+            Type t = o.GetType();
+
+            sb.AppendLine("<{0}>", t.Name);
+
+            foreach (PropertyInfo pi in t.GetProperties(bf))
+            {
+                if (VALUETYPES.Contains(pi.PropertyType) == false)
+                {
+                    continue;
+                }
+
+                object oValue = pi.GetValue(o);
+
+                if (oValue != null)
+                {
+                    sb.AppendLine("    <{0}>{1}</{0}>", pi.Name, oValue);
+                }
+                else
+                {
+                    sb.AppendLine("    <{0} />", pi.Name);
+                }
+            }
+            sb.AppendLine("<{0}>", t.Name);
+
+            return sb.ToString();
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

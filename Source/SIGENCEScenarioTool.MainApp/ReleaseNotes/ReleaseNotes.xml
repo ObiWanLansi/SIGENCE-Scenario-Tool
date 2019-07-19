@@ -20,11 +20,9 @@
 
     <Version Version="20" Title="XXXX 2019 Release">
         <Features>
-            <Issue Id="" Description="" />
-            <Issue Id="" Description="" />
-            <Issue Id="" Description="" />
-            <Issue Id="" Description="" />
-            <Issue Id="" Description="" />
+            <Issue Id="172" Description="Reset The Settings To The Default Values" />
+            <Issue Id="160" Description="Import User Settings" />
+            <Issue Id="159" Description="Export User Settings" />
         </Features>
     </Version>
 

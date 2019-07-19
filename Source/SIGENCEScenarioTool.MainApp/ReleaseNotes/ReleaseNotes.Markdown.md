@@ -2,7 +2,19 @@
 
 <br/>
 
-## Version [19](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/19) - XXXXX 2019 Release
+## Version [20](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/20) - XXXX 2019 Release
+
+### Features (3)
+
+Issue|Description
+-:|-
+[159](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/159)|Export User Settings
+[160](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/160)|Import User Settings
+[172](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/172)|Reset The Settings To The Default Values
+
+<br/>
+
+## Version [19](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/19) - Juni 2019 Release
 
 ### Features (15)
 
