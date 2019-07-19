@@ -25,6 +25,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
         public GeneralSettings()
         {
             this.DataContext = this.model;
+
             InitializeComponent();
         }
 

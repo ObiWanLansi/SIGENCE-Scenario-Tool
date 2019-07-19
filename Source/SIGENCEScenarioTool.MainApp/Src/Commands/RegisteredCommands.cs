@@ -134,7 +134,7 @@ namespace SIGENCEScenarioTool.Commands
         /// <value>
         /// The open settings.
         /// </value>
-        public static RoutedUICommand OpenSettings { get; private set; }
+        public static RoutedUICommand EditSettings { get; private set; }
 
 
         /// <summary>
@@ -298,8 +298,8 @@ namespace SIGENCEScenarioTool.Commands
             CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
             CreateScreenshot.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control));
 
-            OpenSettings = new RoutedUICommand("OpenSettings", "OpenSettings", typeof(RegisteredCommands));
-            OpenSettings.InputGestures.Add(new KeyGesture(Key.X, ModifierKeys.Control));
+            EditSettings = new RoutedUICommand("EditSettings", "EditSettings", typeof(RegisteredCommands));
+            EditSettings.InputGestures.Add(new KeyGesture(Key.X, ModifierKeys.Control));
 
             SyncMapAndGrid = new RoutedUICommand("SyncMapAndGrid", "SyncMapAndGrid", typeof(RegisteredCommands));
             SyncMapAndGrid.InputGestures.Add(new KeyGesture(Key.G, ModifierKeys.Control));

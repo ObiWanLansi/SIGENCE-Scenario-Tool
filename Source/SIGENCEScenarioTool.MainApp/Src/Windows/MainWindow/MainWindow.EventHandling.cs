@@ -478,6 +478,39 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Handles the Click event of the MenuItem_ImportSettings control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_ImportSettings_Click(object sender, RoutedEventArgs e)
+        {
+            ImportSettings();
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_ExportSettings control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_ExportSettings_Click(object sender, RoutedEventArgs e)
+        {
+            ExportSettings();
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_ResetSettings control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_ResetSettings_Click(object sender, RoutedEventArgs e)
+        {
+            ResetSettings();
+        }
+
+
+        /// <summary>
         /// Handles the Click event of the MenuItem_RestoreInitialMapValues control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>

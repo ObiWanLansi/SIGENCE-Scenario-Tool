@@ -312,6 +312,48 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Imports the settings.
+        /// </summary>
+        private void ImportSettings()
+        {
+            if (this.ofdImportSettings.ShowDialog() == true)
+            {
+
+                MB.NotYetImplemented();
+            }
+        }
+
+
+        /// <summary>
+        /// Exports the settings.
+        /// </summary>
+        private void ExportSettings()
+        {
+            if (this.sfdExportSettings.ShowDialog() == true)
+            {
+                MB.NotYetImplemented();
+            }
+        }
+
+
+        /// <summary>
+        /// Resets the settings.
+        /// </summary>
+        private void ResetSettings()
+        {
+            Properties.Settings.Default.Reset();
+            Properties.Settings.Default.Save();
+
+            if (MessageBox.Show("The Settings Are Resetted!.\nPlease Restart The Application!\nWould You Restart Now?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Close();
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
         /// Scenarioes the simulation player.
         /// </summary>
         private void OpenScenarioSimulationPlayer()

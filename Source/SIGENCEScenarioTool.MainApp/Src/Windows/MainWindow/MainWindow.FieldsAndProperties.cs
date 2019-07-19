@@ -67,6 +67,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private readonly OpenFileDialog ofdLoadTemplates = new OpenFileDialog();
 
         /// <summary>
+        /// The SFD save templates
+        /// </summary>
+        private readonly SaveFileDialog sfdExportSettings = new SaveFileDialog();
+
+        /// <summary>
+        /// The ofd load templates
+        /// </summary>
+        private readonly OpenFileDialog ofdImportSettings = new OpenFileDialog();
+
+        /// <summary>
         /// The SFD save screenshot
         /// </summary>
         private readonly SaveFileDialog sfdSaveScreenshot = new SaveFileDialog();

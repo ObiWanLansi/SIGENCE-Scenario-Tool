@@ -18,8 +18,18 @@
     </Version>
     -->
 
+    <Version Version="20" Title="XXXX 2019 Release">
+        <Features>
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+            <Issue Id="" Description="" />
+        </Features>
+    </Version>
 
-    <Version Version="19" Title="XXXXX 2019 Release">
+
+    <Version Version="19" Title="Juni 2019 Release">
         <Features>
             <Issue Id="53" Description="Create A Report File From The Current Scenario" />
             <Issue Id="57" Description="Add Markdown Support For Scenario Description" />

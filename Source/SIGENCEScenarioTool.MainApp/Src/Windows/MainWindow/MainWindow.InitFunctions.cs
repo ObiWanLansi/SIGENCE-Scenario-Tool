@@ -243,7 +243,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //---------------------------------------------------------------------
 
-            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.OpenSettings,
+            this.CommandBindings.Add(new CommandBinding(RegisteredCommands.EditSettings,
                 (sender, e) =>
                 {
                     OpenSettings();
@@ -376,12 +376,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitFileOpenSaveDialogs()
         {
+            #region Scenario Load & Save
+
             this.sfdSaveSIGENCEScenario.Title = "Save SIGENCE Scenario File";
             this.sfdSaveSIGENCEScenario.Filter = "SIGENCE Scenario File (*.stf)|*.stf";
             this.sfdSaveSIGENCEScenario.AddExtension = true;
             this.sfdSaveSIGENCEScenario.CheckPathExists = true;
 
-            //-----------------------------------------------------------------
+            //---------------------------------------------
 
             this.ofdLoadSIGENCEScenario.Title = "Load SIGENCE Scenario File";
             this.ofdLoadSIGENCEScenario.Filter = "SIGENCE Scenario File (*.stf)|*.stf";
@@ -390,7 +392,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.ofdLoadSIGENCEScenario.CheckFileExists = true;
             this.ofdLoadSIGENCEScenario.Multiselect = false;
 
+            #endregion
+
             //-------------------------------------------------------------------------------------
+
+            #region Scenario Import & Export
 
             this.sfdExportSIGENCEScenario.Title = "Export SIGENCE Scenario";
             //sfdExportRFDevices.Filter = "Comma Separated Values (*.csv)|*.csv|Extensible Markup Language (*.xml)|*.xml|JavaScript Object Notation (*.json)|*.json|Office Open XML File Format (*.xlsx)|*.xlsx|SQLite Database (*.sqlite)|*.sqlite";
@@ -398,7 +404,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.sfdExportSIGENCEScenario.AddExtension = true;
             this.sfdExportSIGENCEScenario.CheckPathExists = true;
 
-            //-----------------------------------------------------------------
+            //---------------------------------------------
 
             this.ofdImportSIGENCEScenario.Title = "Import SIGENCE Scenario";
             this.ofdImportSIGENCEScenario.Filter = "Office Open XML File Format (*.xlsx)|*.xlsx";
@@ -407,14 +413,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.ofdImportSIGENCEScenario.CheckFileExists = true;
             this.ofdImportSIGENCEScenario.Multiselect = false;
 
+            #endregion
+
             //-------------------------------------------------------------------------------------
+
+            #region Templates
 
             this.sfdSaveTemplates.Title = "Save SIGENCE Scenario Templates";
             this.sfdSaveTemplates.Filter = "SIGENCE Scenario Templates (*.stt)|*.stt";
             this.sfdSaveTemplates.AddExtension = true;
             this.sfdSaveTemplates.CheckPathExists = true;
 
-            //-----------------------------------------------------------------
+            //---------------------------------------------
 
             this.ofdLoadTemplates.Title = "Load SIGENCE Scenario Templates";
             this.ofdLoadTemplates.Filter = "SIGENCE Scenario Templates (*.stt)|*.stt";
@@ -423,6 +433,27 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.ofdLoadTemplates.CheckFileExists = true;
             this.ofdLoadTemplates.Multiselect = false;
 
+            #endregion
+
+            //-------------------------------------------------------------------------------------
+
+            #region Settings
+
+            this.sfdExportSettings.Title = "Export SIGENCE Scenario Settings";
+            this.sfdExportSettings.Filter = "SIGENCE Scenario Settings (*.sts)|*.sts";
+            this.sfdExportSettings.AddExtension = true;
+            this.sfdExportSettings.CheckPathExists = true;
+
+            //---------------------------------------------
+
+            this.ofdImportSettings.Title = "Import SIGENCE Scenario Settings";
+            this.ofdImportSettings.Filter = "SIGENCE Scenario Settings (*.sts)|*.sts";
+            this.ofdImportSettings.AddExtension = true;
+            this.ofdImportSettings.CheckPathExists = true;
+            this.ofdImportSettings.CheckFileExists = true;
+            this.ofdImportSettings.Multiselect = false;
+
+            #endregion
             //-------------------------------------------------------------------------------------
 
             this.sfdSaveScreenshot.Title = "Save Screenshot";
