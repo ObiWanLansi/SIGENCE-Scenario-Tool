@@ -260,6 +260,7 @@
     <Compile Include="Src\Dialogs\Simulation\SimulationDialog.xaml.cs">
       <DependentUpon>SimulationDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Src\Extensions\DataGridExtension.cs" />
     <Compile Include="Src\Extensions\TextEditorControlExtension.cs" />
     <Compile Include="Src\Markers\AbstractMarker.cs" />
     <Compile Include="Src\Markers\DiamondMarker.xaml.cs">

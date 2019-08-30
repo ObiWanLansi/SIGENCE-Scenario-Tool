@@ -19,6 +19,7 @@ namespace SIGENCEScenarioTool.Commands
 
         //---------------------------------------------------------------------
 
+
         /// <summary>
         /// Gets the create RFDevice.
         /// </summary>
@@ -225,6 +226,14 @@ namespace SIGENCEScenarioTool.Commands
         /// </value>
         public static RoutedUICommand ViewValidationResults { get; private set; }
 
+        /// <summary>
+        /// Gets the mark devices with the same value.
+        /// </summary>
+        /// <value>
+        /// The mark devices with the same value.
+        /// </value>
+        public static RoutedUICommand MarkDevicesWithTheSameValue { get; private set; }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -329,6 +338,11 @@ namespace SIGENCEScenarioTool.Commands
 
             ViewValidationResults = new RoutedUICommand("ViewValidationResults", "ViewValidationResults", typeof(RegisteredCommands));
             ViewValidationResults.InputGestures.Add(new KeyGesture(Key.F9, ModifierKeys.Shift));
+
+
+            MarkDevicesWithTheSameValue = new RoutedUICommand("MarkDevicesWithTheSameValue", "MarkDevicesWithTheSameValue", typeof(RegisteredCommands));
+            MarkDevicesWithTheSameValue.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Shift | ModifierKeys.Control));
+
         }
 
     } // end static public class RegisteredCommands

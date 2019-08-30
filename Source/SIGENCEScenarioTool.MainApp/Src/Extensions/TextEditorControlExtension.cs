@@ -15,7 +15,7 @@ namespace SIGENCEScenarioTool.Extensions
     /// <summary>
     /// 
     /// </summary>
-    static public class TextEditorControlExtension
+    public static class TextEditorControlExtension
     {
 
         /// <summary>

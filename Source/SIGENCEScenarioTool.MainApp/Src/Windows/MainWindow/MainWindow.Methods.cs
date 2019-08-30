@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -863,6 +864,17 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Marks the devices with the same value.
+        /// </summary>
+        private void MarkDevicesWithTheSameValue()
+        {
+            Tuple<PropertyInfo, object> t = dgRFDevices.GetFocusedItem();
+
+            MB.Information($"{t.Item1.Name}: {t.Item2}");
+        }
 
 
         /// <summary>
