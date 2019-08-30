@@ -9,6 +9,8 @@
         <delete dir=".\bin" />
         <delete dir=".\obj" />
 
+        <delete dir="${DeployTarget}" />
+
         <delete dir=".\SIGENCEScenarioTool.MainApp\bin" />
         <delete dir=".\SIGENCEScenarioTool.MainApp\obj" />
 

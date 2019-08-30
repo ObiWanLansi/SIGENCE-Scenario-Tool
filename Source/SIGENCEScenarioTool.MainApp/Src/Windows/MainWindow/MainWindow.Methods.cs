@@ -871,9 +871,49 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void MarkDevicesWithTheSameValue()
         {
-            Tuple<PropertyInfo, object> t = dgRFDevices.GetFocusedItem();
+            try
+            {
+                Tuple<PropertyInfo, object> tSource = dgRFDevices.GetFocusedItem();
 
-            MB.Information($"{t.Item1.Name}: {t.Item2}");
+                if (tSource == null)
+                {
+                    MB.Warning("No Cell Is Selected Or Focused!");
+                    return;
+                }
+
+                if (tSource.Item1 == null)
+                {
+                    MB.Warning("Can't Detect The PropertyType Of This Cell!");
+                    return;
+                }
+
+                if (tSource.Item2 == null)
+                {
+                    MB.Warning("Can't Get The Value Of This Cell!");
+                    return;
+                }
+
+                dgRFDevices.SelectedItems.Clear();
+
+                foreach (var item in dgRFDevices.Items)
+                {
+                    if (item is RFDeviceViewModel)
+                    {
+                        RFDeviceViewModel dvm = item as RFDeviceViewModel;
+
+                        object oValue = tSource.Item1.GetValue(dvm);
+
+                        if (tSource.Item2.Equals(oValue))
+                        {
+                            dgRFDevices.SelectedItems.Add(dvm);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
         }
 
 

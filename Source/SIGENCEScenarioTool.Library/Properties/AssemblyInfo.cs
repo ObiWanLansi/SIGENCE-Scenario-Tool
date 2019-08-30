@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "LansiTools" )]
 [assembly: AssemblyProduct( "SIGENCE Scenario Tool" )]
-[assembly: AssemblyCopyright( "Copyright © LansiTools 2018" )]
+[assembly: AssemblyCopyright( "Copyright © LansiTools 2019" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -50,5 +50,5 @@ using System.Windows;
 // Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("20")]
-[assembly: AssemblyFileVersion("20")]
+[assembly: AssemblyVersion("21")]
+[assembly: AssemblyFileVersion("21")]

@@ -24,6 +24,7 @@ bld/
 
 SIGENCEScenarioTool.SelfExtractingZip/
 SIGENCEScenarioTool.Installer/
+Executable/
 
 
 # Visual Studio 2015 cache/options directory

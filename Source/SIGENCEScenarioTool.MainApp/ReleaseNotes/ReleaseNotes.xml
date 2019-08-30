@@ -23,6 +23,7 @@
             <Issue Id="172" Description="Reset The Settings To The Default Values" />
             <Issue Id="160" Description="Import User Settings" />
             <Issue Id="159" Description="Export User Settings" />
+            <Issue Id="115" Description="Mark Devices With Same Properties Feature" />
         </Features>
     </Version>
 

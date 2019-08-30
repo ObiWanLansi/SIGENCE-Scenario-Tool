@@ -462,6 +462,7 @@
   <HelpKINode Title="GetFileInfoFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetFileInfoFromNode.htm" />
   <HelpKINode Title="GetFilenameWithoutExtension method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_GetFilenameWithoutExtension.htm" />
   <HelpKINode Title="GetFileSize method" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_GetFileSize.htm" />
+  <HelpKINode Title="GetFlatXmlStringFromObject method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetFlatXmlStringFromObject.htm" />
   <HelpKINode Title="GetGeometryFromWKB method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetGeometryFromWKB.htm" />
   <HelpKINode Title="GetGrad method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGrad.htm" />
   <HelpKINode Title="GetGradMinutesSeconds method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
@@ -481,6 +482,8 @@
   <HelpKINode Title="GetLoremIpsum method" Url="html/M_SIGENCEScenarioTool_Tools_LoremIpsum_GetLoremIpsum.htm" />
   <HelpKINode Title="GetMultiPolygonFromWKB method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetMultiPolygonFromWKB.htm" />
   <HelpKINode Title="GetNativeType method" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_GetNativeType.htm" />
+  <HelpKINode Title="GetObjectFromFlatXmlString(Of T) method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetObjectFromFlatXmlString__1.htm" />
+  <HelpKINode Title="GetObjectFromFlatXmlString&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetObjectFromFlatXmlString__1.htm" />
   <HelpKINode Title="GetPointFromWKB method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetPointFromWKB.htm" />
   <HelpKINode Title="GetPolygonFromWKB method" Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetPolygonFromWKB.htm" />
   <HelpKINode Title="GetProperty(Of T) method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetProperty__1.htm" />
@@ -1325,11 +1328,14 @@
   <HelpKINode Title="Tool.FOX field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_FOX.htm" />
   <HelpKINode Title="Tool.FRANZ field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_FRANZ.htm" />
   <HelpKINode Title="Tool.GetDateTimeFromUnixTimestamp method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetDateTimeFromUnixTimestamp.htm" />
+  <HelpKINode Title="Tool.GetFlatXmlStringFromObject method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetFlatXmlStringFromObject.htm" />
   <HelpKINode Title="Tool.GetGrad method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGrad.htm" />
   <HelpKINode Title="Tool.GetGradMinutesSeconds method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
   <HelpKINode Title="Tool.GetHumanDistance method" Url="html/Overload_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
   <HelpKINode Title="Tool.GetHumanSizeForInformatics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForInformatics.htm" />
   <HelpKINode Title="Tool.GetHumanSizeForPhysics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForPhysics.htm" />
+  <HelpKINode Title="Tool.GetObjectFromFlatXmlString(Of T) method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetObjectFromFlatXmlString__1.htm" />
+  <HelpKINode Title="Tool.GetObjectFromFlatXmlString&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetObjectFromFlatXmlString__1.htm" />
   <HelpKINode Title="Tool.IGNORETYPES field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_IGNORETYPES.htm" />
   <HelpKINode Title="Tool.NUMBERTYPES field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_NUMBERTYPES.htm" />
   <HelpKINode Title="Tool.ProductName property" Url="html/P_SIGENCEScenarioTool_Tools_Tool_ProductName.htm" />

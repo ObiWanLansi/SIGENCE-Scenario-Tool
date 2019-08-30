@@ -22,6 +22,11 @@ namespace SIGENCEScenarioTool.Extensions
         {
             var currentcell = dg.CurrentCell;
 
+            if (currentcell == null || currentcell.Column == null)
+            {
+                return null;
+            }
+
             PropertyInfo pi = currentcell.Item.GetType().GetProperty(currentcell.Column.SortMemberPath);
 
             object oValue = pi.GetValue(currentcell.Item);
