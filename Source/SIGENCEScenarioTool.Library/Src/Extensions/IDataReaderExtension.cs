@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Data;
 
-using GeoAPI.Geometries;
+using NetTopologySuite.Geometries;
 
 using SIGENCEScenarioTool.Tools;
 
-using NTS = NetTopologySuite.Geometries;
 
 
 
@@ -22,11 +21,11 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult">The database result.</param>
         /// <param name="iColumnIndex">Index of the i column.</param>
         /// <returns></returns>
-        public static string GetStringOrNull( this IDataReader dbResult, int iColumnIndex )
+        public static string GetStringOrNull(this IDataReader dbResult, int iColumnIndex)
         {
-            if(dbResult.IsDBNull( iColumnIndex ) == false)
+            if (dbResult.IsDBNull(iColumnIndex) == false)
             {
-                return dbResult.GetString( iColumnIndex );
+                return dbResult.GetString(iColumnIndex);
             }
 
             return null;
@@ -39,11 +38,11 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult">The database result.</param>
         /// <param name="iColumnIndex">Index of the i column.</param>
         /// <returns></returns>
-        public static int? GetInt32OrNull( this IDataReader dbResult, int iColumnIndex )
+        public static int? GetInt32OrNull(this IDataReader dbResult, int iColumnIndex)
         {
-            if(dbResult.IsDBNull( iColumnIndex ) == false)
+            if (dbResult.IsDBNull(iColumnIndex) == false)
             {
-                return dbResult.GetInt32( iColumnIndex );
+                return dbResult.GetInt32(iColumnIndex);
             }
 
             return null;
@@ -56,11 +55,11 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult">The database result.</param>
         /// <param name="iColumnIndex">Index of the i column.</param>
         /// <returns></returns>
-        public static long? GetInt64OrNull( this IDataReader dbResult, int iColumnIndex )
+        public static long? GetInt64OrNull(this IDataReader dbResult, int iColumnIndex)
         {
-            if(dbResult.IsDBNull( iColumnIndex ) == false)
+            if (dbResult.IsDBNull(iColumnIndex) == false)
             {
-                return dbResult.GetInt64( iColumnIndex );
+                return dbResult.GetInt64(iColumnIndex);
             }
 
             return null;
@@ -73,11 +72,11 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult">The database result.</param>
         /// <param name="iColumnIndex">Index of the i column.</param>
         /// <returns></returns>
-        public static DateTime? GetDateTimeOrNull( this IDataReader dbResult, int iColumnIndex )
+        public static DateTime? GetDateTimeOrNull(this IDataReader dbResult, int iColumnIndex)
         {
-            if(dbResult.IsDBNull( iColumnIndex ) == false)
+            if (dbResult.IsDBNull(iColumnIndex) == false)
             {
-                return dbResult.GetDateTime( iColumnIndex );
+                return dbResult.GetDateTime(iColumnIndex);
             }
 
             return null;
@@ -92,13 +91,13 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult"></param>
         /// <param name="iColumnIndex"></param>
         /// <returns></returns>
-        public static IGeometry GetGeometryFromWKB( this IDataReader dbResult, int iColumnIndex )
+        public static Geometry GetGeometryFromWKB(this IDataReader dbResult, int iColumnIndex)
         {
-            if(dbResult.IsDBNull( iColumnIndex ) == false)
+            if (dbResult.IsDBNull(iColumnIndex) == false)
             {
-                string strWKB = dbResult.GetString( iColumnIndex );
+                string strWKB = dbResult.GetString(iColumnIndex);
 
-                if(strWKB.IsNotEmpty())
+                if (strWKB.IsNotEmpty())
                 {
                     return strWKB.ToGeometry();
                 }
@@ -114,9 +113,9 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult"></param>
         /// <param name="iColumnIndex"></param>
         /// <returns></returns>
-        public static NTS.MultiPolygon GetMultiPolygonFromWKB( this IDataReader dbResult, int iColumnIndex )
+        public static MultiPolygon GetMultiPolygonFromWKB(this IDataReader dbResult, int iColumnIndex)
         {
-            return (NTS.MultiPolygon)GetGeometryFromWKB( dbResult, iColumnIndex );
+            return (MultiPolygon)GetGeometryFromWKB(dbResult, iColumnIndex);
         }
 
 
@@ -126,9 +125,9 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult"></param>
         /// <param name="iColumnIndex"></param>
         /// <returns></returns>
-        public static NTS.Polygon GetPolygonFromWKB( this IDataReader dbResult, int iColumnIndex )
+        public static Polygon GetPolygonFromWKB(this IDataReader dbResult, int iColumnIndex)
         {
-            return (NTS.Polygon)GetGeometryFromWKB( dbResult, iColumnIndex );
+            return (Polygon)GetGeometryFromWKB(dbResult, iColumnIndex);
         }
 
 
@@ -138,9 +137,9 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult"></param>
         /// <param name="iColumnIndex"></param>
         /// <returns></returns>
-        public static NTS.LineString GetLineStringFromWKB( this IDataReader dbResult, int iColumnIndex )
+        public static LineString GetLineStringFromWKB(this IDataReader dbResult, int iColumnIndex)
         {
-            return (NTS.LineString)GetGeometryFromWKB( dbResult, iColumnIndex );
+            return (LineString)GetGeometryFromWKB(dbResult, iColumnIndex);
         }
 
 
@@ -150,9 +149,9 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="dbResult"></param>
         /// <param name="iColumnIndex"></param>
         /// <returns></returns>
-        public static NTS.Point GetPointFromWKB( this IDataReader dbResult, int iColumnIndex )
+        public static Point GetPointFromWKB(this IDataReader dbResult, int iColumnIndex)
         {
-            return (NTS.Point)GetGeometryFromWKB( dbResult, iColumnIndex );
+            return (Point)GetGeometryFromWKB(dbResult, iColumnIndex);
         }
 
     } // end static public class IDataReaderExtension

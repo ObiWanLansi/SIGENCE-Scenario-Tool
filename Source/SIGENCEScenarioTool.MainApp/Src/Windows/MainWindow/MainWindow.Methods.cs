@@ -10,8 +10,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-using GeoAPI.Geometries;
-
 using GMap.NET;
 using GMap.NET.MapProviders;
 
@@ -797,7 +795,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     float fDensifyInKM = Properties.Settings.Default.DensifyInMeters / 100_000;
 
-                    IGeometry result = Densifier.Densify(ls, fDensifyInKM);
+                    NetTopologySuite.Geometries.Geometry result = Densifier.Densify(ls, fDensifyInKM);
 
                     if (result is LineString lsDensified)
                     {

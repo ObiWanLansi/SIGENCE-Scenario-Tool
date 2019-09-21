@@ -4,8 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-using GeoAPI.Geometries;
-
 using GMap.NET;
 
 using NetTopologySuite.Geometries;
@@ -71,7 +69,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="strWKBAsString">The string WKB as string.</param>
         /// <returns></returns>
-        public static IGeometry ToGeometry( this string strWKBAsString )
+        public static Geometry ToGeometry( this string strWKBAsString )
         {
             if(strWKBAsString == null || strWKBAsString.Trim().Length == 0)
             {
@@ -99,7 +97,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         /// <param name="geo">The geo.</param>
         /// <returns></returns>
-        public static string ToString( this IGeometry geo )
+        public static string ToString( this Geometry geo )
         {
             // Kann ja passieren, ist ja auch nicht weiter schlimm, liefern wir halt eben auch null zurück.
             if(geo == null)

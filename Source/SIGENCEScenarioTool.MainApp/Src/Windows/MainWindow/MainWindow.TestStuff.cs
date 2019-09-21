@@ -13,14 +13,14 @@ using System.Windows.Media;
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
+using NetTopologySuite.Geometries;
+
 using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
-
-using NTS = NetTopologySuite.Geometries;
 
 
 
@@ -241,7 +241,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                                 string strRef = dbResult.GetStringOrNull(1);
                                 string strName = dbResult.GetStringOrNull(2);
-                                NTS.LineString way = (NTS.LineString)dbResult.GetGeometryFromWKB(3);
+
+                                LineString way = (LineString)dbResult.GetGeometryFromWKB(3);
 
                                 if (bb.Contains(way.Coordinate.ToPointLatLng()))
                                 {
