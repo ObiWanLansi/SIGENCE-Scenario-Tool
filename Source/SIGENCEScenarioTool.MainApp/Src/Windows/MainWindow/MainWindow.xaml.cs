@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
@@ -6,6 +7,8 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Xps.Packaging;
 
+using SIGENCEScenarioTool.Datatypes.Geo;
+using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
@@ -119,9 +122,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-#if DEBUG
 
-            ImportSettings(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\mysettings.sts");
+
+
+            DateTime dtStart = DateTime.Now;
+            TerrainModel tm = new TerrainModel();
+            tm.LoadXYZFile(@"d:\BigData\SRTM Tiles Germany\srtm_39_02.xyz");
+            DateTime dtStop = DateTime.Now;
+
+            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
+#if DEBUG
 
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "FMBroadcast", Id = 2 }));
@@ -133,6 +143,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "TwinRx", Id = -4 }));
 
             //LoadTemplates( @"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\Templates.stt" );
+            //ImportSettings(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\mysettings.sts");
 
             //-----------------------------------------------------------------
 

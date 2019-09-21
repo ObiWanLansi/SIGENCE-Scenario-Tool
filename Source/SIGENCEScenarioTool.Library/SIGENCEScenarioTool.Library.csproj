@@ -186,6 +186,7 @@
     <Compile Include="Src\Datatypes\Geo\Altitude.cs" />
     <Compile Include="Src\Datatypes\Geo\GeoNode.cs" />
     <Compile Include="Src\Datatypes\Geo\Latitude.cs" />
+    <Compile Include="Src\Datatypes\Geo\LatLonAlt.cs" />
     <Compile Include="Src\Datatypes\Geo\Longitude.cs" />
     <Compile Include="Src\Datatypes\Geo\TerrainModel.cs" />
     <Compile Include="Src\Datatypes\Observable\ObservableStringCollection.cs" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using GMap.NET;
+using System.IO;
+using System.Threading.Tasks;
 
 
 
@@ -14,36 +14,63 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     sealed public class TerrainModel
     {
         /// <summary>
-        /// 
+        /// The l terrain model
         /// </summary>
-        private List<PointLatLng> lTerrainModel = new List<PointLatLng>();
+        private readonly List<LatLonAlt> lTerrainModel = new List<LatLonAlt>();
+
+
+        /// <summary>
+        /// Gets the point count.
+        /// </summary>
+        /// <value>
+        /// The point count.
+        /// </value>
+        public int PointCount
+        {
+            get { return lTerrainModel.Count; }
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         /// <summary>
-        /// 
+        /// Gets the file.
         /// </summary>
-        public string Source { get; private set; }
+        /// <value>
+        /// The file.
+        /// </value>
+        public FileInfo TerrainFile { get; private set; }
 
         /// <summary>
-        /// 
+        /// Gets the x minimum.
         /// </summary>
+        /// <value>
+        /// The x minimum.
+        /// </value>
         public double XMin { get; private set; }
 
         /// <summary>
-        /// 
+        /// Gets the y minimum.
         /// </summary>
+        /// <value>
+        /// The y minimum.
+        /// </value>
         public double YMin { get; private set; }
 
         /// <summary>
-        /// 
+        /// Gets the x maximum.
         /// </summary>
+        /// <value>
+        /// The x maximum.
+        /// </value>
         public double XMax { get; private set; }
 
         /// <summary>
-        /// 
+        /// Gets the y maximum.
         /// </summary>
+        /// <value>
+        /// The y maximum.
+        /// </value>
         public double YMax { get; private set; }
 
         ///// <summary>
@@ -114,11 +141,11 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
 
         /// <summary>
-        /// 
+        /// Resets this instance.
         /// </summary>
         private void Reset()
         {
-            Source = null;
+            //Source = null;
 
             lTerrainModel.Clear();
 
@@ -132,50 +159,71 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
 
         /// <summary>
-        /// 
+        /// Parses the line.
         /// </summary>
-        /// <param name="strFilename"></param>
+        /// <param name="strLine">The string line.</param>
+        private void ParseLine(string strLine)
+        {
+            string[] fields = strLine.Split(' ');
+
+            if (fields.Length != 3)
+            {
+                return;
+            }
+
+            double x = double.Parse(fields[0].Replace('.', ','));
+            double y = double.Parse(fields[1].Replace('.', ','));
+            int z = int.Parse(fields[2]);
+
+            lock (lTerrainModel)
+            {
+                if (x < XMin)
+                {
+                    XMin = x;
+                }
+
+                if (x > XMax)
+                {
+                    XMax = x;
+                }
+
+                if (y < YMin)
+                {
+                    YMin = y;
+                }
+
+                if (y > YMax)
+                {
+                    YMax = y;
+                }
+
+                lTerrainModel.Add(new LatLonAlt(y, x, z));
+            }
+        }
+
+
+        /// <summary>
+        /// Loads the xyz file.
+        /// </summary>
+        /// <param name="strFilename">The string filename.</param>
         public void LoadXYZFile(string strFilename)
         {
             Reset();
 
-            Source = strFilename;
+            TerrainFile = new FileInfo(strFilename);
 
-            //foreach (string strLine in File.ReadLines(strFilename))
+            string[] strLines = File.ReadAllLines(strFilename);
+
+            Parallel.ForEach(strLines, (strLine) =>
+            {
+                ParseLine(strLine);
+            });
+
+            //foreach (string strLine in strLines)
             //{
-            //    string[] fields = strLine.Split(' ');
-
-            //    if (fields.Length != 3)
-            //    {
-            //        continue;
-            //    }
-
-            //    double x = double.Parse(fields[0].Replace('.', ','));
-            //    double y = double.Parse(fields[1].Replace('.', ','));
-            //    int z = int.Parse(fields[2]);
-
-            //    if (x < XMin)
-            //    {
-            //        XMin = x;
-            //    }
-
-            //    if (x > XMax)
-            //    {
-            //        XMax = x;
-            //    }
-
-            //    if (y < YMin)
-            //    {
-            //        YMin = y;
-            //    }
-
-            //    if (y > YMax)
-            //    {
-            //        YMax = y;
-            //    }
-
-            //    lTerrainModel.Add(new PointLatLng(x, y, z, SpatialReferences.Wgs84));
+            //    ParseLine(strLine);
             //}
+
 
             //Envelope = new Envelope(XMin, YMin, XMax, YMax, SpatialReferences.Wgs84);
 

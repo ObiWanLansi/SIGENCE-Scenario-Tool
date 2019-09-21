@@ -25,7 +25,7 @@ namespace SIGENCEScenarioTool.Datatypes
         /// <value>
         /// The value in it's default SI Einheit.
         /// </value>
-        public T Value { get; set; } = default(T);
+        public T Value { get; set; } = default;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

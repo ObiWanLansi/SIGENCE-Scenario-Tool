@@ -1059,6 +1059,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         NewFile();
                         break;
 
+                    case "gc":
+                        GC.WaitForPendingFinalizers();
+                        GC.Collect();
+                        break;
+
                     case "rand":
                         if (strSplitted.Length > 1)
                         {
