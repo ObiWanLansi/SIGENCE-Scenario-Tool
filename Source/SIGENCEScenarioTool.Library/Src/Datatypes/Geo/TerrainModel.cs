@@ -82,6 +82,17 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
             get { return lTerrainModel.Count; }
         }
 
+        /// <summary>
+        /// Gets the points.
+        /// </summary>
+        /// <value>
+        /// The points.
+        /// </value>
+        public List<LatLonAlt> Points
+        {
+            get { return lTerrainModel; }
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -100,11 +111,20 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
                 throw new ArgumentNullException("envelope");
             }
 
-            //Polygon envelope = pPolygon.GetWGS84();
-
             List<LatLonAlt> lMapPointsInEvelope = new List<LatLonAlt>(1024);
 
-            lMapPointsInEvelope.AddRange(lTerrainModel.Where(mp => envelope.Contains(mp.Lon, mp.Lat)));
+            Parallel.ForEach(lTerrainModel, (point) =>
+            {
+                if (envelope.Contains(point.Lon, point.Lat))
+                {
+                    lock (lMapPointsInEvelope)
+                    {
+                        lMapPointsInEvelope.Add(point);
+                    }
+                }
+            });
+
+            //lMapPointsInEvelope.AddRange(lTerrainModel.Where(mp => envelope.Contains(mp.Lon, mp.Lat)));
 
             // Absteigent sortieren
             lMapPointsInEvelope.Sort((x, y) => { return x.Alt.CompareTo(y.Alt) * -1; });
@@ -119,13 +139,13 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
                 foreach (LatLonAlt mp in lHighestPoints)
                 {
-                    //double dAbstand = GeometryEngine.GeodesicDistance(mpCurrent, mp, LinearUnits.Meters);
+                    double dAbstand = mpCurrent.Distance(mp) * 1000;
 
-                    //if (dAbstand < iPointDeltaInMeters)
-                    //{
-                    //    bAbstandGroßGenug = false;
-                    //    break;
-                    //}
+                    if (dAbstand < iPointDeltaInMeters)
+                    {
+                        bAbstandGroßGenug = false;
+                        break;
+                    }
                 }
 
                 if (bAbstandGroßGenug == true)

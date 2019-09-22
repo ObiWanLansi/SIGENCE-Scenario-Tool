@@ -304,14 +304,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void LoadHeightData()
         {
-
             TerrainModel tm = new TerrainModel();
             {
                 DateTime dtStart = DateTime.Now;
                 tm.LoadXYZFile(@"d:\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
                 DateTime dtStop = DateTime.Now;
 
-                MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
+                //MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
 
                 GMapPolygon polygon = new GMapPolygon(new List<PointLatLng>
                 {
@@ -321,19 +320,32 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     new PointLatLng(tm.YMin,tm.XMax)
                 });
 
-                mcMapControl.Markers.Add(polygon);
+                //mcMapControl.Markers.Add(polygon);
             }
+
+            {
+                foreach (LatLonAlt lla in tm.Points)
+                {
+                    GMapMarker marker = new GMapMarker(lla.ToPointLatLng())
+                    {
+                        Shape = new System.Windows.Shapes.Ellipse { Width = 5, Height = 5, Fill = Brushes.White }
+                    };
+
+                    this.mcMapControl.Markers.Add(marker);
+                }
+            }
+
             {
                 DateTime dtStart = DateTime.Now;
-
-                List<LatLonAlt> highestpoints = tm.GetHighestPoints(new Envelope(tm.XMin, tm.XMax, tm.YMin, tm.YMax), 4, 20);
+                List<LatLonAlt> highestpoints = tm.GetHighestPoints(new Envelope(tm.XMin, tm.XMax, tm.YMin, tm.YMax), 10, 20);
                 DateTime dtStop = DateTime.Now;
 
-                MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {highestpoints.Count}");
+                //MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {highestpoints.Count}");
 
                 if (highestpoints.Count > 0)
                 {
                     int iCounter = 0;
+
                     foreach (LatLonAlt lla in highestpoints)
                     {
                         var dev = new RFDevice()

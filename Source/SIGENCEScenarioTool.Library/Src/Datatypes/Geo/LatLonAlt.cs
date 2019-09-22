@@ -1,4 +1,5 @@
 ﻿using GMap.NET;
+using NetTopologySuite.Geometries;
 
 namespace SIGENCEScenarioTool.Datatypes.Geo
 {
@@ -22,6 +23,8 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// </summary>
         public readonly int Alt;
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LatLonAlt"/> struct.
@@ -36,6 +39,8 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
             this.Alt = Alt;
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
         /// <summary>
         /// Converts to pointlatlng.
@@ -44,6 +49,20 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         public PointLatLng ToPointLatLng()
         {
             return new PointLatLng(Lat, Lon);
+        }
+
+
+        /// <summary>
+        /// Distances the specified other.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns></returns>
+        public double Distance(LatLonAlt other)
+        {
+            NetTopologySuite.Geometries.Point p1 = new NetTopologySuite.Geometries.Point(Lon, Lat);
+            NetTopologySuite.Geometries.Point p2 = new NetTopologySuite.Geometries.Point(other.Lon, other.Lat);
+
+            return p1.Distance(p2);
         }
 
     } // end public struct LatLonAlt
