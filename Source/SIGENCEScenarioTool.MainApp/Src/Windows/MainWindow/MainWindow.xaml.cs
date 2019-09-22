@@ -122,15 +122,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-
-
-
-            DateTime dtStart = DateTime.Now;
-            TerrainModel tm = new TerrainModel();
-            tm.LoadXYZFile(@"d:\BigData\SRTM Tiles Germany\srtm_39_02.xyz");
-            DateTime dtStop = DateTime.Now;
-
-            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
 #if DEBUG
 
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
@@ -198,7 +189,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //CreateHeatmap();
             //CreateExampleRFDevices();
 
-            CreateRandomizedRFDevices(42);
+            //CreateRandomizedRFDevices(42);
 
             //AddRFDevice(RFDevice.DUMMY);
             //OpenDeviceEditDialog(RFDevice.DUMMY);

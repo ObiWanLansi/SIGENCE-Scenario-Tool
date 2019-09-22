@@ -1,9 +1,11 @@
-﻿namespace SIGENCEScenarioTool.Datatypes.Geo
+﻿using GMap.NET;
+
+namespace SIGENCEScenarioTool.Datatypes.Geo
 {
     /// <summary>
     /// 
     /// </summary>
-    struct LatLonAlt
+    public struct LatLonAlt
     {
         /// <summary>
         /// The lat
@@ -34,5 +36,15 @@
             this.Alt = Alt;
         }
 
-    } // end struct LatLonAlt
+
+        /// <summary>
+        /// Converts to pointlatlng.
+        /// </summary>
+        /// <returns></returns>
+        public PointLatLng ToPointLatLng()
+        {
+            return new PointLatLng(Lat, Lon);
+        }
+
+    } // end public struct LatLonAlt
 }

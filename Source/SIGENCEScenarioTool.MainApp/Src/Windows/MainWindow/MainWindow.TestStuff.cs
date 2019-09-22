@@ -297,6 +297,75 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             e.Handled = true;
         }
 
+
+
+        /// <summary>
+        /// Loads the height data.
+        /// </summary>
+        private void LoadHeightData()
+        {
+
+            TerrainModel tm = new TerrainModel();
+            {
+                DateTime dtStart = DateTime.Now;
+                tm.LoadXYZFile(@"d:\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
+                DateTime dtStop = DateTime.Now;
+
+                MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
+
+                GMapPolygon polygon = new GMapPolygon(new List<PointLatLng>
+                {
+                    new PointLatLng(tm.YMin,tm.XMin),
+                    new PointLatLng(tm.YMax,tm.XMin),
+                    new PointLatLng(tm.YMax,tm.XMax),
+                    new PointLatLng(tm.YMin,tm.XMax)
+                });
+
+                mcMapControl.Markers.Add(polygon);
+            }
+            {
+                DateTime dtStart = DateTime.Now;
+
+                List<LatLonAlt> highestpoints = tm.GetHighestPoints(new Envelope(tm.XMin, tm.XMax, tm.YMin, tm.YMax), 4, 20);
+                DateTime dtStop = DateTime.Now;
+
+                MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {highestpoints.Count}");
+
+                if (highestpoints.Count > 0)
+                {
+                    int iCounter = 0;
+                    foreach (LatLonAlt lla in highestpoints)
+                    {
+                        var dev = new RFDevice()
+                        {
+                            Latitude = lla.Lat,
+                            Longitude = lla.Lon,
+                            Altitude = lla.Alt,
+                            Name = $"HighPoint #{++iCounter } @ {lla.Alt} m",
+                            Id = iCounter
+                        };
+
+                        AddRFDevice(dev, true);
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_HeightDataTest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_HeightDataTest_Click(object sender, RoutedEventArgs e)
+        {
+            //Task.Run(() => { LoadHeightData(); });
+            LoadHeightData();
+
+
+            e.Handled = true;
+        }
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

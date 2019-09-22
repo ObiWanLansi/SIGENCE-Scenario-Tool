@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+
+using NetTopologySuite.Geometries;
 
 
 
@@ -10,25 +13,12 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    [Serializable]
     sealed public class TerrainModel
     {
         /// <summary>
         /// The l terrain model
         /// </summary>
         private readonly List<LatLonAlt> lTerrainModel = new List<LatLonAlt>();
-
-
-        /// <summary>
-        /// Gets the point count.
-        /// </summary>
-        /// <value>
-        /// The point count.
-        /// </value>
-        public int PointCount
-        {
-            get { return lTerrainModel.Count; }
-        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -74,68 +64,83 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         public double YMax { get; private set; }
 
         ///// <summary>
-        ///// 
+        ///// Gets the envelope.
         ///// </summary>
+        ///// <value>
+        ///// The envelope.
+        ///// </value>
         //public Envelope Envelope { get; private set; }
+
+        /// <summary>
+        /// Gets the point count.
+        /// </summary>
+        /// <value>
+        /// The point count.
+        /// </value>
+        public int PointCount
+        {
+            get { return lTerrainModel.Count; }
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="pPolygon"></param>
-        ///// <param name="iPointCount"></param>
-        ///// <param name="iPointDeltaInMeters"></param>
-        ///// <returns></returns>
-        //public List<PointLatLng> GetHighestPoints(Polygon pPolygon, int iPointCount, int iPointDeltaInMeters)
-        //{
-        //    if (pPolygon == null)
-        //    {
-        //        throw new ArgumentNullException("pPolygon");
-        //    }
+        /// <summary>
+        /// Gets the highest points.
+        /// </summary>
+        /// <param name="envelope">The envelope.</param>
+        /// <param name="iPointCount">The i point count.</param>
+        /// <param name="iPointDeltaInMeters">The i point delta in meters.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">envelope</exception>
+        public List<LatLonAlt> GetHighestPoints(Envelope envelope, int iPointCount, int iPointDeltaInMeters)
+        {
+            if (envelope == null)
+            {
+                throw new ArgumentNullException("envelope");
+            }
 
-        //    Polygon envelope = pPolygon.GetWGS84();
+            //Polygon envelope = pPolygon.GetWGS84();
 
-        //    List<PointLatLng> lMapPointsInEvelope = new List<PointLatLng>(1024);
+            List<LatLonAlt> lMapPointsInEvelope = new List<LatLonAlt>(1024);
 
-        //    lMapPointsInEvelope.AddRange(lTerrainModel.Where(mp => GeometryEngine.Contains(envelope, mp)));
+            lMapPointsInEvelope.AddRange(lTerrainModel.Where(mp => envelope.Contains(mp.Lon, mp.Lat)));
 
-        //    // Absteigent sortieren
-        //    lMapPointsInEvelope.Sort((x, y) => { return x.Z.CompareTo(y.Z) * -1; });
+            // Absteigent sortieren
+            lMapPointsInEvelope.Sort((x, y) => { return x.Alt.CompareTo(y.Alt) * -1; });
 
-        //    List<PointLatLng> lHighestPoints = new List<PointLatLng>(iPointCount);
+            List<LatLonAlt> lHighestPoints = new List<LatLonAlt>(iPointCount);
 
-        //    int iCounter = 0;
+            int iCounter = 0;
 
-        //    foreach (MapPoint mpCurrent in lMapPointsInEvelope)
-        //    {
-        //        bool bAbstandGroßGenug = true;
+            foreach (LatLonAlt mpCurrent in lMapPointsInEvelope)
+            {
+                bool bAbstandGroßGenug = true;
 
-        //        foreach (MapPoint mp in lHighestPoints)
-        //        {
-        //            double dAbstand = GeometryEngine.GeodesicDistance(mpCurrent, mp, LinearUnits.Meters);
+                foreach (LatLonAlt mp in lHighestPoints)
+                {
+                    //double dAbstand = GeometryEngine.GeodesicDistance(mpCurrent, mp, LinearUnits.Meters);
 
-        //            if (dAbstand < iPointDeltaInMeters)
-        //            {
-        //                bAbstandGroßGenug = false;
-        //                break;
-        //            }
-        //        }
+                    //if (dAbstand < iPointDeltaInMeters)
+                    //{
+                    //    bAbstandGroßGenug = false;
+                    //    break;
+                    //}
+                }
 
-        //        if (bAbstandGroßGenug == true)
-        //        {
-        //            lHighestPoints.Add(mpCurrent);
+                if (bAbstandGroßGenug == true)
+                {
+                    lHighestPoints.Add(mpCurrent);
 
-        //            if (++iCounter == iPointCount)
-        //            {
-        //                break;
-        //            }
-        //        }
-        //    }
+                    if (++iCounter == iPointCount)
+                    {
+                        break;
+                    }
+                }
+            }
 
-        //    return lHighestPoints;
-        //}
+            return lHighestPoints;
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -145,7 +150,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// </summary>
         private void Reset()
         {
-            //Source = null;
+            TerrainFile = null;
 
             lTerrainModel.Clear();
 
@@ -225,33 +230,8 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
             //}
 
 
-            //Envelope = new Envelope(XMin, YMin, XMax, YMax, SpatialReferences.Wgs84);
-
+            //Envelope = new Envelope(XMin, XMax, YMin, YMax);
         }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="strInputFile"></param>
-        ///// <param name="strOuputFile"></param>
-        //static public void ConvertGeoTifToXyz(string strInputFile, string strOuputFile)
-        //{
-        //    // Exceptions werden weitergeschmissen ...
-        //    GdalTranslateUtil.ConvertGeoTifToXYZ(strInputFile, strOuputFile);
-        //}
-
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="strInputFile"></param>
-        //static public void ConvertGeoTifToXyz(string strInputFile)
-        //{
-        //    ConvertGeoTifToXyz(strInputFile, strInputFile + ".xyz");
-        //}
 
     } // end sealed public class TerrainModel
 }
