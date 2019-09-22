@@ -130,9 +130,11 @@
                 <MenuItem Header="Reset Settings" Icon="{StaticResource GARBAGE}" Click="MenuItem_ResetSettings_Click" />
             </MenuItem>
             <MenuItem x:Name="miTest" Header="_Test">
-                <MenuItem Header="_Height Data Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeightDataTest_Click" />
+                <MenuItem Header="_Load Height Data Test" Icon="{StaticResource EARTH}" Click="MenuItem_LoadHeightDataTest_Click" />
+                <MenuItem Header="_Use Height Data Test" Icon="{StaticResource EARTH}" Click="MenuItem_UseHeightDataTest_Click" />
+                <Separator />
                 <!--<MenuItem Header="Toggle Data _Grid" Icon="{StaticResource TEXT_RICH_COLORED}" Command="{x:Static cmd:RegisteredCommands.ToggleDataGrid}" />-->
-                <MenuItem Header="_Load Streets" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
+                <MenuItem Header="_Load Streets Test" Icon="{StaticResource EARTH}" Click="MenuItem_LoadStreets_Click" />
                 <MenuItem Header="_Heatmap Test" Icon="{StaticResource EARTH}" Click="MenuItem_HeatmapTest_Click" />
                 <MenuItem Header="_Charting Test" Icon="{StaticResource CHART}" Click="MenuItem_ChartingTest_Click" />
                 <!--<MenuItem Header="Display Scenario Description" Icon="{StaticResource TEXT_RICH_COLORED}" Click="MenuItem_DisplayScenarioDescription_Click" />-->

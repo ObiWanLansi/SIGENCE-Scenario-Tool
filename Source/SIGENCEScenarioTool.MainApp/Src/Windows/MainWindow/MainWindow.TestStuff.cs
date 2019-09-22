@@ -297,22 +297,26 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             e.Handled = true;
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        /// <summary>
+        /// The tm
+        /// </summary>
+        private TerrainModel tm = null;
 
         /// <summary>
         /// Loads the height data.
         /// </summary>
         private void LoadHeightData()
         {
-            TerrainModel tm = new TerrainModel();
-            {
-                DateTime dtStart = DateTime.Now;
-                tm.LoadXYZFile(@"d:\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
-                DateTime dtStop = DateTime.Now;
+            tm = new TerrainModel();
 
-                //MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
+            DateTime dtStart = DateTime.Now;
+            tm.LoadXYZFile(@"d:\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
+            DateTime dtStop = DateTime.Now;
 
-                GMapPolygon polygon = new GMapPolygon(new List<PointLatLng>
+            GMapPolygon polygon = new GMapPolygon(new List<PointLatLng>
                 {
                     new PointLatLng(tm.YMin,tm.XMin),
                     new PointLatLng(tm.YMax,tm.XMin),
@@ -320,47 +324,55 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     new PointLatLng(tm.YMin,tm.XMax)
                 });
 
-                //mcMapControl.Markers.Add(polygon);
+            mcMapControl.Markers.Add(polygon);
+
+            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
+
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+        }
+
+
+        /// <summary>
+        /// Creates the highest points.
+        /// </summary>
+        private void CreateHighestPoints()
+        {
+            if (tm == null)
+            {
+                MB.Information("Please Load First An Terrain Model!");
+                return;
             }
 
+            DateTime dtStart = DateTime.Now;
+            List<LatLonAlt> highestpoints = tm.GetHighestPoints(new Envelope(tm.XMin, tm.XMax, tm.YMin, tm.YMax), 10, 20);
+            DateTime dtStop = DateTime.Now;
+
+
+            if (highestpoints.Count > 0)
             {
-                foreach (LatLonAlt lla in tm.Points)
+                int iCounter = 0;
+
+                foreach (LatLonAlt lla in highestpoints)
                 {
-                    GMapMarker marker = new GMapMarker(lla.ToPointLatLng())
+                    var dev = new RFDevice()
                     {
-                        Shape = new System.Windows.Shapes.Ellipse { Width = 5, Height = 5, Fill = Brushes.White }
+                        Latitude = lla.Lat,
+                        Longitude = lla.Lon,
+                        Altitude = lla.Alt,
+                        Name = $"HighPoint #{++iCounter } @ {lla.Alt} m",
+                        DeviceSource = DeviceSource.Automatic,
+                        Id = iCounter
                     };
 
-                    this.mcMapControl.Markers.Add(marker);
+                    AddRFDevice(dev, true);
                 }
             }
 
-            {
-                DateTime dtStart = DateTime.Now;
-                List<LatLonAlt> highestpoints = tm.GetHighestPoints(new Envelope(tm.XMin, tm.XMax, tm.YMin, tm.YMax), 10, 20);
-                DateTime dtStop = DateTime.Now;
+            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {highestpoints.Count}");
 
-                //MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {highestpoints.Count}");
-
-                if (highestpoints.Count > 0)
-                {
-                    int iCounter = 0;
-
-                    foreach (LatLonAlt lla in highestpoints)
-                    {
-                        var dev = new RFDevice()
-                        {
-                            Latitude = lla.Lat,
-                            Longitude = lla.Lon,
-                            Altitude = lla.Alt,
-                            Name = $"HighPoint #{++iCounter } @ {lla.Alt} m",
-                            Id = iCounter
-                        };
-
-                        AddRFDevice(dev, true);
-                    }
-                }
-            }
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
         }
 
 
@@ -369,11 +381,31 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_HeightDataTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_LoadHeightDataTest_Click(object sender, RoutedEventArgs e)
         {
             //Task.Run(() => { LoadHeightData(); });
+            Cursor = Cursors.Wait;
+            
             LoadHeightData();
 
+            Cursor = Cursors.Arrow;
+
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_UseHeightDataTest control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_UseHeightDataTest_Click(object sender, RoutedEventArgs e)
+        {
+            Cursor = Cursors.Wait;
+
+            CreateHighestPoints();
+
+            Cursor = Cursors.Arrow;
 
             e.Handled = true;
         }
