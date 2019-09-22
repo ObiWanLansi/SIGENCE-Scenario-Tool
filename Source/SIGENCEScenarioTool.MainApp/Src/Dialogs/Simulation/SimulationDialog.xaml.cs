@@ -636,7 +636,6 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
-
         }
 
     } // end public partial class SimulationDialog
