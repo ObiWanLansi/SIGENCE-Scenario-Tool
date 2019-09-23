@@ -88,7 +88,7 @@ namespace SIGENCEScenarioTool.Extensions
 
             if (tEnum.IsEnum == false)
             {
-                return default;
+                return default(T);
             }
 
             Array aValues = Enum.GetValues(tEnum);
@@ -192,7 +192,7 @@ namespace SIGENCEScenarioTool.Extensions
                 }
             }
 
-            return default;
+            return default(T);
         }
 
 
