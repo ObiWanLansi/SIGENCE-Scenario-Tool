@@ -313,7 +313,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             tm = new TerrainModel();
 
             DateTime dtStart = DateTime.Now;
-            tm.LoadXYZFile(@"d:\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
+            //tm.LoadXYZFile(@"D:\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
+            tm.LoadXYZFile(@"C:\Lanser\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
             DateTime dtStop = DateTime.Now;
 
             GMapPolygon polygon = new GMapPolygon(new List<PointLatLng>

@@ -4,10 +4,11 @@
 
 ## Version [20](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/20) - XXXX 2019 Release
 
-### Features (4)
+### Features (5)
 
 Issue|Description
 -:|-
+[80](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/80)|Add A XYZ Terrainmodel To Get The Elevation Of A RFDevice
 [115](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/115)|Mark Devices With Same Properties Feature
 [159](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/159)|Export User Settings
 [160](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/160)|Import User Settings
