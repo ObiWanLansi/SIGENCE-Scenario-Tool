@@ -670,6 +670,7 @@ namespace SIGENCEScenarioTool.Tools
     /// <summary>
     /// 
     /// </summary>
+    //TODO Auslagern in DataTypes ...
     sealed public class GeoAngle
     {
         /// <summary>

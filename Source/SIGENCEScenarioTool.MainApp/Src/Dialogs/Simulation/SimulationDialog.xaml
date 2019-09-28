@@ -44,7 +44,7 @@
             </Grid>
         </Border>
 
-        <DataGrid Name="dgRFDevices" Grid.Row="3" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended">
+        <DataGrid Name="dgRFDevices" Grid.Row="3" ItemsSource="{Binding RFDeviceViewModelCollection}" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" FontFamily="Courier New" FontSize="14" CanUserResizeRows="False" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Extended">
 
             <DataGrid.Columns>
 
