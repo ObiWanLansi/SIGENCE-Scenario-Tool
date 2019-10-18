@@ -20,11 +20,12 @@
 
     <Version Version="20" Title="XXXX 2019 Release">
         <Features>
-            <Issue Id="172" Description="Reset The Settings To The Default Values" />
-            <Issue Id="160" Description="Import User Settings" />
-            <Issue Id="159" Description="Export User Settings" />
-            <Issue Id="115" Description="Mark Devices With Same Properties Feature" />
             <Issue Id="80" Description="Add A XYZ Terrainmodel To Get The Elevation Of A RFDevice" />
+            <Issue Id="115" Description="Mark Devices With Same Properties Feature" />
+            <Issue Id="159" Description="Export User Settings" />
+            <Issue Id="160" Description="Import User Settings" />
+            <Issue Id="172" Description="Reset The Settings To The Default Values" />
+            <Issue Id="187" Description="Link To Downloadable Scenariotool-Zip File Does Not Work" />
         </Features>
     </Version>
 
