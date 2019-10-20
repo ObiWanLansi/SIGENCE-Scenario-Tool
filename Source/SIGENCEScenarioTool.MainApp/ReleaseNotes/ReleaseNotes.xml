@@ -26,6 +26,7 @@
             <Issue Id="160" Description="Import User Settings" />
             <Issue Id="172" Description="Reset The Settings To The Default Values" />
             <Issue Id="187" Description="Link To Downloadable Scenariotool-Zip File Does Not Work" />
+            <Issue Id="190" Description="New RxTxType For Emitters" />
         </Features>
     </Version>
 

@@ -24,3 +24,5 @@ Iridium|5|Iridium Satcom Transmitter
 LTE|6|LTE Signal
 AIS|7|AIS Signal
 NFMRadio|8|Narrow Fm Band (Voice With 5Khz Bandwidth)
+GSM|9|200Khz GSM Signal With Random Data
+SBandRadar|10|SIMRAD's Argus S-Band Radar

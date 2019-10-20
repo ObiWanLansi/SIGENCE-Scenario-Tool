@@ -119,6 +119,8 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
                     case "LTE":
                     case "AIS":
                     case "NFMRadio":
+                    case "GSM":
+                    case "SBandRadar":
                         return true;
                 }
 
@@ -208,6 +210,12 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
 
                     case 8:
                         return NFMRadio;
+
+                    case 9:
+                        return GSM;
+
+                    case 10:
+                        return SBandRadar;
 
                     default:
                         return Unknown;

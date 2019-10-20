@@ -34,18 +34,11 @@
 
         <!--<delete dir="${ApiDoc}" />-->
 
-        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" workingdir=".">
+        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" workingdir=".">
 
             <arg value="/p:Configuration=Release" />
             <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.html.shfbproj" />
         </exec>
-<!--
-        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" workingdir=".">
-
-            <arg value="/p:Configuration=Release" />
-            <arg value=".\SIGENCEScenarioTool.Library\SIGENCEScenarioTool.Library.word.shfbproj" />
-        </exec>
--->
     </target>
 
 
@@ -62,7 +55,7 @@
     
     <target name="compile" depends="clean">
 
-        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" workingdir=".">
+        <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe" workingdir=".">
 
             <arg value="SIGENCEScenarioTool.sln" />
             <arg value="/rebuild" />
@@ -73,7 +66,7 @@
 
 
     
-    <target name="deploy" depends="doc,apidoc,compile">
+    <target name="deploy" depends="doc,compile">
     
         <delete dir="${DeployTarget}" />
         <mkdir dir="${DeployTarget}" />

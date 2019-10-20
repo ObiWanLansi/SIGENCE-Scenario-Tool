@@ -81,6 +81,16 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
         /// </summary>
         public static RxTxType NFMRadio { get; } = new RxTxType(8,"NFMRadio","Narrow Fm Band (Voice With 5Khz Bandwidth)");
 
+        /// <summary>
+        /// 200Khz GSM Signal With Random Data.
+        /// </summary>
+        public static RxTxType GSM { get; } = new RxTxType(9,"GSM","200Khz GSM Signal With Random Data");
+
+        /// <summary>
+        /// SIMRAD's Argus S-Band Radar.
+        /// </summary>
+        public static RxTxType SBandRadar { get; } = new RxTxType(10,"SBandRadar","SIMRAD's Argus S-Band Radar");
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -147,6 +157,8 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
                     case "LTE":
                     case "AIS":
                     case "NFMRadio":
+                    case "GSM":
+                    case "SBandRadar":
                         return true;
                 }
 
@@ -236,6 +248,12 @@ namespace SIGENCEScenarioTool.Models.RxTxTypes
 
                     case 8:
                         return NFMRadio;
+
+                    case 9:
+                        return GSM;
+
+                    case 10:
+                        return SBandRadar;
 
                     default:
                         return Unknown;

@@ -28,5 +28,7 @@
     <RxTxType ValidFor="Transmitter" Value="6" Name="LTE" Description="LTE Signal"/>
     <RxTxType ValidFor="Transmitter" Value="7" Name="AIS" Description="AIS Signal"/>
     <RxTxType ValidFor="Transmitter" Value="8" Name="NFMRadio" Description="Narrow Fm Band (Voice With 5Khz Bandwidth)"/>
+    <RxTxType ValidFor="Transmitter" Value="9" Name="GSM" Description="200Khz GSM Signal With Random Data"/>
+    <RxTxType ValidFor="Transmitter" Value="10" Name="SBandRadar" Description="SIMRAD's Argus S-Band Radar"/>
 
 </RxTxTypes>

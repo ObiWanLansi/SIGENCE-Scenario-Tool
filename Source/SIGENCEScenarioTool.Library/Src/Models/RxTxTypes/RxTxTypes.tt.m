@@ -44,5 +44,11 @@ classdef RxTxTypes
         % Narrow Fm Band (Voice With 5Khz Bandwidth).
         NFMRadio = 8
 
+        % 200Khz GSM Signal With Random Data.
+        GSM = 9
+
+        % SIMRAD's Argus S-Band Radar.
+        SBandRadar = 10
+
    end
 end
