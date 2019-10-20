@@ -225,6 +225,7 @@
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
     <Compile Include="Src\Commands\RegisteredCommands.cs" />
+    <Compile Include="Src\Converter\RxTxTypeConverter.cs" />
     <Compile Include="Src\Dialogs\Charting\ChartingDialog.xaml.cs">
       <DependentUpon>ChartingDialog.xaml</DependentUpon>
     </Compile>

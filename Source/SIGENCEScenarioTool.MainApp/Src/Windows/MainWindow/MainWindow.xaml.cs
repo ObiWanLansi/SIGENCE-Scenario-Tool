@@ -189,7 +189,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //CreateHeatmap();
             //CreateExampleRFDevices();
 
-            //CreateRandomizedRFDevices(42);
+            CreateRandomizedRFDevices(42);
 
             //AddRFDevice(RFDevice.DUMMY);
             //OpenDeviceEditDialog(RFDevice.DUMMY);
