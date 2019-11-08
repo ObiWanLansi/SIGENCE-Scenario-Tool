@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 
 
 
@@ -242,107 +243,99 @@ namespace SIGENCEScenarioTool.Commands
         /// </summary>
         static RegisteredCommands()
         {
-            OpenCheatSheet = new RoutedUICommand("OpenCheatSheet", "OpenCheatSheet", typeof(RegisteredCommands));
+            Func<RoutedUICommand, RoutedUICommand> CreateCommand = (name) => new RoutedUICommand(nameof(name), nameof(name), typeof(RegisteredCommands));
+
+            OpenCheatSheet = CreateCommand(OpenCheatSheet);
             OpenCheatSheet.InputGestures.Add(new KeyGesture(Key.F1));
 
             //-----------------------------------------------------------------
 
-            CopyRFDevice = new RoutedUICommand("CopyRFDevice", "CopyRFDevice", typeof(RegisteredCommands));
+            CopyRFDevice = CreateCommand(CopyRFDevice);
+            CopyRFDevice.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Control));
 
-            PasteRFDevice = new RoutedUICommand("PasteRFDevice", "PasteRFDevice", typeof(RegisteredCommands));
+            PasteRFDevice = CreateCommand(PasteRFDevice);
+            PasteRFDevice.InputGestures.Add(new KeyGesture(Key.V, ModifierKeys.Control));
 
-            CreateRFDevice = new RoutedUICommand("CreateRFDevice", "CreateRFDevice", typeof(RegisteredCommands));
+            CreateRFDevice = CreateCommand(CreateRFDevice);
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.F5));
             CreateRFDevice.InputGestures.Add(new KeyGesture(Key.C, ModifierKeys.Alt));
 
-            DeleteRFDevice = new RoutedUICommand("DeleteRFDevice", "DeleteRFDevice", typeof(RegisteredCommands));
+            DeleteRFDevice = CreateCommand(DeleteRFDevice);
             DeleteRFDevice.InputGestures.Add(new KeyGesture(Key.F6));
             DeleteRFDevice.InputGestures.Add(new KeyGesture(Key.D, ModifierKeys.Alt));
 
-            MoveRFDevice = new RoutedUICommand("MoveRFDevice", "MoveRFDevice", typeof(RegisteredCommands));
+            MoveRFDevice = CreateCommand(MoveRFDevice);
             MoveRFDevice.InputGestures.Add(new KeyGesture(Key.F7));
             MoveRFDevice.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Alt));
 
-            EditRFDevice = new RoutedUICommand("EditRFDevice", "EditRFDevice", typeof(RegisteredCommands));
+            EditRFDevice = CreateCommand(EditRFDevice);
             EditRFDevice.InputGestures.Add(new KeyGesture(Key.F8));
             EditRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
 
-            ExportRFDevice = new RoutedUICommand("ExportRFDevice", "ExportRFDevice", typeof(RegisteredCommands));
+            ExportRFDevice = CreateCommand(ExportRFDevice);
             ExportRFDevice.InputGestures.Add(new KeyGesture(Key.F9));
-            //ExportRFDevice.InputGestures.Add(new KeyGesture(Key.F7));
-            //ExportRFDevice.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
 
-            ImportRFDevice = new RoutedUICommand("ImportRFDevice", "ImportRFDevice", typeof(RegisteredCommands));
+            ImportRFDevice = CreateCommand(ImportRFDevice);
             ImportRFDevice.InputGestures.Add(new KeyGesture(Key.F10));
-            //ImportRFDevice.InputGestures.Add(new KeyGesture(Key.F8));
-            //ImportRFDevice.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
 
-            ZoomToRFDevice = new RoutedUICommand("ZoomToRFDevice", "ZoomToRFDevice", typeof(RegisteredCommands));
-            //ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.F9));
+            ZoomToRFDevice = CreateCommand(ZoomToRFDevice);
             ZoomToRFDevice.InputGestures.Add(new KeyGesture(Key.Z, ModifierKeys.Control));
 
-            RFDeviceQRCode = new RoutedUICommand("RFDeviceQRCode", "RFDeviceQRCode", typeof(RegisteredCommands));
+            RFDeviceQRCode = CreateCommand(RFDeviceQRCode);
             RFDeviceQRCode.InputGestures.Add(new KeyGesture(Key.Q, ModifierKeys.Control));
 
             //-----------------------------------------------------------------
 
-            //SendDataUDP = new RoutedUICommand("SendDataUDP", "SendDataUDP", typeof(RegisteredCommands));
+            //SendDataUDP = CreateCommand("SendDataUDP", "SendDataUDP", typeof(RegisteredCommands));
             //SendDataUDP.InputGestures.Add(new KeyGesture(Key.F9));
-            ////SendDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
 
-            //ReceiveDataUDP = new RoutedUICommand("ReceiveDataUDP", "ReceiveDataUDP", typeof(RegisteredCommands));
+            //ReceiveDataUDP = CreateCommand("ReceiveDataUDP", "ReceiveDataUDP", typeof(RegisteredCommands));
             //ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.F10));
-            ////ReceiveDataUDP.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
 
             // F11 is reserved for fullscreen ...
 
-            ToggleInfoWindow = new RoutedUICommand("ToggleInfoWindow", "ToggleInfoWindow", typeof(RegisteredCommands));
+            ToggleInfoWindow = CreateCommand(ToggleInfoWindow);
             ToggleInfoWindow.InputGestures.Add(new KeyGesture(Key.F12));
-
-            //ToggleDataGrid = new RoutedUICommand( "ToggleDataGrid", "ToggleDataGrid", typeof( RegisteredCommands ) );
-            //ToggleDataGrid.InputGestures.Add( new KeyGesture( Key.F12, ModifierKeys.Control ) );
 
             //-----------------------------------------------------------------
 
-            CreateScreenshot = new RoutedUICommand("CreateScreenshot", "CreateScreenshot", typeof(RegisteredCommands));
+            CreateScreenshot = CreateCommand(CreateScreenshot);
             CreateScreenshot.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control));
 
-            EditSettings = new RoutedUICommand("EditSettings", "EditSettings", typeof(RegisteredCommands));
+            EditSettings = CreateCommand(EditSettings);
             EditSettings.InputGestures.Add(new KeyGesture(Key.X, ModifierKeys.Control));
 
-            SyncMapAndGrid = new RoutedUICommand("SyncMapAndGrid", "SyncMapAndGrid", typeof(RegisteredCommands));
+            SyncMapAndGrid = CreateCommand(SyncMapAndGrid);
             SyncMapAndGrid.InputGestures.Add(new KeyGesture(Key.G, ModifierKeys.Control));
 
-            ToggleDALF = new RoutedUICommand("ToggleDALF", "ToggleDALF", typeof(RegisteredCommands));
+            ToggleDALF = CreateCommand(ToggleDALF);
             ToggleDALF.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Control));
 
-            OpenScriptEditor = new RoutedUICommand("OpenScriptEditor", "OpenScriptEditor", typeof(RegisteredCommands));
+            OpenScriptEditor = CreateCommand(OpenScriptEditor);
             OpenScriptEditor.InputGestures.Add(new KeyGesture(Key.P, ModifierKeys.Control));
 
-            OpenInGoogleMaps = new RoutedUICommand("OpenInGoogleMaps", "OpenInGoogleMaps", typeof(RegisteredCommands));
+            OpenInGoogleMaps = CreateCommand(OpenInGoogleMaps);
             OpenInGoogleMaps.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Control));
 
             //-----------------------------------------------------------------
 
-            ViewDeviceMap = new RoutedUICommand("ViewDeviceMap", "ViewDeviceMap", typeof(RegisteredCommands));
+            ViewDeviceMap = CreateCommand(ViewDeviceMap);
             ViewDeviceMap.InputGestures.Add(new KeyGesture(Key.F5, ModifierKeys.Shift));
 
-            ViewDescriptionHypertext = new RoutedUICommand("ViewDescriptionHypertext", "ViewDescriptionHypertext", typeof(RegisteredCommands));
+            ViewDescriptionHypertext = CreateCommand(ViewDescriptionHypertext);
             ViewDescriptionHypertext.InputGestures.Add(new KeyGesture(Key.F6, ModifierKeys.Shift));
 
-            EditDescriptionMarkdown = new RoutedUICommand("EditDescriptionMarkdown", "EditDescriptionMarkdown", typeof(RegisteredCommands));
+            EditDescriptionMarkdown = CreateCommand(EditDescriptionMarkdown);
             EditDescriptionMarkdown.InputGestures.Add(new KeyGesture(Key.F7, ModifierKeys.Shift));
 
-            EditDescriptionStylesheet = new RoutedUICommand("EditDescriptionStylesheet", "EditDescriptionStylesheet", typeof(RegisteredCommands));
+            EditDescriptionStylesheet = CreateCommand(EditDescriptionStylesheet);
             EditDescriptionStylesheet.InputGestures.Add(new KeyGesture(Key.F8, ModifierKeys.Shift));
 
-            ViewValidationResults = new RoutedUICommand("ViewValidationResults", "ViewValidationResults", typeof(RegisteredCommands));
+            ViewValidationResults = CreateCommand(ViewValidationResults);
             ViewValidationResults.InputGestures.Add(new KeyGesture(Key.F9, ModifierKeys.Shift));
 
-
-            MarkDevicesWithTheSameValue = new RoutedUICommand("MarkDevicesWithTheSameValue", "MarkDevicesWithTheSameValue", typeof(RegisteredCommands));
+            MarkDevicesWithTheSameValue = CreateCommand(MarkDevicesWithTheSameValue);
             MarkDevicesWithTheSameValue.InputGestures.Add(new KeyGesture(Key.M, ModifierKeys.Shift | ModifierKeys.Control));
-
         }
 
     } // end static public class RegisteredCommands

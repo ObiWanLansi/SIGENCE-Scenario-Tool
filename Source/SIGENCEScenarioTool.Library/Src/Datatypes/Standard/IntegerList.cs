@@ -59,5 +59,5 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
             return ilDestination;
         }
 
-    } // end sealed public class IntegerList
+    } // end public sealed class IntegerList
 }

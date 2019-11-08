@@ -1,4 +1,4 @@
-﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:converter="clr-namespace:SIGENCEScenarioTool.Converter" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" xmlns:tools="clr-namespace:SIGENCEScenarioTool.Tools;assembly=SIGENCEScenarioTool.Library" xmlns:icsharpcode="clr-namespace:ICSharpCode.TextEditor;assembly=ICSharpCode.TextEditor" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Width="1200" Height="900" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="MainWindow_Loaded" Closed="MainWindow_Closed">
+﻿<Window x:Class="SIGENCEScenarioTool.Windows.MainWindow.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cmd="clr-namespace:SIGENCEScenarioTool.Commands" xmlns:models="clr-namespace:SIGENCEScenarioTool.Models;assembly=SIGENCEScenarioTool.Library" xmlns:tools="clr-namespace:SIGENCEScenarioTool.Tools;assembly=SIGENCEScenarioTool.Library" xmlns:icsharpcode="clr-namespace:ICSharpCode.TextEditor;assembly=ICSharpCode.TextEditor" mc:Ignorable="d" Title="SIGENCE Scenario Tool" Width="1200" Height="900" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="MainWindow_Loaded" Closed="MainWindow_Closed">
     <Window.Resources>
 
         <Image x:Key="ADD" Width="16" Height="16" x:Shared="False" Source="/SIGENCEScenarioTool;component/Images/add.png" />
@@ -66,7 +66,7 @@
         </ObjectDataProvider>-->
 
         <models:RFDeviceTooltips x:Key="ToolTips" />
-        <converter:RxTxTypeConverter x:Key="rttc" />
+        <!--<converter:RxTxTypeConverter x:Key="rttc" />-->
 
     </Window.Resources>
 
@@ -98,7 +98,8 @@
                 <MenuItem Header="Copy RFDevice" Icon="{StaticResource COPY}" Command="{x:Static cmd:RegisteredCommands.CopyRFDevice}" />
                 <MenuItem Header="Paste RFDevice" Icon="{StaticResource PASTE}" Command="{x:Static cmd:RegisteredCommands.PasteRFDevice}" />
                 <Separator />
-                <MenuItem Header="_Move RFDevice" Icon="{StaticResource MOVE}" IsCheckable="True" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <MenuItem Header="_Move RFDevice" Icon="{StaticResource MOVE}" IsCheckable="True" IsChecked="{Binding IsDeviceMovingMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{x:Static cmd:RegisteredCommands.MoveRFDevice}" />
+                <MenuItem Header="_Edit RFDevice" Icon="{StaticResource EDIT}" Command="{x:Static cmd:RegisteredCommands.EditRFDevice}" />
                 <Separator />
                 <MenuItem Header="_Export RFDevices" Icon="{StaticResource EXPORT}" Command="{x:Static cmd:RegisteredCommands.ExportRFDevice}" />
                 <MenuItem Header="_Import RFDevices" Icon="{StaticResource IMPORT}" Command="{x:Static cmd:RegisteredCommands.ImportRFDevice}" />
@@ -549,7 +550,7 @@
 
                                 <!--<DataGridComboBoxColumn Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Source={StaticResource eRxTxType}}">-->
                                 <DataGridComboBoxColumn x:Name="dgcbcRxTxType" Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <!--<DataGridComboBoxColumn x:Name="dgcbcRxTxType" Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource rttc}}">-->
+                                    <!--<DataGridComboBoxColumn x:Name="dgcbcRxTxType" Header="RxTxType" SelectedItemBinding="{Binding RxTxType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource rttc}}">-->
                                     <DataGridComboBoxColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="FontWeight" Value="Bold" />

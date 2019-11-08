@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+
 namespace SIGENCEScenarioTool.Datatypes.Physically
 {
     /// <summary>
@@ -12,7 +14,7 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// Initializes a new instance of the <see cref="Frequency" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public Frequency( double value ) : base( value )
+        public Frequency(double value) : base(value)
         {
         }
 
@@ -25,9 +27,9 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static implicit operator Frequency( double value )
+        public static implicit operator Frequency(double value)
         {
-            return new Frequency( value );
+            return new Frequency(value);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -41,7 +43,7 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// </returns>
         public override string ToString()
         {
-            return string.Format( CULTUREINFO , "{0}" , this.Value );
+            return string.Format(CULTUREINFO, "{0}", this.Value);
         }
 
 
@@ -53,8 +55,8 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// </returns>
         public override bool? IsValid()
         {
-            throw new NotImplementedException( "public override bool? IsValid()" );
+            throw new NotImplementedException("public override bool? IsValid()");
         }
 
-    } // end sealed public class Frequency
+    } // end public sealed class Frequency
 }

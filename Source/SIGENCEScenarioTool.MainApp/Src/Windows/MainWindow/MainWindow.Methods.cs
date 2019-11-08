@@ -244,6 +244,32 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
+        /// Toggles the move rf device.
+        /// </summary>
+        private void ToggleMoveRFDevice()
+        {
+            this.IsDeviceMovingMode = !this.IsDeviceMovingMode;
+        }
+
+
+        /// <summary>
+        /// Toggles the dalf.
+        /// </summary>
+        private void ToggleDALF()
+        {
+            this.StartedDALF = !this.StartedDALF;
+        }
+
+
+        /// <summary>
+        /// Toogles the synchronize map and grid.
+        /// </summary>
+        private void ToggleSyncMapAndGrid()
+        {
+            this.SyncMapAndGrid = !this.SyncMapAndGrid;
+        }
+
+        /// <summary>
         /// Views the validation results.
         /// </summary>
         private void ViewValidationResults()
@@ -301,9 +327,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Opens the settings.
+        /// Edit the settings.
         /// </summary>
-        private void OpenSettings()
+        private void EditSettings()
         {
             SettingsDialog dlg = new SettingsDialog();
             dlg.ShowDialog();

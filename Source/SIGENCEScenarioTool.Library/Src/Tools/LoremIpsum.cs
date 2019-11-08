@@ -3,6 +3,8 @@ using System.Text;
 
 using SIGENCEScenarioTool.Extensions;
 
+
+
 namespace SIGENCEScenarioTool.Tools
 {
     /// <summary>
@@ -173,5 +175,5 @@ namespace SIGENCEScenarioTool.Tools
             return sb.ToString();
         }
 
-    } // end sealed public class LoremIpsum
+    } // end public sealed class LoremIpsum
 }

@@ -29,6 +29,7 @@ namespace SIGENCEScenarioTool.Converter
             return value != null ? (value as RxTxType).Name : "";
         }
 
+
         /// <summary>
         /// Konvertiert einen Wert.
         /// </summary>

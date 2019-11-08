@@ -40,7 +40,7 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StringList"/> class.
+        /// Initializes a new instance of the <see cref="StringList" /> class.
         /// </summary>
         /// <param name="collection">Die Auflistung, deren Elemente in die neue Liste kopiert werden.</param>
         public StringList(IEnumerable<string> collection)
@@ -63,5 +63,5 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
             return sl.ToArray();
         }
 
-    } // end sealed public class StringList
+    } // end public sealed class StringList
 }

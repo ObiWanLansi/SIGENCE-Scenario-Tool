@@ -134,5 +134,5 @@ namespace SIGENCEScenarioTool.Tools
             }
         }
 
-    } // end static public class ApplicationResource
+    } // end public static class ApplicationResource
 }

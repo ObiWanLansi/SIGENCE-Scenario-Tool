@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Models.Templates
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static implicit operator RFDevice( RFDeviceTemplate template )
+        public static implicit operator RFDevice(RFDeviceTemplate template)
         {
             return template.device.Clone();
         }
@@ -35,7 +35,7 @@ namespace SIGENCEScenarioTool.Models.Templates
         /// </summary>
         /// <param name="device">The device.</param>
         /// <remarks>Copy only the important properties for an template to this new instance.</remarks>
-        public RFDeviceTemplate( RFDevice device )
+        public RFDeviceTemplate(RFDevice device)
         {
             this.device = device.Clone();
         }
@@ -49,7 +49,7 @@ namespace SIGENCEScenarioTool.Models.Templates
         /// </returns>
         public override string ToString() => this.device.Name;
 
-    } // end sealed public class RFDeviceTemplate
+    } // end public sealed class RFDeviceTemplateCollection
 
 
 
@@ -59,5 +59,5 @@ namespace SIGENCEScenarioTool.Models.Templates
     /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{RFDeviceTemplate}" />
     public sealed class RFDeviceTemplateCollection : ObservableCollection<RFDeviceTemplate>
     {
-    } // end sealed public class RFDeviceTemplateCollection
+    } // end public sealed class RFDeviceTemplateCollection 
 }

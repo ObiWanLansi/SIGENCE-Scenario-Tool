@@ -71,5 +71,5 @@
         /// </summary>
         public static readonly UnitPrefix Atto = new UnitPrefix( "Atto" , "a" , 0.000_000_000_000_000_001 );
 
-    } // end sealed public class UnitPrefixs
+    } // end public sealed class UnitPrefixs
 }

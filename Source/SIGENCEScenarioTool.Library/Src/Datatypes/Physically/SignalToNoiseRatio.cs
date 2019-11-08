@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+
 namespace SIGENCEScenarioTool.Datatypes.Physically
 {
     /// <summary>
@@ -12,7 +14,7 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// Initializes a new instance of the <see cref="SignalToNoiseRatio" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public SignalToNoiseRatio( double value ) : base( value )
+        public SignalToNoiseRatio(double value) : base(value)
         {
         }
 
@@ -25,9 +27,9 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static implicit operator SignalToNoiseRatio( double value )
+        public static implicit operator SignalToNoiseRatio(double value)
         {
-            return new SignalToNoiseRatio( value );
+            return new SignalToNoiseRatio(value);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -41,7 +43,7 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// </returns>
         public override string ToString()
         {
-            return string.Format( CULTUREINFO , "{0}" , this.Value );
+            return string.Format(CULTUREINFO, "{0}", this.Value);
         }
 
 
@@ -53,8 +55,8 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
         /// </returns>
         public override bool? IsValid()
         {
-            throw new NotImplementedException( "public override bool? IsValid()" );
+            throw new NotImplementedException("public override bool? IsValid()");
         }
 
-    } // end sealed public class SignalToNoiseRatio 
+    } // end public sealed class SignalToNoiseRatio
 }

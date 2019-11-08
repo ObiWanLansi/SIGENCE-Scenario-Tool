@@ -43,5 +43,5 @@
             this.Factor = dFactor;
         }
 
-    } // end sealed public class UnitPrefix
+    } // end public sealed class UnitPrefix
 }

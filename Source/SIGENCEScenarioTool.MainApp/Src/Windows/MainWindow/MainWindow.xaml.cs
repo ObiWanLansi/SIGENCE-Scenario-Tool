@@ -113,8 +113,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            XpsDocument xps = new XpsDocument("MarkdownCheatsheet.xps", FileAccess.Read);
-            this.dvMarkdownCheatsheet.Document = xps.GetFixedDocumentSequence();
+            using (XpsDocument xps = new XpsDocument("MarkdownCheatsheet.xps", FileAccess.Read))
+            {
+                this.dvMarkdownCheatsheet.Document = xps.GetFixedDocumentSequence();
+            }
             this.dvMarkdownCheatsheet.FitToWidth();
 
             //-----------------------------------------------------------------

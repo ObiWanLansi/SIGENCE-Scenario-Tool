@@ -110,7 +110,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// Initializes a new instance of the <see cref="ScriptingDialog" /> class.
         /// </summary>
         /// <param name="mw">The mw.</param>
-        public ScriptingDialog( MainWindow mw )
+        public ScriptingDialog(MainWindow mw)
         {
             this.mw = mw;
 
@@ -147,14 +147,14 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             this.tecTextEditorControl.VRulerRow = 80;
 
 
-            HighlightingManager.Manager.AddSyntaxModeFileProvider( new PythonSyntaxModeFileProvider() );
-            this.tecTextEditorControl.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter( "Python" );
+            HighlightingManager.Manager.AddSyntaxModeFileProvider(new PythonSyntaxModeFileProvider());
+            this.tecTextEditorControl.Document.HighlightingStrategy = HighlightingManager.Manager.FindHighlighter("Python");
 
             //this.tecTextEditorControl.Document.FoldingManager.FoldingStrategy = sfs;
             //this.tecTextEditorControl.Document.FoldingManager.UpdateFoldings(null, null);
 
             string strFilename = $"{Tool.StartupPath}\\HelloWorld.py";
-            this.tecTextEditorControl.Text = File.ReadAllText( strFilename );
+            this.tecTextEditorControl.Text = File.ReadAllText(strFilename);
 
             this.tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.PositionChanged += Caret_PositionChanged;
             //this.tecTextEditorControl.ActiveTextAreaControl.Document.DocumentChanged += Document_DocumentChanged;
@@ -167,7 +167,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// Executes the specified string content.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
-        private void Execute( string strContent )
+        private void Execute(string strContent)
         {
             this.Cursor = Cursors.Wait;
 
@@ -178,29 +178,29 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             {
                 //TODO: Hier muss natrülich ein eigener TextWriter her der das dann direkt in die 
                 //      TextBox schreibt, das hier ist nur für das schnelle MockUp sinnvoll ...
-                using(StringWriter sw = new StringWriter())
+                using (StringWriter sw = new StringWriter())
                 {
                     DateTime dtStarted = DateTime.Now;
-                    sw.WriteLine( "[{0}] Execution Started ...", dtStarted.Fmt_DD_MM_YYYY_HH_MM_SS() );
+                    sw.WriteLine("[{0}] Execution Started ...", dtStarted.Fmt_DD_MM_YYYY_HH_MM_SS());
                     //Console.SetOut(TextWriter.Synchronized(sw));
-                    Console.SetOut( sw );
+                    Console.SetOut(sw);
 
                     ScriptEngine engine = Python.CreateEngine();
                     ScriptScope scope = engine.CreateScope();
 
                     // Hier nur die Devices übergeben, aber nicht das komplette MainWindow ...
-                    scope.SetVariable( "devices", this.mw.RFDeviceViewModelCollection );
+                    scope.SetVariable("devices", this.mw.RFDeviceViewModelCollection);
 
                     engine.Runtime.IO.RedirectToConsole();
 
-                    engine.Execute( strContent, scope );
+                    engine.Execute(strContent, scope);
 
                     //MB.Information(sw.ToString());
                     DateTime dtStopped = DateTime.Now;
                     this.ExecutionTime = (dtStopped - dtStarted).ToShortString();
 
-                    sw.WriteLine( "[{0}] Execution Ended ...", dtStopped.Fmt_DD_MM_YYYY_HH_MM_SS() );
-                    sw.WriteLine( "[{0}] Execution Time: {1}", DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS(), this.ExecutionTime );
+                    sw.WriteLine("[{0}] Execution Ended ...", dtStopped.Fmt_DD_MM_YYYY_HH_MM_SS());
+                    sw.WriteLine("[{0}] Execution Time: {1}", DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS(), this.ExecutionTime);
 
                     this.LastOutput = sw.ToString();
 
@@ -216,9 +216,9 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
                     //MB.Information(sb.ToString());
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MB.Error( ex );
+                MB.Error(ex);
             }
 
             this.tecTextEditorControl.Focus();
@@ -234,12 +234,12 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void Caret_PositionChanged( object sender, EventArgs e )
+        private void Caret_PositionChanged(object sender, EventArgs e)
         {
             //tsslRow.Text = string.Format("Zeile {0}", tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Line);
             //tsslColumn.Text = string.Format("Spalte {0}", tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Column);
-            FirePropertyChanged( "Line" );
-            FirePropertyChanged( "Column" );
+            FirePropertyChanged("Line");
+            FirePropertyChanged("Column");
         }
 
 
@@ -248,7 +248,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void Window_Loaded( object sender, RoutedEventArgs e )
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             this.tecTextEditorControl.Focus();
         }
@@ -259,15 +259,15 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void Button_Play_Click( object sender, RoutedEventArgs e )
+        private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
             string strEditorContent = this.tecTextEditorControl.ActiveTextAreaControl.SelectionManager.HasSomethingSelected ?
                 this.tecTextEditorControl.ActiveTextAreaControl.SelectionManager.SelectedText :
                 this.tecTextEditorControl.Text;
 
-            if(strEditorContent.IsNotEmpty() == true)
+            if (strEditorContent.IsNotEmpty() == true)
             {
-                Execute( strEditorContent );
+                Execute(strEditorContent);
             }
         }
 
@@ -284,9 +284,9 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null )
+        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
         {
-            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( strPropertyName ) );
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
         }
 
     } // end public partial class ScriptingDialog

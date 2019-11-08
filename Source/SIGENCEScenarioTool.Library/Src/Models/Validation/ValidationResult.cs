@@ -124,5 +124,5 @@ namespace SIGENCEScenarioTool.Models.Validation
             Add(new ValidationResult(sServity, strMessage, oSource, strPropertyName, oValue));
         }
 
-    } // end public sealed class ValidationResultList
+    } // end public sealed class ValidationResultList 
 }

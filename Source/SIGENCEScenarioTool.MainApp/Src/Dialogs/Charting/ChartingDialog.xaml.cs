@@ -28,7 +28,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartingDialog" /> class.
         /// </summary>
-        public ChartingDialog( RFDeviceList lRFDevices )
+        public ChartingDialog(RFDeviceList lRFDevices)
         {
             this.lRFDevices = lRFDevices;
 
@@ -45,7 +45,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </summary>
         public void InitChart()
         {
-            if( lRFDevices != null && lRFDevices.Count > 0 )
+            if (lRFDevices != null && lRFDevices.Count > 0)
             {
                 //    SortedDictionary<RxTxType, int> sd = new SortedDictionary<RxTxType, int>();
 
@@ -101,30 +101,30 @@ namespace SIGENCEScenarioTool.Dialogs
                     //ca.AxisY.Title = "Count";
                     //ca.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
 
-                    cReceiverTransmitterDistribution.ChartAreas.Add( ca );
+                    cReceiverTransmitterDistribution.ChartAreas.Add(ca);
 
                     //-------------------------
 
                     Series series = new Series
                     {
-                        ChartType = SeriesChartType.Pie ,
-                        IsValueShownAsLabel = true ,
+                        ChartType = SeriesChartType.Pie,
+                        IsValueShownAsLabel = true,
                         IsVisibleInLegend = true
                     };
 
-                    int iReceiver = lRFDevices.Count( ( d ) => d.Id > 0 );
+                    int iReceiver = lRFDevices.Count((d) => d.Id > 0);
                     DataPoint dpReceiver = new DataPoint { ToolTip = "Receiver" };
-                    dpReceiver.SetValueXY( "Receiver" , iReceiver );
-                    series.Points.Add( dpReceiver );
+                    dpReceiver.SetValueXY("Receiver", iReceiver);
+                    series.Points.Add(dpReceiver);
 
-                    int iTransmitter = lRFDevices.Count( ( d ) => d.Id < 0 );
+                    int iTransmitter = lRFDevices.Count((d) => d.Id < 0);
                     DataPoint dpTransmitter = new DataPoint { ToolTip = "Transmitter" };
-                    dpTransmitter.SetValueXY( "Transmitter" , iTransmitter );
-                    series.Points.Add( dpTransmitter );
+                    dpTransmitter.SetValueXY("Transmitter", iTransmitter);
+                    series.Points.Add(dpTransmitter);
 
-                    cReceiverTransmitterDistribution.Legends.Add( new Legend() );
-                    cReceiverTransmitterDistribution.Series.Add( series );
-                    cReceiverTransmitterDistribution.Titles.Add( "Transmitter / Receiver Distribution" );
+                    cReceiverTransmitterDistribution.Legends.Add(new Legend());
+                    cReceiverTransmitterDistribution.Series.Add(series);
+                    cReceiverTransmitterDistribution.Titles.Add("Transmitter / Receiver Distribution");
                 }
             }
         }

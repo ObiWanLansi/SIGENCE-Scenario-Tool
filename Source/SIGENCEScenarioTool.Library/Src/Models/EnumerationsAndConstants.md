@@ -6,6 +6,8 @@ But it is planned to have this created by a script that is always up-to-date.
 
 ## AntennaType
 
+All Known Antenna Types.
+
 Name|Value
 -|-|
 OmniDirectional|0
@@ -16,6 +18,8 @@ Unknown|255
 
 ## DeviceType
 
+The Type Of The Device.
+
 Name|Value
 -|-|
 Unknown|0
@@ -24,6 +28,8 @@ Transmitter|2
 Reference|3
 
 ## DeviceSource
+
+The Source Of The Device.
 
 Name|Value
 -|-|
