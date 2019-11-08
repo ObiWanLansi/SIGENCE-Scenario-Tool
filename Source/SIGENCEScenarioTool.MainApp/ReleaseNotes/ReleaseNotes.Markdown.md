@@ -2,7 +2,7 @@
 
 <br/>
 
-## Version [20](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/20) - XXXX 2019 Release
+## Version [20](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/20) - November 2019 Release
 
 ### Features (9)
 

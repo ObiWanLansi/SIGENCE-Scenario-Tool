@@ -18,7 +18,7 @@
     </Version>
     -->
 
-    <Version Version="20" Title="XXXX 2019 Release">
+    <Version Version="20" Title="November 2019 Release">
         <Features>
             <Issue Id="80" Description="Add A XYZ Terrainmodel To Get The Elevation Of A RFDevice" />
             <Issue Id="115" Description="Mark Devices With Same Properties Feature" />
