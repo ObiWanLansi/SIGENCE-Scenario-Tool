@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
@@ -7,8 +6,6 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Xps.Packaging;
 
-using SIGENCEScenarioTool.Datatypes.Geo;
-using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;

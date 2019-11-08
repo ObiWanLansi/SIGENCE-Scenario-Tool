@@ -159,7 +159,7 @@
                 <Separator />
                 <MenuItem Header="_About SIGENCE Scenario Tool" Icon="{StaticResource HELP}" Click="MenuItem_About_Click" />
                 <!--<MenuItem Header="_About" IsEnabled="False" />-->
-                <!--<MenuItem Header="Check _Version" Icon="{StaticResource HELP}" Click="MenuItem_CheckVersion_Click" />-->
+                <MenuItem Header="Check _Version" Icon="{StaticResource HELP}" Click="MenuItem_CheckVersion_Click" />
             </MenuItem>
         </Menu>
 

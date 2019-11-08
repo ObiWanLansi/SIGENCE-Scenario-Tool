@@ -610,6 +610,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
+        /// <summary>
+        /// Handles the Click event of the MenuItem_CheckVersion control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_CheckVersion_Click(object sender, RoutedEventArgs e)
+        {
+            CheckVersion();
+
+            e.Handled = true;
+        }
+
+
         ///// <summary>
         ///// Handles the Click event of the MenuItem_OpenIssues control.
         ///// </summary>

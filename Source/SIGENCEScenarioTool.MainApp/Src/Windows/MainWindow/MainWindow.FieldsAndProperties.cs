@@ -521,6 +521,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// Gets or sets the data grid visibility.
         /// </summary>
@@ -715,6 +716,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
         /// <summary>
         /// Gets or sets the geo node collection.
         /// </summary>
@@ -740,6 +742,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
         //---------------------------------------------------------------------
+
 
         #region GeoNodeFilter
 
@@ -819,6 +822,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 FirePropertyChanged("CurrentNodes");
             }
         }
+
 
         /// <summary>
         /// The b use name filter

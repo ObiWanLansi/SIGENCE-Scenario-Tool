@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Windows;
@@ -126,7 +127,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// Updates the file history.
         /// </summary>
         private void UpdateFileHistory()
         {
@@ -392,7 +393,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Scenarioes the simulation player.
+        /// Opens the scenario simulation player.
         /// </summary>
         private void OpenScenarioSimulationPlayer()
         {
@@ -1355,7 +1356,41 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// 
+        /// Checks the version.
+        /// </summary>
+        private void CheckVersion()
+        {
+            const string VERSION_URL = "https://raw.githubusercontent.com/ObiWanLansi/SIGENCE-Scenario-Tool/master/Source/LATESTVERSION";
+
+            try
+            {
+                using (WebClient wc = new WebClient())
+                {
+                    wc.Proxy = WebRequest.DefaultWebProxy;
+                    wc.Proxy.Credentials = CredentialCache.DefaultCredentials;
+
+                    int iGitHubVersion = int.Parse(wc.DownloadString(VERSION_URL));
+                    int iLocalVersion = int.Parse(Tool.Version);
+
+                    if (iGitHubVersion > iLocalVersion)
+                    {
+                        MB.Information($"There Is An Newer Version ({iGitHubVersion}) Avaible On GitHub.\nPlease Update The Tool.");
+                    }
+                    else
+                    {
+                        MB.Information("You Have The Newest Version Running.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MB.Error(ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Toggles the information window.
         /// </summary>
         private void ToggleInfoWindow()
         {

@@ -386,7 +386,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             //Task.Run(() => { LoadHeightData(); });
             Cursor = Cursors.Wait;
-            
+
             LoadHeightData();
 
             Cursor = Cursors.Arrow;

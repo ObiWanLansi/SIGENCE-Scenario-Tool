@@ -79,7 +79,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Creates the RFDevice.
+        /// Adds the rf device.
         /// </summary>
         /// <param name="pll">The PLL.</param>
         /// <param name="ds">The ds.</param>
@@ -956,61 +956,60 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// Sends the RFDeviceList via UDP to any connect client.
-        /// This function is not asynchron, so the main thread is blocked when sending data. 
-        /// Maybe in oen of the next versions me make this function asynchron.
-        /// </summary>
-        /// <param name="devicelist">The devicelist.</param>
-        private void SendDataUDP(RFDeviceList devicelist)
-        {
-            try
-            {
-                using (Socket sender = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp))
-                {
-                    IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse(this.settings.UDPHost), this.settings.UDPPortSending);
+        ///// <summary>
+        ///// Sends the RFDeviceList via UDP to any connect client.
+        ///// This function is not asynchron, so the main thread is blocked when sending data. 
+        ///// Maybe in oen of the next versions me make this function asynchron.
+        ///// </summary>
+        ///// <param name="devicelist">The devicelist.</param>
+        //private void SendDataUDP(RFDeviceList devicelist)
+        //{
+        //    try
+        //    {
+        //        using (Socket sender = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp))
+        //        {
+        //            IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse(this.settings.UDPHost), this.settings.UDPPortSending);
 
-                    foreach (RFDevice device in devicelist)
-                    {
-                        XElement eDevice = device.ToXml();
+        //            foreach (RFDevice device in devicelist)
+        //            {
+        //                XElement eDevice = device.ToXml();
 
-                        byte[] baMessage = Encoding.Default.GetBytes(eDevice.ToDefaultString());
+        //                byte[] baMessage = Encoding.Default.GetBytes(eDevice.ToDefaultString());
 
-                        sender.SendTo(baMessage, endpoint);
+        //                sender.SendTo(baMessage, endpoint);
 
-                        // Give the poor client some time to process the data when he need or bleed ...
-                        if (this.settings.UDPDelay > 0)
-                        {
-                            Thread.Sleep(this.settings.UDPDelay);
-                        }
-                    }
+        //                // Give the poor client some time to process the data when he need or bleed ...
+        //                if (this.settings.UDPDelay > 0)
+        //                {
+        //                    Thread.Sleep(this.settings.UDPDelay);
+        //                }
+        //            }
 
-                    sender.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MB.Error(ex);
-            }
-        }
+        //            sender.Close();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MB.Error(ex);
+        //    }
+        //}
 
 
-        /// <summary>
-        /// Sends the data UDP.
-        /// </summary>
-        private void SendDataUDP()
-        {
-            RFDeviceList devicelist = GetDeviceList();
+        ///// <summary>
+        ///// Sends the data UDP.
+        ///// </summary>
+        //private void SendDataUDP()
+        //{
+        //    RFDeviceList devicelist = GetDeviceList();
 
-            if (devicelist.Count == 0)
-            {
-                MB.Warning("No Selected RFDevice Avaible For Sending!");
-                return;
-            }
+        //    if (devicelist.Count == 0)
+        //    {
+        //        MB.Warning("No Selected RFDevice Avaible For Sending!");
+        //        return;
+        //    }
 
-            SendDataUDP(devicelist);
-        }
-
+        //    SendDataUDP(devicelist);
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

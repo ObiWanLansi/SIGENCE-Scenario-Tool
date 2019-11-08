@@ -27,7 +27,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Opens the file.
+        /// Loads the file.
         /// </summary>
         /// <param name="strInputFilename">The string input filename.</param>
         internal void LoadFile(string strInputFilename)
@@ -87,7 +87,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
         /// <summary>
-        /// Opens the file.
+        /// Loads the file.
         /// </summary>
         private void LoadFile()
         {
