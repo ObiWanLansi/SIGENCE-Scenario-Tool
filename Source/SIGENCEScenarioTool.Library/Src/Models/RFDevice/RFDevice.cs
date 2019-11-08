@@ -59,8 +59,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_PRIMARYKEY = "The Unique PrimarKey For This RF Device.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -99,8 +97,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_ID = "Every Scenario Element (I.E. Transmitter, Receiver) Must Be Assigned An Unique Id. Negative Id’S Are Reserved For Receivers While All Other Id’S Are Transmitters By Default. Some Applications (I.E. Tdoa Emitter Localization) Require A Reference Transmitter. For These Applications Id=0 Is The Reference Transmitter. Receivers Must Be Assigned First In The Table, Followed Be Transmitters (With Id=0 Being The First). After The Static Scenario, Update Of Id’S Requires No Specific Order. Note That Definition Of New Transmitters/Receivers After The Static Scenario Is Prohibited.";
 
         #endregion        
 
@@ -141,8 +137,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_DEVICESOURCE = "The Source Of This RF Device.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -181,8 +175,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_STARTTIME = "This Is The Simulation Time At Which The Parameters (Following The Time Parameter In The Same Line) Are Set. All Transmitters And Receivers Used In The Simulation Must Be Set At Start Of The Simulation, I.E. At Time=0. For Static Scenarios, Where Positions Or Characteristics Settings Never Change Throughout The Simulation, The Time Column Only Contains Zero’s.";
 
         #endregion        
 
@@ -223,8 +215,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_NAME = "A Short Describing Display Name For The RF Device.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -263,8 +253,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_LATITUDE = "The Latitude Of The RF Device (WGS84).";
 
         #endregion        
 
@@ -305,8 +293,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_LONGITUDE = "The Longitude Of The RF Device (WGS84).";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -345,8 +331,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_ALTITUDE = "The Elevation Of The RF Device Above The Sea Level (Meter).";
 
         #endregion        
 
@@ -387,8 +371,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_ROLL = "These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -427,8 +409,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_PITCH = "These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.";
 
         #endregion        
 
@@ -469,8 +449,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_YAW = "These Parameters Set The Orientation Of Transmitter / Receiver Antennas. The Respective Antenna Type Is Defined By Antennatype. The Rf Simulation Uses The Antenna Orientation To Compute The Resulting Signal Power At The Receivers.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -509,8 +487,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_RXTXTYPE = "For All Receivers (i.e. ID’s &lt; 0) This Parameter Defines The Radio Being Used.";
 
         #endregion        
 
@@ -551,8 +527,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_ANTENNATYPE = "AntennaType Defines The Antenna Type Used For Transmitter And Receiver Respectively. Note: Currently, Only Omnidirectional Antenna Type Is Available / Supported.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -591,8 +565,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_CENTERFREQUENCY_HZ = "For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Center Frequency [Hz]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.";
 
         #endregion        
 
@@ -633,8 +605,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_BANDWIDTH_HZ = "The Bandwith Of The Transmitter.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -673,8 +643,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_GAIN_DB = "For Transmitters (I.E. Id’s &gt;= 0) This Parameter Defines Transmitter Signal Power [Dbm]. For Receivers (I.E. Id’s &lt; 0) This Parameter Is Currently Unused.";
 
         #endregion        
 
@@ -715,8 +683,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_SIGNALTONOISERATIO_DB = "For Receivers (I.E. Id’s &lt; 0) This Parameter Is Imposes Gaussian White Noise To The Respective Receiver Signal. For Transmitters (I.E. Id’s &gt;= 0) This Parameter Is Unused.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -755,8 +721,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_XPOS = "XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.";
 
         #endregion        
 
@@ -797,8 +761,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_YPOS = "XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -837,8 +799,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_ZPOS = "XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.";
 
         #endregion        
 
@@ -879,8 +839,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_REMARK = "A Comment Or Remark For The RF Device.";
-
         #endregion        
 
         //---------------------------------------------------------------------
@@ -919,8 +877,6 @@ namespace SIGENCEScenarioTool.Models
                 }
             }
         }
-
-        //static public readonly string TOOLTIP_TECHNICALPARAMETERS = "Additional (Optional) Technical Parameters For The Simulation.";
 
         #endregion        
 

@@ -4,7 +4,7 @@
 
 ## Version [20](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/20) - XXXX 2019 Release
 
-### Features (7)
+### Features (8)
 
 Issue|Description
 -:|-
@@ -14,6 +14,7 @@ Issue|Description
 [160](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/160)|Import User Settings
 [172](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/172)|Reset The Settings To The Default Values
 [187](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/187)|Link To Downloadable Scenariotool-Zip File Does Not Work
+[189](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/189)|Unlink Other Transmitters And Receivers, The Reference Transmitter Does Not Display Angle Symbols
 [190](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/190)|New RxTxType For Emitters
 
 <br/>

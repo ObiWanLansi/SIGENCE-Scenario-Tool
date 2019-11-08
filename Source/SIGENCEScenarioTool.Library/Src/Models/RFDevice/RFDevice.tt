@@ -100,8 +100,6 @@ namespace SIGENCEScenarioTool.Models
             }
         }
 
-        //static public readonly string TOOLTIP_<#=strPropertyName.ToUpper()#> = "<#=strCommment#>";
-
         #endregion        
 
         <#

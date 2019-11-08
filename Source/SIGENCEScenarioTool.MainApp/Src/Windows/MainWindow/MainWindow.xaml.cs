@@ -189,10 +189,28 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //CreateHeatmap();
             //CreateExampleRFDevices();
 
-            CreateRandomizedRFDevices(42);
-
-            //AddRFDevice(RFDevice.DUMMY);
+            //CreateRandomizedRFDevices(42);
             //OpenDeviceEditDialog(RFDevice.DUMMY);
+
+            //-----------------------------------------------------------------
+
+            var receiver = RFDevice.CreateDummy();
+            receiver.Id = -42;
+            receiver.Longitude = 9.386941 + 0.1;
+            receiver.Yaw = 45;
+            AddRFDevice(receiver);
+
+            var refdevice = RFDevice.CreateDummy();
+            refdevice.Id = 0;
+            refdevice.Longitude = 9.386941 + 0.2;
+            refdevice.Yaw = 45;
+            AddRFDevice(refdevice);
+
+            var sender = RFDevice.CreateDummy();
+            sender.Id = 42;
+            sender.Longitude = 9.386941 + 0.3;
+            sender.Yaw = 45;
+            AddRFDevice(sender);
 
             //-----------------------------------------------------------------
 

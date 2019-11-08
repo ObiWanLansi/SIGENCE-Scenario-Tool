@@ -12,61 +12,13 @@ namespace SIGENCEScenarioTool.Markers
     public partial class TriangleMarker
     {
         /// <summary>
-        /// The d yaw
-        /// </summary>
-        private double dYaw = 0;
-
-        /// <summary>
-        /// Gets or sets the yaw.
-        /// </summary>
-        /// <value>
-        /// The yaw.
-        /// </value>
-        public double Yaw
-        {
-            get { return this.dYaw; }
-            set
-            {
-                this.dYaw = value;
-
-                FirePropertyChanged();
-            }
-        }
-
-
-        /// <summary>
-        /// The d pitch
-        /// </summary>
-        private double dPitch = 0;
-
-        /// <summary>
-        /// Gets or sets the pitch.
-        /// </summary>
-        /// <value>
-        /// The pitch.
-        /// </value>
-        public double Pitch
-        {
-            get { return this.dPitch; }
-            set
-            {
-                this.dPitch = value;
-
-                FirePropertyChanged();
-            }
-        }
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="TriangleMarker" /> class.
         /// </summary>
         /// <param name="mcMapControl">The mc map control.</param>
         /// <param name="mmMarker">The marker.</param>
         /// <param name="strToolTip">The string tool tip.</param>
-        public TriangleMarker( GMapControl mcMapControl , GMapMarker mmMarker , string strToolTip ) :
-            base( mcMapControl , mmMarker , strToolTip )
+        public TriangleMarker(GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip) :
+            base(mcMapControl, mmMarker, strToolTip)
         {
             InitializeComponent();
 

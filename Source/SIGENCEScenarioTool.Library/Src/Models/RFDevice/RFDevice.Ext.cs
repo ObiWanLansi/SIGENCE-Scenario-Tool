@@ -157,32 +157,65 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// The dummy
+        /// Creates the dummy.
         /// </summary>
-        static public readonly RFDevice DUMMY = new RFDevice
+        /// <returns></returns>
+        static public RFDevice CreateDummy()
         {
-            Id = 42,
-            Name = "Dummy Device",
-            DeviceSource = DeviceSource.User,
-            StartTime = 3.14,
-            Latitude = 47.666557,
-            Longitude = 9.386941,
-            Altitude = 1234,
-            AntennaType = AntennaType.HyperLOG60200,
-            RxTxType = RxTxTypes.RxTxTypes.FMBroadcast,
-            CenterFrequency_Hz = 90_000_000,
-            Bandwidth_Hz = 30_000,
-            Gain_dB = 42,
-            SignalToNoiseRatio_dB = 42,
-            Roll = 123,
-            Pitch = 123,
-            Yaw = 123,
-            XPos = 15,
-            YPos = 10,
-            ZPos = 74,
-            Remark = Tools.Tool.FOX,
-            TechnicalParameters = "SPEED:60;DIRECTION:-42;"
-        };
+            return new RFDevice
+            {
+                Id = 42,
+                Name = "Dummy Device",
+                DeviceSource = DeviceSource.User,
+                StartTime = 3.14,
+                Latitude = 47.666557,
+                Longitude = 9.386941,
+                Altitude = 1234,
+                AntennaType = AntennaType.HyperLOG60200,
+                RxTxType = RxTxTypes.RxTxTypes.FMBroadcast,
+                CenterFrequency_Hz = 90_000_000,
+                Bandwidth_Hz = 30_000,
+                Gain_dB = 42,
+                SignalToNoiseRatio_dB = 42,
+                Roll = 123,
+                Pitch = 123,
+                Yaw = 123,
+                XPos = 15,
+                YPos = 10,
+                ZPos = 74,
+                Remark = Tools.Tool.FRANZ,
+                TechnicalParameters = "SPEED:60;DIRECTION:-42;"
+            };
+        }
+
+
+        ///// <summary>
+        ///// The dummy
+        ///// </summary>
+        //static public readonly RFDevice DUMMY = new RFDevice
+        //{
+        //    Id = 42,
+        //    Name = "Dummy Device",
+        //    DeviceSource = DeviceSource.User,
+        //    StartTime = 3.14,
+        //    Latitude = 47.666557,
+        //    Longitude = 9.386941,
+        //    Altitude = 1234,
+        //    AntennaType = AntennaType.HyperLOG60200,
+        //    RxTxType = RxTxTypes.RxTxTypes.FMBroadcast,
+        //    CenterFrequency_Hz = 90_000_000,
+        //    Bandwidth_Hz = 30_000,
+        //    Gain_dB = 42,
+        //    SignalToNoiseRatio_dB = 42,
+        //    Roll = 123,
+        //    Pitch = 123,
+        //    Yaw = 123,
+        //    XPos = 15,
+        //    YPos = 10,
+        //    ZPos = 74,
+        //    Remark = Tools.Tool.FOX,
+        //    TechnicalParameters = "SPEED:60;DIRECTION:-42;"
+        //};
 
     } // end public partial class RFDevice
 }

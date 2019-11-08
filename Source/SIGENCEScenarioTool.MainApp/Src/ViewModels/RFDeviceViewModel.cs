@@ -984,12 +984,12 @@ namespace SIGENCEScenarioTool.ViewModels
                 //this.Marker.Shape = shape;
             }
 
-#if DEBUG
-            if (this.RFDevice.Id == 42)
-            {
-                marker = new DiamondMarker(this.mcMapControl, this.Marker, GetToolTip());
-            }
-#endif
+            //#if DEBUG
+            //            if (this.RFDevice.Id == 42)
+            //            {
+            //                marker = new DiamondMarker(this.mcMapControl, this.Marker, GetToolTip());
+            //            }
+            //#endif
 
             marker.OnPositionChanged += Marker_OnPositionChanged;
             marker.OnSelectionChanged += Marker_OnSelectionChanged;
@@ -1028,14 +1028,19 @@ namespace SIGENCEScenarioTool.ViewModels
             // Remark: In the Simulation the Angle 0 starts at 3'Clock ...
             const int iYawCorrection = 90;
 
-            if (this.Marker.Shape is RectangleMarker rm)
-            {
-                rm.Yaw = this.Yaw + iYawCorrection;
-            }
+            //if (this.Marker.Shape is RectangleMarker rm)
+            //{
+            //    rm.Yaw = this.Yaw + iYawCorrection;
+            //}
 
-            if (this.Marker.Shape is TriangleMarker tm)
+            //if (this.Marker.Shape is TriangleMarker tm)
+            //{
+            //    tm.Yaw = this.Yaw + iYawCorrection;
+            //}
+
+            if (this.Marker.Shape is AbstractMarker am)
             {
-                tm.Yaw = this.Yaw + iYawCorrection;
+                am.Yaw = this.Yaw + iYawCorrection;
             }
         }
 
@@ -1048,14 +1053,19 @@ namespace SIGENCEScenarioTool.ViewModels
             // Remark: In the Simulation the Angle 0 starts at 3'Clock ...
             const int iPitchCorrection = 90;
 
-            if (this.Marker.Shape is RectangleMarker rm)
-            {
-                rm.Pitch = this.Pitch + iPitchCorrection;
-            }
+            //if (this.Marker.Shape is RectangleMarker rm)
+            //{
+            //    rm.Pitch = this.Pitch + iPitchCorrection;
+            //}
 
-            if (this.Marker.Shape is TriangleMarker tm)
+            //if (this.Marker.Shape is TriangleMarker tm)
+            //{
+            //    tm.Pitch = this.Pitch + iPitchCorrection;
+            //}
+
+            if (this.Marker.Shape is AbstractMarker am)
             {
-                tm.Pitch = this.Pitch + iPitchCorrection;
+                am.Pitch = this.Pitch + iPitchCorrection;
             }
         }
 

@@ -17,8 +17,8 @@ namespace SIGENCEScenarioTool.Markers
         /// <param name="mcMapControl">The mc map control.</param>
         /// <param name="mmMarker">The mm marker.</param>
         /// <param name="strToolTip">The string tool tip.</param>
-        public CircleMarker( GMapControl mcMapControl , GMapMarker mmMarker , string strToolTip ) :
-            base( mcMapControl , mmMarker , strToolTip )
+        public CircleMarker(GMapControl mcMapControl, GMapMarker mmMarker, string strToolTip) :
+            base(mcMapControl, mmMarker, strToolTip)
         {
             InitializeComponent();
         }
