@@ -804,45 +804,6 @@ namespace SIGENCEScenarioTool.Models
 
         //---------------------------------------------------------------------
 
-        #region Remark
-
-        ///<summary>
-        /// The PropertyName As ReadOnly String For Remark.
-        ///</summary>
-        public const string REMARK = "Remark";
-
-        ///<summary>
-        /// The DefaultValue For Remark.
-        ///</summary>
-        public static readonly string DEFAULT_REMARK = "";
-        
-        ///<summary>
-        /// The Internal Field For Remark.
-        ///</summary>
-        //private string _Remark = "";
-        private string _Remark = DEFAULT_REMARK;
-
-        ///<summary>
-        /// A Comment Or Remark For The RF Device.
-        ///</summary>
-        public string Remark 
-        {
-            get { return _Remark; }
-            set
-            {
-                if(_Remark != value)
-                {
-                    _Remark = value;
-
-                    FirePropertyChanged();
-                }
-            }
-        }
-
-        #endregion        
-
-        //---------------------------------------------------------------------
-
         #region TechnicalParameters
 
         ///<summary>
@@ -872,6 +833,45 @@ namespace SIGENCEScenarioTool.Models
                 if(_TechnicalParameters != value)
                 {
                     _TechnicalParameters = value;
+
+                    FirePropertyChanged();
+                }
+            }
+        }
+
+        #endregion        
+
+        //---------------------------------------------------------------------
+
+        #region Remark
+
+        ///<summary>
+        /// The PropertyName As ReadOnly String For Remark.
+        ///</summary>
+        public const string REMARK = "Remark";
+
+        ///<summary>
+        /// The DefaultValue For Remark.
+        ///</summary>
+        public static readonly string DEFAULT_REMARK = "";
+        
+        ///<summary>
+        /// The Internal Field For Remark.
+        ///</summary>
+        //private string _Remark = "";
+        private string _Remark = DEFAULT_REMARK;
+
+        ///<summary>
+        /// A Comment Or Remark For The RF Device.
+        ///</summary>
+        public string Remark 
+        {
+            get { return _Remark; }
+            set
+            {
+                if(_Remark != value)
+                {
+                    _Remark = value;
 
                     FirePropertyChanged();
                 }
@@ -913,8 +913,8 @@ namespace SIGENCEScenarioTool.Models
                 XElementExtension.GetXElement("XPos", XPos),
                 XElementExtension.GetXElement("YPos", YPos),
                 XElementExtension.GetXElement("ZPos", ZPos),
-                XElementExtension.GetXElement("Remark", Remark),
-                XElementExtension.GetXElement("TechnicalParameters", TechnicalParameters)  
+                XElementExtension.GetXElement("TechnicalParameters", TechnicalParameters),
+                XElementExtension.GetXElement("Remark", Remark)  
             );
         }
 
@@ -959,8 +959,8 @@ namespace SIGENCEScenarioTool.Models
                 XPos = eChild.GetProperty<int>("XPos",0),
                 YPos = eChild.GetProperty<int>("YPos",0),
                 ZPos = eChild.GetProperty<int>("ZPos",0),
-                Remark = eChild.GetProperty<string>("Remark",""),
-                TechnicalParameters = eChild.GetProperty<string>("TechnicalParameters","")            
+                TechnicalParameters = eChild.GetProperty<string>("TechnicalParameters",""),
+                Remark = eChild.GetProperty<string>("Remark","")            
             };
         }
 
@@ -1181,21 +1181,6 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (other.Remark == null && Remark != null)
-            {
-                return false;
-            }
-
-            if (other.Remark != null && Remark == null)
-            {
-                return false;
-            }
-
-            if (other.Remark != null && Remark != null && other.Remark.Equals(Remark) == false)
-            {
-                return false;
-            }
-
             if (other.TechnicalParameters == null && TechnicalParameters != null)
             {
                 return false;
@@ -1207,6 +1192,21 @@ namespace SIGENCEScenarioTool.Models
             }
 
             if (other.TechnicalParameters != null && TechnicalParameters != null && other.TechnicalParameters.Equals(TechnicalParameters) == false)
+            {
+                return false;
+            }
+
+            if (other.Remark == null && Remark != null)
+            {
+                return false;
+            }
+
+            if (other.Remark != null && Remark == null)
+            {
+                return false;
+            }
+
+            if (other.Remark != null && Remark != null && other.Remark.Equals(Remark) == false)
             {
                 return false;
             }
@@ -1349,14 +1349,14 @@ namespace SIGENCEScenarioTool.Models
         public string TOOLTIP_ZPOS { get { return "XPos,YPos,ZPos Define The Transmitter / Receiver\nPositions In A Local Coordinate System With\nThe Transmitter (ID=0) Being The Center Position."; } }
 
         /// <summary>
-        /// The tooltip for the Remark.
-        /// </summary>
-        public string TOOLTIP_REMARK { get { return "A Comment Or Remark For The RF Device."; } }
-
-        /// <summary>
         /// The tooltip for the TechnicalParameters.
         /// </summary>
         public string TOOLTIP_TECHNICALPARAMETERS { get { return "Additional (Optional) Technical Parameters\nFor The Simulation."; } }
+
+        /// <summary>
+        /// The tooltip for the Remark.
+        /// </summary>
+        public string TOOLTIP_REMARK { get { return "A Comment Or Remark For The RF Device."; } }
 
     } // end public class RFDeviceTooltips
 }

@@ -19,7 +19,6 @@ using Markdig;
 using NetTopologySuite.Densify;
 using NetTopologySuite.Geometries;
 
-using SIGENCEScenarioTool.Datatypes.Geo;
 using SIGENCEScenarioTool.Dialogs.RFDevice;
 using SIGENCEScenarioTool.Dialogs.Scripting;
 using SIGENCEScenarioTool.Dialogs.Settings;
@@ -1025,40 +1024,40 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// Determines whether [is wanted geo node] [the specified object].
-        /// </summary>
-        /// <param name="obj">The object.</param>
-        /// <returns>
-        ///   <c>true</c> if [is wanted geo node] [the specified object]; otherwise, <c>false</c>.
-        /// </returns>
-        private bool IsWantedGeoNode(object obj)
-        {
-            if (obj == null || obj is GeoNode == false)
-            {
-                return false;
-            }
+        ///// <summary>
+        ///// Determines whether [is wanted geo node] [the specified object].
+        ///// </summary>
+        ///// <param name="obj">The object.</param>
+        ///// <returns>
+        /////   <c>true</c> if [is wanted geo node] [the specified object]; otherwise, <c>false</c>.
+        ///// </returns>
+        //private bool IsWantedGeoNode(object obj)
+        //{
+        //    if (obj == null || obj is GeoNode == false)
+        //    {
+        //        return false;
+        //    }
 
-            GeoNode gn = (GeoNode)obj;
+        //    GeoNode gn = (GeoNode)obj;
 
-            if (this.UseGeoTagFilter == true)
-            {
-                if (gn.Tag != this.GeoTagFilter)
-                {
-                    return false;
-                }
-            }
+        //    if (this.UseGeoTagFilter == true)
+        //    {
+        //        if (gn.Tag != this.GeoTagFilter)
+        //        {
+        //            return false;
+        //        }
+        //    }
 
-            if (this.UseNameFilter == true && this.NameFilter.IsNotEmpty())
-            {
-                if (gn.Name.ToLower().Contains(this.NameFilter.ToLower()) == false)
-                {
-                    return false;
-                }
-            }
+        //    if (this.UseNameFilter == true && this.NameFilter.IsNotEmpty())
+        //    {
+        //        if (gn.Name.ToLower().Contains(this.NameFilter.ToLower()) == false)
+        //        {
+        //            return false;
+        //        }
+        //    }
 
-            return true;
-        }
+        //    return true;
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1434,40 +1433,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //{
         //    this.DataGridVisibility = this.DataGridVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
         //    FirePropertyChanged( "DataGridVisibility" );
-        //}
-
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-        ///// <summary>
-        ///// Checks the version.
-        ///// </summary>
-        //private void CheckVersion()
-        //{
-        //    // The Problem is that GitHub Not Return The Plain Text File Rather The Version As Full Blown HTML Content :-( 
-        //    string strCurrentVersion = ApplicationResource.ReadResourceAsString( "SIGENCEScenarioTool.Properties.VERSION" );
-
-        //    if(string.IsNullOrEmpty( strCurrentVersion ))
-        //    {
-        //        MB.Warning( "The Current Version Could Not Be Determined!" );
-        //        return;
-        //    }
-
-        //    try
-        //    {
-        //        using(WebClient wc = new WebClient())
-        //        {
-        //            wc.Proxy = WebRequest.DefaultWebProxy;
-        //            wc.Proxy.Credentials = CredentialCache.DefaultCredentials;
-        //            wc.Encoding = Encoding.UTF8;
-
-        //            string strResult = wc.DownloadString( "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/blob/master/Source/LATEST" );
-        //        }
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        MB.Error( ex );
-        //    }
         //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

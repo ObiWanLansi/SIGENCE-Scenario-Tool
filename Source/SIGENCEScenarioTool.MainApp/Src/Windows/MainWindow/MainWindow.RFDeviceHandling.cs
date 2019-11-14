@@ -4,10 +4,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading;
 using System.Windows.Input;
 using System.Xml.Linq;
 
@@ -185,25 +181,25 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        /// <summary>
-        /// Deletes the RFDevice.
-        /// </summary>
-        private void DeleteRFDevice()
-        {
-            if (this.dgRFDevices.SelectedItem == null)
-            {
-                MB.Information("No RFDevice Is Selected In The DataGrid!");
-                return;
-            }
+        ///// <summary>
+        ///// Deletes the RFDevice.
+        ///// </summary>
+        //private void DeleteRFDevice()
+        //{
+        //    if (this.dgRFDevices.SelectedItem == null)
+        //    {
+        //        MB.Information("No RFDevice Is Selected In The DataGrid!");
+        //        return;
+        //    }
 
-            if (this.dgRFDevices.SelectedItems.Count > 1)
-            {
-                MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
-                return;
-            }
+        //    if (this.dgRFDevices.SelectedItems.Count > 1)
+        //    {
+        //        MB.Information("There Are More Than One RFDevice Selected In The DataGrid!");
+        //        return;
+        //    }
 
-            DeleteRFDevice(this.dgRFDevices.SelectedItem as RFDeviceViewModel);
-        }
+        //    DeleteRFDevice(this.dgRFDevices.SelectedItem as RFDeviceViewModel);
+        //}
 
 
         /// <summary>
@@ -225,17 +221,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             list.ForEach(DeleteRFDevice);
-
-            //var lDelete =new List<RFDeviceViewModel>( dgRFDevices.SelectedItems);
-            //            foreach( RFDeviceViewModel device in .ToList() )
-            //            {
-            //                DeleteRFDevice( device );
-            //            }
-
-            //foreach (RFDeviceViewModel device in (from devicemodel in this.RFDevicesCollection where devicemodel.IsMarked == true select devicemodel).ToList())
-            //{
-            //    DeleteRFDevice(device);
-            //}
         }
 
 
@@ -387,11 +372,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                 break;
 
                             case 18:
-                                device.Remark = Convert.ToString(value);
+                                device.TechnicalParameters = Convert.ToString(value);
                                 break;
 
                             case 19:
-                                device.TechnicalParameters = Convert.ToString(value);
+                                device.Remark = Convert.ToString(value);
                                 break;
                         }
                     }
@@ -475,7 +460,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 "RxTxType","AntType",
                 "Gain","CenterFreq","BandWidth","SNR",
                 "x","y","z",
-                "Remark","TechnicalParameters"
+                "TechnicalParameters","Remark"
             };
 
             // Create Header Columns
@@ -532,8 +517,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     AddCell(maindatasheet, 15, iRowCounter, device.XPos, c);
                     AddCell(maindatasheet, 16, iRowCounter, device.YPos, c);
                     AddCell(maindatasheet, 17, iRowCounter, device.ZPos, c);
-                    AddCell(maindatasheet, 18, iRowCounter, device.Remark, c);
-                    AddCell(maindatasheet, 19, iRowCounter, device.TechnicalParameters, c);
+                    AddCell(maindatasheet, 18, iRowCounter, device.TechnicalParameters, c);
+                    AddCell(maindatasheet, 19, iRowCounter, device.Remark, c);
 
                     iRowCounter++;
                 }
@@ -756,7 +741,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            //OpenDeviceEditDialog((this.dgRFDevices.SelectedItem as RFDeviceViewModel).RFDevice);
             OpenDeviceEditDialog(this.dgRFDevices.SelectedItem as RFDeviceViewModel);
         }
 
@@ -950,7 +934,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             ded = null;
-
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

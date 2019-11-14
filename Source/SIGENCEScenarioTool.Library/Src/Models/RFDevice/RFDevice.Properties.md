@@ -1,5 +1,5 @@
 ﻿
-# RFDevice (Version 20)
+# RFDevice (Version 21)
 
 *Represent A Device Based On A Radio Frequency.*
 
@@ -25,5 +25,5 @@ SignalToNoiseRatio_dB|SignalToNoiseRatio|0|For Receivers (I.E. Id’s < 0) This 
 XPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
 YPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
 ZPos|int|0|XPos,YPos,ZPos Define The Transmitter / Receiver Positions In A Local Coordinate System With The Transmitter (ID=0) Being The Center Position.
-Remark|string|""|A Comment Or Remark For The RF Device.
 TechnicalParameters|string|""|Additional (Optional) Technical Parameters For The Simulation.
+Remark|string|""|A Comment Or Remark For The RF Device.

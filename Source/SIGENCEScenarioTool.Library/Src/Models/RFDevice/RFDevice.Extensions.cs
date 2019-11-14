@@ -159,16 +159,16 @@ namespace SIGENCEScenarioTool.Models
         }
 
 
-        public static RFDevice WithRemark(this RFDevice instance,string value)
+        public static RFDevice WithTechnicalParameters(this RFDevice instance,string value)
         {
-            instance.Remark = value;
+            instance.TechnicalParameters = value;
             return instance;
         }
 
 
-        public static RFDevice WithTechnicalParameters(this RFDevice instance,string value)
+        public static RFDevice WithRemark(this RFDevice instance,string value)
         {
-            instance.TechnicalParameters = value;
+            instance.Remark = value;
             return instance;
         }
 

@@ -1,0 +1,254 @@
+[
+  {
+    "PrimaryKey": "38b8727b-f6e7-469d-aac9-e8564a41f682",
+    "Id": -42,
+    "DeviceSource": 1,
+    "StartTime": 3.14,
+    "Name": "Dummy Device",
+    "Latitude": {
+      "Value": 47.666557
+    },
+    "Longitude": {
+      "Value": 9.486941
+    },
+    "Altitude": {
+      "Value": 1234
+    },
+    "Roll": 123.0,
+    "Pitch": 123.0,
+    "Yaw": 45.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 90000000.0
+    },
+    "Bandwidth_Hz": {
+      "Value": 30000.0
+    },
+    "Gain_dB": {
+      "Value": 42.0
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 42.0
+    },
+    "XPos": 15,
+    "YPos": 10,
+    "ZPos": 74,
+    "TechnicalParameters": "SPEED:60;DIRECTION:-42;",
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern."
+  },
+  {
+    "PrimaryKey": "b3cc1c7c-101e-4f72-9fe8-8b99ba57710d",
+    "Id": 0,
+    "DeviceSource": 1,
+    "StartTime": 3.14,
+    "Name": "Dummy Device",
+    "Latitude": {
+      "Value": 47.666557
+    },
+    "Longitude": {
+      "Value": 9.586941
+    },
+    "Altitude": {
+      "Value": 1234
+    },
+    "Roll": 123.0,
+    "Pitch": 123.0,
+    "Yaw": 45.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 90000000.0
+    },
+    "Bandwidth_Hz": {
+      "Value": 30000.0
+    },
+    "Gain_dB": {
+      "Value": 42.0
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 42.0
+    },
+    "XPos": 15,
+    "YPos": 10,
+    "ZPos": 74,
+    "TechnicalParameters": "SPEED:60;DIRECTION:-42;",
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern."
+  },
+  {
+    "PrimaryKey": "ef7fb17f-8575-4489-bf27-fbb5b83eb4cd",
+    "Id": 42,
+    "DeviceSource": 1,
+    "StartTime": 3.14,
+    "Name": "Dummy Device",
+    "Latitude": {
+      "Value": 47.666557
+    },
+    "Longitude": {
+      "Value": 9.686941
+    },
+    "Altitude": {
+      "Value": 1234
+    },
+    "Roll": 123.0,
+    "Pitch": 123.0,
+    "Yaw": 45.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "FMBroadcast",
+      "Remark": "This Is A Fm Broadcast Radio Transmitter (Awgn Noise Signal) With Input 20Khz Signal And 50Khz Bandwidth"
+    },
+    "AntennaType": 2,
+    "CenterFrequency_Hz": {
+      "Value": 90000000.0
+    },
+    "Bandwidth_Hz": {
+      "Value": 30000.0
+    },
+    "Gain_dB": {
+      "Value": 42.0
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 42.0
+    },
+    "XPos": 15,
+    "YPos": 10,
+    "ZPos": 74,
+    "TechnicalParameters": "SPEED:60;DIRECTION:-42;",
+    "Remark": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern."
+  },
+  {
+    "PrimaryKey": "d05dde08-2e7b-4070-8d84-f945be997b1e",
+    "Id": 569,
+    "DeviceSource": 2,
+    "StartTime": 2.0,
+    "Name": "RFDevice #1",
+    "Latitude": {
+      "Value": 47.648103663144
+    },
+    "Longitude": {
+      "Value": 9.38992556193942
+    },
+    "Altitude": {
+      "Value": 7032
+    },
+    "Roll": -53.0,
+    "Pitch": 29.0,
+    "Yaw": 68.0,
+    "RxTxType": {
+      "Value": 4,
+      "Name": "GPSJammer",
+      "Remark": "10MHz L1 GPS Jammer"
+    },
+    "AntennaType": 0,
+    "CenterFrequency_Hz": {
+      "Value": 9100000.24563061
+    },
+    "Bandwidth_Hz": {
+      "Value": 12000.8689078134
+    },
+    "Gain_dB": {
+      "Value": 81.1453241874209
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 131.964751762322
+    },
+    "XPos": 23,
+    "YPos": -2,
+    "ZPos": -67,
+    "TechnicalParameters": "PARAM1:VALUE1; PARAM2:VALUE2; PARAM3:VALUE3;",
+    "Remark": "The quick brown fox jumps over a lazy dog."
+  },
+  {
+    "PrimaryKey": "d81e86d1-ba6b-4c41-a2b2-691092e7d83a",
+    "Id": 423,
+    "DeviceSource": 2,
+    "StartTime": 2.5,
+    "Name": "RFDevice #2",
+    "Latitude": {
+      "Value": 47.6875493742759
+    },
+    "Longitude": {
+      "Value": 9.34777130412867
+    },
+    "Altitude": {
+      "Value": 4694
+    },
+    "Roll": 81.0,
+    "Pitch": 76.0,
+    "Yaw": -109.0,
+    "RxTxType": {
+      "Value": 2,
+      "Name": "SIN",
+      "Remark": "This Is A Sine Generator A 500Hz Frequency"
+    },
+    "AntennaType": 255,
+    "CenterFrequency_Hz": {
+      "Value": 8700000.98384117
+    },
+    "Bandwidth_Hz": {
+      "Value": 13000.0232541449
+    },
+    "Gain_dB": {
+      "Value": 62.9150285450346
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 71.6176773945883
+    },
+    "XPos": -50,
+    "YPos": -5,
+    "ZPos": 3,
+    "TechnicalParameters": "PARAM1:VALUE1; PARAM2:VALUE2; PARAM3:VALUE3;",
+    "Remark": "Falsches Üben von Xylophonmusik quält jeden größeren Zwerg."
+  },
+  {
+    "PrimaryKey": "97516291-c4db-4dee-8892-1a35a94c379f",
+    "Id": 599,
+    "DeviceSource": 2,
+    "StartTime": 3.33,
+    "Name": "RFDevice #3",
+    "Latitude": {
+      "Value": 47.6183381477748
+    },
+    "Longitude": {
+      "Value": 9.38706259790307
+    },
+    "Altitude": {
+      "Value": 1951
+    },
+    "Roll": 55.0,
+    "Pitch": -14.0,
+    "Yaw": 91.0,
+    "RxTxType": {
+      "Value": 3,
+      "Name": "B200mini",
+      "Remark": "Ettus B200mini"
+    },
+    "AntennaType": 3,
+    "CenterFrequency_Hz": {
+      "Value": 8800000.80644003
+    },
+    "Bandwidth_Hz": {
+      "Value": 19000.4649493715
+    },
+    "Gain_dB": {
+      "Value": 121.041762522441
+    },
+    "SignalToNoiseRatio_dB": {
+      "Value": 38.9446120201352
+    },
+    "XPos": 14,
+    "YPos": 40,
+    "ZPos": 61,
+    "TechnicalParameters": "PARAM3:VALUE3; PARAM2:VALUE2; PARAM1:VALUE1;",
+    "Remark": "The quick brown fox jumps over a lazy dog."
+  }
+]
