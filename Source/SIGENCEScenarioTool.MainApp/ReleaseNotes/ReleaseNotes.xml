@@ -22,7 +22,7 @@
         <Features>
             <Issue Id="80" Description="Add A XYZ Terrainmodel To Get The Elevation Of A RFDevice" />
             <Issue Id="115" Description="Mark Devices With Same Properties Feature" />
-            <Issue Id="157" Description="MenuItem For Checking The Version On GitHub" />
+            <Issue Id="157" Description="Menu Item For Checking The Version On GitHub" />
             <Issue Id="159" Description="Export User Settings" />
             <Issue Id="160" Description="Import User Settings" />
             <Issue Id="172" Description="Reset The Settings To The Default Values" />
