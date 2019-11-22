@@ -14,6 +14,7 @@
   <HelpKINode Title="AIS property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_AIS.htm" />
   <HelpKINode Title="ALLCHARS field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLCHARS.htm" />
   <HelpKINode Title="ALLPANGRAMS field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLPANGRAMS.htm" />
+  <HelpKINode Title="Alt field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Alt.htm" />
   <HelpKINode Title="Altitude class">
     <HelpKINode Title="Altitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude__ctor.htm" />
@@ -105,6 +106,7 @@
   <HelpKINode Title="CopyTo method" Url="html/Overload_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo.htm" />
   <HelpKINode Title="Craft enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="CreateCoordinate method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreateCoordinate.htm" />
+  <HelpKINode Title="CreateDummy method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_CreateDummy.htm" />
   <HelpKINode Title="CreatePoint method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePoint.htm" />
   <HelpKINode Title="CreatePolygon method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePolygon.htm" />
   <HelpKINode Title="CreateRandomizedRFDeviceList method" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceList_CreateRandomizedRFDeviceList.htm" />
@@ -224,6 +226,7 @@
   <HelpKINode Title="DictionaryExtension.ForEach method" Url="html/Overload_SIGENCEScenarioTool_Extensions_DictionaryExtension_ForEach.htm" />
   <HelpKINode Title="DictionaryExtension.ToString(Of TKey, TValue) method" Url="html/M_SIGENCEScenarioTool_Extensions_DictionaryExtension_ToString__2.htm" />
   <HelpKINode Title="DictionaryExtension.ToString&lt;TKey, TValue&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_DictionaryExtension_ToString__2.htm" />
+  <HelpKINode Title="Dipole enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
   <HelpKINode Title="DirectoryTable method" Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTable.htm" />
   <HelpKINode Title="DirectoryTree method" Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTree.htm" />
   <HelpKINode Title="DisplayableEnumeration class">
@@ -242,6 +245,7 @@
     <HelpKINode Title="Speech.Dispose Method " Url="html/M_SIGENCEScenarioTool_Tools_Speech_Dispose.htm" />
     <HelpKINode Title="SQLiteMemoryDatabase.Dispose Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Dispose.htm" />
   </HelpKINode>
+  <HelpKINode Title="Distance method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Distance.htm" />
   <HelpKINode Title="Double to Bandwidth conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_op_Implicit.htm" />
   <HelpKINode Title="Double to Frequency conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_op_Implicit.htm" />
   <HelpKINode Title="Double to Gain conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_op_Implicit.htm" />
@@ -249,7 +253,6 @@
   <HelpKINode Title="Double to Longitude conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_op_Implicit.htm" />
   <HelpKINode Title="Double to SignalToNoiseRatio conversion" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_op_Implicit.htm" />
   <HelpKINode Title="DropTable method" Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_DropTable.htm" />
-  <HelpKINode Title="DUMMY field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DUMMY.htm" />
   <HelpKINode Title="Emergency enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="Empty field" Url="html/F_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Empty.htm" />
   <HelpKINode Title="Empty property" Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Empty.htm" />
@@ -467,6 +470,7 @@
   <HelpKINode Title="GetGrad method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGrad.htm" />
   <HelpKINode Title="GetGradMinutesSeconds method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
   <HelpKINode Title="GetGuidFromNode method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetGuidFromNode.htm" />
+  <HelpKINode Title="GetHighestPoints method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_GetHighestPoints.htm" />
   <HelpKINode Title="GetHumanDistance method" Url="html/Overload_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
   <HelpKINode Title="GetHumanSizeForInformatics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForInformatics.htm" />
   <HelpKINode Title="GetHumanSizeForPhysics method" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanSizeForPhysics.htm" />
@@ -512,12 +516,13 @@
   <HelpKINode Title="GetXElement method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetXElement.htm" />
   <HelpKINode Title="Giga field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Giga.htm" />
   <HelpKINode Title="GPSJammer property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GPSJammer.htm" />
+  <HelpKINode Title="GSM property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GSM.htm" />
   <HelpKINode Title="HackRF property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_HackRF.htm" />
   <HelpKINode Title="Header method" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Header.htm" />
   <HelpKINode Title="HereIAm method" Url="html/M_SIGENCEScenarioTool_Tools_MB_HereIAm.htm" />
   <HelpKINode Title="Highway enumeration" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Hyperlink method" Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Hyperlink.htm" />
-  <HelpKINode Title="HyperLOG60200 enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
+  <HelpKINode Title="HyperLog60100 enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
   <HelpKINode Title="ID field">
     <HelpKINode Title="GeoLocalizationResult.ID Field" Url="html/F_SIGENCEScenarioTool_Models_GeoLocalizationResult_ID.htm" />
     <HelpKINode Title="RFDevice.ID Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ID.htm" />
@@ -575,6 +580,7 @@
   <HelpKINode Title="IsEmpty method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_IsEmpty.htm" />
   <HelpKINode Title="IsNegative property" Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_IsNegative.htm" />
   <HelpKINode Title="IsNotEmpty method" Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_IsNotEmpty.htm" />
+  <HelpKINode Title="IsoLog3DMobile enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
   <HelpKINode Title="IsValid method">
     <HelpKINode Title="Altitude.IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude_IsValid.htm" />
     <HelpKINode Title="Bandwidth.IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_IsValid.htm" />
@@ -594,6 +600,7 @@
   <HelpKINode Title="IXmlExport.ToXml method" Url="html/M_SIGENCEScenarioTool_Interfaces_IXmlExport_ToXml.htm" />
   <HelpKINode Title="KAISERTHERMEN field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_KAISERTHERMEN.htm" />
   <HelpKINode Title="Kilo field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Kilo.htm" />
+  <HelpKINode Title="Lat field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Lat.htm" />
   <HelpKINode Title="Latitude class">
     <HelpKINode Title="Latitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude__ctor.htm" />
@@ -613,6 +620,18 @@
   <HelpKINode Title="Latitude.IsValid method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_IsValid.htm" />
   <HelpKINode Title="Latitude.Latitude constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude__ctor.htm" />
   <HelpKINode Title="Latitude.ToString method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_ToString.htm" />
+  <HelpKINode Title="LatLonAlt structure">
+    <HelpKINode Title="LatLonAlt Structure" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LatLonAlt.Alt field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Alt.htm" />
+  <HelpKINode Title="LatLonAlt.Distance method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Distance.htm" />
+  <HelpKINode Title="LatLonAlt.Lat field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Lat.htm" />
+  <HelpKINode Title="LatLonAlt.LatLonAlt constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt__ctor.htm" />
+  <HelpKINode Title="LatLonAlt.Lon field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Lon.htm" />
+  <HelpKINode Title="LatLonAlt.ToPointLatLng method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_ToPointLatLng.htm" />
   <HelpKINode Title="Left enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_TextAlign.htm" />
   <HelpKINode Title="Leisure enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
   <HelpKINode Title="ListExtension class">
@@ -627,8 +646,10 @@
   <HelpKINode Title="ListExtension.SaveAsXml&lt;T&gt; method" Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsXml__1.htm" />
   <HelpKINode Title="Load method" Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Load.htm" />
   <HelpKINode Title="LoadFromXml method" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_LoadFromXml.htm" />
+  <HelpKINode Title="LoadXYZFile method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_LoadXYZFile.htm" />
   <HelpKINode Title="LOCALIZATIONTIME field" Url="html/F_SIGENCEScenarioTool_Models_GeoLocalizationResult_LOCALIZATIONTIME.htm" />
   <HelpKINode Title="LocalizationTime property" Url="html/P_SIGENCEScenarioTool_Models_GeoLocalizationResult_LocalizationTime.htm" />
+  <HelpKINode Title="Lon field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Lon.htm" />
   <HelpKINode Title="Longitude class">
     <HelpKINode Title="Longitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude__ctor.htm" />
@@ -751,7 +772,7 @@
   <HelpKINode Title="ObservableStringCollection.ObservableStringCollection constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection__ctor.htm" />
   <HelpKINode Title="Off method" Url="html/M_SIGENCEScenarioTool_Tools_Blink_Off.htm" />
   <HelpKINode Title="OmniDirectional enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
-  <HelpKINode Title="OmniLOG30800 enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
+  <HelpKINode Title="OmniLog30800 enumeration member" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
   <HelpKINode Title="On method" Url="html/M_SIGENCEScenarioTool_Tools_Blink_On.htm" />
   <HelpKINode Title="OpenWebAdress method" Url="html/M_SIGENCEScenarioTool_Tools_Windows_OpenWebAdress.htm" />
   <HelpKINode Title="OpenWithDefaultApplication method" Url="html/Overload_SIGENCEScenarioTool_Tools_Windows_OpenWithDefaultApplication.htm" />
@@ -763,6 +784,8 @@
   <HelpKINode Title="PITCH field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_PITCH.htm" />
   <HelpKINode Title="Pitch property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Pitch.htm" />
   <HelpKINode Title="Place enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
+  <HelpKINode Title="PointCount property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_PointCount.htm" />
+  <HelpKINode Title="Points property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_Points.htm" />
   <HelpKINode Title="PORTANIGRA field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_PORTANIGRA.htm" />
   <HelpKINode Title="Position property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Position.htm" />
   <HelpKINode Title="Power enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
@@ -845,6 +868,7 @@
   <HelpKINode Title="RFDevice.CENTERFREQUENCY_HZ field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_CENTERFREQUENCY_HZ.htm" />
   <HelpKINode Title="RFDevice.CenterFrequency_Hz property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_CenterFrequency_Hz.htm" />
   <HelpKINode Title="RFDevice.Clone method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_Clone.htm" />
+  <HelpKINode Title="RFDevice.CreateDummy method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_CreateDummy.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_ALTITUDE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_ALTITUDE.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_ANTENNATYPE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_ANTENNATYPE.htm" />
   <HelpKINode Title="RFDevice.DEFAULT_BANDWIDTH_HZ field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_BANDWIDTH_HZ.htm" />
@@ -869,7 +893,6 @@
   <HelpKINode Title="RFDevice.DEFAULT_ZPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_ZPOS.htm" />
   <HelpKINode Title="RFDevice.DEVICESOURCE field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEVICESOURCE.htm" />
   <HelpKINode Title="RFDevice.DeviceSource property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_DeviceSource.htm" />
-  <HelpKINode Title="RFDevice.DUMMY field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DUMMY.htm" />
   <HelpKINode Title="RFDevice.Equals method" Url="html/Overload_SIGENCEScenarioTool_Models_RFDevice_Equals.htm" />
   <HelpKINode Title="RFDevice.FromXml method" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_FromXml.htm" />
   <HelpKINode Title="RFDevice.GAIN_DB field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_GAIN_DB.htm" />
@@ -1020,6 +1043,7 @@
   <HelpKINode Title="RxTxTypes.FromInt method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromInt.htm" />
   <HelpKINode Title="RxTxTypes.FromString method" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromString.htm" />
   <HelpKINode Title="RxTxTypes.GPSJammer property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GPSJammer.htm" />
+  <HelpKINode Title="RxTxTypes.GSM property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GSM.htm" />
   <HelpKINode Title="RxTxTypes.HackRF property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_HackRF.htm" />
   <HelpKINode Title="RxTxTypes.IdealSDR property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_IdealSDR.htm" />
   <HelpKINode Title="RxTxTypes.Iridium property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Iridium.htm" />
@@ -1027,6 +1051,7 @@
   <HelpKINode Title="RxTxTypes.LTE property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_LTE.htm" />
   <HelpKINode Title="RxTxTypes.NFMRadio property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_NFMRadio.htm" />
   <HelpKINode Title="RxTxTypes.QPSK property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_QPSK.htm" />
+  <HelpKINode Title="RxTxTypes.SBandRadar property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SBandRadar.htm" />
   <HelpKINode Title="RxTxTypes.SIN property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SIN.htm" />
   <HelpKINode Title="RxTxTypes.TwinRx property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_TwinRx.htm" />
   <HelpKINode Title="RxTxTypes.Unknown property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Unknown.htm" />
@@ -1043,6 +1068,7 @@
   <HelpKINode Title="SaveDefault method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_SaveDefault.htm" />
   <HelpKINode Title="SaveWPFScreenshot method" Url="html/M_SIGENCEScenarioTool_Tools_Windows_SaveWPFScreenshot.htm" />
   <HelpKINode Title="Say method" Url="html/M_SIGENCEScenarioTool_Tools_Speech_Say.htm" />
+  <HelpKINode Title="SBandRadar property" Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SBandRadar.htm" />
   <HelpKINode Title="ScenarioMetaInformation class">
     <HelpKINode Title="ScenarioMetaInformation Class" Url="html/T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm" />
     <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation__ctor.htm" />
@@ -1112,7 +1138,9 @@
   <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Geo.GeoNode class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_GeoNode.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Geo.GeoNodeCollection class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Geo.Latitude class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Geo.LatLonAlt structure" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Geo.Longitude class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm" />
+  <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Geo.TerrainModel class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Observable namespace" Url="html/N_SIGENCEScenarioTool_Datatypes_Observable.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Observable.ObservableStringCollection class" Url="html/T_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection.htm" />
   <HelpKINode Title="SIGENCEScenarioTool.Datatypes.Physically namespace" Url="html/N_SIGENCEScenarioTool_Datatypes_Physically.htm" />
@@ -1299,6 +1327,23 @@
   <HelpKINode Title="TECHNICALPARAMETERS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_TECHNICALPARAMETERS.htm" />
   <HelpKINode Title="TechnicalParameters property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_TechnicalParameters.htm" />
   <HelpKINode Title="Tera field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Tera.htm" />
+  <HelpKINode Title="TerrainFile property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_TerrainFile.htm" />
+  <HelpKINode Title="TerrainModel class">
+    <HelpKINode Title="TerrainModel Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel.htm" />
+    <HelpKINode Title="constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TerrainModel.GetHighestPoints method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_GetHighestPoints.htm" />
+  <HelpKINode Title="TerrainModel.LoadXYZFile method" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_LoadXYZFile.htm" />
+  <HelpKINode Title="TerrainModel.PointCount property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_PointCount.htm" />
+  <HelpKINode Title="TerrainModel.Points property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_Points.htm" />
+  <HelpKINode Title="TerrainModel.TerrainFile property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_TerrainFile.htm" />
+  <HelpKINode Title="TerrainModel.TerrainModel constructor" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel__ctor.htm" />
+  <HelpKINode Title="TerrainModel.XMax property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_XMax.htm" />
+  <HelpKINode Title="TerrainModel.XMin property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_XMin.htm" />
+  <HelpKINode Title="TerrainModel.YMax property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_YMax.htm" />
+  <HelpKINode Title="TerrainModel.YMin property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_YMin.htm" />
   <HelpKINode Title="Tertiary enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Tertiary_Link enumeration member" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
   <HelpKINode Title="Test method" Url="html/M_SIGENCEScenarioTool_Tools_Blink_Test.htm" />
@@ -1375,7 +1420,10 @@
   <HelpKINode Title="TOOLTIP_YPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_YPOS.htm" />
   <HelpKINode Title="TOOLTIP_ZPOS property" Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_ZPOS.htm" />
   <HelpKINode Title="ToPoint method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPoint.htm" />
-  <HelpKINode Title="ToPointLatLng method" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPointLatLng.htm" />
+  <HelpKINode Title="ToPointLatLng method">
+    <HelpKINode Title="GeoHelper.ToPointLatLng Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPointLatLng.htm" />
+    <HelpKINode Title="LatLonAlt.ToPointLatLng Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_ToPointLatLng.htm" />
+  </HelpKINode>
   <HelpKINode Title="ToShortString method" Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToShortString.htm" />
   <HelpKINode Title="ToString method">
     <HelpKINode Title="Bandwidth.ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_ToString.htm" />
@@ -1569,11 +1617,15 @@
   <HelpKINode Title="XElementExtension.GetXElement method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetXElement.htm" />
   <HelpKINode Title="XElementExtension.SaveDefault method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_SaveDefault.htm" />
   <HelpKINode Title="XElementExtension.ToDefaultString method" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_ToDefaultString.htm" />
+  <HelpKINode Title="XMax property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_XMax.htm" />
+  <HelpKINode Title="XMin property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_XMin.htm" />
   <HelpKINode Title="XPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_XPOS.htm" />
   <HelpKINode Title="XPos property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_XPos.htm" />
   <HelpKINode Title="XYLOPHONMUSIK field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_XYLOPHONMUSIK.htm" />
   <HelpKINode Title="YAW field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_YAW.htm" />
   <HelpKINode Title="Yaw property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Yaw.htm" />
+  <HelpKINode Title="YMax property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_YMax.htm" />
+  <HelpKINode Title="YMin property" Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_YMin.htm" />
   <HelpKINode Title="YPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_YPOS.htm" />
   <HelpKINode Title="YPos property" Url="html/P_SIGENCEScenarioTool_Models_RFDevice_YPos.htm" />
   <HelpKINode Title="ZPOS field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ZPOS.htm" />

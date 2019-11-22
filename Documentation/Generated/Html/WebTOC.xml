@@ -1,74 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="04c7cf92-b27e-4a5f-8c0b-ed966419b8c2" Title="SIGENCEScenarioTool.Database.SQLite" Url="html/N_SIGENCEScenarioTool_Database_SQLite.htm">
-    <HelpTOCNode Id="c974596d-dc53-4711-9a97-25526dc7656d" Title="SQLiteHelper Class" Url="html/T_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper.htm">
-      <HelpTOCNode Id="98392d36-5bdf-453c-8e58-b9cb47226a60" Title="SQLiteHelper Methods" Url="html/Methods_T_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper.htm">
+  <HelpTOCNode Id="527b7dd1-c578-4a49-93a4-f56da7524560" Title="SIGENCEScenarioTool.Database.SQLite" Url="html/N_SIGENCEScenarioTool_Database_SQLite.htm">
+    <HelpTOCNode Id="8bea55ca-762b-4f1a-a06f-72f592bfd8e9" Title="SQLiteHelper Class" Url="html/T_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper.htm">
+      <HelpTOCNode Id="22554bbd-f73f-4593-9cc3-e1ba30380aac" Title="SQLiteHelper Methods" Url="html/Methods_T_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper.htm">
         <HelpTOCNode Title="GetDbType Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_GetDbType.htm" />
         <HelpTOCNode Title="GetNativeType Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_GetNativeType.htm" />
         <HelpTOCNode Title="GetSQLiteColumn Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_GetSQLiteColumn.htm" />
         <HelpTOCNode Title="GetSQLiteParameter Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_GetSQLiteParameter.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1c7963c4-140e-4804-9f28-787738f26a94" Title="SQLiteHelper Fields" Url="html/Fields_T_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper.htm">
+      <HelpTOCNode Id="bdf68431-c049-471e-9e4d-4d50effb31c0" Title="SQLiteHelper Fields" Url="html/Fields_T_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper.htm">
         <HelpTOCNode Title="TypeMapping Field" Url="html/F_SIGENCEScenarioTool_Database_SQLite_SQLiteHelper_TypeMapping.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ac2f209d-06bf-45ef-9e63-2ad8db320950" Title="SQLiteMemoryDatabase Class" Url="html/T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
+    <HelpTOCNode Id="55c281d8-8304-43de-af10-df309a7b0487" Title="SQLiteMemoryDatabase Class" Url="html/T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
       <HelpTOCNode Title="SQLiteMemoryDatabase Constructor " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase__ctor.htm" />
-      <HelpTOCNode Id="6a3e235d-6895-4849-ba17-ffbb19cd2821" Title="SQLiteMemoryDatabase Properties" Url="html/Properties_T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
+      <HelpTOCNode Id="c4d3aa52-fe1e-4a85-a282-5484560a5564" Title="SQLiteMemoryDatabase Properties" Url="html/Properties_T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
         <HelpTOCNode Title="Connection Property " Url="html/P_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Connection.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="fad5d3e9-f292-43d0-a1c2-792b9f43165e" Title="SQLiteMemoryDatabase Methods" Url="html/Methods_T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
+      <HelpTOCNode Id="c8929e06-2e4f-4d1c-9f54-ddab3fbe0081" Title="SQLiteMemoryDatabase Methods" Url="html/Methods_T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Dispose.htm" />
         <HelpTOCNode Title="Finalize Method " Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Finalize.htm" />
-        <HelpTOCNode Id="3f494b64-270d-4640-9b4c-7aafdb350f01" Title="Load Method " Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Load.htm">
+        <HelpTOCNode Id="0cc76da1-4a58-4843-8c74-db23316ffb5f" Title="Load Method " Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Load.htm">
           <HelpTOCNode Title="Load Method (FileInfo)" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Load.htm" />
           <HelpTOCNode Title="Load Method (String)" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Load_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="8a736544-93fa-4109-9d8b-6d08b42e4673" Title="Save Method " Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Save.htm">
+        <HelpTOCNode Id="fadc2c04-7054-436e-9620-a3fc12b36f3a" Title="Save Method " Url="html/Overload_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Save.htm">
           <HelpTOCNode Title="Save Method (FileInfo, Boolean, Boolean)" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Save.htm" />
           <HelpTOCNode Title="Save Method (String, Boolean, Boolean)" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_Save_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="2b8f06c3-be11-4459-94c5-0800db958bc3" Title="SQLiteMemoryDatabase Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
+      <HelpTOCNode Id="db7b202b-4d09-40a8-a61a-a136e48c0598" Title="SQLiteMemoryDatabase Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase.htm">
         <HelpTOCNode Title="Implicit Conversion (SQLiteMemoryDatabase to SQLiteConnection)" Url="html/M_SIGENCEScenarioTool_Database_SQLite_SQLiteMemoryDatabase_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="a7fffefc-a31b-45e3-bb95-bc1b9fb4b038" Title="SIGENCEScenarioTool.Datatypes" Url="html/N_SIGENCEScenarioTool_Datatypes.htm">
-    <HelpTOCNode Id="5bfe041a-31bc-43fb-89f7-1933e62797f0" Title="DataTypeBase(T) Class" Url="html/T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
+  <HelpTOCNode Id="0765953a-1dac-4d18-a4ad-a811b888a302" Title="SIGENCEScenarioTool.Datatypes" Url="html/N_SIGENCEScenarioTool_Datatypes.htm">
+    <HelpTOCNode Id="e3981ded-813b-40bc-8a73-bdd4f7670e3a" Title="DataTypeBase(T) Class" Url="html/T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
       <HelpTOCNode Title="DataTypeBase(T) Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1__ctor.htm" />
-      <HelpTOCNode Id="9e32c299-2c47-4fc2-ae9c-203be7000a27" Title="DataTypeBase(T) Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
+      <HelpTOCNode Id="379a81a2-d8b2-49e9-9685-72ec443fd9b3" Title="DataTypeBase(T) Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
         <HelpTOCNode Title="Value Property " Url="html/P_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_Value.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="50f4b853-bef0-45ec-aa68-091745bcb0a7" Title="DataTypeBase(T) Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
+      <HelpTOCNode Id="6cac90fa-f168-47a7-beec-b76e487c8bc7" Title="DataTypeBase(T) Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
         <HelpTOCNode Title="CompareTo Method " Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_CompareTo.htm" />
-        <HelpTOCNode Id="70fd71c9-a03a-4ec7-bddc-981fa1549b16" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_Equals.htm">
+        <HelpTOCNode Id="cd27ec30-13d4-4cdb-ad62-1e07bb66c3c6" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_Equals.htm">
           <HelpTOCNode Title="Equals Method (T)" Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_Equals.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_IsValid.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e0e87727-9295-43e3-9632-a4cb873807bf" Title="DataTypeBase(T) Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
+      <HelpTOCNode Id="08141f5e-f1c4-430a-870f-5c310a57caec" Title="DataTypeBase(T) Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
         <HelpTOCNode Title="Implicit Conversion (DataTypeBase(T) to T)" Url="html/M_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_op_Implicit.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="967b08e7-ccba-428e-9d03-433405576e25" Title="DataTypeBase(T) Fields" Url="html/Fields_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
+      <HelpTOCNode Id="33585bfb-08e5-4ef1-98a6-e32bd74b1cc2" Title="DataTypeBase(T) Fields" Url="html/Fields_T_SIGENCEScenarioTool_Datatypes_DataTypeBase_1.htm">
         <HelpTOCNode Title="CULTUREINFO Field" Url="html/F_SIGENCEScenarioTool_Datatypes_DataTypeBase_1_CULTUREINFO.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="77bfaea8-fdb0-4312-b9c0-4ec18febe186" Title="UnitPrefix Class" Url="html/T_SIGENCEScenarioTool_Datatypes_UnitPrefix.htm">
+    <HelpTOCNode Id="b38e0d1f-f1f1-4b2d-8e2d-7bee47157def" Title="UnitPrefix Class" Url="html/T_SIGENCEScenarioTool_Datatypes_UnitPrefix.htm">
       <HelpTOCNode Title="UnitPrefix Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_UnitPrefix__ctor.htm" />
-      <HelpTOCNode Id="667bd4ad-c1a6-4015-8b8e-76912c56823e" Title="UnitPrefix Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_UnitPrefix.htm">
+      <HelpTOCNode Id="c33cd6f3-ac85-43eb-9c35-dc1053809050" Title="UnitPrefix Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_UnitPrefix.htm">
         <HelpTOCNode Title="Factor Property " Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Factor.htm" />
         <HelpTOCNode Title="Name Property " Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Name.htm" />
         <HelpTOCNode Title="Symbol Property " Url="html/P_SIGENCEScenarioTool_Datatypes_UnitPrefix_Symbol.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="UnitPrefix Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_UnitPrefix.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="a64822ab-bced-4bef-8c9b-2018287ec8d4" Title="UnitPrefixs Class" Url="html/T_SIGENCEScenarioTool_Datatypes_UnitPrefixs.htm">
+    <HelpTOCNode Id="06fc34bc-cdbe-457a-9173-1ffd8254b275" Title="UnitPrefixs Class" Url="html/T_SIGENCEScenarioTool_Datatypes_UnitPrefixs.htm">
       <HelpTOCNode Title="UnitPrefixs Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_UnitPrefixs__ctor.htm" />
       <HelpTOCNode Title="UnitPrefixs Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_UnitPrefixs.htm" />
-      <HelpTOCNode Id="d0c52c83-b424-4851-97ae-82de3c21124f" Title="UnitPrefixs Fields" Url="html/Fields_T_SIGENCEScenarioTool_Datatypes_UnitPrefixs.htm">
+      <HelpTOCNode Id="9ce4a715-c2c2-400a-99b7-3f492dc90f3c" Title="UnitPrefixs Fields" Url="html/Fields_T_SIGENCEScenarioTool_Datatypes_UnitPrefixs.htm">
         <HelpTOCNode Title="Atto Field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Atto.htm" />
         <HelpTOCNode Title="Default Field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Default.htm" />
         <HelpTOCNode Title="Exa Field" Url="html/F_SIGENCEScenarioTool_Datatypes_UnitPrefixs_Exa.htm" />
@@ -85,20 +85,20 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="f28b3d6f-265c-4e84-8a96-b9de2f2d3f07" Title="SIGENCEScenarioTool.Datatypes.Geo" Url="html/N_SIGENCEScenarioTool_Datatypes_Geo.htm">
-    <HelpTOCNode Id="ec1b39e3-cd82-4c7a-a825-29ee063a8bac" Title="Altitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm">
+  <HelpTOCNode Id="bd7cf8f4-27f5-498a-9ed9-48a0be71fab0" Title="SIGENCEScenarioTool.Datatypes.Geo" Url="html/N_SIGENCEScenarioTool_Datatypes_Geo.htm">
+    <HelpTOCNode Id="6e9fd1e9-be49-450b-b891-8fd187175756" Title="Altitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm">
       <HelpTOCNode Title="Altitude Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude__ctor.htm" />
       <HelpTOCNode Title="Altitude Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm" />
-      <HelpTOCNode Id="d93075a2-be23-4590-8766-b5d4c3cecf47" Title="Altitude Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm">
+      <HelpTOCNode Id="054f3118-f1fa-4473-8aee-3303d7824735" Title="Altitude Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm">
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude_IsValid.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="219ea63c-cd92-4232-8d8b-d923605d4f5f" Title="Altitude Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm">
+      <HelpTOCNode Id="ee59df7d-5819-49dd-88a4-be47d4dc9346" Title="Altitude Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Geo_Altitude.htm">
         <HelpTOCNode Title="Implicit Conversion (Int32 to Altitude)" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Altitude_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="fba116cd-82e9-4415-bd38-b55a48445fc0" Title="GeoNode Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_GeoNode.htm">
+    <HelpTOCNode Id="bc48d7d8-406e-4510-bb96-027ce1b95cd1" Title="GeoNode Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_GeoNode.htm">
       <HelpTOCNode Title="GeoNode Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_GeoNode__ctor.htm" />
-      <HelpTOCNode Id="3690a61f-3dd7-4bfb-9b3a-afc565903503" Title="GeoNode Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_GeoNode.htm">
+      <HelpTOCNode Id="5be6b50d-bd77-414c-97c2-f3604831df3f" Title="GeoNode Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_GeoNode.htm">
         <HelpTOCNode Title="Latitude Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Latitude.htm" />
         <HelpTOCNode Title="Longitude Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Longitude.htm" />
         <HelpTOCNode Title="Name Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_GeoNode_Name.htm" />
@@ -109,105 +109,133 @@
       </HelpTOCNode>
       <HelpTOCNode Title="GeoNode Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_GeoNode.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="6a5f714c-75e9-4bd8-8092-65d556b851ff" Title="GeoNodeCollection Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection.htm">
+    <HelpTOCNode Id="e4d03477-5b30-4a02-af49-a2896f260668" Title="GeoNodeCollection Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection.htm">
       <HelpTOCNode Title="GeoNodeCollection Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection.htm" />
-      <HelpTOCNode Id="35ec6b19-d28a-40c0-83a1-209e8ad844f3" Title="GeoNodeCollection Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection.htm">
+      <HelpTOCNode Id="4d610cde-bdf6-4bb5-81dd-f791cb4151d6" Title="GeoNodeCollection Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection.htm">
         <HelpTOCNode Title="GetCollection Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection_GetCollection.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="GeoNodeCollection Events" Url="html/Events_T_SIGENCEScenarioTool_Datatypes_Geo_GeoNodeCollection.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="48b08c03-3669-44e3-9417-5d29179ffebd" Title="Latitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm">
+    <HelpTOCNode Id="5d8ca3d6-ec7c-4006-b71b-6a82d5792544" Title="Latitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm">
       <HelpTOCNode Title="Latitude Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude__ctor.htm" />
       <HelpTOCNode Title="Latitude Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm" />
-      <HelpTOCNode Id="d8530dbe-9d0e-4718-b9b5-cac630fe06c6" Title="Latitude Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm">
+      <HelpTOCNode Id="0efcc969-c232-44c9-b641-23e002b2fdc2" Title="Latitude Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm">
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_IsValid.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="808dde63-0b98-43b2-8f13-62d0c6fefd39" Title="Latitude Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm">
+      <HelpTOCNode Id="89947496-d1c3-4f36-bd5a-139d82d61786" Title="Latitude Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Geo_Latitude.htm">
         <HelpTOCNode Title="Implicit Conversion (Double to Latitude)" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Latitude_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="84ae3dce-2a4b-4efe-ab2f-9ddd6e7c656d" Title="Longitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm">
+    <HelpTOCNode Id="d2ca5546-a19d-4727-9026-8fc9566f3581" Title="LatLonAlt Structure" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt.htm">
+      <HelpTOCNode Title="LatLonAlt Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt__ctor.htm" />
+      <HelpTOCNode Id="aeffb8b8-37a1-4a74-ade3-f4609d8434fa" Title="LatLonAlt Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt.htm">
+        <HelpTOCNode Title="Distance Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Distance.htm" />
+        <HelpTOCNode Title="ToPointLatLng Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_ToPointLatLng.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c2c484df-6d84-48a4-b1da-8ca4601ccfcb" Title="LatLonAlt Fields" Url="html/Fields_T_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt.htm">
+        <HelpTOCNode Title="Alt Field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Alt.htm" />
+        <HelpTOCNode Title="Lat Field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Lat.htm" />
+        <HelpTOCNode Title="Lon Field" Url="html/F_SIGENCEScenarioTool_Datatypes_Geo_LatLonAlt_Lon.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7df7a8f7-a841-43ea-a7c1-6bb5517cc58a" Title="Longitude Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm">
       <HelpTOCNode Title="Longitude Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude__ctor.htm" />
       <HelpTOCNode Title="Longitude Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm" />
-      <HelpTOCNode Id="6af58dcc-65d7-455d-975b-db07934afe0c" Title="Longitude Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm">
+      <HelpTOCNode Id="225f008b-6cb7-4ea2-b75c-3fa91d5ae709" Title="Longitude Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm">
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_IsValid.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a3f7c714-eca3-4ab6-b747-b9995d32f4c9" Title="Longitude Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm">
+      <HelpTOCNode Id="d5b18e39-04af-451b-aa35-eb9a7918aee3" Title="Longitude Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Geo_Longitude.htm">
         <HelpTOCNode Title="Implicit Conversion (Double to Longitude)" Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_Longitude_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
+    <HelpTOCNode Id="a0a353d4-2c1c-45a1-ae44-a33791071706" Title="TerrainModel Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel.htm">
+      <HelpTOCNode Title="TerrainModel Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel__ctor.htm" />
+      <HelpTOCNode Id="2b220738-2295-4cd1-86a2-5d97b6cdc91a" Title="TerrainModel Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel.htm">
+        <HelpTOCNode Title="PointCount Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_PointCount.htm" />
+        <HelpTOCNode Title="Points Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_Points.htm" />
+        <HelpTOCNode Title="TerrainFile Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_TerrainFile.htm" />
+        <HelpTOCNode Title="XMax Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_XMax.htm" />
+        <HelpTOCNode Title="XMin Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_XMin.htm" />
+        <HelpTOCNode Title="YMax Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_YMax.htm" />
+        <HelpTOCNode Title="YMin Property " Url="html/P_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_YMin.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="96426273-3b26-4162-b8e2-38bbb002b5f9" Title="TerrainModel Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel.htm">
+        <HelpTOCNode Title="GetHighestPoints Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_GetHighestPoints.htm" />
+        <HelpTOCNode Title="LoadXYZFile Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Geo_TerrainModel_LoadXYZFile.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="e1785158-60f2-4403-b499-fde1229996ac" Title="SIGENCEScenarioTool.Datatypes.Observable" Url="html/N_SIGENCEScenarioTool_Datatypes_Observable.htm">
-    <HelpTOCNode Id="143f6bc4-f1e4-445e-bf31-b2971fc04c2b" Title="ObservableStringCollection Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection.htm">
+  <HelpTOCNode Id="be3806d5-b86e-4f65-92a2-e0380d48ed4e" Title="SIGENCEScenarioTool.Datatypes.Observable" Url="html/N_SIGENCEScenarioTool_Datatypes_Observable.htm">
+    <HelpTOCNode Id="779c5624-99c3-4a93-b3c3-96d42d19ee6c" Title="ObservableStringCollection Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection.htm">
       <HelpTOCNode Title="ObservableStringCollection Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection__ctor.htm" />
       <HelpTOCNode Title="ObservableStringCollection Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection.htm" />
       <HelpTOCNode Title="ObservableStringCollection Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection.htm" />
       <HelpTOCNode Title="ObservableStringCollection Events" Url="html/Events_T_SIGENCEScenarioTool_Datatypes_Observable_ObservableStringCollection.htm" />
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="4e4bbc08-084f-4ffc-9a98-3d3fed99a37d" Title="SIGENCEScenarioTool.Datatypes.Physically" Url="html/N_SIGENCEScenarioTool_Datatypes_Physically.htm">
-    <HelpTOCNode Id="2a50cd62-f44d-4356-93d1-a2728d6a006a" Title="Bandwidth Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm">
+  <HelpTOCNode Id="1240ab80-5a28-47f1-8023-698e7d4e3d9e" Title="SIGENCEScenarioTool.Datatypes.Physically" Url="html/N_SIGENCEScenarioTool_Datatypes_Physically.htm">
+    <HelpTOCNode Id="e00226fe-d685-43c2-b438-500cf03b8c24" Title="Bandwidth Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm">
       <HelpTOCNode Title="Bandwidth Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth__ctor.htm" />
       <HelpTOCNode Title="Bandwidth Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm" />
-      <HelpTOCNode Id="901261b3-2cb2-4526-ba58-6a4b28121b64" Title="Bandwidth Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm">
+      <HelpTOCNode Id="a6f5a1f0-e1ad-475e-8cd4-340400d88b9d" Title="Bandwidth Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm">
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_IsValid.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="00be4cd8-ad0d-49ab-81a9-918af707cd4c" Title="Bandwidth Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm">
+      <HelpTOCNode Id="11b92e42-4310-41f1-9da8-c1b9e0e015c0" Title="Bandwidth Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth.htm">
         <HelpTOCNode Title="Implicit Conversion (Double to Bandwidth)" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Bandwidth_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="10b6990a-d96a-4802-a24a-c619d386de5e" Title="Frequency Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_Frequency.htm">
+    <HelpTOCNode Id="36e51355-071d-48b3-bdef-6d59a467a976" Title="Frequency Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_Frequency.htm">
       <HelpTOCNode Title="Frequency Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency__ctor.htm" />
       <HelpTOCNode Title="Frequency Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Physically_Frequency.htm" />
-      <HelpTOCNode Id="7d6e4116-a251-4309-9fb6-560b6d69cb26" Title="Frequency Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_Frequency.htm">
+      <HelpTOCNode Id="9807f2dc-e869-41e8-8300-f18cde8d2a82" Title="Frequency Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_Frequency.htm">
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_IsValid.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="4ac6eede-6669-4273-878a-099105dd3175" Title="Frequency Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_Frequency.htm">
+      <HelpTOCNode Id="296016fb-a70f-4a8c-9a0b-ac890d72f821" Title="Frequency Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_Frequency.htm">
         <HelpTOCNode Title="Implicit Conversion (Double to Frequency)" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Frequency_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="78cd7951-9764-421f-85c8-4866734efc6b" Title="Gain Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_Gain.htm">
+    <HelpTOCNode Id="45174425-87a6-43e5-8da2-d71a2a02e57e" Title="Gain Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_Gain.htm">
       <HelpTOCNode Title="Gain Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain__ctor.htm" />
       <HelpTOCNode Title="Gain Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Physically_Gain.htm" />
-      <HelpTOCNode Id="d4808407-79ea-4414-b3b5-f5a14211e112" Title="Gain Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_Gain.htm">
+      <HelpTOCNode Id="da1cd288-8286-43aa-a826-65062859a073" Title="Gain Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_Gain.htm">
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_IsValid.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="24866ab6-2418-446b-8c99-a672630fffb0" Title="Gain Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_Gain.htm">
+      <HelpTOCNode Id="70f7ee4c-1013-4055-b2ac-d9a6383e344d" Title="Gain Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_Gain.htm">
         <HelpTOCNode Title="Implicit Conversion (Double to Gain)" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_Gain_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6c6b4f2c-59b2-4eb9-9cfb-546fa1d9b414" Title="SignalToNoiseRatio Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio.htm">
+    <HelpTOCNode Id="9c1eef05-6abd-4312-b4e7-b606692393eb" Title="SignalToNoiseRatio Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio.htm">
       <HelpTOCNode Title="SignalToNoiseRatio Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio__ctor.htm" />
       <HelpTOCNode Title="SignalToNoiseRatio Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio.htm" />
-      <HelpTOCNode Id="c17635f8-5e8a-4625-86b4-19fca59f0f53" Title="SignalToNoiseRatio Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio.htm">
+      <HelpTOCNode Id="3a20fac4-c23f-4801-8378-e9d9d3166097" Title="SignalToNoiseRatio Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio.htm">
         <HelpTOCNode Title="IsValid Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_IsValid.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3ecd46cd-af2e-45ec-8479-f937800379c6" Title="SignalToNoiseRatio Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio.htm">
+      <HelpTOCNode Id="2501deb6-22fb-49a5-a272-d7dff95c923c" Title="SignalToNoiseRatio Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio.htm">
         <HelpTOCNode Title="Implicit Conversion (Double to SignalToNoiseRatio)" Url="html/M_SIGENCEScenarioTool_Datatypes_Physically_SignalToNoiseRatio_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="2712b2e2-7ba9-469b-a45f-e31b82c453d7" Title="SIGENCEScenarioTool.Datatypes.Standard" Url="html/N_SIGENCEScenarioTool_Datatypes_Standard.htm">
-    <HelpTOCNode Id="44e05e3a-910e-4ec9-aeb7-73546a6b742a" Title="IntegerList Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Standard_IntegerList.htm">
-      <HelpTOCNode Id="bceb0217-1f95-4b24-8069-f35cd66c2457" Title="IntegerList Constructor " Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_IntegerList__ctor.htm">
+  <HelpTOCNode Id="92ccf808-a727-450f-a48d-e09cae22be93" Title="SIGENCEScenarioTool.Datatypes.Standard" Url="html/N_SIGENCEScenarioTool_Datatypes_Standard.htm">
+    <HelpTOCNode Id="663598f3-05b9-4e87-9548-260fb301cbdc" Title="IntegerList Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Standard_IntegerList.htm">
+      <HelpTOCNode Id="f50911b4-0bcf-4e7d-9764-f72b11c3ad80" Title="IntegerList Constructor " Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_IntegerList__ctor.htm">
         <HelpTOCNode Title="IntegerList Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_IntegerList__ctor.htm" />
         <HelpTOCNode Title="IntegerList Constructor (IEnumerable(Int32))" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_IntegerList__ctor_1.htm" />
         <HelpTOCNode Title="IntegerList Constructor (Int32)" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_IntegerList__ctor_2.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="IntegerList Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Standard_IntegerList.htm" />
       <HelpTOCNode Title="IntegerList Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Standard_IntegerList.htm" />
-      <HelpTOCNode Id="43dadb3f-d023-4942-8915-50165cb4c855" Title="IntegerList Operators" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Standard_IntegerList.htm">
+      <HelpTOCNode Id="7af2a2bc-105e-4a44-90bf-40528f0a2fea" Title="IntegerList Operators" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Standard_IntegerList.htm">
         <HelpTOCNode Title="Multiply Operator " Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_IntegerList_op_Multiply.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="12a02f7e-c466-4c2c-a91a-794d555a65be" Title="StringList Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Standard_StringList.htm">
-      <HelpTOCNode Id="8e75a647-3703-40f3-b3e2-046c2687ea5c" Title="StringList Constructor " Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor.htm">
+    <HelpTOCNode Id="e3c272e4-0d7c-4123-80ca-3f8e8d5c71b5" Title="StringList Class" Url="html/T_SIGENCEScenarioTool_Datatypes_Standard_StringList.htm">
+      <HelpTOCNode Id="f2272c57-24d4-4e21-bf6b-bcf3362dd0d7" Title="StringList Constructor " Url="html/Overload_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor.htm">
         <HelpTOCNode Title="StringList Constructor " Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor.htm" />
         <HelpTOCNode Title="StringList Constructor (IEnumerable(String))" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor_1.htm" />
         <HelpTOCNode Title="StringList Constructor (Int32)" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList__ctor_2.htm" />
@@ -215,19 +243,19 @@
       </HelpTOCNode>
       <HelpTOCNode Title="StringList Properties" Url="html/Properties_T_SIGENCEScenarioTool_Datatypes_Standard_StringList.htm" />
       <HelpTOCNode Title="StringList Methods" Url="html/Methods_T_SIGENCEScenarioTool_Datatypes_Standard_StringList.htm" />
-      <HelpTOCNode Id="df2c386f-5bb2-4ec2-8adc-02ecb3cf0a62" Title="StringList Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Standard_StringList.htm">
+      <HelpTOCNode Id="32d7f757-49f3-4905-85f1-0997c92a65ad" Title="StringList Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Datatypes_Standard_StringList.htm">
         <HelpTOCNode Title="Implicit Conversion (StringList to String[])" Url="html/M_SIGENCEScenarioTool_Datatypes_Standard_StringList_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="a4cdb0ba-6fb5-4ddb-8d9d-3362f5fd54f1" Title="SIGENCEScenarioTool.Extensions" Url="html/N_SIGENCEScenarioTool_Extensions.htm">
-    <HelpTOCNode Id="07368724-cbfa-4ddf-ba31-e67c5b9d5ed9" Title="ColorExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_ColorExtension.htm">
-      <HelpTOCNode Id="36947b13-24bb-410c-9439-284c982a39e1" Title="ColorExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_ColorExtension.htm">
+  <HelpTOCNode Id="6d1b0292-d64c-4a0a-b82a-136c434ceb50" Title="SIGENCEScenarioTool.Extensions" Url="html/N_SIGENCEScenarioTool_Extensions.htm">
+    <HelpTOCNode Id="f6602ab3-6ab0-465b-811a-7229c1c1af71" Title="ColorExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_ColorExtension.htm">
+      <HelpTOCNode Id="6f41b536-5c58-4336-a6e3-065d7597400f" Title="ColorExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_ColorExtension.htm">
         <HelpTOCNode Title="WithAlpha Method " Url="html/M_SIGENCEScenarioTool_Extensions_ColorExtension_WithAlpha.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="96931127-7eba-495c-9dd8-305c2919ffbe" Title="DateTimeExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_DateTimeExtension.htm">
-      <HelpTOCNode Id="472a13c0-b553-43be-9d2f-b443b19bdceb" Title="DateTimeExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_DateTimeExtension.htm">
+    <HelpTOCNode Id="e234c431-593c-4026-a34e-c8ef080f0703" Title="DateTimeExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_DateTimeExtension.htm">
+      <HelpTOCNode Id="83e26a94-8e1a-4466-b288-edae1dc46376" Title="DateTimeExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_DateTimeExtension.htm">
         <HelpTOCNode Title="DaysInMonth Method " Url="html/M_SIGENCEScenarioTool_Extensions_DateTimeExtension_DaysInMonth.htm" />
         <HelpTOCNode Title="Fmt_DD_MM_YYYY Method " Url="html/M_SIGENCEScenarioTool_Extensions_DateTimeExtension_Fmt_DD_MM_YYYY.htm" />
         <HelpTOCNode Title="Fmt_DD_MM_YYYY_HH_MM Method " Url="html/M_SIGENCEScenarioTool_Extensions_DateTimeExtension_Fmt_DD_MM_YYYY_HH_MM.htm" />
@@ -239,27 +267,27 @@
         <HelpTOCNode Title="Fmt_YYYYMMDDHHMMSS Method " Url="html/M_SIGENCEScenarioTool_Extensions_DateTimeExtension_Fmt_YYYYMMDDHHMMSS.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e766cd5f-1bf3-495e-bc2c-e589ce7cb03d" Title="DbCommandExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_DbCommandExtension.htm">
-      <HelpTOCNode Id="00f34639-2ba5-47d1-838b-f9fce304f53b" Title="DbCommandExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_DbCommandExtension.htm">
+    <HelpTOCNode Id="d2221989-9ba8-4481-b03e-86b9d612c600" Title="DbCommandExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_DbCommandExtension.htm">
+      <HelpTOCNode Id="52d01946-6d35-47b0-a779-b53607deeb67" Title="DbCommandExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_DbCommandExtension.htm">
         <HelpTOCNode Title="ResetParameters Method " Url="html/M_SIGENCEScenarioTool_Extensions_DbCommandExtension_ResetParameters.htm" />
-        <HelpTOCNode Id="5ce90455-56b2-4f55-a47b-5f26f3c8b68c" Title="SetNullableParamter Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_DbCommandExtension_SetNullableParamter.htm">
+        <HelpTOCNode Id="dbd6837b-2166-4a2b-8c58-9dd10132a3d4" Title="SetNullableParamter Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_DbCommandExtension_SetNullableParamter.htm">
           <HelpTOCNode Title="SetNullableParamter Method (DbCommand, Int32, Object)" Url="html/M_SIGENCEScenarioTool_Extensions_DbCommandExtension_SetNullableParamter.htm" />
           <HelpTOCNode Title="SetNullableParamter Method (DbCommand, String, Object)" Url="html/M_SIGENCEScenarioTool_Extensions_DbCommandExtension_SetNullableParamter_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="9195fa7c-6fd8-4a13-b922-34f0cccefc3b" Title="DictionaryExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_DictionaryExtension.htm">
-      <HelpTOCNode Id="84da8d58-6554-4fc3-a60e-5083ada29d9f" Title="DictionaryExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_DictionaryExtension.htm">
-        <HelpTOCNode Id="b0a1e232-5606-4741-8cee-c4308d05120e" Title="ForEach Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_DictionaryExtension_ForEach.htm">
+    <HelpTOCNode Id="875ad64f-f6c3-4a2f-8a4c-0572355c0d2a" Title="DictionaryExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_DictionaryExtension.htm">
+      <HelpTOCNode Id="badcdd03-2c33-44e1-bd24-f6677d0da8e3" Title="DictionaryExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_DictionaryExtension.htm">
+        <HelpTOCNode Id="176850e3-3003-4096-bc8b-7f8be722197f" Title="ForEach Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_DictionaryExtension_ForEach.htm">
           <HelpTOCNode Title="ForEach(TKey, TValue) Method (Dictionary(TKey, TValue), Action(TKey, TValue))" Url="html/M_SIGENCEScenarioTool_Extensions_DictionaryExtension_ForEach__2.htm" />
           <HelpTOCNode Title="ForEach(TKey, TValue) Method (SortedDictionary(TKey, TValue), Action(TKey, TValue))" Url="html/M_SIGENCEScenarioTool_Extensions_DictionaryExtension_ForEach__2_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ToString(TKey, TValue) Method " Url="html/M_SIGENCEScenarioTool_Extensions_DictionaryExtension_ToString__2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="93f1c2ed-c2ed-42e5-b1b6-de884e437ad0" Title="FileInfoExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_FileInfoExtension.htm">
-      <HelpTOCNode Id="15b3b4f1-642c-4cfb-815e-64510e360b02" Title="FileInfoExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_FileInfoExtension.htm">
-        <HelpTOCNode Id="a7ada26b-56d3-45f9-a285-7e3206a75588" Title="CopyTo Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo.htm">
+    <HelpTOCNode Id="ea5c5a75-646d-4e92-b521-140efa80f578" Title="FileInfoExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_FileInfoExtension.htm">
+      <HelpTOCNode Id="cc4df53d-1d29-498f-a3ab-9b7cb4c11f48" Title="FileInfoExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_FileInfoExtension.htm">
+        <HelpTOCNode Id="43d087d8-5a33-4733-bbc5-e5b57d84f1e3" Title="CopyTo Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo.htm">
           <HelpTOCNode Title="CopyTo Method (FileInfo, DirectoryInfo)" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo.htm" />
           <HelpTOCNode Title="CopyTo Method (FileInfo, DirectoryInfo, Boolean)" Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_CopyTo_1.htm" />
         </HelpTOCNode>
@@ -269,8 +297,8 @@
         <HelpTOCNode Title="MoveTo Method " Url="html/M_SIGENCEScenarioTool_Extensions_FileInfoExtension_MoveTo.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bcfed8b1-f260-40a0-9e0c-64b3f52607f0" Title="IDataReaderExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_IDataReaderExtension.htm">
-      <HelpTOCNode Id="67206923-8e43-4640-b57f-377f5663af55" Title="IDataReaderExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_IDataReaderExtension.htm">
+    <HelpTOCNode Id="3df459f8-4c42-4d93-8812-031a72d1d911" Title="IDataReaderExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_IDataReaderExtension.htm">
+      <HelpTOCNode Id="c815d1f3-aba0-4c06-acc7-f729e899f960" Title="IDataReaderExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_IDataReaderExtension.htm">
         <HelpTOCNode Title="GetDateTimeOrNull Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetDateTimeOrNull.htm" />
         <HelpTOCNode Title="GetGeometryFromWKB Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetGeometryFromWKB.htm" />
         <HelpTOCNode Title="GetInt32OrNull Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetInt32OrNull.htm" />
@@ -282,66 +310,66 @@
         <HelpTOCNode Title="GetStringOrNull Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDataReaderExtension_GetStringOrNull.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a0695c8a-3467-48fa-8e89-6f046f71b1d7" Title="IDbConnectionExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_IDbConnectionExtension.htm">
-      <HelpTOCNode Id="e9dbccb7-7734-47cb-a05e-d08d77bd9c5a" Title="IDbConnectionExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_IDbConnectionExtension.htm">
+    <HelpTOCNode Id="eced1477-1791-4233-9a55-c31c6764b8f9" Title="IDbConnectionExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_IDbConnectionExtension.htm">
+      <HelpTOCNode Id="7cb70b35-b0b6-4ec9-ae17-3ae9db7a935b" Title="IDbConnectionExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_IDbConnectionExtension.htm">
         <HelpTOCNode Title="CloseIfOpen Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_CloseIfOpen.htm" />
-        <HelpTOCNode Id="507a0d63-46d1-40a3-8ada-26322b7b8e1a" Title="ExecuteNonQuery Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteNonQuery.htm">
+        <HelpTOCNode Id="94372a17-6b84-4c95-8609-e69f15cd48bb" Title="ExecuteNonQuery Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteNonQuery.htm">
           <HelpTOCNode Title="ExecuteNonQuery Method (IDbConnection, String, Object[])" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteNonQuery_1.htm" />
           <HelpTOCNode Title="ExecuteNonQuery Method (IDbConnection, Int32, Boolean, String, Object[])" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteNonQuery.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="28e4cb09-91ba-406a-b6f7-2e87b25e4608" Title="ExecuteScalar Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteScalar.htm">
+        <HelpTOCNode Id="e3e2e426-e234-4cf6-8042-e55cffdd3127" Title="ExecuteScalar Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteScalar.htm">
           <HelpTOCNode Title="ExecuteScalar Method (IDbConnection, String, Object[])" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteScalar_1.htm" />
           <HelpTOCNode Title="ExecuteScalar Method (IDbConnection, Int32, String, Object[])" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_ExecuteScalar.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="GetDictionary(T1, T2) Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_GetDictionary__2.htm" />
         <HelpTOCNode Title="GetSortedDictionary(T1, T2) Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_GetSortedDictionary__2.htm" />
         <HelpTOCNode Title="SaveAsCSV Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SaveAsCSV.htm" />
-        <HelpTOCNode Id="3d3eb7f8-f9aa-463a-8a06-e67907744063" Title="Select Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_Select.htm">
+        <HelpTOCNode Id="9e4f7727-fff4-423d-a405-a9316c65a570" Title="Select Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_Select.htm">
           <HelpTOCNode Title="Select Method (IDbConnection, String)" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_Select.htm" />
           <HelpTOCNode Title="Select Method (IDbConnection, String, Object[])" Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_Select_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="SelectAsDataTable Method " Url="html/M_SIGENCEScenarioTool_Extensions_IDbConnectionExtension_SelectAsDataTable.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6f1984f0-0d00-4fc5-9e1d-31dba9365290" Title="ListExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_ListExtension.htm">
-      <HelpTOCNode Id="0f3f9c5c-774a-4d56-baca-db4c0b347b59" Title="ListExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_ListExtension.htm">
+    <HelpTOCNode Id="106fa9e4-8815-4d9b-9c3e-b860435999fd" Title="ListExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_ListExtension.htm">
+      <HelpTOCNode Id="b5ec3681-cdc5-4425-9ff8-a3d6af17f5cd" Title="ListExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_ListExtension.htm">
         <HelpTOCNode Title="SaveAsCsv(T) Method " Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsCsv__1.htm" />
         <HelpTOCNode Title="SaveAsJson(T) Method " Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsJson__1.htm" />
         <HelpTOCNode Title="SaveAsXml(T) Method " Url="html/M_SIGENCEScenarioTool_Extensions_ListExtension_SaveAsXml__1.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e88d8bb0-8b60-437f-92b4-e36e8160988f" Title="MarkdownExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_MarkdownExtension.htm">
-      <HelpTOCNode Id="d3eff67d-f128-4b5d-9f38-4b1d800a8062" Title="MarkdownExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_MarkdownExtension.htm">
+    <HelpTOCNode Id="953f10de-eed6-40b5-a651-cda0e479a6f0" Title="MarkdownExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_MarkdownExtension.htm">
+      <HelpTOCNode Id="0dc8a39e-1c8f-49db-8e6c-87180075fdf6" Title="MarkdownExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_MarkdownExtension.htm">
         <HelpTOCNode Title="BlockQuote Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_BlockQuote.htm" />
         <HelpTOCNode Title="Bold Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Bold.htm" />
-        <HelpTOCNode Id="c39ff195-9b88-4213-9e3e-67bbc6607b9a" Title="DirectoryTable Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTable.htm">
+        <HelpTOCNode Id="7bb22716-0ae1-4c2d-b37b-46c30ec2e5be" Title="DirectoryTable Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTable.htm">
           <HelpTOCNode Title="DirectoryTable Method (DirectoryInfo, Boolean, Boolean)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTable.htm" />
           <HelpTOCNode Title="DirectoryTable Method (String, Boolean, Boolean)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTable_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="15cf9c21-d23f-4376-a08c-6d207b4fc8c0" Title="DirectoryTree Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTree.htm">
+        <HelpTOCNode Id="4d16496a-e595-4084-91cf-899981a591e9" Title="DirectoryTree Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTree.htm">
           <HelpTOCNode Title="DirectoryTree Method (DirectoryInfo, Boolean, Int32)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTree.htm" />
           <HelpTOCNode Title="DirectoryTree Method (String, Boolean, Int32)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_DirectoryTree_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Header Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Header.htm" />
-        <HelpTOCNode Id="ade4858b-7303-41a0-9c55-f04db4e42f1c" Title="Hyperlink Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Hyperlink.htm">
+        <HelpTOCNode Id="56e704bd-b892-42d5-a7d9-dadfe84709a7" Title="Hyperlink Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Hyperlink.htm">
           <HelpTOCNode Title="Hyperlink Method (String, String)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Hyperlink.htm" />
           <HelpTOCNode Title="Hyperlink Method (String, String, String)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Hyperlink_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Image Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Image.htm" />
-        <HelpTOCNode Id="b6645b0e-dec6-40f3-a280-c798648cb8b7" Title="Include Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Include.htm">
+        <HelpTOCNode Id="1881a31a-b932-4a47-b496-1a33e2fc2905" Title="Include Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Include.htm">
           <HelpTOCNode Title="Include Method (FileInfo)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Include.htm" />
           <HelpTOCNode Title="Include Method (String)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Include_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Italic Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Italic.htm" />
         <HelpTOCNode Title="OrderedList(T) Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_OrderedList__1.htm" />
         <HelpTOCNode Title="PartingLine Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_PartingLine.htm" />
-        <HelpTOCNode Id="a0e25a70-3a38-4bb9-b95d-f0f1c0bd432a" Title="SourceCode Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_SourceCode.htm">
+        <HelpTOCNode Id="8ab7d9ab-0f53-40f5-8e19-abafeec74294" Title="SourceCode Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_SourceCode.htm">
           <HelpTOCNode Title="SourceCode Method (IEnumerable(String), String)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_SourceCode.htm" />
           <HelpTOCNode Title="SourceCode Method (FileInfo, String)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_SourceCode_1.htm" />
           <HelpTOCNode Title="SourceCode Method (String, String)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_SourceCode_2.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Strikethrough Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Strikethrough.htm" />
-        <HelpTOCNode Id="69ae0fdf-c598-4663-b54d-3ace34ff1cd9" Title="Table Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Table.htm">
+        <HelpTOCNode Id="0f7c5620-95a1-4cee-aa7d-827f16b98441" Title="Table Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_MarkdownExtension_Table.htm">
           <HelpTOCNode Title="Table(T) Method (IList(T))" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Table__1.htm" />
           <HelpTOCNode Title="Table Method (DataTable)" Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_Table.htm" />
         </HelpTOCNode>
@@ -349,22 +377,22 @@
         <HelpTOCNode Title="UnorderedList(T) Method " Url="html/M_SIGENCEScenarioTool_Extensions_MarkdownExtension_UnorderedList__1.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="530bc706-6463-41ac-850c-7fa8c18f8d67" Title="RandomExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_RandomExtension.htm">
-      <HelpTOCNode Id="fc8c86df-1571-4248-9531-57eab3d99a5f" Title="RandomExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_RandomExtension.htm">
+    <HelpTOCNode Id="c228eafe-183b-471f-a211-0d669daf9788" Title="RandomExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_RandomExtension.htm">
+      <HelpTOCNode Id="d79f126b-cabe-4a7d-be45-20bb1272b5d1" Title="RandomExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_RandomExtension.htm">
         <HelpTOCNode Title="NextAutoKennzeichen Method " Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextAutoKennzeichen.htm" />
         <HelpTOCNode Title="NextBool Method " Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextBool.htm" />
         <HelpTOCNode Title="NextColor Method " Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextColor.htm" />
-        <HelpTOCNode Id="61c06fc0-fa6a-432d-a5a2-20a073f7585d" Title="NextDateTime Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_RandomExtension_NextDateTime.htm">
+        <HelpTOCNode Id="0b372789-6a15-4985-a068-91e40fa143c7" Title="NextDateTime Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_RandomExtension_NextDateTime.htm">
           <HelpTOCNode Title="NextDateTime Method (Random, DateTimeKind)" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextDateTime_1.htm" />
           <HelpTOCNode Title="NextDateTime Method (Random, DateTime, DateTime, DateTimeKind)" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextDateTime.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="1599b784-9bde-42a9-95fe-8cd3c9540a84" Title="NextEnum Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_RandomExtension_NextEnum.htm">
+        <HelpTOCNode Id="3bc53334-cafd-47ee-8aef-1b0631c69495" Title="NextEnum Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_RandomExtension_NextEnum.htm">
           <HelpTOCNode Title="NextEnum(T) Method (Random)" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextEnum__1.htm" />
           <HelpTOCNode Title="NextEnum Method (Random, Type)" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextEnum.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="NextInt Method " Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextInt.htm" />
         <HelpTOCNode Title="NextLong Method " Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextLong.htm" />
-        <HelpTOCNode Id="12fa5f9a-95c5-4c72-8e31-77e77f91249f" Title="NextObject Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_RandomExtension_NextObject.htm">
+        <HelpTOCNode Id="c5cb6525-f1ac-4ec4-b0be-761449b1fa67" Title="NextObject Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_RandomExtension_NextObject.htm">
           <HelpTOCNode Title="NextObject(T) Method (Random, ICollection(T))" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextObject__1.htm" />
           <HelpTOCNode Title="NextObject(T) Method (Random, IList(T))" Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextObject__1_1.htm" />
         </HelpTOCNode>
@@ -374,8 +402,8 @@
         <HelpTOCNode Title="NextULong Method " Url="html/M_SIGENCEScenarioTool_Extensions_RandomExtension_NextULong.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0784e075-a313-47ab-855b-c4f93867e4a9" Title="SQLiteExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_SQLiteExtension.htm">
-      <HelpTOCNode Id="11141a93-e614-48fe-9826-a14818e8e0fd" Title="SQLiteExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_SQLiteExtension.htm">
+    <HelpTOCNode Id="f0587a76-3771-458d-a182-b90894fd0a8e" Title="SQLiteExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_SQLiteExtension.htm">
+      <HelpTOCNode Id="d1f9ba47-f650-40a6-8c7a-12398f35a3a8" Title="SQLiteExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_SQLiteExtension.htm">
         <HelpTOCNode Title="Analyze Method " Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Analyze.htm" />
         <HelpTOCNode Title="DropTable Method " Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_DropTable.htm" />
         <HelpTOCNode Title="GetLastPrimarykey Method " Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_GetLastPrimarykey.htm" />
@@ -388,13 +416,13 @@
         <HelpTOCNode Title="Vacuum Method " Url="html/M_SIGENCEScenarioTool_Extensions_SQLiteExtension_Vacuum.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="38bcf38f-deb6-4024-bc31-7f8b154e9bcd" Title="StringBuilderExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_StringBuilderExtension.htm">
-      <HelpTOCNode Id="a1e6d3ba-7c24-4f4a-baf1-da689f8b86da" Title="StringBuilderExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_StringBuilderExtension.htm">
+    <HelpTOCNode Id="bfcdd2f5-1347-456b-a1f8-1214c3440135" Title="StringBuilderExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_StringBuilderExtension.htm">
+      <HelpTOCNode Id="8aefddde-212a-4f7c-b809-60f19009ebae" Title="StringBuilderExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_StringBuilderExtension.htm">
         <HelpTOCNode Title="AppendLine Method " Url="html/M_SIGENCEScenarioTool_Extensions_StringBuilderExtension_AppendLine.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e42666eb-11f4-4918-ad14-6ed865082a08" Title="StringExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_StringExtension.htm">
-      <HelpTOCNode Id="8bfa4323-afd4-4b76-a76e-fc70ed0cc85e" Title="StringExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_StringExtension.htm">
+    <HelpTOCNode Id="2b81ca47-55ec-47ea-af35-a03099e277fa" Title="StringExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_StringExtension.htm">
+      <HelpTOCNode Id="480892b0-0e0c-417d-83fb-fe5618f67c90" Title="StringExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_StringExtension.htm">
         <HelpTOCNode Title="Capitalize Method " Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_Capitalize.htm" />
         <HelpTOCNode Title="CapitalizeOnlyFirstLetter Method " Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_CapitalizeOnlyFirstLetter.htm" />
         <HelpTOCNode Title="EqualsIgnoreCase Method " Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_EqualsIgnoreCase.htm" />
@@ -405,20 +433,20 @@
         <HelpTOCNode Title="ToColor Method " Url="html/M_SIGENCEScenarioTool_Extensions_StringExtension_ToColor.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="8eebe9ee-b317-456f-b20f-b4d10d4cdfe7" Title="TimeSpanExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_TimeSpanExtension.htm">
-      <HelpTOCNode Id="fb35fcea-b02d-4764-b740-2067d2167bc0" Title="TimeSpanExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_TimeSpanExtension.htm">
+    <HelpTOCNode Id="bc0529bb-6f17-4ed0-9659-49d8679fd69d" Title="TimeSpanExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_TimeSpanExtension.htm">
+      <HelpTOCNode Id="466e27ac-c415-471f-9fda-6b42cb412690" Title="TimeSpanExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_TimeSpanExtension.htm">
         <HelpTOCNode Title="ToHHMMSSString Method " Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToHHMMSSString.htm" />
         <HelpTOCNode Title="ToShortString Method " Url="html/M_SIGENCEScenarioTool_Extensions_TimeSpanExtension_ToShortString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="892fb3ef-c3d3-4f32-b1a6-7ba30801b88e" Title="TypeExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_TypeExtension.htm">
-      <HelpTOCNode Id="0e9e28fa-bdcf-4a26-8211-c502a50e427d" Title="TypeExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_TypeExtension.htm">
+    <HelpTOCNode Id="8cfc47ee-f572-49c5-8ad9-f04692d75a17" Title="TypeExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_TypeExtension.htm">
+      <HelpTOCNode Id="1a636189-dd14-44b6-a8b5-5adb3b15ade3" Title="TypeExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_TypeExtension.htm">
         <HelpTOCNode Title="DerivedFromType Method " Url="html/M_SIGENCEScenarioTool_Extensions_TypeExtension_DerivedFromType.htm" />
         <HelpTOCNode Title="ImplementsInterface Method " Url="html/M_SIGENCEScenarioTool_Extensions_TypeExtension_ImplementsInterface.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="de9fa3f4-a110-46f3-ba13-e2804533308e" Title="XElementExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_XElementExtension.htm">
-      <HelpTOCNode Id="ce894780-0d4a-487d-b813-1f53eab5c1cf" Title="XElementExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_XElementExtension.htm">
+    <HelpTOCNode Id="7fbed3ee-980f-4dd5-b8de-1e6a225a5674" Title="XElementExtension Class" Url="html/T_SIGENCEScenarioTool_Extensions_XElementExtension.htm">
+      <HelpTOCNode Id="4423c7e5-ddfc-4e95-b6d9-0dace2e60af9" Title="XElementExtension Methods" Url="html/Methods_T_SIGENCEScenarioTool_Extensions_XElementExtension.htm">
         <HelpTOCNode Title="GetBitmapSourceFromNode Method " Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetBitmapSourceFromNode.htm" />
         <HelpTOCNode Title="GetBoolAttribute Method " Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetBoolAttribute.htm" />
         <HelpTOCNode Title="GetBoolFromNode Method " Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetBoolFromNode.htm" />
@@ -444,7 +472,7 @@
         <HelpTOCNode Title="GetSingleFromNodePoint Method " Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetSingleFromNodePoint.htm" />
         <HelpTOCNode Title="GetStringAttribute Method " Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringAttribute.htm" />
         <HelpTOCNode Title="GetStringFromCData Method " Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringFromCData.htm" />
-        <HelpTOCNode Id="d6121e56-7f06-491b-8cbb-cc049b75ac5f" Title="GetStringFromNode Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringFromNode.htm">
+        <HelpTOCNode Id="d7ced4c1-935a-4f85-a3ec-58b778e13065" Title="GetStringFromNode Method " Url="html/Overload_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringFromNode.htm">
           <HelpTOCNode Title="GetStringFromNode Method (XElement, String)" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringFromNode.htm" />
           <HelpTOCNode Title="GetStringFromNode Method (XElement, String, String)" Url="html/M_SIGENCEScenarioTool_Extensions_XElementExtension_GetStringFromNode_1.htm" />
         </HelpTOCNode>
@@ -456,29 +484,29 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="18e3a819-a4ab-4310-b1f0-8dacff399f66" Title="SIGENCEScenarioTool.Interfaces" Url="html/N_SIGENCEScenarioTool_Interfaces.htm">
-    <HelpTOCNode Id="738783fc-ba72-4a0c-9ef6-c210e79ed0d4" Title="IXmlExport Interface" Url="html/T_SIGENCEScenarioTool_Interfaces_IXmlExport.htm">
-      <HelpTOCNode Id="7906a8a7-5a1b-4ca1-9943-332aced22a19" Title="IXmlExport Methods" Url="html/Methods_T_SIGENCEScenarioTool_Interfaces_IXmlExport.htm">
+  <HelpTOCNode Id="10dee0c8-45ca-4475-b571-00a783b7a14d" Title="SIGENCEScenarioTool.Interfaces" Url="html/N_SIGENCEScenarioTool_Interfaces.htm">
+    <HelpTOCNode Id="aaa1a63b-9211-4b0d-8e5f-1e07a3a7dc06" Title="IXmlExport Interface" Url="html/T_SIGENCEScenarioTool_Interfaces_IXmlExport.htm">
+      <HelpTOCNode Id="8f17a28b-3921-40cc-84ee-d19088219456" Title="IXmlExport Methods" Url="html/Methods_T_SIGENCEScenarioTool_Interfaces_IXmlExport.htm">
         <HelpTOCNode Title="ToXml Method " Url="html/M_SIGENCEScenarioTool_Interfaces_IXmlExport_ToXml.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="544e43ba-fdac-47e8-8211-717a17453e5c" Title="SIGENCEScenarioTool.Models" Url="html/N_SIGENCEScenarioTool_Models.htm">
-    <HelpTOCNode Id="51c81cf3-14dc-400c-88e0-39a181e543db" Title="AbstractModelBase Class" Url="html/T_SIGENCEScenarioTool_Models_AbstractModelBase.htm">
+  <HelpTOCNode Id="fcf1efe2-7088-4cf1-9b7c-3a44679ae93b" Title="SIGENCEScenarioTool.Models" Url="html/N_SIGENCEScenarioTool_Models.htm">
+    <HelpTOCNode Id="6ba7f8fd-a424-46c6-82f2-4445fa25add6" Title="AbstractModelBase Class" Url="html/T_SIGENCEScenarioTool_Models_AbstractModelBase.htm">
       <HelpTOCNode Title="AbstractModelBase Constructor " Url="html/M_SIGENCEScenarioTool_Models_AbstractModelBase__ctor.htm" />
-      <HelpTOCNode Id="3af8dd45-c0e8-4ffe-b245-8cd2df4ddf35" Title="AbstractModelBase Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_AbstractModelBase.htm">
+      <HelpTOCNode Id="e63d3a83-01ec-49d7-b129-2d4a17456db4" Title="AbstractModelBase Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_AbstractModelBase.htm">
         <HelpTOCNode Title="FirePropertyChanged Method " Url="html/M_SIGENCEScenarioTool_Models_AbstractModelBase_FirePropertyChanged.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e9c3dbb7-6e08-43c4-a7d8-8275bd3a21a2" Title="AbstractModelBase Events" Url="html/Events_T_SIGENCEScenarioTool_Models_AbstractModelBase.htm">
+      <HelpTOCNode Id="abb2bbbf-53bf-4086-a78d-10be8c7fd9a5" Title="AbstractModelBase Events" Url="html/Events_T_SIGENCEScenarioTool_Models_AbstractModelBase.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/E_SIGENCEScenarioTool_Models_AbstractModelBase_PropertyChanged.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="AntennaType Enumeration" Url="html/T_SIGENCEScenarioTool_Models_AntennaType.htm" />
     <HelpTOCNode Title="DeviceSource Enumeration" Url="html/T_SIGENCEScenarioTool_Models_DeviceSource.htm" />
     <HelpTOCNode Title="DeviceType Enumeration" Url="html/T_SIGENCEScenarioTool_Models_DeviceType.htm" />
-    <HelpTOCNode Id="7a63dd7d-ff56-4e5f-8f1c-38ca9421fd63" Title="GeoLocalizationResult Class" Url="html/T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
+    <HelpTOCNode Id="f30fcdb1-1f9f-49f0-9d32-7d155308749e" Title="GeoLocalizationResult Class" Url="html/T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
       <HelpTOCNode Title="GeoLocalizationResult Constructor " Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResult__ctor.htm" />
-      <HelpTOCNode Id="8e350b18-5b17-4f3f-b121-166f859cb2ec" Title="GeoLocalizationResult Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
+      <HelpTOCNode Id="512cac38-b0ba-4293-a009-c3a6563cfc7e" Title="GeoLocalizationResult Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
         <HelpTOCNode Title="Altitude Property " Url="html/P_SIGENCEScenarioTool_Models_GeoLocalizationResult_Altitude.htm" />
         <HelpTOCNode Title="Id Property " Url="html/P_SIGENCEScenarioTool_Models_GeoLocalizationResult_Id.htm" />
         <HelpTOCNode Title="Latitude Property " Url="html/P_SIGENCEScenarioTool_Models_GeoLocalizationResult_Latitude.htm" />
@@ -486,16 +514,16 @@
         <HelpTOCNode Title="Longitude Property " Url="html/P_SIGENCEScenarioTool_Models_GeoLocalizationResult_Longitude.htm" />
         <HelpTOCNode Title="PrimaryKey Property " Url="html/P_SIGENCEScenarioTool_Models_GeoLocalizationResult_PrimaryKey.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5aea3fa7-31e0-469b-b32a-a59d87a00918" Title="GeoLocalizationResult Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
+      <HelpTOCNode Id="c3f6ca05-d330-4ff7-b9e3-f7ed472a19ea" Title="GeoLocalizationResult Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
         <HelpTOCNode Title="Clone Method " Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResult_Clone.htm" />
-        <HelpTOCNode Id="397b5f41-675b-4e70-a5d8-b3d7fefefd2f" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Models_GeoLocalizationResult_Equals.htm">
+        <HelpTOCNode Id="16fa9214-8dc0-4c05-9e51-aec05dda0153" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Models_GeoLocalizationResult_Equals.htm">
           <HelpTOCNode Title="Equals Method (GeoLocalizationResult)" Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResult_Equals.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="FromXml Method " Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResult_FromXml.htm" />
         <HelpTOCNode Title="ToXml Method " Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResult_ToXml.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="GeoLocalizationResult Events" Url="html/Events_T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm" />
-      <HelpTOCNode Id="432cc665-130b-49cd-b647-c877a29e35e4" Title="GeoLocalizationResult Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
+      <HelpTOCNode Id="e65a52a9-6335-48bf-a5a3-c8ce5ae418ca" Title="GeoLocalizationResult Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_GeoLocalizationResult.htm">
         <HelpTOCNode Title="ALTITUDE Field" Url="html/F_SIGENCEScenarioTool_Models_GeoLocalizationResult_ALTITUDE.htm" />
         <HelpTOCNode Title="DEFAULT_ALTITUDE Field" Url="html/F_SIGENCEScenarioTool_Models_GeoLocalizationResult_DEFAULT_ALTITUDE.htm" />
         <HelpTOCNode Title="DEFAULT_ID Field" Url="html/F_SIGENCEScenarioTool_Models_GeoLocalizationResult_DEFAULT_ID.htm" />
@@ -510,8 +538,8 @@
         <HelpTOCNode Title="PRIMARYKEY Field" Url="html/F_SIGENCEScenarioTool_Models_GeoLocalizationResult_PRIMARYKEY.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d32dd09c-2ec3-4b75-b292-0870f2e3667a" Title="GeoLocalizationResultList Class" Url="html/T_SIGENCEScenarioTool_Models_GeoLocalizationResultList.htm">
-      <HelpTOCNode Id="bc4ae165-8de0-4dfb-a2eb-94acf73161a6" Title="GeoLocalizationResultList Constructor " Url="html/Overload_SIGENCEScenarioTool_Models_GeoLocalizationResultList__ctor.htm">
+    <HelpTOCNode Id="743ad359-6989-4914-9652-c24f02f69a15" Title="GeoLocalizationResultList Class" Url="html/T_SIGENCEScenarioTool_Models_GeoLocalizationResultList.htm">
+      <HelpTOCNode Id="ac76c5c3-bc25-45f0-9736-72915d069c11" Title="GeoLocalizationResultList Constructor " Url="html/Overload_SIGENCEScenarioTool_Models_GeoLocalizationResultList__ctor.htm">
         <HelpTOCNode Title="GeoLocalizationResultList Constructor " Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResultList__ctor.htm" />
         <HelpTOCNode Title="GeoLocalizationResultList Constructor (Int32)" Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResultList__ctor_2.htm" />
         <HelpTOCNode Title="GeoLocalizationResultList Constructor (IEnumerable(GeoLocalizationResult))" Url="html/M_SIGENCEScenarioTool_Models_GeoLocalizationResultList__ctor_1.htm" />
@@ -519,9 +547,9 @@
       <HelpTOCNode Title="GeoLocalizationResultList Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_GeoLocalizationResultList.htm" />
       <HelpTOCNode Title="GeoLocalizationResultList Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_GeoLocalizationResultList.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="e4798f14-b90c-477a-9471-af8ee92f44d4" Title="RFDevice Class" Url="html/T_SIGENCEScenarioTool_Models_RFDevice.htm">
+    <HelpTOCNode Id="b431b91a-2824-4a64-86ac-1ce5b6c5d122" Title="RFDevice Class" Url="html/T_SIGENCEScenarioTool_Models_RFDevice.htm">
       <HelpTOCNode Title="RFDevice Constructor " Url="html/M_SIGENCEScenarioTool_Models_RFDevice__ctor.htm" />
-      <HelpTOCNode Id="342db15c-2c87-48ad-878a-b9baad6819de" Title="RFDevice Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RFDevice.htm">
+      <HelpTOCNode Id="ae978747-a51d-4300-b540-a8f268c4bea4" Title="RFDevice Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RFDevice.htm">
         <HelpTOCNode Title="Altitude Property " Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Altitude.htm" />
         <HelpTOCNode Title="AntennaType Property " Url="html/P_SIGENCEScenarioTool_Models_RFDevice_AntennaType.htm" />
         <HelpTOCNode Title="Bandwidth_Hz Property " Url="html/P_SIGENCEScenarioTool_Models_RFDevice_Bandwidth_Hz.htm" />
@@ -545,9 +573,10 @@
         <HelpTOCNode Title="YPos Property " Url="html/P_SIGENCEScenarioTool_Models_RFDevice_YPos.htm" />
         <HelpTOCNode Title="ZPos Property " Url="html/P_SIGENCEScenarioTool_Models_RFDevice_ZPos.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="16b235d3-df94-44f9-b4bf-5feb1e9285d7" Title="RFDevice Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RFDevice.htm">
+      <HelpTOCNode Id="d59b2084-0a04-45a4-a072-a0e6ea96d9be" Title="RFDevice Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RFDevice.htm">
         <HelpTOCNode Title="Clone Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_Clone.htm" />
-        <HelpTOCNode Id="66dae4d0-dbd2-4a20-b301-cca3f8c1147a" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Models_RFDevice_Equals.htm">
+        <HelpTOCNode Title="CreateDummy Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_CreateDummy.htm" />
+        <HelpTOCNode Id="64c300db-e743-4c56-b042-1b245088edf8" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Models_RFDevice_Equals.htm">
           <HelpTOCNode Title="Equals Method (RFDevice)" Url="html/M_SIGENCEScenarioTool_Models_RFDevice_Equals.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="FromXml Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_FromXml.htm" />
@@ -556,7 +585,7 @@
         <HelpTOCNode Title="Validate Method " Url="html/M_SIGENCEScenarioTool_Models_RFDevice_Validate.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="RFDevice Events" Url="html/Events_T_SIGENCEScenarioTool_Models_RFDevice.htm" />
-      <HelpTOCNode Id="67720428-aec7-467e-8bd9-e6ae01475e5f" Title="RFDevice Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_RFDevice.htm">
+      <HelpTOCNode Id="5a98ae0c-2a37-4bea-9f4a-fb4fc0f1ee71" Title="RFDevice Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_RFDevice.htm">
         <HelpTOCNode Title="ALTITUDE Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ALTITUDE.htm" />
         <HelpTOCNode Title="ANTENNATYPE Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ANTENNATYPE.htm" />
         <HelpTOCNode Title="BANDWIDTH_HZ Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_BANDWIDTH_HZ.htm" />
@@ -584,7 +613,6 @@
         <HelpTOCNode Title="DEFAULT_YPOS Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_YPOS.htm" />
         <HelpTOCNode Title="DEFAULT_ZPOS Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEFAULT_ZPOS.htm" />
         <HelpTOCNode Title="DEVICESOURCE Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DEVICESOURCE.htm" />
-        <HelpTOCNode Title="DUMMY Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_DUMMY.htm" />
         <HelpTOCNode Title="GAIN_DB Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_GAIN_DB.htm" />
         <HelpTOCNode Title="ID Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ID.htm" />
         <HelpTOCNode Title="LATITUDE Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_LATITUDE.htm" />
@@ -604,8 +632,8 @@
         <HelpTOCNode Title="ZPOS Field" Url="html/F_SIGENCEScenarioTool_Models_RFDevice_ZPOS.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0b79e940-c439-4528-bf29-ae5cd9eea2e1" Title="RFDeviceExtensions Class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceExtensions.htm">
-      <HelpTOCNode Id="d9f7a9e5-a15c-4eb9-b133-b4ba8af2b9b2" Title="RFDeviceExtensions Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RFDeviceExtensions.htm">
+    <HelpTOCNode Id="01f3d580-5b3e-4ca0-9940-acc1d5d6b6cc" Title="RFDeviceExtensions Class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceExtensions.htm">
+      <HelpTOCNode Id="e040f4be-72c7-4102-b5c7-bbae3f385ada" Title="RFDeviceExtensions Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RFDeviceExtensions.htm">
         <HelpTOCNode Title="WithAltitude Method " Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithAltitude.htm" />
         <HelpTOCNode Title="WithAntennaType Method " Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithAntennaType.htm" />
         <HelpTOCNode Title="WithBandwidth_Hz Method " Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithBandwidth_Hz.htm" />
@@ -630,20 +658,20 @@
         <HelpTOCNode Title="WithZPos Method " Url="html/M_SIGENCEScenarioTool_Models_RFDeviceExtensions_WithZPos.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="7e92cb4a-60cd-4391-8f0f-ea577c1bae4d" Title="RFDeviceList Class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceList.htm">
-      <HelpTOCNode Id="a2839d78-1af0-439c-9e86-24a4778b241c" Title="RFDeviceList Constructor " Url="html/Overload_SIGENCEScenarioTool_Models_RFDeviceList__ctor.htm">
+    <HelpTOCNode Id="9470207f-df55-44db-906e-993de1670185" Title="RFDeviceList Class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceList.htm">
+      <HelpTOCNode Id="4d05ff3d-6c2c-4ce8-9bd8-9ce2a6d44c28" Title="RFDeviceList Constructor " Url="html/Overload_SIGENCEScenarioTool_Models_RFDeviceList__ctor.htm">
         <HelpTOCNode Title="RFDeviceList Constructor " Url="html/M_SIGENCEScenarioTool_Models_RFDeviceList__ctor.htm" />
         <HelpTOCNode Title="RFDeviceList Constructor (Int32)" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceList__ctor_2.htm" />
         <HelpTOCNode Title="RFDeviceList Constructor (IEnumerable(RFDevice))" Url="html/M_SIGENCEScenarioTool_Models_RFDeviceList__ctor_1.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="RFDeviceList Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RFDeviceList.htm" />
-      <HelpTOCNode Id="9b51cbfb-53f4-4322-b7a5-dd1dd439d5a7" Title="RFDeviceList Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RFDeviceList.htm">
+      <HelpTOCNode Id="05be25af-df07-4237-82d5-895160ae11a9" Title="RFDeviceList Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RFDeviceList.htm">
         <HelpTOCNode Title="CreateRandomizedRFDeviceList Method " Url="html/M_SIGENCEScenarioTool_Models_RFDeviceList_CreateRandomizedRFDeviceList.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="8bbbc117-8502-4a18-b5e7-454e381135dd" Title="RFDeviceTooltips Class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceTooltips.htm">
+    <HelpTOCNode Id="6f385457-50a9-4ba9-8c7c-29b57968c462" Title="RFDeviceTooltips Class" Url="html/T_SIGENCEScenarioTool_Models_RFDeviceTooltips.htm">
       <HelpTOCNode Title="RFDeviceTooltips Constructor " Url="html/M_SIGENCEScenarioTool_Models_RFDeviceTooltips__ctor.htm" />
-      <HelpTOCNode Id="3dccdc94-e0cc-44cd-97cc-0d2170c26a68" Title="RFDeviceTooltips Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RFDeviceTooltips.htm">
+      <HelpTOCNode Id="9c4deb7d-475f-4327-ac34-3aa06c834a50" Title="RFDeviceTooltips Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RFDeviceTooltips.htm">
         <HelpTOCNode Title="TOOLTIP_ALTITUDE Property " Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_ALTITUDE.htm" />
         <HelpTOCNode Title="TOOLTIP_ANTENNATYPE Property " Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_ANTENNATYPE.htm" />
         <HelpTOCNode Title="TOOLTIP_BANDWIDTH_HZ Property " Url="html/P_SIGENCEScenarioTool_Models_RFDeviceTooltips_TOOLTIP_BANDWIDTH_HZ.htm" />
@@ -671,20 +699,20 @@
     </HelpTOCNode>
     <HelpTOCNode Title="Servity Enumeration" Url="html/T_SIGENCEScenarioTool_Models_Servity.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="6024936c-26af-46b1-b85e-1de259ffb007" Title="SIGENCEScenarioTool.Models.MetaInformation" Url="html/N_SIGENCEScenarioTool_Models_MetaInformation.htm">
-    <HelpTOCNode Id="b19392b0-e41d-400b-9301-9963bbfde6c3" Title="ScenarioMetaInformation Class" Url="html/T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
+  <HelpTOCNode Id="4a2ac9f0-66aa-464e-b4af-a59c4f5ac3d5" Title="SIGENCEScenarioTool.Models.MetaInformation" Url="html/N_SIGENCEScenarioTool_Models_MetaInformation.htm">
+    <HelpTOCNode Id="9fa6a2c5-4be9-41b0-a230-c6b984083c79" Title="ScenarioMetaInformation Class" Url="html/T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
       <HelpTOCNode Title="ScenarioMetaInformation Constructor " Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation__ctor.htm" />
-      <HelpTOCNode Id="cbcf1ac9-c70f-4897-875f-8564278feca0" Title="ScenarioMetaInformation Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
+      <HelpTOCNode Id="1b8c83e1-488c-4ff5-8519-91ea9a3d8aae" Title="ScenarioMetaInformation Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
         <HelpTOCNode Title="ApplicationContext Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_ApplicationContext.htm" />
         <HelpTOCNode Title="ContactPerson Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_ContactPerson.htm" />
         <HelpTOCNode Title="DescriptionMarkdown Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DescriptionMarkdown.htm" />
         <HelpTOCNode Title="DescriptionStylesheet Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DescriptionStylesheet.htm" />
         <HelpTOCNode Title="Version Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Version.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3dd91291-1822-4422-a197-9ba7b39eb4ce" Title="ScenarioMetaInformation Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
+      <HelpTOCNode Id="aabe7e30-b486-43f9-8a74-68f0b5a0f63d" Title="ScenarioMetaInformation Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
         <HelpTOCNode Title="Clear Method " Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Clear.htm" />
         <HelpTOCNode Title="Clone Method " Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Clone.htm" />
-        <HelpTOCNode Id="49d2ea99-5f36-4a60-a352-5a099b194a07" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Equals.htm">
+        <HelpTOCNode Id="c0b8c542-efb5-48fa-b08b-b2704d0a6361" Title="Equals Method " Url="html/Overload_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Equals.htm">
           <HelpTOCNode Title="Equals Method (ScenarioMetaInformation)" Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_Equals.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="FromXml Method " Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_FromXml.htm" />
@@ -694,7 +722,7 @@
         <HelpTOCNode Title="ToXml Method " Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_ToXml.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="ScenarioMetaInformation Events" Url="html/Events_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm" />
-      <HelpTOCNode Id="14fbce14-2d51-4ede-9df9-34b3b56e63cf" Title="ScenarioMetaInformation Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
+      <HelpTOCNode Id="80ba9135-a271-4898-a446-32450cbff43d" Title="ScenarioMetaInformation Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation.htm">
         <HelpTOCNode Title="APPLICATIONCONTEXT Field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_APPLICATIONCONTEXT.htm" />
         <HelpTOCNode Title="CONTACTPERSON Field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_CONTACTPERSON.htm" />
         <HelpTOCNode Title="DEFAULT_APPLICATIONCONTEXT Field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_DEFAULT_APPLICATIONCONTEXT.htm" />
@@ -707,9 +735,9 @@
         <HelpTOCNode Title="VERSION Field" Url="html/F_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformation_VERSION.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d78c6c50-f8f5-4998-b638-55f7383c34f0" Title="ScenarioMetaInformationTooltips Class" Url="html/T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips.htm">
+    <HelpTOCNode Id="c436feb9-9870-4934-9c58-723abfdb7f5b" Title="ScenarioMetaInformationTooltips Class" Url="html/T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips.htm">
       <HelpTOCNode Title="ScenarioMetaInformationTooltips Constructor " Url="html/M_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips__ctor.htm" />
-      <HelpTOCNode Id="f843d038-3a92-4ec9-96fa-3e554586b55a" Title="ScenarioMetaInformationTooltips Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips.htm">
+      <HelpTOCNode Id="d28f9fc8-d777-45de-b067-918f5a633f31" Title="ScenarioMetaInformationTooltips Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips.htm">
         <HelpTOCNode Title="TOOLTIP_APPLICATIONCONTEXT Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_APPLICATIONCONTEXT.htm" />
         <HelpTOCNode Title="TOOLTIP_CONTACTPERSON Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_CONTACTPERSON.htm" />
         <HelpTOCNode Title="TOOLTIP_DESCRIPTIONMARKDOWN Property " Url="html/P_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips_TOOLTIP_DESCRIPTIONMARKDOWN.htm" />
@@ -719,69 +747,71 @@
       <HelpTOCNode Title="ScenarioMetaInformationTooltips Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_MetaInformation_ScenarioMetaInformationTooltips.htm" />
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="c04882a7-213a-4f85-86db-46682adbe5b5" Title="SIGENCEScenarioTool.Models.RxTxTypes" Url="html/N_SIGENCEScenarioTool_Models_RxTxTypes.htm">
-    <HelpTOCNode Id="bdc65f4c-affd-4ba3-9efa-b10e6ff6e6a2" Title="RxTxType Class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
-      <HelpTOCNode Id="0d6241fa-55d5-4abb-9617-b6baccf452cb" Title="RxTxType Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
+  <HelpTOCNode Id="2c47b908-8d9a-43f9-b961-ef1af85973d0" Title="SIGENCEScenarioTool.Models.RxTxTypes" Url="html/N_SIGENCEScenarioTool_Models_RxTxTypes.htm">
+    <HelpTOCNode Id="cdf2d610-de67-4196-8f48-f35ab16809c8" Title="RxTxType Class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
+      <HelpTOCNode Id="800b3020-a00e-4f88-af8d-6fe8484461e4" Title="RxTxType Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
         <HelpTOCNode Title="Name Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Name.htm" />
         <HelpTOCNode Title="Remark Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Remark.htm" />
         <HelpTOCNode Title="Value Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Value.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7ed75fe7-e186-4682-9604-2a0cd2b588b3" Title="RxTxType Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
+      <HelpTOCNode Id="82d103a6-834f-497d-96f1-83d4ee54ccb6" Title="RxTxType Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5e466a38-1e2e-4ea4-885e-20629cdff7fa" Title="RxTxType Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
+      <HelpTOCNode Id="41afb99b-419a-4cb4-8afa-84af39f3ba3a" Title="RxTxType Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
         <HelpTOCNode Title="Implicit Conversion (RxTxType to Int32)" Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_op_Implicit.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="69f8a32c-20b2-40e3-b5f1-472c63e01cb6" Title="RxTxType Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
+      <HelpTOCNode Id="f5ac5547-9e32-48c5-9b00-43a62bf8946e" Title="RxTxType Fields" Url="html/Fields_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType.htm">
         <HelpTOCNode Title="Empty Field" Url="html/F_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_Empty.htm" />
         <HelpTOCNode Title="EmptyId Field" Url="html/F_SIGENCEScenarioTool_Models_RxTxTypes_RxTxType_EmptyId.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="b08f1fdc-c8b3-457e-a11a-86fe337c563f" Title="RxTxTypes Class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm">
-      <HelpTOCNode Id="e3e9f527-c20b-4f8a-8e70-0191649635b9" Title="RxTxTypes Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm">
+    <HelpTOCNode Id="209ef6a9-629f-4349-9d33-bc69c5e2ba16" Title="RxTxTypes Class" Url="html/T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm">
+      <HelpTOCNode Id="7c04c7bf-ce8e-4b1f-aa7c-c550e9b81ec3" Title="RxTxTypes Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm">
         <HelpTOCNode Title="AIS Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_AIS.htm" />
         <HelpTOCNode Title="B200mini Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_B200mini.htm" />
         <HelpTOCNode Title="FMBroadcast Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FMBroadcast.htm" />
         <HelpTOCNode Title="GPSJammer Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GPSJammer.htm" />
+        <HelpTOCNode Title="GSM Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_GSM.htm" />
         <HelpTOCNode Title="HackRF Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_HackRF.htm" />
         <HelpTOCNode Title="IdealSDR Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_IdealSDR.htm" />
         <HelpTOCNode Title="Iridium Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Iridium.htm" />
         <HelpTOCNode Title="LTE Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_LTE.htm" />
         <HelpTOCNode Title="NFMRadio Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_NFMRadio.htm" />
         <HelpTOCNode Title="QPSK Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_QPSK.htm" />
+        <HelpTOCNode Title="SBandRadar Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SBandRadar.htm" />
         <HelpTOCNode Title="SIN Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_SIN.htm" />
         <HelpTOCNode Title="TwinRx Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_TwinRx.htm" />
         <HelpTOCNode Title="Unknown Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Unknown.htm" />
         <HelpTOCNode Title="Values Property " Url="html/P_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_Values.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="18110369-eeda-43e4-8366-8cbc778b93a3" Title="RxTxTypes Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm">
+      <HelpTOCNode Id="16d6baf6-70e3-4b1a-98ca-c71ecddb20c0" Title="RxTxTypes Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes.htm">
         <HelpTOCNode Title="FromInt Method " Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromInt.htm" />
         <HelpTOCNode Title="FromString Method " Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_FromString.htm" />
         <HelpTOCNode Title="IsValidForId Method " Url="html/M_SIGENCEScenarioTool_Models_RxTxTypes_RxTxTypes_IsValidForId.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="2919e011-6b79-4e81-b3fd-7538ce631279" Title="SIGENCEScenarioTool.Models.Templates" Url="html/N_SIGENCEScenarioTool_Models_Templates.htm">
-    <HelpTOCNode Id="b6beba51-a750-455b-bcb2-3adf44330049" Title="RFDeviceTemplate Class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm">
+  <HelpTOCNode Id="eaa0b0dc-7552-494b-bf5e-d924ed50a896" Title="SIGENCEScenarioTool.Models.Templates" Url="html/N_SIGENCEScenarioTool_Models_Templates.htm">
+    <HelpTOCNode Id="2a98b936-3587-463d-9904-6494525606ab" Title="RFDeviceTemplate Class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm">
       <HelpTOCNode Title="RFDeviceTemplate Constructor " Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate__ctor.htm" />
-      <HelpTOCNode Id="c72a9519-95ae-461a-9318-c98455df3be9" Title="RFDeviceTemplate Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm">
+      <HelpTOCNode Id="1426f37c-e532-488b-9ddf-28351cdf8b12" Title="RFDeviceTemplate Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm">
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="d9f8a6f9-30ff-4ab0-8382-88131d671bc7" Title="RFDeviceTemplate Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm">
+      <HelpTOCNode Id="fb2d173a-340f-49bc-ad27-67459b57d098" Title="RFDeviceTemplate Type Conversions" Url="html/Operators_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate.htm">
         <HelpTOCNode Title="Implicit Conversion (RFDeviceTemplate to RFDevice)" Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplate_op_Implicit.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1bc15b35-654e-4d6a-bf9c-7499646ffde3" Title="RFDeviceTemplateCollection Class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm">
+    <HelpTOCNode Id="fe97cdff-047e-4c18-a9ce-28d33ca666be" Title="RFDeviceTemplateCollection Class" Url="html/T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm">
       <HelpTOCNode Title="RFDeviceTemplateCollection Constructor " Url="html/M_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection__ctor.htm" />
       <HelpTOCNode Title="RFDeviceTemplateCollection Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
       <HelpTOCNode Title="RFDeviceTemplateCollection Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
       <HelpTOCNode Title="RFDeviceTemplateCollection Events" Url="html/Events_T_SIGENCEScenarioTool_Models_Templates_RFDeviceTemplateCollection.htm" />
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="069c1fdf-b8a9-47de-b48d-55870b65fbeb" Title="SIGENCEScenarioTool.Models.Validation" Url="html/N_SIGENCEScenarioTool_Models_Validation.htm">
-    <HelpTOCNode Id="6a459051-86e6-4855-abec-fa1c70a163c9" Title="ValidationResult Class" Url="html/T_SIGENCEScenarioTool_Models_Validation_ValidationResult.htm">
+  <HelpTOCNode Id="9a5147ac-d9b9-45d3-8ccb-914eea89be2b" Title="SIGENCEScenarioTool.Models.Validation" Url="html/N_SIGENCEScenarioTool_Models_Validation.htm">
+    <HelpTOCNode Id="bd133146-84e3-49cc-90e7-66efd0ce8faa" Title="ValidationResult Class" Url="html/T_SIGENCEScenarioTool_Models_Validation_ValidationResult.htm">
       <HelpTOCNode Title="ValidationResult Constructor " Url="html/M_SIGENCEScenarioTool_Models_Validation_ValidationResult__ctor.htm" />
-      <HelpTOCNode Id="fbe76e39-cb2c-400d-836c-e8a28461e898" Title="ValidationResult Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_Validation_ValidationResult.htm">
+      <HelpTOCNode Id="357f6634-bf9e-4f72-ba3f-7364af6c77f8" Title="ValidationResult Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_Validation_ValidationResult.htm">
         <HelpTOCNode Title="Id Property " Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Id.htm" />
         <HelpTOCNode Title="Message Property " Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_Message.htm" />
         <HelpTOCNode Title="PropertyName Property " Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResult_PropertyName.htm" />
@@ -792,24 +822,24 @@
       </HelpTOCNode>
       <HelpTOCNode Title="ValidationResult Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Validation_ValidationResult.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="69e08210-fd83-4742-a1e3-a564a8a969ae" Title="ValidationResultList Class" Url="html/T_SIGENCEScenarioTool_Models_Validation_ValidationResultList.htm">
+    <HelpTOCNode Id="e38e221a-672a-499c-be4d-33d86699f85b" Title="ValidationResultList Class" Url="html/T_SIGENCEScenarioTool_Models_Validation_ValidationResultList.htm">
       <HelpTOCNode Title="ValidationResultList Constructor " Url="html/M_SIGENCEScenarioTool_Models_Validation_ValidationResultList__ctor.htm" />
-      <HelpTOCNode Id="fcd9f88f-0eb5-4d91-a79a-111e4ad76dcf" Title="ValidationResultList Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_Validation_ValidationResultList.htm">
+      <HelpTOCNode Id="a7a162dd-af34-45fa-a23c-b3a876fc1466" Title="ValidationResultList Properties" Url="html/Properties_T_SIGENCEScenarioTool_Models_Validation_ValidationResultList.htm">
         <HelpTOCNode Title="Empty Property " Url="html/P_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Empty.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e8a2f282-45f3-4e0e-951b-6d3aa362d765" Title="ValidationResultList Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Validation_ValidationResultList.htm">
-        <HelpTOCNode Id="fa967734-f368-4b77-b3af-38f455bf4edd" Title="Add Method " Url="html/Overload_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Add.htm">
+      <HelpTOCNode Id="f240410d-7bfe-46d8-affc-47a73ddd7b33" Title="ValidationResultList Methods" Url="html/Methods_T_SIGENCEScenarioTool_Models_Validation_ValidationResultList.htm">
+        <HelpTOCNode Id="21427e22-f5c0-40b8-8d92-f7b6742b78a2" Title="Add Method " Url="html/Overload_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Add.htm">
           <HelpTOCNode Title="Add Method (Servity, String, Object, String, Object)" Url="html/M_SIGENCEScenarioTool_Models_Validation_ValidationResultList_Add.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="b73db6f0-70c3-476a-9700-97d6de72d175" Title="SIGENCEScenarioTool.Tools" Url="html/N_SIGENCEScenarioTool_Tools.htm">
-    <HelpTOCNode Id="2994c69f-5234-4c7f-9f82-dfb3e132f831" Title="ApplicationResource Class" Url="html/T_SIGENCEScenarioTool_Tools_ApplicationResource.htm">
-      <HelpTOCNode Id="a5d98bf4-e82c-4368-9804-54d19db99d79" Title="ApplicationResource Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_ApplicationResource.htm">
+  <HelpTOCNode Id="2f296466-13f5-4ef3-aaae-6317d8314215" Title="SIGENCEScenarioTool.Tools" Url="html/N_SIGENCEScenarioTool_Tools.htm">
+    <HelpTOCNode Id="2ad7f411-d59d-4803-8a86-5582b7584578" Title="ApplicationResource Class" Url="html/T_SIGENCEScenarioTool_Tools_ApplicationResource.htm">
+      <HelpTOCNode Id="0e2e0cf5-763b-4c6f-ac12-a922f9eada66" Title="ApplicationResource Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_ApplicationResource.htm">
         <HelpTOCNode Title="Assembly Property " Url="html/P_SIGENCEScenarioTool_Tools_ApplicationResource_Assembly.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="93a8b106-47b0-4d81-a34b-9e472715ddcf" Title="ApplicationResource Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_ApplicationResource.htm">
+      <HelpTOCNode Id="f1e75c09-96e0-499d-9c85-1b14b2ba477c" Title="ApplicationResource Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_ApplicationResource.htm">
         <HelpTOCNode Title="Contains Method " Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_Contains.htm" />
         <HelpTOCNode Title="GetEmbeddedResourcenNames Method " Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_GetEmbeddedResourcenNames.htm" />
         <HelpTOCNode Title="ReadResourceAsByteArray Method " Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsByteArray.htm" />
@@ -817,8 +847,8 @@
         <HelpTOCNode Title="ReadResourceAsXDocument Method " Url="html/M_SIGENCEScenarioTool_Tools_ApplicationResource_ReadResourceAsXDocument.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="77155832-8a9f-4610-a17b-bb800e19191e" Title="Blink Class" Url="html/T_SIGENCEScenarioTool_Tools_Blink.htm">
-      <HelpTOCNode Id="882f58a1-b48c-4b1a-83aa-3da6e833dfd1" Title="Blink Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Blink.htm">
+    <HelpTOCNode Id="54e79d08-ad1d-41ac-bb89-34daf5e502a4" Title="Blink Class" Url="html/T_SIGENCEScenarioTool_Tools_Blink.htm">
+      <HelpTOCNode Id="01a6622c-7250-49bf-8160-c5749a8cc802" Title="Blink Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Blink.htm">
         <HelpTOCNode Title="FadeWhiteToBlack Method " Url="html/M_SIGENCEScenarioTool_Tools_Blink_FadeWhiteToBlack.htm" />
         <HelpTOCNode Title="Off Method " Url="html/M_SIGENCEScenarioTool_Tools_Blink_Off.htm" />
         <HelpTOCNode Title="On Method " Url="html/M_SIGENCEScenarioTool_Tools_Blink_On.htm" />
@@ -827,10 +857,10 @@
         <HelpTOCNode Title="Test Method " Url="html/M_SIGENCEScenarioTool_Tools_Blink_Test.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="12604e61-5678-48df-9378-6e42c14ff2c0" Title="ExtractIcon Class" Url="html/T_SIGENCEScenarioTool_Tools_ExtractIcon.htm">
-      <HelpTOCNode Id="e0a651e2-4fbb-4ff2-b9d3-786bc5960117" Title="ExtractIcon Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_ExtractIcon.htm">
+    <HelpTOCNode Id="4c361bfb-d579-4a60-b890-c684c3761fe4" Title="ExtractIcon Class" Url="html/T_SIGENCEScenarioTool_Tools_ExtractIcon.htm">
+      <HelpTOCNode Id="990a1f65-d436-445e-9f6c-0ad93818b5b7" Title="ExtractIcon Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_ExtractIcon.htm">
         <HelpTOCNode Title="ExtractIconEx Method " Url="html/M_SIGENCEScenarioTool_Tools_ExtractIcon_ExtractIconEx.htm" />
-        <HelpTOCNode Id="c9a59034-00d7-4fc2-a28b-8994c1ee65a2" Title="GetIcon Method " Url="html/Overload_SIGENCEScenarioTool_Tools_ExtractIcon_GetIcon.htm">
+        <HelpTOCNode Id="8a6a02d7-c8c8-4309-b081-ea559afd218a" Title="GetIcon Method " Url="html/Overload_SIGENCEScenarioTool_Tools_ExtractIcon_GetIcon.htm">
           <HelpTOCNode Title="GetIcon Method (String)" Url="html/M_SIGENCEScenarioTool_Tools_ExtractIcon_GetIcon.htm" />
           <HelpTOCNode Title="GetIcon Method (String, Boolean)" Url="html/M_SIGENCEScenarioTool_Tools_ExtractIcon_GetIcon_1.htm" />
           <HelpTOCNode Title="GetIcon Method (String, Int32)" Url="html/M_SIGENCEScenarioTool_Tools_ExtractIcon_GetIcon_2.htm" />
@@ -838,39 +868,39 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bce367eb-1e32-4487-9365-d82e3b6b25f3" Title="GenericFoldingStrategy Class" Url="html/T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm">
+    <HelpTOCNode Id="2a2f1454-1f59-4cc3-ad9f-3fc04c6aaaf2" Title="GenericFoldingStrategy Class" Url="html/T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm">
       <HelpTOCNode Title="GenericFoldingStrategy Constructor " Url="html/M_SIGENCEScenarioTool_Tools_GenericFoldingStrategy__ctor.htm" />
-      <HelpTOCNode Id="7dfcb0b9-5217-49ac-a62f-2e2f6ecf44bc" Title="GenericFoldingStrategy Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm">
+      <HelpTOCNode Id="ea2b17dc-f4ad-4c1f-a473-b51c62c721f5" Title="GenericFoldingStrategy Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm">
         <HelpTOCNode Title="GenerateFoldMarkers Method " Url="html/M_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_GenerateFoldMarkers.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e2534d63-fb33-4044-9e7f-eaacb6860aa9" Title="GenericFoldingStrategy Fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm">
+      <HelpTOCNode Id="198745c8-f2ff-4796-b0aa-15dab98363cb" Title="GenericFoldingStrategy Fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_GenericFoldingStrategy.htm">
         <HelpTOCNode Title="REGION_END Field" Url="html/F_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_REGION_END.htm" />
         <HelpTOCNode Title="REGION_START Field" Url="html/F_SIGENCEScenarioTool_Tools_GenericFoldingStrategy_REGION_START.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="b6fcc9fd-8811-4282-a113-66fe7ee6168d" Title="GeoAngle Class" Url="html/T_SIGENCEScenarioTool_Tools_GeoAngle.htm">
+    <HelpTOCNode Id="f50ceee5-bb57-43e2-b0b1-e7054d8296a2" Title="GeoAngle Class" Url="html/T_SIGENCEScenarioTool_Tools_GeoAngle.htm">
       <HelpTOCNode Title="GeoAngle Constructor " Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle__ctor.htm" />
-      <HelpTOCNode Id="8ff45efc-1ae7-4746-ab39-0142c029da08" Title="GeoAngle Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_GeoAngle.htm">
+      <HelpTOCNode Id="c7c5a3b2-874c-439c-9e34-5f3b8c6022f0" Title="GeoAngle Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_GeoAngle.htm">
         <HelpTOCNode Title="Degrees Property " Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Degrees.htm" />
         <HelpTOCNode Title="IsNegative Property " Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_IsNegative.htm" />
         <HelpTOCNode Title="Milliseconds Property " Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Milliseconds.htm" />
         <HelpTOCNode Title="Minutes Property " Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Minutes.htm" />
         <HelpTOCNode Title="Seconds Property " Url="html/P_SIGENCEScenarioTool_Tools_GeoAngle_Seconds.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="cf5fd2fc-5642-4c2c-87b5-deb7f295f6c2" Title="GeoAngle Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GeoAngle.htm">
+      <HelpTOCNode Id="7e056805-6bbb-441c-9335-8a6953efb4b9" Title="GeoAngle Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GeoAngle.htm">
         <HelpTOCNode Title="FromDouble Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle_FromDouble.htm" />
-        <HelpTOCNode Id="7c8fef5b-0b3c-4bfa-aca5-46235d8346e9" Title="ToString Method " Url="html/Overload_SIGENCEScenarioTool_Tools_GeoAngle_ToString.htm">
+        <HelpTOCNode Id="fd412e40-6c6c-4aec-9aff-ea0b6cfc972b" Title="ToString Method " Url="html/Overload_SIGENCEScenarioTool_Tools_GeoAngle_ToString.htm">
           <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle_ToString.htm" />
           <HelpTOCNode Title="ToString Method (String)" Url="html/M_SIGENCEScenarioTool_Tools_GeoAngle_ToString_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="8fa40489-857c-4872-893a-61f2775de180" Title="GeoHelper Class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm">
-      <HelpTOCNode Id="a7cf0533-2157-4abd-b012-02e65c517ad2" Title="GeoHelper Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GeoHelper.htm">
+    <HelpTOCNode Id="135fca9c-52d6-4535-b63e-15e4c20c95ea" Title="GeoHelper Class" Url="html/T_SIGENCEScenarioTool_Tools_GeoHelper.htm">
+      <HelpTOCNode Id="cf04e5ef-f5f9-4b98-bf99-befc7d8d2739" Title="GeoHelper Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_GeoHelper.htm">
         <HelpTOCNode Title="CreateCoordinate Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreateCoordinate.htm" />
         <HelpTOCNode Title="CreatePoint Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePoint.htm" />
         <HelpTOCNode Title="CreatePolygon Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_CreatePolygon.htm" />
-        <HelpTOCNode Id="7265cdc1-4917-4863-af66-2921d45c3459" Title="ToCoordinate Method " Url="html/Overload_SIGENCEScenarioTool_Tools_GeoHelper_ToCoordinate.htm">
+        <HelpTOCNode Id="ec2b25b4-b9f9-40b5-98ee-2630d9c77dc1" Title="ToCoordinate Method " Url="html/Overload_SIGENCEScenarioTool_Tools_GeoHelper_ToCoordinate.htm">
           <HelpTOCNode Title="ToCoordinate Method (PointLatLng)" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToCoordinate.htm" />
           <HelpTOCNode Title="ToCoordinate Method (Point)" Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToCoordinate_1.htm" />
         </HelpTOCNode>
@@ -879,7 +909,7 @@
         <HelpTOCNode Title="ToPointLatLng Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToPointLatLng.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Tools_GeoHelper_ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="061fb78f-bffa-48d1-8d53-6414b69e8609" Title="GeoHelper Fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_GeoHelper.htm">
+      <HelpTOCNode Id="6e55e9e3-6e0b-4195-9562-2ad400dd1cde" Title="GeoHelper Fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_GeoHelper.htm">
         <HelpTOCNode Title="AMPHITHEATER Field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_AMPHITHEATER.htm" />
         <HelpTOCNode Title="BARBARATHERMEN Field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_BARBARATHERMEN.htm" />
         <HelpTOCNode Title="GERMANY_CENTERPOINT Field" Url="html/F_SIGENCEScenarioTool_Tools_GeoHelper_GERMANY_CENTERPOINT.htm" />
@@ -890,77 +920,77 @@
     </HelpTOCNode>
     <HelpTOCNode Title="GeoTag Enumeration" Url="html/T_SIGENCEScenarioTool_Tools_GeoTag.htm" />
     <HelpTOCNode Title="Highway Enumeration" Url="html/T_SIGENCEScenarioTool_Tools_Highway.htm" />
-    <HelpTOCNode Id="9cbfaf8f-6a8d-42ca-af8c-c6e1cc1da6b7" Title="LoremIpsum Class" Url="html/T_SIGENCEScenarioTool_Tools_LoremIpsum.htm">
+    <HelpTOCNode Id="24b22629-628c-4bbb-9005-2fac945dfeb8" Title="LoremIpsum Class" Url="html/T_SIGENCEScenarioTool_Tools_LoremIpsum.htm">
       <HelpTOCNode Title="LoremIpsum Constructor " Url="html/M_SIGENCEScenarioTool_Tools_LoremIpsum__ctor.htm" />
-      <HelpTOCNode Id="e2a1dbaa-77a2-4f61-8972-0510466bffef" Title="LoremIpsum Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_LoremIpsum.htm">
+      <HelpTOCNode Id="8526930f-b7ef-4ef7-9caf-d708d1b0821a" Title="LoremIpsum Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_LoremIpsum.htm">
         <HelpTOCNode Title="GetLoremIpsum Method " Url="html/M_SIGENCEScenarioTool_Tools_LoremIpsum_GetLoremIpsum.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="56f0de03-7aef-45dd-b2ce-315cb94a65fb" Title="MarkdownSyntaxModeFileProvider Class" Url="html/T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm">
+    <HelpTOCNode Id="7b420384-f27a-489f-ad1f-8137f4f54894" Title="MarkdownSyntaxModeFileProvider Class" Url="html/T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm">
       <HelpTOCNode Title="MarkdownSyntaxModeFileProvider Constructor " Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider__ctor.htm" />
-      <HelpTOCNode Id="8dee013f-5c46-441d-a7c9-529b99f90525" Title="MarkdownSyntaxModeFileProvider Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm">
+      <HelpTOCNode Id="13efdd86-a1e7-44aa-9c0f-72e3a58dafb1" Title="MarkdownSyntaxModeFileProvider Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm">
         <HelpTOCNode Title="SyntaxModes Property " Url="html/P_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_SyntaxModes.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="51b6141e-4d35-4ddd-ac29-74ffe7dd4d88" Title="MarkdownSyntaxModeFileProvider Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm">
+      <HelpTOCNode Id="e5e8fa3f-5801-41fa-9dc3-fa3ff1377771" Title="MarkdownSyntaxModeFileProvider Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider.htm">
         <HelpTOCNode Title="GetSyntaxModeFile Method " Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_GetSyntaxModeFile.htm" />
         <HelpTOCNode Title="UpdateSyntaxModeList Method " Url="html/M_SIGENCEScenarioTool_Tools_MarkdownSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1bcd1020-771e-465d-bcee-4d357106defb" Title="MB Class" Url="html/T_SIGENCEScenarioTool_Tools_MB.htm">
-      <HelpTOCNode Id="1386e6c5-7aef-4232-890b-6f403fcaaebe" Title="MB Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_MB.htm">
+    <HelpTOCNode Id="2b9e6b20-2165-450d-acd1-1e9366425d73" Title="MB Class" Url="html/T_SIGENCEScenarioTool_Tools_MB.htm">
+      <HelpTOCNode Id="9c59f019-2a93-4178-bf77-337b3463dd75" Title="MB Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_MB.htm">
         <HelpTOCNode Title="Error Method " Url="html/M_SIGENCEScenarioTool_Tools_MB_Error.htm" />
         <HelpTOCNode Title="HereIAm Method " Url="html/M_SIGENCEScenarioTool_Tools_MB_HereIAm.htm" />
-        <HelpTOCNode Id="646c236a-5540-4c3b-9556-2bf7603d5f98" Title="Information Method " Url="html/Overload_SIGENCEScenarioTool_Tools_MB_Information.htm">
+        <HelpTOCNode Id="3619325e-2eb5-46ba-8687-3e43ff705ca6" Title="Information Method " Url="html/Overload_SIGENCEScenarioTool_Tools_MB_Information.htm">
           <HelpTOCNode Title="Information Method (String)" Url="html/M_SIGENCEScenarioTool_Tools_MB_Information.htm" />
           <HelpTOCNode Title="Information Method (String, Object[])" Url="html/M_SIGENCEScenarioTool_Tools_MB_Information_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="NotYetImplemented Method " Url="html/M_SIGENCEScenarioTool_Tools_MB_NotYetImplemented.htm" />
-        <HelpTOCNode Id="9ebcb4a6-5e00-4168-90b0-aaafce925445" Title="Warning Method " Url="html/Overload_SIGENCEScenarioTool_Tools_MB_Warning.htm">
+        <HelpTOCNode Id="1de1d398-2859-4322-a32f-f9560b6ea154" Title="Warning Method " Url="html/Overload_SIGENCEScenarioTool_Tools_MB_Warning.htm">
           <HelpTOCNode Title="Warning Method (String)" Url="html/M_SIGENCEScenarioTool_Tools_MB_Warning.htm" />
           <HelpTOCNode Title="Warning Method (String, Object[])" Url="html/M_SIGENCEScenarioTool_Tools_MB_Warning_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="eceb0845-f4eb-4efa-b089-6cf2d891cea1" Title="NoDisplayAttribute Class" Url="html/T_SIGENCEScenarioTool_Tools_NoDisplayAttribute.htm">
+    <HelpTOCNode Id="784f68ef-bdd3-473c-b71e-4dc90e29347f" Title="NoDisplayAttribute Class" Url="html/T_SIGENCEScenarioTool_Tools_NoDisplayAttribute.htm">
       <HelpTOCNode Title="NoDisplayAttribute Constructor " Url="html/M_SIGENCEScenarioTool_Tools_NoDisplayAttribute__ctor.htm" />
       <HelpTOCNode Title="NoDisplayAttribute Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_NoDisplayAttribute.htm" />
       <HelpTOCNode Title="NoDisplayAttribute Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_NoDisplayAttribute.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="6352e088-1553-4fe3-93ae-4d148a531f61" Title="PythonSyntaxModeFileProvider Class" Url="html/T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm">
+    <HelpTOCNode Id="1e718d20-de14-4074-9d08-d875e195c598" Title="PythonSyntaxModeFileProvider Class" Url="html/T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm">
       <HelpTOCNode Title="PythonSyntaxModeFileProvider Constructor " Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider__ctor.htm" />
-      <HelpTOCNode Id="04ebfde9-bb51-4d38-9290-f67dda950c3e" Title="PythonSyntaxModeFileProvider Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm">
+      <HelpTOCNode Id="f1317743-1f1c-4e17-8f4a-1f2bc5a60400" Title="PythonSyntaxModeFileProvider Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm">
         <HelpTOCNode Title="SyntaxModes Property " Url="html/P_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_SyntaxModes.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2bc56422-0f11-4f43-839c-0f8a03b5a127" Title="PythonSyntaxModeFileProvider Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm">
+      <HelpTOCNode Id="eed302e6-56c0-4774-b93b-8c6716b7c63a" Title="PythonSyntaxModeFileProvider Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider.htm">
         <HelpTOCNode Title="GetSyntaxModeFile Method " Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_GetSyntaxModeFile.htm" />
         <HelpTOCNode Title="UpdateSyntaxModeList Method " Url="html/M_SIGENCEScenarioTool_Tools_PythonSyntaxModeFileProvider_UpdateSyntaxModeList.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6acbf83c-ef4e-4003-ac35-78221b968bdd" Title="Speech Class" Url="html/T_SIGENCEScenarioTool_Tools_Speech.htm">
+    <HelpTOCNode Id="5834fab7-9186-4a3d-8c59-664873f8ecaa" Title="Speech Class" Url="html/T_SIGENCEScenarioTool_Tools_Speech.htm">
       <HelpTOCNode Title="Speech Constructor " Url="html/M_SIGENCEScenarioTool_Tools_Speech__ctor.htm" />
-      <HelpTOCNode Id="a7edd870-72d7-4f10-a4a2-4c6066bf98e7" Title="Speech Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_Speech.htm">
+      <HelpTOCNode Id="16a732a7-a5a6-4c82-8de2-410466d71c39" Title="Speech Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_Speech.htm">
         <HelpTOCNode Title="State Property " Url="html/P_SIGENCEScenarioTool_Tools_Speech_State.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="b74a55b1-4c9a-4bd1-af6c-75ab396b3abd" Title="Speech Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Speech.htm">
+      <HelpTOCNode Id="ee4556d2-a029-4f53-aa8c-bcf6b6297bca" Title="Speech Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Speech.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M_SIGENCEScenarioTool_Tools_Speech_Dispose.htm" />
         <HelpTOCNode Title="Say Method " Url="html/M_SIGENCEScenarioTool_Tools_Speech_Say.htm" />
         <HelpTOCNode Title="Speak Method " Url="html/M_SIGENCEScenarioTool_Tools_Speech_Speak.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="TextAlign Enumeration" Url="html/T_SIGENCEScenarioTool_Tools_TextAlign.htm" />
-    <HelpTOCNode Id="8365ce5e-102b-472f-bffe-7791b11e215f" Title="Tool Class" Url="html/T_SIGENCEScenarioTool_Tools_Tool.htm">
-      <HelpTOCNode Id="221571cb-4dc5-4011-aca4-c202b5eace88" Title="Tool Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_Tool.htm">
+    <HelpTOCNode Id="6e75e0ec-93ab-41bd-9066-d1c65d11d5b5" Title="Tool Class" Url="html/T_SIGENCEScenarioTool_Tools_Tool.htm">
+      <HelpTOCNode Id="31c474ca-ecdb-4c61-a5e9-3f76bf51bae1" Title="Tool Properties" Url="html/Properties_T_SIGENCEScenarioTool_Tools_Tool.htm">
         <HelpTOCNode Title="ProductName Property " Url="html/P_SIGENCEScenarioTool_Tools_Tool_ProductName.htm" />
         <HelpTOCNode Title="ProductTitle Property " Url="html/P_SIGENCEScenarioTool_Tools_Tool_ProductTitle.htm" />
         <HelpTOCNode Title="StartupPath Property " Url="html/P_SIGENCEScenarioTool_Tools_Tool_StartupPath.htm" />
         <HelpTOCNode Title="Version Property " Url="html/P_SIGENCEScenarioTool_Tools_Tool_Version.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="f8afe0f3-310f-47b4-a4b3-1c0a913403b0" Title="Tool Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Tool.htm">
+      <HelpTOCNode Id="c9c75622-1cf0-4493-8980-183e4cb248d5" Title="Tool Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Tool.htm">
         <HelpTOCNode Title="GetDateTimeFromUnixTimestamp Method " Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetDateTimeFromUnixTimestamp.htm" />
         <HelpTOCNode Title="GetFlatXmlStringFromObject Method " Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetFlatXmlStringFromObject.htm" />
         <HelpTOCNode Title="GetGrad Method " Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGrad.htm" />
         <HelpTOCNode Title="GetGradMinutesSeconds Method " Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetGradMinutesSeconds.htm" />
-        <HelpTOCNode Id="b3c48f46-727e-4a99-b6e5-a9d835df6ba2" Title="GetHumanDistance Method " Url="html/Overload_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm">
+        <HelpTOCNode Id="b80d3cbc-975e-4cde-ba46-41657f729587" Title="GetHumanDistance Method " Url="html/Overload_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm">
           <HelpTOCNode Title="GetHumanDistance Method (Int32)" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance.htm" />
           <HelpTOCNode Title="GetHumanDistance Method (Int64)" Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetHumanDistance_1.htm" />
         </HelpTOCNode>
@@ -969,7 +999,7 @@
         <HelpTOCNode Title="GetObjectFromFlatXmlString(T) Method " Url="html/M_SIGENCEScenarioTool_Tools_Tool_GetObjectFromFlatXmlString__1.htm" />
         <HelpTOCNode Title="ReadResourceAsString Method " Url="html/M_SIGENCEScenarioTool_Tools_Tool_ReadResourceAsString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="755dcbbb-a325-4149-8140-dd317133829c" Title="Tool Fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_Tool.htm">
+      <HelpTOCNode Id="dde0b61e-6519-4907-bc78-23995e6ee6ba" Title="Tool Fields" Url="html/Fields_T_SIGENCEScenarioTool_Tools_Tool.htm">
         <HelpTOCNode Title="ALLCHARS Field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLCHARS.htm" />
         <HelpTOCNode Title="ALLPANGRAMS Field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_ALLPANGRAMS.htm" />
         <HelpTOCNode Title="DATETIMEFORMATS Field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_DATETIMEFORMATS.htm" />
@@ -984,11 +1014,11 @@
         <HelpTOCNode Title="XYLOPHONMUSIK Field" Url="html/F_SIGENCEScenarioTool_Tools_Tool_XYLOPHONMUSIK.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="cfc8da06-ca7d-4250-8882-575390d8622b" Title="Windows Class" Url="html/T_SIGENCEScenarioTool_Tools_Windows.htm">
-      <HelpTOCNode Id="140c979f-d72a-4841-88d2-633db620d51d" Title="Windows Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Windows.htm">
+    <HelpTOCNode Id="1788628b-d4fb-420a-90cb-827d4b73b43b" Title="Windows Class" Url="html/T_SIGENCEScenarioTool_Tools_Windows.htm">
+      <HelpTOCNode Id="2bd332f7-e0f8-477b-8258-9dd7f8f1d70f" Title="Windows Methods" Url="html/Methods_T_SIGENCEScenarioTool_Tools_Windows.htm">
         <HelpTOCNode Title="GetWPFScreenshot Method " Url="html/M_SIGENCEScenarioTool_Tools_Windows_GetWPFScreenshot.htm" />
         <HelpTOCNode Title="OpenWebAdress Method " Url="html/M_SIGENCEScenarioTool_Tools_Windows_OpenWebAdress.htm" />
-        <HelpTOCNode Id="6f5362ca-5593-4b8a-be59-82505b9dfd91" Title="OpenWithDefaultApplication Method " Url="html/Overload_SIGENCEScenarioTool_Tools_Windows_OpenWithDefaultApplication.htm">
+        <HelpTOCNode Id="919e6e13-7399-405b-94d2-c2884dbd2625" Title="OpenWithDefaultApplication Method " Url="html/Overload_SIGENCEScenarioTool_Tools_Windows_OpenWithDefaultApplication.htm">
           <HelpTOCNode Title="OpenWithDefaultApplication Method (FileInfo)" Url="html/M_SIGENCEScenarioTool_Tools_Windows_OpenWithDefaultApplication.htm" />
           <HelpTOCNode Title="OpenWithDefaultApplication Method (String)" Url="html/M_SIGENCEScenarioTool_Tools_Windows_OpenWithDefaultApplication_1.htm" />
         </HelpTOCNode>
@@ -996,14 +1026,14 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="98d0ee3c-8258-47ea-b530-2019e34f25c9" Title="SIGENCEScenarioTool.Ui" Url="html/N_SIGENCEScenarioTool_Ui.htm">
-    <HelpTOCNode Id="34291f2c-3de4-4d61-9a1f-61457c520fae" Title="DisplayableEnumeration Class" Url="html/T_SIGENCEScenarioTool_Ui_DisplayableEnumeration.htm">
+  <HelpTOCNode Id="3e5408e0-753d-4f28-9ad3-54cc90246759" Title="SIGENCEScenarioTool.Ui" Url="html/N_SIGENCEScenarioTool_Ui.htm">
+    <HelpTOCNode Id="76e090c6-166f-439c-b79d-90d2e14c4ea4" Title="DisplayableEnumeration Class" Url="html/T_SIGENCEScenarioTool_Ui_DisplayableEnumeration.htm">
       <HelpTOCNode Title="DisplayableEnumeration Constructor " Url="html/M_SIGENCEScenarioTool_Ui_DisplayableEnumeration__ctor.htm" />
-      <HelpTOCNode Id="e03f7f21-9fdb-4375-be6c-5fcc471c9f14" Title="DisplayableEnumeration Properties" Url="html/Properties_T_SIGENCEScenarioTool_Ui_DisplayableEnumeration.htm">
+      <HelpTOCNode Id="0f291c19-551c-4036-8d68-0c94000514fd" Title="DisplayableEnumeration Properties" Url="html/Properties_T_SIGENCEScenarioTool_Ui_DisplayableEnumeration.htm">
         <HelpTOCNode Title="Name Property " Url="html/P_SIGENCEScenarioTool_Ui_DisplayableEnumeration_Name.htm" />
         <HelpTOCNode Title="Value Property " Url="html/P_SIGENCEScenarioTool_Ui_DisplayableEnumeration_Value.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9740bd73-c39c-4fcc-b76a-e7ce11196913" Title="DisplayableEnumeration Methods" Url="html/Methods_T_SIGENCEScenarioTool_Ui_DisplayableEnumeration.htm">
+      <HelpTOCNode Id="750043aa-8e07-47cb-bac9-4f19aa20e275" Title="DisplayableEnumeration Methods" Url="html/Methods_T_SIGENCEScenarioTool_Ui_DisplayableEnumeration.htm">
         <HelpTOCNode Title="GetCollection(T) Method " Url="html/M_SIGENCEScenarioTool_Ui_DisplayableEnumeration_GetCollection__1.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_SIGENCEScenarioTool_Ui_DisplayableEnumeration_ToString.htm" />
       </HelpTOCNode>

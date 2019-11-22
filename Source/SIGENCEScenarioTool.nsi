@@ -1,6 +1,6 @@
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "SIGENCE Scenario Tool"
-!define PRODUCT_VERSION "20"
+!define PRODUCT_VERSION "21"
 !define PRODUCT_PUBLISHER "ObiWanLansi"
 !define PRODUCT_WEB_SITE "https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -45,7 +45,7 @@ var ICONS_GROUP
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 
-OutFile ".\SIGENCEScenarioTool.Installer\SIGENCEScenarioTool_Setup-${PRODUCT_VERSION}.exe"
+OutFile "..\Distribution\Installer\SIGENCEScenarioTool_Setup.exe"
 
 InstallDir "$PROGRAMFILES\${PRODUCT_NAME} ${PRODUCT_VERSION}"
 
@@ -59,7 +59,7 @@ Section "Hauptgruppe" SEC01
 
   SetOutPath "$INSTDIR"
 
-  File /r "..\Executable\*.*"
+  File /r "..\Build\*.*"
 
 SectionEnd
 

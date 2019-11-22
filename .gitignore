@@ -22,10 +22,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-SIGENCEScenarioTool.SelfExtractingZip/
-SIGENCEScenarioTool.Installer/
-Executable/
-
+Build
+Distribution
 
 # Visual Studio 2015 cache/options directory
 .vs/

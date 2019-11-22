@@ -1,15 +1,17 @@
 <?xml version="1.0"?>
 <project name="SIGENCEScenarioTool" basedir="." default="compile">
 
-    <property name="DeployTarget" value="..\Executable" />
+    <property name="Build" value="..\Build" />
+    <property name="Distribution" value="..\Distribution" />
     <property name="ApiDoc" value="..\Documentation" />
 
     <target name="clean">
-        
+
         <delete dir=".\bin" />
         <delete dir=".\obj" />
 
-        <delete dir="${DeployTarget}" />
+        <delete dir="${Build}" />
+        <delete dir="${Distribution}" />
 
         <delete dir=".\SIGENCEScenarioTool.MainApp\bin" />
         <delete dir=".\SIGENCEScenarioTool.MainApp\obj" />
@@ -22,13 +24,16 @@
 
         <delete dir=".\SIGENCEScenarioTool.TestSuite\bin" />
         <delete dir=".\SIGENCEScenarioTool.TestSuite\obj" />
-
+<!--
         <delete dir=".\SIGENCEScenarioTool.Installer" />
+        <delete dir=".\SIGENCEScenarioTool.SimpleZipFile" />
         <delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+-->
     </target>
 
+    <!-- *********************************************************************************************************** -->
 
-    
+
     <!-- Die bauen wir nur gelegentlich, ausserdem muessen wir noch von Hand ein Inhaltsverzeichnis einfuegen ...-->
     <target name="apidoc" depends="compile">
 
@@ -42,7 +47,6 @@
     </target>
 
 
-
     <target name="doc">
 
         <exec program="powershell.exe" workingdir="..\Documentation">
@@ -51,8 +55,9 @@
         </exec>
     </target>
 
+    <!-- *********************************************************************************************************** -->
 
-    
+
     <target name="compile" depends="clean">
 
         <exec program="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe" workingdir=".">
@@ -62,64 +67,69 @@
             <arg value="Release|AnyCPU" />
         </exec>
     </target>
-    
 
 
-    
-    <target name="deploy" depends="doc,compile">
-    
-        <delete dir="${DeployTarget}" />
-        <mkdir dir="${DeployTarget}" />
+    <target name="build" depends="doc,compile">
 
-        <copy todir="${DeployTarget}">
+        <delete dir="${Build}" />
+        <mkdir dir="${Build}" />
+
+        <copy todir="${Build}">
             <fileset basedir=".\bin\Release">
                 <include name="**/*" />
             </fileset>
         </copy>
 
         <delete>
-            <fileset basedir="${DeployTarget}">
+            <fileset basedir="${Build}">
                 <include name="*.pdb" />
             </fileset>
         </delete>
 
-        <exec program="md5.exe" workingdir="${DeployTarget}">
+        <exec program="md5.exe" workingdir="${Build}">
             <arg value="-v -c" />
         </exec>
     </target>
 
+    <!-- *********************************************************************************************************** -->
 
 
-    <target name="sfx" depends="deploy">
-        
-        <delete dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
-        
-        <mkdir dir=".\SIGENCEScenarioTool.SelfExtractingZip" />
-        
+    <target name="sfx" depends="build">
+
+        <mkdir dir="${Distribution}\SelfExtractingZip" />
+
         <exec program="C:\Program Files\7-Zip\7z.exe">
-            <arg line="a -sfx .\SIGENCEScenarioTool.SelfExtractingZip\SIGENCEScenarioTool_SelfExtracting.exe ${DeployTarget}\*" />
+            <arg line="a -sfx ${Distribution}\SelfExtractingZip\SIGENCEScenarioTool_SelfExtracting.exe ${Build}\*" />
         </exec>
 
-        <exec program="cmd5.exe" workingdir=".\SIGENCEScenarioTool.SelfExtractingZip" />
+        <exec program="cmd5.exe" workingdir="${Distribution}\SelfExtractingZip" />
     </target>
 
 
-    
-    <target name="installer" depends="deploy">
-        
-        <delete dir=".\SIGENCEScenarioTool.Installer" />
-        
-        <mkdir dir=".\SIGENCEScenarioTool.Installer" />
-        
+    <target name="zip" depends="build">
+
+        <mkdir dir="${Distribution}\SimpleZipFile" />
+
+        <exec program="C:\Program Files\7-Zip\7z.exe">
+            <arg line="a ${Distribution}\SimpleZipFile\SIGENCEScenarioTool.zip ${Build}\*" />
+        </exec>
+
+        <exec program="cmd5.exe" workingdir="${Distribution}\SimpleZipFile" />
+    </target>
+
+
+    <target name="installer" depends="build">
+
+        <mkdir dir="${Distribution}\Installer" />
+
         <exec program="C:\Program Files (x86)\NSIS\makensis.exe">
             <arg line="SIGENCEScenarioTool.nsi" />
         </exec>
 
-        <exec program="cmd5.exe" workingdir=".\SIGENCEScenarioTool.Installer" />
+        <exec program="cmd5.exe" workingdir="${Distribution}\Installer" />
     </target>
 
 
-
-    <target name="all" depends="sfx,installer" />
+    <target name="all" depends="sfx,zip,installer" />
 
 </project>
