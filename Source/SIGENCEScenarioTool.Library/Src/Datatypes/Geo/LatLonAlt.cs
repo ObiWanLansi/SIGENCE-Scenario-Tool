@@ -59,8 +59,8 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// <returns></returns>
         public double Distance(LatLonAlt other)
         {
-            NetTopologySuite.Geometries.Point p1 = new NetTopologySuite.Geometries.Point(Lon, Lat);
-            NetTopologySuite.Geometries.Point p2 = new NetTopologySuite.Geometries.Point(other.Lon, other.Lat);
+            Point p1 = new Point(Lon, Lat);
+            Point p2 = new Point(other.Lon, other.Lat);
 
             return p1.Distance(p2);
         }

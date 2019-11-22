@@ -12,7 +12,7 @@ namespace SIGENCEScenarioTool.Tools
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="ICSharpCode.TextEditor.Document.IFoldingStrategy" />
+    /// <seealso cref="IFoldingStrategy" />
     public sealed class GenericFoldingStrategy : IFoldingStrategy
     {
         /// <summary>

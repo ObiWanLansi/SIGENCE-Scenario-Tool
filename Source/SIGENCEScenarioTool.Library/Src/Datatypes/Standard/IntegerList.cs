@@ -8,7 +8,7 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.Generic.List{System.Int32}" />
+    /// <seealso cref="List{int}" />
     public sealed class IntegerList : List<int>
     {
         /// <summary>

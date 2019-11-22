@@ -42,10 +42,10 @@ namespace SIGENCEScenarioTool.Models.Templates
 
 
         /// <summary>
-        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// Returns a <see cref="string" /> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String" /> that represents this instance.
+        /// A <see cref="string" /> that represents this instance.
         /// </returns>
         public override string ToString() => this.device.Name;
 
@@ -56,7 +56,7 @@ namespace SIGENCEScenarioTool.Models.Templates
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{RFDeviceTemplate}" />
+    /// <seealso cref="ObservableCollection{RFDeviceTemplate}" />
     public sealed class RFDeviceTemplateCollection : ObservableCollection<RFDeviceTemplate>
     {
     } // end public sealed class RFDeviceTemplateCollection 

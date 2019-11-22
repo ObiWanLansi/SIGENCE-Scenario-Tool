@@ -10,10 +10,17 @@ namespace SIGENCEScenarioTool.Models
     public enum AntennaType : byte
     {
         OmniDirectional = 0,
+        Dipole = 1,
+        HyperLog60100 = 2,
+        OmniLog30800 = 3,
+        IsoLog3DMobile = 4,
+        SimradArgusRadar = 5,
 
-        OmniLOG30800 = 1,
-        HyperLOG60200 = 2,
-        SimradArgusRadar = 3,
+
+        // The Old values Before 20191122
+        //OmniLOG30800 = 1,
+        //HyperLOG60200 = 2,
+        //SimradArgusRadar = 3,
 
         Unknown = 255
 

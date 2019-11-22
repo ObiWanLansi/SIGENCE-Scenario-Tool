@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Datatypes.Physically
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Datatypes.DataTypeBase{System.Double}" />
+    /// <seealso cref="DataTypeBase{double}" />
     public sealed class Frequency : DataTypeBase<double>
     {
         /// <summary>

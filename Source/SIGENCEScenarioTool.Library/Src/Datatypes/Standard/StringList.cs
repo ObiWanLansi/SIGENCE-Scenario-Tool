@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Datatypes.Standard
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.Generic.List{System.String}" />
+    /// <seealso cref="List{string}" />
     public sealed class StringList : List<string>
     {
 

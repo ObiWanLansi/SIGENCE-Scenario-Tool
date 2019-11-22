@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Datatypes.DataTypeBase{int}" />
+    /// <seealso cref="DataTypeBase{int}" />
     public sealed class Altitude : DataTypeBase<int>
     {
         /// <summary>

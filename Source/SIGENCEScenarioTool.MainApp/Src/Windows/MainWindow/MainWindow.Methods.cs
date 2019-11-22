@@ -548,7 +548,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 DeviceSource = DeviceSource.User,
                 Latitude = 47.666557,
                 Longitude = 9.386941,
-                AntennaType = AntennaType.HyperLOG60200,
+                AntennaType = AntennaType.HyperLog60100,
                 RxTxType = RxTxTypes.FMBroadcast,
                 CenterFrequency_Hz = 90_000_000,
                 Bandwidth_Hz = 30_000

@@ -266,10 +266,10 @@ namespace SIGENCEScenarioTool.Models
 
             return new GeoLocalizationResult
             {
-                PrimaryKey = eChild.GetProperty<Guid>("PrimaryKey",Guid.NewGuid()),
-                Id = eChild.GetProperty<int>("Id",0),
-                Latitude = eChild.GetProperty<double>("Latitude",double.NaN),
-                Longitude = eChild.GetProperty<double>("Longitude",double.NaN),
+                PrimaryKey = eChild.GetProperty("PrimaryKey",Guid.NewGuid()),
+                Id = eChild.GetProperty("Id",0),
+                Latitude = eChild.GetProperty("Latitude",double.NaN),
+                Longitude = eChild.GetProperty("Longitude",double.NaN),
                 Altitude = eChild.GetProperty<uint>("Altitude",0),
                 LocalizationTime = eChild.GetProperty<double>("LocalizationTime",0)            
             };

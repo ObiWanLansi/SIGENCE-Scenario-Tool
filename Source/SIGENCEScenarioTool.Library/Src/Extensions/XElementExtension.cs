@@ -425,12 +425,20 @@ namespace SIGENCEScenarioTool.Extensions
         /// <param name="strElementName">Name of the string element.</param>
         /// <param name="tDefault">The t default.</param>
         /// <returns></returns>
-        public static T GetEnumFromNode<T>(this XElement xCurrentElement, string strElementName, T tDefault)
+        public static T GetEnumFromNode<T>(this XElement xCurrentElement, string strElementName, T tDefault) // where T : struct
         {
             XElement x = xCurrentElement.Element(strElementName);
 
             if (x != null && x.Value.IsNotEmpty() == true)
             {
+                //if (Enum.TryParse(x.Value, out T result) == true)
+                //{
+                //    return result;
+                //}
+
+                // ACHTUNG: Die Parse Funktion liefert auch ein Enum zurück wenn der String gar nicht gefunden wird,
+                // die Enum hat dann den Wert des Integers, bei dem Versuch mit TryParse gibt es Probleme wegen dem 
+                // generischen Ansatz :-(
                 return (T)Enum.Parse(typeof(T), x.Value);
             }
 

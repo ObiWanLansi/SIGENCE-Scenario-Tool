@@ -101,7 +101,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{GeoNode}" />
+    /// <seealso cref="ObservableCollection{GeoNode}" />
     public sealed class GeoNodeCollection : ObservableCollection<GeoNode>
     {
         #region If We Want To Have The Instance As Singelton Object

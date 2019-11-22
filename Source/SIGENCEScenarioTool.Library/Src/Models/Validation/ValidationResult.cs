@@ -96,7 +96,7 @@ namespace SIGENCEScenarioTool.Models.Validation
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="System.Collections.Generic.List{ValidationResult}" />
+    /// <seealso cref="List{ValidationResult}" />
     public sealed class ValidationResultList : List<ValidationResult>
     {
         /// <summary>

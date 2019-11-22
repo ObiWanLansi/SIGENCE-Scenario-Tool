@@ -10,7 +10,7 @@ namespace SIGENCEScenarioTool.Models
     /// <summary>
     /// Addition Functions For An RFDevice.
     /// </summary>
-    /// <seealso cref="System.IEquatable{RFDevice}" />
+    /// <seealso cref="IEquatable{RFDevice}" />
     /// <seealso cref="AbstractModelBase" />
     /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     /// <seealso cref="ICloneable" />
@@ -27,6 +27,28 @@ namespace SIGENCEScenarioTool.Models
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Determines whether [is basic valid].
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if [is basic valid]; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsBasicValid()
+        {
+            //if (this.PrimaryKey == Guid.Empty)
+            //{
+            //    return false;
+            //}
+
+            //if (this.Name.IsEmpty() == true)
+            //    if (this.StartTime < 0)
+            //        if (this.RxTxType == null)
+
+            //            return true;
+
+        }
 
 
         /// <summary>
@@ -171,7 +193,7 @@ namespace SIGENCEScenarioTool.Models
                 Latitude = 47.666557,
                 Longitude = 9.386941,
                 Altitude = 1234,
-                AntennaType = AntennaType.HyperLOG60200,
+                AntennaType = AntennaType.HyperLog60100,
                 RxTxType = RxTxTypes.RxTxTypes.FMBroadcast,
                 CenterFrequency_Hz = 90_000_000,
                 Bandwidth_Hz = 30_000,

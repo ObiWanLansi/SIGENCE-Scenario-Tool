@@ -92,12 +92,12 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
 
             if (eChild != null)
             {
-                this.Version = eChild.GetProperty<string>(VERSION, "");
-                this.ApplicationContext = eChild.GetProperty<string>(APPLICATIONCONTEXT, "");
-                this.ContactPerson = eChild.GetProperty<string>(CONTACTPERSON, "");
+                this.Version = eChild.GetProperty(VERSION, "");
+                this.ApplicationContext = eChild.GetProperty(APPLICATIONCONTEXT, "");
+                this.ContactPerson = eChild.GetProperty(CONTACTPERSON, "");
 
-                this.DescriptionMarkdown = eChild.GetProperty<string>(DESCRIPTIONMARKDOWN, "");
-                this.DescriptionStylesheet = eChild.GetProperty<string>(DESCRIPTIONSTYLESHEET, "");
+                this.DescriptionMarkdown = eChild.GetProperty(DESCRIPTIONMARKDOWN, "");
+                this.DescriptionStylesheet = eChild.GetProperty(DESCRIPTIONSTYLESHEET, "");
             }
             else
             {

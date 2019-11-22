@@ -7,7 +7,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Datatypes.DataTypeBase{double}" />
+    /// <seealso cref="DataTypeBase{double}" />
     public sealed class Latitude : DataTypeBase<double>
     {
         /// <summary>

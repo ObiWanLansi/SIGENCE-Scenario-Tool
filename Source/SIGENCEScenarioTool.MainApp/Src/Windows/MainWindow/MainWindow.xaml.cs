@@ -219,6 +219,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //SaveFile( @"C:\Transfer\TestScenario.stf" );
             //LoadFile( @"C:\Transfer\TestScenario.stf" );
 
+
+            Reset();
+            LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestWrongAntennaType.stf");
             //LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\LongLineForSimulationPlayer.stf");
 
             //-----------------------------------------------------------------
