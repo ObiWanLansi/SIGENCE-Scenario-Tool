@@ -18,12 +18,14 @@
     </Version>
     -->
 
+
     <Version Version="21" Title="XXXXX 2019 Release">
         <Features>
-            <Issue Id="" Description="" />
-            <Issue Id="" Description="" />
+            <Issue Id="192" Description="Open File With Invalid AntennaType" />
+            <Issue Id="193" Description="Synchronize The Antenna Types Against The Documentation" />
         </Features>
     </Version>
+
 
     <Version Version="20" Title="November 2019 Release">
         <Features>

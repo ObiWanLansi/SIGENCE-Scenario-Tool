@@ -267,11 +267,11 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
 
             return new ScenarioMetaInformation
             {
-                Version = eChild.GetProperty("Version",""),
-                ApplicationContext = eChild.GetProperty("ApplicationContext",""),
-                ContactPerson = eChild.GetProperty("ContactPerson",""),
-                DescriptionMarkdown = eChild.GetProperty("DescriptionMarkdown",""),
-                DescriptionStylesheet = eChild.GetProperty("DescriptionStylesheet","")            
+                Version = eChild.GetProperty<string>("Version",""),
+                ApplicationContext = eChild.GetProperty<string>("ApplicationContext",""),
+                ContactPerson = eChild.GetProperty<string>("ContactPerson",""),
+                DescriptionMarkdown = eChild.GetProperty<string>("DescriptionMarkdown",""),
+                DescriptionStylesheet = eChild.GetProperty<string>("DescriptionStylesheet","")            
             };
         }
 

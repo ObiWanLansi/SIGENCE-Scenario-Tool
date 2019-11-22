@@ -431,15 +431,10 @@ namespace SIGENCEScenarioTool.Extensions
 
             if (x != null && x.Value.IsNotEmpty() == true)
             {
-                //if (Enum.TryParse(x.Value, out T result) == true)
-                //{
-                //    return result;
-                //}
-
-                // ACHTUNG: Die Parse Funktion liefert auch ein Enum zurück wenn der String gar nicht gefunden wird,
-                // die Enum hat dann den Wert des Integers, bei dem Versuch mit TryParse gibt es Probleme wegen dem 
-                // generischen Ansatz :-(
-                return (T)Enum.Parse(typeof(T), x.Value);
+                if (Enum.IsDefined(typeof(T), x.Value))
+                {
+                    return (T)Enum.Parse(typeof(T), x.Value);
+                }
             }
 
             return tDefault;

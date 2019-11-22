@@ -120,11 +120,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    return;
             //}
 
-            if (d.IsBasicValid() == false)
-            {
-                MB.Warning("Device Is Not Valid And Will Not Be Added To The Scenario!");
-                return;
-            }
+            //if (d.IsBasicValid() == false)
+            //{
+            //    MB.Warning("Device Is Not Valid And Will Not Be Added To The Scenario!");
+            //    return;
+            //}
 
             AddRFDevice(new RFDeviceViewModel(this.mcMapControl, d), bIsSelected);
         }

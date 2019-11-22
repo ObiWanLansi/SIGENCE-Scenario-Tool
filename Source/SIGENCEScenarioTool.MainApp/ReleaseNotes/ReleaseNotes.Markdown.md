@@ -2,6 +2,17 @@
 
 <br/>
 
+## Version [21](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/21) - XXXXX 2019 Release
+
+### Features (2)
+
+Issue|Description
+-:|-
+[192](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/192)|Open File With Invalid AntennaType
+[193](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/193)|Synchronize The Antenna Types Against The Documentation
+
+<br/>
+
 ## Version [20](https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/releases/tag/20) - November 2019 Release
 
 ### Features (9)

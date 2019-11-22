@@ -30,28 +30,6 @@ namespace SIGENCEScenarioTool.Models
 
 
         /// <summary>
-        /// Determines whether [is basic valid].
-        /// </summary>
-        /// <returns>
-        ///   <c>true</c> if [is basic valid]; otherwise, <c>false</c>.
-        /// </returns>
-        public bool IsBasicValid()
-        {
-            //if (this.PrimaryKey == Guid.Empty)
-            //{
-            //    return false;
-            //}
-
-            //if (this.Name.IsEmpty() == true)
-            //    if (this.StartTime < 0)
-            //        if (this.RxTxType == null)
-
-            //            return true;
-
-        }
-
-
-        /// <summary>
         /// Validates this instance.
         /// </summary>
         /// <returns></returns>
