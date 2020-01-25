@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
-using System.Net.Mqtt;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -216,7 +214,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             {
                 this.bIsMQTTEnabled = value;
 
-                EnableOrDisableMQTT();
+                //EnableOrDisableMQTT();
                 FirePropertyChanged();
             }
         }
@@ -481,100 +479,100 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// The mqttclient
-        /// </summary>
-        private IMqttClient mqttclient = null;
+        ///// <summary>
+        ///// The mqttclient
+        ///// </summary>
+        //private IMqttClient mqttclient = null;
 
 
-        /// <summary>
-        /// Connects the MQTT.
-        /// </summary>
-        private void ConnectMQTTAsync()
-        {
-            string strHost = Properties.Settings.Default.MQTTHost;
-            int iPort = Properties.Settings.Default.MQTTPort;
+        ///// <summary>
+        ///// Connects the MQTT.
+        ///// </summary>
+        //private void ConnectMQTTAsync()
+        //{
+        //    string strHost = Properties.Settings.Default.MQTTHost;
+        //    int iPort = Properties.Settings.Default.MQTTPort;
 
-            MqttConfiguration configuration = new MqttConfiguration
-            {
-                //BufferSize = 128 * 1024,
-                Port = iPort,
-                //KeepAliveSecs = 10,
-                //WaitTimeoutSecs = 2,
-                //MaximumQualityOfService = MqttQualityOfService.AtLeastOnce,
-                AllowWildcardsInTopicFilters = true
-            };
+        //    MqttConfiguration configuration = new MqttConfiguration
+        //    {
+        //        //BufferSize = 128 * 1024,
+        //        Port = iPort,
+        //        //KeepAliveSecs = 10,
+        //        //WaitTimeoutSecs = 2,
+        //        //MaximumQualityOfService = MqttQualityOfService.AtLeastOnce,
+        //        AllowWildcardsInTopicFilters = true
+        //    };
 
-            try
-            {
-                Task<IMqttClient> tClient = MqttClient.CreateAsync(strHost, configuration);
-                tClient.Wait();
+        //    try
+        //    {
+        //        Task<IMqttClient> tClient = MqttClient.CreateAsync(strHost, configuration);
+        //        tClient.Wait();
 
-                this.mqttclient = tClient.Result;
-                //this.mqttclient.ConnectAsync(new MqttClientCredentials(Tool.ProductName)).Wait();
+        //        this.mqttclient = tClient.Result;
+        //        //this.mqttclient.ConnectAsync(new MqttClientCredentials(Tool.ProductName)).Wait();
 
-                ////Task<SessionState> session = mqttclient.ConnectAsync(new MqttClientCredentials(Guid.NewGuid().ToString()));
-                //session.Wait();
+        //        ////Task<SessionState> session = mqttclient.ConnectAsync(new MqttClientCredentials(Guid.NewGuid().ToString()));
+        //        //session.Wait();
 
-                this.MQTTStatusBrush = Brushes.Lime;
-                this.MQTTStatusMessage = $"Connected To MQTTT Broker ({strHost})";
-            }
-            catch (Exception ex)
-            {
-                this.MQTTStatusBrush = Brushes.Red;
-                this.MQTTStatusMessage = $"Not Connected To MQTTT Broker ({strHost}):\n{ex.Message}";
-            }
-        }
-
-
-        /// <summary>
-        /// Disconnects the MQTT.
-        /// </summary>
-        private void DisconnectMQTT()
-        {
-            if (this.mqttclient != null)
-            {
-                this.mqttclient.DisconnectAsync().Wait();
-            }
-
-            this.MQTTStatusBrush = Brushes.Gray;
-            this.MQTTStatusMessage = "Not Connected To An MQTTT Broker";
-        }
+        //        this.MQTTStatusBrush = Brushes.Lime;
+        //        this.MQTTStatusMessage = $"Connected To MQTTT Broker ({strHost})";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        this.MQTTStatusBrush = Brushes.Red;
+        //        this.MQTTStatusMessage = $"Not Connected To MQTTT Broker ({strHost}):\n{ex.Message}";
+        //    }
+        //}
 
 
-        /// <summary>
-        /// Sends the MQTT message.
-        /// </summary>
-        /// <param name="strTopic">The string topic.</param>
-        /// <param name="strMessage">The string message.</param>
-        private void SendMQTTMessage(string strTopic, string strMessage)
-        {
-            //MqttApplicationMessage message = new MqttApplicationMessage( "foo/bar/topic1" , Encoding.UTF8.GetBytes( "Foo Message 1" ) );
-            //client.Result.PublishAsync( message , MqttQualityOfService.AtLeastOnce , true );
-        }
+        ///// <summary>
+        ///// Disconnects the MQTT.
+        ///// </summary>
+        //private void DisconnectMQTT()
+        //{
+        //    if (this.mqttclient != null)
+        //    {
+        //        this.mqttclient.DisconnectAsync().Wait();
+        //    }
+
+        //    this.MQTTStatusBrush = Brushes.Gray;
+        //    this.MQTTStatusMessage = "Not Connected To An MQTTT Broker";
+        //}
 
 
-        /// <summary>
-        /// Enables the or disable MQTT.
-        /// </summary>
-        private void EnableOrDisableMQTT()
-        {
-            if (this.bIsMQTTEnabled == true)
-            {
-                ConnectMQTTAsync();
-                //this.MQTTStatusBrush = Brushes.Lime;
-                //this.MQTTStatusMessage = $"Connected To MQTTT Broker ({Properties.Settings.Default.MQTTBrokerURL})";
-            }
-            else
-            {
-                DisconnectMQTT();
-                //this.MQTTStatusBrush = Brushes.Gray;
-                //this.MQTTStatusMessage = "Not Connected To An MQTTT Broker";
-            }
+        ///// <summary>
+        ///// Sends the MQTT message.
+        ///// </summary>
+        ///// <param name="strTopic">The string topic.</param>
+        ///// <param name="strMessage">The string message.</param>
+        //private void SendMQTTMessage(string strTopic, string strMessage)
+        //{
+        //    //MqttApplicationMessage message = new MqttApplicationMessage( "foo/bar/topic1" , Encoding.UTF8.GetBytes( "Foo Message 1" ) );
+        //    //client.Result.PublishAsync( message , MqttQualityOfService.AtLeastOnce , true );
+        //}
 
-            FirePropertyChanged("MQTTStatusBrush");
-            FirePropertyChanged("MQTTStatusMessage");
-        }
+
+        ///// <summary>
+        ///// Enables the or disable MQTT.
+        ///// </summary>
+        //private void EnableOrDisableMQTT()
+        //{
+        //    if (this.bIsMQTTEnabled == true)
+        //    {
+        //        ConnectMQTTAsync();
+        //        //this.MQTTStatusBrush = Brushes.Lime;
+        //        //this.MQTTStatusMessage = $"Connected To MQTTT Broker ({Properties.Settings.Default.MQTTBrokerURL})";
+        //    }
+        //    else
+        //    {
+        //        DisconnectMQTT();
+        //        //this.MQTTStatusBrush = Brushes.Gray;
+        //        //this.MQTTStatusMessage = "Not Connected To An MQTTT Broker";
+        //    }
+
+        //    FirePropertyChanged("MQTTStatusBrush");
+        //    FirePropertyChanged("MQTTStatusMessage");
+        //}
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
