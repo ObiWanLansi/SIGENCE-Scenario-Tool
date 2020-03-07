@@ -30,20 +30,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// Sets the description without event.
         /// </summary>
         /// <param name="strDescriptionMarkdown">The string description.</param>
-        public void SetDescriptionWithoutEvent(string strDescriptionMarkdown)
-        {
-            this._DescriptionMarkdown = strDescriptionMarkdown;
-        }
+        public void SetDescriptionWithoutEvent( string strDescriptionMarkdown ) => this._DescriptionMarkdown = strDescriptionMarkdown;
 
 
         /// <summary>
         /// Sets the style sheet without event.
         /// </summary>
         /// <param name="strDescriptionStylesheet">The string style sheet.</param>
-        public void SetStyleSheetWithoutEvent(string strDescriptionStylesheet)
-        {
-            this._DescriptionStylesheet = strDescriptionStylesheet;
-        }
+        public void SetStyleSheetWithoutEvent( string strDescriptionStylesheet ) => this._DescriptionStylesheet = strDescriptionStylesheet;
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -77,20 +71,11 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         /// Loads from XML.
         /// </summary>
         /// <param name="eRoot">The e root.</param>
-        public void LoadFromXml(XElement eRoot)
+        public void LoadFromXml( XElement eRoot )
         {
-            XElement eChild = null;
+            XElement eChild = eRoot.Name.LocalName.Equals("ScenarioMetaInformation") ? eRoot : eRoot.Element("ScenarioMetaInformation");
 
-            if (eRoot.Name.LocalName.Equals("ScenarioMetaInformation"))
-            {
-                eChild = eRoot;
-            }
-            else
-            {
-                eChild = eRoot.Element("ScenarioMetaInformation");
-            }
-
-            if (eChild != null)
+            if( eChild != null )
             {
                 this.Version = eChild.GetProperty(VERSION, "");
                 this.ApplicationContext = eChild.GetProperty(APPLICATIONCONTEXT, "");

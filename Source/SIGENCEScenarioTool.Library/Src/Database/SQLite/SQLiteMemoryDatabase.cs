@@ -38,8 +38,8 @@ namespace SIGENCEScenarioTool.Database.SQLite
         /// </summary>
         public SQLiteMemoryDatabase()
         {
-            Connection = new SQLiteConnection(new SQLiteConnectionStringBuilder { DataSource = ":memory:" }.ConnectionString);
-            Connection.Open();
+            this.Connection = new SQLiteConnection(new SQLiteConnectionStringBuilder { DataSource = ":memory:" }.ConnectionString);
+            this.Connection.Open();
         }
 
 
@@ -82,7 +82,7 @@ namespace SIGENCEScenarioTool.Database.SQLite
             {
                 dbFile.Open();
 
-                dbFile.BackupDatabase(Connection, "main", "main", -1, null, -1);
+                dbFile.BackupDatabase(this.Connection, "main", "main", -1, null, -1);
 
                 dbFile.Close();
             }
@@ -118,16 +118,16 @@ namespace SIGENCEScenarioTool.Database.SQLite
             // Immer schön sauber wegschreiben ...
             if (bCleanWrite == true)
             {
-                Connection.Analyze();
-                Connection.Reindex();
-                Connection.Vacuum();
+                this.Connection.Analyze();
+                this.Connection.Reindex();
+                this.Connection.Vacuum();
             }
 
             using (SQLiteConnection dbFile = new SQLiteConnection(new SQLiteConnectionStringBuilder { DataSource = fi.FullName }.ConnectionString))
             {
                 dbFile.Open();
 
-                Connection.BackupDatabase(dbFile, "main", "main", -1, null, -1);
+                this.Connection.BackupDatabase(dbFile, "main", "main", -1, null, -1);
 
                 dbFile.Close();
             }
@@ -164,23 +164,23 @@ namespace SIGENCEScenarioTool.Database.SQLite
         /// <param name="bShouldDisposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
         private void Dispose(bool bShouldDisposing)
         {
-            if (bIsDisposed == false)
+            if ( this.bIsDisposed == false)
             {
                 if (bShouldDisposing == true)
                 {
-                    if (Connection != null)
+                    if ( this.Connection != null)
                     {
-                        if (Connection.State != ConnectionState.Closed)
+                        if ( this.Connection.State != ConnectionState.Closed)
                         {
-                            Connection.Close();
+                            this.Connection.Close();
                         }
 
-                        Connection.Dispose();
-                        Connection = null;
+                        this.Connection.Dispose();
+                        this.Connection = null;
                     }
                 }
 
-                bIsDisposed = true;
+                this.bIsDisposed = true;
             }
         }
 

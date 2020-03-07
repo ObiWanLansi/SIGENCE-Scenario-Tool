@@ -897,7 +897,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                Tuple<PropertyInfo, object> tSource = dgRFDevices.GetFocusedItem();
+                Tuple<PropertyInfo, object> tSource = this.dgRFDevices.GetFocusedItem();
 
                 if (tSource == null)
                 {
@@ -917,9 +917,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     return;
                 }
 
-                dgRFDevices.SelectedItems.Clear();
+                this.dgRFDevices.SelectedItems.Clear();
 
-                foreach (var item in dgRFDevices.Items)
+                foreach (var item in this.dgRFDevices.Items)
                 {
                     if (item is RFDeviceViewModel)
                     {
@@ -929,7 +929,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                         if (tSource.Item2.Equals(oValue))
                         {
-                            dgRFDevices.SelectedItems.Add(dvm);
+                            this.dgRFDevices.SelectedItems.Add(dvm);
                         }
                     }
                 }

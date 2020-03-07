@@ -114,9 +114,9 @@ namespace SIGENCEScenarioTool.UnitTests
 
             SIGENCEScenarioToolTestCaseHelper.ValidateTestCaseInformation();
 
-            dtStart = DateTime.Now;
+            this.dtStart = DateTime.Now;
 
-            Log.InfoFormat("Tests Started @ {0}", dtStart.ToString("dd.MM.yyyy, HH:mm:ss"));
+            Log.InfoFormat("Tests Started @ {0}", this.dtStart.ToString("dd.MM.yyyy, HH:mm:ss"));
         }
 
 
@@ -129,7 +129,7 @@ namespace SIGENCEScenarioTool.UnitTests
             DateTime dtStop = DateTime.Now;
 
             Log.InfoFormat("Tests Stopped @ {0}", dtStop.ToString("dd.MM.yyyy, HH:mm:ss"));
-            Log.InfoFormat("Total TestTime: {0} ", dtStop - dtStart);
+            Log.InfoFormat("Total TestTime: {0} ", dtStop - this.dtStart);
         }
 
     } // end sealed class SIGENCEScenarioToolInit_And_Deinit

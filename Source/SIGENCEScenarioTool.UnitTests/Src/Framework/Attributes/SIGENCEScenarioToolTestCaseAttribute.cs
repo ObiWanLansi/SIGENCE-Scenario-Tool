@@ -33,7 +33,7 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// <param name="strGUID">The string unique identifier.</param>
         public SIGENCEScenarioToolTestCaseAttribute(string strGUID)
         {
-            Id = new Guid(strGUID);
+            this.Id = new Guid(strGUID);
         }
 
 
@@ -45,7 +45,7 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// </returns>
         public override string ToString()
         {
-            return Id.ToString();
+            return this.Id.ToString();
         }
 
     } // end public sealed class SIGENCEScenarioToolTestCaseAttribute 

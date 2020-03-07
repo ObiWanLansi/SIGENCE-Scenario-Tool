@@ -89,7 +89,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// </value>
         public UserControl SelectedPanel
         {
-            get { return this.ucSelectedPanel; }
+            get => this.ucSelectedPanel;
             set
             {
                 this.ucSelectedPanel = value;

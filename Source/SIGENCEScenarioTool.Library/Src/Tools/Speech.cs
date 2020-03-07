@@ -26,7 +26,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </value>
         public SynthesizerState State
         {
-            get { return speech.State; }
+            get { return this.speech.State; }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ namespace SIGENCEScenarioTool.Tools
         public Speech()
         {
             // Wir geben immer 100%.
-            speech.Volume = 100;
+            this.speech.Volume = 100;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ namespace SIGENCEScenarioTool.Tools
             //    Thread.Sleep( 10 );
             //}
 
-            speech.Speak(strContent);
+            this.speech.Speak(strContent);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -82,10 +82,10 @@ namespace SIGENCEScenarioTool.Tools
         /// </summary>
         public void Dispose()
         {
-            if (speech != null)
+            if ( this.speech != null)
             {
-                speech.Dispose();
-                speech = null;
+                this.speech.Dispose();
+                this.speech = null;
             }
         }
 

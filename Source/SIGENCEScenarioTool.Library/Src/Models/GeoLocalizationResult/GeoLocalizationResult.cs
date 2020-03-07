@@ -41,12 +41,12 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Unique PrimarKey For This Result.
         ///</summary>
-        public Guid PrimaryKey 
+        public Guid PrimaryKey
         {
-            get { return _PrimaryKey; }
+            get => this._PrimaryKey;
             set
             {
-                _PrimaryKey = value;
+                this._PrimaryKey = value;
                 FirePropertyChanged();
             }
         }
@@ -75,12 +75,12 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Id Of The Localized RFDevice.
         ///</summary>
-        public int Id 
+        public int Id
         {
-            get { return _Id; }
+            get => this._Id;
             set
             {
-                _Id = value;
+                this._Id = value;
                 FirePropertyChanged();
             }
         }
@@ -109,12 +109,12 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Latitude Of The Localized RF Device (WGS84).
         ///</summary>
-        public double Latitude 
+        public double Latitude
         {
-            get { return _Latitude; }
+            get => this._Latitude;
             set
             {
-                _Latitude = value;
+                this._Latitude = value;
                 FirePropertyChanged();
             }
         }
@@ -143,12 +143,12 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Longitude Of The Localized RF Device (WGS84).
         ///</summary>
-        public double Longitude 
+        public double Longitude
         {
-            get { return _Longitude; }
+            get => this._Longitude;
             set
             {
-                _Longitude = value;
+                this._Longitude = value;
                 FirePropertyChanged();
             }
         }
@@ -177,12 +177,12 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Elevation Of The Localized RF Device Above The Sea Level (Meter).
         ///</summary>
-        public uint Altitude 
+        public uint Altitude
         {
-            get { return _Altitude; }
+            get => this._Altitude;
             set
             {
-                _Altitude = value;
+                this._Altitude = value;
                 FirePropertyChanged();
             }
         }
@@ -211,12 +211,12 @@ namespace SIGENCEScenarioTool.Models
         ///<summary>
         /// The Localization Time.
         ///</summary>
-        public double LocalizationTime 
+        public double LocalizationTime
         {
-            get { return _LocalizationTime; }
+            get => this._LocalizationTime;
             set
             {
-                _LocalizationTime = value;
+                this._LocalizationTime = value;
                 FirePropertyChanged();
             }
         }
@@ -236,12 +236,12 @@ namespace SIGENCEScenarioTool.Models
         {
             return new XElement("GeoLocalizationResult",
 
-                XElementExtension.GetXElement("PrimaryKey", PrimaryKey),
-                XElementExtension.GetXElement("Id", Id),
-                XElementExtension.GetXElement("Latitude", Latitude),
-                XElementExtension.GetXElement("Longitude", Longitude),
-                XElementExtension.GetXElement("Altitude", Altitude),
-                XElementExtension.GetXElement("LocalizationTime", LocalizationTime)  
+                XElementExtension.GetXElement("PrimaryKey", this.PrimaryKey),
+                XElementExtension.GetXElement("Id", this.Id),
+                XElementExtension.GetXElement("Latitude", this.Latitude),
+                XElementExtension.GetXElement("Longitude", this.Longitude),
+                XElementExtension.GetXElement("Altitude", this.Altitude),
+                XElementExtension.GetXElement("LocalizationTime", this.LocalizationTime)  
             );
         }
 
@@ -285,32 +285,32 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (PrimaryKey != other.PrimaryKey )
+            if ( this.PrimaryKey != other.PrimaryKey )
             {
                 return false;
             }
 
-            if (Id != other.Id )
+            if ( this.Id != other.Id )
             {
                 return false;
             }
 
-            if (Latitude != other.Latitude )
+            if ( this.Latitude != other.Latitude )
             {
                 return false;
             }
 
-            if (Longitude != other.Longitude )
+            if ( this.Longitude != other.Longitude )
             {
                 return false;
             }
 
-            if (Altitude != other.Altitude )
+            if ( this.Altitude != other.Altitude )
             {
                 return false;
             }
 
-            if (LocalizationTime != other.LocalizationTime )
+            if ( this.LocalizationTime != other.LocalizationTime )
             {
                 return false;
             }

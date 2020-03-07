@@ -73,7 +73,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// </value>
         public string LastOutput
         {
-            get { return this.strLastOutput; }
+            get => this.strLastOutput;
             set
             {
                 this.strLastOutput = value;
@@ -95,7 +95,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// </value>
         public string ExecutionTime
         {
-            get { return this.strExecutionTime; }
+            get => this.strExecutionTime;
             set
             {
                 this.strExecutionTime = value;
@@ -110,7 +110,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// Initializes a new instance of the <see cref="ScriptingDialog" /> class.
         /// </summary>
         /// <param name="mw">The mw.</param>
-        public ScriptingDialog(MainWindow mw)
+        public ScriptingDialog( MainWindow mw )
         {
             this.mw = mw;
 
@@ -167,7 +167,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// Executes the specified string content.
         /// </summary>
         /// <param name="strContent">Content of the string.</param>
-        private void Execute(string strContent)
+        private void Execute( string strContent )
         {
             this.Cursor = Cursors.Wait;
 
@@ -178,7 +178,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
             {
                 //TODO: Hier muss natrülich ein eigener TextWriter her der das dann direkt in die 
                 //      TextBox schreibt, das hier ist nur für das schnelle MockUp sinnvoll ...
-                using (StringWriter sw = new StringWriter())
+                using( StringWriter sw = new StringWriter() )
                 {
                     DateTime dtStarted = DateTime.Now;
                     sw.WriteLine("[{0}] Execution Started ...", dtStarted.Fmt_DD_MM_YYYY_HH_MM_SS());
@@ -197,7 +197,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
 
                     //MB.Information(sw.ToString());
                     DateTime dtStopped = DateTime.Now;
-                    this.ExecutionTime = (dtStopped - dtStarted).ToShortString();
+                    this.ExecutionTime = ( dtStopped - dtStarted ).ToShortString();
 
                     sw.WriteLine("[{0}] Execution Ended ...", dtStopped.Fmt_DD_MM_YYYY_HH_MM_SS());
                     sw.WriteLine("[{0}] Execution Time: {1}", DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS(), this.ExecutionTime);
@@ -216,7 +216,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
                     //MB.Information(sb.ToString());
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -230,27 +230,24 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
 
 
         /// <summary>
-        /// Handles the PositionChanged event of the Caret control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void Caret_PositionChanged(object sender, EventArgs e)
-        {
-            //tsslRow.Text = string.Format("Zeile {0}", tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Line);
-            //tsslColumn.Text = string.Format("Spalte {0}", tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Column);
-            FirePropertyChanged("Line");
-            FirePropertyChanged("Column");
-        }
-
-
-        /// <summary>
         /// Handles the Loaded event of the Window control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded( object sender, RoutedEventArgs e ) => this.tecTextEditorControl.Focus();
+
+
+        /// <summary>
+        /// Handles the PositionChanged event of the Caret control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void Caret_PositionChanged( object sender, EventArgs e )
         {
-            this.tecTextEditorControl.Focus();
+            //tsslRow.Text = string.Format("Zeile {0}", tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Line);
+            //tsslColumn.Text = string.Format("Spalte {0}", tecTextEditorControl.ActiveTextAreaControl.TextArea.Caret.Column);
+            FirePropertyChanged(nameof(this.Line));
+            FirePropertyChanged(nameof(this.Column));
         }
 
 
@@ -259,13 +256,13 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs" /> instance containing the event data.</param>
-        private void Button_Play_Click(object sender, RoutedEventArgs e)
+        private void Button_Play_Click( object sender, RoutedEventArgs e )
         {
             string strEditorContent = this.tecTextEditorControl.ActiveTextAreaControl.SelectionManager.HasSomethingSelected ?
                 this.tecTextEditorControl.ActiveTextAreaControl.SelectionManager.SelectedText :
                 this.tecTextEditorControl.Text;
 
-            if (strEditorContent.IsNotEmpty() == true)
+            if( strEditorContent.IsNotEmpty() == true )
             {
                 Execute(strEditorContent);
             }
@@ -284,10 +281,7 @@ namespace SIGENCEScenarioTool.Dialogs.Scripting
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        protected void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
-        }
+        protected void FirePropertyChanged( [CallerMemberName]string strPropertyName = null ) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
 
     } // end public partial class ScriptingDialog
 }

@@ -84,7 +84,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Id
         {
-            get { return this.RFDevice.Id; }
+            get => this.RFDevice.Id;
             set
             {
                 this.RFDevice.Id = value;
@@ -117,7 +117,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public DeviceSource DeviceSource
         {
-            get { return this.RFDevice.DeviceSource; }
+            get => this.RFDevice.DeviceSource;
             set
             {
                 this.RFDevice.DeviceSource = value;
@@ -135,7 +135,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double StartTime
         {
-            get { return this.RFDevice.StartTime; }
+            get => this.RFDevice.StartTime;
             set
             {
                 this.RFDevice.StartTime = value;
@@ -153,7 +153,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string Name
         {
-            get { return this.RFDevice.Name; }
+            get => this.RFDevice.Name;
             set
             {
                 this.RFDevice.Name = value;
@@ -176,7 +176,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </remarks>
         public double Latitude
         {
-            get { return this.RFDevice.Latitude; }
+            get => this.RFDevice.Latitude;
             set
             {
                 this.RFDevice.Latitude = value;
@@ -202,7 +202,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </remarks>
         public double Longitude
         {
-            get { return this.RFDevice.Longitude; }
+            get => this.RFDevice.Longitude;
             set
             {
                 this.RFDevice.Longitude = value;
@@ -225,7 +225,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Altitude
         {
-            get { return this.RFDevice.Altitude; }
+            get => this.RFDevice.Altitude;
             set
             {
                 this.RFDevice.Altitude = value;
@@ -244,7 +244,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double Roll
         {
-            get { return this.RFDevice.Roll; }
+            get => this.RFDevice.Roll;
             set
             {
                 this.RFDevice.Roll = value;
@@ -262,7 +262,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double Pitch
         {
-            get { return this.RFDevice.Pitch; }
+            get => this.RFDevice.Pitch;
             set
             {
                 this.RFDevice.Pitch = value;
@@ -281,7 +281,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double Yaw
         {
-            get { return this.RFDevice.Yaw; }
+            get => this.RFDevice.Yaw;
             set
             {
                 this.RFDevice.Yaw = value;
@@ -300,7 +300,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public RxTxType RxTxType
         {
-            get { return this.RFDevice.RxTxType; }
+            get => this.RFDevice.RxTxType;
             set
             {
                 this.RFDevice.RxTxType = value;
@@ -318,7 +318,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public AntennaType AntennaType
         {
-            get { return this.RFDevice.AntennaType; }
+            get => this.RFDevice.AntennaType;
             set
             {
                 this.RFDevice.AntennaType = value;
@@ -336,7 +336,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double Gain
         {
-            get { return this.RFDevice.Gain_dB; }
+            get => this.RFDevice.Gain_dB;
             set
             {
                 this.RFDevice.Gain_dB = value;
@@ -355,7 +355,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double CenterFrequency
         {
-            get { return this.RFDevice.CenterFrequency_Hz; }
+            get => this.RFDevice.CenterFrequency_Hz;
             set
             {
                 this.RFDevice.CenterFrequency_Hz = value;
@@ -374,7 +374,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double Bandwidth
         {
-            get { return this.RFDevice.Bandwidth_Hz; }
+            get => this.RFDevice.Bandwidth_Hz;
             set
             {
                 this.RFDevice.Bandwidth_Hz = value;
@@ -393,7 +393,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public double SignalToNoiseRatio
         {
-            get { return this.RFDevice.SignalToNoiseRatio_dB; }
+            get => this.RFDevice.SignalToNoiseRatio_dB;
             set
             {
                 this.RFDevice.SignalToNoiseRatio_dB = value;
@@ -412,7 +412,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int XPos
         {
-            get { return this.RFDevice.XPos; }
+            get => this.RFDevice.XPos;
             set
             {
                 this.RFDevice.XPos = value;
@@ -430,7 +430,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int YPos
         {
-            get { return this.RFDevice.YPos; }
+            get => this.RFDevice.YPos;
             set
             {
                 this.RFDevice.YPos = value;
@@ -448,7 +448,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int ZPos
         {
-            get { return this.RFDevice.ZPos; }
+            get => this.RFDevice.ZPos;
             set
             {
                 this.RFDevice.ZPos = value;
@@ -466,7 +466,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string Remark
         {
-            get { return this.RFDevice.Remark; }
+            get => this.RFDevice.Remark;
             set
             {
                 this.RFDevice.Remark = value;
@@ -484,7 +484,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string TechnicalParameters
         {
-            get { return this.RFDevice.TechnicalParameters; }
+            get => this.RFDevice.TechnicalParameters;
             set
             {
                 this.RFDevice.TechnicalParameters = value;
@@ -509,7 +509,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public GMapMarker Marker
         {
-            get { return this._Marker; }
+            get => this._Marker;
             set
             {
                 this._Marker = value;
@@ -532,7 +532,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public bool IsMarked
         {
-            get { return this.bIsMarked; }
+            get => this.bIsMarked;
             set
             {
                 this.bIsMarked = value;
@@ -555,7 +555,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public bool IsSelected
         {
-            get { return this.bIsSelected; }
+            get => this.bIsSelected;
             set
             {
                 this.bIsSelected = value;
@@ -699,7 +699,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string FirstValidationHint
         {
-            get { return this.strFirstValidationHint; }
+            get => this.strFirstValidationHint;
             set
             {
                 this.strFirstValidationHint = value;
@@ -722,7 +722,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string ValidationHint
         {
-            get { return this.strValidationHint; }
+            get => this.strValidationHint;
             set
             {
                 this.strValidationHint = value;
@@ -745,7 +745,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public Brush ValidationBackground
         {
-            get { return this.bValidationBackground; }
+            get => this.bValidationBackground;
             set
             {
                 this.bValidationBackground = value;
@@ -831,7 +831,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public SimulationState CurrentSimulationState
         {
-            get { return this.simsa; }
+            get => this.simsa;
             set
             {
                 this.simsa = value;

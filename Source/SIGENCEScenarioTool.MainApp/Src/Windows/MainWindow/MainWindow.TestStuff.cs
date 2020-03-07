@@ -310,24 +310,24 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void LoadHeightData()
         {
-            tm = new TerrainModel();
+            this.tm = new TerrainModel();
 
             DateTime dtStart = DateTime.Now;
             //tm.LoadXYZFile(@"D:\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
-            tm.LoadXYZFile(@"C:\Lanser\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
+            this.tm.LoadXYZFile(@"C:\Lanser\BigData\SRTM Tiles Germany\srtm_38_03.xyz");
             DateTime dtStop = DateTime.Now;
 
             GMapPolygon polygon = new GMapPolygon(new List<PointLatLng>
                 {
-                    new PointLatLng(tm.YMin,tm.XMin),
-                    new PointLatLng(tm.YMax,tm.XMin),
-                    new PointLatLng(tm.YMax,tm.XMax),
-                    new PointLatLng(tm.YMin,tm.XMax)
+                    new PointLatLng(this.tm.YMin,this.tm.XMin),
+                    new PointLatLng(this.tm.YMax,this.tm.XMin),
+                    new PointLatLng(this.tm.YMax,this.tm.XMax),
+                    new PointLatLng(this.tm.YMin,this.tm.XMax)
                 });
 
-            mcMapControl.Markers.Add(polygon);
+            this.mcMapControl.Markers.Add(polygon);
 
-            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {tm.PointCount}");
+            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {this.tm.PointCount}");
 
             GC.WaitForPendingFinalizers();
             GC.Collect();
@@ -339,14 +339,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CreateHighestPoints()
         {
-            if (tm == null)
+            if ( this.tm == null)
             {
                 MB.Information("Please Load First An Terrain Model!");
                 return;
             }
 
             DateTime dtStart = DateTime.Now;
-            List<LatLonAlt> highestpoints = tm.GetHighestPoints(new Envelope(tm.XMin, tm.XMax, tm.YMin, tm.YMax), 10, 20);
+            List<LatLonAlt> highestpoints = this.tm.GetHighestPoints(new Envelope(this.tm.XMin, this.tm.XMax, this.tm.YMin, this.tm.YMax), 10, 20);
             DateTime dtStop = DateTime.Now;
 
 
@@ -385,11 +385,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void MenuItem_LoadHeightDataTest_Click(object sender, RoutedEventArgs e)
         {
             //Task.Run(() => { LoadHeightData(); });
-            Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
             LoadHeightData();
 
-            Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
 
             e.Handled = true;
         }
@@ -402,11 +402,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void MenuItem_UseHeightDataTest_Click(object sender, RoutedEventArgs e)
         {
-            Cursor = Cursors.Wait;
+            this.Cursor = Cursors.Wait;
 
             CreateHighestPoints();
 
-            Cursor = Cursors.Arrow;
+            this.Cursor = Cursors.Arrow;
 
             e.Handled = true;
         }

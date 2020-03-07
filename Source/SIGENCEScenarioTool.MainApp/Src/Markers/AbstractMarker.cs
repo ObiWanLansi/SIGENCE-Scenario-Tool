@@ -55,7 +55,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public double Yaw
         {
-            get { return this.dYaw; }
+            get => this.dYaw;
             set
             {
                 this.dYaw = value;
@@ -78,7 +78,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public double Pitch
         {
-            get { return this.dPitch; }
+            get => this.dPitch;
             set
             {
                 this.dPitch = value;
@@ -145,8 +145,8 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public string MarkerToolTip
         {
-            get { return this.label.Content as string; }
-            set { this.label.Content = value; }
+            get => this.label.Content as string;
+            set => this.label.Content = value;
         }
 
 
@@ -163,7 +163,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public bool IsSelected
         {
-            get { return this.bIsSelected; }
+            get => this.bIsSelected;
             set
             {
                 this.bIsSelected = value;
@@ -189,7 +189,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public Brush Stroke
         {
-            get { return this.bStroke; }
+            get => this.bStroke;
             set
             {
                 this.bStroke = value;
@@ -211,7 +211,7 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public double StrokeThickness
         {
-            get { return this.dStrokeThickness; }
+            get => this.dStrokeThickness;
             set
             {
                 this.dStrokeThickness = value;

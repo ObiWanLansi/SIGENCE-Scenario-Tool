@@ -45,7 +45,7 @@ namespace SIGENCEScenarioTool.Dialogs
         /// </summary>
         public void InitChart()
         {
-            if (lRFDevices != null && lRFDevices.Count > 0)
+            if ( this.lRFDevices != null && this.lRFDevices.Count > 0)
             {
                 //    SortedDictionary<RxTxType, int> sd = new SortedDictionary<RxTxType, int>();
 
@@ -101,7 +101,7 @@ namespace SIGENCEScenarioTool.Dialogs
                     //ca.AxisY.Title = "Count";
                     //ca.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
 
-                    cReceiverTransmitterDistribution.ChartAreas.Add(ca);
+                    this.cReceiverTransmitterDistribution.ChartAreas.Add(ca);
 
                     //-------------------------
 
@@ -112,19 +112,19 @@ namespace SIGENCEScenarioTool.Dialogs
                         IsVisibleInLegend = true
                     };
 
-                    int iReceiver = lRFDevices.Count((d) => d.Id > 0);
+                    int iReceiver = this.lRFDevices.Count((d) => d.Id > 0);
                     DataPoint dpReceiver = new DataPoint { ToolTip = "Receiver" };
                     dpReceiver.SetValueXY("Receiver", iReceiver);
                     series.Points.Add(dpReceiver);
 
-                    int iTransmitter = lRFDevices.Count((d) => d.Id < 0);
+                    int iTransmitter = this.lRFDevices.Count((d) => d.Id < 0);
                     DataPoint dpTransmitter = new DataPoint { ToolTip = "Transmitter" };
                     dpTransmitter.SetValueXY("Transmitter", iTransmitter);
                     series.Points.Add(dpTransmitter);
 
-                    cReceiverTransmitterDistribution.Legends.Add(new Legend());
-                    cReceiverTransmitterDistribution.Series.Add(series);
-                    cReceiverTransmitterDistribution.Titles.Add("Transmitter / Receiver Distribution");
+                    this.cReceiverTransmitterDistribution.Legends.Add(new Legend());
+                    this.cReceiverTransmitterDistribution.Series.Add(series);
+                    this.cReceiverTransmitterDistribution.Titles.Add("Transmitter / Receiver Distribution");
                 }
             }
         }

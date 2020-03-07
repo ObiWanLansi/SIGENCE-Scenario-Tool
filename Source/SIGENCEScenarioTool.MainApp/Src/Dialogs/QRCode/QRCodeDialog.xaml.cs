@@ -41,8 +41,8 @@ namespace SIGENCEScenarioTool.Dialogs.QRCode
         {
             InitializeComponent();
 
-            RFDevice = rfdefvice;
-            DataContext = rfdefvice;
+            this.RFDevice = rfdefvice;
+            this.DataContext = rfdefvice;
 
             CreateQRCode();
         }
@@ -55,7 +55,7 @@ namespace SIGENCEScenarioTool.Dialogs.QRCode
         /// </summary>
         private void CreateQRCode()
         {
-            string strQRCodeData = new PayloadGenerator.Geolocation(RFDevice.Latitude.ToString(), RFDevice.Longitude.ToString()).ToString();
+            string strQRCodeData = new PayloadGenerator.Geolocation(this.RFDevice.Latitude.ToString(), this.RFDevice.Longitude.ToString()).ToString();
 
             QRCoder.QRCode qrCode = new QRCoder.QRCode(qrGenerator.CreateQrCode(strQRCodeData, QRCodeGenerator.ECCLevel.Q));
             Bitmap bmp = qrCode.GetGraphic(5, Color.Black, Color.White, false);
@@ -68,7 +68,7 @@ namespace SIGENCEScenarioTool.Dialogs.QRCode
             bi.StreamSource = ms;
             bi.EndInit();
 
-            imgQRCode.Source = bi;
+            this.imgQRCode.Source = bi;
         }
 
     } // end public partial class QRCodeDialog

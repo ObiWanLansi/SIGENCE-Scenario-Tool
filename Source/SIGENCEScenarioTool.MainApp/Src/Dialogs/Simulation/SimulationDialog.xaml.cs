@@ -70,7 +70,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </value>
         public int UniqueDeviceCount
         {
-            get { return this.iUniqueDeviceCount; }
+            get => this.iUniqueDeviceCount;
             set
             {
                 this.iUniqueDeviceCount = value;
@@ -93,7 +93,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </value>
         public double CurrentTimeSeconds
         {
-            get { return this.iCurrentTimeSeconds; }
+            get => this.iCurrentTimeSeconds;
             set
             {
                 this.iCurrentTimeSeconds = value;
@@ -115,7 +115,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </value>
         public double MinTimeSeconds
         {
-            get { return this.iMinTimeSeconds; }
+            get => this.iMinTimeSeconds;
             set
             {
                 this.iMinTimeSeconds = value;
@@ -138,7 +138,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </value>
         public double MaxTimeSeconds
         {
-            get { return this.iMaxTimeSeconds; }
+            get => this.iMaxTimeSeconds;
             set
             {
                 this.iMaxTimeSeconds = value;
@@ -161,7 +161,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </value>
         public string CurrentTimeAsString
         {
-            get { return this.strCurrentTime; }
+            get => this.strCurrentTime;
             set
             {
                 this.strCurrentTime = value;
@@ -184,7 +184,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </value>
         public bool IsRunning
         {
-            get { return this.bIsRunning; }
+            get => this.bIsRunning;
             set
             {
                 this.bIsRunning = value;
@@ -209,7 +209,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </value>
         public bool IsMQTTEnabled
         {
-            get { return this.bIsMQTTEnabled; }
+            get => this.bIsMQTTEnabled;
             set
             {
                 this.bIsMQTTEnabled = value;

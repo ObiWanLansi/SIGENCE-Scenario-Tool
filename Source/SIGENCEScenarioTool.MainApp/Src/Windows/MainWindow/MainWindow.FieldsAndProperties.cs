@@ -206,7 +206,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool DescriptionMarkdownChanged
         {
-            get { return this._bDescriptionMarkdownChanged; }
+            get => this._bDescriptionMarkdownChanged;
             set
             {
                 this._bDescriptionMarkdownChanged = value;
@@ -229,7 +229,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool DescriptionStylesheetChanged
         {
-            get { return this._bDescriptionStylesheetChanged; }
+            get => this._bDescriptionStylesheetChanged;
             set
             {
                 this._bDescriptionStylesheetChanged = value;
@@ -254,7 +254,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public RFDeviceTemplate CurrentSelectedTemplate
         {
-            get { return this.dtCurrentSelectedTemplate; }
+            get => this.dtCurrentSelectedTemplate;
             set
             {
                 this.dtCurrentSelectedTemplate = value;
@@ -280,7 +280,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool CreatingRFDevice
         {
-            get { return this.bCreatingRFDevice; }
+            get => this.bCreatingRFDevice;
             set
             {
                 this.bCreatingRFDevice = value;
@@ -307,7 +307,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool SimulationMode
         {
-            get { return this.bSimulationMode; }
+            get => this.bSimulationMode;
             set
             {
                 this.bSimulationMode = value;
@@ -389,7 +389,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool IsTileLoading
         {
-            get { return this.bIsTileLoading; }
+            get => this.bIsTileLoading;
             set
             {
                 this.bIsTileLoading = value;
@@ -412,7 +412,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool IsDeviceMovingMode
         {
-            get { return this.bIsDeviceMovingMode; }
+            get => this.bIsDeviceMovingMode;
             set
             {
                 this.bIsDeviceMovingMode = value;
@@ -434,7 +434,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public GMapProvider MapProvider
         {
-            get { return this.mcMapControl.MapProvider; }
+            get => this.mcMapControl.MapProvider;
             set
             {
                 this.mcMapControl.MapProvider = value;
@@ -455,7 +455,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public double Zoom
         {
-            get { return this.mcMapControl.Zoom; }
+            get => this.mcMapControl.Zoom;
             set
             {
                 this.mcMapControl.Zoom = value;
@@ -473,7 +473,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public double Latitude
         {
-            get { return this.mcMapControl.Position.Lat; }
+            get => this.mcMapControl.Position.Lat;
             set
             {
                 this.mcMapControl.Position = new PointLatLng(value, this.mcMapControl.Position.Lng);
@@ -491,7 +491,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public double Longitude
         {
-            get { return this.mcMapControl.Position.Lng; }
+            get => this.mcMapControl.Position.Lng;
             set
             {
                 this.mcMapControl.Position = new PointLatLng(this.mcMapControl.Position.Lat, value);
@@ -509,7 +509,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ShowCenter
         {
-            get { return this.mcMapControl.ShowCenter; }
+            get => this.mcMapControl.ShowCenter;
             set
             {
                 this.mcMapControl.ShowCenter = value;
@@ -552,7 +552,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public RFDeviceViewModel CurrentSelectedDevice
         {
-            get { return this.dvmCurrentSelectedDevice; }
+            get => this.dvmCurrentSelectedDevice;
             set
             {
                 this.dvmCurrentSelectedDevice = value;
@@ -577,7 +577,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public string CurrentFile
         {
-            get { return this.strCurrentFile; }
+            get => this.strCurrentFile;
             set
             {
                 this.strCurrentFile = value;
@@ -603,7 +603,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool SyncMapAndGrid
         {
-            get { return this.bSyncMapAndGrid; }
+            get => this.bSyncMapAndGrid;
             set
             {
                 this.bSyncMapAndGrid = value;
@@ -626,7 +626,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool UseBrowserInternal
         {
-            get { return this.bUseBrowserInternal; }
+            get => this.bUseBrowserInternal;
             set
             {
                 this.bUseBrowserInternal = value;
@@ -759,7 +759,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public GeoTag GeoTagFilter
         {
-            get { return this.gtGeoTagFilter; }
+            get => this.gtGeoTagFilter;
             set
             {
                 this.gtGeoTagFilter = value;
@@ -785,7 +785,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool UseGeoTagFilter
         {
-            get { return this.bUseGeoTagFilter; }
+            get => this.bUseGeoTagFilter;
             set
             {
                 this.bUseGeoTagFilter = value;
@@ -811,7 +811,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public string NameFilter
         {
-            get { return this.strNameFilter; }
+            get => this.strNameFilter;
             set
             {
                 this.strNameFilter = value;
@@ -837,7 +837,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool UseNameFilter
         {
-            get { return this.bUseNameFilter; }
+            get => this.bUseNameFilter;
             set
             {
                 this.bUseNameFilter = value;
@@ -867,13 +867,13 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool StartedDALF
         {
-            get { return this.bStartedDALF; }
+            get => this.bStartedDALF;
             set
             {
-                if (value == true)
+                if( value == true )
                 {
                     // Nur wenn es erfolgreich gestartet werden konnte machen wir weiter ...
-                    if (StartDALF() == false)
+                    if( StartDALF() == false )
                     {
                         return;
                     }
@@ -912,10 +912,10 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <remarks>We use a string so that we can provide a empty a string as integer NULL ...</remarks>
         public string IdFilter
         {
-            get { return this.iIdFilter != null ? this.iIdFilter.ToString() : ""; }
+            get => this.iIdFilter != null ? this.iIdFilter.ToString() : "";
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if( string.IsNullOrEmpty(value) )
                 {
                     this.iIdFilter = null;
                 }
@@ -926,7 +926,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                         this.iIdFilter = int.Parse(value);
                     }
-                    catch (Exception)
+                    catch( Exception )
                     {
                         this.iIdFilter = null;
                     }
@@ -952,7 +952,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ShowReceiver
         {
-            get { return this.bShowReceiver; }
+            get => this.bShowReceiver;
             set
             {
                 this.bShowReceiver = value;
@@ -977,7 +977,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public bool ShowTransmitter
         {
-            get { return this.bShowTransmitter; }
+            get => this.bShowTransmitter;
             set
             {
                 this.bShowTransmitter = value;
@@ -1002,7 +1002,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </value>
         public RxTxType RxTxTypeFilter
         {
-            get { return this.rttRxTxTypeFilter; }
+            get => this.rttRxTxTypeFilter;
             set
             {
                 this.rttRxTxTypeFilter = value;

@@ -34,11 +34,11 @@ namespace SIGENCEScenarioTool.Tools
         /// <exception cref="ArgumentNullException"></exception>
         public static Assembly Assembly
         {
-            get { return a; }
+            get => a;
             set
             {
                 // Before 4.7 ...
-                if(a == null)
+                if( a == null )
                 {
                     throw new ArgumentNullException();
                 }

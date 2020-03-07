@@ -208,7 +208,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Information
         {
-            get { return this.iInformation; }
+            get => this.iInformation;
             set
             {
                 this.iInformation = value;
@@ -228,7 +228,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Warning
         {
-            get { return this.iWarning; }
+            get => this.iWarning;
             set
             {
                 this.iWarning = value;
@@ -249,7 +249,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Error
         {
-            get { return this.iError; }
+            get => this.iError;
             set
             {
                 this.iError = value;
@@ -270,7 +270,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public int Fatal
         {
-            get { return this.iFatal; }
+            get => this.iFatal;
             set
             {
                 this.iFatal = value;
@@ -288,7 +288,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </summary>
         public new int Count
         {
-            get { return this.iCount; }
+            get => this.iCount;
             set
             {
                 this.iCount = value;
@@ -309,7 +309,7 @@ namespace SIGENCEScenarioTool.ViewModels
         /// </value>
         public string LastRun
         {
-            get { return this.strLastRun; }
+            get => this.strLastRun;
             set
             {
                 this.strLastRun = value;

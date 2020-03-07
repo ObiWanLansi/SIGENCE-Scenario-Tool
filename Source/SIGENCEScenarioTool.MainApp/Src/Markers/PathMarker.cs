@@ -86,16 +86,16 @@ namespace SIGENCEScenarioTool.Markers
         /// </value>
         public bool IsSelected
         {
-            get { return this.bIsSelected; }
+            get => this.bIsSelected;
             set
             {
                 this.bIsSelected = value;
 
-                if(this.bIsSelected)
+                if( this.bIsSelected )
                 {
-                    if(this.Shape is Path path)
+                    if( this.Shape is Path path )
                     {
-                        path.Stroke = new SolidColorBrush( Colors.Blue );
+                        path.Stroke = new SolidColorBrush(Colors.Blue);
                         path.StrokeThickness = 7;
                     }
                 }

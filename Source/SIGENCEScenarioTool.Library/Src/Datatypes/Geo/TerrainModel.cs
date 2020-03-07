@@ -79,7 +79,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// </value>
         public int PointCount
         {
-            get { return lTerrainModel.Count; }
+            get { return this.lTerrainModel.Count; }
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// </value>
         public List<LatLonAlt> Points
         {
-            get { return lTerrainModel; }
+            get { return this.lTerrainModel; }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -113,7 +113,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
 
             List<LatLonAlt> lMapPointsInEvelope = new List<LatLonAlt>(1024);
 
-            Parallel.ForEach(lTerrainModel, (point) =>
+            Parallel.ForEach(this.lTerrainModel, (point) =>
             {
                 if (envelope.Contains(point.Lon, point.Lat))
                 {
@@ -170,14 +170,14 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// </summary>
         private void Reset()
         {
-            TerrainFile = null;
+            this.TerrainFile = null;
 
-            lTerrainModel.Clear();
+            this.lTerrainModel.Clear();
 
-            XMin = double.MaxValue;
-            YMin = double.MaxValue;
-            XMax = double.MinValue;
-            YMax = double.MinValue;
+            this.XMin = double.MaxValue;
+            this.YMin = double.MaxValue;
+            this.XMax = double.MinValue;
+            this.YMax = double.MinValue;
 
             //Envelope = null;
         }
@@ -200,29 +200,29 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
             double y = double.Parse(fields[1].Replace('.', ','));
             int z = int.Parse(fields[2]);
 
-            lock (lTerrainModel)
+            lock ( this.lTerrainModel )
             {
-                if (x < XMin)
+                if (x < this.XMin )
                 {
-                    XMin = x;
+                    this.XMin = x;
                 }
 
-                if (x > XMax)
+                if (x > this.XMax )
                 {
-                    XMax = x;
+                    this.XMax = x;
                 }
 
-                if (y < YMin)
+                if (y < this.YMin )
                 {
-                    YMin = y;
+                    this.YMin = y;
                 }
 
-                if (y > YMax)
+                if (y > this.YMax )
                 {
-                    YMax = y;
+                    this.YMax = y;
                 }
 
-                lTerrainModel.Add(new LatLonAlt(y, x, z));
+                this.lTerrainModel.Add(new LatLonAlt(y, x, z));
             }
         }
 
@@ -235,7 +235,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         {
             Reset();
 
-            TerrainFile = new FileInfo(strFilename);
+            this.TerrainFile = new FileInfo(strFilename);
 
             string[] strLines = File.ReadAllLines(strFilename);
 

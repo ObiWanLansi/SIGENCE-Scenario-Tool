@@ -48,7 +48,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// <returns></returns>
         public PointLatLng ToPointLatLng()
         {
-            return new PointLatLng(Lat, Lon);
+            return new PointLatLng(this.Lat, this.Lon);
         }
 
 
@@ -59,7 +59,7 @@ namespace SIGENCEScenarioTool.Datatypes.Geo
         /// <returns></returns>
         public double Distance(LatLonAlt other)
         {
-            Point p1 = new Point(Lon, Lat);
+            Point p1 = new Point(this.Lon, this.Lat);
             Point p2 = new Point(other.Lon, other.Lat);
 
             return p1.Distance(p2);

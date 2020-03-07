@@ -35,7 +35,7 @@ namespace SIGENCEScenarioTool.Ui
         /// </returns>
         public override string ToString()
         {
-            return Name;
+            return this.Name;
         }
 
 

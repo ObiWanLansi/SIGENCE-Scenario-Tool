@@ -24,7 +24,7 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels
         /// <returns></returns>
         public Image GetImage()
         {
-            return ( Image ) Resources ["EXPORT"];
+            return ( Image ) this.Resources ["EXPORT"];
         }
 
 
