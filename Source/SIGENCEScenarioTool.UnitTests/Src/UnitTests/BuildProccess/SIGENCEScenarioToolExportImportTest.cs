@@ -38,7 +38,7 @@ namespace SIGENCEScenarioTool.UnitTests
         [Test]
         [Category("ExportImport")]
         [SIGENCEScenarioToolTestCase("28321d28-352c-462a-9d87-49b1b3ad7224")]
-        [Description("Tests if the RFDevices are properly exported and imported as XML.")]
+        [Description("Tests If The Rfdevices Are Properly Exported And Imported As Xml.")]
         public void Test000_ExportAndImportRFDeviceXml()
         {
             SIGENCEScenarioToolTestCaseHelper.ShowTestCaseInformation();
@@ -72,8 +72,7 @@ namespace SIGENCEScenarioTool.UnitTests
 
             Assert.NotNull(e);
 
-            string strFilename =
-                $"{Path.GetTempPath()}nunit_rfdevice.{DateTime.Now.ToString("yyyyMMdd_HHmmssfff")}.xml";
+            string strFilename = $"{Path.GetTempPath()}nunit_rfdevice.{DateTime.Now:yyyyMMdd_HHmmssfff}.xml";
 
             e.SaveDefault(strFilename);
 
@@ -100,7 +99,7 @@ namespace SIGENCEScenarioTool.UnitTests
         /// </summary>
         public enum FileFormat : byte
         {
-            Csv, Xml//, Json
+            Csv, Xml, Json
 
         } // end public enum FileFormat
 
@@ -119,8 +118,8 @@ namespace SIGENCEScenarioTool.UnitTests
         [Test]
         [Category("ExportImport")]
         [SIGENCEScenarioToolTestCase("9ABC401E-9790-4FD4-9339-371914053AD8")]
-        [Description("Tests if the RFDevices are properly exported in different formats.")]
-        public void Test001_ExportRFDevices( [ValueSource(nameof(aFormats))] FileFormat format, [Values(10, 50, 200, 1000)] int iCount )
+        [Description("Tests If The Rfdevices Are Properly Exported In Different Formats.")]
+        public void Test001_ExportRFDevices( [ValueSource(nameof(aFormats))] FileFormat format, [Values(3, 5, 20)] int iCount )
         {
             SIGENCEScenarioToolTestCaseHelper.ShowTestCaseInformation();
 
@@ -128,8 +127,7 @@ namespace SIGENCEScenarioTool.UnitTests
 
             RFDeviceList dl = RFDeviceList.CreateRandomizedRFDeviceList(iCount, new PointLatLng(0, 0));
 
-            string strFilename =
-                $"{Path.GetTempPath()}nunit_rfdevice.{DateTime.Now.ToString("yyyyMMdd_HHmmssfff")}.{format}";
+            string strFilename = $"{Path.GetTempPath()}nunit_rfdevice.{DateTime.Now:yyyyMMdd_HHmmssfff}.{format}";
 
             switch( format )
             {
@@ -141,9 +139,9 @@ namespace SIGENCEScenarioTool.UnitTests
                     dl.SaveAsCsv(strFilename);
                     break;
 
-                    //case FileFormat.Json:
-                    //    dl.SaveAsJson(strFilename);
-                    //    break;
+                case FileFormat.Json:
+                    dl.SaveAsJson(strFilename);
+                    break;
             }
 
             //-----------------------------------------------------------------

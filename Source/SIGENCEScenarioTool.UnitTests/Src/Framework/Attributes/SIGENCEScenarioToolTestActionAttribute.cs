@@ -29,20 +29,14 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// Executed before each test is run
         /// </summary>
         /// <param name="test">The test that is going to be run.</param>
-        public void BeforeTest(ITest test)
-        {
-            Log.InfoFormat("BeforeTest: [{0}] {1}", DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss"), test.FullName);
-        }
+        public void BeforeTest( ITest test ) => Log.InfoFormat("BeforeTest: [{0}] {1}", DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss"), test.FullName);
 
 
         /// <summary>
         /// Executed after each test is run
         /// </summary>
         /// <param name="test">The test that has just been run.</param>
-        public void AfterTest(ITest test)
-        {
-            Log.InfoFormat("AfterTest: [{0}] {1}", DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss"), test.FullName);
-        }
+        public void AfterTest( ITest test ) => Log.InfoFormat("AfterTest: [{0}] {1}", DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss"), test.FullName);
 
 
         /// <summary>

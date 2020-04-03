@@ -22,19 +22,14 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// Initializes a new instance of the <see cref="SIGENCEScenarioToolTestCaseAttribute"/> class.
         /// </summary>
         /// <param name="g">The g.</param>
-        public SIGENCEScenarioToolTestCaseAttribute(Guid g)
-        {
-        }
+        public SIGENCEScenarioToolTestCaseAttribute( Guid g ) => this.Id = g;
 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SIGENCEScenarioToolTestCaseAttribute"/> class.
         /// </summary>
         /// <param name="strGUID">The string unique identifier.</param>
-        public SIGENCEScenarioToolTestCaseAttribute(string strGUID)
-        {
-            this.Id = new Guid(strGUID);
-        }
+        public SIGENCEScenarioToolTestCaseAttribute( string strGUID ) => this.Id = new Guid(strGUID);
 
 
         /// <summary>
@@ -43,10 +38,7 @@ namespace SIGENCEScenarioTool.UnitTest.Attributes
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString()
-        {
-            return this.Id.ToString();
-        }
+        public override string ToString() => this.Id.ToString();
 
     } // end public sealed class SIGENCEScenarioToolTestCaseAttribute 
 }
