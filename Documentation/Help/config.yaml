@@ -1,0 +1,12 @@
+MainPage:
+  Caption: Home
+  Document: Home.md
+Pages:
+- Caption: ''
+  Document: Download.md
+- Caption: Install
+  Document: ''
+- Caption: Screenshots
+  Document: ''
+- Caption: Third Party Libraries
+  Document: ThirdPartyLibraries.md

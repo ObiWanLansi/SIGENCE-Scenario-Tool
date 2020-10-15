@@ -72,7 +72,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HelpPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">O:\SIGENCE-Scenario-Tool.wiki</Value>
+      <Value Profile="(Default)">O:\SIGENCE-Scenario-Tool\Documentation\Help</Value>
     </Setting>
     <Setting Name="HelpPort" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">1510</Value>

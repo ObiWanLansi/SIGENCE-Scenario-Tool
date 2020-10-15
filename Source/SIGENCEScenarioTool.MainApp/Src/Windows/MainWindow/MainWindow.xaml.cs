@@ -124,7 +124,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 #if DEBUG
 
-            //HelpConfigFactory.CreateTemplate(Properties.Settings.Default.HelpPath);
+            HelpConfigFactory.CreateTemplate(Properties.Settings.Default.HelpPath);
 
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "FMBroadcast", Id = 2 }));

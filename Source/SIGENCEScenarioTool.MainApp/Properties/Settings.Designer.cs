@@ -300,7 +300,7 @@ namespace SIGENCEScenarioTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("O:\\SIGENCE-Scenario-Tool.wiki")]
+        [global::System.Configuration.DefaultSettingValueAttribute("O:\\SIGENCE-Scenario-Tool\\Documentation\\Help")]
         public string HelpPath {
             get {
                 return ((string)(this["HelpPath"]));

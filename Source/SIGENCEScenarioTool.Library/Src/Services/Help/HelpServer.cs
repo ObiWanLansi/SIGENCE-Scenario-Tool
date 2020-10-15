@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 using Ceen;
 using Ceen.Httpd;
 
+using Markdig;
+
 using SIGENCEScenarioTool.Extensions;
-
-
+using SIGENCEScenarioTool.Tools;
 
 namespace SIGENCEScenarioTool.Services.Help
 {
@@ -130,7 +133,7 @@ namespace SIGENCEScenarioTool.Services.Help
             // Erstmal nur auf dem Loopback lauschen ...
             this.EndPoint = new IPEndPoint(IPAddress.Loopback, (int) Port);
 
-            this.task = HttpServer.ListenAsync(EndPoint, false, config, this.tcs.Token);
+            this.task = HttpServer.ListenAsync(this.EndPoint, false, config, this.tcs.Token);
         }
 
 
@@ -162,12 +165,62 @@ namespace SIGENCEScenarioTool.Services.Help
 
 
         /// <summary>
+        /// The HTML template
+        /// </summary>
+        private string HTML_TEMPLATE =
+@"<!DOCTYPE html>
+<html>
+    <head>
+        <title>$APPLICATION_TITLE$ - $VERSION$</title>
+        <style>
+            body { background-color: #F0FFFF; }
+        </style>
+    </head>
+    <body>
+        $CONTENT$
+    </body>
+</html>";
+
+
+        /// <summary>
+        /// The sd help pages
+        /// </summary>
+        private readonly SortedDictionary<string, HelpPage> sdHelpPages = new SortedDictionary<string, HelpPage>();
+
+
+        /// <summary>
+        /// Adds the page.
+        /// </summary>
+        /// <param name="strPath">The string path.</param>
+        /// <param name="hp">The hp.</param>
+        /// <returns></returns>
+        private void AddHelpPage( string strPath, HelpPage hp )
+        {
+
+            string strMarkdownFilename = $"{Path}\\{hp.Document}";
+
+            string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
+
+            string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
+            //string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
+
+            //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
+            hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", strHtmlContent);
+
+            this.sdHelpPages.Add(strPath, hp);
+        }
+
+
+        /// <summary>
         /// Creates the help.
         /// </summary>
         private void CreateHelp()
         {
+            this.sdHelpPages.Clear();
+
             if( Path.IsEmpty() )
             {
+                //TODO: Warning or Error ?
                 return;
             }
 
@@ -178,23 +231,63 @@ namespace SIGENCEScenarioTool.Services.Help
 
             if( Directory.Exists(Path) == false )
             {
-                return;
-            }
-
-            string strConfigFile = string.Format("{0}\\config.yaml", Path);
-
-            if( File.Exists(strConfigFile) == false )
-            {
+                //TODO: Warning or Error ?
                 return;
             }
 
 
-            string strHome = string.Format("{0}\\Home.md", Path);
-            string strIndex = string.Format("{0}\\Index.md", Path);
+            HelpConfig hc = HelpConfigFactory.LoadConfig(Path);
 
-            if( File.Exists(strHome) == false && File.Exists(strIndex) == false )
+            if( hc == null )
             {
+                //TODO: Warning or Error ?
+                return;
+            }
 
+            if( hc.MainPage.Validate() == false )
+            {
+                //TODO: Warning or Error ?
+                return;
+            }
+
+            AddHelpPage("/", hc.MainPage);
+
+            foreach( HelpPage hp in hc.Pages )
+            {
+                // Wenn beide leer sind können wir nix weiter machen
+                if( hp.Validate() == false )
+                {
+                    continue;
+                }
+
+                #region OldStuff
+                //// Wenn der Documentname leer ist nehmen wir die Caption + .md
+                //if( hp.Document.IsEmpty() )
+                //{
+                //    hp.Document = hp.Caption + ".md";
+                //}
+
+                //// Wenn die Caption leer ist nehmen wir das Document - .md
+                //if( hp.Caption.IsEmpty() )
+                //{
+                //    hp.Caption = hp.Document.Substring(0, hp.Document.Length - 3);
+                //}
+
+                //string strMarkdownFilename = $"{Path}\\{hp.Document}";
+
+                //string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
+
+                //string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
+                //string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
+
+                //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
+                #endregion
+
+                // Der Pfad ist der Dokumentname ohne .md
+                //string strPath = hp.Document.Substring(0, hp.Document.Length - 3).ToLower();
+                //AddHelpPage($"/{strPath}", hp);
+
+                AddHelpPage($"/{hp.Document}", hp);
             }
         }
 
@@ -209,7 +302,17 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <exception cref="NotImplementedException"></exception>
         public async Task<bool> HandleAsync( IHttpContext context )
         {
-            await context.Response.WriteAllAsync(DateTime.Now.Fmt_DD_MM_YYYY_HH_MM_SS());
+            IHttpRequest request = context.Request;
+
+            if( this.sdHelpPages.ContainsKey(request.Path) )
+            {
+                await context.Response.WriteAllAsync(sdHelpPages [request.Path].HtmlContent);
+            }
+            else
+            {
+                //TODO 404 ( mal als embedded resource machen ...)
+                await context.Response.WriteAllAsync("<h1>vierhundertvier (404)</h1>");
+            }
 
             return true;
         }

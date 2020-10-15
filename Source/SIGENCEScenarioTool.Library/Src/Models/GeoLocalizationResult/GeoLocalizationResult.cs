@@ -43,10 +43,10 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Guid PrimaryKey 
         {
-            get { return _PrimaryKey; }
+            get { return this._PrimaryKey; }
             set
             {
-                _PrimaryKey = value;
+                this._PrimaryKey = value;
                 FirePropertyChanged();
             }
         }
@@ -77,10 +77,10 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public int Id 
         {
-            get { return _Id; }
+            get { return this._Id; }
             set
             {
-                _Id = value;
+                this._Id = value;
                 FirePropertyChanged();
             }
         }
@@ -111,10 +111,10 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public double Latitude 
         {
-            get { return _Latitude; }
+            get { return this._Latitude; }
             set
             {
-                _Latitude = value;
+                this._Latitude = value;
                 FirePropertyChanged();
             }
         }
@@ -145,10 +145,10 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public double Longitude 
         {
-            get { return _Longitude; }
+            get { return this._Longitude; }
             set
             {
-                _Longitude = value;
+                this._Longitude = value;
                 FirePropertyChanged();
             }
         }
@@ -179,10 +179,10 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public uint Altitude 
         {
-            get { return _Altitude; }
+            get { return this._Altitude; }
             set
             {
-                _Altitude = value;
+                this._Altitude = value;
                 FirePropertyChanged();
             }
         }
@@ -213,10 +213,10 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public double LocalizationTime 
         {
-            get { return _LocalizationTime; }
+            get { return this._LocalizationTime; }
             set
             {
-                _LocalizationTime = value;
+                this._LocalizationTime = value;
                 FirePropertyChanged();
             }
         }
@@ -236,12 +236,12 @@ namespace SIGENCEScenarioTool.Models
         {
             return new XElement("GeoLocalizationResult",
 
-                XElementExtension.GetXElement("PrimaryKey", PrimaryKey),
-                XElementExtension.GetXElement("Id", Id),
-                XElementExtension.GetXElement("Latitude", Latitude),
-                XElementExtension.GetXElement("Longitude", Longitude),
-                XElementExtension.GetXElement("Altitude", Altitude),
-                XElementExtension.GetXElement("LocalizationTime", LocalizationTime)  
+                XElementExtension.GetXElement("PrimaryKey", this.PrimaryKey),
+                XElementExtension.GetXElement("Id", this.Id),
+                XElementExtension.GetXElement("Latitude", this.Latitude),
+                XElementExtension.GetXElement("Longitude", this.Longitude),
+                XElementExtension.GetXElement("Altitude", this.Altitude),
+                XElementExtension.GetXElement("LocalizationTime", this.LocalizationTime)  
             );
         }
 
@@ -285,32 +285,32 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (PrimaryKey != other.PrimaryKey )
+            if ( this.PrimaryKey != other.PrimaryKey )
             {
                 return false;
             }
 
-            if (Id != other.Id )
+            if ( this.Id != other.Id )
             {
                 return false;
             }
 
-            if (Latitude != other.Latitude )
+            if ( this.Latitude != other.Latitude )
             {
                 return false;
             }
 
-            if (Longitude != other.Longitude )
+            if ( this.Longitude != other.Longitude )
             {
                 return false;
             }
 
-            if (Altitude != other.Altitude )
+            if ( this.Altitude != other.Altitude )
             {
                 return false;
             }
 
-            if (LocalizationTime != other.LocalizationTime )
+            if ( this.LocalizationTime != other.LocalizationTime )
             {
                 return false;
             }

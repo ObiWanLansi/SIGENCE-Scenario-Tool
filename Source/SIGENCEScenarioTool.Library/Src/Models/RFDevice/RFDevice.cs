@@ -47,12 +47,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Guid PrimaryKey 
         {
-            get { return _PrimaryKey; }
+            get { return this._PrimaryKey; }
             set
             {
-                if(_PrimaryKey != value)
+                if( this._PrimaryKey != value)
                 {
-                    _PrimaryKey = value;
+                    this._PrimaryKey = value;
 
                     FirePropertyChanged();
                 }
@@ -86,12 +86,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public int Id 
         {
-            get { return _Id; }
+            get { return this._Id; }
             set
             {
-                if(_Id != value)
+                if( this._Id != value)
                 {
-                    _Id = value;
+                    this._Id = value;
 
                     FirePropertyChanged();
                 }
@@ -125,12 +125,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public DeviceSource DeviceSource 
         {
-            get { return _DeviceSource; }
+            get { return this._DeviceSource; }
             set
             {
-                if(_DeviceSource != value)
+                if( this._DeviceSource != value)
                 {
-                    _DeviceSource = value;
+                    this._DeviceSource = value;
 
                     FirePropertyChanged();
                 }
@@ -164,12 +164,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public double StartTime 
         {
-            get { return _StartTime; }
+            get { return this._StartTime; }
             set
             {
-                if(_StartTime != value)
+                if( this._StartTime != value)
                 {
-                    _StartTime = value;
+                    this._StartTime = value;
 
                     FirePropertyChanged();
                 }
@@ -203,12 +203,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public string Name 
         {
-            get { return _Name; }
+            get { return this._Name; }
             set
             {
-                if(_Name != value)
+                if( this._Name != value)
                 {
-                    _Name = value;
+                    this._Name = value;
 
                     FirePropertyChanged();
                 }
@@ -242,12 +242,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Latitude Latitude 
         {
-            get { return _Latitude; }
+            get { return this._Latitude; }
             set
             {
-                if(_Latitude != value)
+                if( this._Latitude != value)
                 {
-                    _Latitude = value;
+                    this._Latitude = value;
 
                     FirePropertyChanged();
                 }
@@ -281,12 +281,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Longitude Longitude 
         {
-            get { return _Longitude; }
+            get { return this._Longitude; }
             set
             {
-                if(_Longitude != value)
+                if( this._Longitude != value)
                 {
-                    _Longitude = value;
+                    this._Longitude = value;
 
                     FirePropertyChanged();
                 }
@@ -320,12 +320,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Altitude Altitude 
         {
-            get { return _Altitude; }
+            get { return this._Altitude; }
             set
             {
-                if(_Altitude != value)
+                if( this._Altitude != value)
                 {
-                    _Altitude = value;
+                    this._Altitude = value;
 
                     FirePropertyChanged();
                 }
@@ -359,12 +359,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public double Roll 
         {
-            get { return _Roll; }
+            get { return this._Roll; }
             set
             {
-                if(_Roll != value)
+                if( this._Roll != value)
                 {
-                    _Roll = value;
+                    this._Roll = value;
 
                     FirePropertyChanged();
                 }
@@ -398,12 +398,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public double Pitch 
         {
-            get { return _Pitch; }
+            get { return this._Pitch; }
             set
             {
-                if(_Pitch != value)
+                if( this._Pitch != value)
                 {
-                    _Pitch = value;
+                    this._Pitch = value;
 
                     FirePropertyChanged();
                 }
@@ -437,12 +437,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public double Yaw 
         {
-            get { return _Yaw; }
+            get { return this._Yaw; }
             set
             {
-                if(_Yaw != value)
+                if( this._Yaw != value)
                 {
-                    _Yaw = value;
+                    this._Yaw = value;
 
                     FirePropertyChanged();
                 }
@@ -476,12 +476,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public RxTxType RxTxType 
         {
-            get { return _RxTxType; }
+            get { return this._RxTxType; }
             set
             {
-                if(_RxTxType != value)
+                if( this._RxTxType != value)
                 {
-                    _RxTxType = value;
+                    this._RxTxType = value;
 
                     FirePropertyChanged();
                 }
@@ -515,12 +515,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public AntennaType AntennaType 
         {
-            get { return _AntennaType; }
+            get { return this._AntennaType; }
             set
             {
-                if(_AntennaType != value)
+                if( this._AntennaType != value)
                 {
-                    _AntennaType = value;
+                    this._AntennaType = value;
 
                     FirePropertyChanged();
                 }
@@ -554,12 +554,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Frequency CenterFrequency_Hz 
         {
-            get { return _CenterFrequency_Hz; }
+            get { return this._CenterFrequency_Hz; }
             set
             {
-                if(_CenterFrequency_Hz != value)
+                if( this._CenterFrequency_Hz != value)
                 {
-                    _CenterFrequency_Hz = value;
+                    this._CenterFrequency_Hz = value;
 
                     FirePropertyChanged();
                 }
@@ -593,12 +593,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Bandwidth Bandwidth_Hz 
         {
-            get { return _Bandwidth_Hz; }
+            get { return this._Bandwidth_Hz; }
             set
             {
-                if(_Bandwidth_Hz != value)
+                if( this._Bandwidth_Hz != value)
                 {
-                    _Bandwidth_Hz = value;
+                    this._Bandwidth_Hz = value;
 
                     FirePropertyChanged();
                 }
@@ -632,12 +632,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public Gain Gain_dB 
         {
-            get { return _Gain_dB; }
+            get { return this._Gain_dB; }
             set
             {
-                if(_Gain_dB != value)
+                if( this._Gain_dB != value)
                 {
-                    _Gain_dB = value;
+                    this._Gain_dB = value;
 
                     FirePropertyChanged();
                 }
@@ -671,12 +671,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public SignalToNoiseRatio SignalToNoiseRatio_dB 
         {
-            get { return _SignalToNoiseRatio_dB; }
+            get { return this._SignalToNoiseRatio_dB; }
             set
             {
-                if(_SignalToNoiseRatio_dB != value)
+                if( this._SignalToNoiseRatio_dB != value)
                 {
-                    _SignalToNoiseRatio_dB = value;
+                    this._SignalToNoiseRatio_dB = value;
 
                     FirePropertyChanged();
                 }
@@ -710,12 +710,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public int XPos 
         {
-            get { return _XPos; }
+            get { return this._XPos; }
             set
             {
-                if(_XPos != value)
+                if( this._XPos != value)
                 {
-                    _XPos = value;
+                    this._XPos = value;
 
                     FirePropertyChanged();
                 }
@@ -749,12 +749,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public int YPos 
         {
-            get { return _YPos; }
+            get { return this._YPos; }
             set
             {
-                if(_YPos != value)
+                if( this._YPos != value)
                 {
-                    _YPos = value;
+                    this._YPos = value;
 
                     FirePropertyChanged();
                 }
@@ -788,12 +788,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public int ZPos 
         {
-            get { return _ZPos; }
+            get { return this._ZPos; }
             set
             {
-                if(_ZPos != value)
+                if( this._ZPos != value)
                 {
-                    _ZPos = value;
+                    this._ZPos = value;
 
                     FirePropertyChanged();
                 }
@@ -827,12 +827,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public string TechnicalParameters 
         {
-            get { return _TechnicalParameters; }
+            get { return this._TechnicalParameters; }
             set
             {
-                if(_TechnicalParameters != value)
+                if( this._TechnicalParameters != value)
                 {
-                    _TechnicalParameters = value;
+                    this._TechnicalParameters = value;
 
                     FirePropertyChanged();
                 }
@@ -866,12 +866,12 @@ namespace SIGENCEScenarioTool.Models
         ///</summary>
         public string Remark 
         {
-            get { return _Remark; }
+            get { return this._Remark; }
             set
             {
-                if(_Remark != value)
+                if( this._Remark != value)
                 {
-                    _Remark = value;
+                    this._Remark = value;
 
                     FirePropertyChanged();
                 }
@@ -893,28 +893,28 @@ namespace SIGENCEScenarioTool.Models
         {
             return new XElement("RFDevice",
 
-                XElementExtension.GetXElement("PrimaryKey", PrimaryKey),
-                XElementExtension.GetXElement("Id", Id),
-                XElementExtension.GetXElement("DeviceSource", DeviceSource),
-                XElementExtension.GetXElement("StartTime", StartTime),
-                XElementExtension.GetXElement("Name", Name),
-                XElementExtension.GetXElement("Latitude", Latitude),
-                XElementExtension.GetXElement("Longitude", Longitude),
-                XElementExtension.GetXElement("Altitude", Altitude),
-                XElementExtension.GetXElement("Roll", Roll),
-                XElementExtension.GetXElement("Pitch", Pitch),
-                XElementExtension.GetXElement("Yaw", Yaw),
-                XElementExtension.GetXElement("RxTxType", RxTxType),
-                XElementExtension.GetXElement("AntennaType", AntennaType),
-                XElementExtension.GetXElement("CenterFrequency_Hz", CenterFrequency_Hz),
-                XElementExtension.GetXElement("Bandwidth_Hz", Bandwidth_Hz),
-                XElementExtension.GetXElement("Gain_dB", Gain_dB),
-                XElementExtension.GetXElement("SignalToNoiseRatio_dB", SignalToNoiseRatio_dB),
-                XElementExtension.GetXElement("XPos", XPos),
-                XElementExtension.GetXElement("YPos", YPos),
-                XElementExtension.GetXElement("ZPos", ZPos),
-                XElementExtension.GetXElement("TechnicalParameters", TechnicalParameters),
-                XElementExtension.GetXElement("Remark", Remark)  
+                XElementExtension.GetXElement("PrimaryKey", this.PrimaryKey),
+                XElementExtension.GetXElement("Id", this.Id),
+                XElementExtension.GetXElement("DeviceSource", this.DeviceSource),
+                XElementExtension.GetXElement("StartTime", this.StartTime),
+                XElementExtension.GetXElement("Name", this.Name),
+                XElementExtension.GetXElement("Latitude", this.Latitude),
+                XElementExtension.GetXElement("Longitude", this.Longitude),
+                XElementExtension.GetXElement("Altitude", this.Altitude),
+                XElementExtension.GetXElement("Roll", this.Roll),
+                XElementExtension.GetXElement("Pitch", this.Pitch),
+                XElementExtension.GetXElement("Yaw", this.Yaw),
+                XElementExtension.GetXElement("RxTxType", this.RxTxType),
+                XElementExtension.GetXElement("AntennaType", this.AntennaType),
+                XElementExtension.GetXElement("CenterFrequency_Hz", this.CenterFrequency_Hz),
+                XElementExtension.GetXElement("Bandwidth_Hz", this.Bandwidth_Hz),
+                XElementExtension.GetXElement("Gain_dB", this.Gain_dB),
+                XElementExtension.GetXElement("SignalToNoiseRatio_dB", this.SignalToNoiseRatio_dB),
+                XElementExtension.GetXElement("XPos", this.XPos),
+                XElementExtension.GetXElement("YPos", this.YPos),
+                XElementExtension.GetXElement("ZPos", this.ZPos),
+                XElementExtension.GetXElement("TechnicalParameters", this.TechnicalParameters),
+                XElementExtension.GetXElement("Remark", this.Remark)  
             );
         }
 
@@ -981,232 +981,232 @@ namespace SIGENCEScenarioTool.Models
                 return false;
             }
 
-            if (other.PrimaryKey == null && PrimaryKey != null)
+            if (other.PrimaryKey == null && this.PrimaryKey != null)
             {
                 return false;
             }
 
-            if (other.PrimaryKey != null && PrimaryKey == null)
+            if (other.PrimaryKey != null && this.PrimaryKey == null)
             {
                 return false;
             }
 
-            if (other.PrimaryKey != null && PrimaryKey != null && other.PrimaryKey.Equals(PrimaryKey) == false)
+            if (other.PrimaryKey != null && this.PrimaryKey != null && other.PrimaryKey.Equals(this.PrimaryKey) == false)
             {
                 return false;
             }
 
-            if (Id != other.Id )
+            if ( this.Id != other.Id )
             {
                 return false;
             }
 
-            if (DeviceSource != other.DeviceSource )
+            if ( this.DeviceSource != other.DeviceSource )
             {
                 return false;
             }
 
-            if (StartTime != other.StartTime )
+            if ( this.StartTime != other.StartTime )
             {
                 return false;
             }
 
-            if (other.Name == null && Name != null)
+            if (other.Name == null && this.Name != null)
             {
                 return false;
             }
 
-            if (other.Name != null && Name == null)
+            if (other.Name != null && this.Name == null)
             {
                 return false;
             }
 
-            if (other.Name != null && Name != null && other.Name.Equals(Name) == false)
+            if (other.Name != null && this.Name != null && other.Name.Equals(this.Name) == false)
             {
                 return false;
             }
 
-            if (other.Latitude == null && Latitude != null)
+            if (other.Latitude == null && this.Latitude != null)
             {
                 return false;
             }
 
-            if (other.Latitude != null && Latitude == null)
+            if (other.Latitude != null && this.Latitude == null)
             {
                 return false;
             }
 
-            if (other.Latitude != null && Latitude != null && other.Latitude.Equals(Latitude) == false)
+            if (other.Latitude != null && this.Latitude != null && other.Latitude.Equals(this.Latitude) == false)
             {
                 return false;
             }
 
-            if (other.Longitude == null && Longitude != null)
+            if (other.Longitude == null && this.Longitude != null)
             {
                 return false;
             }
 
-            if (other.Longitude != null && Longitude == null)
+            if (other.Longitude != null && this.Longitude == null)
             {
                 return false;
             }
 
-            if (other.Longitude != null && Longitude != null && other.Longitude.Equals(Longitude) == false)
+            if (other.Longitude != null && this.Longitude != null && other.Longitude.Equals(this.Longitude) == false)
             {
                 return false;
             }
 
-            if (other.Altitude == null && Altitude != null)
+            if (other.Altitude == null && this.Altitude != null)
             {
                 return false;
             }
 
-            if (other.Altitude != null && Altitude == null)
+            if (other.Altitude != null && this.Altitude == null)
             {
                 return false;
             }
 
-            if (other.Altitude != null && Altitude != null && other.Altitude.Equals(Altitude) == false)
+            if (other.Altitude != null && this.Altitude != null && other.Altitude.Equals(this.Altitude) == false)
             {
                 return false;
             }
 
-            if (Roll != other.Roll )
+            if ( this.Roll != other.Roll )
             {
                 return false;
             }
 
-            if (Pitch != other.Pitch )
+            if ( this.Pitch != other.Pitch )
             {
                 return false;
             }
 
-            if (Yaw != other.Yaw )
+            if ( this.Yaw != other.Yaw )
             {
                 return false;
             }
 
-            if (other.RxTxType == null && RxTxType != null)
+            if (other.RxTxType == null && this.RxTxType != null)
             {
                 return false;
             }
 
-            if (other.RxTxType != null && RxTxType == null)
+            if (other.RxTxType != null && this.RxTxType == null)
             {
                 return false;
             }
 
-            if (other.RxTxType != null && RxTxType != null && other.RxTxType.Equals(RxTxType) == false)
+            if (other.RxTxType != null && this.RxTxType != null && other.RxTxType.Equals(this.RxTxType) == false)
             {
                 return false;
             }
 
-            if (AntennaType != other.AntennaType )
+            if ( this.AntennaType != other.AntennaType )
             {
                 return false;
             }
 
-            if (other.CenterFrequency_Hz == null && CenterFrequency_Hz != null)
+            if (other.CenterFrequency_Hz == null && this.CenterFrequency_Hz != null)
             {
                 return false;
             }
 
-            if (other.CenterFrequency_Hz != null && CenterFrequency_Hz == null)
+            if (other.CenterFrequency_Hz != null && this.CenterFrequency_Hz == null)
             {
                 return false;
             }
 
-            if (other.CenterFrequency_Hz != null && CenterFrequency_Hz != null && other.CenterFrequency_Hz.Equals(CenterFrequency_Hz) == false)
+            if (other.CenterFrequency_Hz != null && this.CenterFrequency_Hz != null && other.CenterFrequency_Hz.Equals(this.CenterFrequency_Hz) == false)
             {
                 return false;
             }
 
-            if (other.Bandwidth_Hz == null && Bandwidth_Hz != null)
+            if (other.Bandwidth_Hz == null && this.Bandwidth_Hz != null)
             {
                 return false;
             }
 
-            if (other.Bandwidth_Hz != null && Bandwidth_Hz == null)
+            if (other.Bandwidth_Hz != null && this.Bandwidth_Hz == null)
             {
                 return false;
             }
 
-            if (other.Bandwidth_Hz != null && Bandwidth_Hz != null && other.Bandwidth_Hz.Equals(Bandwidth_Hz) == false)
+            if (other.Bandwidth_Hz != null && this.Bandwidth_Hz != null && other.Bandwidth_Hz.Equals(this.Bandwidth_Hz) == false)
             {
                 return false;
             }
 
-            if (other.Gain_dB == null && Gain_dB != null)
+            if (other.Gain_dB == null && this.Gain_dB != null)
             {
                 return false;
             }
 
-            if (other.Gain_dB != null && Gain_dB == null)
+            if (other.Gain_dB != null && this.Gain_dB == null)
             {
                 return false;
             }
 
-            if (other.Gain_dB != null && Gain_dB != null && other.Gain_dB.Equals(Gain_dB) == false)
+            if (other.Gain_dB != null && this.Gain_dB != null && other.Gain_dB.Equals(this.Gain_dB) == false)
             {
                 return false;
             }
 
-            if (other.SignalToNoiseRatio_dB == null && SignalToNoiseRatio_dB != null)
+            if (other.SignalToNoiseRatio_dB == null && this.SignalToNoiseRatio_dB != null)
             {
                 return false;
             }
 
-            if (other.SignalToNoiseRatio_dB != null && SignalToNoiseRatio_dB == null)
+            if (other.SignalToNoiseRatio_dB != null && this.SignalToNoiseRatio_dB == null)
             {
                 return false;
             }
 
-            if (other.SignalToNoiseRatio_dB != null && SignalToNoiseRatio_dB != null && other.SignalToNoiseRatio_dB.Equals(SignalToNoiseRatio_dB) == false)
+            if (other.SignalToNoiseRatio_dB != null && this.SignalToNoiseRatio_dB != null && other.SignalToNoiseRatio_dB.Equals(this.SignalToNoiseRatio_dB) == false)
             {
                 return false;
             }
 
-            if (XPos != other.XPos )
+            if ( this.XPos != other.XPos )
             {
                 return false;
             }
 
-            if (YPos != other.YPos )
+            if ( this.YPos != other.YPos )
             {
                 return false;
             }
 
-            if (ZPos != other.ZPos )
+            if ( this.ZPos != other.ZPos )
             {
                 return false;
             }
 
-            if (other.TechnicalParameters == null && TechnicalParameters != null)
+            if (other.TechnicalParameters == null && this.TechnicalParameters != null)
             {
                 return false;
             }
 
-            if (other.TechnicalParameters != null && TechnicalParameters == null)
+            if (other.TechnicalParameters != null && this.TechnicalParameters == null)
             {
                 return false;
             }
 
-            if (other.TechnicalParameters != null && TechnicalParameters != null && other.TechnicalParameters.Equals(TechnicalParameters) == false)
+            if (other.TechnicalParameters != null && this.TechnicalParameters != null && other.TechnicalParameters.Equals(this.TechnicalParameters) == false)
             {
                 return false;
             }
 
-            if (other.Remark == null && Remark != null)
+            if (other.Remark == null && this.Remark != null)
             {
                 return false;
             }
 
-            if (other.Remark != null && Remark == null)
+            if (other.Remark != null && this.Remark == null)
             {
                 return false;
             }
 
-            if (other.Remark != null && Remark != null && other.Remark.Equals(Remark) == false)
+            if (other.Remark != null && this.Remark != null && other.Remark.Equals(this.Remark) == false)
             {
                 return false;
             }

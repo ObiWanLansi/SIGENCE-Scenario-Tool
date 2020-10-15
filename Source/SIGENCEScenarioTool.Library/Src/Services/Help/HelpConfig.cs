@@ -5,13 +5,19 @@ using System.Text;
 
 using Newtonsoft.Json;
 
+using SIGENCEScenarioTool.Extensions;
+
+using YamlDotNet.Serialization;
+
+
+
 namespace SIGENCEScenarioTool.Services.Help
 {
 
     /// <summary>
     /// 
     /// </summary>
-    public sealed class Page
+    public sealed class HelpPage
     {
         /// <summary>
         /// Gets or sets the caption.
@@ -29,7 +35,47 @@ namespace SIGENCEScenarioTool.Services.Help
         /// </value>
         public string Document { get; set; } = "";
 
-    } // end public sealed class Page
+
+        /// <summary>
+        /// Gets or sets the content of the HTML.
+        /// </summary>
+        /// <value>
+        /// The content of the HTML.
+        /// </value>
+        [JsonIgnore]
+        [YamlIgnore]
+        public string HtmlContent { get; set; } = null;// = "";
+
+
+        /// <summary>
+        /// Validates this instance.
+        /// </summary>
+        /// <returns></returns>
+        public bool Validate()
+        {
+            // Wenn beide leer sind können wir nix weiter machen
+            if( this.Document.IsEmpty() && this.Caption.IsEmpty() )
+            {
+                return false;
+            }
+
+            // Wenn der Documentname leer ist nehmen wir die Caption + .md
+            if( this.Document.IsEmpty() )
+            {
+                this.Document = this.Caption + ".md";
+            }
+
+            // Wenn die Caption leer ist nehmen wir das Document - .md
+            if( this.Caption.IsEmpty() )
+            {
+                this.Caption = this.Document.Substring(0, this.Document.Length - 3);
+            }
+
+            return true;
+        }
+
+
+    } // end public sealed class HelpPage
 
 
 
@@ -40,12 +86,12 @@ namespace SIGENCEScenarioTool.Services.Help
     {
 
         /// <summary>
-        /// Gets or sets the index page.
+        /// Gets or sets the main page.
         /// </summary>
         /// <value>
-        /// The index page.
+        /// The main page.
         /// </value>
-        public string IndexPage { get; set; } = "Index.md";
+        public HelpPage MainPage { get; set; } = null;//"Index.md";
 
         /// <summary>
         /// Gets or sets the pages.
@@ -53,7 +99,7 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <value>
         /// The pages.
         /// </value>
-        public List<Page> Pages { get; set; } = new List<Page>();
+        public List<HelpPage> Pages { get; set; } = new List<HelpPage>();
 
     } // end public sealed class HelpConfig
 
@@ -64,7 +110,12 @@ namespace SIGENCEScenarioTool.Services.Help
     /// </summary>
     public static class HelpConfigFactory
     {
-        const string CONFGIG_FILE = "config.json";
+        /// <summary>
+        /// The confgig file
+        /// </summary>
+        private const string CONFGIG_FILE_JSON = "config.json";
+        private const string CONFGIG_FILE_YAML = "config.yaml";
+
 
         /// <summary>
         /// Loads the configuration.
@@ -74,7 +125,10 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <exception cref="NotImplementedException"></exception>
         public static HelpConfig LoadConfig( string strHelpDirectory )
         {
-            throw new NotImplementedException();
+            string strConfigFilename = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_JSON);
+            string strJsonContent = File.ReadAllText(strConfigFilename, Encoding.Default);
+
+            return JsonConvert.DeserializeObject<HelpConfig>(strJsonContent);
         }
 
 
@@ -86,10 +140,13 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <exception cref="NotImplementedException"></exception>
         public static void SaveConfig( HelpConfig config, string strHelpDirectory )
         {
+            string strConfigFilenameJSON = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_JSON);
             string strJsonContent = JsonConvert.SerializeObject(config, Formatting.Indented);
-            string strOutputFilename = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE);
+            File.WriteAllText(strConfigFilenameJSON, strJsonContent, Encoding.Default);
 
-            File.WriteAllText(strOutputFilename, strJsonContent, Encoding.GetEncoding("ISO-8859-1"));
+            string strConfigFilenameYAML = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_YAML);
+            string strYamlContent = new SerializerBuilder().Build().Serialize(config);
+            File.WriteAllText(strConfigFilenameYAML, strYamlContent, Encoding.Default);
         }
 
 
@@ -97,18 +154,20 @@ namespace SIGENCEScenarioTool.Services.Help
         /// Creates the template.
         /// </summary>
         /// <param name="strHelpDirectory">The string help directory.</param>
-        public static void CreateTemplate( string strHelpDirectory )
+        public static void CreateTemplate( string strHelpDirectory)
         {
-            HelpConfig config = new HelpConfig();
+            HelpConfig config = new HelpConfig
+            {
+                MainPage = new HelpPage { Caption = "Home", Document = "Home.md" }
+            };
 
-            config.Pages.Add(new Page { Caption = "Download", Document = "Download.md" });
-            config.Pages.Add(new Page { Caption = "Install", Document = "Install.md" });
-            config.Pages.Add(new Page { Caption = "Screenshots", Document = "Screenshots.md" });
-            config.Pages.Add(new Page { Caption = "Third Party Libraries", Document = "ThirdPartyLibraries.md" });
+            config.Pages.Add(new HelpPage { /*Caption = "Download", */Document = "Download.md" });
+            config.Pages.Add(new HelpPage { Caption = "Install"/*, Document = "Install.md"*/ });
+            config.Pages.Add(new HelpPage { Caption = "Screenshots"/*, Document = "Screenshots.md"*/ });
+            config.Pages.Add(new HelpPage { Caption = "Third Party Libraries", Document = "ThirdPartyLibraries.md" });
 
             SaveConfig(config, strHelpDirectory);
         }
 
     } // end public static class HelpConfigFactory
-
 }
