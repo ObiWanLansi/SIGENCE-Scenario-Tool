@@ -167,14 +167,16 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <summary>
         /// The HTML template
         /// </summary>
-        private string HTML_TEMPLATE =
+        private readonly string HTML_TEMPLATE =
 @"<!DOCTYPE html>
 <html>
     <head>
-        <title>$APPLICATION_TITLE$ - $VERSION$</title>
+        <title>$APPLICATION_TITLE$ (Version $VERSION$) - [Help]</title>
+        $BOOTSTRAP_LINK$
         <style>
             body { background-color: #F0FFFF; }
         </style>
+        $BOOTSTRAP_SCRIPT$
     </head>
     <body>
         $CONTENT$
@@ -205,7 +207,11 @@ namespace SIGENCEScenarioTool.Services.Help
             //string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
 
             //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
-            hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", strHtmlContent);
+            hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).
+                                                Replace("$VERSION$", Tool.Version).
+                                                Replace("$CONTENT$", strHtmlContent).
+                                                Replace("$BOOTSTRAP_LINK$", "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity=\"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin=\"anonymous\">").
+                                                Replace("$BOOTSTRAP_SCRIPT$", "<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin=\"anonymous\"></script>");
 
             this.sdHelpPages.Add(strPath, hp);
         }
