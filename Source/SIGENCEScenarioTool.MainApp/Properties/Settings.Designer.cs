@@ -12,7 +12,7 @@ namespace SIGENCEScenarioTool.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,9 +26,9 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4242")]
-        public int UDPPortSending {
+        public uint UDPPortSending {
             get {
-                return ((int)(this["UDPPortSending"]));
+                return ((uint)(this["UDPPortSending"]));
             }
             set {
                 this["UDPPortSending"] = value;
@@ -38,9 +38,9 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int UDPDelay {
+        public uint UDPDelay {
             get {
-                return ((int)(this["UDPDelay"]));
+                return ((uint)(this["UDPDelay"]));
             }
             set {
                 this["UDPDelay"] = value;
@@ -50,9 +50,9 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("18")]
-        public int MapZoomLevel {
+        public uint MapZoomLevel {
             get {
-                return ((int)(this["MapZoomLevel"]));
+                return ((uint)(this["MapZoomLevel"]));
             }
             set {
                 this["MapZoomLevel"] = value;
@@ -74,9 +74,9 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("7474")]
-        public int UDPPortReceiving {
+        public uint UDPPortReceiving {
             get {
-                return ((int)(this["UDPPortReceiving"]));
+                return ((uint)(this["UDPPortReceiving"]));
             }
             set {
                 this["UDPPortReceiving"] = value;
@@ -241,9 +241,9 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int MaxLastItems {
+        public uint MaxLastItems {
             get {
-                return ((int)(this["MaxLastItems"]));
+                return ((uint)(this["MaxLastItems"]));
             }
             set {
                 this["MaxLastItems"] = value;
@@ -277,9 +277,9 @@ namespace SIGENCEScenarioTool.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1883")]
-        public int MQTTPort {
+        public uint MQTTPort {
             get {
-                return ((int)(this["MQTTPort"]));
+                return ((uint)(this["MQTTPort"]));
             }
             set {
                 this["MQTTPort"] = value;
@@ -295,6 +295,30 @@ namespace SIGENCEScenarioTool.Properties {
             }
             set {
                 this["EnableUDP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("O:\\SIGENCE-Scenario-Tool.wiki")]
+        public string HelpPath {
+            get {
+                return ((string)(this["HelpPath"]));
+            }
+            set {
+                this["HelpPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1510")]
+        public uint HelpPort {
+            get {
+                return ((uint)(this["HelpPort"]));
+            }
+            set {
+                this["HelpPort"] = value;
             }
         }
     }

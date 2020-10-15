@@ -318,7 +318,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// </summary>
         private void CreateDeviceTimeCache()
         {
-            foreach (var device in from dev in this.RFDeviceViewModelCollection orderby dev.StartTime descending select dev)
+            foreach ( RFDeviceViewModel device in from dev in this.RFDeviceViewModelCollection orderby dev.StartTime descending select dev)
             {
                 if (this.sdDeviceTimeCache.ContainsKey(device.Id))
                 {
@@ -358,7 +358,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             //this.mcMapControl.MapProvider = MainWindow.GetProviderFromString(settings.InitialMap);
             this.mcMapControl.MapProvider = mcSourceMapControl.MapProvider;
 
-            foreach (var device in this.RFDeviceViewModelCollection)
+            foreach ( RFDeviceViewModel device in this.RFDeviceViewModelCollection)
             {
                 this.mcMapControl.Markers.Add(device.Marker);
             }
@@ -445,7 +445,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
             {
                 bool bIsSet = false;
 
-                foreach (var tuple in this.sdDeviceTimeCache[id])
+                foreach ( Tuple<double, RFDeviceViewModel> tuple in this.sdDeviceTimeCache[id])
                 {
                     if ((this.iCurrentTimeSeconds > tuple.Item2.StartTime) && bIsSet == false)
                     {
@@ -470,7 +470,7 @@ namespace SIGENCEScenarioTool.Dialogs.Simulation
         /// <param name="bVisible">if set to <c>true</c> [b visible].</param>
         private void SetDeviceVisibility(bool bVisible = true)
         {
-            foreach (var device in this.RFDeviceViewModelCollection)
+            foreach ( RFDeviceViewModel device in this.RFDeviceViewModelCollection)
             {
                 device.SetVisible(bVisible);
             }

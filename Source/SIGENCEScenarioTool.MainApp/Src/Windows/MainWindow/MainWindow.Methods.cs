@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -26,6 +27,7 @@ using SIGENCEScenarioTool.Dialogs.Simulation;
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
+using SIGENCEScenarioTool.Services.Help;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.ViewModels;
 
@@ -69,7 +71,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void SetTitle()
         {
-            this.Title = $"{Tool.ProductTitle} (Version {Tool.Version}){(this.CurrentFile != null ? $" [{new FileInfo(this.CurrentFile).Name}]" : "")}";
+            this.Title = $"{Tool.ProductTitle} (Version {Tool.Version}){( this.CurrentFile != null ? $" [{new FileInfo(this.CurrentFile).Name}]" : "" )}";
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -91,21 +93,21 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             try
             {
-                if (this.CurrentFile != null)
+                if( this.CurrentFile != null )
                 {
                     this.sfdSaveScreenshot.FileName = new FileInfo(this.CurrentFile).Name;
                 }
 
-                if (this.sfdSaveScreenshot.ShowDialog() == true)
+                if( this.sfdSaveScreenshot.ShowDialog() == true )
                 {
-                    var screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
+                    System.Windows.Media.Imaging.BitmapSource screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
 
                     Tools.Windows.SaveWPFScreenshot(screenshot, this.sfdSaveScreenshot.FileName);
 
                     Tools.Windows.OpenWithDefaultApplication(this.sfdSaveScreenshot.FileName);
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -133,7 +135,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.miRecentFiles.BeginInit();
             this.miRecentFiles.Items.Clear();
 
-            foreach (string strFileName in Properties.Settings.Default.LastOpenFiles)
+            foreach( string strFileName in Properties.Settings.Default.LastOpenFiles )
             {
                 FileInfo fi = new FileInfo(strFileName);
 
@@ -159,7 +161,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Adds the file history.
         /// </summary>
         /// <param name="strFilename">The string filename.</param>
-        private void AddFileHistory(string strFilename)
+        private void AddFileHistory( string strFilename )
         {
             StringCollection sc = Properties.Settings.Default.LastOpenFiles;
 
@@ -178,16 +180,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //        break;
             //}
 
-            if (sc.Contains(strFilename) == true)
+            if( sc.Contains(strFilename) == true )
             {
                 sc.Remove(strFilename);
             }
 
             sc.Insert(0, strFilename);
 
-            if (sc.Count > Properties.Settings.Default.MaxLastItems)
+            if( sc.Count > Properties.Settings.Default.MaxLastItems )
             {
-                sc.RemoveAt(Properties.Settings.Default.MaxLastItems);
+                sc.RemoveAt((int) Properties.Settings.Default.MaxLastItems);
             }
 
             UpdateFileHistory();
@@ -340,7 +342,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Imports the settings.
         /// </summary>
         /// <param name="strFileName">Name of the string file.</param>
-        private void ImportSettings(string strFileName)
+        private void ImportSettings( string strFileName )
         {
             try
             {
@@ -350,7 +352,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 this.settings.Save();
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -362,7 +364,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ImportSettings()
         {
-            if (this.ofdImportSettings.ShowDialog() == true)
+            if( this.ofdImportSettings.ShowDialog() == true )
             {
                 ImportSettings(this.ofdImportSettings.FileName);
             }
@@ -373,7 +375,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Exports the settings.
         /// </summary>
         /// <param name="strFileName">Name of the string file.</param>
-        private void ExportSettings(string strFileName)
+        private void ExportSettings( string strFileName )
         {
             try
             {
@@ -381,7 +383,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 File.WriteAllText(strFileName, strContent, Encoding.GetEncoding("ISO-8859-1"));
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -393,7 +395,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ExportSettings()
         {
-            if (this.sfdExportSettings.ShowDialog() == true)
+            if( this.sfdExportSettings.ShowDialog() == true )
             {
                 ExportSettings(this.sfdExportSettings.FileName);
             }
@@ -408,7 +410,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.settings.Reset();
             this.settings.Save();
 
-            if (MessageBox.Show("The Settings Are Resetted!.\nPlease Restart The Application!\nWould You Restart Now?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if( MessageBox.Show("The Settings Are Resetted!.\nPlease Restart The Application!\nWould You Restart Now?", Tool.ProductTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes )
             {
                 Close();
             }
@@ -427,7 +429,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             sd = null;
 
             // Wir müssen uns die Marker wieder von dem anderen MapControl zurück klauen ...
-            foreach (var device in this.RFDeviceViewModelCollection)
+            foreach( RFDeviceViewModel device in this.RFDeviceViewModelCollection )
             {
                 this.mcMapControl.Markers.Add(device.Marker);
             }
@@ -438,11 +440,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Opens the device edit dialog.
         /// </summary>
         //private void OpenDeviceEditDialog(RFDevice device)
-        private void OpenDeviceEditDialog(RFDeviceViewModel device)
+        private void OpenDeviceEditDialog( RFDeviceViewModel device )
         {
             RFDeviceEditDialog ded = new RFDeviceEditDialog(device);
 
-            if (ded.ShowDialog() ?? false == true)
+            if( ded.ShowDialog() ?? false == true )
             {
                 DeleteRFDevice(device);
                 AddRFDevice(ded.Device);
@@ -457,7 +459,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void UpdateScenarioDescriptionMarkdown()
         {
-            if (this.MetaInformation.DescriptionMarkdown.IsNotEmpty())
+            if( this.MetaInformation.DescriptionMarkdown.IsNotEmpty() )
             {
                 this.sbHtml.Clear();
                 this.sbMarkdown.Clear();
@@ -466,11 +468,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     string strHeaderWithCSS = HEADER.Replace("$STYLE$", this.MetaInformation.DescriptionStylesheet);
 
-                    string[] strLines = this.tecDescriptionMarkdown.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    string [] strLines = this.tecDescriptionMarkdown.Text.Split(new [] { Environment.NewLine }, StringSplitOptions.None);
 
-                    foreach (string strLine in strLines)
+                    foreach( string strLine in strLines )
                     {
-                        if (strLine.StartsWith(GenericFoldingStrategy.REGION_START) || strLine.StartsWith(GenericFoldingStrategy.REGION_END))
+                        if( strLine.StartsWith(GenericFoldingStrategy.REGION_START) || strLine.StartsWith(GenericFoldingStrategy.REGION_END) )
                         {
                             continue;
                         }
@@ -487,7 +489,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     this.wbWebBrowser.NavigateToString(this.sbHtml.ToString());
                     //this.wbWebBrowser.Refresh();
                 }
-                catch (Exception ex)
+                catch( Exception ex )
                 {
                     this.wbWebBrowser.NavigateToString($"<h1>{ex.Message}</h1>");
                 }
@@ -504,27 +506,27 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitMetaInformation()
         {
-            if (this.MetaInformation.Version.IsEmpty())
+            if( this.MetaInformation.Version.IsEmpty() )
             {
                 this.MetaInformation.Version = "1.0";
             }
 
-            if (this.MetaInformation.ApplicationContext.IsEmpty())
+            if( this.MetaInformation.ApplicationContext.IsEmpty() )
             {
                 this.MetaInformation.ApplicationContext = "Please Type The Name Of The ApplicationContext Here ...";
             }
 
-            if (this.MetaInformation.ContactPerson.IsEmpty())
+            if( this.MetaInformation.ContactPerson.IsEmpty() )
             {
                 this.MetaInformation.ContactPerson = Environment.UserName;
             }
 
-            if (this.MetaInformation.DescriptionMarkdown.IsEmpty())
+            if( this.MetaInformation.DescriptionMarkdown.IsEmpty() )
             {
                 this.MetaInformation.DescriptionMarkdown = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.md");
             }
 
-            if (this.MetaInformation.DescriptionStylesheet.IsEmpty())
+            if( this.MetaInformation.DescriptionStylesheet.IsEmpty() )
             {
                 this.MetaInformation.DescriptionStylesheet = File.ReadAllText($"{Tool.StartupPath}\\ScenarioDescription.css");
             }
@@ -574,7 +576,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         //[Conditional("DEBUG")]
         private void CreateScenarioReport()
         {
-            if (string.IsNullOrEmpty(this.CurrentFile))
+            if( string.IsNullOrEmpty(this.CurrentFile) )
             {
                 MB.Information("The scenario has not been saved yet.\nSave it first and then try again.");
                 return;
@@ -587,7 +589,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             string strScenarioName = fiCurrentFile.GetFilenameWithoutExtension();
 
             string strOutputDirectory = $"{fiCurrentFile.DirectoryName}\\{strScenarioName}.Report";
-            if (Directory.Exists(strOutputDirectory) == false)
+            if( Directory.Exists(strOutputDirectory) == false )
             {
                 Directory.CreateDirectory(strOutputDirectory);
             }
@@ -609,7 +611,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             sb.AppendLine($"|Version|{this.MetaInformation.Version}|");
             sb.AppendLine($"|Application Context|{this.MetaInformation.ApplicationContext}|");
             sb.AppendLine($"|Contact Person|{this.MetaInformation.ContactPerson}|");
-            if (this.MetaInformation.DescriptionMarkdown.IsNotEmpty())
+            if( this.MetaInformation.DescriptionMarkdown.IsNotEmpty() )
             {
                 sb.AppendLine($"|User Description|[ScenarioDescription.md](./ScenarioDescription.md)|");
                 string strOutputUserDescription = $"{strOutputDirectory}\\ScenarioDescription.md";
@@ -622,12 +624,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             sb.AppendLine();
             sb.AppendLine("## RFDevice List");
             sb.AppendLine();
-            if (this.RFDeviceViewModelCollection != null && this.RFDeviceViewModelCollection.Count > 0)
+            if( this.RFDeviceViewModelCollection != null && this.RFDeviceViewModelCollection.Count > 0 )
             {
                 sb.AppendLine("|  Id|DeviceSource|StartTime|Name|Latitude|Longitude|Altitude|Roll|Pitch|Yaw|RxTxType|AntennaType|CenterFrequency|Bandwidth|Gain|SignalToNoiseRatio|");
                 sb.AppendLine("|---:|:-----------|:-------:|:---|-------:|--------:|-------:|---:|----:|--:|:-------|:----------|--------------:|--------:|---:|-----------------:|");
 
-                foreach (RFDeviceViewModel dev in from device in this.RFDeviceViewModelCollection orderby device.Id, device.StartTime select device)
+                foreach( RFDeviceViewModel dev in from device in this.RFDeviceViewModelCollection orderby device.Id, device.StartTime select device )
                 {
                     sb.AppendLine($"|{dev.Id}|{dev.DeviceSource}|{dev.StartTime}|{dev.Name}|{dev.HumanLatitude}|{dev.HumanLongitude}|{dev.HumanAltitude}|{dev.Roll}|{dev.Pitch}|{dev.Yaw}|{dev.RxTxType}|{dev.AntennaType}|{dev.HumanCenterFrequency}|{dev.HumanBandwidth}|{dev.HumanGain}|{dev.HumanSignalToNoiseRatio}|");
                 }
@@ -640,9 +642,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             sb.AppendLine();
             sb.AppendLine("## Validation Results");
             sb.AppendLine();
-            if (this.ValidationResult != null && this.ValidationResult.Count > 0)
+            if( this.ValidationResult != null && this.ValidationResult.Count > 0 )
             {
-                List<Models.Validation.ValidationResult> lResults = (from result in this.ValidationResult select result.Result).ToList();
+                List<Models.Validation.ValidationResult> lResults = ( from result in this.ValidationResult select result.Result ).ToList();
                 sb.AppendLine(lResults.Table());
             }
             sb.AppendLine("---");
@@ -655,12 +657,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             try
             {
                 string strOutputFilenameScreenshot = $"{strOutputDirectory}\\ScenarioScreenshot.png";
-                var screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
+                System.Windows.Media.Imaging.BitmapSource screenshot = Tools.Windows.GetWPFScreenshot(this.mcMapControl);
                 Tools.Windows.SaveWPFScreenshot(screenshot, strOutputFilenameScreenshot);
 
                 sb.AppendLine("![ScenarioScreenshot](./ScenarioScreenshot.png)");
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 sb.AppendLine($"**{ex.Message}**");
                 MB.Error(ex);
@@ -701,7 +703,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             this.settings.InitialLatitude = pll.Lat;
             this.settings.InitialLongitude = pll.Lng;
 
-            this.settings.InitialZoom = (uint)this.mcMapControl.Zoom;
+            this.settings.InitialZoom = (uint) this.mcMapControl.Zoom;
             this.settings.InitialMap = this.mcMapControl.MapProvider.ToString();
 
             this.settings.Save();
@@ -715,11 +717,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="strMapProvider">The string map provider.</param>
         /// <returns></returns>
-        public static GMapProvider GetProviderFromString(string strMapProvider)
+        public static GMapProvider GetProviderFromString( string strMapProvider )
         {
-            foreach (var mp in GMapProviders.List)
+            foreach( GMapProvider mp in GMapProviders.List )
             {
-                if (mp.Name == strMapProvider)
+                if( mp.Name == strMapProvider )
                 {
                     return mp;
                 }
@@ -736,9 +738,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ResetDALF()
         {
-            if (this.mrDALF != null)
+            if( this.mrDALF != null )
             {
-                if (this.mcMapControl.Markers.Contains(this.mrDALF))
+                if( this.mcMapControl.Markers.Contains(this.mrDALF) )
                 {
                     this.mcMapControl.Markers.Remove(this.mrDALF);
 
@@ -767,23 +769,23 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //    }
             //}
 
-            if (this.dvmLastSelectedDevice == null)
+            if( this.dvmLastSelectedDevice == null )
             {
-                if (this.dgRFDevices.SelectedItems.Count != 1)
+                if( this.dgRFDevices.SelectedItems.Count != 1 )
                 {
                     MB.Information("There Are No One Or More Than One RFDevice Selected In The DataGrid!");
                     return false;
                 }
 
-                RFDevice selectedDevice = (this.dgRFDevices.SelectedItems[0] as RFDeviceViewModel).RFDevice;
+                RFDevice selectedDevice = ( this.dgRFDevices.SelectedItems [0] as RFDeviceViewModel ).RFDevice;
 
-                if (selectedDevice.Id == 0)
+                if( selectedDevice.Id == 0 )
                 {
                     MB.Information("The Reference Transmitter Is Not Good For DALF!");
                     return false;
                 }
 
-                if (selectedDevice.DeviceSource == DeviceSource.Automatic)
+                if( selectedDevice.DeviceSource == DeviceSource.Automatic )
                 {
                     MB.Information("The DeviceSource Of The Current Device Is Automatic. That's Not Good For Copying The Device!");
                     return false;
@@ -804,34 +806,34 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             this.mcMapControl.Cursor = Cursors.Arrow;
 
-            if (this.mrDALF != null && this.mrDALF.Points.Count > 0)
+            if( this.mrDALF != null && this.mrDALF.Points.Count > 0 )
             {
                 // Erst die alten löschen ...
                 DeleteRFDevices(device => device.Id == this.dvmLastSelectedDevice.Id && device.DeviceSource == DeviceSource.Automatic);
 
-                if (this.mrDALF.Points.Count == 2)
+                if( this.mrDALF.Points.Count == 2 )
                 {
-                    PointLatLng pllStart = this.mrDALF.Points[0];
-                    PointLatLng pllEnd = this.mrDALF.Points[1];
+                    PointLatLng pllStart = this.mrDALF.Points [0];
+                    PointLatLng pllEnd = this.mrDALF.Points [1];
 
                     Coordinate cStart = pllStart.ToCoordinate();
                     Coordinate cEnd = pllEnd.ToCoordinate();
 
-                    LineString ls = new LineString(new[] { cStart, cEnd });
+                    LineString ls = new LineString(new [] { cStart, cEnd });
 
                     float fDensifyInKM = Properties.Settings.Default.DensifyInMeters / 100_000;
 
                     NetTopologySuite.Geometries.Geometry result = Densifier.Densify(ls, fDensifyInKM);
 
-                    if (result is LineString lsDensified)
+                    if( result is LineString lsDensified )
                     {
                         int iCounter = -1;
-                        foreach (Coordinate c in lsDensified.Coordinates)
+                        foreach( Coordinate c in lsDensified.Coordinates )
                         {
                             iCounter++;
 
                             // Den ersten müssen wir überspringen da es das Original selbst noch ist welches wir natürlich nicht zweimal brauchen ...    
-                            if (iCounter == 0)
+                            if( iCounter == 0 )
                             {
                                 continue;
                             }
@@ -850,7 +852,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 #if DEBUG
                         StringBuilder sb = new StringBuilder();
-                        sb.AppendLine("Total Distance     : {0} Km", (cStart.Distance(cEnd) * 100));
+                        sb.AppendLine("Total Distance     : {0} Km", ( cStart.Distance(cEnd) * 100 ));
                         sb.AppendLine("Densify Settings   : {0} m", Properties.Settings.Default.DensifyInMeters);
                         sb.AppendLine("Densify Point Count: {0}", lsDensified.Coordinates.Length);
                         MB.Information(sb.ToString());
@@ -861,12 +863,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 {
                     int iCounter = -1;
 
-                    foreach (PointLatLng pos in this.mrDALF.Points)
+                    foreach( PointLatLng pos in this.mrDALF.Points )
                     {
                         iCounter++;
 
                         // Den ersten müssen wir überspringen da es das Original selbst noch ist welches wir natürlich nicht zweimal brauchen ...    
-                        if (iCounter == 0)
+                        if( iCounter == 0 )
                         {
                             continue;
                         }
@@ -899,19 +901,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             {
                 Tuple<PropertyInfo, object> tSource = this.dgRFDevices.GetFocusedItem();
 
-                if (tSource == null)
+                if( tSource == null )
                 {
                     MB.Warning("No Cell Is Selected Or Focused!");
                     return;
                 }
 
-                if (tSource.Item1 == null)
+                if( tSource.Item1 == null )
                 {
                     MB.Warning("Can't Detect The PropertyType Of This Cell!");
                     return;
                 }
 
-                if (tSource.Item2 == null)
+                if( tSource.Item2 == null )
                 {
                     MB.Warning("Can't Get The Value Of This Cell!");
                     return;
@@ -919,22 +921,22 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 this.dgRFDevices.SelectedItems.Clear();
 
-                foreach (var item in this.dgRFDevices.Items)
+                foreach( object item in this.dgRFDevices.Items )
                 {
-                    if (item is RFDeviceViewModel)
+                    if( item is RFDeviceViewModel )
                     {
                         RFDeviceViewModel dvm = item as RFDeviceViewModel;
 
                         object oValue = tSource.Item1.GetValue(dvm);
 
-                        if (tSource.Item2.Equals(oValue))
+                        if( tSource.Item2.Equals(oValue) )
                         {
                             this.dgRFDevices.SelectedItems.Add(dvm);
                         }
                     }
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -946,7 +948,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void ResetAllDeviceFilter()
         {
-            if (this.bDataGridInEditMode == true)
+            if( this.bDataGridInEditMode == true )
             {
                 MB.Warning("You Are In The Edit Mode From The DataGrid.\nPlease End The Editing And Try Again.");
                 return;
@@ -980,39 +982,39 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <returns>
         ///   <c>true</c> if [is wanted rf device] [the specified object]; otherwise, <c>false</c>.
         /// </returns>
-        private bool IsWantedRFDevice(object obj)
+        private bool IsWantedRFDevice( object obj )
         {
-            if (obj == null || obj is RFDeviceViewModel == false)
+            if( obj == null || obj is RFDeviceViewModel == false )
             {
                 return false;
             }
 
-            RFDeviceViewModel device = (RFDeviceViewModel)obj;
+            RFDeviceViewModel device = (RFDeviceViewModel) obj;
 
             device.SetVisible(false);
 
-            if (this.iIdFilter != null)
+            if( this.iIdFilter != null )
             {
-                if (device.Id != this.iIdFilter)
+                if( device.Id != this.iIdFilter )
                 {
                     return false;
                 }
             }
 
-            if (this.ShowReceiver == false && device.DeviceType == DeviceType.Receiver)
+            if( this.ShowReceiver == false && device.DeviceType == DeviceType.Receiver )
             {
                 return false;
             }
 
-            if (this.ShowTransmitter == false && device.DeviceType == DeviceType.Transmitter)
+            if( this.ShowTransmitter == false && device.DeviceType == DeviceType.Transmitter )
             {
                 return false;
             }
 
-            if (this.rttRxTxTypeFilter != null && this.rttRxTxTypeFilter.Value != RxTxType.EmptyId)
+            if( this.rttRxTxTypeFilter != null && this.rttRxTxTypeFilter.Value != RxTxType.EmptyId )
             {
                 // Wir müssen auf den Namen vergleichen da die ID mehrfach vorkommen kann (je nachdem ob Transmitter oder Receiver).
-                if (this.rttRxTxTypeFilter.Name != device.RxTxType.Name)
+                if( this.rttRxTxTypeFilter.Name != device.RxTxType.Name )
                 {
                     return false;
                 }
@@ -1066,20 +1068,20 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Quicks the command action.
         /// </summary>
         /// <param name="strCommand">The string command.</param>
-        private void QuickCommandAction(string strCommand)
+        private void QuickCommandAction( string strCommand )
         {
-            if (strCommand.IsEmpty())
+            if( strCommand.IsEmpty() )
             {
                 return;
             }
 
-            string[] strSplitted = strCommand.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string [] strSplitted = strCommand.Split(new [] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (strSplitted.Length > 0)
+            if( strSplitted.Length > 0 )
             {
-                string strMainCommand = strSplitted[0].ToLower();
+                string strMainCommand = strSplitted [0].ToLower();
 
-                switch (strMainCommand)
+                switch( strMainCommand )
                 {
                     case "new":
                         NewFile();
@@ -1091,14 +1093,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         break;
 
                     case "rand":
-                        if (strSplitted.Length > 1)
+                        if( strSplitted.Length > 1 )
                         {
                             try
                             {
-                                int iCount = int.Parse(strSplitted[1]);
+                                int iCount = int.Parse(strSplitted [1]);
                                 CreateRandomizedRFDevices(iCount);
                             }
-                            catch (Exception ex)
+                            catch( Exception ex )
                             {
                                 MB.Error(ex);
                             }
@@ -1107,9 +1109,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 
                     case "load":
-                        if (strSplitted.Length > 1)
+                        if( strSplitted.Length > 1 )
                         {
-                            LoadFile(strSplitted[1]);
+                            LoadFile(strSplitted [1]);
                         }
                         else
                         {
@@ -1118,9 +1120,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                         break;
 
                     case "save":
-                        if (strSplitted.Length > 1)
+                        if( strSplitted.Length > 1 )
                         {
-                            SaveFile(strSplitted[1]);
+                            SaveFile(strSplitted [1]);
                         }
                         else
                         {
@@ -1175,18 +1177,18 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             string strCommand = this.cbQuickCommand.Text;
 
-            if (strCommand.IsEmpty())
+            if( strCommand.IsEmpty() )
             {
                 return;
             }
 
             this.Cursor = Cursors.Wait;
 
-            string[] strSplitted = strCommand.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+            string [] strSplitted = strCommand.Split(new [] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (strSplitted.Length > 0)
+            if( strSplitted.Length > 0 )
             {
-                foreach (string strSubCommand in strSplitted)
+                foreach( string strSubCommand in strSplitted )
                 {
                     QuickCommandAction(strSubCommand);
                 }
@@ -1209,7 +1211,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            if (this.RFDeviceViewModelCollection.Count == 0)
+            if( this.RFDeviceViewModelCollection.Count == 0 )
             {
                 this.ValidationResult.Add(new Models.Validation.ValidationResult(Servity.Information, "No Devices Are Configured.", "Scenario", "RFDevicesCollection", null));
                 this.ValidationResult.EstimateCounts();
@@ -1219,16 +1221,16 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             // Validation over the entire scenario, then only the individual RFDevices ...
-            if (this.RFDeviceViewModelCollection.FirstOrDefault(d => d.Id == 0) == null)
+            if( this.RFDeviceViewModelCollection.FirstOrDefault(d => d.Id == 0) == null )
             {
                 this.ValidationResult.Add(new Models.Validation.ValidationResult(Servity.Warning, "No Reference Device Is Avaible.", "Scenario", "RFDevicesCollection", null));
             }
 
             // Check if all the PrimaryKeys of the RFDevices are Unique ...
             HashSet<Guid> hsGuids = new HashSet<Guid>();
-            foreach (RFDevice device in this.RFDeviceViewModelCollection)
+            foreach( RFDevice device in this.RFDeviceViewModelCollection )
             {
-                if (hsGuids.Contains(device.PrimaryKey))
+                if( hsGuids.Contains(device.PrimaryKey) )
                 {
                     this.ValidationResult.Add(new Models.Validation.ValidationResult(Servity.Error, "The PrimaryKey Is Not Unique!", device, "PrimaryKey", device.PrimaryKey));
                 }
@@ -1244,7 +1246,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            foreach (RFDevice device in this.RFDeviceViewModelCollection)
+            foreach( RFDevice device in this.RFDeviceViewModelCollection )
             {
                 this.ValidationResult.Add(device.Validate());
             }
@@ -1253,7 +1255,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             this.ValidationResult.EstimateCounts();
 
-            if (this.tiValidation.IsSelected == false)
+            if( this.tiValidation.IsSelected == false )
             {
                 this.tiValidation.IsSelected = true;
             }
@@ -1275,9 +1277,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Opens the webbrowser.
         /// </summary>
         /// <param name="strUrl">The string URL.</param>
-        private void OpenWebbrowser(string strUrl)
+        private void OpenWebbrowser( string strUrl )
         {
-            if (this.UseBrowserInternal)
+            if( this.UseBrowserInternal )
             {
                 OpenWebbrowserInternal(strUrl);
             }
@@ -1292,7 +1294,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Opens the webbrowser external.
         /// </summary>
         /// <param name="strUrl">The string URL.</param>
-        private void OpenWebbrowserExternal(string strUrl)
+        private void OpenWebbrowserExternal( string strUrl )
         {
             Tools.Windows.OpenWebAdress(strUrl);
         }
@@ -1303,7 +1305,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="strUrl">The string URL.</param>
         /// <param name="strTitle">The string title.</param>
-        private void OpenWebbrowserInternal(string strUrl, string strTitle = null)
+        private void OpenWebbrowserInternal( string strUrl, string strTitle = null )
         {
             StackPanel header = new StackPanel
             {
@@ -1361,9 +1363,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Webbrowser_Close_Click(object sender, RoutedEventArgs e)
+        private void Webbrowser_Close_Click( object sender, RoutedEventArgs e )
         {
-            this.tcTabControl.Items.Remove(((sender as Button).Parent as StackPanel).Parent);
+            this.tcTabControl.Items.Remove(( ( sender as Button ).Parent as StackPanel ).Parent);
         }
 
 
@@ -1389,7 +1391,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             try
             {
-                using (WebClient wc = new WebClient())
+                using( WebClient wc = new WebClient() )
                 {
                     wc.Proxy = WebRequest.DefaultWebProxy;
                     wc.Proxy.Credentials = CredentialCache.DefaultCredentials;
@@ -1397,7 +1399,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     int iGitHubVersion = int.Parse(wc.DownloadString(VERSION_URL));
                     int iLocalVersion = int.Parse(Tool.Version);
 
-                    if (iGitHubVersion > iLocalVersion)
+                    if( iGitHubVersion > iLocalVersion )
                     {
                         MB.Information($"There Is An Newer Version ({iGitHubVersion}) Avaible On GitHub.\nPlease Update The Tool.");
                     }
@@ -1407,7 +1409,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     }
                 }
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -1421,6 +1423,35 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             this.InfoWindowVisibility = this.InfoWindowVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
             FirePropertyChanged("InfoWindowVisibility");
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Opens the help.
+        /// </summary>
+        private void OpenHelp()
+        {
+            try
+            {
+                HelpServer.Port = Properties.Settings.Default.HelpPort;
+                HelpServer.Path = Properties.Settings.Default.HelpPath;
+
+                HelpServer.Instance.Start();
+
+                IPEndPoint endpoint = HelpServer.Instance.EndPoint;
+
+                // Wir geben unserem eigenenm Server natürlich erstmal ein bissel Zeit zum initialisieren
+                // TODO: Sollte natürlich nur das erstmal von nöten sein, ist der Server bereits gestartet kann natürlich direkt los gelegt werden.
+                Thread.Sleep(2000);
+
+                Tools.Windows.OpenWebAdress($"http://{endpoint.Address}:{endpoint.Port}");
+            }
+            catch( Exception ex )
+            {
+                MB.Error(ex);
+            }
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1443,11 +1474,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="iMaxCount">The i maximum count.</param>
         /// <param name="bEnsureRefDevice">if set to <c>true</c> [b ensure reference device].</param>
-        private void CreateRandomizedRFDevices(int iMaxCount, bool bEnsureRefDevice = false)
+        private void CreateRandomizedRFDevices( int iMaxCount, bool bEnsureRefDevice = false )
         {
             this.Cursor = Cursors.Wait;
 
-            foreach (var device in RFDeviceList.CreateRandomizedRFDeviceList(iMaxCount, this.mcMapControl.Position, bEnsureRefDevice))
+            foreach( RFDevice device in RFDeviceList.CreateRandomizedRFDeviceList(iMaxCount, this.mcMapControl.Position, bEnsureRefDevice) )
             {
                 AddRFDevice(device);
             }

@@ -524,7 +524,7 @@ namespace SIGENCEScenarioTool.Extensions
 
             iCounter = 0;
 
-            foreach (var pi in lColumns)
+            foreach ( PropertyInfo pi in lColumns)
             {
                 //if (iCounter > 0)
                 {

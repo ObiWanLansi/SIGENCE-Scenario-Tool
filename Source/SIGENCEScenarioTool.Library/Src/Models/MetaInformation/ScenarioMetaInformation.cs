@@ -43,14 +43,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// The Version Of This Scenario.
         ///</summary>
-        public string Version
+        public string Version 
         {
-            get => this._Version;
+            get { return _Version; }
             set
             {
-                if( this._Version != value )
+                if(_Version != value)
                 {
-                    this._Version = value;
+                    _Version = value;
 
                     FirePropertyChanged();
                 }
@@ -84,14 +84,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// For Which Application Or Tool Is The Scenario.
         ///</summary>
-        public string ApplicationContext
+        public string ApplicationContext 
         {
-            get => this._ApplicationContext;
+            get { return _ApplicationContext; }
             set
             {
-                if( this._ApplicationContext != value )
+                if(_ApplicationContext != value)
                 {
-                    this._ApplicationContext = value;
+                    _ApplicationContext = value;
 
                     FirePropertyChanged();
                 }
@@ -125,14 +125,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// An Contact Person If You Have Questions About The Scenario.
         ///</summary>
-        public string ContactPerson
+        public string ContactPerson 
         {
-            get => this._ContactPerson;
+            get { return _ContactPerson; }
             set
             {
-                if( this._ContactPerson != value )
+                if(_ContactPerson != value)
                 {
-                    this._ContactPerson = value;
+                    _ContactPerson = value;
 
                     FirePropertyChanged();
                 }
@@ -166,14 +166,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// An Markdown Content Where You Can Describe The Scenario And The Excepted Result.
         ///</summary>
-        public string DescriptionMarkdown
+        public string DescriptionMarkdown 
         {
-            get => this._DescriptionMarkdown;
+            get { return _DescriptionMarkdown; }
             set
             {
-                if( this._DescriptionMarkdown != value )
+                if(_DescriptionMarkdown != value)
                 {
-                    this._DescriptionMarkdown = value;
+                    _DescriptionMarkdown = value;
 
                     FirePropertyChanged();
                 }
@@ -207,14 +207,14 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         ///<summary>
         /// An Optional Stylesheet To Use For Rendering The Generated HTML.
         ///</summary>
-        public string DescriptionStylesheet
+        public string DescriptionStylesheet 
         {
-            get => this._DescriptionStylesheet;
+            get { return _DescriptionStylesheet; }
             set
             {
-                if( this._DescriptionStylesheet != value )
+                if(_DescriptionStylesheet != value)
                 {
-                    this._DescriptionStylesheet = value;
+                    _DescriptionStylesheet = value;
 
                     FirePropertyChanged();
                 }
@@ -238,11 +238,11 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
         {
             return new XElement("ScenarioMetaInformation",
 
-                XElementExtension.GetXElement("Version", this.Version, false),
-                XElementExtension.GetXElement("ApplicationContext", this.ApplicationContext, false),
-                XElementExtension.GetXElement("ContactPerson", this.ContactPerson, false),
-                XElementExtension.GetXElement("DescriptionMarkdown", this.DescriptionMarkdown, true),
-                XElementExtension.GetXElement("DescriptionStylesheet", this.DescriptionStylesheet, true)  
+                XElementExtension.GetXElement("Version", Version, false),
+                XElementExtension.GetXElement("ApplicationContext", ApplicationContext, false),
+                XElementExtension.GetXElement("ContactPerson", ContactPerson, false),
+                XElementExtension.GetXElement("DescriptionMarkdown", DescriptionMarkdown, true),
+                XElementExtension.GetXElement("DescriptionStylesheet", DescriptionStylesheet, true)  
             );
         }
 
@@ -292,77 +292,77 @@ namespace SIGENCEScenarioTool.Models.MetaInformation
                 return false;
             }
 
-            if (other.Version == null && this.Version != null)
+            if (other.Version == null && Version != null)
             {
                 return false;
             }
 
-            if (other.Version != null && this.Version == null)
+            if (other.Version != null && Version == null)
             {
                 return false;
             }
 
-            if (other.Version != null && this.Version != null && other.Version.Equals(this.Version) == false)
+            if (other.Version != null && Version != null && other.Version.Equals(Version) == false)
             {
                 return false;
             }
 
-            if (other.ApplicationContext == null && this.ApplicationContext != null)
+            if (other.ApplicationContext == null && ApplicationContext != null)
             {
                 return false;
             }
 
-            if (other.ApplicationContext != null && this.ApplicationContext == null)
+            if (other.ApplicationContext != null && ApplicationContext == null)
             {
                 return false;
             }
 
-            if (other.ApplicationContext != null && this.ApplicationContext != null && other.ApplicationContext.Equals(this.ApplicationContext) == false)
+            if (other.ApplicationContext != null && ApplicationContext != null && other.ApplicationContext.Equals(ApplicationContext) == false)
             {
                 return false;
             }
 
-            if (other.ContactPerson == null && this.ContactPerson != null)
+            if (other.ContactPerson == null && ContactPerson != null)
             {
                 return false;
             }
 
-            if (other.ContactPerson != null && this.ContactPerson == null)
+            if (other.ContactPerson != null && ContactPerson == null)
             {
                 return false;
             }
 
-            if (other.ContactPerson != null && this.ContactPerson != null && other.ContactPerson.Equals(this.ContactPerson) == false)
+            if (other.ContactPerson != null && ContactPerson != null && other.ContactPerson.Equals(ContactPerson) == false)
             {
                 return false;
             }
 
-            if (other.DescriptionMarkdown == null && this.DescriptionMarkdown != null)
+            if (other.DescriptionMarkdown == null && DescriptionMarkdown != null)
             {
                 return false;
             }
 
-            if (other.DescriptionMarkdown != null && this.DescriptionMarkdown == null)
+            if (other.DescriptionMarkdown != null && DescriptionMarkdown == null)
             {
                 return false;
             }
 
-            if (other.DescriptionMarkdown != null && this.DescriptionMarkdown != null && other.DescriptionMarkdown.Equals(this.DescriptionMarkdown) == false)
+            if (other.DescriptionMarkdown != null && DescriptionMarkdown != null && other.DescriptionMarkdown.Equals(DescriptionMarkdown) == false)
             {
                 return false;
             }
 
-            if (other.DescriptionStylesheet == null && this.DescriptionStylesheet != null)
+            if (other.DescriptionStylesheet == null && DescriptionStylesheet != null)
             {
                 return false;
             }
 
-            if (other.DescriptionStylesheet != null && this.DescriptionStylesheet == null)
+            if (other.DescriptionStylesheet != null && DescriptionStylesheet == null)
             {
                 return false;
             }
 
-            if (other.DescriptionStylesheet != null && this.DescriptionStylesheet != null && other.DescriptionStylesheet.Equals(this.DescriptionStylesheet) == false)
+            if (other.DescriptionStylesheet != null && DescriptionStylesheet != null && other.DescriptionStylesheet.Equals(DescriptionStylesheet) == false)
             {
                 return false;
             }

@@ -736,7 +736,7 @@ namespace SIGENCEScenarioTool.Tools
                 angleInDegrees -= 360.0;
             }
 
-            var result = new GeoAngle
+            GeoAngle result = new GeoAngle
             {
 
                 //switch the value to positive
@@ -746,10 +746,10 @@ namespace SIGENCEScenarioTool.Tools
 
             //gets the degree
             result.Degrees = (int)Math.Floor(angleInDegrees);
-            var delta = angleInDegrees - result.Degrees;
+            double delta = angleInDegrees - result.Degrees;
 
             //gets minutes and seconds
-            var seconds = (int)Math.Floor(3600.0 * delta);
+            int seconds = (int)Math.Floor(3600.0 * delta);
             result.Seconds = seconds % 60;
             result.Minutes = (int)Math.Floor(seconds / 60.0);
             delta = delta * 3600.0 - seconds;
@@ -770,7 +770,7 @@ namespace SIGENCEScenarioTool.Tools
         /// </returns>
         public override string ToString()
         {
-            var degrees = this.IsNegative
+            int degrees = this.IsNegative
                 ? -this.Degrees
                 : this.Degrees;
 

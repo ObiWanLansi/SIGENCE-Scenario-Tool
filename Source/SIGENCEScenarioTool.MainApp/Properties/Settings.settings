@@ -2,19 +2,19 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIGENCEScenarioTool.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="UDPPortSending" Type="System.Int32" Scope="User">
+    <Setting Name="UDPPortSending" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">4242</Value>
     </Setting>
-    <Setting Name="UDPDelay" Type="System.Int32" Scope="User">
+    <Setting Name="UDPDelay" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">100</Value>
     </Setting>
-    <Setting Name="MapZoomLevel" Type="System.Int32" Scope="User">
+    <Setting Name="MapZoomLevel" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">18</Value>
     </Setting>
     <Setting Name="UDPHost" Type="System.String" Scope="User">
       <Value Profile="(Default)">127.0.0.1</Value>
     </Setting>
-    <Setting Name="UDPPortReceiving" Type="System.Int32" Scope="User">
+    <Setting Name="UDPPortReceiving" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">7474</Value>
     </Setting>
     <Setting Name="DeviceCopyTimeAddValue" Type="System.Double" Scope="User">
@@ -56,7 +56,7 @@
     <Setting Name="LastOpenFiles" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="MaxLastItems" Type="System.Int32" Scope="User">
+    <Setting Name="MaxLastItems" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="EnableMQTT" Type="System.Boolean" Scope="User">
@@ -65,11 +65,17 @@
     <Setting Name="MQTTHost" Type="System.String" Scope="User">
       <Value Profile="(Default)">localhost</Value>
     </Setting>
-    <Setting Name="MQTTPort" Type="System.Int32" Scope="User">
+    <Setting Name="MQTTPort" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">1883</Value>
     </Setting>
     <Setting Name="EnableUDP" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HelpPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">O:\SIGENCE-Scenario-Tool.wiki</Value>
+    </Setting>
+    <Setting Name="HelpPort" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">1510</Value>
     </Setting>
   </Settings>
 </SettingsFile>

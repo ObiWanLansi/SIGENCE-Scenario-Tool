@@ -20,7 +20,7 @@ namespace SIGENCEScenarioTool.Extensions
         /// <returns></returns>
         public static Tuple<PropertyInfo, object> GetFocusedItem(this DataGrid dg)
         {
-            var currentcell = dg.CurrentCell;
+            DataGridCellInfo currentcell = dg.CurrentCell;
 
             if (currentcell == null || currentcell.Column == null)
             {

@@ -130,7 +130,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 if (this.mrDALF == null)
                 {
-                    var list = new List<PointLatLng>(2);
+                    List<PointLatLng> list = new List<PointLatLng>(2);
 
                     if (this.dvmLastSelectedDevice != null)
                     {
@@ -320,7 +320,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            foreach (var item in e.AddedItems)
+            foreach ( object item in e.AddedItems)
             {
                 if (item is RFDeviceViewModel dvm)
                 {
@@ -335,7 +335,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             }
 
-            foreach (var item in e.RemovedItems)
+            foreach ( object item in e.RemovedItems)
             {
                 if (item is RFDeviceViewModel model)
                 {
@@ -623,30 +623,30 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         }
 
 
-        ///// <summary>
-        ///// Handles the Click event of the MenuItem_OpenIssues control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        //private void MenuItem_OpenIssues_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/");
+        /// <summary>
+        /// Handles the Click event of the MenuItem_OpenIssues control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_OpenIssues_Click( object sender, RoutedEventArgs e )
+        {
+            Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/issues/");
 
-        //    e.Handled = true;
-        //}
+            e.Handled = true;
+        }
 
 
-        ///// <summary>
-        ///// Handles the Click event of the MenuItem_KanbanBoard control.
-        ///// </summary>
-        ///// <param name="sender">The source of the event.</param>
-        ///// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        //private void MenuItem_KanbanBoard_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1?fullscreen=true");
+        /// <summary>
+        /// Handles the Click event of the MenuItem_KanbanBoard control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_KanbanBoard_Click( object sender, RoutedEventArgs e )
+        {
+            Tools.Windows.OpenWebAdress("https://github.com/ObiWanLansi/SIGENCE-Scenario-Tool/projects/1?fullscreen=true");
 
-        //    e.Handled = true;
-        //}
+            e.Handled = true;
+        }
 
 
         /// <summary>
@@ -999,7 +999,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
             else
             {
-                foreach (var item in this.dgRFDevices.SelectedItems)
+                foreach ( object item in this.dgRFDevices.SelectedItems)
                 {
                     if (item == sender)
                     {

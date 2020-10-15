@@ -9,6 +9,7 @@ using System.Windows.Xps.Packaging;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Models.RxTxTypes;
 using SIGENCEScenarioTool.Models.Templates;
+using SIGENCEScenarioTool.Services.Help;
 using SIGENCEScenarioTool.Tools;
 using SIGENCEScenarioTool.Ui;
 
@@ -123,6 +124,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 #if DEBUG
 
+            //HelpConfigFactory.CreateTemplate(Properties.Settings.Default.HelpPath);
+
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "FMBroadcast", Id = 2 }));
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "NFMRadio", Id = 3 }));
@@ -193,19 +196,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             //-----------------------------------------------------------------
 
-            var receiver = RFDevice.CreateDummy();
+            RFDevice receiver = RFDevice.CreateDummy();
             receiver.Id = -42;
             receiver.Longitude = 9.386941 + 0.1;
             receiver.Yaw = 45;
             AddRFDevice(receiver);
 
-            var refdevice = RFDevice.CreateDummy();
+            RFDevice refdevice = RFDevice.CreateDummy();
             refdevice.Id = 0;
             refdevice.Longitude = 9.386941 + 0.2;
             refdevice.Yaw = 45;
             AddRFDevice(refdevice);
 
-            var sender = RFDevice.CreateDummy();
+            RFDevice sender = RFDevice.CreateDummy();
             sender.Id = 42;
             sender.Longitude = 9.386941 + 0.3;
             sender.Yaw = 45;
@@ -220,8 +223,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             //LoadFile( @"C:\Transfer\TestScenario.stf" );
 
 
-            Reset();
-            LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestWrongAntennaType.stf");
+            //Reset();
+            //LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\TestWrongAntennaType.stf");
             //LoadFile(@"D:\EigeneDateien\Entwicklung.GitHub\SIGENCE-Scenario-Tool\Examples\LongLineForSimulationPlayer.stf");
 
             //-----------------------------------------------------------------

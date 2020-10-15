@@ -223,7 +223,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             List<RFDeviceViewModel> list = new List<RFDeviceViewModel>(this.dgRFDevices.SelectedItems.Count);
 
-            foreach (var item in this.dgRFDevices.SelectedItems)
+            foreach ( object item in this.dgRFDevices.SelectedItems)
             {
                 list.Add(item as RFDeviceViewModel);
             }
@@ -1018,7 +1018,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 return;
             }
 
-            foreach (var device in this.dgRFDevices.SelectedItems)
+            foreach ( object device in this.dgRFDevices.SelectedItems)
             {
                 this.lCopiedRFDevices.Add(device as RFDeviceViewModel);
             }
@@ -1032,7 +1032,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             if (this.lCopiedRFDevices.Count > 0)
             {
-                foreach (var device in this.lCopiedRFDevices)
+                foreach ( RFDeviceViewModel device in this.lCopiedRFDevices)
                 {
                     // Create a copy of the original device and change the primarykey    
                     RFDevice newdevice = device.RFDevice.Clone();

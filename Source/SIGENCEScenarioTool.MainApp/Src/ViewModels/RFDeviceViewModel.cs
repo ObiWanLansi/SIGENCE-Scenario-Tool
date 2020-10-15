@@ -768,7 +768,7 @@ namespace SIGENCEScenarioTool.ViewModels
 
             int iCounter = 0;
 
-            foreach (var v in from val in validation orderby val.Servity descending select val)
+            foreach ( Models.Validation.ValidationResult v in from val in validation orderby val.Servity descending select val)
             {
                 if (iCounter++ == 0)
                 {

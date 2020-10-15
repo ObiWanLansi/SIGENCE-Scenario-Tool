@@ -43,6 +43,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             AddCommand(ApplicationCommands.New, NewFile);
             AddCommand(ApplicationCommands.Open, LoadFile);
             AddCommand(ApplicationCommands.Save, SaveFile);
+            AddCommand(ApplicationCommands.Help, OpenHelp);
 
             AddCommand(ApplicationCommands.SaveAs, SaveAsFile);
             AddCommand(ApplicationCommands.Close, Close);

@@ -356,7 +356,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 foreach (LatLonAlt lla in highestpoints)
                 {
-                    var dev = new RFDevice()
+                    RFDevice dev = new RFDevice()
                     {
                         Latitude = lla.Lat,
                         Longitude = lla.Lon,

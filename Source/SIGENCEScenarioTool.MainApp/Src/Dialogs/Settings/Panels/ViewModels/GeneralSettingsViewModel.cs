@@ -27,12 +27,12 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// <value>
         ///
         /// </value>
-        public System.Int32 UDPPortSending
+        public System.UInt32 UDPPortSending
         {
-            get => this.properties.UDPPortSending;
+            get { return this.properties.UDPPortSending; }
             set
             {
-                if( this.properties.UDPPortSending != value )
+                if(this.properties.UDPPortSending != value)
                 {
                     this.properties.UDPPortSending = value;
 
@@ -48,12 +48,12 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// <value>
         ///
         /// </value>
-        public System.Int32 UDPDelay
+        public System.UInt32 UDPDelay
         {
-            get => this.properties.UDPDelay;
+            get { return this.properties.UDPDelay; }
             set
             {
-                if( this.properties.UDPDelay != value )
+                if(this.properties.UDPDelay != value)
                 {
                     this.properties.UDPDelay = value;
 
@@ -69,12 +69,12 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// <value>
         ///
         /// </value>
-        public System.Int32 MapZoomLevel
+        public System.UInt32 MapZoomLevel
         {
-            get => this.properties.MapZoomLevel;
+            get { return this.properties.MapZoomLevel; }
             set
             {
-                if( this.properties.MapZoomLevel != value )
+                if(this.properties.MapZoomLevel != value)
                 {
                     this.properties.MapZoomLevel = value;
 
@@ -92,10 +92,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.String UDPHost
         {
-            get => this.properties.UDPHost;
+            get { return this.properties.UDPHost; }
             set
             {
-                if( this.properties.UDPHost != value )
+                if(this.properties.UDPHost != value)
                 {
                     this.properties.UDPHost = value;
 
@@ -111,12 +111,12 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// <value>
         ///
         /// </value>
-        public System.Int32 UDPPortReceiving
+        public System.UInt32 UDPPortReceiving
         {
-            get => this.properties.UDPPortReceiving;
+            get { return this.properties.UDPPortReceiving; }
             set
             {
-                if( this.properties.UDPPortReceiving != value )
+                if(this.properties.UDPPortReceiving != value)
                 {
                     this.properties.UDPPortReceiving = value;
 
@@ -134,10 +134,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Double DeviceCopyTimeAddValue
         {
-            get => this.properties.DeviceCopyTimeAddValue;
+            get { return this.properties.DeviceCopyTimeAddValue; }
             set
             {
-                if( this.properties.DeviceCopyTimeAddValue != value )
+                if(this.properties.DeviceCopyTimeAddValue != value)
                 {
                     this.properties.DeviceCopyTimeAddValue = value;
 
@@ -155,10 +155,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Double InitialLatitude
         {
-            get => this.properties.InitialLatitude;
+            get { return this.properties.InitialLatitude; }
             set
             {
-                if( this.properties.InitialLatitude != value )
+                if(this.properties.InitialLatitude != value)
                 {
                     this.properties.InitialLatitude = value;
 
@@ -176,10 +176,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Double InitialLongitude
         {
-            get => this.properties.InitialLongitude;
+            get { return this.properties.InitialLongitude; }
             set
             {
-                if( this.properties.InitialLongitude != value )
+                if(this.properties.InitialLongitude != value)
                 {
                     this.properties.InitialLongitude = value;
 
@@ -197,10 +197,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.UInt32 InitialZoom
         {
-            get => this.properties.InitialZoom;
+            get { return this.properties.InitialZoom; }
             set
             {
-                if( this.properties.InitialZoom != value )
+                if(this.properties.InitialZoom != value)
                 {
                     this.properties.InitialZoom = value;
 
@@ -218,10 +218,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.String InitialMap
         {
-            get => this.properties.InitialMap;
+            get { return this.properties.InitialMap; }
             set
             {
-                if( this.properties.InitialMap != value )
+                if(this.properties.InitialMap != value)
                 {
                     this.properties.InitialMap = value;
 
@@ -239,10 +239,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Double LastWidth
         {
-            get => this.properties.LastWidth;
+            get { return this.properties.LastWidth; }
             set
             {
-                if( this.properties.LastWidth != value )
+                if(this.properties.LastWidth != value)
                 {
                     this.properties.LastWidth = value;
 
@@ -260,10 +260,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Double LastHeight
         {
-            get => this.properties.LastHeight;
+            get { return this.properties.LastHeight; }
             set
             {
-                if( this.properties.LastHeight != value )
+                if(this.properties.LastHeight != value)
                 {
                     this.properties.LastHeight = value;
 
@@ -281,10 +281,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Double LastLeft
         {
-            get => this.properties.LastLeft;
+            get { return this.properties.LastLeft; }
             set
             {
-                if( this.properties.LastLeft != value )
+                if(this.properties.LastLeft != value)
                 {
                     this.properties.LastLeft = value;
 
@@ -302,10 +302,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Double LastTop
         {
-            get => this.properties.LastTop;
+            get { return this.properties.LastTop; }
             set
             {
-                if( this.properties.LastTop != value )
+                if(this.properties.LastTop != value)
                 {
                     this.properties.LastTop = value;
 
@@ -323,10 +323,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.String LastWindowState
         {
-            get => this.properties.LastWindowState;
+            get { return this.properties.LastWindowState; }
             set
             {
-                if( this.properties.LastWindowState != value )
+                if(this.properties.LastWindowState != value)
                 {
                     this.properties.LastWindowState = value;
 
@@ -344,10 +344,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Boolean IsUpgraded
         {
-            get => this.properties.IsUpgraded;
+            get { return this.properties.IsUpgraded; }
             set
             {
-                if( this.properties.IsUpgraded != value )
+                if(this.properties.IsUpgraded != value)
                 {
                     this.properties.IsUpgraded = value;
 
@@ -365,10 +365,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Single DensifyInMeters
         {
-            get => this.properties.DensifyInMeters;
+            get { return this.properties.DensifyInMeters; }
             set
             {
-                if( this.properties.DensifyInMeters != value )
+                if(this.properties.DensifyInMeters != value)
                 {
                     this.properties.DensifyInMeters = value;
 
@@ -386,10 +386,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Collections.Specialized.StringCollection LastOpenFiles
         {
-            get => this.properties.LastOpenFiles;
+            get { return this.properties.LastOpenFiles; }
             set
             {
-                if( this.properties.LastOpenFiles != value )
+                if(this.properties.LastOpenFiles != value)
                 {
                     this.properties.LastOpenFiles = value;
 
@@ -405,12 +405,12 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// <value>
         ///
         /// </value>
-        public System.Int32 MaxLastItems
+        public System.UInt32 MaxLastItems
         {
-            get => this.properties.MaxLastItems;
+            get { return this.properties.MaxLastItems; }
             set
             {
-                if( this.properties.MaxLastItems != value )
+                if(this.properties.MaxLastItems != value)
                 {
                     this.properties.MaxLastItems = value;
 
@@ -428,10 +428,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Boolean EnableMQTT
         {
-            get => this.properties.EnableMQTT;
+            get { return this.properties.EnableMQTT; }
             set
             {
-                if( this.properties.EnableMQTT != value )
+                if(this.properties.EnableMQTT != value)
                 {
                     this.properties.EnableMQTT = value;
 
@@ -449,10 +449,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.String MQTTHost
         {
-            get => this.properties.MQTTHost;
+            get { return this.properties.MQTTHost; }
             set
             {
-                if( this.properties.MQTTHost != value )
+                if(this.properties.MQTTHost != value)
                 {
                     this.properties.MQTTHost = value;
 
@@ -468,12 +468,12 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// <value>
         ///
         /// </value>
-        public System.Int32 MQTTPort
+        public System.UInt32 MQTTPort
         {
-            get => this.properties.MQTTPort;
+            get { return this.properties.MQTTPort; }
             set
             {
-                if( this.properties.MQTTPort != value )
+                if(this.properties.MQTTPort != value)
                 {
                     this.properties.MQTTPort = value;
 
@@ -491,10 +491,10 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         /// </value>
         public System.Boolean EnableUDP
         {
-            get => this.properties.EnableUDP;
+            get { return this.properties.EnableUDP; }
             set
             {
-                if( this.properties.EnableUDP != value )
+                if(this.properties.EnableUDP != value)
                 {
                     this.properties.EnableUDP = value;
 
@@ -504,5 +504,47 @@ namespace SIGENCEScenarioTool.Dialogs.Settings.Panels.ViewModels
         }
 
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
+        public System.String HelpPath
+        {
+            get { return this.properties.HelpPath; }
+            set
+            {
+                if(this.properties.HelpPath != value)
+                {
+                    this.properties.HelpPath = value;
+
+                    FirePropertyChanged();
+                }
+            }
+        }
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <value>
+        ///
+        /// </value>
+        public System.UInt32 HelpPort
+        {
+            get { return this.properties.HelpPort; }
+            set
+            {
+                if(this.properties.HelpPort != value)
+                {
+                    this.properties.HelpPort = value;
+
+                    FirePropertyChanged();
+                }
+            }
+        }
+
+    
     } // end internal sealed class GeneralSettingsViewModel
 }

@@ -246,7 +246,7 @@ namespace SIGENCEScenarioTool.Commands
             Func<RoutedUICommand, RoutedUICommand> CreateCommand = (name) => new RoutedUICommand(nameof(name), nameof(name), typeof(RegisteredCommands));
 
             OpenCheatSheet = CreateCommand(OpenCheatSheet);
-            OpenCheatSheet.InputGestures.Add(new KeyGesture(Key.F1));
+            OpenCheatSheet.InputGestures.Add(new KeyGesture(Key.F1, ModifierKeys.Control));
 
             //-----------------------------------------------------------------
 

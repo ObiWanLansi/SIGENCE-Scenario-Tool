@@ -38,7 +38,7 @@ namespace SIGENCEScenarioTool
 
                 if( File.Exists( strFilename ) )
                 {
-                    var window = new MainWindow();
+                    MainWindow window = new MainWindow();
                     window.LoadFile( strFilename );
                     window.Show();
                 }

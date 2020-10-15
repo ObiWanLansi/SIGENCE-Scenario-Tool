@@ -151,12 +151,13 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Help">
-                <!--<MenuItem Header="_Display Help" Command="{x:Static ApplicationCommands.Help}" IsEnabled="False" />-->
+                <MenuItem Header="_Open Help" Icon="{StaticResource HELP}" Command="{x:Static ApplicationCommands.Help}" />
+                <Separator />
                 <MenuItem Header="_Open Cheat Sheet" Icon="{StaticResource HELP}" Command="{x:Static cmd:RegisteredCommands.OpenCheatSheet}" />
                 <MenuItem Header="_Open Release Notes" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_ReleaseNotes_Click" />
-                <!--<Separator />
-                <MenuItem Header="_Open Issues" Icon="{StaticResource BUG_GREEN}" Click="MenuItem_OpenIssues_Click" />-->
-                <!--<MenuItem Header="_Open Kanban Board" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_KanbanBoard_Click" />-->
+                <Separator />
+                <MenuItem Header="_Open Issues" Icon="{StaticResource BUG_GREEN}" Click="MenuItem_OpenIssues_Click" />
+                <MenuItem Header="_Open Kanban Board" Icon="{StaticResource TABLE_INFORMATION}" Click="MenuItem_KanbanBoard_Click" />
                 <Separator />
                 <MenuItem Header="_About SIGENCE Scenario Tool" Icon="{StaticResource HELP}" Click="MenuItem_About_Click" />
                 <!--<MenuItem Header="_About" IsEnabled="False" />-->

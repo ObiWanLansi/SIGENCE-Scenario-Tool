@@ -39,6 +39,12 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Ceen.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ceen.Httpd.0.9.9\lib\netstandard2.0\Ceen.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ceen.Httpd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ceen.Httpd.0.9.9\lib\netstandard2.0\Ceen.Httpd.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -149,6 +155,9 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.8.1.2\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -200,6 +209,8 @@
     <Compile Include="Src\Extensions\TimeSpanExtension.cs" />
     <Compile Include="Src\Extensions\TypeExtension.cs" />
     <Compile Include="Src\Extensions\XElementExtension.cs" />
+    <Compile Include="Src\Services\Help\HelpConfig.cs" />
+    <Compile Include="Src\Services\Help\HelpServer.cs" />
     <Compile Include="Src\Interfaces\IXmlExport.cs" />
     <Compile Include="Src\Models\AbstractModelBase.cs" />
     <Compile Include="Src\Models\Attachements\Attachement.cs" />

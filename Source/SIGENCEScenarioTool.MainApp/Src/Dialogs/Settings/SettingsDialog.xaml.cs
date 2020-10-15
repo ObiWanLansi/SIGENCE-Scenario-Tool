@@ -120,11 +120,11 @@ namespace SIGENCEScenarioTool.Dialogs.Settings
         /// </summary>
         private void InitPanels()
         {
-            var _gs = new GeneralSettings();
-            var _ns = new NetworkSettings();
-            var _ds = new DatabaseSettings();
-            var _is = new ImportSettings();
-            var _es = new ExportSettings();
+            GeneralSettings _gs = new GeneralSettings();
+            NetworkSettings _ns = new NetworkSettings();
+            DatabaseSettings _ds = new DatabaseSettings();
+            ImportSettings _is = new ImportSettings();
+            ExportSettings _es = new ExportSettings();
 
             this.Panels = new ObservableCollection<SettingsPanelViewModel>
             {
