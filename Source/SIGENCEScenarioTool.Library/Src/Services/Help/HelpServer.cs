@@ -164,24 +164,24 @@ namespace SIGENCEScenarioTool.Services.Help
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        /// <summary>
-        /// The HTML template
-        /// </summary>
-        private readonly string HTML_TEMPLATE =
-@"<!DOCTYPE html>
-<html>
-    <head>
-        <title>$APPLICATION_TITLE$ (Version $VERSION$) - [Help]</title>
-        $BOOTSTRAP_LINK$
-        <style>
-            body { background-color: #F0FFFF; }
-        </style>
-        $BOOTSTRAP_SCRIPT$
-    </head>
-    <body>
-        $CONTENT$
-    </body>
-</html>";
+        //        /// <summary>
+        //        /// The HTML template
+        //        /// </summary>
+        //        private readonly string HTML_TEMPLATE =
+        //@"<!DOCTYPE html>
+        //<html>
+        //    <head>
+        //        <title>$APPLICATION_TITLE$ (Version $VERSION$) - [Help]</title>
+        //        $BOOTSTRAP_LINK$
+        //        <style>
+        //            body { background-color: #F0FFFF; }
+        //        </style>
+        //        $BOOTSTRAP_SCRIPT$
+        //    </head>
+        //    <body>
+        //        $CONTENT$
+        //    </body>
+        //</html>";
 
 
         /// <summary>
@@ -191,6 +191,59 @@ namespace SIGENCEScenarioTool.Services.Help
 
 
         /// <summary>
+        /// Creates the HTML from markdown.
+        /// </summary>
+        /// <param name="hp">The hp.</param>
+        /// <returns></returns>
+        private string CreateHTMLFromMarkdown( HelpPage hp )
+        {
+            string strMarkdownFilename = $"{Path}\\{hp.Document}";
+
+            string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
+
+            return Markdown.ToHtml(strMarkdownContent);
+        }
+
+
+        /// <summary>
+        /// Adds the main page.
+        /// </summary>
+        /// <param name="hc">The hc.</param>
+        private void AddMainPage( HelpConfig hc )
+        {
+            string strMarkdownFilename = $"{Path}\\{hc.MainPage.Document}";
+
+            string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
+
+            string strTemplateContent = File.ReadAllText(@"O:\SIGENCE-Scenario-Tool\Documentation\Help\main.html", Encoding.Default);
+
+            StringBuilder sbBTN = new StringBuilder(8192);
+            StringBuilder sbTAB = new StringBuilder(8192);
+
+            sbBTN.Append($"<button class=\"tablink\" onclick=\"openPage('{hc.MainPage.Caption}', this, 'gray')\" id=\"defaultOpen\">{hc.MainPage.Caption}</button>\n");
+            //sbTAB.Append($"<div id=\"Home\" class=\"tabcontent\"><h3>Home</h3></div>\n");
+            sbTAB.Append($"<div id=\"Home\" class=\"tabcontent\">{CreateHTMLFromMarkdown(hc.MainPage)}</div>\n");
+
+            foreach( HelpPage hp in hc.Pages )
+            {
+                // Wenn beide leer sind können wir nix weiter machen
+                if( hp.Validate() == false )
+                {
+                    continue;
+                }
+
+                sbBTN.Append($"<button class=\"tablink\" onclick=\"openPage('{hp.Caption}', this, 'gray')\">{hp.Caption}</button>\n");
+                //sbTAB.Append($"<div id=\"{hp.Caption}\" class=\"tabcontent\"><h3>{hp.Caption}</h3></div>\n");
+                //sbTAB.Append($"<div id=\"{hp.Caption}\" class=\"tabcontent\"><iframe src=\"./{hp.Document}\" /></div>\n");
+                sbTAB.Append($"<div id=\"{hp.Caption}\" class=\"tabcontent\">{CreateHTMLFromMarkdown(hp)}</div>\n");
+            }
+
+            hc.MainPage.HtmlContent = strTemplateContent.Replace("$BUTTONS$", sbBTN.ToString()).Replace("$TABS$", sbTAB.ToString());
+
+            this.sdHelpPages.Add("/", hc.MainPage);
+        }
+
+        /// <summary>
         /// Adds the page.
         /// </summary>
         /// <param name="strPath">The string path.</param>
@@ -198,22 +251,26 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <returns></returns>
         private void AddHelpPage( string strPath, HelpPage hp )
         {
+            //string strMarkdownFilename = $"{Path}\\{hp.Document}";
 
-            string strMarkdownFilename = $"{Path}\\{hp.Document}";
+            //string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
 
-            string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
 
-            string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
-            //string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
+            //string strTemplateContent = File.ReadAllText(@"O:\SIGENCE-Scenario-Tool\Documentation\Help\tabbar.html", Encoding.Default);
 
-            //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
-            hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).
-                                                Replace("$VERSION$", Tool.Version).
-                                                Replace("$CONTENT$", strHtmlContent).
-                                                Replace("$BOOTSTRAP_LINK$", "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity=\"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin=\"anonymous\">").
-                                                Replace("$BOOTSTRAP_SCRIPT$", "<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin=\"anonymous\"></script>");
+            #region OldStuff
+            //string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
+            ////string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
 
-            this.sdHelpPages.Add(strPath, hp);
+            ////hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
+            //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).
+            //                                    Replace("$VERSION$", Tool.Version).
+            //                                    Replace("$CONTENT$", strHtmlContent).
+            //                                    Replace("$BOOTSTRAP_LINK$", "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity=\"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin=\"anonymous\">").
+            //                                    Replace("$BOOTSTRAP_SCRIPT$", "<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin=\"anonymous\"></script>");
+            #endregion
+
+            //this.sdHelpPages.Add(strPath, hp);
         }
 
 
@@ -256,48 +313,53 @@ namespace SIGENCEScenarioTool.Services.Help
                 return;
             }
 
-            AddHelpPage("/", hc.MainPage);
 
-            foreach( HelpPage hp in hc.Pages )
-            {
-                // Wenn beide leer sind können wir nix weiter machen
-                if( hp.Validate() == false )
-                {
-                    continue;
-                }
+            AddMainPage(hc);
+            //AddHelpPage("/", hc.MainPage);
 
-                #region OldStuff
-                //// Wenn der Documentname leer ist nehmen wir die Caption + .md
-                //if( hp.Document.IsEmpty() )
-                //{
-                //    hp.Document = hp.Caption + ".md";
-                //}
+            //foreach( HelpPage hp in hc.Pages )
+            //{
+            //    // Wenn beide leer sind können wir nix weiter machen
+            //    if( hp.Validate() == false )
+            //    {
+            //        continue;
+            //    }
 
-                //// Wenn die Caption leer ist nehmen wir das Document - .md
-                //if( hp.Caption.IsEmpty() )
-                //{
-                //    hp.Caption = hp.Document.Substring(0, hp.Document.Length - 3);
-                //}
+            //    #region OldStuff
+            //    //// Wenn der Documentname leer ist nehmen wir die Caption + .md
+            //    //if( hp.Document.IsEmpty() )
+            //    //{
+            //    //    hp.Document = hp.Caption + ".md";
+            //    //}
 
-                //string strMarkdownFilename = $"{Path}\\{hp.Document}";
+            //    //// Wenn die Caption leer ist nehmen wir das Document - .md
+            //    //if( hp.Caption.IsEmpty() )
+            //    //{
+            //    //    hp.Caption = hp.Document.Substring(0, hp.Document.Length - 3);
+            //    //}
 
-                //string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
+            //    //string strMarkdownFilename = $"{Path}\\{hp.Document}";
 
-                //string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
-                //string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
+            //    //string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
 
-                //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
-                #endregion
+            //    //string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
+            //    //string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
 
-                // Der Pfad ist der Dokumentname ohne .md
-                //string strPath = hp.Document.Substring(0, hp.Document.Length - 3).ToLower();
-                //AddHelpPage($"/{strPath}", hp);
+            //    //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
+            //    #endregion
 
-                AddHelpPage($"/{hp.Document}", hp);
-            }
+            //    // Der Pfad ist der Dokumentname ohne .md
+            //    //string strPath = hp.Document.Substring(0, hp.Document.Length - 3).ToLower();
+            //    //AddHelpPage($"/{strPath}", hp);
+
+            //    AddHelpPage($"/{hp.Document}", hp);
+            //}
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        private static readonly HashSet<string> ALLOWED_FILE_TYPES = new HashSet<string> { ".jpg", ".png", ".gif" };
 
 
         /// <summary>
@@ -316,8 +378,30 @@ namespace SIGENCEScenarioTool.Services.Help
             }
             else
             {
-                //TODO 404 ( mal als embedded resource machen ...)
-                await context.Response.WriteAllAsync("<h1>vierhundertvier (404)</h1>");
+                bool bHandled = false;
+                //TODO Jetzt erstmal schauen ob es vielleicht eine Resource (.jpg, ...) ist die sogar im Pfad liegt...
+
+                string strPath = request.Path.ToLower();
+
+                foreach( string strExtension in ALLOWED_FILE_TYPES )
+                {
+                    if( strPath.EndsWith(strExtension) )
+                    {
+                        // TODO: Wir müssen natürlich noch checken ob der Pfad gegen Manieren (zB, ..\..\ oder C:\ - so könnte der Request ausbrechen)
+                        string strFullFilename = $"{Path}\\{strPath}";
+
+                        await context.Response.WriteAllAsync(File.ReadAllBytes(strFullFilename));
+                        bHandled = true;
+
+                        break;
+                    }
+                }
+
+                if( !bHandled )
+                {
+                    //TODO 404 ( mal als embedded resource machen ...)
+                    await context.Response.WriteAllAsync("<h1>vierhundertvier (404)</h1>");
+                }
             }
 
             return true;

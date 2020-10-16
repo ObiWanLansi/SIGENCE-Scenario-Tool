@@ -1444,7 +1444,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 // Wir geben unserem eigenenm Server natürlich erstmal ein bissel Zeit zum initialisieren
                 // TODO: Sollte natürlich nur das erstmal von nöten sein, ist der Server bereits gestartet kann natürlich direkt los gelegt werden.
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
 
                 Tools.Windows.OpenWebAdress($"http://{endpoint.Address}:{endpoint.Port}");
             }

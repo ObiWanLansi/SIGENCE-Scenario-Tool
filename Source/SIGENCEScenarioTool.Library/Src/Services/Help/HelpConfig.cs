@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-using Newtonsoft.Json;
-
 using SIGENCEScenarioTool.Extensions;
 
 using YamlDotNet.Serialization;
-
-
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace SIGENCEScenarioTool.Services.Help
 {
@@ -42,7 +39,7 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <value>
         /// The content of the HTML.
         /// </value>
-        [JsonIgnore]
+        //[JsonIgnore]
         [YamlIgnore]
         public string HtmlContent { get; set; } = null;// = "";
 
@@ -113,7 +110,7 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <summary>
         /// The confgig file
         /// </summary>
-        private const string CONFGIG_FILE_JSON = "config.json";
+        //private const string CONFGIG_FILE_JSON = "config.json";
         private const string CONFGIG_FILE_YAML = "config.yaml";
 
 
@@ -125,10 +122,13 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <exception cref="NotImplementedException"></exception>
         public static HelpConfig LoadConfig( string strHelpDirectory )
         {
-            string strConfigFilename = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_JSON);
-            string strJsonContent = File.ReadAllText(strConfigFilename, Encoding.Default);
+            //string strConfigFilename = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_JSON);
+            //string strJsonContent = File.ReadAllText(strConfigFilename, Encoding.Default);
+            //return JsonConvert.DeserializeObject<HelpConfig>(strJsonContent);
 
-            return JsonConvert.DeserializeObject<HelpConfig>(strJsonContent);
+            string strConfigFilename = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_YAML);
+            string strYamlContent = File.ReadAllText(strConfigFilename, Encoding.Default);
+            return new DeserializerBuilder().Build().Deserialize<HelpConfig>(strYamlContent);
         }
 
 
@@ -140,9 +140,9 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <exception cref="NotImplementedException"></exception>
         public static void SaveConfig( HelpConfig config, string strHelpDirectory )
         {
-            string strConfigFilenameJSON = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_JSON);
-            string strJsonContent = JsonConvert.SerializeObject(config, Formatting.Indented);
-            File.WriteAllText(strConfigFilenameJSON, strJsonContent, Encoding.Default);
+            //string strConfigFilenameJSON = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_JSON);
+            //string strJsonContent = JsonConvert.SerializeObject(config, Formatting.Indented);
+            //File.WriteAllText(strConfigFilenameJSON, strJsonContent, Encoding.Default);
 
             string strConfigFilenameYAML = string.Format("{0}\\{1}", strHelpDirectory, CONFGIG_FILE_YAML);
             string strYamlContent = new SerializerBuilder().Build().Serialize(config);
@@ -154,7 +154,7 @@ namespace SIGENCEScenarioTool.Services.Help
         /// Creates the template.
         /// </summary>
         /// <param name="strHelpDirectory">The string help directory.</param>
-        public static void CreateTemplate( string strHelpDirectory)
+        public static void CreateTemplate( string strHelpDirectory )
         {
             HelpConfig config = new HelpConfig
             {
