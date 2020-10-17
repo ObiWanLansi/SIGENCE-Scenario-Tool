@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 using Ceen;
 using Ceen.Httpd;
 
 using Markdig;
+using Markdig.SyntaxHighlighting;
 
 using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Tools;
+
+
 
 namespace SIGENCEScenarioTool.Services.Help
 {
@@ -110,19 +115,6 @@ namespace SIGENCEScenarioTool.Services.Help
 
             //-----------------------------------------------------------------
 
-            //DefaultModule defaulthandler = new DefaultModule();
-
-            //foreach( Type type in typeof(AppMonitoring).Assembly.GetTypes() )
-            //{
-            //    if( type.ImplementsInterface(this.tIMonitoringModule) )
-            //    {
-            //        IMonitoringModule module = (IMonitoringModule) Activator.CreateInstance(type);
-
-            //        defaulthandler.AddModule(module);
-            //        config.AddRoute($"/{module.GetRoute()}", module);
-            //    }
-            //}
-
             // Der muss immer zuletzt hinzugefügt werden
             config.AddRoute("", this);
 
@@ -164,25 +156,17 @@ namespace SIGENCEScenarioTool.Services.Help
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        //        /// <summary>
-        //        /// The HTML template
-        //        /// </summary>
-        //        private readonly string HTML_TEMPLATE =
-        //@"<!DOCTYPE html>
-        //<html>
-        //    <head>
-        //        <title>$APPLICATION_TITLE$ (Version $VERSION$) - [Help]</title>
-        //        $BOOTSTRAP_LINK$
-        //        <style>
-        //            body { background-color: #F0FFFF; }
-        //        </style>
-        //        $BOOTSTRAP_SCRIPT$
-        //    </head>
-        //    <body>
-        //        $CONTENT$
-        //    </body>
-        //</html>";
-
+        /// <summary>
+        /// The mapi
+        /// </summary>
+        private static readonly MarkdownPipeline MAPI = new MarkdownPipelineBuilder().
+                                                            UseAdvancedExtensions().
+                                                            UseSyntaxHighlighting().
+                                                            UseEmojiAndSmiley().
+                                                            UseBootstrap().
+                                                            UseAutoLinks().
+                                                            //UseAutoIdentifiers().
+                                                            Build();
 
         /// <summary>
         /// The sd help pages
@@ -201,7 +185,18 @@ namespace SIGENCEScenarioTool.Services.Help
 
             string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
 
-            return Markdown.ToHtml(strMarkdownContent);
+            return Markdown.ToHtml(strMarkdownContent, MAPI);
+        }
+
+
+        /// <summary>
+        /// Creates the HTML from markdown.
+        /// </summary>
+        /// <param name="strMarkdownContent">Content of the string markdown.</param>
+        /// <returns></returns>
+        private string CreateHTMLFromMarkdown( string strMarkdownContent )
+        {
+            return Markdown.ToHtml(strMarkdownContent, MAPI);
         }
 
 
@@ -211,17 +206,18 @@ namespace SIGENCEScenarioTool.Services.Help
         /// <param name="hc">The hc.</param>
         private void AddMainPage( HelpConfig hc )
         {
-            string strMarkdownFilename = $"{Path}\\{hc.MainPage.Document}";
+            //string strMarkdownFilename = $"{Path}\\{hc.MainPage.Document}";
 
-            string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
+            //string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
 
             string strTemplateContent = File.ReadAllText(@"O:\SIGENCE-Scenario-Tool\Documentation\Help\main.html", Encoding.Default);
+
+            //---------------------------------------------------------------------------------------------------------
 
             StringBuilder sbBTN = new StringBuilder(8192);
             StringBuilder sbTAB = new StringBuilder(8192);
 
             sbBTN.Append($"<button class=\"tablink\" onclick=\"openPage('{hc.MainPage.Caption}', this, 'gray')\" id=\"defaultOpen\">{hc.MainPage.Caption}</button>\n");
-            //sbTAB.Append($"<div id=\"Home\" class=\"tabcontent\"><h3>Home</h3></div>\n");
             sbTAB.Append($"<div id=\"Home\" class=\"tabcontent\">{CreateHTMLFromMarkdown(hc.MainPage)}</div>\n");
 
             foreach( HelpPage hp in hc.Pages )
@@ -233,50 +229,50 @@ namespace SIGENCEScenarioTool.Services.Help
                 }
 
                 sbBTN.Append($"<button class=\"tablink\" onclick=\"openPage('{hp.Caption}', this, 'gray')\">{hp.Caption}</button>\n");
-                //sbTAB.Append($"<div id=\"{hp.Caption}\" class=\"tabcontent\"><h3>{hp.Caption}</h3></div>\n");
                 //sbTAB.Append($"<div id=\"{hp.Caption}\" class=\"tabcontent\"><iframe src=\"./{hp.Document}\" /></div>\n");
                 sbTAB.Append($"<div id=\"{hp.Caption}\" class=\"tabcontent\">{CreateHTMLFromMarkdown(hp)}</div>\n");
             }
+
+            //---------------------------------------------------------------------------------------------------------
+
+            try
+            {
+                StringBuilder sbDependencies = new StringBuilder(8192);
+
+                sbDependencies.AppendLine("# Dependencies");
+                sbDependencies.AppendLine();
+                sbDependencies.AppendLine("|Package|Version|Link|");
+                sbDependencies.AppendLine("|:------|:------|:---|");
+                string strDependencyFile = @"O:\SIGENCE-Scenario-Tool\Source\SIGENCEScenarioTool.Library\packages.config";
+
+                XDocument xdoc = XDocument.Load(strDependencyFile);
+
+                foreach( XElement package in xdoc.Root.Elements("package") )
+                {
+                    string strPackageName = package.Attribute("id").Value;
+                    string strPackageVersion = package.Attribute("version").Value;
+                    sbDependencies.AppendLine($"|{strPackageName}|{strPackageVersion}|https://www.nuget.org/packages/{strPackageName}/|");
+                }
+
+                sbBTN.Append($"<button class=\"tablink\" onclick=\"openPage('dependencies', this, 'gray')\" id=\"defaultOpen\">Dependencies</button>\n");
+                sbTAB.Append($"<div id=\"dependencies\" class=\"tabcontent\">{CreateHTMLFromMarkdown(sbDependencies.ToString())}</div>\n");
+            }
+            catch( Exception )
+            {
+            }
+
+            //---------------------------------------------------------------------------------------------------------
 
             hc.MainPage.HtmlContent = strTemplateContent.Replace("$BUTTONS$", sbBTN.ToString()).Replace("$TABS$", sbTAB.ToString());
 
             this.sdHelpPages.Add("/", hc.MainPage);
         }
 
-        /// <summary>
-        /// Adds the page.
-        /// </summary>
-        /// <param name="strPath">The string path.</param>
-        /// <param name="hp">The hp.</param>
-        /// <returns></returns>
-        private void AddHelpPage( string strPath, HelpPage hp )
-        {
-            //string strMarkdownFilename = $"{Path}\\{hp.Document}";
-
-            //string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
-
-
-            //string strTemplateContent = File.ReadAllText(@"O:\SIGENCE-Scenario-Tool\Documentation\Help\tabbar.html", Encoding.Default);
-
-            #region OldStuff
-            //string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
-            ////string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
-
-            ////hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
-            //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).
-            //                                    Replace("$VERSION$", Tool.Version).
-            //                                    Replace("$CONTENT$", strHtmlContent).
-            //                                    Replace("$BOOTSTRAP_LINK$", "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity=\"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin=\"anonymous\">").
-            //                                    Replace("$BOOTSTRAP_SCRIPT$", "<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\" integrity=\"sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI\" crossorigin=\"anonymous\"></script>");
-            #endregion
-
-            //this.sdHelpPages.Add(strPath, hp);
-        }
-
 
         /// <summary>
         /// Creates the help.
         /// </summary>
+        [Conditional("DEBUG")]
         private void CreateHelp()
         {
             this.sdHelpPages.Clear();
@@ -315,50 +311,14 @@ namespace SIGENCEScenarioTool.Services.Help
 
 
             AddMainPage(hc);
-            //AddHelpPage("/", hc.MainPage);
-
-            //foreach( HelpPage hp in hc.Pages )
-            //{
-            //    // Wenn beide leer sind können wir nix weiter machen
-            //    if( hp.Validate() == false )
-            //    {
-            //        continue;
-            //    }
-
-            //    #region OldStuff
-            //    //// Wenn der Documentname leer ist nehmen wir die Caption + .md
-            //    //if( hp.Document.IsEmpty() )
-            //    //{
-            //    //    hp.Document = hp.Caption + ".md";
-            //    //}
-
-            //    //// Wenn die Caption leer ist nehmen wir das Document - .md
-            //    //if( hp.Caption.IsEmpty() )
-            //    //{
-            //    //    hp.Caption = hp.Document.Substring(0, hp.Document.Length - 3);
-            //    //}
-
-            //    //string strMarkdownFilename = $"{Path}\\{hp.Document}";
-
-            //    //string strMarkdownContent = File.Exists(strMarkdownFilename) ? File.ReadAllText(strMarkdownFilename, Encoding.Default) : LoremIpsum.GetLoremIpsum();
-
-            //    //string strHtmlContent = Markdown.ToHtml(strMarkdownContent);
-            //    //string strHtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version);
-
-            //    //hp.HtmlContent = this.HTML_TEMPLATE.Replace("$APPLICATION_TITLE$", Tool.ProductTitle).Replace("$VERSION$", Tool.Version).Replace("$CONTENT$", $"<h1>{hp.Caption}</h1>");
-            //    #endregion
-
-            //    // Der Pfad ist der Dokumentname ohne .md
-            //    //string strPath = hp.Document.Substring(0, hp.Document.Length - 3).ToLower();
-            //    //AddHelpPage($"/{strPath}", hp);
-
-            //    AddHelpPage($"/{hp.Document}", hp);
-            //}
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+        /// <summary>
+        /// The allowed file types
+        /// </summary>
         private static readonly HashSet<string> ALLOWED_FILE_TYPES = new HashSet<string> { ".jpg", ".png", ".gif" };
 
 
