@@ -263,6 +263,19 @@ namespace SIGENCEScenarioTool.Services.Help
 
             //---------------------------------------------------------------------------------------------------------
 
+            try
+            {
+                string strReleaseNotes = ".\\ReleaseNotes\\ReleaseNotes.Markdown.md";
+                string strMarkdownContent = File.ReadAllText(strReleaseNotes);
+                sbBTN.Append($"<button class=\"tablink\" onclick=\"openPage('ReleaseNotes', this, 'gray')\" id=\"defaultOpen\">Release Notes</button>\n");
+                sbTAB.Append($"<div id=\"ReleaseNotes\" class=\"tabcontent\">{CreateHTMLFromMarkdown(strMarkdownContent)}</div>\n");
+            }
+            catch( Exception )
+            {
+            }
+
+            //---------------------------------------------------------------------------------------------------------
+
             hc.MainPage.HtmlContent = strTemplateContent.Replace("$BUTTONS$", sbBTN.ToString()).Replace("$TABS$", sbTAB.ToString());
 
             this.sdHelpPages.Add("/", hc.MainPage);
