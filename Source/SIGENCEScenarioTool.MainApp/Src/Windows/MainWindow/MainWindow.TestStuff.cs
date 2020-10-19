@@ -10,6 +10,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
+using Microsoft.Win32;
+
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
 
@@ -21,8 +23,7 @@ using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
-
-
+using System.Xml.Linq;
 
 namespace SIGENCEScenarioTool.Windows.MainWindow
 {
@@ -36,7 +37,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_ChartingTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_ChartingTest_Click( object sender, RoutedEventArgs e )
         {
             ChartingDialog cw = new ChartingDialog(new RFDeviceList(from device in this.RFDeviceViewModelCollection select device.RFDevice));
             cw.ShowDialog();
@@ -174,9 +175,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         {
             List<GMapMarker> lDelete = new List<GMapMarker>();
 
-            foreach (GMapMarker mm in this.mcMapControl.Markers)
+            foreach( GMapMarker mm in this.mcMapControl.Markers )
             {
-                if (mm.Tag is Highway)
+                if( mm.Tag is Highway )
                 {
                     lDelete.Add(mm);
                 }
@@ -208,7 +209,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 DataSource = strFilename
             };
 
-            using (SQLiteConnection dbConnection = new SQLiteConnection(csbDatabase.ConnectionString))
+            using( SQLiteConnection dbConnection = new SQLiteConnection(csbDatabase.ConnectionString) )
             {
                 dbConnection.Open();
 
@@ -222,19 +223,19 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStart = DateTime.Now;
 
-                    using (SQLiteCommand dbSelectCommand = new SQLiteCommand(strSelectStatement, dbConnection))
+                    using( SQLiteCommand dbSelectCommand = new SQLiteCommand(strSelectStatement, dbConnection) )
                     {
-                        using (SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader())
+                        using( SQLiteDataReader dbResult = dbSelectCommand.ExecuteReader() )
                         {
-                            while (dbResult.Read())
+                            while( dbResult.Read() )
                             {
                                 Highway type = Highway.Unknown;
 
                                 try
                                 {
-                                    type = (Highway)Enum.Parse(typeof(Highway), dbResult.GetString(0), true);
+                                    type = (Highway) Enum.Parse(typeof(Highway), dbResult.GetString(0), true);
                                 }
-                                catch (Exception ex)
+                                catch( Exception ex )
                                 {
                                     Debug.WriteLine(ex.Message);
                                 }
@@ -242,9 +243,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                                 string strRef = dbResult.GetStringOrNull(1);
                                 string strName = dbResult.GetStringOrNull(2);
 
-                                LineString way = (LineString)dbResult.GetGeometryFromWKB(3);
+                                LineString way = (LineString) dbResult.GetGeometryFromWKB(3);
 
-                                if (bb.Contains(way.Coordinate.ToPointLatLng()))
+                                if( bb.Contains(way.Coordinate.ToPointLatLng()) )
                                 {
                                     List<PointLatLng> list = new List<PointLatLng>(way.Count);
 
@@ -252,7 +253,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                                     this.Dispatcher.Invoke(() =>
                                     {
-                                        PathMarker mrWay = new PathMarker(this.mcMapControl, list, type, $"{(strName.IsNotEmpty() ? strName : "Unknown")}{(strRef.IsNotEmpty() ? $" ({strRef})" : "")}")
+                                        PathMarker mrWay = new PathMarker(this.mcMapControl, list, type, $"{( strName.IsNotEmpty() ? strName : "Unknown" )}{( strRef.IsNotEmpty() ? $" ({strRef})" : "" )}")
                                         {
                                             Tag = type
                                         };
@@ -268,15 +269,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                     DateTime dtStop = DateTime.Now;
 
-                    MB.Information("Load {0} Ways In {1}.", iCounter, (dtStop - dtStart).ToHHMMSSString());
+                    MB.Information("Load {0} Ways In {1}.", iCounter, ( dtStop - dtStart ).ToHHMMSSString());
                 }
-                catch (Exception ex)
+                catch( Exception ex )
                 {
                     MB.Error(ex);
                 }
                 finally
                 {
-                    if (dbConnection.State == ConnectionState.Open)
+                    if( dbConnection.State == ConnectionState.Open )
                     {
                         dbConnection.Close();
                     }
@@ -290,7 +291,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_LoadStreets_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_LoadStreets_Click( object sender, RoutedEventArgs e )
         {
             Task.Run(() => { LoadStreets(); });
 
@@ -327,7 +328,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             this.mcMapControl.Markers.Add(polygon);
 
-            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {this.tm.PointCount}");
+            MB.Information($"Time: {( dtStop - dtStart ).ToHHMMSSString()} / Points: {this.tm.PointCount}");
 
             GC.WaitForPendingFinalizers();
             GC.Collect();
@@ -339,7 +340,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void CreateHighestPoints()
         {
-            if ( this.tm == null)
+            if( this.tm == null )
             {
                 MB.Information("Please Load First An Terrain Model!");
                 return;
@@ -350,11 +351,11 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             DateTime dtStop = DateTime.Now;
 
 
-            if (highestpoints.Count > 0)
+            if( highestpoints.Count > 0 )
             {
                 int iCounter = 0;
 
-                foreach (LatLonAlt lla in highestpoints)
+                foreach( LatLonAlt lla in highestpoints )
                 {
                     RFDevice dev = new RFDevice()
                     {
@@ -370,7 +371,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                 }
             }
 
-            MB.Information($"Time: {(dtStop - dtStart).ToHHMMSSString()} / Points: {highestpoints.Count}");
+            MB.Information($"Time: {( dtStop - dtStart ).ToHHMMSSString()} / Points: {highestpoints.Count}");
 
             GC.WaitForPendingFinalizers();
             GC.Collect();
@@ -382,7 +383,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_LoadHeightDataTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_LoadHeightDataTest_Click( object sender, RoutedEventArgs e )
         {
             //Task.Run(() => { LoadHeightData(); });
             this.Cursor = Cursors.Wait;
@@ -400,7 +401,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_UseHeightDataTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_UseHeightDataTest_Click( object sender, RoutedEventArgs e )
         {
             this.Cursor = Cursors.Wait;
 
@@ -419,11 +420,165 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
-        private void DataGridGeoData_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void DataGridGeoData_MouseDoubleClick( object sender, MouseButtonEventArgs e )
         {
-            GeoNode gn = (sender as DataGrid).SelectedItem as GeoNode;
+            GeoNode gn = ( sender as DataGrid ).SelectedItem as GeoNode;
 
             JumpToGeoNode(gn);
+
+            e.Handled = true;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        /// <summary>
+        /// Messages the mocker.
+        /// </summary>
+        /// <param name="strFilename">The string filename.</param>
+        private void MessageMocker( string strFilename )
+        {
+            try
+            {
+                XDocument xdoc = XDocument.Load(strFilename);
+
+                Window w = new Window
+                {
+                    Title = "SIGENCE XML MQTT Message Mocker",
+                    Width = 600,
+                    Height = 600,
+                    ResizeMode = ResizeMode.NoResize,
+                    //WindowStyle = WindowStyle.SingleBorderWindow,
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                };
+
+                Grid grid = new Grid();
+
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+                int iCurrentRow = 0;
+
+                Action<UIElement, UIElement> AddRow = ( e1, e2 ) =>
+                {
+                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
+
+                    grid.Children.Add(e1);
+                    grid.Children.Add(e2);
+
+                    Grid.SetColumn(e1, 0);
+                    Grid.SetRow(e1, iCurrentRow);
+
+                    Grid.SetColumn(e2, 1);
+                    Grid.SetRow(e2, iCurrentRow);
+
+                    iCurrentRow++;
+                };
+
+                //-----------------------------------------------------------------------------------------------------
+
+                const int MARGIN_LEFT_RIGHT = 10;
+                const int MARGIN_TOP_BOTTOM = 5;
+
+                XElement root = xdoc.Root;
+
+                AddRow(new Label
+                {
+                    Content = "Name",
+                    Margin = new Thickness(MARGIN_LEFT_RIGHT),
+                    FontWeight = FontWeights.Bold
+                }, new Label
+                {
+                    Content = root.Element("name").Value,
+                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM)
+                });
+
+                AddRow(new Label
+                {
+                    Content = "Id",
+                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                    FontWeight = FontWeights.Bold
+                }, new Label
+                {
+                    Content = root.Element("id").Value,
+                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM)
+                });
+
+                AddRow(new Label
+                {
+                    Content = "Version",
+                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                    FontWeight = FontWeights.Bold
+                }, new Label
+                {
+                    Content = root.Element("version").Value,
+                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM)
+                });
+
+                foreach( XElement eField in root.Elements("key") )
+                {
+                    AddRow(new Label
+                    {
+                        Content = eField.Element("name").Value,
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                        FontWeight = FontWeights.Bold
+                    }, new TextBox
+                    {
+                        Text = "",
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                        VerticalContentAlignment = VerticalAlignment.Center
+                    });
+                }
+
+                //-----------------------------------------------------------------------------------------------------
+
+                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+                StackPanel sp = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Center };
+                sp.Children.Add(new Button { Content = "Send", Width = 100, Height = 40, Margin = new Thickness(20) });
+                sp.Children.Add(new Button { Content = "Cancel", Width = 100, Height = 40, Margin = new Thickness(20) });
+
+                grid.Children.Add(sp);
+
+                Grid.SetColumn(sp, 0);
+                Grid.SetRow(sp, iCurrentRow);
+                Grid.SetColumnSpan(sp, 2);
+
+                //-----------------------------------------------------------------------------------------------------
+
+                w.Content = new ScrollViewer { Content = grid, VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
+
+                w.ShowDialog();
+            }
+            catch( Exception ex )
+            {
+                MB.Error(ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the MenuItem_MQTTMessageSender control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void MenuItem_MQTTMessageSender_Click( object sender, RoutedEventArgs e )
+        {
+
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Title = "Load XML Message Definition",
+                Filter = "SIGENCE XML Message Definition (*.xml)|*.xml",
+                AddExtension = true,
+                CheckPathExists = true,
+                CheckFileExists = true,
+                Multiselect = false
+            };
+
+            if( ofd.ShowDialog() == true )
+            {
+                MessageMocker(ofd.FileName);
+            }
 
             e.Handled = true;
         }
@@ -438,7 +593,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="pllBottomRight">The PLL bottom right.</param>
         /// <param name="bColor">Color of the b.</param>
         [Conditional("DEBUG")]
-        private void CreateHeatmap(PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor)
+        private void CreateHeatmap( PointLatLng pllTopLeft, PointLatLng pllBottomRight, Brush bColor )
         {
             List<PointLatLng> points = new List<PointLatLng>
             {
@@ -452,7 +607,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
             mp.RegenerateShape(this.mcMapControl);
 
-            if (mp.Shape is System.Windows.Shapes.Path path)
+            if( mp.Shape is System.Windows.Shapes.Path path )
             {
                 path.Stroke = Brushes.Black;
                 path.StrokeThickness = 0.1;
@@ -480,9 +635,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             Random r = new Random();
             List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
 
-            for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
+            for( double x = pll.Lng - ( iKachelBreite * dWidth ) ; x < pll.Lng + ( iKachelBreite * dWidth ) ; x += dWidth )
             {
-                for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
+                for( double y = pll.Lat - ( iKachelHöhe * dHeight ) ; y < pll.Lat + ( iKachelHöhe * dHeight ) ; y += dHeight )
                 {
                     PointLatLng pllTopLeft = new PointLatLng(y, x);
                     PointLatLng pllBottomRight = new PointLatLng(y + dHeight, x + dWidth);
@@ -499,7 +654,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="pllCenter">The PLL center.</param>
         /// <param name="bColor">Color of the b.</param>
         [Conditional("DEBUG")]
-        private void CreateHeatmap2(PointLatLng pllCenter, Brush bColor)
+        private void CreateHeatmap2( PointLatLng pllCenter, Brush bColor )
         {
             // Die Größe der Punkte sind in Pixel, dasm uss natürlich angepasst werden an die GeoKoordinaten, siehe GMap.NET.WindowsPresentation.GMapPolygon .
             GMapMarker marker = new GMapMarker(pllCenter)
@@ -528,9 +683,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             Random r = new Random();
             List<Brush> colors = new List<Brush> { Brushes.White, Brushes.LightYellow, Brushes.Yellow, Brushes.Orange, Brushes.OrangeRed, Brushes.Red };
 
-            for (double x = pll.Lng - (iKachelBreite * dWidth); x < pll.Lng + (iKachelBreite * dWidth); x += dWidth)
+            for( double x = pll.Lng - ( iKachelBreite * dWidth ) ; x < pll.Lng + ( iKachelBreite * dWidth ) ; x += dWidth )
             {
-                for (double y = pll.Lat - (iKachelHöhe * dHeight); y < pll.Lat + (iKachelHöhe * dHeight); y += dHeight)
+                for( double y = pll.Lat - ( iKachelHöhe * dHeight ) ; y < pll.Lat + ( iKachelHöhe * dHeight ) ; y += dHeight )
                 {
                     PointLatLng pllPos = new PointLatLng(y, x);
 
@@ -545,7 +700,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void MenuItem_HeatmapTest_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_HeatmapTest_Click( object sender, RoutedEventArgs e )
         {
             CreateHeatmap();
 

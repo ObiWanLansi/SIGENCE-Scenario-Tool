@@ -26,15 +26,15 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitCommands()
         {
-            Action<RoutedUICommand, Action> AddCommand = (cmd, func) =>
+            Action<RoutedUICommand, Action> AddCommand = ( cmd, func ) =>
             {
                 this.CommandBindings.Add(new CommandBinding(cmd,
-                    (sender, e) =>
+                    ( sender, e ) =>
                     {
                         func();
                         e.Handled = true;
                     },
-                    (sender, e) => { e.CanExecute = true; }
+                    ( sender, e ) => { e.CanExecute = true; }
                 ));
             };
 
@@ -57,7 +57,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             AddCommand(RegisteredCommands.CreateRFDevice, BeginCreateRFDevice);
             AddCommand(RegisteredCommands.DeleteRFDevice, DeleteRFDevices);
 
-            AddCommand(RegisteredCommands.MoveRFDevice,ToggleMoveRFDevice);
+            AddCommand(RegisteredCommands.MoveRFDevice, ToggleMoveRFDevice);
             AddCommand(RegisteredCommands.EditRFDevice, EditRFDevice);
             AddCommand(RegisteredCommands.CopyRFDevice, CopyRFDevice);
             AddCommand(RegisteredCommands.PasteRFDevice, PasteRFDevice);
@@ -231,7 +231,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void InitTextEditorControls()
         {
-            Action<TextEditorControl> Init = (tec) =>
+            Action<TextEditorControl> Init = ( tec ) =>
             {
                 tec.HideMouseCursor = true;
                 tec.LineViewerStyle = LineViewerStyle.FullRow;

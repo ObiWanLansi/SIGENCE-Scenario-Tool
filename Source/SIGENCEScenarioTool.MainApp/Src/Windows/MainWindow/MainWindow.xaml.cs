@@ -124,6 +124,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
 #if DEBUG
 
+            MessageMocker(@"O:\SIGENCE-ObiWanLansi-Tools\MessageHandler\java\messages\JammerDetection.xml");
+
             HelpConfigFactory.CreateTemplate(Properties.Settings.Default.HelpPath);
 
             this.RFDeviceTemplateCollection.Add(new RFDeviceTemplate(new RFDevice { Name = "GPS Jammer", Id = 1 }));

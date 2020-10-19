@@ -30,7 +30,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Loads the file.
         /// </summary>
         /// <param name="strInputFilename">The string input filename.</param>
-        internal void LoadFile(string strInputFilename)
+        internal void LoadFile( string strInputFilename )
         {
             this.Cursor = Cursors.Wait;
 
@@ -70,14 +70,14 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 XElement eRFDeviceCollection = xdoc.Root.Element("RFDeviceCollection");
 
-                foreach (XElement e in eRFDeviceCollection.Elements())
+                foreach( XElement e in eRFDeviceCollection.Elements() )
                 {
                     AddRFDevice(RFDevice.FromXml(e));
                 }
 
                 AddFileHistory(strInputFilename);
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -91,7 +91,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void LoadFile()
         {
-            if (this.ofdLoadSIGENCEScenario.ShowDialog() == true)
+            if( this.ofdLoadSIGENCEScenario.ShowDialog() == true )
             {
                 Reset();
 
@@ -104,7 +104,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Saves the file.
         /// </summary>
         /// <param name="strOutputFilename">The string output filename.</param>
-        internal void SaveFile(string strOutputFilename)
+        internal void SaveFile( string strOutputFilename )
         {
             this.Cursor = Cursors.Wait;
 
@@ -135,7 +135,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 XElement eRFDeviceCollection = new XElement("RFDeviceCollection");
 
-                foreach (RFDevice d in from rfdevice in this.RFDeviceViewModelCollection select rfdevice.RFDevice)
+                foreach( RFDevice d in from rfdevice in this.RFDeviceViewModelCollection select rfdevice.RFDevice )
                 {
                     eRFDeviceCollection.Add(d.ToXml());
                 }
@@ -146,7 +146,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 eSIGENCEScenarioTool.SaveDefault(strOutputFilename);
             }
-            catch (Exception ex)
+            catch( Exception ex )
             {
                 MB.Error(ex);
             }
@@ -160,9 +160,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// </summary>
         private void SaveFile()
         {
-            if (this.CurrentFile == null)
+            if( this.CurrentFile == null )
             {
-                if (this.sfdSaveSIGENCEScenario.ShowDialog() == true)
+                if( this.sfdSaveSIGENCEScenario.ShowDialog() == true )
                 {
                     this.CurrentFile = this.sfdSaveSIGENCEScenario.FileName;
                 }
