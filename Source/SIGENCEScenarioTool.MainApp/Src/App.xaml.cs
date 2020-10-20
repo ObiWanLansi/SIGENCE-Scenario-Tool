@@ -57,13 +57,13 @@ namespace SIGENCEScenarioTool
         /// <param name="e">The <see cref="System.Windows.ExitEventArgs" /> instance containing the event data.</param>
         private void Application_Exit( object sender , ExitEventArgs e )
         {
-            try
-            {
-                Blink.Off();
-            }
-            catch( Exception )
-            {
-            }
+            //try
+            //{
+            //    Blink.Off();
+            //}
+            //catch( Exception )
+            //{
+            //}
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

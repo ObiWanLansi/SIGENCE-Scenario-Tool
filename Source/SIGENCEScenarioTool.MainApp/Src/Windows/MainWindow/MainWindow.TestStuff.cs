@@ -9,11 +9,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-
-using Microsoft.Win32;
+using System.Xml.Linq;
 
 using GMap.NET;
 using GMap.NET.WindowsPresentation;
+
+using Microsoft.Win32;
 
 using NetTopologySuite.Geometries;
 
@@ -23,7 +24,8 @@ using SIGENCEScenarioTool.Extensions;
 using SIGENCEScenarioTool.Markers;
 using SIGENCEScenarioTool.Models;
 using SIGENCEScenarioTool.Tools;
-using System.Xml.Linq;
+
+
 
 namespace SIGENCEScenarioTool.Windows.MainWindow
 {
@@ -319,12 +321,12 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             DateTime dtStop = DateTime.Now;
 
             GMapPolygon polygon = new GMapPolygon(new List<PointLatLng>
-                {
-                    new PointLatLng(this.tm.YMin,this.tm.XMin),
-                    new PointLatLng(this.tm.YMax,this.tm.XMin),
-                    new PointLatLng(this.tm.YMax,this.tm.XMax),
-                    new PointLatLng(this.tm.YMin,this.tm.XMax)
-                });
+            {
+                new PointLatLng(this.tm.YMin,this.tm.XMin),
+                new PointLatLng(this.tm.YMax,this.tm.XMin),
+                new PointLatLng(this.tm.YMax,this.tm.XMax),
+                new PointLatLng(this.tm.YMin,this.tm.XMax)
+            });
 
             this.mcMapControl.Markers.Add(polygon);
 
@@ -438,6 +440,9 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// <param name="strFilename">The string filename.</param>
         private void MessageMocker( string strFilename )
         {
+            const int MARGIN_LEFT_RIGHT = 10;
+            const int MARGIN_TOP_BOTTOM = 5;
+
             try
             {
                 XDocument xdoc = XDocument.Load(strFilename);
@@ -448,7 +453,6 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
                     Width = 600,
                     Height = 600,
                     ResizeMode = ResizeMode.NoResize,
-                    //WindowStyle = WindowStyle.SingleBorderWindow,
                     WindowStartupLocation = WindowStartupLocation.CenterScreen
                 };
 
@@ -477,66 +481,107 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
 
                 //-----------------------------------------------------------------------------------------------------
 
-                const int MARGIN_LEFT_RIGHT = 10;
-                const int MARGIN_TOP_BOTTOM = 5;
-
-                XElement root = xdoc.Root;
-
-                AddRow(new Label
-                {
-                    Content = "Name",
-                    Margin = new Thickness(MARGIN_LEFT_RIGHT),
-                    FontWeight = FontWeights.Bold
-                }, new Label
-                {
-                    Content = root.Element("name").Value,
-                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM)
-                });
-
-                AddRow(new Label
-                {
-                    Content = "Id",
-                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
-                    FontWeight = FontWeights.Bold
-                }, new Label
-                {
-                    Content = root.Element("id").Value,
-                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM)
-                });
-
-                AddRow(new Label
-                {
-                    Content = "Version",
-                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
-                    FontWeight = FontWeights.Bold
-                }, new Label
-                {
-                    Content = root.Element("version").Value,
-                    Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM)
-                });
-
-                foreach( XElement eField in root.Elements("key") )
-                {
-                    AddRow(new Label
+                AddRow(
+                    new Label
                     {
-                        Content = eField.Element("name").Value,
+                        Content = "MQTT Topic",
                         Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
                         FontWeight = FontWeights.Bold
-                    }, new TextBox
+                    },
+                    new TextBox
                     {
                         Text = "",
                         Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
                         VerticalContentAlignment = VerticalAlignment.Center
-                    });
+                    }
+                );
+
+                //-----------------------------------------------------------------------------------------------------
+
+                XElement root = xdoc.Root;
+
+                AddRow(
+                    new Label
+                    {
+                        Content = "Name",
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT),
+                        FontWeight = FontWeights.Bold
+                    },
+                    new Label
+                    {
+                        Content = root.Element("name").Value,
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                        BorderBrush = Brushes.Black,
+                        BorderThickness = new Thickness(1)
+                    }
+                );
+
+                AddRow(
+                    new Label
+                    {
+                        Content = "Id",
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                        FontWeight = FontWeights.Bold
+                    },
+                    new Label
+                    {
+                        Content = root.Element("id").Value,
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                        BorderBrush = Brushes.Black,
+                        BorderThickness = new Thickness(1)
+                    }
+                );
+
+                AddRow(
+                    new Label
+                    {
+                        Content = "Version",
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                        FontWeight = FontWeights.Bold
+                    },
+                    new Label
+                    {
+                        Content = root.Element("version").Value,
+                        Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                        BorderBrush = Brushes.Black,
+                        BorderThickness = new Thickness(1)
+                    }
+                );
+
+                foreach( XElement eField in root.Elements("key") )
+                {
+                    string strFieldName = eField.Element("name").Value;
+
+                    AddRow(
+                        new Label
+                        {
+                            Content = strFieldName,
+                            Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                            FontWeight = FontWeights.Bold
+                        },
+                        new TextBox
+                        {
+                            Text = "",
+                            Margin = new Thickness(MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM, MARGIN_LEFT_RIGHT, MARGIN_TOP_BOTTOM),
+                            VerticalContentAlignment = VerticalAlignment.Center,
+                            Tag = eField.Element("name").Value
+                        }
+                    );
                 }
 
                 //-----------------------------------------------------------------------------------------------------
 
                 grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
+                Button btnSend = new Button { Content = "Send", Width = 100, Height = 40, Margin = new Thickness(20) };
+                btnSend.Click += ( s, a ) => MB.NotYetImplemented();
+
+                Button btnCancel = new Button { Content = "Cancel", Width = 100, Height = 40, Margin = new Thickness(20) };
+                btnCancel.Click += ( s, a ) => w.Close();
+
                 StackPanel sp = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Center };
-                sp.Children.Add(new Button { Content = "Send", Width = 100, Height = 40, Margin = new Thickness(20) });
-                sp.Children.Add(new Button { Content = "Cancel", Width = 100, Height = 40, Margin = new Thickness(20) });
+                sp.Children.Add(btnSend);
+                sp.Children.Add(btnCancel);
 
                 grid.Children.Add(sp);
 
