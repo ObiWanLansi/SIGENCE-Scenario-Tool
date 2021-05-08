@@ -50,10 +50,10 @@ public class JavaMockUp {
 
 		} catch (UnknownHostException ex) {
 
-			System.err.println(ex.getLocalizedMessage());
+			System.err.println(ex.getMessage());
 		} catch (IOException ex) {
 
-			System.err.println(ex.getLocalizedMessage());
+			System.err.println(ex.getMessage());
 		}
 	}
 }
