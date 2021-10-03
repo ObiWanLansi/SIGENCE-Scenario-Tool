@@ -49,6 +49,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             catch (Exception)
             {
             }
+
+            e.Handled = true;
         }
 
 
@@ -379,6 +381,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void DataGrid_Execute_Copy(object sender, ExecutedRoutedEventArgs e)
         {
             CopyRFDevice();
+
+            e.Handled = true;
         }
 
 
@@ -390,6 +394,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void DataGrid_Execute_Paste(object sender, ExecutedRoutedEventArgs e)
         {
             PasteRFDevice();
+
+            e.Handled = true;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -485,6 +491,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void MenuItem_ImportSettings_Click(object sender, RoutedEventArgs e)
         {
             ImportSettings();
+
+            e.Handled = true;
         }
 
 
@@ -496,6 +504,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void MenuItem_ExportSettings_Click(object sender, RoutedEventArgs e)
         {
             ExportSettings();
+
+            e.Handled = true;
         }
 
 
@@ -507,6 +517,8 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         private void MenuItem_ResetSettings_Click(object sender, RoutedEventArgs e)
         {
             ResetSettings();
+
+            e.Handled = true;
         }
 
 
@@ -1026,6 +1038,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
             }
 
             QuickCommandAction();
+
             e.Handled = true;
         }
 
@@ -1478,10 +1491,7 @@ namespace SIGENCEScenarioTool.Windows.MainWindow
         /// Fires the property changed.
         /// </summary>
         /// <param name="strPropertyName">Name of the string property.</param>
-        private void FirePropertyChanged([CallerMemberName]string strPropertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
-        }
+        private void FirePropertyChanged( [CallerMemberName] string strPropertyName = null ) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(strPropertyName));
 
     } // end public partial class MainWindow
 }
